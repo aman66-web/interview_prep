@@ -77,6 +77,20 @@ Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack
 4. Add `ANTHROPIC_API_KEY` (private) and `ANTHROPIC_MODEL` (for example `claude-sonnet-5-5`) in Vercel, Production and Preview. Sonnet costs about 12 cents per interview; see `docs/PROGRESS.md` for the full cost table.
 5. Until both are set, the site shows "The AI interviewer isn't switched on yet" and nothing is charged.
 
+## 2c. Stripe (payments, test mode first)
+
+Nothing is charged for real until you switch Stripe to live mode at launch (P7). Everything below is in **test mode**: keep the "Test mode" switch on, top right in Stripe.
+
+1. Go to stripe.com and sign in (or create the account for this business).
+2. **Developers, API keys:** copy the **Secret key** (starts `sk_test_`). Add it in Vercel as `STRIPE_SECRET_KEY` (Sensitive, Production and Preview). You do **not** need to create products: the site creates the $39 and $99 prices itself when someone pays. (If you would rather use prices you made in Stripe, add their ids as `STRIPE_PRICE_MONTHLY` and `STRIPE_PRICE_PASS90`.)
+3. **Billing, Customer portal:** open it and click **Activate test link** (or Save). Tick "Customers can cancel subscriptions" and "update payment methods". Without this, "Manage billing" shows an error.
+4. **Developers, Webhooks, Add endpoint.** Address: `https://YOUR-SITE/api/stripe/webhook`. Choose these events: `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`, `invoice.paid`, `invoice.payment_failed`, `charge.refunded`. After saving, reveal the **Signing secret** (starts `whsec_`) and add it in Vercel as `STRIPE_WEBHOOK_SECRET` (Sensitive).
+   - While the site is only on Vercel preview links (behind your Vercel login), Stripe cannot reach the webhook. That is fine for testing: when someone pays, the page they land on asks Stripe about the payment and switches the plan on straight away. The webhook is what handles renewals, cancellations and refunds later, so point it at the real address before launch.
+5. Try it: on the pricing page click **Get the 90-Day Pass**, pay with the test card `4242 4242 4242 4242` (any future date, any 3 digits), and check **Account** shows the pass.
+6. To test without paying, in Stripe create a **Coupon** (100% off, once) and a **Promotion code** for it, then type that code on the Stripe payment page.
+
+Money rules in the code: card details never touch this site (Stripe's page takes them); a refund of a 90-Day Pass in Stripe takes its 90 days back; deleting an account first deletes the person's Stripe customer, which cancels any subscription.
+
 ## 3. Where the keys go
 
 | Value | Name to use | Private? |
@@ -85,6 +99,8 @@ Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack
 | Publishable key | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | No |
 | Secret key | `SUPABASE_SECRET_KEY` | **Yes** |
 | Anthropic key | `ANTHROPIC_API_KEY` | **Yes** |
+| Stripe secret key | `STRIPE_SECRET_KEY` | **Yes** |
+| Stripe webhook secret | `STRIPE_WEBHOOK_SECRET` | **Yes** |
 | Model name | `ANTHROPIC_MODEL` | No |
 
 - **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY` as **Sensitive**.

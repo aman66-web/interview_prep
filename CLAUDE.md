@@ -91,6 +91,7 @@ Section numbers in the docs match `docs/KIT.md`, so "rule 2.6" and "section 14" 
 - Tables holding answer keys (`math_checks`) are never readable by browsers. Likewise case JSON and drill answers: only the allow-listed public views (`lib/content/public.ts`, `toPublicDrill`) reach a browser.
 - Cases and drills are data: add a case as a JSON file plus one line in `lib/content/all-cases.ts`. Never set a case to `reviewed` yourself; a human reviewer does that.
 - `tests/repo-rules.test.ts` enforces rules 2.3, 2.4 and 2.7 (disclaimer, no fake proof, no logos, no trackers, no stray cookies or storage). If it fails, fix the code, not the test.
+- Payments: every Stripe call goes through `lib/stripe/client.ts` (Stripe's REST API, no Stripe package). A plan is only ever changed by the server: the signed webhook, the page people land on after paying, or the three database functions in `supabase/migrations/20261014170000_payments.sql`.
 - Never log email addresses or other personal data.
 
 ## Commands (available once P0 has scaffolded the app)

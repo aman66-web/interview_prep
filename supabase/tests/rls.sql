@@ -404,6 +404,124 @@ end $$;
 select rls_test.become('postgres');
 
 -- ---------------------------------------------------------------------------
+-- Payments: who can change a plan, and how purchases and refunds add up
+-- ---------------------------------------------------------------------------
+
+select rls_test.become('postgres');
+
+select rls_test.check(
+  not has_function_privilege('anon', 'public.grant_pass_purchase(uuid,text,text,integer)', 'execute')
+  and not has_function_privilege('authenticated', 'public.grant_pass_purchase(uuid,text,text,integer)', 'execute')
+  and not has_function_privilege('anon', 'public.revoke_pass_purchase(uuid,text,integer)', 'execute')
+  and not has_function_privilege('authenticated', 'public.revoke_pass_purchase(uuid,text,integer)', 'execute')
+  and not has_function_privilege('anon', 'public.set_subscription_state(uuid,text,text,timestamptz)', 'execute')
+  and not has_function_privilege('authenticated', 'public.set_subscription_state(uuid,text,text,timestamptz)', 'execute'),
+  'browsers cannot call the payment functions');
+
+select rls_test.check(
+  has_function_privilege('service_role', 'public.grant_pass_purchase(uuid,text,text,integer)', 'execute')
+  and has_function_privilege('service_role', 'public.revoke_pass_purchase(uuid,text,integer)', 'execute')
+  and has_function_privilege('service_role', 'public.set_subscription_state(uuid,text,text,timestamptz)', 'execute'),
+  'the server can call the payment functions');
+
+do $$
+declare
+  rejected boolean := false;
+begin
+  begin
+    update public.entitlements set status = 'made_up' where user_id = 'cccccccc-cccc-cccc-cccc-cccccccccccc';
+  exception when check_violation then
+    rejected := true;
+  end;
+  perform rls_test.check(rejected, 'an entitlement status Stripe does not use is refused');
+end $$;
+
+insert into auth.users (id, email) values
+  ('dddddddd-dddd-dddd-dddd-dddddddddddd', 'rls-user-d@example.test'),
+  ('eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'rls-user-e@example.test'),
+  ('ffffffff-ffff-ffff-ffff-ffffffffffff', 'rls-user-f@example.test');
+
+select rls_test.become('service_role');
+
+do $$
+declare
+  d constant uuid := 'dddddddd-dddd-dddd-dddd-dddddddddddd';
+  e constant uuid := 'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee';
+  f constant uuid := 'ffffffff-ffff-ffff-ffff-ffffffffffff';
+  row_e public.entitlements;
+  first_end timestamptz;
+  missing_ok boolean := false;
+begin
+  -- A first pass: 90 days from now.
+  perform rls_test.check(public.grant_pass_purchase(d, 'cs_1', 'pi_1', 90), 'a paid pass is added');
+  select * into row_e from public.entitlements where user_id = d;
+  first_end := row_e.expires_at;
+  perform rls_test.check(row_e.plan = 'pass90' and row_e.status = 'active' and row_e.stripe_ref = 'pi_1'
+    and first_end between now() + interval '89 days 23 hours' and now() + interval '90 days 1 hour',
+    'a pass lasts 90 days from now');
+
+  -- The same checkout twice adds nothing.
+  perform rls_test.check(public.grant_pass_purchase(d, 'cs_1', 'pi_1', 90) = false, 'the same checkout is not counted twice');
+  perform rls_test.check((select expires_at from public.entitlements where user_id = d) = first_end,
+    'a repeated message leaves the end date alone');
+
+  -- Buying again extends from the current end date.
+  perform rls_test.check(public.grant_pass_purchase(d, 'cs_2', 'pi_2', 90), 'a second pass is added');
+  perform rls_test.check((select expires_at from public.entitlements where user_id = d) = first_end + interval '90 days',
+    'buying again extends the pass by 90 more days');
+
+  -- A full refund of one purchase takes its 90 days back, once.
+  perform rls_test.check(public.revoke_pass_purchase(d, 'ch_2', 90), 'a refunded pass is taken back');
+  perform rls_test.check((select expires_at from public.entitlements where user_id = d) = first_end
+    and (select status from public.entitlements where user_id = d) = 'active',
+    'refunding the second purchase leaves the first 90 days');
+  perform rls_test.check(public.revoke_pass_purchase(d, 'ch_2', 90) = false, 'the same refund is not applied twice');
+  perform rls_test.check((select expires_at from public.entitlements where user_id = d) = first_end,
+    'a repeated refund message changes nothing');
+  perform rls_test.check(public.revoke_pass_purchase(d, 'ch_1', 90), 'refunding the first purchase too');
+  select * into row_e from public.entitlements where user_id = d;
+  perform rls_test.check(row_e.status = 'refunded' and row_e.expires_at <= now(), 'a fully refunded pass ends access now');
+
+  -- A group plan is never replaced by a purchase.
+  update public.entitlements set plan = 'group', status = 'active' where user_id = e;
+  perform rls_test.check(public.grant_pass_purchase(e, 'cs_3', 'pi_3', 90), 'a purchase by a group member is accepted');
+  perform rls_test.check((select plan from public.entitlements where user_id = e) = 'group', 'and the group plan stays');
+
+  -- Subscriptions.
+  perform public.set_subscription_state(f, 'sub_1', 'active', now() + interval '33 days');
+  select * into row_e from public.entitlements where user_id = f;
+  perform rls_test.check(row_e.plan = 'monthly' and row_e.status = 'active' and row_e.stripe_ref = 'sub_1', 'a subscription starts the monthly plan');
+  perform public.set_subscription_state(f, 'sub_1', 'past_due', now() + interval '33 days');
+  perform rls_test.check((select status from public.entitlements where user_id = f) = 'past_due', 'a failed payment is copied across');
+  perform public.set_subscription_state(f, 'sub_1', 'canceled', now());
+  perform rls_test.check((select status from public.entitlements where user_id = f) = 'canceled', 'a cancelled subscription ends the plan');
+
+  -- A new subscription is not undone by a late message about the old one.
+  perform public.set_subscription_state(f, 'sub_2', 'active', now() + interval '33 days');
+  perform public.set_subscription_state(f, 'sub_1', 'canceled', now());
+  select * into row_e from public.entitlements where user_id = f;
+  perform rls_test.check(row_e.status = 'active' and row_e.stripe_ref = 'sub_2', 'an old subscription ending does not end the new one');
+
+  -- A running pass is not ended by an old subscription ending.
+  perform rls_test.check(public.grant_pass_purchase(f, 'cs_4', 'pi_4', 90), 'a subscriber can still buy a pass');
+  perform public.set_subscription_state(f, 'sub_2', 'canceled', now());
+  select * into row_e from public.entitlements where user_id = f;
+  perform rls_test.check(row_e.plan = 'pass90' and row_e.status = 'active', 'a running pass survives its subscriber cancelling');
+
+  -- A user who has been deleted: the purchase is refused and nothing is kept.
+  begin
+    perform public.grant_pass_purchase('99999999-9999-9999-9999-999999999999', 'cs_gone', 'pi_gone', 90);
+  exception when foreign_key_violation then
+    missing_ok := true;
+  end;
+  perform rls_test.check(missing_ok, 'a purchase for a deleted user is refused');
+  perform rls_test.check(not exists (select 1 from public.stripe_events where id = 'pass:cs_gone'),
+    'and its claim is rolled back, so Stripe can retry safely');
+end $$;
+
+select rls_test.become('postgres');
+
+-- ---------------------------------------------------------------------------
 -- Deleting a user deletes all of their data (and only theirs)
 -- ---------------------------------------------------------------------------
 

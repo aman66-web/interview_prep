@@ -131,6 +131,7 @@ Everything brand- or business-specific lives here, so it can change without touc
 | `/api/stripe/checkout` | Start a Stripe checkout |
 | `/api/stripe/webhook` | Receive Stripe events |
 | `/api/stripe/portal` | Open the Stripe billing portal |
+| `/api/stripe/return` | Where Stripe sends people after paying: confirms the checkout with Stripe and switches the plan on at once (the webhook still follows) |
 | `/api/leads` | Save a university or club enquiry |
 | `/api/cron/cleanup` | Retention clean-up (protected by `CRON_SECRET`) |
 | `/api/og/score` | Share-card image |

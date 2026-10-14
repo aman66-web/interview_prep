@@ -2,7 +2,7 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0, P1, P2 and P3 built. The Supabase project is up and its tables are locked down. Still open: the sign-in settings and secret key (founder, see Handoff), a real sign-in test, and an Anthropic key to run the interviewer for real.
+**Current milestone:** P0 to P4 built. The Supabase project is up and its tables are locked down. Still open (founder): the sign-in settings and secret key (see Handoff), an Anthropic key, and Stripe test keys. Then a real sign-in test, a real interview and a real test-mode purchase.
 
 ## Handoff (14 Oct 2026)
 
@@ -73,14 +73,18 @@ Read this first in a new session.
 Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 interviews a month would cost about $1.20 to $1.75. The hard caps are 3 a day, 60 a month, 40 turns, 2,000 characters a message and 900,000 tokens per session. Prices are our own table (check `lib/ai/pricing.ts` against Anthropic's price page before launch); Anthropic's invoice is the source of truth.
 
 ### P4 Payments
-- [ ] Stripe test mode, checkout for both plans
-- [ ] Webhooks and entitlements
-- [ ] Customer Portal
-- [ ] Paywall states
-- [ ] A pass that extends correctly when bought again
-- [ ] Account deletion (`app/app/account/actions.ts`) must first cancel the user's Stripe subscription and delete or anonymise the Stripe customer
-- [ ] Add a check on `entitlements.status` once the Stripe states are known (the P1 migration leaves it free text)
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Stripe checkout for both plans (`/api/stripe/checkout`; Monthly $39 subscription, 90-Day Pass $99 one-time; the price is created inline unless `STRIPE_PRICE_*` are set). Built on Stripe's REST API with no extra package; everything is in `lib/stripe/`
+- [x] Webhooks and entitlements (`/api/stripe/webhook`: signature checked, 5-minute replay window, each event recorded once; subscription messages are never trusted for their content, the code asks Stripe for the subscription's current state)
+- [x] Customer Portal (`/api/stripe/portal`, "Manage billing" on the account page)
+- [x] Paywall states: pricing page with notices, account page plan and billing, a ready-to-go "Add 90 more days" link
+- [x] A pass that extends correctly when bought again (database function `grant_pass_purchase`, each checkout counted once; a full refund takes its 90 days back once)
+- [x] Account deletion deletes the Stripe customer first (which cancels any subscription); if Stripe cannot be reached nothing is deleted
+- [x] Check on `entitlements.status` (Stripe's subscription states plus `refunded`)
+- [x] After paying, the page they land on (`/api/stripe/return`) asks Stripe and switches the plan on at once, so access never depends on webhook timing
+- [x] Tests: 269 unit and database tests, and a browser run with a pretend Stripe (74 checks: buying, extending, refunds, forged and replayed webhooks, other people's checkouts, the billing portal, deleting an account). **Not yet run with the real Stripe.** Migration `20261014170000_payments.sql` applied to the real Supabase project (14 Oct); functions are server-only and the security advisor is clean
+- [ ] Founder: Stripe test keys and the webhook (`docs/SETUP.md` section 2c), then one real test-mode purchase with the test card
+- [ ] Decide on Stripe Tax with an accountant (`stripeTaxEnabled` in `site.config.ts` is off)
+- [ ] Vercel preview link and plain-English report
 
 ### P5 Content and search
 - [ ] 20 cases ready for review
@@ -131,7 +135,7 @@ Claude Code: give click-by-click steps whenever he asks.
   - [ ] Add the environment variables for Production and Preview, and mark the secret ones "Sensitive".
   - [ ] Move to the Pro plan before taking real payments.
 - [ ] **5. Stripe (UK account):**
-  - [ ] Create both products in test mode, then add the webhook endpoint.
+  - [ ] Test keys and webhook (`docs/SETUP.md` section 2c). No products needed: checkout creates the prices.
   - [ ] Decide on Stripe Tax with an accountant.
   - [ ] Switch to live mode only at P7.
 - [ ] **6. Anthropic:** create an API key in the console and set a monthly spend limit.

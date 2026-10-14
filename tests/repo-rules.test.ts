@@ -92,6 +92,12 @@ describe("the repository rules", () => {
     expect(outsideLib).toEqual([]);
   });
 
+  it("reach Stripe only through lib/stripe/client.ts, with no card details stored (section 15)", () => {
+    expect(code.filter((f) => /api\.stripe\.com/.test(f.text)).map((f) => f.path)).toEqual(["lib/stripe/client.ts"]);
+    expect(code.filter((f) => /from ["']stripe["']|require\(["']stripe["']\)/.test(f.text)).map((f) => f.path)).toEqual([]);
+    expect(code.filter((f) => /card_number|cardNumber|\bcvc\b|\bcvv\b/i.test(f.text)).map((f) => f.path)).toEqual([]);
+  });
+
   it("never log email addresses or other personal data (rule 2.7)", () => {
     const offenders = code
       .filter((f) => /console\.(log|error|warn|info)\([^)]*\b(email|user\.email|formData)/i.test(f.text))
