@@ -2,15 +2,18 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0, P1, P2 and P3 built. Still open: the Supabase project and a real sign-in test (see Handoff), and an Anthropic key to run the interviewer for real.
+**Current milestone:** P0, P1, P2 and P3 built. The Supabase project is up and its tables are locked down. Still open: the sign-in settings and secret key (founder, see Handoff), a real sign-in test, and an Anthropic key to run the interviewer for real.
 
 ## Handoff (14 Oct 2026)
 
 Read this first in a new session.
 
-- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. The only environment variable set so far is `SHOW_DRAFT_CONTENT=1` for **Preview** (so draft cases can be reviewed on previews; never for Production). The Supabase variables are not set yet.
-- **Supabase is not started.** The founder's first Supabase account (org "Aman's Org") already has menumacros, drone-test-prep (both live) and cscs-test-app (paused). **Do not touch those three.** The founder is using his second Supabase account instead (2 free project slots). The Supabase connector must be connected to that second account (claude.ai, Customize, Connectors) and a session started afterwards. **On 14 Oct a follow-up session (`session_01KDMgSC6YrKmbrpLCMhbG3o`) still saw only "Aman's Org", so the reconnect had not taken effect.** The founder needs to Disconnect Supabase there, sign out of supabase.com, sign in to the second account, Connect again and choose that account's organisation. Check that `list_organizations` shows the second account before doing anything.
-- **Founder's earlier yes (rule 2.6), given in the previous session:** create the Supabase project, apply `supabase/migrations/*`, run `supabase/tests/rls.sql` (it rolls itself back), set Auth URL configuration and the two email templates from `docs/SETUP.md`, add the Vercel environment variables (Production and Preview), redeploy, and test a real sign-in with his own email. Because this is a new session, confirm with him in one line before the first change, and tell him the exact Supabase cost before creating the project.
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`.
+- **Supabase project exists (14 Oct 2026).** Second account, organisation "aman662002@gmail.com's Org" (Free plan, $0). Project `interview-prep`, ref `jkvnarskslswdwrdzefa`, London (`eu-west-2`), URL `https://jkvnarskslswdwrdzefa.supabase.co`. The first account (menumacros, drone-test-prep, cscs-test-app) was never touched.
+  - **Done with the founder's go ("try supabase now"):** created the project; applied the three files in `supabase/migrations/` in order; checked the real database with read-only queries (11 tables, all with Row Level Security and a policy, `anon` has no table access, `authenticated` has only the intended grants, the two interview functions and `handle_new_user` are not callable from browsers, the sign-up trigger exists); the security advisor returns no findings; `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` added to Vercel (Production and Preview).
+  - **`supabase/tests/rls.sql` could not be run through the connector:** it timed out after 60 s (scripts containing `delete` also stalled on the other project) and left nothing behind (checked). The same script passes on a local Postgres and in CI against the same migration files. The founder can also paste it into the Supabase SQL Editor for a belt-and-braces run.
+  - **The connector cannot do these, so the founder does them in the dashboard (click-by-click in `docs/SETUP.md`):** Authentication, URL Configuration (Site URL and Redirect URLs); the Magic Link and Confirm sign up email templates; and adding `SUPABASE_SECRET_KEY` to Vercel himself (Sensitive, Production and Preview). The session's `api.supabase.com` connection returned "upstream auth failed", so the Management API was not usable either (not worked around).
+  - **Then:** push (or redeploy) so the new variables reach a build, and test a real sign-in. **The built-in Supabase email sender only sends to members of the Supabase organisation**, which for this account is `aman662002@gmail.com`; test with that address (or invite another address to the organisation first).
 - **Keys (rule 2.5):** the Supabase URL and publishable key can go straight to Vercel without appearing in chat. The secret key (`SUPABASE_SECRET_KEY`) must not pass through chat: if the connector cannot place it directly, the founder pastes it into Vercel himself, marked Sensitive.
 - **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs), Vercel Pro before payments.
 - PR: https://github.com/aman66-web/interview_prep/pull/1 (CI green on the P0 + P1 commit).
@@ -34,7 +37,8 @@ Read this first in a new session.
 - [x] Profiles (created automatically on signup)
 - [x] Account deletion and data export (`/app/account`)
 - [x] Tests passing (48), including a browser run of the whole login flow against a fake Supabase
-- [ ] Founder: create the Supabase project, add the keys, apply the migration (`docs/SETUP.md`)
+- [x] Supabase project created and migrations applied (14 Oct, see Handoff); public keys in Vercel
+- [ ] Founder: Auth URL configuration, the two email templates and `SUPABASE_SECRET_KEY` in Vercel (`docs/SETUP.md`)
 - [ ] Test a real sign-in email end to end (needs the project above; confirms the email template)
 - [ ] Vercel preview link
 - [ ] Plain-English report
@@ -122,7 +126,7 @@ Claude Code: give click-by-click steps whenever he asks.
 
 - [ ] **1. Brand:** pick a name and domain. Check the domain is free and the name isn't someone else's trademark. Tell Claude Code so it can update `site.config.ts`.
 - [ ] **2. GitHub:** create a new private repo, add the kit and open it with Claude Code.
-- [ ] **3. Supabase:** the free plan allows 2 active projects and you already have 2 (menumacros and drone-test-prep). Either pause one or upgrade to Pro (about $25 a month) before creating this project.
+- [x] **3. Supabase:** done on 14 Oct using the second account (free plan, $0): project `interview-prep` in London.
 - [ ] **4. Vercel:** import the repo.
   - [ ] Add the environment variables for Production and Preview, and mark the secret ones "Sensitive".
   - [ ] Move to the Pro plan before taking real payments.

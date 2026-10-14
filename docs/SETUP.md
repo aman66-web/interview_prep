@@ -31,10 +31,10 @@ You can also ask Claude Code to apply it for you. It will ask before touching yo
 ### Tell Supabase where your site lives
 
 1. **Authentication, URL Configuration.**
-2. **Site URL:** your real address once you have a domain. Until then use the Vercel address of the site.
+2. **Site URL:** your real address once you have a domain. Until then use `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`.
 3. **Redirect URLs:** add each of these (one per line):
    - `http://localhost:3000/**`
-   - your Vercel preview pattern, which looks like `https://*-your-team.vercel.app/**` (Claude will tell you the exact one once the project is on Vercel)
+   - `https://interview-prep-*-aman-moneysave.vercel.app/**` (this covers every Vercel preview of this project)
    - your real domain, `https://yourdomain.com/**`, when you have it
 
 ### Make the sign-in email work for university students
@@ -52,7 +52,7 @@ Some university and company email systems open every link in an email to scan it
    ```
 
 3. Open **Confirm sign up** and paste the same text. (New people get this one the first time.)
-4. Send yourself a test sign-in and tell Claude whether the link and the code both worked. This is the one piece that could not be tested without a real project.
+4. Send yourself a test sign-in **using the email address of your Supabase account (aman662002@gmail.com)**, because the built-in sender refuses anyone else, and tell Claude whether the link and the code both worked. This is the one piece that could not be tested without a real project.
 
 ### Email sending: needed before anyone but you can log in
 
