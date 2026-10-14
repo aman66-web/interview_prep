@@ -46,6 +46,8 @@ Section numbers in the docs match `docs/KIT.md`, so "rule 2.6" and "section 14" 
 - `git push`, `supabase db push` or `supabase link`, or any Stripe, Vercel or Supabase change made through a connector or CLI.
 - Anything that costs money, deploys to production or emails real users.
 
+**Standing permission (founder, 14 Oct 2026):** pushing finished work to the pull-request branch `claude/gifted-shannon-r42f73` is allowed without asking each time. Pushing or merging to `main` always asks first, and everything else in rule 2.6 still applies.
+
 **2.7 Privacy (UK GDPR).**
 - Collect only the data needed.
 - Delete interview transcripts after 365 days (configurable).
