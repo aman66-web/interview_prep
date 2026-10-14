@@ -2,17 +2,19 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0 (waiting for the founder's "go")
+**Current milestone:** P0 built, P1 in progress
 
 ## Milestones (kit section 13)
 
 ### P0 Setup
-- [ ] Split the kit into project files (kit section 0)
-- [ ] Scaffold Next.js in a temporary folder, then move it in (`create-next-app` refuses a non-empty folder)
-- [ ] Add `site.config.ts`
-- [ ] Add `.claude/settings.json`, `.gitignore` and `.env.example`
-- [ ] Add GitHub Actions to run lint, tests and build
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Split the kit into project files (kit section 0)
+- [x] Scaffold Next.js in a temporary folder, then move it in (`create-next-app` refuses a non-empty folder)
+- [x] Add `site.config.ts`
+- [x] Add `.claude/settings.json`, `.gitignore` and `.env.example`
+- [x] Add GitHub Actions to run lint, tests and build
+- [x] Tests passing
+- [ ] Vercel preview link (founder imports the repo into Vercel, then it appears on the pull request)
+- [ ] Plain-English report
 
 ### P1 Login and database
 - [ ] Supabase migrations
