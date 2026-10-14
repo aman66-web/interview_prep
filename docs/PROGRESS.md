@@ -128,7 +128,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 
 Claude Code: give click-by-click steps whenever he asks.
 
-- [ ] **1. Brand:** pick a name and domain. Check the domain is free and the name isn't someone else's trademark. Tell Claude Code so it can update `site.config.ts`.
+- [ ] **1. Brand:** name chosen: **CaseSpar** (14 Oct 2026; `site.config.ts` updated). casespar.com was free at $11.25 a year on 14 Oct; the founder buys it. A web search found no product with this name, but that is not a trademark check: check the UK and US trademark registers before launch.
 - [ ] **2. GitHub:** create a new private repo, add the kit and open it with Claude Code.
 - [x] **3. Supabase:** done on 14 Oct using the second account (free plan, $0): project `interview-prep` in London.
 - [ ] **4. Vercel:** import the repo.
