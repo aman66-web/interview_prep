@@ -4,15 +4,16 @@ Consulting case-interview practice with a text AI interviewer and a scored debri
 
 The founder (Aman) is a non-developer. Follow rule 2.13 when talking to him.
 
-**Start of every session:** read `docs/PROGRESS.md` to see which milestone we are on. **End of every milestone:** tick it off there and report (rule 2.13).
+**Current state and the founder checklist:** @docs/PROGRESS.md (loaded automatically). **End of every milestone:** tick it off there and report (rule 2.13) with what was built, what to click (the Vercel preview link; the founder cannot open localhost), what he must do, and a proposed commit message.
 
 ## Docs
 
 | File | What is in it |
 |---|---|
 | `docs/SPEC.md` | Product, pricing, stack, site config, pages and routes, AI interviewer design, payments and access, data model, growth features, design, analytics (kit sections 1 and 3-12) |
-| `docs/CONTENT.md` | Case file format (the case JSON schema), `content:check` tests, launch targets, writing and review rules (kit section 7) |
-| `docs/PROGRESS.md` | Milestone checklist P0-P7 and the founder's setup checklist |
+| `docs/CONTENT.md` | Case file format (the case JSON schema), `content:check` tests, launch targets, writing and review rules (kit section 7), and how the content and drill engine works |
+| `docs/PROGRESS.md` | Milestone checklist P0-P7, the founder's setup checklist, and the handoff notes |
+| `docs/SETUP.md` | Click-by-click setup for Supabase, Vercel and where keys go |
 | `docs/KIT.md` | The original build kit, unchanged. Reference only; do not edit |
 | `docs/RESEARCH_TODO.md` | Facts that could not be verified (rule 2.2). Create when first needed |
 
@@ -85,7 +86,9 @@ Section numbers in the docs match `docs/KIT.md`, so "rule 2.6" and "section 14" 
 - Database access: `lib/supabase/server.ts` acts as the logged-in user (Row Level Security applies; the default). `lib/supabase/admin.ts` uses the secret key and ignores Row Level Security: server actions and route handlers only, and only after checking who the caller is.
 - Every page, server action and route handler that needs a login calls `requireUser()` or `getUser()` from `lib/auth/session.ts` itself. The proxy and layouts are not the only gate.
 - Database changes go in a new file in `supabase/migrations/`. Any new table needs Row Level Security, the minimum grants, and a case in `supabase/tests/rls.sql`. `npm test` runs those checks when `RLS_TEST_DATABASE_URL` points at a Postgres (CI always does).
-- Tables holding answer keys (`math_checks`) are never readable by browsers.
+- Tables holding answer keys (`math_checks`) are never readable by browsers. Likewise case JSON and drill answers: only the allow-listed public views (`lib/content/public.ts`, `toPublicDrill`) reach a browser.
+- Cases and drills are data: add a case as a JSON file plus one line in `lib/content/all-cases.ts`. Never set a case to `reviewed` yourself; a human reviewer does that.
+- `tests/repo-rules.test.ts` enforces rules 2.3, 2.4 and 2.7 (disclaimer, no fake proof, no logos, no trackers, no stray cookies or storage). If it fails, fix the code, not the test.
 - Never log email addresses or other personal data.
 
 ## Commands (available once P0 has scaffolded the app)

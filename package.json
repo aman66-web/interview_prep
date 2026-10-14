@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "content:check": "node scripts/content-check.mjs"
+    "content:check": "vitest run content-"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

@@ -8,7 +8,16 @@ export function SiteHeader() {
         <Link href="/" className="text-lg font-semibold">
           {siteConfig.brandName}
         </Link>
-        <nav aria-label="Main" className="flex items-center gap-4 text-sm">
+        <nav aria-label="Main" className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 text-sm">
+          <Link href="/cases" className="underline">
+            Cases
+          </Link>
+          <Link href="/drills" className="underline">
+            Drills
+          </Link>
+          <Link href="/pricing" className="underline">
+            Pricing
+          </Link>
           <Link href="/login" className="underline">
             Log in
           </Link>

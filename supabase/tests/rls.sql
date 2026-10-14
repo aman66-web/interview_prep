@@ -149,6 +149,15 @@ select rls_test.check(
   'Row Level Security is switched on for every table');
 
 select rls_test.check(
+  not exists (
+    select 1 from pg_class c
+    join pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public' and c.relkind in ('r', 'p')
+      and not exists (select 1 from pg_policy p where p.polrelid = c.oid)
+  ),
+  'every table has an explicit policy (even if it is deny-all)');
+
+select rls_test.check(
   not has_function_privilege('anon', 'public.handle_new_user()', 'execute')
   and not has_function_privilege('authenticated', 'public.handle_new_user()', 'execute'),
   'browsers cannot call the new-user function directly');

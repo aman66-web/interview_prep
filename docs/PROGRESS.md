@@ -2,14 +2,14 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0 and P1 built; waiting on the founder's Supabase project to test against real email
+**Current milestone:** P0, P1 and P2 built. Still open from P1: the Supabase project and a real sign-in test (see Handoff).
 
 ## Handoff (14 Oct 2026)
 
 Read this first in a new session.
 
-- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. **No environment variables are set yet.**
-- **Supabase is not started.** The founder's first Supabase account (org "Aman's Org") already has menumacros, drone-test-prep (both live) and cscs-test-app (paused). **Do not touch those three.** The founder is using his second Supabase account instead (2 free project slots). The Supabase connector must be connected to that second account (claude.ai, Customize, Connectors) and the session started afterwards. Check that `list_organizations` shows the second account before doing anything.
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. The only environment variable set so far is `SHOW_DRAFT_CONTENT=1` for **Preview** (so draft cases can be reviewed on previews; never for Production). The Supabase variables are not set yet.
+- **Supabase is not started.** The founder's first Supabase account (org "Aman's Org") already has menumacros, drone-test-prep (both live) and cscs-test-app (paused). **Do not touch those three.** The founder is using his second Supabase account instead (2 free project slots). The Supabase connector must be connected to that second account (claude.ai, Customize, Connectors) and a session started afterwards. **On 14 Oct a follow-up session (`session_01KDMgSC6YrKmbrpLCMhbG3o`) still saw only "Aman's Org", so the reconnect had not taken effect.** The founder needs to Disconnect Supabase there, sign out of supabase.com, sign in to the second account, Connect again and choose that account's organisation. Check that `list_organizations` shows the second account before doing anything.
 - **Founder's earlier yes (rule 2.6), given in the previous session:** create the Supabase project, apply `supabase/migrations/*`, run `supabase/tests/rls.sql` (it rolls itself back), set Auth URL configuration and the two email templates from `docs/SETUP.md`, add the Vercel environment variables (Production and Preview), redeploy, and test a real sign-in with his own email. Because this is a new session, confirm with him in one line before the first change, and tell him the exact Supabase cost before creating the project.
 - **Keys (rule 2.5):** the Supabase URL and publishable key can go straight to Vercel without appearing in chat. The secret key (`SUPABASE_SECRET_KEY`) must not pass through chat: if the connector cannot place it directly, the founder pastes it into Vercel himself, marked Sensitive.
 - **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs), Vercel Pro before payments.
@@ -24,8 +24,8 @@ Read this first in a new session.
 - [x] Add `.claude/settings.json`, `.gitignore` and `.env.example`
 - [x] Add GitHub Actions to run lint, tests and build
 - [x] Tests passing
-- [ ] Vercel preview link (founder imports the repo into Vercel, then it appears on the pull request)
-- [ ] Plain-English report
+- [x] Vercel project created and linked; preview builds on every push
+- [x] Plain-English report
 
 ### P1 Login and database
 - [x] Supabase migrations (`supabase/migrations/`, all 11 tables from kit section 9)
@@ -40,11 +40,13 @@ Read this first in a new session.
 - [ ] Plain-English report
 
 ### P2 Content engine
-- [ ] Case schema and `content:check`
-- [ ] 5 draft cases, including the free starter
-- [ ] The drills generator
-- [ ] `/cases` and `/drills` pages
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Case schema and `content:check` (validates the format, recomputes every maths answer and exhibit number; proven to catch mistakes)
+- [x] 5 draft cases, including the free starter (profitability, market entry, market sizing, pricing, growth). **All are drafts until a person with consulting experience reads them.**
+- [x] The drills generator: 240 mental-maths and 60 chart-reading drills by code, plus 12 market-sizing and 16 framework drills written by hand (328 in total)
+- [x] `/cases`, `/cases/[slug]`, `/drills`, `/drills/[category]`, and a placeholder `/pricing`
+- [x] Tests passing (147), browser test of every new screen, no answer key in any page's HTML
+- [ ] Founder or a paid reviewer reads the 5 draft cases on the preview site and marks them reviewed (or asks for changes)
+- [ ] Vercel preview link and plain-English report
 
 ### P3 AI interviewer
 - [ ] Session stages, exhibit reveals, maths checks, debrief scoring, limits and usage logging

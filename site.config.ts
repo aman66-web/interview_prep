@@ -24,6 +24,11 @@ export const siteConfig = {
       aiCasesPerDay: 3,
       aiCasesPerMonth: 60,
     },
+    // Visitors without an account may try this many drills per browser tab
+    // before being asked to sign up (a nudge, not a security limit: drills cost us nothing to serve).
+    anonymous: {
+      drillsPerSession: 5,
+    },
     candidateTurnsPerSession: 40,
   },
 

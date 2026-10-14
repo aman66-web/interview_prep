@@ -1,0 +1,220 @@
+{
+  "id": "case-004",
+  "slug": "flexora-gym-software-pricing",
+  "title": "Flexora: should the price go up to $75?",
+  "track": "consulting",
+  "type": "pricing",
+  "industry": "Software (SaaS)",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 25,
+  "prompt": "Flexora sells scheduling and billing software to independent gyms in the US and UK. It charges $60 per gym per month and has 5,000 customers. The CEO wants to raise the price to $75 for everyone. Should the company do it? How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "Customers and pricing today",
+      "answer": "5,000 gyms each pay $60 a month. Everyone pays the same price and can cancel at any time, month to month."
+    },
+    {
+      "question_topic": "Costs",
+      "answer": "Each gym costs Flexora $15 a month to serve (support, payment processing and hosting). Fixed costs do not change with the price."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants to maximise monthly profit contribution (revenue minus variable costs). The CEO also cares about not losing too many customers."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "Two competitors charge $55 and $80 for similar products. The $80 product has more features."
+    },
+    {
+      "question_topic": "Customer research",
+      "answer": "Flexora surveyed current customers on how many would stay at each price. The results are available."
+    },
+    {
+      "question_topic": "Switching costs",
+      "answer": "Customers can cancel any month, but switching to another system takes a gym a few weeks of effort."
+    },
+    {
+      "question_topic": "New customers",
+      "answer": "New customers come mainly from referrals and search. Assume a price change does not affect new customers in the next six months."
+    },
+    {
+      "question_topic": "Product plans",
+      "answer": "No new features are planned in the next six months."
+    },
+    {
+      "question_topic": "How a price change works",
+      "answer": "A price change would apply to all customers at once, with 30 days' notice."
+    },
+    {
+      "question_topic": "Current cancellations",
+      "answer": "About 1.5% of customers cancel in a typical month at the current price."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Customers: willingness to pay and likely churn at each price",
+      "Company economics: margin per customer and break-even volume loss",
+      "Competitors and alternatives",
+      "Implementation options: one price, tiers or staged rises",
+      "Risks and how to test"
+    ],
+    "good_signs": [
+      "Works with contribution (price minus variable cost), not just revenue",
+      "Calculates the break-even volume loss before looking at the survey",
+      "Compares more than one price point instead of only $60 versus $75",
+      "Questions how reliable survey answers are"
+    ],
+    "red_flags": [
+      "Looks only at revenue and ignores the $15 variable cost",
+      "Accepts the survey at face value",
+      "Ignores competitor prices"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "survey-retention",
+      "title": "Survey: share of current customers who would stay at each price",
+      "kind": "line",
+      "data": {
+        "columns": ["Monthly price ($)", "Customers who would stay (%)"],
+        "rows": [
+          [60, 100],
+          [65, 95],
+          [70, 88],
+          [75, 78],
+          [80, 62]
+        ]
+      },
+      "reveal_hint": "Ask what the customer research says about how many customers would stay at higher prices.",
+      "insight": "Retention falls slowly up to $70 and then faster. At $75, about 22% of customers would leave; at $80, 38% would."
+    },
+    {
+      "id": "cost-to-serve-gym",
+      "title": "Variable cost to serve one gym ($ per month)",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "Dollars"],
+        "rows": [
+          ["Support", 6],
+          ["Payment processing", 5],
+          ["Hosting", 4],
+          ["Total variable cost", 15]
+        ]
+      },
+      "reveal_hint": "Ask for the variable cost of serving each customer.",
+      "insight": "Variable cost per gym is $15 a month, so each gym contributes $45 today."
+    }
+  ],
+  "math": [
+    {
+      "id": "break-even-loss",
+      "question": "If the price rises from $60 to $75, what percentage of customers could Flexora lose before monthly contribution falls below today's level?",
+      "inputs": {
+        "old_price": 60,
+        "new_price": 75,
+        "variable_cost": 15
+      },
+      "expression": "(new_price - old_price) / (new_price - variable_cost) * 100",
+      "expected": 25,
+      "tolerance_pct": 2,
+      "working": "Contribution per customer rises from $45 to $60. Keeping total contribution equal needs 45 / 60 = 75% of customers, so up to 25% could leave. Shortcut: price rise $15 divided by new contribution $60 is 25%.",
+      "input_sources": [
+        { "input": "variable_cost", "exhibit_id": "cost-to-serve-gym", "row": 3, "column": "Dollars" }
+      ]
+    },
+    {
+      "id": "contribution-today",
+      "question": "What is Flexora's monthly contribution today, in dollars?",
+      "inputs": {
+        "customers": 5000,
+        "price": 60,
+        "variable_cost": 15
+      },
+      "expression": "customers * (price - variable_cost)",
+      "expected": 225000,
+      "tolerance_pct": 1,
+      "working": "5,000 gyms x ($60 - $15) = 5,000 x $45 = $225,000.",
+      "input_sources": [
+        { "input": "variable_cost", "exhibit_id": "cost-to-serve-gym", "row": 3, "column": "Dollars" }
+      ]
+    },
+    {
+      "id": "contribution-at-75",
+      "question": "Using the survey, what would monthly contribution be at $75, in dollars?",
+      "inputs": {
+        "customers": 5000,
+        "price": 75,
+        "variable_cost": 15,
+        "stay_pct": 78
+      },
+      "expression": "customers * stay_pct / 100 * (price - variable_cost)",
+      "expected": 234000,
+      "tolerance_pct": 1,
+      "working": "78% of 5,000 is 3,900 gyms. Each contributes $75 - $15 = $60. 3,900 x $60 = $234,000.",
+      "input_sources": [
+        { "input": "price", "exhibit_id": "survey-retention", "row": 3, "column": "Monthly price ($)" },
+        { "input": "stay_pct", "exhibit_id": "survey-retention", "row": 3, "column": "Customers who would stay (%)" },
+        { "input": "variable_cost", "exhibit_id": "cost-to-serve-gym", "row": 3, "column": "Dollars" }
+      ]
+    },
+    {
+      "id": "contribution-at-70",
+      "question": "What would monthly contribution be at $70, in dollars?",
+      "inputs": {
+        "customers": 5000,
+        "price": 70,
+        "variable_cost": 15,
+        "stay_pct": 88
+      },
+      "expression": "customers * stay_pct / 100 * (price - variable_cost)",
+      "expected": 242000,
+      "tolerance_pct": 1,
+      "working": "88% of 5,000 is 4,400 gyms. Each contributes $70 - $15 = $55. 4,400 x $55 = $242,000, which is 7.6% above today and $8,000 above the $75 option.",
+      "input_sources": [
+        { "input": "price", "exhibit_id": "survey-retention", "row": 2, "column": "Monthly price ($)" },
+        { "input": "stay_pct", "exhibit_id": "survey-retention", "row": 2, "column": "Customers who would stay (%)" },
+        { "input": "variable_cost", "exhibit_id": "cost-to-serve-gym", "row": 3, "column": "Dollars" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Besides one price change for everyone, what else could Flexora do to earn more from its customers?",
+    "idea_bank": [
+      "Create tiers such as Basic and Pro, so larger or more demanding gyms pay more",
+      "Charge by gym size or number of members",
+      "Offer a discount for annual prepayment to reduce churn",
+      "Raise prices in two steps (for example $65, then $70) and watch cancellations",
+      "Protect long-standing customers with a smaller rise",
+      "Add paid extras such as marketing tools or member apps",
+      "Take a small share of payments processed through the platform",
+      "Test a new price on new customers or a sample of existing ones first",
+      "Improve onboarding and support to reduce cancellations at any price"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "At $75 the break-even loss is 25% and the survey suggests 22% would leave, so contribution rises only slightly ($234k versus $225k)",
+      "$70 looks best of the tested prices, at about $242k a month versus $225k today",
+      "Survey answers are not the same as real behaviour, so test before rolling out to everyone"
+    ],
+    "good_signs": [
+      "Recommends about $70 or a staged increase with monitoring",
+      "Considers the effect on referrals and customer count, not only profit",
+      "Proposes a test on a subset of customers and the metrics to track"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the objective: maximise monthly contribution, keep churn under control; confirm costs, customers and that new-customer volume is unaffected.",
+    "Structure: customer willingness to pay, company economics, competitors, how to implement, risks.",
+    "Break-even: at $75, contribution per gym rises from $45 to $60, so Flexora can lose up to 25% of customers before it is worse off.",
+    "Survey: at $75, 78% stay, so contribution is $234k versus $225k today (a 4% gain). At $70, 88% stay and contribution is $242k (+7.6%). At $65 it is $237.5k; at $80 it falls to $201.5k.",
+    "Insight: the biggest gain is at a smaller rise than the CEO proposed, and revenue alone would mislead (it falls at $75).",
+    "Recommendation: move to about $70, announce with 30 days' notice, protect the longest-standing customers with a smaller step, and test on a sample first. Track cancellations weekly against the 12% the survey implies."
+  ],
+  "free_starter": false,
+  "free_preview": true,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

@@ -1,0 +1,225 @@
+{
+  "id": "case-001",
+  "slug": "harbourline-bakeries",
+  "title": "Harbourline Bakeries: why did profit fall?",
+  "track": "consulting",
+  "type": "profitability",
+  "industry": "Food retail",
+  "difficulty": 1,
+  "style": "interviewer_led",
+  "est_minutes": 25,
+  "prompt": "Harbourline is a UK chain of 120 company-owned bakery-cafés. Last year the average café made a profit of £200,000. This year it made far less, even though it served the same number of customers in the same number of cafés. The CEO has asked you to find out what happened and what to do about it. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "Business model",
+      "answer": "Harbourline runs 120 bakery-cafés across the UK. All are company-owned; there are no franchises. Customers buy bread, pastries, sandwiches and hot drinks."
+    },
+    {
+      "question_topic": "Customers and sales",
+      "answer": "Each café served about 400,000 customers last year and again this year. The average spend per customer was £5.00 in both years."
+    },
+    {
+      "question_topic": "Number of cafés",
+      "answer": "No cafés were opened or closed in either year."
+    },
+    {
+      "question_topic": "Prices",
+      "answer": "The last price rise was 18 months ago, at about 3%. Competitors have not raised their prices this year."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants average profit per café back to £200,000 within two years. Closing cafés is not an option."
+    },
+    {
+      "question_topic": "Cost lines",
+      "answer": "Each café has four cost lines: ingredients, labour, rent and utilities, and other costs. Rent and utilities and other costs are fixed under long leases."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "Two national chains with similar menus compete with Harbourline. Neither has changed its prices this year."
+    },
+    {
+      "question_topic": "Labour",
+      "answer": "Hourly pay rose with the national minimum wage this year. Opening hours and staff hours per café are unchanged."
+    },
+    {
+      "question_topic": "Ingredients",
+      "answer": "Prices for butter, milk and eggs rose sharply this year after a supplier contract was renewed. Flour prices rose slightly."
+    },
+    {
+      "question_topic": "Customer price sensitivity",
+      "answer": "Customers rarely react to small price changes on bread and pastries. Coffee is more price-sensitive."
+    },
+    {
+      "question_topic": "Anything unusual",
+      "answer": "Nothing unusual: no weather, local events or refurbishments that affected a meaningful number of cafés."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Revenue: number of customers and average spend",
+      "Costs: ingredients, labour, rent and utilities, other",
+      "Comparison: per café, per cost line, this year versus last year",
+      "External factors: supplier prices, wages, competitors",
+      "Ways to recover profit: price, cost and mix"
+    ],
+    "good_signs": [
+      "Starts from profit = revenue minus costs",
+      "Checks revenue first and rules it out quickly",
+      "Asks to compare per café and per cost line, year on year",
+      "States a hypothesis early (costs, not revenue) and tests it"
+    ],
+    "red_flags": [
+      "Recites a named framework with no link to this problem",
+      "Jumps to solutions before diagnosing the cause",
+      "Ignores that customers and café numbers did not change"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "pl-per-cafe",
+      "title": "Profit and loss per café (£ thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Last year", "This year"],
+        "rows": [
+          ["Revenue", 2000, 2000],
+          ["Ingredients", 560, 640],
+          ["Labour", 640, 680],
+          ["Rent and utilities", 400, 400],
+          ["Other costs", 200, 200],
+          ["Profit", 200, 80]
+        ]
+      },
+      "reveal_hint": "Ask for a breakdown of revenue and costs per café, last year versus this year.",
+      "insight": "Revenue is flat, so profit per café fell by £120k (from £200k to £80k). Ingredients rose by £80k and labour by £40k; rent and other costs did not change. Ingredients explain two-thirds of the fall."
+    },
+    {
+      "id": "ingredients-by-category",
+      "title": "Ingredient cost per café by category (£ thousand)",
+      "kind": "bar",
+      "data": {
+        "columns": ["Category", "Last year", "This year"],
+        "rows": [
+          ["Flour and grains", 120, 128],
+          ["Dairy and eggs", 200, 256],
+          ["Fillings and toppings", 140, 148],
+          ["Packaging", 100, 108]
+        ]
+      },
+      "reveal_hint": "Ask what is driving the rise in ingredient costs, or for ingredient costs by category.",
+      "insight": "Dairy and eggs rose £56k of the £80k ingredient increase (70%). The other three categories each rose by about 6% to 8%."
+    }
+  ],
+  "math": [
+    {
+      "id": "ingredients-share-of-fall",
+      "question": "What percentage of the fall in profit per café is explained by higher ingredient costs?",
+      "inputs": {
+        "ingredients_last": 560,
+        "ingredients_this": 640,
+        "profit_last": 200,
+        "profit_this": 80
+      },
+      "expression": "(ingredients_this - ingredients_last) / (profit_last - profit_this) * 100",
+      "expected": 66.6667,
+      "tolerance_pct": 2,
+      "working": "Ingredients rose £80k (640 - 560). Profit fell £120k (200 - 80). 80 / 120 = 2/3, about 67%.",
+      "input_sources": [
+        { "input": "ingredients_last", "exhibit_id": "pl-per-cafe", "row": 1, "column": "Last year" },
+        { "input": "ingredients_this", "exhibit_id": "pl-per-cafe", "row": 1, "column": "This year" },
+        { "input": "profit_last", "exhibit_id": "pl-per-cafe", "row": 5, "column": "Last year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-cafe", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "total-profit-this-year",
+      "question": "What was the whole chain's profit this year, in £ million?",
+      "inputs": {
+        "cafes": 120,
+        "profit_per_cafe_k": 80
+      },
+      "expression": "cafes * profit_per_cafe_k / 1000",
+      "expected": 9.6,
+      "tolerance_pct": 1,
+      "working": "120 cafés x £80k = £9,600k, which is £9.6 million.",
+      "input_sources": [
+        { "input": "profit_per_cafe_k", "exhibit_id": "pl-per-cafe", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "profit-after-4pct-rise",
+      "question": "Suppose Harbourline raises all prices by 4% and loses no customers, and costs do not change. What is profit per café, in £ thousand?",
+      "inputs": {
+        "revenue": 2000,
+        "rise_pct": 4,
+        "profit_this": 80
+      },
+      "expression": "profit_this + revenue * rise_pct / 100",
+      "expected": 160,
+      "tolerance_pct": 1,
+      "working": "4% of £2,000k revenue is £80k of extra revenue, all of which drops to profit. £80k + £80k = £160k.",
+      "input_sources": [
+        { "input": "revenue", "exhibit_id": "pl-per-cafe", "row": 0, "column": "This year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-cafe", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "price-rise-to-recover",
+      "question": "Ignoring any loss of customers, what percentage price rise alone would bring profit per café back to last year's level?",
+      "inputs": {
+        "profit_target": 200,
+        "profit_this": 80,
+        "revenue": 2000
+      },
+      "expression": "(profit_target - profit_this) / revenue * 100",
+      "expected": 6,
+      "tolerance_pct": 2,
+      "working": "The gap is £120k (200 - 80). £120k / £2,000k revenue = 6%.",
+      "input_sources": [
+        { "input": "profit_target", "exhibit_id": "pl-per-cafe", "row": 5, "column": "Last year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-cafe", "row": 5, "column": "This year" },
+        { "input": "revenue", "exhibit_id": "pl-per-cafe", "row": 0, "column": "This year" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Beyond a general price rise, what could Harbourline do to bring profit per café back to £200,000 within two years?",
+    "idea_bank": [
+      "Renegotiate or dual-source dairy and egg supply, and agree longer fixed-price contracts for butter",
+      "Reformulate recipes to use less butter without hurting taste",
+      "Raise prices only on low-sensitivity items such as bread and pastries, not coffee",
+      "Cut waste from unsold stock with better demand forecasting or baking to order",
+      "Match staff schedules to footfall peaks to use labour hours more efficiently",
+      "Lift average spend with bundles such as coffee plus pastry",
+      "Shift the menu mix towards higher-margin items",
+      "Buy packaging in bulk or switch to lighter, cheaper materials",
+      "Add a loyalty scheme to increase visit frequency"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Profit per café fell £120k because ingredient costs rose £80k and labour £40k while revenue stayed flat",
+      "Dairy and eggs drive most of the ingredient increase",
+      "A clear recommendation with next steps"
+    ],
+    "good_signs": [
+      "Quantifies the options: a 6% price rise alone would close the gap, but a mix of actions is safer",
+      "Names risks such as customer reaction and supplier availability",
+      "Gives a timeline and what to measure"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goal (back to £200k per café in two years), confirm customers, spend and café count are unchanged, and that closures are off the table.",
+    "Structure: profit = revenue minus costs. Revenue (customers x spend) is flat, so focus on costs by line: ingredients, labour, rent and utilities, other.",
+    "Analysis: per café, ingredients rose £80k and labour £40k; rent and other costs are fixed. Within ingredients, dairy and eggs rose £56k (70% of the increase).",
+    "Maths: ingredients explain two-thirds of the profit fall. A 6% price rise on unchanged volume would restore £200k, but customers may not tolerate that on coffee.",
+    "Ideas: supplier action on dairy and eggs, recipe changes, targeted price rises on low-sensitivity items, waste reduction, smarter labour scheduling.",
+    "Recommendation: lead with supplier and recipe actions on dairy, add a targeted 2% to 3% price rise on bread and pastries, tighten labour scheduling, and track profit per café monthly against the £200k goal."
+  ],
+  "free_starter": true,
+  "free_preview": true,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}
