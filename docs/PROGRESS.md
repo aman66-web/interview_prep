@@ -4,6 +4,17 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
 
 **Current milestone:** P0 and P1 built; waiting on the founder's Supabase project to test against real email
 
+## Handoff (14 Oct 2026)
+
+Read this first in a new session.
+
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. **No environment variables are set yet.**
+- **Supabase is not started.** The founder's first Supabase account (org "Aman's Org") already has menumacros, drone-test-prep (both live) and cscs-test-app (paused). **Do not touch those three.** The founder is using his second Supabase account instead (2 free project slots). The Supabase connector must be connected to that second account (claude.ai, Customize, Connectors) and the session started afterwards. Check that `list_organizations` shows the second account before doing anything.
+- **Founder's earlier yes (rule 2.6), given in the previous session:** create the Supabase project, apply `supabase/migrations/*`, run `supabase/tests/rls.sql` (it rolls itself back), set Auth URL configuration and the two email templates from `docs/SETUP.md`, add the Vercel environment variables (Production and Preview), redeploy, and test a real sign-in with his own email. Because this is a new session, confirm with him in one line before the first change, and tell him the exact Supabase cost before creating the project.
+- **Keys (rule 2.5):** the Supabase URL and publishable key can go straight to Vercel without appearing in chat. The secret key (`SUPABASE_SECRET_KEY`) must not pass through chat: if the connector cannot place it directly, the founder pastes it into Vercel himself, marked Sensitive.
+- **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs), Vercel Pro before payments.
+- PR: https://github.com/aman66-web/interview_prep/pull/1 (CI green on the P0 + P1 commit).
+
 ## Milestones (kit section 13)
 
 ### P0 Setup
