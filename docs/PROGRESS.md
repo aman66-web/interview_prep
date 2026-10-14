@@ -2,7 +2,7 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0 built, P1 in progress
+**Current milestone:** P0 and P1 built; waiting on the founder's Supabase project to test against real email
 
 ## Milestones (kit section 13)
 
@@ -17,12 +17,16 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
 - [ ] Plain-English report
 
 ### P1 Login and database
-- [ ] Supabase migrations
-- [ ] Row Level Security and its tests
-- [ ] Magic-link login
-- [ ] Profiles
-- [ ] Account deletion and data export
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Supabase migrations (`supabase/migrations/`, all 11 tables from kit section 9)
+- [x] Row Level Security and its tests (`supabase/tests/rls.sql`, run by `npm test`)
+- [x] Magic-link login (link plus 6-digit code; `/login`, `/auth/confirm`, `/auth/continue`)
+- [x] Profiles (created automatically on signup)
+- [x] Account deletion and data export (`/app/account`)
+- [x] Tests passing (48), including a browser run of the whole login flow against a fake Supabase
+- [ ] Founder: create the Supabase project, add the keys, apply the migration (`docs/SETUP.md`)
+- [ ] Test a real sign-in email end to end (needs the project above; confirms the email template)
+- [ ] Vercel preview link
+- [ ] Plain-English report
 
 ### P2 Content engine
 - [ ] Case schema and `content:check`
@@ -34,6 +38,7 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
 ### P3 AI interviewer
 - [ ] Session stages, exhibit reveals, maths checks, debrief scoring, limits and usage logging
 - [ ] The free starter case works from start to finish
+- [ ] Debrief page reads `math_checks` with the admin client after the session finishes; browsers cannot read that table because it holds answer keys
 - [ ] **Report the estimated cost per session** to the founder
 - [ ] Tests passing, Vercel preview link, plain-English report
 
@@ -43,6 +48,8 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
 - [ ] Customer Portal
 - [ ] Paywall states
 - [ ] A pass that extends correctly when bought again
+- [ ] Account deletion (`app/app/account/actions.ts`) must first cancel the user's Stripe subscription and delete or anonymise the Stripe customer
+- [ ] Add a check on `entitlements.status` once the Stripe states are known (the P1 migration leaves it free text)
 - [ ] Tests passing, Vercel preview link, plain-English report
 
 ### P5 Content and search
@@ -70,6 +77,7 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
   - [ ] A real test purchase **and** refund
   - [ ] An Anthropic monthly spend limit
   - [ ] A final read of the legal pages
+  - [ ] Real email sending connected to Supabase (its built-in sender only reaches your own team) and CAPTCHA switched on for sign-in (`docs/SETUP.md`)
 - Claude Code:
   - [ ] Check every funnel event fires
 
@@ -97,6 +105,7 @@ Claude Code: give click-by-click steps whenever he asks.
   - [ ] Decide on Stripe Tax with an accountant.
   - [ ] Switch to live mode only at P7.
 - [ ] **6. Anthropic:** create an API key in the console and set a monthly spend limit.
+- [ ] **6b. Email sending for login:** Supabase's built-in sender only emails your own team. Pick an email service (needs your approval) before real students sign up. See `docs/SETUP.md`.
 - [ ] **7. Support email:** a separate inbox just for this site.
 - [ ] **8. Case reviewer (recommended):** someone with consulting experience to check the 20 launch cases before they go live.
 - [ ] **9. Never paste secret keys into any chat.** Add them yourself in Vercel and `.env.local` (or, in a cloud session, the environment settings).

@@ -79,10 +79,20 @@ Section numbers in the docs match `docs/KIT.md`, so "rule 2.6" and "section 14" 
 
 ---
 
+## Code conventions
+
+- Next.js 16: the old `middleware.ts` is now `proxy.ts`. Current Next.js docs are bundled in `node_modules/next/dist/docs/`; read them before using an API you are unsure of.
+- Database access: `lib/supabase/server.ts` acts as the logged-in user (Row Level Security applies; the default). `lib/supabase/admin.ts` uses the secret key and ignores Row Level Security: server actions and route handlers only, and only after checking who the caller is.
+- Every page, server action and route handler that needs a login calls `requireUser()` or `getUser()` from `lib/auth/session.ts` itself. The proxy and layouts are not the only gate.
+- Database changes go in a new file in `supabase/migrations/`. Any new table needs Row Level Security, the minimum grants, and a case in `supabase/tests/rls.sql`. `npm test` runs those checks when `RLS_TEST_DATABASE_URL` points at a Postgres (CI always does).
+- Tables holding answer keys (`math_checks`) are never readable by browsers.
+- Never log email addresses or other personal data.
+
 ## Commands (available once P0 has scaffolded the app)
 
 - `npm run dev`
-- `npm test`
+- `npm test` (set `RLS_TEST_DATABASE_URL` to also run the database security checks)
+- `npm run typecheck`
 - `npm run lint`
 - `npm run build`
 - `npm run content:check` (validates all content and recomputes all case maths)
