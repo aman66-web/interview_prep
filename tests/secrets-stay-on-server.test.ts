@@ -38,9 +38,14 @@ describe("secrets stay on the server", () => {
       for (const name of SECRET_NAMES) {
         if (text.includes(name)) offences.push(`${file} mentions ${name}`);
       }
-      for (const forbidden of ["lib/supabase/admin", "lib/supabase/server", "lib/ai", "lib/env"]) {
+      for (const forbidden of ["lib/supabase/admin", "lib/supabase/server", "lib/env"]) {
         if (text.includes(forbidden)) offences.push(`${file} imports ${forbidden}`);
       }
+      // The only part of lib/ai that is safe in the browser is the plain list of stages.
+      for (const [, target] of text.matchAll(/["']@\/lib\/ai\/?([^"']*)["']/g)) {
+        if (target !== "stages") offences.push(`${file} imports lib/ai/${target}`);
+      }
+      if (/from ["'][^"']*lib\/ai["']/.test(text)) offences.push(`${file} imports lib/ai`);
     }
     expect(offences).toEqual([]);
   });

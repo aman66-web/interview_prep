@@ -21,7 +21,7 @@ Click-by-click steps for the accounts the site needs. Do them in order; stop whe
 Claude Code has written the database set-up in `supabase/migrations/`. The easiest way to apply it, with no extra tools:
 
 1. In Supabase, open **SQL Editor, New query**.
-2. Open `supabase/migrations/20261014140000_initial_schema.sql` on GitHub, copy everything, paste it in, and click **Run**. It should say "Success".
+2. Open each file in `supabase/migrations/` on GitHub **in order** (oldest date first: `20261014140000_initial_schema.sql`, then `..150000_explicit_deny_policies.sql`, then `..160000_interview_state.sql`), copy everything, paste it in, and click **Run**. Each should say "Success".
 3. Open a new query, paste the contents of `supabase/tests/rls.sql`, and click **Run**. The result should show **ALL RLS CHECKS PASSED**. This script checks that nobody can see anyone else's data. It tidies up after itself and leaves nothing behind.
 
 If either step shows an error, copy the red error text to Claude (it contains no secrets).
@@ -69,6 +69,14 @@ Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack
 3. Free "Hobby" is fine while you are building. **You must move to Pro before taking real payments**, because Hobby is for non-commercial use.
 4. Open **Settings, Environment Variables** and add the three Supabase values from step 1 (see below). Tick **Production and Preview**.
 
+## 2b. Anthropic (the AI interviewer)
+
+1. Go to console.anthropic.com and sign in.
+2. **Settings, Limits:** set a **monthly spend limit** first (for example $20 while testing). This is the safety net that stops a surprise bill.
+3. **API keys, Create key.** Copy it once; it is shown only one time.
+4. Add `ANTHROPIC_API_KEY` (private) and `ANTHROPIC_MODEL` (for example `claude-sonnet-5-5`) in Vercel, Production and Preview. Sonnet costs about 12 cents per interview; see `docs/PROGRESS.md` for the full cost table.
+5. Until both are set, the site shows "The AI interviewer isn't switched on yet" and nothing is charged.
+
 ## 3. Where the keys go
 
 | Value | Name to use | Private? |
@@ -76,6 +84,8 @@ Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack
 | Project URL | `NEXT_PUBLIC_SUPABASE_URL` | No |
 | Publishable key | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | No |
 | Secret key | `SUPABASE_SECRET_KEY` | **Yes** |
+| Anthropic key | `ANTHROPIC_API_KEY` | **Yes** |
+| Model name | `ANTHROPIC_MODEL` | No |
 
 - **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY` as **Sensitive**.
 - **For Claude Code in a cloud session:** the cloud environment menu in the session's title bar, then **Edit**, then add them as environment variables. Start a new session afterwards so it picks them up.

@@ -73,6 +73,7 @@ STRIPE_PRICE_MONTHLY=
 STRIPE_PRICE_PASS90=
 ANTHROPIC_API_KEY=
 ANTHROPIC_MODEL=
+ANTHROPIC_EFFORT=
 CRON_SECRET=
 ADMIN_EMAILS=
 NEXT_PUBLIC_SUPPORT_EMAIL=
@@ -167,6 +168,12 @@ Each session moves through these stages. The current stage is stored in `case_se
   - "Analysis & maths" uses the code results from `math_checks`.
   - Each fix links to a related drill.
 - **Limits:** 40 candidate turns per session. Older turns are summarised to keep each call within a token cap. Per-user daily and monthly limits come from `site.config.ts`. Hitting a limit shows a friendly message; free users also see an upgrade button.
+- **As built (P3):**
+  - Code, not the model, decides what is allowed: the stage can only move to the next one (or finish), an exhibit is revealed only in the analysis stage, the candidate's numbers are compared with `expected` by code, and quotes in the debrief are dropped unless the candidate really said them. "Analysis & maths" is the average of the model's analysis score and the code's maths score, rounded.
+  - A turn is saved atomically by the database function `commit_interview_turn` (two taps cannot double-save); a session starts through `start_interview_session`, which enforces the free and paid limits without races. Both are callable only by the server.
+  - A reply streams to the browser as lines of JSON (`/api/interview`), so the candidate sees the interviewer typing. If the model fails, nothing is saved and the candidate's message is put back in the box.
+  - The debrief page reads `case_sessions.scores` (which includes the maths results) as the signed-in user. `math_checks` is never readable by browsers.
+  - `ANTHROPIC_EFFORT=none` leaves the effort setting out for models that reject it.
 - **Staying on task:** the AI stays in its interviewer role and refuses unrelated tasks or attempts to change its instructions. It never asks for personal data.
 - **Cost:**
   - Log every call (input tokens, output tokens, estimated cost) to `ai_usage`.

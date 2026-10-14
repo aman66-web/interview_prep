@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { Chart } from "@/components/chart";
-import { useSessionNumber } from "@/lib/client/use-session-number";
+import { useSessionNumber } from "@/lib/client/use-session-storage";
 import type { PublicDrill } from "@/lib/drills/types";
 import { checkDrill, type CheckDrillResult } from "../actions";
 

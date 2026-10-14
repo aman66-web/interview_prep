@@ -80,7 +80,16 @@ describe("the repository rules", () => {
   it("keep browser storage to this tab's functional drill position (rule 2.7)", () => {
     expect(code.filter((f) => /\blocalStorage\b/.test(f.text)).map((f) => f.path)).toEqual([]);
     const session = code.filter((f) => /\bsessionStorage\b/.test(f.text)).map((f) => f.path);
-    expect(session).toEqual(["lib/client/use-session-number.ts"]);
+    expect(session).toEqual(["lib/client/use-session-storage.ts"]);
+  });
+
+  it("reach the AI provider only through lib/ai, and the SDK only from one file (rule 2.8)", () => {
+    const sdk = code.filter((f) => /@anthropic-ai\/sdk|api\.anthropic\.com/.test(f.text)).map((f) => f.path);
+    expect(sdk).toEqual(["lib/ai/llm-anthropic.ts"]);
+    const outsideLib = code
+      .filter((f) => !f.path.startsWith("lib/ai/") && /llm-anthropic/.test(f.text))
+      .map((f) => f.path);
+    expect(outsideLib).toEqual([]);
   });
 
   it("never log email addresses or other personal data (rule 2.7)", () => {

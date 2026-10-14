@@ -2,7 +2,7 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0, P1 and P2 built. Still open from P1: the Supabase project and a real sign-in test (see Handoff).
+**Current milestone:** P0, P1, P2 and P3 built. Still open: the Supabase project and a real sign-in test (see Handoff), and an Anthropic key to run the interviewer for real.
 
 ## Handoff (14 Oct 2026)
 
@@ -49,11 +49,24 @@ Read this first in a new session.
 - [ ] Vercel preview link and plain-English report
 
 ### P3 AI interviewer
-- [ ] Session stages, exhibit reveals, maths checks, debrief scoring, limits and usage logging
-- [ ] The free starter case works from start to finish
-- [ ] Debrief page reads `math_checks` with the admin client after the session finishes; browsers cannot read that table because it holds answer keys
-- [ ] **Report the estimated cost per session** to the founder
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Session stages, exhibit reveals, maths checks, debrief scoring, limits and usage logging (`lib/ai/`; every model call goes through it, and only `lib/ai/llm-anthropic.ts` imports the SDK)
+- [x] The free starter case works from start to finish: `/app/start/[slug]`, `/app/interview/[id]` (chat, stage bar, exhibits, notes, calculator, timer), `/app/debrief/[id]`. Proven in a browser against a fake model; **not yet run with a real model**
+- [x] The debrief stores its maths results inside `case_sessions.scores` when the interview finishes, so the debrief page reads only that and `math_checks` (which holds answer keys) is never readable by browsers
+- [x] **Estimated cost per session reported** (see below)
+- [x] Tests passing, browser test passing
+- [ ] Founder: Anthropic key and monthly spend limit, then set `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` (a model ID such as `claude-sonnet-5-5`) in Vercel
+- [ ] First real run with a real model: read the transcript and debrief of the free starter case and tune the prompts in `lib/ai/prompt.ts` if needed
+- [ ] Vercel preview link and plain-English report
+
+**Cost estimate (14 Oct 2026, from `lib/ai/pricing.ts`, prices per million tokens; prompt caching on).** A typical 20-turn interview with the debrief, then the 40-turn limit with long answers:
+
+| Model | Typical session | Long session (40 turns) | 60 typical sessions in a month (the plan's limit) |
+|---|---|---|---|
+| `claude-sonnet-5-5` ($2 in / $10 out) | about $0.12 | about $0.37 | about $7.00 (18% of $39) |
+| `claude-opus-5-5` ($4 / $20) | about $0.23 | about $0.73 | about $14 (36%) |
+| `claude-haiku-5-5` ($0.10 / $0.50) | under $0.01 | about $0.02 | about $0.35 (1%) |
+
+Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 interviews a month would cost about $1.20 to $1.75. The hard caps are 3 a day, 60 a month, 40 turns, 2,000 characters a message and 900,000 tokens per session. Prices are our own table (check `lib/ai/pricing.ts` against Anthropic's price page before launch); Anthropic's invoice is the source of truth.
 
 ### P4 Payments
 - [ ] Stripe test mode, checkout for both plans

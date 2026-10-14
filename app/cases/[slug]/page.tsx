@@ -123,11 +123,12 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             : `The full interview is part of the paid plans (from $${siteConfig.prices.monthly} a month).`}
         </p>
         <Link
-          href={`/login?next=/cases/${c.slug}`}
+          href={`/app/start/${c.slug}`}
           className="mt-4 inline-block rounded-md bg-accent px-5 py-2.5 font-medium text-accent-foreground"
         >
-          Create a free account
+          {c.freeStarter ? "Start the interview (free account)" : "Practise this case"}
         </Link>
+        <p className="mt-2 text-sm text-muted">You will be asked to sign in first.</p>
       </section>
     </div>
   );

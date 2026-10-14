@@ -307,6 +307,103 @@ select rls_test.check(
   'the server can save a lead');
 
 -- ---------------------------------------------------------------------------
+-- The interview functions: server only, limits enforced, one save at a time
+-- ---------------------------------------------------------------------------
+
+select rls_test.become('postgres');
+
+insert into auth.users (id, email) values ('cccccccc-cccc-cccc-cccc-cccccccccccc', 'rls-user-c@example.test');
+
+select rls_test.check(
+  not has_function_privilege('anon', 'public.start_interview_session(uuid,text,text,integer,integer,integer)', 'execute')
+  and not has_function_privilege('authenticated', 'public.start_interview_session(uuid,text,text,integer,integer,integer)', 'execute')
+  and not has_function_privilege('anon', 'public.commit_interview_turn(uuid,integer,text,text,text,text[],text,integer,jsonb)', 'execute')
+  and not has_function_privilege('authenticated', 'public.commit_interview_turn(uuid,integer,text,text,text,text[],text,integer,jsonb)', 'execute'),
+  'browsers cannot call the interview functions');
+
+select rls_test.check(
+  has_function_privilege('service_role', 'public.start_interview_session(uuid,text,text,integer,integer,integer)', 'execute')
+  and has_function_privilege('service_role', 'public.commit_interview_turn(uuid,integer,text,text,text,text[],text,integer,jsonb)', 'execute'),
+  'the server can call the interview functions');
+
+select rls_test.become('authenticated', 'cccccccc-cccc-cccc-cccc-cccccccccccc');
+select rls_test.check(
+  rls_test.refused($q$select public.start_interview_session('cccccccc-cccc-cccc-cccc-cccccccccccc', 'case-c', 'hi', null, null, null)$q$),
+  'a logged-in user cannot start an interview by calling the function directly (limits would be skipped)');
+
+select rls_test.become('service_role');
+
+do $$
+declare
+  c constant uuid := 'cccccccc-cccc-cccc-cccc-cccccccccccc';
+  r jsonb;
+  sid uuid;
+  ok boolean;
+  n integer;
+  row_s public.case_sessions;
+begin
+  -- Free-plan style limit: 1 session in total.
+  r := public.start_interview_session(c, 'case-c', 'Welcome to the case.', 1, null, null);
+  perform rls_test.check(r ? 'session_id', 'a first interview can be started');
+  sid := (r ->> 'session_id')::uuid;
+  select * into row_s from public.case_sessions where id = sid;
+  perform rls_test.check(row_s.stage = 'intro' and row_s.turns = 0 and row_s.user_id = c and row_s.revealed_exhibits = '{}',
+    'a new session starts at the intro stage with no turns and no exhibits shown');
+  perform rls_test.check((select count(*) from public.session_messages where session_id = sid and role = 'assistant') = 1,
+    'the interviewer''s opening message is saved with the session');
+
+  perform rls_test.check(public.start_interview_session(c, 'case-c2', 'x', 1, null, null) ->> 'blocked' = 'total',
+    'a second interview is refused when the total limit is 1');
+  perform rls_test.check(public.start_interview_session(c, 'case-c2', 'x', null, 1, null) ->> 'blocked' = 'day',
+    'a second interview today is refused when the daily limit is 1');
+  perform rls_test.check(public.start_interview_session(c, 'case-c2', 'x', null, null, 1) ->> 'blocked' = 'month',
+    'a second interview this month is refused when the monthly limit is 1');
+  perform rls_test.check((select count(*) from public.case_sessions where user_id = c) = 1,
+    'refused starts create nothing');
+
+  r := public.start_interview_session(c, 'case-c3', 'Welcome.', null, 3, 60);
+  perform rls_test.check(r ? 'session_id', 'a paid-style limit (3 a day, 60 a month) lets a second interview start');
+
+  -- Saving a turn.
+  ok := public.commit_interview_turn(sid, 5, 'my answer', 'reply', 'clarifying', '{}', null, null, '[]'::jsonb);
+  perform rls_test.check(ok = false, 'saving a turn with the wrong turn number is refused');
+  perform rls_test.check((select count(*) from public.session_messages where session_id = sid) = 1,
+    'a refused save changes nothing');
+
+  ok := public.commit_interview_turn(sid, 0, 'my first message', 'interviewer reply', 'clarifying', array['ex1'], 'summary so far', 2,
+    '[{"math_id":"m1","given":10,"expected":12,"correct":false}]'::jsonb);
+  select * into row_s from public.case_sessions where id = sid;
+  perform rls_test.check(ok and row_s.turns = 1 and row_s.stage = 'clarifying' and row_s.revealed_exhibits = array['ex1'] and row_s.summary = 'summary so far' and row_s.summary_covers = 2,
+    'saving a turn updates turns, stage, exhibits shown and summary');
+  perform rls_test.check((select array_agg(role order by created_at) from public.session_messages where session_id = sid) = array['assistant','user','assistant'],
+    'messages come back in the order they were written');
+  perform rls_test.check((select count(*) from public.session_messages where session_id = sid) = 3,
+    'saving a turn stores the candidate message and the interviewer reply');
+
+  ok := public.commit_interview_turn(sid, 0, 'a duplicate', 'reply', 'clarifying', '{}', null, null, '[]'::jsonb);
+  perform rls_test.check(ok = false, 'a second save for the same turn is refused (no double replies)');
+
+  ok := public.commit_interview_turn(sid, 1, 'second message', 'second reply', 'analysis', array['ex1'], null, null,
+    '[{"math_id":"m1","given":12,"expected":12,"correct":true}]'::jsonb);
+  perform rls_test.check((select given from public.math_checks where session_id = sid and math_id = 'm1') = 12
+    and (select correct from public.math_checks where session_id = sid and math_id = 'm1')
+    and (select count(*) from public.math_checks where session_id = sid) = 1,
+    'a new answer to the same maths question replaces the old one');
+  perform rls_test.check((select summary from public.case_sessions where id = sid) = 'summary so far',
+    'a save without a new summary keeps the earlier one');
+
+  ok := public.commit_interview_turn(sid, 2, null, 'a nudge from the interviewer', 'analysis', array['ex1'], null, null, '[]'::jsonb);
+  perform rls_test.check(ok and (select turns from public.case_sessions where id = sid) = 2,
+    'an interviewer-only message does not count as a candidate turn');
+
+  update public.case_sessions set completed_at = now() where id = sid;
+  ok := public.commit_interview_turn(sid, 2, 'too late', 'reply', 'analysis', '{}', null, null, '[]'::jsonb);
+  perform rls_test.check(ok = false, 'a finished session accepts no more turns');
+end $$;
+
+select rls_test.become('postgres');
+
+-- ---------------------------------------------------------------------------
 -- Deleting a user deletes all of their data (and only theirs)
 -- ---------------------------------------------------------------------------
 
