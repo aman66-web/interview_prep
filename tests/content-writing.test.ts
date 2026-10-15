@@ -225,7 +225,10 @@ describe("placeholders", () => {
     const text = JSON.stringify(after.findPage("privacy"));
     expect(text).not.toContain("[support email]");
     expect(text).toContain("help@example.com");
-    expect(text).toContain("[legal entity name]");
+    // Company details and the minimum age come from site.config.ts; founder notes stay visible.
+    expect(text).not.toContain("[legal entity name]");
+    expect(text).toContain("MARTZEY LTD");
+    expect(text).toContain("[Founder");
     expect(after.fillPlaceholders("From [effective date].", { effective: "2026-11-01" })).toBe("From 1 November 2026.");
     expect(after.fillPlaceholders("From [effective date].", {})).toBe("From [effective date].");
   });
@@ -251,8 +254,17 @@ describe("placeholders", () => {
     }
   });
 
-  it("only fills the placeholders it lists", () => {
-    expect(FILLABLE_PLACEHOLDERS).toEqual(["[support email]", "[effective date]"]);
+  it("only fills the placeholders it lists (company details and age come from site.config.ts)", () => {
+    expect(FILLABLE_PLACEHOLDERS).toEqual([
+      "[support email]",
+      "[effective date]",
+      "[legal entity name]",
+      "[company number]",
+      "[registered address]",
+      "[England and Wales, founder to confirm]",
+      "[minimum age, founder to confirm, for example 18]",
+      "[minimum age, founder to confirm]",
+    ]);
   });
 });
 
@@ -347,7 +359,7 @@ describe("share pictures for pages with their own Open Graph", () => {
       pageOpenGraph({ type: "article", title: "T", description: "D", path: "/guides/x", modifiedTime: "2026-10-15" }),
     ]) {
       expect(og.images).toEqual([DEFAULT_SHARE_IMAGE]);
-      expect(og.siteName).toBe("CaseSpar");
+      expect(og.siteName).toBe("Mock Partner");
     }
     expect(DEFAULT_SHARE_IMAGE.url).toBe("/opengraph-image");
     expect(existsSync("app/opengraph-image.tsx"), "the picture DEFAULT_SHARE_IMAGE points at").toBe(true);

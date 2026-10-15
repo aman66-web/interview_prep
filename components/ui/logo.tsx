@@ -1,7 +1,7 @@
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
-/** The CaseSpar mark: a dark rounded square with a lime upward arrow (progress, momentum). */
+/** The brand mark: a dark rounded square with a lime upward arrow (progress, momentum). */
 export function LogoMark({ className, size = 28 }: { className?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" focusable="false" className={className}>

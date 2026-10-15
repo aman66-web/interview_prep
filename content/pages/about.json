@@ -1,16 +1,16 @@
 {
   "slug": "about",
-  "title": "About CaseSpar",
-  "seo_title": "About CaseSpar | AI case interview practice",
-  "description": "What CaseSpar is, who it is for, how the AI interviewer and scored debrief work, and how every practice case is written and checked.",
+  "title": "About Mock Partner",
+  "seo_title": "About Mock Partner | AI case interview practice",
+  "description": "What Mock Partner is, who it is for, how the AI interviewer and scored debrief work, and how every practice case is written and checked.",
   "updated": "2026-10-15",
   "status": "draft",
-  "intro": "CaseSpar is a website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window. Then you get a scored debrief that shows what went well and what to fix next.",
+  "intro": "Mock Partner is a website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window. Then you get a scored debrief that shows what went well and what to fix next.",
   "blocks": [
-    { "type": "h2", "id": "what-it-is", "text": "What CaseSpar is" },
+    { "type": "h2", "id": "what-it-is", "text": "What Mock Partner is" },
     {
       "type": "p",
-      "text": "In a case interview you are given a business problem and asked to work through it, with an interviewer guiding you. It takes practice, and practice usually needs someone to play the interviewer. CaseSpar gives you an interviewer whenever you want one."
+      "text": "In a case interview you are given a business problem and asked to work through it, with an interviewer guiding you. It takes practice, and practice usually needs someone to play the interviewer. Mock Partner gives you an interviewer whenever you want one."
     },
     {
       "type": "p",
@@ -26,7 +26,7 @@
         "Anyone who wants to get quicker at the maths, structuring and chart reading that case interviews test."
       ]
     },
-    { "type": "p", "text": "CaseSpar is in English only for now." },
+    { "type": "p", "text": "Mock Partner is in English only for now." },
 
     { "type": "h2", "id": "how-it-works", "text": "How it works" },
     {
@@ -55,7 +55,7 @@
     {
       "type": "ul",
       "items": [
-        "Every case is written for CaseSpar. We don't copy or rework cases from casebooks, books, other websites or firms' own practice materials.",
+        "Every case is written for Mock Partner. We don't copy or rework cases from casebooks, books, other websites or firms' own practice materials.",
         "The companies and numbers are invented. Any likeness to a real business is a coincidence.",
         "Every maths question has an expected answer, and our tests recompute it from the case's own numbers. So the answer key is checked by code, not just by eye.",
         "A person reads and checks each case before it goes live. Until then it stays a draft and is hidden from the live site. [Founder to confirm who reviews cases. Say \"someone with consulting experience\" only if that is true of the reviewer.]"
@@ -90,7 +90,7 @@
       "type": "callout",
       "tone": "key",
       "title": "Practice, not a prediction",
-      "text": "A high score on CaseSpar doesn't mean you will pass a real interview, and a low score doesn't mean you won't. Use your debrief to decide what to practise next."
+      "text": "A high score on Mock Partner doesn't mean you will pass a real interview, and a low score doesn't mean you won't. Use your debrief to decide what to practise next."
     },
 
     { "type": "h2", "id": "free-and-paid", "text": "Free and paid" },
@@ -102,7 +102,7 @@
     { "type": "h2", "id": "your-data", "text": "Your data" },
     {
       "type": "p",
-      "text": "We collect only what we need to run CaseSpar. You can download your data or delete your account at any time from your account page. We never sell your data, and we don't use advertising trackers. The privacy policy has the details."
+      "text": "We collect only what we need to run Mock Partner. You can download your data or delete your account at any time from your account page. We never sell your data, and we don't use advertising trackers. The privacy policy has the details."
     },
 
     { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },

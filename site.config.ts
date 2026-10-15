@@ -3,7 +3,7 @@
 // Prices here are for display only; the real prices come from Stripe.
 
 export const siteConfig = {
-  brandName: "CaseSpar",
+  brandName: "Mock Partner",
   tagline:
     "Practise consulting case interviews with an AI interviewer that scores you.",
   // Set NEXT_PUBLIC_SUPPORT_EMAIL; an empty value hides the email address.
@@ -37,6 +37,18 @@ export const siteConfig = {
   refundMaxAiSessions: 2,
 
   transcriptRetentionDays: 365,
+
+  // The company that runs the site (founder, 15 Oct 2026). UK company websites must show
+  // these; the footer, terms and privacy policy read them from here.
+  operator: {
+    legalName: "MARTZEY LTD",
+    companyNumber: "14466643",
+    registeredIn: "England and Wales",
+    registeredOffice: "86-90 Paul Street, London, England, EC2A 4NE",
+  },
+
+  // Users must be at least this old (founder, 15 Oct 2026); used in the terms and privacy policy.
+  minimumAge: 18,
 
   // Phase 2 adds "data".
   tracksEnabled: ["consulting"],

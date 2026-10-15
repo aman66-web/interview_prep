@@ -181,7 +181,7 @@ describe("fitting titles and descriptions to search results", () => {
 
   it("keep the brand suffix only while the whole title fits in 60 characters", () => {
     expect(pageTitle("Case interview library")).toBe("Case interview library");
-    expect(renderedTitle(pageTitle("Case interview library"))).toBe("Case interview library | CaseSpar");
+    expect(renderedTitle(pageTitle("Case interview library"))).toBe("Case interview library | Mock Partner");
     const long = "Brinmoor Bike Share: why are so many bikes out of service?";
     expect(pageTitle(long)).toEqual({ absolute: long });
     const tooLong = "A very long case title that goes on and on well past the sixty character limit";

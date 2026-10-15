@@ -65,7 +65,7 @@ The preview site is `https://interview-prep-git-claude-gifted-shannon-r42f73-ama
 ## C. Anthropic (the AI interviewer)
 
 1. Open console.anthropic.com. Go to **Settings**, then **Limits**, and set the **monthly spend limit** to **$20**. If it asks for credit or a payment card first, stop and let the founder do that (it costs money, so he decides).
-2. Go to **API keys**, then **Create key**, name it `casespar-preview`. Click **Copy**. Do not read the key.
+2. Go to **API keys**, then **Create key**, name it `mockpartner-preview`. Click **Copy**. Do not read the key.
 3. In Vercel, **Environment Variables**, **Add**:
    - Name: `ANTHROPIC_API_KEY`, tick **Production** and **Preview**, turn on **Sensitive**.
    - Click into the **Value** box and **stop**. Tell the founder: "Press Ctrl+V (Cmd+V on a Mac) now, then click Save."

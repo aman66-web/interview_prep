@@ -24,7 +24,7 @@ export const SKILL_LABELS: Record<SkillKey, string> = {
 
 export const FIRST_NAME_MAX = 30;
 const TOKEN_MAX = 600;
-const KEY_LABEL = "casespar:share-card-signing-key:v1";
+const KEY_LABEL = "mockpartner:share-card-signing-key:v1";
 
 const score = z.number().int().min(1).max(5);
 

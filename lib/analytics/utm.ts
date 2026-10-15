@@ -8,7 +8,7 @@ export type UtmKey = (typeof UTM_KEYS)[number];
 export type Utm = Partial<Record<UtmKey, string>>;
 
 /** The session-storage key (read and written only through lib/client/use-session-storage.ts). */
-export const UTM_STORAGE_KEY = "casespar:first-utm";
+export const UTM_STORAGE_KEY = "mockpartner:first-utm";
 
 const MAX_LENGTH = 100;
 

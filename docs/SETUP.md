@@ -105,7 +105,7 @@ Money rules in the code: card details never touch this site (Stripe's page takes
 | Clean-up password: any long random text you make up (a password manager can generate one) | `CRON_SECRET` | **Yes** |
 | Your own email, so you can open `/admin` (several emails: separate them with commas) | `ADMIN_EMAILS` | No, but keep it to yourself |
 | Support inbox shown on the site | `NEXT_PUBLIC_SUPPORT_EMAIL` | No |
-| The real web address, once you have a domain (e.g. `https://casespar.com`) | `NEXT_PUBLIC_SITE_URL` | No |
+| The real web address, once you have a domain (e.g. `https://mockpartner.com`) | `NEXT_PUBLIC_SITE_URL` | No |
 | Optional: a separate key for share links (any long random text) | `SHARE_SIGNING_SECRET` | **Yes** |
 
 - **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY`, `CRON_SECRET` and `SHARE_SIGNING_SECRET` as **Sensitive**.

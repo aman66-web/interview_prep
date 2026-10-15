@@ -26,7 +26,7 @@ const COLUMNS = [
   {
     title: "About",
     links: [
-      { href: "/about", label: "About CaseSpar" },
+      { href: "/about", label: `About ${siteConfig.brandName}` },
       { href: "/for-universities", label: "For universities and clubs" },
       { href: "/login", label: "Log in", account: true },
     ],
@@ -97,15 +97,21 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-sm text-on-night-muted md:flex-row md:items-center md:justify-between">
-            <p className="max-w-3xl">{siteConfig.disclaimer}</p>
+            <div className="max-w-3xl space-y-2">
+              <p>{siteConfig.disclaimer}</p>
+              <p>
+                {siteConfig.brandName} is run by {siteConfig.operator.legalName}, a company registered in {siteConfig.operator.registeredIn}{" "}
+                (company number {siteConfig.operator.companyNumber}). Registered office: {siteConfig.operator.registeredOffice}.
+              </p>
+            </div>
             <p className="shrink-0">
-              &copy; {new Date().getFullYear()} {siteConfig.brandName}
+              &copy; {new Date().getFullYear()} {siteConfig.operator.legalName}
             </p>
           </div>
         </div>
         <p
           aria-hidden="true"
-          className="wordmark pointer-events-none -mb-[0.2em] select-none text-center text-[21vw] font-semibold leading-none tracking-[-0.06em] min-[1400px]:text-[18rem]"
+          className="wordmark pointer-events-none -mb-[0.2em] select-none text-center text-[13vw] font-semibold leading-none tracking-[-0.06em] min-[1400px]:text-[11.5rem]"
         >
           {siteConfig.brandName}
         </p>

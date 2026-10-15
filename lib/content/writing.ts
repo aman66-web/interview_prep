@@ -78,7 +78,17 @@ export function formatDate(iso: string, month: "long" | "short" = "long"): strin
 }
 
 /** The placeholders fillPlaceholders() can fill from config; every other "[...]" is for a person to fill. */
-export const FILLABLE_PLACEHOLDERS = ["[support email]", "[effective date]"] as const;
+/** Placeholders filled from site.config.ts (always available) rather than by the founder editing the page. */
+const CONFIG_PLACEHOLDERS: [string, string][] = [
+  ["[legal entity name]", siteConfig.operator.legalName],
+  ["[company number]", siteConfig.operator.companyNumber],
+  ["[registered address]", siteConfig.operator.registeredOffice],
+  ["[England and Wales, founder to confirm]", siteConfig.operator.registeredIn],
+  ["[minimum age, founder to confirm, for example 18]", String(siteConfig.minimumAge)],
+  ["[minimum age, founder to confirm]", String(siteConfig.minimumAge)],
+];
+
+export const FILLABLE_PLACEHOLDERS = ["[support email]", "[effective date]", ...CONFIG_PLACEHOLDERS.map(([from]) => from)] as const;
 
 /**
  * Every square-bracket note still in a value's text, such as "[Founder to confirm ...]",
@@ -102,15 +112,15 @@ export function withoutPlaceholders<T>(items: T[]): T[] {
 }
 
 /**
- * Replaces the placeholders we can fill from config: "[support email]" once
- * NEXT_PUBLIC_SUPPORT_EMAIL is set, and "[effective date]" once a page has `effective`.
- * Every other square-bracket placeholder stays visible for the founder to fill in.
+ * Replaces the placeholders we can fill from config: the company details and minimum age
+ * (site.config.ts), "[support email]" once NEXT_PUBLIC_SUPPORT_EMAIL is set, and
+ * "[effective date]" once a page has `effective`. Every other square-bracket placeholder
+ * stays visible for the founder to fill in.
  */
 export function fillPlaceholders<T>(value: T, page?: Pick<Page, "effective">): T {
-  const replacements: [string, string][] = [];
+  const replacements: [string, string][] = [...CONFIG_PLACEHOLDERS];
   if (siteConfig.supportEmail) replacements.push(["[support email]", siteConfig.supportEmail]);
   if (page?.effective) replacements.push(["[effective date]", formatDate(page.effective)]);
-  if (replacements.length === 0) return value;
   const walk = (v: unknown): unknown => {
     if (typeof v === "string") return replacements.reduce((s, [from, to]) => s.split(from).join(to), v);
     if (Array.isArray(v)) return v.map(walk);

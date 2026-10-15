@@ -10,7 +10,7 @@ import { siteConfig } from "@/site.config";
 export const TITLE_MAX = 60;
 export const DESCRIPTION_MAX = 160;
 
-/** The suffix the root layout's title template adds ("%s | CaseSpar"). */
+/** The suffix the root layout's title template adds ("%s | Mock Partner"). */
 export const TITLE_SUFFIX = ` | ${siteConfig.brandName}`;
 
 // A cut at a sentence end is only used if it keeps at least this share of the room,
@@ -47,7 +47,7 @@ export function clipText(text: string, max: number): string {
 }
 
 /**
- * The title for a page under the root layout's "%s | CaseSpar" template. It keeps the brand
+ * The title for a page under the root layout's "%s | Mock Partner" template. It keeps the brand
  * suffix when the whole title fits in 60 characters; otherwise it shows the title alone,
  * shortened at a word boundary if it is still too long.
  */

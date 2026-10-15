@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Pricing",
   description: PRICING_DESCRIPTION,
   alternates: { canonical: "/pricing" },
-  openGraph: pageOpenGraph({ title: "CaseSpar pricing", description: PRICING_DESCRIPTION, path: "/pricing" }),
+  openGraph: pageOpenGraph({ title: `${siteConfig.brandName} pricing`, description: PRICING_DESCRIPTION, path: "/pricing" }),
 };
 
 const { limits, prices } = siteConfig;

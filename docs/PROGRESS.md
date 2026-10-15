@@ -8,14 +8,14 @@ Tick items off as they are done. Every milestone ends with tests passing, a Verc
 
 Read this first in a new session.
 
-- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`, `CRON_SECRET` (without it the daily transcript clean-up refuses to run, so the 365-day promise is not kept), `ADMIN_EMAILS` (to open `/admin`) and `NEXT_PUBLIC_SUPPORT_EMAIL`.
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, personal account; the founder has Vercel Pro) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`, `CRON_SECRET` (without it the daily transcript clean-up refuses to run, so the 365-day promise is not kept), `ADMIN_EMAILS` (to open `/admin`) and `NEXT_PUBLIC_SUPPORT_EMAIL`.
 - **Supabase project exists (14 Oct 2026).** Second account, organisation "aman662002@gmail.com's Org" (Free plan, $0). Project `interview-prep`, ref `jkvnarskslswdwrdzefa`, London (`eu-west-2`), URL `https://jkvnarskslswdwrdzefa.supabase.co`. The first account (menumacros, drone-test-prep, cscs-test-app) was never touched.
   - **Done with the founder's go ("try supabase now"):** created the project; applied the three files in `supabase/migrations/` in order; checked the real database with read-only queries (11 tables, all with Row Level Security and a policy, `anon` has no table access, `authenticated` has only the intended grants, the two interview functions and `handle_new_user` are not callable from browsers, the sign-up trigger exists); the security advisor returns no findings; `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` added to Vercel (Production and Preview).
   - **`supabase/tests/rls.sql` could not be run through the connector:** it timed out after 60 s (scripts containing `delete` also stalled on the other project) and left nothing behind (checked). The same script passes on a local Postgres and in CI against the same migration files. The founder can also paste it into the Supabase SQL Editor for a belt-and-braces run.
   - **The connector cannot do these, so the founder does them in the dashboard (click-by-click in `docs/SETUP.md`):** Authentication, URL Configuration (Site URL and Redirect URLs); the Magic Link and Confirm sign up email templates; and adding `SUPABASE_SECRET_KEY` to Vercel himself (Sensitive, Production and Preview). The session's `api.supabase.com` connection returned "upstream auth failed", so the Management API was not usable either (not worked around).
   - **Then:** push (or redeploy) so the new variables reach a build, and test a real sign-in. **The built-in Supabase email sender only sends to members of the Supabase organisation**, which for this account is `aman662002@gmail.com`; test with that address (or invite another address to the organisation first).
 - **Keys (rule 2.5):** the Supabase URL and publishable key can go straight to Vercel without appearing in chat. The secret key (`SUPABASE_SECRET_KEY`) must not pass through chat: if the connector cannot place it directly, the founder pastes it into Vercel himself, marked Sensitive.
-- **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs), Vercel Pro before payments.
+- **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs; decided 15 Oct to set this up later).
 - PR: https://github.com/aman66-web/interview_prep/pull/1 (CI green on the P0 + P1 commit).
 
 ## Milestones (kit section 13)
@@ -106,12 +106,12 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 
 ### P7 Launch checklist
 - Founder:
-  - [ ] Vercel Pro
-  - [ ] Custom domain
+  - [x] Vercel Pro (already on Pro, 15 Oct 2026)
+  - [ ] Custom domain (mockpartner.com; the founder buys it once the site is finished)
   - [ ] Stripe live mode
   - [ ] A real test purchase **and** refund
   - [ ] An Anthropic monthly spend limit
-  - [ ] A final read of the legal pages, and fill in their square-bracket placeholders (company name, address, effective date, minimum age)
+  - [ ] A final read of the legal pages and their remaining square-bracket notes. Company details (MARTZEY LTD, chosen 15 Oct 2026) and the minimum age (18) now come from `site.config.ts`; the effective date is set when the pages are approved
   - [ ] A lawyer checks the refund policy (7 days, 2 or fewer interviews) against the UK 14-day right to cancel, and the wording of the "start straight away" tick box before checkout
   - [ ] `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` set in Vercel (Production), then check the daily clean-up has run successfully (Vercel, project, Cron Jobs)
   - [ ] Approve the About and FAQ pages (fill in their square-bracket notes, then set `"status": "approved"`). Until then they show a draft notice and are left out of Google and the sitemap
@@ -132,12 +132,12 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 
 Claude Code: give click-by-click steps whenever he asks.
 
-- [ ] **1. Brand:** name chosen: **CaseSpar** (14 Oct 2026; `site.config.ts` updated). casespar.com was free at $11.25 a year on 14 Oct; the founder buys it. A web search found no product with this name, but that is not a trademark check: check the UK and US trademark registers before launch.
+- [ ] **1. Brand:** name chosen: **Mock Partner** (15 Oct 2026, replacing CaseSpar; `site.config.ts` updated). mockpartner.com and mockpartner.ai were free on 15 Oct ($11.25 a year for the .com on Vercel); the founder wants to finish the site before buying. A web search found no product with this exact name, but that is not a trademark check: check the UK and US trademark registers before launch.
 - [ ] **2. GitHub:** create a new private repo, add the kit and open it with Claude Code.
 - [x] **3. Supabase:** done on 14 Oct using the second account (free plan, $0): project `interview-prep` in London.
 - [ ] **4. Vercel:** import the repo.
   - [ ] Add the environment variables for Production and Preview, and mark the secret ones "Sensitive".
-  - [ ] Move to the Pro plan before taking real payments.
+  - [x] Move to the Pro plan before taking real payments (the founder already has Vercel Pro, 15 Oct 2026).
 - [ ] **5. Stripe (UK account):**
   - [ ] Test keys and webhook (`docs/SETUP.md` section 2c). No products needed: checkout creates the prices.
   - [ ] Decide on Stripe Tax with an accountant.

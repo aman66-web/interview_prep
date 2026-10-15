@@ -187,7 +187,7 @@ export function PractiseCta({ title, text, primary, secondary }: { title: ReactN
 }
 
 
-/** Sets the last `words` words of a heading in the italic serif: "About <i>CaseSpar</i>". */
+/** Sets the last `words` words of a heading in the italic serif: "About <i>Mock Partner</i>". */
 export function AccentTitle({ title, words = 1 }: { title: string; words?: number }) {
   const parts = title.trim().split(/\s+/);
   if (parts.length <= words) return <>{title}</>;
