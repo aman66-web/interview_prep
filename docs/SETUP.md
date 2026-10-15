@@ -102,8 +102,14 @@ Money rules in the code: card details never touch this site (Stripe's page takes
 | Stripe secret key | `STRIPE_SECRET_KEY` | **Yes** |
 | Stripe webhook secret | `STRIPE_WEBHOOK_SECRET` | **Yes** |
 | Model name | `ANTHROPIC_MODEL` | No |
+| Clean-up password: any long random text you make up (a password manager can generate one) | `CRON_SECRET` | **Yes** |
+| Your own email, so you can open `/admin` (several emails: separate them with commas) | `ADMIN_EMAILS` | No, but keep it to yourself |
+| Support inbox shown on the site | `NEXT_PUBLIC_SUPPORT_EMAIL` | No |
+| The real web address, once you have a domain (e.g. `https://casespar.com`) | `NEXT_PUBLIC_SITE_URL` | No |
+| Optional: a separate key for share links (any long random text) | `SHARE_SIGNING_SECRET` | **Yes** |
 
-- **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY` as **Sensitive**.
+- **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY`, `CRON_SECRET` and `SHARE_SIGNING_SECRET` as **Sensitive**.
+- **The daily clean-up** (deletes interview chats after 365 days) runs by itself once `CRON_SECRET` is set in Vercel (Production). Without it the clean-up refuses to run.
 - **For Claude Code in a cloud session:** the cloud environment menu in the session's title bar, then **Edit**, then add them as environment variables. Start a new session afterwards so it picks them up.
 - **On your own computer:** copy `.env.example` to `.env.local` and fill in the values. `.env.local` is never uploaded to GitHub.
 

@@ -87,20 +87,21 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 - [ ] Vercel preview link and plain-English report
 
 ### P5 Content and search
-- [ ] 20 cases ready for review
-- [ ] Case-type guides
-- [ ] Firm guides (verified facts only)
-- [ ] Free tools
-- [ ] Sitemap, metadata and OG images
+- [x] 20 cases written (case-001 to case-020: profitability, market entry, market sizing, M&A, pricing, growth, operations), every number recomputed by tests. **All drafts until a person with consulting experience reads them**
+- [x] Case-type guides: 10 guides (the seven case types plus structuring, case maths and practising alone), every worked number recomputed by tests; a 60-term glossary
+- [x] Firm guides (verified facts only): Bain and BCG from their own careers pages (checked 15 Oct 2026). McKinsey is hidden: its site could not be reached, see `docs/RESEARCH_TODO.md`
+- [x] Free tools: market sizing, break-even, mental maths trainer, growth rate (`/tools`)
+- [x] Sitemap, robots, page titles and descriptions, structured data, default and per-score share images
 - [ ] Tests passing, Vercel preview link, plain-English report
 
 ### P6 Polish
-- [ ] Dashboard and progress
-- [ ] Share card
-- [ ] Universities page and leads
-- [ ] Admin page
-- [ ] Retention cron
-- [ ] Legal pages (drafts for the founder to review)
+- [x] New design across the whole site (light and dark, phone first; rules in `docs/DESIGN.md`)
+- [x] Dashboard and progress (skill scores, recent interviews, recommended next step)
+- [x] Share card (signed link with scores only; a first name only if the person types one)
+- [x] Universities page and leads (`/for-universities`, `/api/leads`)
+- [x] Admin page (`/admin`, only for `ADMIN_EMAILS`): funnel, AI cost, enquiries
+- [x] Retention cron (`/api/cron/cleanup`, daily via `vercel.json`; needs `CRON_SECRET` in Vercel)
+- [x] Legal pages (drafts for the founder to review): terms, privacy, refunds, disclaimer, plus about and FAQ
 - [ ] Tests passing, Vercel preview link, plain-English report
 
 ### P7 Launch checklist
