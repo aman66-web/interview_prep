@@ -108,3 +108,11 @@ Use the preview site address above.
 ## H. Report
 
 Tell the founder in a few short lines: which parts worked, which did not and what you saw, and anything he still needs to do. Never include a key.
+
+## Extra jobs (only when the founder asks for one by its letter)
+
+### I. UK trade mark search for the name
+
+1. Open https://trademarks.ipo.gov.uk/ipo-tmtext (the UK IPO's trade mark search). If it shows a "verify you are human" check, stop and ask the founder to click it.
+2. Search the words `MOCK PARTNER`, then `MOCKPARTNER`, then `MOCK PARTNERS`. For each search, note any results that are live (registered or pending) and in classes 9, 41 or 42.
+3. Report what you found in a few lines: the mark, its owner, its status and classes, or "no results". This is not legal advice.
