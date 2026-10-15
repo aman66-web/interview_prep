@@ -31,7 +31,7 @@ export function SiteHeader() {
           >
             Log in
           </Link>
-          <ButtonLink href="/login" size="sm" arrow className="hidden sm:inline-flex">
+          <ButtonLink href="/login" size="sm" arrow>
             Start free
           </ButtonLink>
           <MobileMenu items={MAIN_NAV} />

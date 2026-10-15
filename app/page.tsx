@@ -326,9 +326,9 @@ function HowItWorks() {
             </p>
           </div>
 
-          <ol className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-14 grid grid-cols-2 gap-3 lg:grid-cols-5">
             {STAGES.map((s, i) => (
-              <li key={s.name} className="relative rounded-[1.5rem] bg-white/[0.04] p-6 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.07]">
+              <li key={s.name} className="relative rounded-[1.5rem] bg-white/[0.04] p-5 ring-1 ring-inset ring-white/10 transition-colors last:col-span-2 hover:bg-white/[0.07] sm:p-6 lg:last:col-span-1">
                 <span className="font-mono text-xs text-on-night-muted">0{i + 1}</span>
                 <h3 className="mt-6 text-xl font-medium text-white">{s.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-on-night-muted">{s.text}</p>
@@ -539,7 +539,7 @@ function PricingTeaser() {
         <ul className="mt-14 grid gap-4 lg:grid-cols-3">
           {PLANS.map((plan) => (
             <li key={plan.id}>
-              <Card tone={plan.highlight ? "night" : "surface"} className="flex h-full flex-col" padding="lg">
+              <Card tone={plan.highlight ? "night" : "surface"} className={cn("flex h-full flex-col", plan.highlight && "shadow-float ring-2 ring-inset ring-brand/50")} padding="lg">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className={cn("text-lg font-medium", plan.highlight && "text-white")}>{plan.name}</h3>
                   {plan.highlight ? <Tag tone="lime">Most flexible</Tag> : null}

@@ -81,12 +81,12 @@
     { "type": "h2", "id": "worked-example", "text": "A full worked example: finding the bottleneck" },
     {
       "type": "example",
-      "title": "Worked example: Kestrel Bikes (an invented case)",
-      "question": "Kestrel, an invented company, assembles electric bikes. It has orders for 400 bikes a week but ships only 300, and the CEO wants to know why and how to fix it. The plant works one 8-hour shift, 5 days a week. There are four steps: frame preparation (1 station, 6 minutes per bike), motor and wiring (2 stations, each taking 16 minutes per bike), final assembly (3 stations, 15 minutes per bike) and testing (1 station, 5 minutes per bike). Each bike brings in $250 of contribution. Assume 50 working weeks a year.",
+      "title": "Worked example: Ferrow Bikes (an invented case)",
+      "question": "Ferrow, an invented company, assembles electric bikes. It has orders for 400 bikes a week but ships only 300, and the CEO wants to know why and how to fix it. The plant works one 8-hour shift, 5 days a week. There are four steps: frame preparation (1 station, 6 minutes per bike), motor and wiring (2 stations, each taking 16 minutes per bike), final assembly (3 stations, 15 minutes per bike) and testing (1 station, 5 minutes per bike). Each bike brings in $250 of contribution. Assume 50 working weeks a year.",
       "answer": [
         "Time available per station: 8 hours × 60 minutes × 5 days = 2,400 minutes a week.",
         "Capacity of each step: frame preparation 2,400 ÷ 6 = 400 bikes a week; motor and wiring 2 × 2,400 ÷ 16 = 300; final assembly 3 × 2,400 ÷ 15 = 480; testing 2,400 ÷ 5 = 480.",
-        "Motor and wiring is the bottleneck. It caps output at 300 bikes a week, exactly what Kestrel ships. The other steps sit partly idle: frame preparation, for example, runs at 300 ÷ 400 = 75% utilisation.",
+        "Motor and wiring is the bottleneck. It caps output at 300 bikes a week, exactly what Ferrow ships. The other steps sit partly idle: frame preparation, for example, runs at 300 ÷ 400 = 75% utilisation.",
         "The prize for fixing it: 100 more bikes a week × 50 weeks = 5,000 bikes a year, worth 5,000 × $250 = $1.25m of contribution.",
         "Option A, add a third motor station ($60,000 of equipment plus a technician at $50,000 a year): motor capacity rises to 3 × 2,400 ÷ 16 = 450, so frame preparation (400) becomes the new bottleneck and output reaches 400. Net gain in the first year: $1.25m − $60,000 − $50,000 = $1.14m.",
         "Option B, buy ready-made wiring harnesses that cut motor time to 12 minutes but cost $8 more per bike: motor capacity becomes 2 × 2,400 ÷ 12 = 400. Extra cost: 400 bikes × $8 × 50 weeks = $160,000 a year, so the net gain is $1.25m − $160,000 = $1.09m a year.",
@@ -181,7 +181,7 @@
     },
     {
       "type": "p",
-      "text": "For Kestrel, a strong close might be: 'Kestrel ships 300 bikes a week because motor and wiring can only handle 300. Adding a third station lifts output to the 400 that customers are ordering, worth about $1.25m a year in contribution, and the equipment pays back in under a month. While it is installed, bought-in harnesses can bridge the gap. After that, frame preparation will be running flat out, so the plant should plan more frame capacity before orders grow again.'"
+      "text": "For Ferrow, a strong close might be: 'Ferrow ships 300 bikes a week because motor and wiring can only handle 300. Adding a third station lifts output to the 400 that customers are ordering, worth about $1.25m a year in contribution, and the equipment pays back in under a month. While it is installed, bought-in harnesses can bridge the gap. After that, frame preparation will be running flat out, so the plant should plan more frame capacity before orders grow again.'"
     },
     { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
     {

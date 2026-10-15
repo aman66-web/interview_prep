@@ -113,15 +113,15 @@
     { "type": "h2", "id": "worked-example-new-product", "text": "A full worked example: pricing a new product" },
     {
       "type": "example",
-      "title": "Worked example: Corvane's pallet-wrapping robot (an invented case)",
-      "question": "Corvane, an invented equipment maker, has built a robot that wraps pallets in plastic film automatically. Its target customers are mid-sized warehouses, which wrap pallets by hand today. The CEO asks: what price should we launch at? The interviewer shares this data. A typical warehouse wraps 200 pallets a day, 250 days a year. Hand wrapping takes a worker 3 minutes a pallet, at $20 an hour. The robot also uses less film, saving $0.20 a pallet. It needs $5,000 a year of servicing, paid by the customer, and lasts 5 years. Warehouses expect new equipment to pay for itself within 2 years. Each robot costs Corvane $40,000 to build and install. A rival sells a semi-automatic machine for $25,000, but it still needs a worker beside it. Market research estimates yearly sales of 500 robots at $70,000, 400 at $85,000 and 250 at $100,000.",
+      "title": "Worked example: Brackwell's pallet-wrapping robot (an invented case)",
+      "question": "Brackwell, an invented equipment maker, has built a robot that wraps pallets in plastic film automatically. Its target customers are mid-sized warehouses, which wrap pallets by hand today. The CEO asks: what price should we launch at? The interviewer shares this data. A typical warehouse wraps 200 pallets a day, 250 days a year. Hand wrapping takes a worker 3 minutes a pallet, at $20 an hour. The robot also uses less film, saving $0.20 a pallet. It needs $5,000 a year of servicing, paid by the customer, and lasts 5 years. Warehouses expect new equipment to pay for itself within 2 years. Each robot costs Brackwell $40,000 to build and install. A rival sells a semi-automatic machine for $25,000, but it still needs a worker beside it. Market research estimates yearly sales of 500 robots at $70,000, 400 at $85,000 and 250 at $100,000.",
       "answer": [
         "Objective first: the CEO confirms the goal is the most profit from the robot each year.",
         "Floor: each robot costs $40,000, so any price below that loses money on every sale.",
         "Value to one warehouse. Pallets a year: 200 × 250 = 50,000. Hand-wrapping time: 50,000 × 3 minutes = 150,000 minutes, or 2,500 hours. Labour saved: 2,500 × $20 = $50,000 a year.",
         "Film saved: 50,000 × $0.20 = $10,000 a year. After servicing, the warehouse saves $50,000 + $10,000 − $5,000 = $55,000 a year.",
         "Ceiling: with a 2-year payback rule, a warehouse would pay up to 2 × $55,000 = $110,000. Over the robot's 5-year life it saves 5 × $55,000 = $275,000, so the value is real; the payback rule is what limits the price.",
-        "Competitor check: the rival's machine is far cheaper at $25,000, but it only removes part of the labour cost, so it does not cap Corvane's price at $25,000. It does mean Corvane's sales pitch must show the extra savings clearly.",
+        "Competitor check: the rival's machine is far cheaper at $25,000, but it only removes part of the labour cost, so it does not cap Brackwell's price at $25,000. It does mean Brackwell's sales pitch must show the extra savings clearly.",
         "Yearly contribution at each price (units × (price − $40,000)): at $70,000, 500 × $30,000 = $15m; at $85,000, 400 × $45,000 = $18m; at $100,000, 250 × $60,000 = $15m.",
         "$85,000 gives the most contribution. The customer's payback is $85,000 ÷ $55,000 = about 1.5 years (around 18.5 months), inside the 2-year rule, and over five years the warehouse is $275,000 − $85,000 = $190,000 better off.",
         "Show the trade-off: if the CEO cared more about winning customers fast, $70,000 would sell (500 − 400) ÷ 400 = 25% more robots, at a cost of $18m − $15m = $3m of yearly contribution. Making that choice visible is part of a good answer.",
@@ -192,7 +192,7 @@
     },
     {
       "type": "p",
-      "text": "For the Corvane example, a strong close might be: 'Corvane should launch the robot at about $85,000. Of the prices tested, that one gives the highest yearly contribution, about $18m, and customers still earn back the cost in about 18 months. The main risk is a rival launching a fully automatic machine, so I would confirm demand with a few pilot customers and offer leasing to warehouses with tight budgets.'"
+      "text": "For the Brackwell example, a strong close might be: 'Brackwell should launch the robot at about $85,000. Of the prices tested, that one gives the highest yearly contribution, about $18m, and customers still earn back the cost in about 18 months. The main risk is a rival launching a fully automatic machine, so I would confirm demand with a few pilot customers and offer leasing to warehouses with tight budgets.'"
     },
     { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
     {
