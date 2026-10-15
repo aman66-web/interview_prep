@@ -21,7 +21,7 @@ The fee is the founder's decision. Agree it in writing before the reviewer start
 
 The preview site is protected by Vercel's login. To let the reviewer in without a Vercel account (Vercel's "Shareable Links", available on all plans; docs: https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links, checked 15 Oct 2026): in Vercel open project **interview-prep**, then **Deployments**, select the newest preview deployment, click **Share**, choose **Anyone with the link** in the dropdown, and send that link. To revoke it later, switch the dropdown back to **Only people with access**. The link shows that one deployment, so share a fresh one after big changes. Drafts are visible on previews.
 
-Each case has its own page at `/cases/<case>`. Running a case as an AI interview needs a sign-in, which only works for the founder's own email until an email-sending service is set up, so the reviewer works from the case pages and the answer key. The reviewer also gets this brief and, for each case, the answer key (Claude can export one per case on request: the facts, exhibits, maths with working, and model answer).
+Each case has its own page at `/cases/<case>`. Running a case as an AI interview needs a sign-in, which only works for the founder's own email until an email-sending service is set up, so the reviewer works from the case pages and the answer key. The reviewer also gets this brief, `docs/CASE_REVIEW_NOTES.md` (what Claude's two review rounds changed in each case, and the questions it could not settle) and, for each case, the answer key (Claude can export one per case on request: the facts, exhibits, maths with working, and model answer).
 
 ## Brief for the reviewer
 

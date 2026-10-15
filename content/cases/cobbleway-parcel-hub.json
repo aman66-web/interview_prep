@@ -7,8 +7,8 @@
   "industry": "Logistics",
   "difficulty": 2,
   "style": "interviewer_led",
-  "est_minutes": 25,
-  "prompt": "Cobbleway Parcels is a UK parcel carrier. Its main sorting hub in the Midlands has fallen behind: on most nights it cannot sort every parcel in time for the morning delivery vans, so thousands of parcels arrive a day late. The operations director wants to spend £15 million on a second sorting machine. The CEO has asked you to work out what is going wrong and whether the new machine is the right fix. How would you approach this?",
+  "est_minutes": 30,
+  "prompt": "Cobbleway Parcels is a UK parcel carrier. Its main sorting hub in the Midlands has fallen behind: on most nights it cannot sort every parcel in time for the morning delivery vans, so tens of thousands of parcels arrive a day late. The operations director wants to spend £15 million on a second sorting machine. The CEO has asked you to work out what is going wrong and whether the new machine is the right fix. How would you approach this?",
   "facts": [
     {
       "question_topic": "How the night works",
@@ -16,7 +16,7 @@
     },
     {
       "question_topic": "Volume",
-      "answer": "The hub now handles about 240,000 parcels a night, up from 180,000 two years ago. Volume is growing about 10% a year."
+      "answer": "The hub now handles about 240,000 parcels a night, up from about 200,000 two years ago. Volume is growing about 10% a year and is expected to keep doing so."
     },
     {
       "question_topic": "The process",
@@ -24,7 +24,11 @@
     },
     {
       "question_topic": "Late parcels and customers",
-      "answer": "On a typical night tens of thousands of parcels miss the 4am cut-off. A small day shift sorts them and they go out a day late. Complaints have tripled this year, and two large online retailers have warned they may move to another carrier."
+      "answer": "On a typical night tens of thousands of parcels miss the 4am cut-off. A small day shift sorts them and they go out a day late. Complaints have tripled this year. Two large online retailers, which together send about 15% of the hub's parcels, have warned they may move to another carrier unless deliveries are back on time within three months."
+    },
+    {
+      "question_topic": "Why the operations director wants a machine",
+      "answer": "Every night parcels pile up beside the sorting machine, waiting to be placed on it, so he believes the machine is too slow."
     },
     {
       "question_topic": "Induction staffing",
@@ -36,11 +40,11 @@
     },
     {
       "question_topic": "The sorting machine",
-      "answer": "The current machine is reliable, with less than 2% downtime. A second machine would cost £15m and take 18 months to install. The building has space for it."
+      "answer": "The current machine is reliable, with less than 2% downtime. A second machine would cost £15m and take 18 months to install. The building has space for it. It would be fed from the same 50 induction stations; it would not add any."
     },
     {
       "question_topic": "Cost of more staff",
-      "answer": "Hiring 12 permanent night staff, enough to fill 8 more induction stations every night after holidays and sickness, would cost about £0.4m a year."
+      "answer": "A permanent night worker costs about £33,000 a year. Hiring 12, enough to fill 8 more induction stations every night after holidays and sickness, would cost about £0.4m a year; filling all 10 empty stations would take about 15 people. Recruiting and training takes about six weeks."
     },
     {
       "question_topic": "Other hubs and finance",
@@ -58,12 +62,13 @@
     "good_signs": [
       "Turns parcels per night into a required rate per hour and compares it with each step",
       "Recognises that the slowest step sets the hub's output, so a faster machine elsewhere does not help",
+      "Reads the pile of parcels beside the machine as a queue for induction, not proof that the machine is too slow",
       "Asks why the bottleneck step is slow before suggesting fixes",
       "Thinks about next year's volume and where the bottleneck moves"
     ],
     "red_flags": [
       "Accepts the second machine as the answer without checking which step is the constraint",
-      "Looks only at total capacity and ignores the hour-by-hour flow",
+      "Adds up or averages the capacity of the steps instead of seeing that the slowest step sets the hub's output",
       "Ignores the staffing problem at induction"
     ]
   },
@@ -158,6 +163,20 @@
       "expected": 33000,
       "tolerance_pct": 2,
       "working": "240,000 x 1.1 = 264,000 parcels a night. 264,000 / 8 = 33,000 an hour. That is above loading's 32,000, so loading becomes the next bottleneck. The sorting machine (40,000) still has room."
+    },
+    {
+      "id": "next-year-speed-needed",
+      "question": "Next year, even with all 50 induction stations staffed, how many parcels must each person place per hour for induction to keep up?",
+      "inputs": {
+        "parcels_per_night": 240000,
+        "growth_pct": 10,
+        "sort_hours": 8,
+        "stations": 50
+      },
+      "expression": "parcels_per_night * (100 + growth_pct) / 100 / sort_hours / stations",
+      "expected": 660,
+      "tolerance_pct": 2,
+      "working": "Next year the hub needs 33,000 parcels an hour. 33,000 / 50 stations = 660 parcels per person per hour, up from 625 today. All 50 stations at today's speed give only 31,250 an hour (50 x 625), so filling stations is not enough: each person must also get faster, for example by taking soft parcels off the main belts."
     }
   ],
   "brainstorm": {
@@ -165,6 +184,7 @@
     "idea_bank": [
       "Replace unreliable agency workers with permanent night staff, or pay a bonus for turning up",
       "Keep a pool of trained standby staff to fill empty stations each night",
+      "Hold the agency to a guaranteed fill rate, or add a second agency",
       "Move staff from unloading, which has spare capacity, to induction during the busiest hours",
       "Send small soft parcels to trays or a separate hand-sort line so they do not slow the main belts",
       "Ask large senders to use boxes or pre-sort their parcels, with a discount for machine-friendly packaging",
@@ -172,6 +192,7 @@
       "Ask some lorries to arrive earlier so sorting can start before 8pm",
       "Add automatic induction equipment for standard boxes later on",
       "Add van loading capacity before next year's growth",
+      "Draw up a capacity plan for every step: unloading runs out in about two years and the machine in about three",
       "Track output per hour at every step each night to see where the bottleneck moves"
     ]
   },
@@ -182,18 +203,20 @@
       "Fix induction: staff at least 48 of the 50 stations every night and speed up the handling of small soft parcels"
     ],
     "good_signs": [
-      "Notes that loading (32,000 an hour) becomes the next bottleneck when volume grows to 33,000 an hour next year",
-      "Compares the cost: about £0.4m a year for permanent staff against £15m and 18 months for a machine",
+      "Notes that next year the hub needs 33,000 an hour: even all 50 stations at today's speed give only 31,250, and loading (32,000 an hour) becomes the next bottleneck",
+      "Compares the cost: about £0.4m to £0.5m a year for permanent staff against £15m and 18 months for a machine",
+      "Notes the urgency: the two retailers want a fix within three months, far sooner than a machine could arrive",
+      "Times the machine decision: at 10% growth the hub needs about 40,000 an hour in about three years, and a machine takes 18 months to install, so decide in about 18 months, not now",
       "Gives quick wins, a timeline and what to track each night"
     ]
   },
   "model_answer_outline": [
-    "Clarify: 240,000 parcels a night must be sorted between 8pm and 4am; volume grows 10% a year; about 40,000 parcels a night are late; the proposed fix is a £15m second machine.",
+    "Clarify: 240,000 parcels a night must be sorted between 8pm and 4am; volume grows 10% a year; tens of thousands of parcels a night are late, and two retailers with about 15% of volume want a fix within three months; the proposed fix is a £15m second machine that takes 18 months to install.",
     "Structure: required rate, capacity of each step, the bottleneck and why it is slow, options with cost and time, future growth.",
-    "Analysis: the hub needs 30,000 parcels an hour. Unloading (36,000), the machine (40,000) and loading (32,000) can cope; induction (25,000) cannot, so output is 200,000 a night and 40,000 are late.",
+    "Analysis: the hub needs 30,000 parcels an hour. Unloading (36,000), the machine (40,000) and loading (32,000) can cope; induction (25,000) cannot, so output is 200,000 a night and 40,000 (one in six) are late. The pile of parcels beside the machine is the queue for induction, not a sign that the machine is slow.",
     "Root cause: induction fell from 33,600 to 25,000 an hour because only 40 of 50 stations are staffed and soft parcels (now 40% of volume) slow each person from 700 to 625 an hour.",
-    "Maths: 48 staffed stations are needed at today's speed. Next year the hub needs 33,000 an hour, so it also needs faster handling (50 stations at 700 gives 35,000) and more loading capacity.",
-    "Recommendation: do not buy the second machine now. Hire permanent night staff (about £0.4m a year) to fill at least 48 stations, set up a separate line for soft parcels, and plan extra loading capacity before next year. Revisit the machine in about three years, when volume nears its 40,000-an-hour limit."
+    "Maths: 48 staffed stations are needed at today's speed. Next year the hub needs 33,000 an hour: even all 50 stations at 625 give only 31,250, so each person must place about 660 an hour (back towards the 700 of two years ago), and loading (32,000) must grow too.",
+    "Recommendation: do not buy the second machine now. Hire permanent night staff (12 to 15 people, about £0.4m to £0.5m a year) so that 48 to 50 stations are filled every night, using standby agency staff and overtime for the six weeks this takes; set up a separate line for soft parcels to lift speed per person; and add loading capacity before next year. Risks: permanent staff may also miss shifts, and the retailers may leave before the fixes land, so report on-time delivery to them weekly. The machine reaches its limit in about three years and takes 18 months to install, so decide on it in about 18 months, as part of a plan for every step (unloading runs out in about two years)."
   ],
   "free_starter": false,
   "free_preview": false,

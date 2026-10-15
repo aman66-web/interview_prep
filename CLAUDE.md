@@ -15,6 +15,7 @@ The founder (Aman) is a non-developer. Follow rule 2.13 when talking to him.
 | `docs/PROGRESS.md` | Milestone checklist P0-P7, the founder's setup checklist, and the handoff notes |
 | `docs/SETUP.md` | Click-by-click setup for Supabase, Vercel and where keys go |
 | `docs/REVIEWER_GUIDE.md` | Hiring and briefing the human case reviewer, and how a sign-off is recorded |
+| `docs/CASE_REVIEW_NOTES.md` | Per case: what Claude's two review rounds changed (15 Oct 2026) and the points the human reviewer should decide |
 | `docs/DESIGN.md` | The design system: colour tokens, fonts, shared UI components and page patterns. Read before building or changing any page |
 | `docs/KIT.md` | The original build kit, unchanged. Reference only; do not edit |
 | `docs/RESEARCH_TODO.md` | Facts that could not be verified (rule 2.2). Create when first needed |

@@ -16,7 +16,7 @@ import larkmoor from "@/content/cases/larkmoor-meal-kit-acquisition.json";
 import londonCargo from "@/content/cases/london-cargo-bikes.json";
 import lumen from "@/content/cases/lumen-tutoring-growth.json";
 import ostrander from "@/content/cases/ostrander-pumps-sensor-deal.json";
-import parlune from "@/content/cases/parlune-subscriber-growth.json";
+import orvessa from "@/content/cases/orvessa-subscriber-growth.json";
 import pellbrook from "@/content/cases/pellbrook-clinics-waiting-times.json";
 import stowline from "@/content/cases/stowline-backup-pricing.json";
 import dogWalking from "@/content/cases/us-dog-walking-market.json";
@@ -38,7 +38,7 @@ export const rawCases: unknown[] = [
   brinmoor,
   bramblecup,
   hollinsway,
-  parlune,
+  orvessa,
   londonCargo,
   dogWalking,
   cragwell,

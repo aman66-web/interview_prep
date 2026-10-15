@@ -19,6 +19,10 @@
       "answer": "£16 million this year, about £2 million per centre, and similar across centres. A breakdown of revenue per centre by stream is available."
     },
     {
+      "question_topic": "Profit today",
+      "answer": "Each centre makes an operating profit of about £400,000 a year, about 20% of revenue, before head-office costs and loan interest. Daytime programmes need extra instructors but use walls that are already there, so management expects them to earn at least the same margin."
+    },
+    {
       "question_topic": "Objective and budget",
       "answer": "The owners want revenue of £32 million in year 5, with every centre staying profitable. They will invest up to £20 million in new centres over the five years, from cash and a bank loan."
     },
@@ -43,8 +47,12 @@
       "answer": "Cragwell could open full centres like today's or smaller bouldering-only centres. Figures for both formats are available. Bouldering centres fit ordinary industrial or retail units, which are easy to find; full centres need very tall buildings, which are rare."
     },
     {
+      "question_topic": "Where new centres would go",
+      "answer": "Research has found about 15 towns and city districts in England with enough climbers and no bouldering wall nearby, most of them outside Cragwell's current cities. Assume new centres in those places would not take customers from Cragwell's existing centres."
+    },
+    {
       "question_topic": "Opening pace",
-      "answer": "The team can open up to three new centres a year. Assume a new centre counts towards year 5 revenue only if it opens by the end of year 4."
+      "answer": "The team can open up to three new centres a year. A new centre's first full year of trading is the year after it opens, so only centres that open by the end of year 4 count towards year 5 revenue."
     },
     {
       "question_topic": "Buying rivals",
@@ -63,12 +71,14 @@
       "Works out the size of the gap (£16 million) and splits it between existing and new centres",
       "Spots that peak times are full, so growth at existing centres must come from daytimes",
       "Compares the two formats on payback and fit with the budget, not just on revenue",
+      "Asks where new centres would go and whether they would take customers from existing centres",
       "Checks the plan against the opening pace and the year 5 deadline"
     ],
     "red_flags": [
       "Proposes a big price rise despite rivals nearby",
       "Assumes existing centres can simply take more climbers at peak times",
-      "Counts new centres at full revenue without checking time to mature or the budget"
+      "Counts new centres at full revenue without checking time to mature or the budget",
+      "Builds the plan on buying rivals, although none has been identified"
     ]
   },
   "exhibits": [
@@ -115,11 +125,11 @@
           ["Cost to build and fit out", 5000, 1500],
           ["Yearly revenue when mature", 2000, 1200],
           ["Yearly operating profit when mature", 400, 300],
-          ["Years to reach mature revenue", 3, 1]
+          ["Full year in which mature revenue is reached", 3, 1]
         ]
       },
       "reveal_hint": "Ask what new centres would cost and earn, or how the two possible formats compare.",
-      "insight": "A bouldering-only centre costs less than a third as much, reaches full revenue in its first year and pays back in 5 years (£1.5m / £300k), against 12.5 years for a full centre (£5m / £400k). Closing a £12m gap would take 10 bouldering-only centres (£15m) or 6 full centres (£30m, well over the £20m budget)."
+      "insight": "A bouldering-only centre costs less than a third as much, makes its mature revenue from its first full year and pays back in 5 years (£1.5m / £300k), against 12.5 years for a full centre (£5m / £400k). Closing a £12m gap would take 10 bouldering-only centres (£15m) or 6 full centres (£30m, well over the £20m budget, and all 6 would have to open by the end of year 2 to be mature in year 5)."
     }
   ],
   "math": [
@@ -165,9 +175,26 @@
       "expression": "centres_needed * build_cost_k / 1000",
       "expected": 15,
       "tolerance_pct": 3,
-      "working": "10 x £1.5 million = £15 million, within the £20 million budget. Closing the same gap with full centres would need 6 (£12 million / £2 million each) at £5 million each, which is £30 million and well over budget.",
+      "working": "10 x £1.5 million = £15 million, within the £20 million budget and leaving about £5 million in reserve.",
       "input_sources": [
         { "input": "build_cost_k", "exhibit_id": "new-centre-formats", "row": 0, "column": "Bouldering-only centre" }
+      ]
+    },
+    {
+      "id": "full-centres-cost",
+      "question": "If Cragwell closed the same £12 million gap with full centres instead, how much would they cost to build, in £ million?",
+      "inputs": {
+        "gap_m": 12,
+        "full_revenue_k": 2000,
+        "full_cost_k": 5000
+      },
+      "expression": "gap_m * 1000 / full_revenue_k * full_cost_k / 1000",
+      "expected": 30,
+      "tolerance_pct": 3,
+      "working": "£12 million / £2 million per full centre = 6 centres. 6 x £5 million = £30 million, £10 million over the £20 million budget. A full centre reaches mature revenue only in its third full year, so all 6 would also have to open by the end of year 2 (the team's limit of three a year), in tall buildings that are rare.",
+      "input_sources": [
+        { "input": "full_revenue_k", "exhibit_id": "new-centre-formats", "row": 1, "column": "Full centre" },
+        { "input": "full_cost_k", "exhibit_id": "new-centre-formats", "row": 0, "column": "Full centre" }
       ]
     },
     {
@@ -180,7 +207,7 @@
       "expression": "build_cost_k / profit_k",
       "expected": 5,
       "tolerance_pct": 3,
-      "working": "£1.5 million / £300,000 a year = 5 years. A full centre takes £5 million / £400,000 = 12.5 years, and needs 3 years to reach full revenue.",
+      "working": "£1.5 million / £300,000 a year = 5 years. A full centre takes £5 million / £400,000 = 12.5 years, and needs until its third full year to reach mature revenue.",
       "input_sources": [
         { "input": "build_cost_k", "exhibit_id": "new-centre-formats", "row": 0, "column": "Bouldering-only centre" },
         { "input": "profit_k", "exhibit_id": "new-centre-formats", "row": 2, "column": "Bouldering-only centre" }
@@ -198,7 +225,9 @@
       "Yoga, strength and fitness classes in spare studio space, as part of a premium membership",
       "A better café with a work-friendly area to bring people in during the day",
       "Off-peak prices and a booking app to spread climbers away from the busiest hours",
+      "A small peak-time supplement on day passes, of no more than a few per cent so that climbers do not switch to rivals",
       "Selling or renting more gear, such as shoes and chalk, and offering shoe resoling",
+      "Outdoor climbing trips and guided days for members",
       "Birthday parties and group bookings on weekday afternoons"
     ]
   },
@@ -206,20 +235,21 @@
     "must_mention": [
       "Doubling to £32 million needs both levers: about £4 million from daytime programmes at existing centres and about £12 million from new centres",
       "About 10 bouldering-only centres close the gap for about £15 million, within the £20 million budget; full centres would cost about £30 million",
-      "Bouldering-only centres pay back in about 5 years against 12.5 for full centres, and reach full revenue in their first year"
+      "Bouldering-only centres pay back in about 5 years against 12.5 for full centres, and make their mature revenue from their first full year"
     ],
     "good_signs": [
       "Turns it into a timeline: two to three openings a year, all open by the end of year 4",
-      "Names the risks, such as finding 10 good sites, rival bouldering walls and the 25% uplift not arriving",
+      "Considers a mix (one full centre and nine bouldering-only centres just fits the budget at £18.5 million) and explains why bouldering-only is still better: faster payback, more cash in reserve and no hunt for a tall building",
+      "Names the risks, such as opening 10 centres in four years when the first 8 took 12, rival bouldering walls opening in the same towns, and the 25% daytime uplift not arriving",
       "Gives milestones to track, such as daytime capacity used and revenue per new centre"
     ]
   },
   "model_answer_outline": [
-    "Clarify: £32 million of revenue in year 5 from £16 million today, staying profitable, with up to £20 million to invest and at most three openings a year.",
+    "Clarify: £32 million of revenue in year 5 from £16 million today, every centre staying profitable (each makes about 20% today), with up to £20 million to invest and at most three openings a year.",
     "Structure: revenue = centres x revenue per centre. Split growth into existing centres (by stream and time slot) and new centres (by format), and check it against the budget and the timeline.",
-    "Existing centres: memberships and day passes make 70% of revenue, but peaks are 90% to 95% full while weekday daytimes are only 30% used. Daytime programmes could lift each centre by 25%, to £20 million in total.",
-    "Gap: £12 million must come from new centres. Full centres: 6 needed, £30 million and a 12.5-year payback, so they break the budget; and because they take 3 years to mature, all 6 would have to open in the first two years, in tall buildings that are rare. Bouldering-only centres: 10 needed, £15 million, a 5-year payback and full revenue in year one.",
-    "Feasibility: 10 openings by the end of year 4 means two to three a year, within the team's limit of three, and suitable units are easy to find.",
+    "Existing centres: memberships and day passes make 70% of revenue, but peaks are 90% to 95% full while weekday daytimes are only 30% used. Daytime programmes could lift each centre by 25%, to £2.5 million, or £20 million across the eight, and they use walls that are already there.",
+    "Gap: £12 million must come from new centres. Full centres: 6 needed, £30 million (£10 million over budget) and a 12.5-year payback; because they mature only in their third full year, all 6 would have to open by the end of year 2, in tall buildings that are rare. Bouldering-only centres: 10 needed, £15 million, a 5-year payback and mature revenue from their first full year. A mix with one full centre and nine bouldering-only centres just fits (£18.5 million) but leaves little reserve and ties cash up in the slower format.",
+    "Feasibility: 10 openings by the end of year 4 means two to three a year, within the team's limit of three; suitable units are easy to find and about 15 places have the demand. The biggest risk is execution, since the first 8 centres took 12 years.",
     "Recommendation: launch daytime programmes now, open about 10 bouldering-only centres over four years, keep about £5 million in reserve, and review every six months on daytime capacity used and revenue per new centre. Consider buying independent walls if good ones come up."
   ],
   "free_starter": false,

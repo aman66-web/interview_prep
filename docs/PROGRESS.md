@@ -88,6 +88,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 
 ### P5 Content and search
 - [x] 20 cases written (case-001 to case-020: profitability, market entry, market sizing, M&A, pricing, growth, operations), every number recomputed by tests. **All drafts until a person with consulting experience reads them**
+- [x] Every case reviewed and rewritten by Claude, then checked again by separate skeptical checkers (15 Oct 2026): more realistic numbers, real-world claims checked or removed, one real product name taken out (case-015 is now Orvessa, at `/cases/orvessa-subscriber-growth`). What changed and the open questions for the human reviewer: `docs/CASE_REVIEW_NOTES.md`
 - [x] Case-type guides: 10 guides (the seven case types plus structuring, case maths and practising alone), every worked number recomputed by tests; a 60-term glossary
 - [x] Firm guides (verified facts only): Bain, BCG and McKinsey, each from the firm's own careers pages (checked 15 Oct 2026); facts that could not be verified are in `docs/RESEARCH_TODO.md`
 - [x] Free tools: market sizing, break-even, mental maths trainer, growth rate (`/tools`)
