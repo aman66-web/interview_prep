@@ -92,7 +92,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 - [x] Firm guides (verified facts only): Bain and BCG from their own careers pages (checked 15 Oct 2026). McKinsey is hidden: its site could not be reached, see `docs/RESEARCH_TODO.md`
 - [x] Free tools: market sizing, break-even, mental maths trainer, growth rate (`/tools`)
 - [x] Sitemap, robots, page titles and descriptions, structured data, default and per-score share images
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Tests passing (725 unit tests, database security checks in CI, four browser suites), Vercel preview link and plain-English report (15 Oct 2026)
 
 ### P6 Polish
 - [x] New design across the whole site (light and dark, phone first; rules in `docs/DESIGN.md`)
@@ -102,7 +102,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 - [x] Admin page (`/admin`, only for `ADMIN_EMAILS`): funnel, AI cost, enquiries
 - [x] Retention cron (`/api/cron/cleanup`, daily via `vercel.json`; needs `CRON_SECRET` in Vercel)
 - [x] Legal pages (drafts for the founder to review): terms, privacy, refunds, disclaimer, plus about and FAQ
-- [ ] Tests passing, Vercel preview link, plain-English report
+- [x] Tests passing (725 unit tests, database security checks in CI, four browser suites), Vercel preview link and plain-English report (15 Oct 2026)
 
 ### P7 Launch checklist
 - Founder:
