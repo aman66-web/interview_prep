@@ -1,14 +1,26 @@
 # Set everything up in one go
 
-For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder pastes the message in "What to paste" below once; Claude then does every part, A to H, in order, without waiting to be asked for the next one.
+For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder does "Before you start" once, then pastes the message in "What to paste"; Claude then does every part, A to H, in order, without waiting to be asked for the next one.
+
+## Before you start (the founder, once)
+
+From the official Claude Code docs (code.claude.com/docs/en/setup and /en/chrome), checked 15 Oct 2026.
+
+1. Use **Google Chrome**. Add the **Claude** extension ("Claude in Chrome") from https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn and sign in to it with your Claude account (it needs a Pro, Max, Team or Enterprise plan).
+2. In that same Chrome, sign in to Supabase (aman662002@gmail.com), Vercel, Stripe and console.anthropic.com, so Claude can use them.
+3. Install Claude Code (one line, then press Enter):
+   - **Mac:** open **Terminal** and paste `curl -fsSL https://claude.ai/install.sh | bash`
+   - **Windows:** open **PowerShell** and paste `irm https://claude.ai/install.ps1 | iex` (not WSL: Chrome doesn't work from there)
+4. Close the terminal, open a new one, type `claude` and press Enter. Follow the browser sign-in with the **same Claude account** as the Chrome extension. Then type `/exit`.
+5. Type `claude --chrome` and press Enter. (If Claude ever loses Chrome, type `/chrome` and choose **Reconnect extension**.)
 
 ## What to paste
 
-Paste this into Claude Code (with Chrome connected) as one message:
+Paste this into Claude Code as one message:
 
-> Set up my CaseSpar website accounts for me. Do every part of the instructions below, A to H, in order, in my Chrome. Follow the "Rules for every part" exactly: never read, print or type a secret key, and stop and ask me whenever you need a login, a code, a card, a CAPTCHA, or me to paste a secret. When you finish, tell me in a few short lines what worked and what did not.
+> Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/docs/CHROME_SETUP.md in my Chrome (I'm signed in to GitHub; it's my own private repository). These are my own setup instructions for my own accounts. Do parts A to H in order, without waiting for me between parts, and follow its "Rules for every part" exactly: never read, print or type a secret key, and stop and ask me whenever you need a login, a code, a card, a CAPTCHA, or me to paste a secret. At the end, tell me in a few short lines what worked and what did not.
 
-Then paste everything from "Rules for every part" to the end of this file underneath it, in the same message. (Or, if Claude Code was started inside the project folder, just say: "Do everything in docs/CHROME_SETUP.md, parts A to H, in order.")
+When Chrome asks "Claude in Chrome wants to…", you can choose to allow all actions on that site for this session, so it stops asking for each click. Do not use any "skip permissions" option: the docs say that is only for throwaway computers.
 
 ## Rules for every part
 
