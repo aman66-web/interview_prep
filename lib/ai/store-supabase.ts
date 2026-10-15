@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { recordCaseCompleted } from "@/lib/analytics/funnel";
 import type { MathCheck } from "./maths";
 import type { Stage } from "./stages";
 import type { CommitTurn, InterviewStore, MessageRow, SessionRow, StartResult, UsageRow } from "./store";
@@ -77,11 +78,16 @@ export function createSupabaseStore(db: SupabaseClient): InterviewStore {
     },
 
     async completeSession({ sessionId, scores, summary }) {
-      const { error } = await db
+      // Only an unfinished session is finished, so the first debrief stands and only the
+      // request that finished it gets a row back (and records the funnel event, once).
+      const { data, error } = await db
         .from("case_sessions")
         .update({ scores, summary, stage: "debrief" satisfies Stage, completed_at: new Date().toISOString() })
-        .eq("id", sessionId);
+        .eq("id", sessionId)
+        .is("completed_at", null)
+        .select("user_id, case_id");
       if (error) fail("finishing the session", error);
+      for (const row of (data ?? []) as { user_id: string; case_id: string }[]) await recordCaseCompleted(db, row);
     },
 
     async findActiveSession(userId, caseId) {

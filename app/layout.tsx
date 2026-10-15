@@ -3,6 +3,7 @@ import { Geist_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { UtmCapture } from "@/components/utm-capture";
 import { siteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/site.config";
 import "./globals.css";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <SiteFooter />
+        <UtmCapture />
       </body>
     </html>
   );

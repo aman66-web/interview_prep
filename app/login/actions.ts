@@ -2,8 +2,11 @@
 
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { recordSignupOnce } from "@/lib/analytics/funnel";
+import { appendUtm, utmFromFormData } from "@/lib/analytics/utm";
 import { emailSchema, otpCodeSchema } from "@/lib/auth/schemas";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 export type LoginState = {
@@ -37,11 +40,17 @@ export async function requestSignInEmail(
   const next = safeNextPath(formData.get("next"));
   const origin = await requestOrigin();
 
+  // The link carries the visit's campaign tags (no personal data) so the signup
+  // event can be attributed when the link is opened (SPEC section 10).
+  const redirectTo = new URL(`${origin}/auth/confirm`);
+  redirectTo.searchParams.set("next", next);
+  appendUtm(redirectTo.searchParams, utmFromFormData(formData));
+
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
-      emailRedirectTo: `${origin}/auth/confirm?next=${encodeURIComponent(next)}`,
+      emailRedirectTo: redirectTo.toString(),
       shouldCreateUser: true,
     },
   });
@@ -79,12 +88,12 @@ export async function verifySignInCode(
   }
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.verifyOtp({
+  const { data, error } = await supabase.auth.verifyOtp({
     email: email.data,
     token: token.data,
     type: "email",
   });
-  if (error) {
+  if (error || !data.user) {
     return {
       step: "code",
       email: email.data,
@@ -92,6 +101,8 @@ export async function verifySignInCode(
         "That code is wrong or has expired. Check the newest email, or go back to request a new one.",
     };
   }
+
+  await recordSignupOnce(createAdminClient, data.user, { utm: utmFromFormData(formData) }); // funnel: first sign-in only
 
   redirect(safeNextPath(formData.get("next")));
 }

@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { recordEvent } from "@/lib/analytics/events";
 import { getUser } from "@/lib/auth/session";
 import { isSameOrigin } from "@/lib/http/same-origin";
 import { buildCheckoutParams } from "@/lib/stripe/checkout";
@@ -44,6 +45,7 @@ export async function POST(request: NextRequest) {
       }),
     );
     if (!session.url) throw new Error("Stripe returned no checkout address.");
+    await recordEvent("checkout_started", { userId: user.id, path: `/pricing?plan=${plan}` }, createAdminClient); // funnel
     return NextResponse.redirect(session.url, 303);
   } catch (error) {
     console.error("stripe: could not start checkout", error instanceof StripeError ? { status: error.status, code: error.code } : "unexpected error");

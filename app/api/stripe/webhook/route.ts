@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { recordPurchaseOnce, type CheckoutLike } from "@/lib/analytics/funnel";
 import { createStripeApi, StripeError } from "@/lib/stripe/client";
 import { handleStripeEvent, parseEvent } from "@/lib/stripe/events";
 import { verifySignature } from "@/lib/stripe/signature";
@@ -33,6 +34,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const outcome = await handleStripeEvent({ ...createPaymentsDeps(createAdminClient()), stripe: createStripeApi() }, event);
+    if (outcome === "handled" && event.type === "checkout.session.completed") await recordPurchaseOnce(createAdminClient, event.data.object as unknown as CheckoutLike); // funnel
     return NextResponse.json({ received: true, outcome });
   } catch (error) {
     console.error("stripe: could not handle an event", { type: event.type, ...(error instanceof StripeError ? { status: error.status, code: error.code } : {}) });

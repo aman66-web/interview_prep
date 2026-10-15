@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { hasAccess } from "@/lib/access";
+import { recordStartOutcome } from "@/lib/analytics/funnel";
 import { startInterview } from "@/lib/ai/interview";
 import { isAiConfigured } from "@/lib/ai/llm";
 import { createInterviewStore } from "@/lib/ai/server";
@@ -21,6 +22,7 @@ export async function startInterviewAction(formData: FormData) {
 
   const paid = hasAccess(await getEntitlement(await createClient()), "all_cases");
   const outcome = await startInterview({ store: createInterviewStore(createAdminClient()) }, { userId: user.id, c, paid });
+  await recordStartOutcome(createAdminClient, outcome, { userId: user.id, slug }); // funnel: case_started or paywall_viewed
 
   switch (outcome.status) {
     case "started":

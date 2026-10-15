@@ -9,5 +9,5 @@ export async function proxy(request: NextRequest) {
 // Only the pages that need a login session. Public marketing pages skip it,
 // so they stay fast and cacheable.
 export const config = {
-  matcher: ["/app/:path*", "/login", "/auth/:path*"],
+  matcher: ["/app/:path*", "/admin", "/login", "/auth/:path*"],
 };

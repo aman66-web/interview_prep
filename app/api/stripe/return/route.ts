@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { recordPurchaseOnce } from "@/lib/analytics/funnel";
 import { getUser } from "@/lib/auth/session";
 import { createStripeApi, isStripeConfigured, StripeError } from "@/lib/stripe/client";
 import { applyCheckoutSession } from "@/lib/stripe/events";
@@ -25,7 +26,7 @@ export async function GET(request: NextRequest) {
     const session = await createStripeApi().retrieveCheckoutSession(sessionId);
     // Only the person who started this checkout may apply it.
     if (session.client_reference_id !== user.id) return back(request, "/app/account");
-    await applyCheckoutSession(deps, session);
+    if (await applyCheckoutSession(deps, session)) await recordPurchaseOnce(createAdminClient, session); // funnel: once per paid checkout
     return back(request, "/app/account?checkout=success");
   } catch (error) {
     console.error("stripe: could not confirm a checkout", error instanceof StripeError ? { status: error.status, code: error.code } : "unexpected error");

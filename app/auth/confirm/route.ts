@@ -1,6 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { recordSignupOnce } from "@/lib/analytics/funnel";
+import { appendUtm, utmFromSearchParams } from "@/lib/analytics/utm";
 import { parseSignInOtpType } from "@/lib/auth/schemas";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 // Where the link in the sign-in email lands.
@@ -21,13 +24,17 @@ export async function GET(request: NextRequest) {
     url.searchParams.set("token_hash", tokenHash);
     url.searchParams.set("type", type);
     url.searchParams.set("next", next);
+    appendUtm(url.searchParams, utmFromSearchParams(searchParams)); // campaign tags for the signup event, if the link carries them
     return NextResponse.redirect(url);
   }
 
   if (code) {
     const supabase = await createClient();
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) return NextResponse.redirect(new URL(next, origin));
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+    if (!error) {
+      await recordSignupOnce(createAdminClient, data.user, { utm: utmFromSearchParams(searchParams) }); // funnel: first sign-in only
+      return NextResponse.redirect(new URL(next, origin));
+    }
   }
 
   return NextResponse.redirect(new URL("/login?error=link_invalid", origin));
