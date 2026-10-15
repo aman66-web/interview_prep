@@ -7,7 +7,7 @@ import { makeRng, type Rng } from "@/lib/drills/rng";
 import { formatNumber } from "@/lib/tools/format";
 import { ALL_TOPICS, checkAnswer, formatAnswer, nextQuestion, randomSeed, ROUND_LENGTHS, TOPICS, type MathsQuestion, type Topic } from "@/lib/tools/mental-maths";
 import { cn } from "@/lib/ui/cn";
-import { NO_OUTLINE } from "./fields";
+import { NO_OUTLINE, NUMBER_INPUT_PROPS } from "./fields";
 
 // The mental maths trainer (/tools/mental-maths-trainer). Timed rounds of generated
 // questions, checked instantly. Everything happens in this browser tab: no answers
@@ -108,7 +108,7 @@ export function MentalMathsTrainer() {
   if (phase === "setup") {
     return (
       <div className="bg-night-glow rounded-[2rem] p-6 text-on-night sm:p-10">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center [&>*]:min-w-0">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-on-night-muted">Mental maths trainer</p>
             <h2 className="mt-4 text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl">
@@ -285,15 +285,13 @@ export function MentalMathsTrainer() {
             <label htmlFor={`${id}-answer`} className="sr-only">
               Your answer{question.unit ? ` (${question.unit === "%" ? "percent" : question.unit})` : ""}
             </label>
-            <div className={cn("flex h-14 flex-1 items-center gap-2 rounded-2xl bg-white/[0.08] px-5 ring-1 ring-inset ring-white/20 focus-within:ring-2 focus-within:ring-lime", inputError && "ring-2 ring-[#fca5a5]")}>
+            {/* flex-1 only in the row layout: in the stacked phone layout it would squash the box below h-14. */}
+            <div className={cn("flex h-14 items-center gap-2 sm:flex-1 rounded-2xl bg-white/[0.08] px-5 ring-1 ring-inset ring-white/20 focus-within:ring-2 focus-within:ring-lime", inputError && "ring-2 ring-[#fca5a5]")}>
               {question.unit === "$" || question.unit === "$ million" ? <span aria-hidden="true" className="text-lg text-on-night-muted">$</span> : null}
               <input
                 id={`${id}-answer`}
                 ref={inputRef}
-                type="text"
-                inputMode="decimal"
-                autoComplete="off"
-                spellCheck={false}
+                {...NUMBER_INPUT_PROPS}
                 value={answer}
                 onChange={(e) => {
                   setAnswer(e.target.value);

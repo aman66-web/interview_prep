@@ -5,8 +5,24 @@
  * Calm, credible and fast: a warm light canvas, white cards with large radii,
  * near-black pill buttons, one lime accent used sparingly, and indigo for data.
  * Every colour has a dark-mode twin; the theme follows the visitor's system setting.
+ *
+ * Text contrast (WCAG AA needs 4.5:1 for normal text), checked 15 Oct 2026:
+ *   light --subtle #66666f: canvas 5.11, surface 5.68, surface-2 5.30, surface-3 4.80,
+ *     warning-soft 5.15, pastels (lavender, mint, peach, sky, butter) 4.75 to 5.25
+ *   dark --subtle #8a8a94: canvas 5.75, surface 5.38, surface-2 5.08, surface-3 4.58,
+ *     warning-soft 4.64, pastels 4.52 to 4.86
+ *   light --warning #92570a: canvas 5.26, surface 5.85, surface-2 5.45, surface-3 4.94,
+ *     warning-soft 5.30
+ *   dark --warning #fbbf24: canvas 11.78, surface 11.01, surface-2 10.39, surface-3 9.37,
+ *     warning-soft 9.51
+ *   light --success #14733a: canvas 5.33, surface 5.93, surface-2 5.52, surface-3 5.00,
+ *     success-soft 5.29
+ * tests/site-shell.test.ts recomputes all of these, plus ink, muted, danger and the dark twins.
+ * Re-check these if you change a text or background token.
  */
 :root {
+  /* Browser-drawn parts (scrollbars, form controls) follow the theme. */
+  color-scheme: light;
   --canvas: #f3f3f0;
   --surface: #ffffff;
   --surface-2: #f7f7f4;
@@ -14,7 +30,7 @@
   --ink: #0d0d10;
   --ink-contrast: #ffffff;
   --muted: #55555e;
-  --subtle: #8b8b94;
+  --subtle: #66666f;
   --line: #e3e3de;
   --line-strong: #cfcfc8;
 
@@ -36,9 +52,9 @@
   --on-night: #f5f6fa;
   --on-night-muted: #a9afc4;
 
-  --success: #15803d;
+  --success: #14733a;
   --success-soft: #e6f6ec;
-  --warning: #a16207;
+  --warning: #92570a;
   --warning-soft: #fdf3dc;
   --danger: #c2271d;
   --danger-soft: #fdecea;
@@ -56,6 +72,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --canvas: #0b0b0d;
     --surface: #141417;
     --surface-2: #1a1a1e;
@@ -63,7 +80,7 @@
     --ink: #f3f3f4;
     --ink-contrast: #0d0d10;
     --muted: #a7a7b0;
-    --subtle: #7d7d87;
+    --subtle: #8a8a94;
     --line: #2a2a30;
     --line-strong: #3a3a42;
 
@@ -245,11 +262,19 @@ p {
     var(--night);
 }
 
-/* Frosted glass for cards that float over colour. */
+/* Frosted glass for cards that float over colour. Write only the standard
+   backdrop-filter: the CSS optimiser adds the -webkit- copy itself, and a hand-written
+   -webkit- line makes it drop the standard one (so Chrome and Firefox got no blur). */
 .glass {
   background: color-mix(in oklab, var(--surface) 72%, transparent);
   backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* The sticky header and phone menu sit over page text, so they stay readable even
+   where the blur is not drawn: nearly opaque, with the blur as a finishing touch. */
+.glass-bar {
+  background: color-mix(in oklab, var(--surface) 94%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
 }
 
 /* A faint dot grid for texture. */

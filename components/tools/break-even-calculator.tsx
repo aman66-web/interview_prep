@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { breakEven, type BreakEvenIssue, type BreakEvenResult } from "@/lib/tools/break-even";
 import { BREAK_EVEN_EXAMPLE } from "@/lib/tools/examples";
-import { formatMoney, formatMoneyCompact, formatNumber, formatPercent, formatYearsMonths, parseNumberInput } from "@/lib/tools/format";
+import { formatMoney, formatMoneyCompact, formatNumber, formatPercent, formatYearsMonths, invalidNumberMessage, parseNumberInput } from "@/lib/tools/format";
 import { Announcer, CURRENCIES, type CurrencySymbol, NumberField, SelectField, Stat } from "./fields";
 
 // The break-even calculator (/tools/break-even-calculator). Everything is worked out
@@ -20,7 +20,7 @@ function read(values: Record<Field, string>) {
   for (const field of Object.keys(values) as Field[]) {
     const parsed = parseNumberInput(values[field]);
     if (parsed.kind === "number") numbers[field] = parsed.value;
-    else if (parsed.kind === "invalid") errors[field] = "Enter a number, like 1,200 or 4.50.";
+    else if (parsed.kind === "invalid") errors[field] = invalidNumberMessage(parsed, "Enter a number, like 1,200 or 4.50.");
     else if (REQUIRED.includes(field)) errors[field] = "Enter a number.";
     else numbers[field] = null;
   }

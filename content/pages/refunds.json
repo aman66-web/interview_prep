@@ -11,7 +11,7 @@
       "type": "callout",
       "tone": "warning",
       "title": "Note for the founder",
-      "text": "[Founder: check with a lawyer how the 7-day policy fits the 14-day cancellation right; the checkout may need a consent tick box.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. The checkout does not ask for that consent yet."
+      "text": "[Founder: ask a lawyer to check the 7-day policy and the tick-box wording against the 14-day cancellation right.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout now asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
     },
     {
       "type": "callout",
@@ -32,6 +32,10 @@
     {
       "type": "p",
       "text": "This applies to both the Monthly plan and the 90-Day Pass. Drills don't count towards the limit."
+    },
+    {
+      "type": "p",
+      "text": "Before you pay, we ask you to confirm that you want access to start straight away and that you understand you lose the 14-day right to cancel once you start using your plan. This refund policy is on top of that, and it does not affect your other legal rights."
     },
 
     { "type": "h2", "id": "how-to-ask", "text": "How to ask for a refund" },

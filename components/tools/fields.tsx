@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/ui/cn";
 
 // Form pieces shared by the free tools: labelled number fields with units, selects,
@@ -46,8 +46,16 @@ type NumberFieldProps = {
 };
 
 /**
- * A text box for numbers (type="text" with a decimal keypad, so 1,200, 4.8bn and 12%
- * all work). The unit sits inside the box and is part of the label for screen readers.
+ * Keyboard settings for a box that takes typed numbers. A full keyboard, not the decimal
+ * keypad: on an iPhone the decimal keypad has no minus sign, no % and no letters (so -3,
+ * 12% and 4.8bn couldn't be typed), and where the phone's region writes decimals with a
+ * comma it offers only a comma. Autocorrect and capitals are off so 4m stays 4m.
+ */
+export const NUMBER_INPUT_PROPS = { type: "text", inputMode: "text", autoComplete: "off", autoCapitalize: "off", autoCorrect: "off", spellCheck: false } as const;
+
+/**
+ * A text box for numbers (1,200, -3, 4.8bn and 12% all work; see NUMBER_INPUT_PROPS).
+ * The unit sits inside the box and is part of the label for screen readers.
  */
 export function NumberField({ id, label, value, onChange, prefix, suffix, hint, error, optional, placeholder, className, hideLabel }: NumberFieldProps) {
   const describedBy = [hint ? `${id}-hint` : null, error ? `${id}-error` : null].filter(Boolean).join(" ") || undefined;
@@ -64,10 +72,7 @@ export function NumberField({ id, label, value, onChange, prefix, suffix, hint, 
         ) : null}
         <input
           id={id}
-          type="text"
-          inputMode="decimal"
-          autoComplete="off"
-          spellCheck={false}
+          {...NUMBER_INPUT_PROPS}
           value={value}
           placeholder={placeholder}
           onChange={(e) => onChange(e.target.value)}
@@ -212,6 +217,54 @@ export function Announcer({ text }: { text: string }) {
     <p className="sr-only" aria-live="polite" aria-atomic="true">
       {settled}
     </p>
+  );
+}
+
+/**
+ * The rounded frame for a wide table. When the table is wider than the space it has
+ * (on a phone, say), the frame becomes a labelled region that keyboard users can tab to
+ * and scroll with the arrow keys, a fade on the right edge shows there is more, and a
+ * short line under it says so. When everything fits, it is just the frame.
+ */
+export function ScrollRegion({ label, children, className }: { label: string; children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [state, setState] = useState({ scrollable: false, atEnd: true });
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () => {
+      const scrollable = el.scrollWidth > el.clientWidth + 1;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      setState((s) => (s.scrollable === scrollable && s.atEnd === atEnd ? s : { scrollable, atEnd }));
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    if (el.firstElementChild) observer.observe(el.firstElementChild);
+    el.addEventListener("scroll", update, { passive: true });
+    return () => {
+      observer.disconnect();
+      el.removeEventListener("scroll", update);
+    };
+  }, []);
+  return (
+    <div className={cn("min-w-0", className)}>
+      <div className="relative">
+        <div
+          ref={ref}
+          role={state.scrollable ? "region" : undefined}
+          aria-label={state.scrollable ? label : undefined}
+          tabIndex={state.scrollable ? 0 : undefined}
+          className="overflow-x-auto rounded-[1.5rem] ring-1 ring-inset ring-line"
+        >
+          {children}
+        </div>
+        {state.scrollable && !state.atEnd ? (
+          <div aria-hidden="true" className="pointer-events-none absolute inset-y-px right-px w-12 rounded-r-[1.5rem] bg-gradient-to-l from-surface to-transparent" />
+        ) : null}
+      </div>
+      {state.scrollable ? <p className="mt-2 text-xs text-muted">Scroll sideways to see every column.</p> : null}
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { StoredDebrief } from "@/lib/ai/schema";
 import { formatDay, nextStep, recommendCase, summariseProgress, toProgressSessions, usageCounts, type CaseLite, type ProgressSession, type SessionRow } from "./progress";
-import { formatScore, overallScore, SKILLS, strongestSkill, weakestSkill } from "./skills";
+import { focusSkill, formatScore, overallScore, SKILLS, strongestSkill, weakestSkill } from "./skills";
 
 function debrief(scores: StoredDebrief["scores"], maths = { attempted: 1, correct: 1, total: 2 }): StoredDebrief {
   return { version: 1, scores, strengths: [], fixes: [], summary: "A summary.", maths: { ...maths, items: [] } };
@@ -24,6 +24,7 @@ const session = (id: string, caseId: string, startedAt: string, d: StoredDebrief
   startedAt,
   completedAt: done ? startedAt : null,
   debrief: d,
+  closed: false,
 });
 
 describe("skills", () => {
@@ -40,6 +41,13 @@ describe("skills", () => {
     expect(weakestSkill(s1)).toBe("synthesis");
     expect(strongestSkill(s1)).toBe("structure");
     expect(weakestSkill({ structure: 3, analysis_maths: 3, business_judgement: 3, communication: 3, synthesis: 3 })).toBe("structure");
+  });
+
+  it("names no skill to focus on when all five scores are equal, as the debrief does", () => {
+    expect(focusSkill({ structure: 3, analysis_maths: 3, business_judgement: 3, communication: 3, synthesis: 3 })).toBeNull();
+    expect(focusSkill({ structure: 4.5, analysis_maths: 4.5, business_judgement: 4.5, communication: 4.5, synthesis: 4.5 })).toBeNull();
+    expect(focusSkill(s1)).toBe("synthesis");
+    expect(focusSkill({ structure: 2, analysis_maths: 3, business_judgement: 2, communication: 3, synthesis: 3 })).toBe("structure");
   });
 
   it("formats scores with at most one decimal place", () => {
@@ -140,6 +148,20 @@ describe("nextStep", () => {
     expect(nextStep({ sessions, cases: CASES, paid: false, freeAllowance: 1 })).toEqual({ kind: "case", caseId: "case-003", slug: "entry-easy", locked: true, newType: true });
   });
 
+  it("never tells a new free user they have used their free interview when the free starter is not shown", () => {
+    const noStarter = CASES.filter((c) => !c.free_starter);
+    expect(nextStep({ sessions: [], cases: noStarter, paid: false, freeAllowance: 1 })).toEqual({ kind: "starter_unavailable" });
+    expect(nextStep({ sessions: [], cases: [], paid: false, freeAllowance: 1 })).toEqual({ kind: "starter_unavailable" });
+  });
+
+  it("still offers paid users a case, and free users who used their interview a locked one, when the starter is hidden", () => {
+    const noStarter = CASES.filter((c) => !c.free_starter);
+    expect(nextStep({ sessions: [], cases: noStarter, paid: true, freeAllowance: 1 }).kind).toBe("case");
+    const used = [session("done", "case-001", "2026-10-01T10:00:00Z", debrief(s1))];
+    expect(nextStep({ sessions: used, cases: noStarter, paid: false, freeAllowance: 1 })).toMatchObject({ kind: "case", locked: true });
+    expect(nextStep({ sessions: used, cases: [], paid: false, freeAllowance: 1 })).toEqual({ kind: "upgrade" });
+  });
+
   it("suggests upgrading or browsing when nothing is left to recommend", () => {
     const all = CASES.map((c, i) => session(`s${i}`, c.id, `2026-10-0${i + 1}T10:00:00Z`, debrief(s1)));
     expect(nextStep({ sessions: all, cases: CASES, paid: false, freeAllowance: 1 }).kind).toBe("upgrade");
@@ -150,5 +172,35 @@ describe("nextStep", () => {
 describe("formatDay", () => {
   it("writes dates the British way", () => {
     expect(formatDay("2026-10-15T12:00:00Z")).toBe("15 Oct 2026");
+  });
+});
+
+describe("interviews closed by the clean-up", () => {
+  const NOW = new Date("2027-10-20T12:00:00Z");
+  const rows: SessionRow[] = [
+    // Closed by the clean-up: end date a year back, no debrief.
+    { id: "a", case_id: "case-001", started_at: "2026-09-01T10:00:00Z", completed_at: "2026-10-19T12:00:00Z", scores: { unfinished: true, redacted_at: "2027-10-19T03:17:00Z" } },
+    // Never finished and past the retention period, but the clean-up has not run yet.
+    { id: "b", case_id: "case-002", started_at: "2026-09-02T10:00:00Z", completed_at: null, scores: null },
+    // A recent unfinished interview: still in progress.
+    { id: "c", case_id: "case-003", started_at: "2027-10-19T10:00:00Z", completed_at: null, scores: null },
+  ];
+
+  it("marks them closed, never finished and never continuable", () => {
+    const sessions = toProgressSessions(rows, NOW);
+    expect(sessions.map((s) => [s.id, s.closed, s.completedAt])).toEqual([
+      ["a", true, null],
+      ["b", true, null],
+      ["c", false, null],
+    ]);
+    const p = summariseProgress(sessions);
+    expect(p.scored).toEqual([]);
+    expect(p.inProgress.map((s) => s.id)).toEqual(["c"]);
+  });
+
+  it("does not offer to continue a closed interview", () => {
+    const sessions = toProgressSessions(rows.slice(0, 2), NOW);
+    const step = nextStep({ sessions, cases: CASES, paid: true, freeAllowance: 1 });
+    expect(step.kind).not.toBe("continue");
   });
 });

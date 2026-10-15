@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AccentTitle, DraftNote, slugify } from "@/components/learn/article";
+import { AccentTitle, DraftNotice, slugify } from "@/components/learn/article";
 import { pageOpenGraph } from "@/components/learn/seo";
 import { Faq, faqJsonLd, JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Mail } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
-import { showDrafts } from "@/lib/content/cases";
-import { findPage, formatDate } from "@/lib/content/writing";
+import { findPage, formatDate, withoutPlaceholders } from "@/lib/content/writing";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
@@ -21,6 +20,9 @@ export function generateMetadata(): Metadata {
     description: page.description,
     alternates: { canonical: "/faq" },
     openGraph: pageOpenGraph({ title: page.seo_title, description: page.description, path: "/faq" }),
+    // A draft still holds the founder's square-bracket notes: keep it out of search
+    // results (and the sitemap) until it is approved.
+    ...(page.status === "draft" ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -69,13 +71,20 @@ export default function FaqPage() {
   if (!page) notFound();
   const groups = page.faq.map((g) => ({ ...g, id: slugify(g.heading) }));
   const links = page.blocks.flatMap((b) => (b.type === "links" ? b.items : []));
-  const allItems = groups.flatMap((g) => g.items);
+  // Search engines get only finished answers: one still holding a square-bracket note
+  // (or an unfilled "[support email]") stays on the page but out of the structured data.
+  const finishedItems = withoutPlaceholders(groups.flatMap((g) => g.items));
 
   return (
     <>
-      <PageHeader eyebrow="FAQ" title={<AccentTitle title={page.title} />} intro={page.intro}>
-        {showDrafts() && page.status === "draft" ? <DraftNote>Draft: waiting for the founder&rsquo;s approval. This note shows on previews only.</DraftNote> : null}
-      </PageHeader>
+      <PageHeader eyebrow="FAQ" title={<AccentTitle title={page.title} />} intro={page.intro} />
+
+      {/* Shown on the live site too while the page is a draft (like the legal pages). */}
+      {page.status === "draft" ? (
+        <Container className="mt-6">
+          <DraftNotice />
+        </Container>
+      ) : null}
 
       <Container className="mt-8 sm:mt-14">
         <div className="grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14">
@@ -139,7 +148,7 @@ export default function FaqPage() {
         <div className="h-16 sm:h-24" />
       </Container>
 
-      <JsonLd data={faqJsonLd(allItems)} />
+      {finishedItems.length > 0 ? <JsonLd data={faqJsonLd(finishedItems)} /> : null}
     </>
   );
 }

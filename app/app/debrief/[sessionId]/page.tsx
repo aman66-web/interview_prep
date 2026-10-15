@@ -10,8 +10,9 @@ import { ArrowLeft, Award, Calculator, Check, Cross, Lock, Share, Sparkle, Targe
 import { Container } from "@/components/ui/layout";
 import { hasAccess } from "@/lib/access";
 import { storedDebriefSchema } from "@/lib/ai/schema";
+import { closedUnfinishedMessage, isClosedUnfinished, isExpiredUnfinished } from "@/lib/retention/expired";
 import { formatDay } from "@/lib/app/progress";
-import { formatScore, overallScore, SKILLS, skillInfo, strongestSkill, weakestSkill } from "@/lib/app/skills";
+import { focusSkill, formatScore, overallScore, SKILLS, skillInfo, strongestSkill } from "@/lib/app/skills";
 import { getEntitlement } from "@/lib/auth/entitlement";
 import { requireUser } from "@/lib/auth/session";
 import { visibleCases } from "@/lib/content/cases";
@@ -44,12 +45,37 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
   const supabase = await createClient();
   const { data: session } = await supabase
     .from("case_sessions")
-    .select("id, case_id, completed_at, scores")
+    .select("id, case_id, started_at, completed_at, scores")
     .eq("id", sessionId)
     .maybeSingle();
   if (!session) notFound();
   const c = visibleCases().find((x) => x.id === session.case_id);
   if (!c) notFound();
+
+  // Never finished and past the retention period: the transcript is gone (or about to be),
+  // so there is nothing to continue and no debrief to show (lib/retention/expired.ts).
+  if (isClosedUnfinished(session.scores) || isExpiredUnfinished({ startedAt: session.started_at, completedAt: session.completed_at })) {
+    return (
+      <>
+        <BackLink />
+        <Container size="narrow" className="pt-2">
+          <Card padding="lg">
+            <h1 className="text-3xl font-medium tracking-tight text-ink">{c.title}</h1>
+            <p className="mt-4 text-muted">{closedUnfinishedMessage()}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href={`/cases/${c.slug}`} arrow>
+                Try this case again
+              </ButtonLink>
+              <ButtonLink href="/app" variant="secondary">
+                Back to your dashboard
+              </ButtonLink>
+            </div>
+          </Card>
+        </Container>
+        <div className="h-10" />
+      </>
+    );
+  }
 
   if (!session.completed_at) {
     return (
@@ -101,8 +127,8 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
   const spread = Math.max(...values) > Math.min(...values);
   // "Strongest" only when one skill is clearly ahead; "Focus next" goes to the lowest (first listed on a tie).
   const strongest = spread && values.filter((v) => v === Math.max(...values)).length === 1 ? strongestSkill(d.scores) : null;
-  const weakest = spread ? weakestSkill(d.scores) : null;
-  const focusSkill = weakest ? skillInfo(weakest) : null;
+  const weakest = focusSkill(d.scores); // null when all five scores are equal
+  const focus = weakest ? skillInfo(weakest) : null;
 
   return (
     <>
@@ -152,7 +178,7 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
                 >
                   <Share size={16} /> Share your scores
                 </Link>
-                {focusSkill ? (
+                {focus ? (
                   <ButtonLink href="#fixes" variant="inverse" arrow>
                     See what to fix next
                   </ButtonLink>
@@ -254,11 +280,11 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
               ))}
             </ul>
           )}
-          {focusSkill ? (
+          {focus ? (
             <p className="mt-4 text-sm text-muted">
-              Your lowest score was {focusSkill.label.toLowerCase()}.{" "}
-              <Link href={`/guides/${focusSkill.guide.slug}`} className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
-                Read: {focusSkill.guide.title}
+              Your lowest score was {focus.label.toLowerCase()}.{" "}
+              <Link href={`/guides/${focus.guide.slug}`} className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
+                Read: {focus.guide.title}
               </Link>
             </p>
           ) : null}

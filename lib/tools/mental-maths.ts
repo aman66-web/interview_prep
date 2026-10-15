@@ -1,5 +1,5 @@
 import { makeRng, pick, type Rng } from "@/lib/drills/rng";
-import { formatCompact, formatNumber, parseNumberInput } from "./format";
+import { formatCompact, formatNumber, invalidNumberMessage, parseNumberInput } from "./format";
 
 // Questions for the free mental maths trainer (/tools/mental-maths-trainer). They are
 // generated in the visitor's browser, so this file is separate from the drills on
@@ -56,6 +56,24 @@ const EXACT = { abs: 1e-9, rel: 1e-9 };
 const n = (x: number, digits = 2) => formatNumber(x, digits);
 const isWhole = (x: number) => Math.abs(x - Math.round(x)) < 1e-9;
 const clean = (x: number) => Math.round(x * 1e9) / 1e9;
+
+/**
+ * A big number in words that is exactly the number, never rounded: 1.125 billion, not
+ * 1.13 billion (the trainer marks answers exactly, so a rounded short form would be
+ * marked wrong if typed). Falls back to the full number if no short form is exact.
+ */
+export function exactShort(x: number): string {
+  for (const [size, word] of [
+    [1e9, "billion"],
+    [1e6, "million"],
+  ] as const) {
+    if (Math.abs(x) < size) continue;
+    const text = `${n(x / size, 6)} ${word}`;
+    const back = parseNumberInput(text);
+    if (back.kind === "number" && Math.abs(back.value - x) < 1e-6) return text;
+  }
+  return n(x);
+}
 
 type Maker = (rng: Rng) => MathsQuestion | null;
 
@@ -262,7 +280,7 @@ const makers: Record<QuestionKind, { topic: Topic; make: Maker }> = {
         unit: "$",
         scale: 1,
         tolerance: EXACT,
-        explanation: `$${shown} ÷ ${n(count)} = $${n(each)}${each >= 1e6 ? ` (${formatCompact(each)})` : ""}. Divide the digits first, then count the zeros. Check: ${n(count)} × $${n(each)} gets you back to $${shown}.`,
+        explanation: `$${shown} ÷ ${n(count)} = $${n(each)}${each >= 1e6 ? ` (${exactShort(each)})` : ""}. Divide the digits first, then count the zeros. Check: ${n(count)} × $${n(each)} gets you back to $${shown}.`,
         inputs: { total, count },
       };
     },
@@ -282,7 +300,7 @@ const makers: Record<QuestionKind, { topic: Topic; make: Maker }> = {
         unit: "$",
         scale: 1,
         tolerance: EXACT,
-        explanation: `${n(millions)} × ${n(spend)} = ${n(millions * spend)}, and the millions carry over: $${formatCompact(answer)}, or $${n(answer)}. You can type it as ${n(millions * spend)}m.`,
+        explanation: `${n(millions)} × ${n(spend)} = ${n(millions * spend)}, and the millions carry over: $${exactShort(answer)}, or $${n(answer)}. You can type it as ${n(millions * spend)}m.`,
         inputs: { people, spend },
       };
     },
@@ -397,7 +415,7 @@ export function checkAnswer(q: MathsQuestion, raw: string): AnswerCheck {
   // "8,000 units" and "2.5 years" are fine: the unit word is dropped before reading the number.
   const parsed = parseNumberInput(raw.replace(/\s*(units?|years?|yrs?)\s*$/i, ""));
   if (parsed.kind === "empty") return { valid: false, message: "Type an answer first, or press Skip." };
-  if (parsed.kind === "invalid") return { valid: false, message: "Type a number, such as 120, 12.5 or 4m." };
+  if (parsed.kind === "invalid") return { valid: false, message: invalidNumberMessage(parsed, "Type a number, such as 120, 12.5 or 4m.") };
   const given = parsed.value;
   const correct = within(given, q) || (q.scale !== 1 && within(given / q.scale, q));
   return { valid: true, correct, given };

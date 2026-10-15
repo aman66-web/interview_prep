@@ -4,9 +4,18 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { GET } from "@/app/api/cron/cleanup/route";
 import { storedDebriefSchema, type StoredDebrief } from "@/lib/ai/schema";
 import { EVENT_RETENTION_DAYS } from "@/lib/analytics/events";
+import { nextStep, summariseProgress, toProgressSessions, type CaseLite } from "@/lib/app/progress";
 import { checkCronAuth } from "@/lib/retention/auth";
 import { cutoff, runRetentionCleanup, type RetentionStore, type SessionToRedact } from "@/lib/retention/cleanup";
+import {
+  closedUnfinishedMessage,
+  closedUnfinishedScores,
+  isClosedUnfinished,
+  isExpiredUnfinished,
+  transcriptCutoff,
+} from "@/lib/retention/expired";
 import { isRedacted, REDACTED_DETAIL, redactDebrief } from "@/lib/retention/redact";
+import { createRetentionStore } from "@/lib/retention/store-supabase";
 import { siteConfig } from "@/site.config";
 
 // The retention clean-up (SPEC section 9, rule 2.7).
@@ -70,16 +79,31 @@ describe("redactDebrief", () => {
   });
 });
 
+type MemorySession = SessionToRedact & { started_at: string; completed_at: string | null; summary_covers: number };
+
 /** An in-memory database for the clean-up. */
 function memoryStore() {
   const db = {
     messages: [] as { id: string; created_at: string }[],
-    sessions: [] as (SessionToRedact & { started_at: string })[],
+    sessions: [] as MemorySession[],
     events: [] as { id: string; created_at: string }[],
     saves: 0,
+    steps: [] as string[],
   };
   const store: RetentionStore = {
+    async closeUnfinishedBefore(c, scores) {
+      db.steps.push("close");
+      let closed = 0;
+      for (const s of db.sessions) {
+        if (s.completed_at === null && s.started_at < c) {
+          Object.assign(s, { completed_at: c, scores, summary: null, summary_covers: 0 });
+          closed++;
+        }
+      }
+      return closed;
+    },
     async deleteMessagesBefore(c) {
+      db.steps.push("messages");
       const before = db.messages.length;
       db.messages = db.messages.filter((m) => m.created_at >= c);
       return before - db.messages.length;
@@ -104,6 +128,19 @@ function memoryStore() {
 
 const ago = (days: number) => new Date(NOW.getTime() - days * DAY).toISOString();
 
+/** A session row for the memory store: finished (with a debrief) unless `finished` is false. */
+function row(id: string, startedDaysAgo: number, opts: { finished?: boolean; summary?: string | null; covers?: number } = {}): MemorySession {
+  const finished = opts.finished ?? true;
+  return {
+    id,
+    started_at: ago(startedDaysAgo),
+    completed_at: finished ? ago(startedDaysAgo - 0.01) : null,
+    scores: finished ? debrief : null,
+    summary: opts.summary ?? null,
+    summary_covers: opts.covers ?? 0,
+  };
+}
+
 describe("runRetentionCleanup", () => {
   it("deletes old messages and events and redacts old interviews, leaving recent ones alone", async () => {
     const { db, store } = memoryStore();
@@ -111,14 +148,22 @@ describe("runRetentionCleanup", () => {
     const old = siteConfig.transcriptRetentionDays + 1;
     db.messages.push({ id: "m-old", created_at: ago(old) }, { id: "m-new", created_at: ago(keep) });
     db.sessions.push(
-      { id: "s-old", started_at: ago(old), scores: debrief, summary: "rolling summary of what they said" },
-      { id: "s-abandoned", started_at: ago(old), scores: null, summary: "they said hello" },
-      { id: "s-new", started_at: ago(keep), scores: debrief, summary: "recent" },
+      row("s-old", old, { summary: "rolling summary of what they said" }),
+      row("s-abandoned", old, { finished: false, summary: "they said hello", covers: 4 }),
+      row("s-new", keep, { summary: "recent" }),
     );
     db.events.push({ id: "e-old", created_at: ago(EVENT_RETENTION_DAYS + 1) }, { id: "e-new", created_at: ago(EVENT_RETENTION_DAYS - 1) });
 
     const result = await runRetentionCleanup(store, { now: NOW });
-    expect(result).toMatchObject({ ok: true, messagesDeleted: 1, sessionsRedacted: 2, eventsDeleted: 1, moreSessionsLeft: false, failed: [] });
+    expect(result).toMatchObject({
+      ok: true,
+      sessionsClosed: 1,
+      messagesDeleted: 1,
+      sessionsRedacted: 1,
+      eventsDeleted: 1,
+      moreSessionsLeft: false,
+      failed: [],
+    });
     expect(result.transcriptCutoff).toBe(cutoff(NOW, siteConfig.transcriptRetentionDays));
     expect(result.eventCutoff).toBe(ago(EVENT_RETENTION_DAYS));
     expect(db.messages.map((m) => m.id)).toEqual(["m-new"]);
@@ -128,17 +173,18 @@ describe("runRetentionCleanup", () => {
     expect(sOld.summary).toBeNull();
     expect(storedDebriefSchema.parse(sOld.scores).scores).toEqual(debrief.scores);
     expect(isRedacted(sOld.scores)).toBe(true);
-    expect(sAbandoned).toMatchObject({ scores: null, summary: null });
+    expect(sAbandoned).toMatchObject({ completed_at: result.transcriptCutoff, summary: null, summary_covers: 0 });
+    expect(isClosedUnfinished(sAbandoned.scores)).toBe(true);
     expect(sNew).toMatchObject({ scores: debrief, summary: "recent" });
 
     // A second run has nothing left to do.
     const again = await runRetentionCleanup(store, { now: NOW });
-    expect(again).toMatchObject({ ok: true, messagesDeleted: 0, sessionsRedacted: 0, eventsDeleted: 0 });
+    expect(again).toMatchObject({ ok: true, sessionsClosed: 0, messagesDeleted: 0, sessionsRedacted: 0, eventsDeleted: 0 });
   });
 
   it("works through many old interviews in batches, and stops at the per-run limit", async () => {
     const { db, store } = memoryStore();
-    for (let i = 0; i < 25; i++) db.sessions.push({ id: `s${i}`, started_at: ago(400), scores: debrief, summary: null });
+    for (let i = 0; i < 25; i++) db.sessions.push(row(`s${i}`, 400));
     const first = await runRetentionCleanup(store, { now: NOW, batchSize: 5, maxBatches: 3 });
     expect(first).toMatchObject({ sessionsRedacted: 15, moreSessionsLeft: true });
     const second = await runRetentionCleanup(store, { now: NOW, batchSize: 5, maxBatches: 3 });
@@ -147,7 +193,7 @@ describe("runRetentionCleanup", () => {
 
   it("never loops forever if a save does not stick", async () => {
     const { db, store } = memoryStore();
-    db.sessions.push({ id: "stuck", started_at: ago(400), scores: debrief, summary: "x" });
+    db.sessions.push(row("stuck", 400, { summary: "x" }));
     store.saveRedactedSession = async () => {}; // pretend the update matched nothing
     const result = await runRetentionCleanup(store, { now: NOW });
     expect(result.sessionsRedacted).toBe(1);
@@ -163,6 +209,148 @@ describe("runRetentionCleanup", () => {
     expect(result).toMatchObject({ ok: false, failed: ["messages"], eventsDeleted: 0 });
     expect(error).toHaveBeenCalledOnce();
     error.mockRestore();
+  });
+});
+
+describe("closing interviews that were never finished (their transcript is deleted)", () => {
+  const days = siteConfig.transcriptRetentionDays;
+
+  it("closes every unfinished interview past the retention period before deleting any messages", async () => {
+    const { db, store } = memoryStore();
+    db.sessions.push(
+      row("old-unfinished-short", days + 3, { finished: false }), // no summary: the redaction step alone never touched it
+      row("old-unfinished-long", days + 30, { finished: false, summary: "what they said so far", covers: 12 }),
+      row("recent-unfinished", days - 1, { finished: false, summary: "still going", covers: 2 }),
+      row("old-finished", days + 3),
+    );
+    db.messages.push({ id: "m1", created_at: ago(days + 3) });
+
+    const result = await runRetentionCleanup(store, { now: NOW });
+    expect(result).toMatchObject({ ok: true, sessionsClosed: 2, failed: [] });
+    expect(db.steps.slice(0, 2)).toEqual(["close", "messages"]);
+
+    for (const id of ["old-unfinished-short", "old-unfinished-long"]) {
+      const s = db.sessions.find((x) => x.id === id)!;
+      expect(s, id).toMatchObject({ completed_at: result.transcriptCutoff, summary: null, summary_covers: 0 });
+      expect(s.scores, id).toEqual(closedUnfinishedScores(NOW));
+      expect(isClosedUnfinished(s.scores), id).toBe(true);
+      expect(isRedacted(s.scores), id).toBe(true); // so the redaction step leaves it alone
+      expect(storedDebriefSchema.safeParse(s.scores).success, id).toBe(false); // never shown as a debrief
+      expect(Date.parse(s.completed_at!)).toBeGreaterThan(Date.parse(s.started_at));
+    }
+    expect(db.sessions.find((x) => x.id === "recent-unfinished")).toMatchObject({ completed_at: null, summary: "still going", summary_covers: 2 });
+    expect(db.sessions.find((x) => x.id === "old-finished")!.completed_at).toBe(ago(days + 3 - 0.01));
+  });
+
+  it("is no longer offered on the dashboard as an interview to continue", async () => {
+    const { db, store } = memoryStore();
+    db.sessions.push(row("old-unfinished", days + 3, { finished: false }));
+    const cases: CaseLite[] = [{ id: "case-001", slug: "harbourline-bakeries", type: "profitability", difficulty: 1, free_starter: true }];
+    const sessions = () =>
+      toProgressSessions(
+        db.sessions.map((s) => ({ id: s.id, case_id: "case-001", started_at: s.started_at, completed_at: s.completed_at, scores: s.scores })),
+        NOW,
+      );
+
+    // Past the retention period it is treated as closed even before the clean-up runs.
+    expect(nextStep({ sessions: sessions(), cases, paid: true, freeAllowance: 1 }).kind).not.toBe("continue");
+    expect(sessions()[0].closed).toBe(true);
+    await runRetentionCleanup(store, { now: NOW });
+    expect(nextStep({ sessions: sessions(), cases, paid: true, freeAllowance: 1 }).kind).not.toBe("continue");
+    const progress = summariseProgress(sessions());
+    expect(progress.inProgress).toEqual([]);
+    expect(progress.scored).toEqual([]); // closed, but never scored
+  });
+
+  it("carries on with the other steps if closing fails", async () => {
+    const { db, store } = memoryStore();
+    db.messages.push({ id: "m1", created_at: ago(days + 3) });
+    const error = vi.spyOn(console, "error").mockImplementation(() => {});
+    store.closeUnfinishedBefore = async () => {
+      throw new Error("Database error while closing old unfinished sessions: 57014");
+    };
+    const result = await runRetentionCleanup(store, { now: NOW });
+    expect(result).toMatchObject({ ok: false, failed: ["closing"], sessionsClosed: 0, messagesDeleted: 1 });
+    error.mockRestore();
+  });
+
+  it("knows which unfinished interviews are past the retention period, for pages that run before the clean-up", () => {
+    const cut = transcriptCutoff(NOW, days);
+    expect(cut.toISOString()).toBe(cutoff(NOW, days));
+    const at = (ms: number) => new Date(ms).toISOString();
+    expect(isExpiredUnfinished({ startedAt: at(cut.getTime() - 1), completedAt: null }, NOW)).toBe(true);
+    expect(isExpiredUnfinished({ startedAt: at(cut.getTime()), completedAt: null }, NOW)).toBe(false);
+    expect(isExpiredUnfinished({ startedAt: ago(days - 1), completedAt: null }, NOW)).toBe(false);
+    expect(isExpiredUnfinished({ startedAt: ago(days + 50), completedAt: ago(days + 49) }, NOW)).toBe(false);
+    expect(isExpiredUnfinished({ startedAt: "not a date", completedAt: null }, NOW)).toBe(false);
+    expect(isExpiredUnfinished({ startedAt: ago(40), completedAt: null }, NOW, 30)).toBe(true);
+  });
+
+  it("marks a closed interview so it is never mistaken for a debrief or a finished one", () => {
+    expect(isClosedUnfinished(closedUnfinishedScores(NOW))).toBe(true);
+    for (const other of [null, undefined, "x", [], debrief, redactDebrief(debrief, NOW), { unfinished: true }, { redacted_at: "x" }]) {
+      expect(isClosedUnfinished(other)).toBe(false);
+    }
+    expect(closedUnfinishedMessage(365)).toMatch(/never finished.*365 days.*transcript was deleted/);
+  });
+});
+
+describe("the clean-up's database queries", () => {
+  type Call = { table: string; op: string; payload?: unknown; options?: unknown; filters: unknown[][] };
+  function fakeDb(reply: (call: Call) => { count?: number; error?: { code?: string; message: string } | null }) {
+    const calls: Call[] = [];
+    const db = {
+      from(table: string) {
+        const call: Call = { table, op: "select", filters: [] };
+        const chain: Record<string, unknown> = {};
+        const step =
+          (name: string) =>
+          (...args: unknown[]) => {
+            call.filters.push([name, ...args]);
+            return chain;
+          };
+        Object.assign(chain, {
+          update: (payload: unknown, options?: unknown) => ((call.op = "update"), (call.payload = payload), (call.options = options), chain),
+          is: step("is"),
+          lt: step("lt"),
+          eq: step("eq"),
+          then: (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) => {
+            calls.push(call);
+            return Promise.resolve()
+              .then(() => ({ data: null, error: null, count: null, ...reply(call) }))
+              .then(resolve, reject);
+          },
+        });
+        return chain;
+      },
+    };
+    return { db: db as unknown as Parameters<typeof createRetentionStore>[0], calls };
+  }
+
+  it("closes only unfinished sessions started before the cutoff, in one update", async () => {
+    const { db, calls } = fakeDb(() => ({ count: 3 }));
+    const marker = closedUnfinishedScores(NOW);
+    const cut = cutoff(NOW, siteConfig.transcriptRetentionDays);
+    expect(await createRetentionStore(db).closeUnfinishedBefore(cut, marker)).toBe(3);
+    expect(calls).toEqual([
+      {
+        table: "case_sessions",
+        op: "update",
+        payload: { completed_at: cut, scores: marker, summary: null, summary_covers: 0 },
+        options: { count: "exact" },
+        filters: [
+          ["is", "completed_at", null],
+          ["lt", "started_at", cut],
+        ],
+      },
+    ]);
+  });
+
+  it("reports a database error by its code only", async () => {
+    const { db } = fakeDb(() => ({ error: { code: "57014", message: "canceling statement due to statement timeout" } }));
+    await expect(createRetentionStore(db).closeUnfinishedBefore("2025-10-15T00:00:00.000Z", closedUnfinishedScores(NOW))).rejects.toThrow(
+      "Database error while closing old unfinished sessions: 57014",
+    );
   });
 });
 

@@ -6,7 +6,11 @@ import type { CardView } from "./card";
 // site's default preview. Satori supports flexbox and inline styles only, so these
 // use plain style objects. Colours are the design system's night palette
 // (docs/DESIGN.md: white and raw hex are fine inside night panels). The default
-// font that ships with next/og is used, so nothing is fetched from the internet.
+// font that ships with next/og (Geist) is used. next/og fetches a font from Google
+// Fonts only for a character Geist lacks, so everything drawn here must stay within
+// Geist: our own fixed text, the case titles, and a first name, which is limited to
+// the letters Geist has (lib/share/token.ts; tests/share.test.ts renders the card
+// with the internet switched off to prove nothing is fetched).
 // No firm names or logos (rule 2.3).
 
 export const IMAGE_SIZE = { width: 1200, height: 630 } as const;
@@ -48,8 +52,9 @@ function Brand({ size = 52, fontSize = 34 }: { size?: number; fontSize?: number 
 function Kicker({ children }: { children: string }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20, letterSpacing: 4, color: C.muted, textTransform: "uppercase" }}>
-      <div style={{ display: "flex", width: 10, height: 10, borderRadius: 999, background: C.lime }} />
-      {children}
+      <div style={{ display: "flex", flexShrink: 0, width: 10, height: 10, borderRadius: 999, background: C.lime }} />
+      {/* A long first name with no spaces breaks inside the word rather than running into the scores panel. */}
+      <div style={{ display: "flex", flex: 1, minWidth: 0, wordBreak: "break-word" }}>{children}</div>
     </div>
   );
 }
@@ -72,6 +77,66 @@ function Frame({ children }: { children: ReactElement | ReactElement[] }) {
       {children}
     </div>
   );
+}
+
+// The left column of the share card has a fixed size (500 px wide). A long first name
+// puts the heading on two lines and a long case title takes three; together they would
+// push the date line over the title. So the title's size is picked to fit, from an
+// estimate of how the text wraps (typical Geist letter widths by kind of letter,
+// rounded up a little). tests/share.test.ts checks the estimate against how the
+// current cases and some long names really wrap.
+const COLUMN_WIDTH = 500;
+const KICKER_TEXT_WIDTH = COLUMN_WIDTH - 10 - 12; // minus the dot and the gap after it
+const KICKER_LINE = 26; // 20 px text at Geist's normal line height (1.3)
+/**
+ * Height left for the heading and the title, in px: the column (about 366 px) less the
+ * gaps (18 + 14), the date line (about 29) and the overall score (132) is about 173;
+ * a few px more is fine, because the top of the big score's line is empty space.
+ */
+const HEADING_AND_TITLE_ROOM = 176;
+const TITLE_SIZES = [56, 46, 40, 34, 30] as const;
+
+const THIN = new Set([..." '’.,:;!|()Iijl1ІЇіїј"]);
+const NARROW = new Set([..."-rtfJЈ"]);
+const WIDE = new Set([..."WMŴẀẂẄÆŒĲЉЊЩШЮЖҖМЫФЋЂЪѢДҢЦwmŵẁẃẅæœљњщшюжҗмыфѫ"]);
+
+/** About how wide one character is in Geist, as a share of the font size. */
+export function charWidthEm(ch: string): number {
+  if (THIN.has(ch)) return 0.3;
+  if (NARROW.has(ch)) return 0.42;
+  if (WIDE.has(ch)) return 0.95;
+  return ch !== ch.toLowerCase() ? 0.68 : 0.57;
+}
+
+/** How many lines `text` takes, wrapped at spaces and after hyphens; a word longer than a line is broken. */
+export function estimateLines(text: string, width: number, fontSize: number, letterSpacing: number): number {
+  const measure = (s: string) => [...s].reduce((sum, ch) => sum + charWidthEm(ch) * fontSize + letterSpacing, 0);
+  const space = measure(" ");
+  let lines = 1;
+  let used = 0;
+  for (const word of text.split(/\s+|(?<=-)/).filter(Boolean)) {
+    const w = measure(word);
+    if (used > 0 && used + space + w <= width) {
+      used += space + w;
+      continue;
+    }
+    if (used > 0) lines += 1;
+    const extra = Math.max(0, Math.ceil(w / width) - 1); // a word wider than the line runs onto more lines
+    lines += extra;
+    used = w - extra * width;
+  }
+  return lines;
+}
+
+/** The largest title size at which the heading (drawn in capitals) and the case title both fit. */
+export function titleFontSize(view: Pick<CardView, "heading" | "caseTitle">): number {
+  const headingHeight = estimateLines(view.heading.toUpperCase(), KICKER_TEXT_WIDTH, 20, 4) * KICKER_LINE;
+  // As before, only short titles may use the largest size.
+  const sizes = TITLE_SIZES.filter((size) => size < 56 || view.caseTitle.length <= 28);
+  for (const size of sizes) {
+    if (headingHeight + estimateLines(view.caseTitle, COLUMN_WIDTH, size, -1.5) * size * 1.08 <= HEADING_AND_TITLE_ROOM) return size;
+  }
+  return TITLE_SIZES[TITLE_SIZES.length - 1];
 }
 
 /** The share card: five bars, the overall score and the case. */
@@ -102,7 +167,7 @@ export function ScoreCardImage({ view, host }: { view: CardView; host: string })
             style={{
               display: "flex",
               marginTop: 18,
-              fontSize: view.caseTitle.length > 28 ? 46 : 56,
+              fontSize: titleFontSize(view),
               lineHeight: 1.08,
               color: C.white,
               letterSpacing: -1.5,

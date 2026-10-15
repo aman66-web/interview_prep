@@ -28,9 +28,82 @@ const KEY_LABEL = "casespar:share-card-signing-key:v1";
 
 const score = z.number().int().min(1).max(5);
 
-/** Letters (any alphabet), spaces, hyphens and apostrophes; starts with a letter. */
-const NAME_PATTERN = /^\p{L}[\p{L}\p{M} '’-]*$/u;
+/**
+ * The letters a first name may use: the Latin letters (with their accents) and the
+ * Cyrillic letters that the share picture's font can draw. That font (Geist) ships
+ * with next/og. For any other letter, next/og would fetch a font from Google Fonts
+ * with the name in the request, and log the name if that failed (rule 2.7), so such
+ * names are refused instead. tests/share.test.ts checks every letter here against
+ * the font file itself, so a next/og update that drops one is caught.
+ * Each entry is a [first, last] code point range.
+ */
+export const NAME_LETTER_RANGES: readonly (readonly [number, number])[] = [
+  // Latin: A to Z, then the accented letters of Western, Central and Eastern Europe,
+  // Turkish, Azerbaijani, Romanian, Welsh and Vietnamese that the font covers.
+  [0x41, 0x5a],
+  [0x61, 0x7a],
+  [0xc0, 0xd6],
+  [0xd8, 0xf6],
+  [0xf8, 0xff],
+  [0x100, 0x113],
+  [0x116, 0x12b],
+  [0x12e, 0x137],
+  [0x139, 0x13e],
+  [0x141, 0x148],
+  [0x14a, 0x14d],
+  [0x150, 0x17e],
+  [0x18f, 0x18f],
+  [0x1a0, 0x1a1],
+  [0x1af, 0x1b0],
+  [0x1cd, 0x1ce],
+  [0x1e4, 0x1e9],
+  [0x218, 0x21b],
+  [0x259, 0x259],
+  [0x1e20, 0x1e21],
+  [0x1e80, 0x1e85],
+  [0x1e9e, 0x1e9e],
+  [0x1ea0, 0x1ef9],
+  // Cyrillic: Russian, Ukrainian, Belarusian, Bulgarian, Serbian, Macedonian, Kazakh and others.
+  [0x400, 0x45f],
+  [0x462, 0x463],
+  [0x46a, 0x46b],
+  [0x472, 0x475],
+  [0x490, 0x493],
+  [0x496, 0x497],
+  [0x49a, 0x49b],
+  [0x4a2, 0x4a3],
+  [0x4ae, 0x4b3],
+  [0x4b6, 0x4b7],
+  [0x4ba, 0x4bb],
+  [0x4c0, 0x4c0],
+  [0x4cf, 0x4cf],
+  [0x4d8, 0x4d9],
+  [0x4e2, 0x4e3],
+  [0x4e8, 0x4e9],
+  [0x4ee, 0x4ef],
+];
+
+/** Spaces, hyphens and straight or curly apostrophes may sit between the letters. */
+export const NAME_JOINERS = " -'’";
+
+const hex = (cp: number) => `\\u{${cp.toString(16)}}`;
+const LETTER_CLASS = NAME_LETTER_RANGES.map(([a, b]) => (a === b ? hex(a) : `${hex(a)}-${hex(b)}`)).join("");
+const JOINER_CLASS = [...NAME_JOINERS].map((ch) => hex(ch.codePointAt(0)!)).join("");
+
+/**
+ * Starts with a letter; then letters, spaces, hyphens and apostrophes. No combining
+ * marks: names are NFC-normalised first, which turns "e" plus an accent into "é".
+ */
+const NAME_PATTERN = new RegExp(`^[${LETTER_CLASS}][${LETTER_CLASS}${JOINER_CLASS}]*$`, "u");
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+/**
+ * True when the share picture's bundled font can draw every character of this name,
+ * so drawing it never fetches a font from the internet.
+ */
+export function isDrawableName(name: string): boolean {
+  return name.length > 0 && name.length <= FIRST_NAME_MAX && NAME_PATTERN.test(name);
+}
 
 function isRealDay(value: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -65,6 +138,10 @@ const wireSchema = z
   })
   .strict();
 
+/** Shown when a name has a character the card cannot draw. */
+export const NAME_RULE_MESSAGE =
+  "The card can only show letters A to Z (accents such as é or ł are fine) or Cyrillic letters, with spaces, hyphens and apostrophes. Leave the name empty to share without it.";
+
 /**
  * Tidies what the person typed: trims, joins repeated spaces, normalises accents.
  * Empty means "no name". Anything else that breaks the rules is refused, not altered.
@@ -75,7 +152,7 @@ export function cleanFirstName(input: unknown): { ok: true; name: string | null 
   const name = input.normalize("NFC").replace(/\s+/g, " ").trim();
   if (name === "") return { ok: true, name: null };
   if (name.length > FIRST_NAME_MAX) return { ok: false, reason: `Keep the name to ${FIRST_NAME_MAX} characters or fewer.` };
-  if (!NAME_PATTERN.test(name)) return { ok: false, reason: "Use letters, spaces, hyphens and apostrophes only." };
+  if (!isDrawableName(name)) return { ok: false, reason: NAME_RULE_MESSAGE };
   return { ok: true, name };
 }
 

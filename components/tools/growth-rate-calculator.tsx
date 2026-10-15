@@ -4,10 +4,10 @@ import { useId, useState, type ReactNode } from "react";
 import { IconBadge } from "@/components/ui/card";
 import { Clock, Percent, TrendUp } from "@/components/ui/icons";
 import { GROWTH_EXAMPLE } from "@/lib/tools/examples";
-import { formatCompact, formatNumber, formatPercent, parseNumberInput } from "@/lib/tools/format";
+import { formatCompact, formatNumber, formatPercent, invalidNumberMessage, parseNumberInput } from "@/lib/tools/format";
 import { cagr, compareDoubling, DOUBLING_TABLE_RATES, futureValue, type Outcome } from "@/lib/tools/growth";
 import { cn } from "@/lib/ui/cn";
-import { Announcer, NumberField } from "./fields";
+import { Announcer, NumberField, ScrollRegion } from "./fields";
 
 // The growth rate calculator (/tools/growth-rate-calculator): CAGR, future value and
 // doubling time, worked out in the browser from lib/tools/growth.ts as you type.
@@ -17,7 +17,7 @@ type Read = { value: number | null; error: string | null };
 function read(raw: string): Read {
   const p = parseNumberInput(raw);
   if (p.kind === "number") return { value: p.value, error: null };
-  return { value: null, error: p.kind === "empty" ? "Enter a number." : "Enter a number, like 40 or 12.5." };
+  return { value: null, error: p.kind === "empty" ? "Enter a number." : invalidNumberMessage(p, "Enter a number, like 40 or 12.5.") };
 }
 
 const show = (n: number) => (Math.abs(n) >= 1e6 ? formatCompact(n) : formatNumber(n, 2));
@@ -148,21 +148,21 @@ export function GrowthRateCalculator() {
                 : (doubling?.message ?? "Enter a growth rate.")}
             </p>
           </div>
-          <div className="relative min-w-0 overflow-x-auto rounded-[1.5rem] ring-1 ring-inset ring-line">
-            <table className="w-full min-w-[22rem] text-sm">
+          <ScrollRegion label="Doubling time at common growth rates">
+            <table className="w-full text-sm">
               <caption className="sr-only">Doubling time at common growth rates, exact and by the rule of 72</caption>
               <thead className="bg-surface-2 text-xs uppercase tracking-wide text-muted">
                 <tr>
-                  <th scope="col" className="px-4 py-3 text-left font-medium">
+                  <th scope="col" className="px-3 py-3 text-left font-medium sm:px-4">
                     Growth a year
                   </th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium">
+                  <th scope="col" className="px-3 py-3 text-right font-medium sm:px-4">
                     Exact (years)
                   </th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium">
+                  <th scope="col" className="px-3 py-3 text-right font-medium sm:px-4">
                     Rule of 72
                   </th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium">
+                  <th scope="col" className="px-3 py-3 text-right font-medium sm:px-4">
                     Rule is off by
                   </th>
                 </tr>
@@ -174,18 +174,18 @@ export function GrowthRateCalculator() {
                   const current = rate.value !== null && Math.abs(rate.value - r) < 1e-9;
                   return (
                     <tr key={r} className={cn(current && "bg-lime/40 dark:bg-lime/10")} aria-current={current ? "true" : undefined}>
-                      <th scope="row" className="px-4 py-2.5 text-left font-medium text-ink tabular-nums">
+                      <th scope="row" className="px-3 py-2.5 text-left font-medium text-ink tabular-nums sm:px-4">
                         {r}%
                       </th>
-                      <td className="px-4 py-2.5 text-right text-ink tabular-nums">{formatNumber(row.value.exact, 2, 2)}</td>
-                      <td className="px-4 py-2.5 text-right text-ink tabular-nums">{formatNumber(row.value.rule72, 2, 2)}</td>
-                      <td className="px-4 py-2.5 text-right text-muted tabular-nums">{formatNumber(Math.abs(row.value.errorPct), 1, 1)}%</td>
+                      <td className="px-3 py-2.5 text-right text-ink tabular-nums sm:px-4">{formatNumber(row.value.exact, 2, 2)}</td>
+                      <td className="px-3 py-2.5 text-right text-ink tabular-nums sm:px-4">{formatNumber(row.value.rule72, 2, 2)}</td>
+                      <td className="px-3 py-2.5 text-right text-muted tabular-nums sm:px-4">{formatNumber(Math.abs(row.value.errorPct), 1, 1)}%</td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
-          </div>
+          </ScrollRegion>
         </div>
       </Panel>
     </div>

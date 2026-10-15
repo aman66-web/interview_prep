@@ -185,7 +185,8 @@ export default function GuidesPage() {
               <ul className={cn("mt-12 grid gap-4", firms.length > 1 && "md:grid-cols-2", firms.length > 2 && "lg:grid-cols-3")}>
                 {firms.map((f) => (
                   <li key={f.slug}>
-                    <article className="group relative flex h-full flex-col rounded-[1.75rem] bg-white/[0.05] p-6 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.09] sm:p-7">
+                    {/* The title's link covers the card; the card shows a lime focus outline for it (brand indigo is too dark on night). */}
+                    <article className="group relative flex h-full flex-col rounded-[1.75rem] bg-white/[0.05] p-6 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.09] has-[a:focus-visible]:bg-white/[0.09] has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-3 has-[a:focus-visible]:outline-lime has-[a:focus-visible]:outline-solid sm:p-7">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white ring-1 ring-inset ring-white/15">
                           {f.sources.length} source{f.sources.length === 1 ? "" : "s"}

@@ -103,12 +103,14 @@ export function InterviewRoom({
     if (log) log.scrollTop = log.scrollHeight;
   }, [messages, draft, busy]);
 
-  // The reply box grows with what is typed, up to a limit, then scrolls.
+  // The reply box grows with what is typed, up to a limit (smaller on short laptop screens,
+  // so Send stays in view), then scrolls.
   useLayoutEffect(() => {
     const el = inputRef.current;
     if (!el) return;
+    const cap = Math.max(96, Math.min(240, Math.round(window.innerHeight * 0.25)));
     el.style.height = "auto";
-    el.style.height = `${Math.min(el.scrollHeight, 240)}px`;
+    el.style.height = `${Math.min(el.scrollHeight, cap)}px`;
   }, [input]);
 
   // When "Finish now" turns into the confirmation, move focus to it (the button that was focused has gone).
@@ -226,8 +228,11 @@ export function InterviewRoom({
     "inline-flex h-9 items-center gap-1.5 rounded-full bg-surface px-3 text-[13px] font-medium text-ink ring-1 ring-inset ring-line transition-colors hover:bg-surface-3 disabled:pointer-events-none disabled:opacity-50";
 
   return (
-    <div className="mx-auto w-full max-w-[76rem] px-3 pb-6 pt-4 sm:px-6 lg:px-8">
-      <header className="rounded-[1.75rem] bg-surface p-4 shadow-soft ring-1 ring-inset ring-line sm:px-6 sm:py-5">
+    // On laptops and desktops the room fills the screen below the sticky site header (4.75rem tall),
+    // so the reply box and Send are in view without scrolling, down to about 1024 x 600. The
+    // conversation and the tools scroll inside it. (The account bar is hidden here on large screens.)
+    <div className="mx-auto w-full max-w-[76rem] px-3 pb-6 pt-4 sm:px-6 lg:flex lg:h-[calc(100dvh-4.75rem)] lg:min-h-[32rem] lg:flex-col lg:px-8 lg:pb-4 lg:pt-3">
+      <header className="shrink-0 rounded-[1.75rem] bg-surface p-4 shadow-soft ring-1 ring-inset ring-line sm:px-6 sm:py-5 lg:py-4">
         <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
           <div className="min-w-0">
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
@@ -243,7 +248,7 @@ export function InterviewRoom({
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
-              title={`Time since you started (cases like this take about ${estMinutes} minutes)`}
+              title={`Time since you started (this case is written to take about ${estMinutes} minutes)`}
               className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface-2 px-3 font-mono text-[13px] tabular-nums text-ink ring-1 ring-inset ring-line"
             >
               <Clock size={14} className="text-muted" />
@@ -258,20 +263,20 @@ export function InterviewRoom({
             </Link>
           </div>
         </div>
-        <StageBar stage={stage} className="mt-4" />
+        <StageBar stage={stage} className="mt-4 lg:mt-3" />
       </header>
 
-      <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] xl:grid-cols-[minmax(0,1fr)_minmax(0,27rem)]">
+      <div className="mt-3 grid gap-3 lg:min-h-0 lg:flex-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:grid-rows-[minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,27rem)]">
         <section
           aria-label="Conversation"
-          className="flex flex-col overflow-hidden rounded-[1.75rem] bg-surface shadow-soft ring-1 ring-inset ring-line lg:h-[calc(100dvh-18.5rem)] lg:min-h-[32rem]"
+          className="flex flex-col overflow-hidden rounded-[1.75rem] bg-surface shadow-soft ring-1 ring-inset ring-line lg:min-h-0 lg:overflow-y-auto"
         >
           <div
             ref={logRef}
             role="log"
             aria-live="polite"
             aria-relevant="additions"
-            className="max-h-[62vh] min-h-[18rem] flex-1 space-y-5 overflow-y-auto overscroll-contain p-4 sm:p-6 lg:max-h-none"
+            className="max-h-[62vh] min-h-[18rem] flex-1 space-y-5 overflow-y-auto overscroll-contain p-4 sm:p-6 lg:max-h-none lg:min-h-0"
           >
             {messages.map((m, i) => (
               <Bubble key={i} who={m.role}>
@@ -433,7 +438,7 @@ export function InterviewRoom({
         <aside
           id="tools"
           aria-label="Tools"
-          className="flex scroll-mt-24 flex-col overflow-hidden rounded-[1.75rem] bg-surface shadow-soft ring-1 ring-inset ring-line lg:h-[calc(100dvh-18.5rem)] lg:min-h-[32rem]"
+          className="flex scroll-mt-24 flex-col overflow-hidden rounded-[1.75rem] bg-surface shadow-soft ring-1 ring-inset ring-line lg:min-h-0"
         >
           <div role="tablist" aria-label="Tools" onKeyDown={onTabKey} className="m-2 grid grid-cols-4 gap-1 rounded-full bg-surface-2 p-1 ring-1 ring-inset ring-line">
             {tabs.map((name) => {
@@ -470,18 +475,24 @@ export function InterviewRoom({
               );
             })}
           </div>
-          <div
-            role="tabpanel"
-            id={`panel-${tab}`}
-            aria-labelledby={`tab-${tab}`}
-            tabIndex={0}
-            className="min-h-[16rem] flex-1 overflow-y-auto px-4 pb-5 pt-2 focus-visible:outline-offset-[-4px] sm:px-5"
-          >
-            {tab === "Exhibits" ? <ExhibitsPanel exhibits={exhibits} /> : null}
-            {tab === "Notes" ? <NotesPanel sessionId={sessionId} /> : null}
-            {tab === "Calculator" ? <Calculator /> : null}
-            {tab === "Timer" ? <Timer seconds={elapsed} estMinutes={estMinutes} /> : null}
-          </div>
+          {/* Every panel stays in the page and only the selected one shows, so switching tabs never
+              loses the calculator's sum, and every tab's aria-controls points at a real panel. */}
+          {tabs.map((name) => (
+            <div
+              key={name}
+              role="tabpanel"
+              id={`panel-${name}`}
+              aria-labelledby={`tab-${name}`}
+              tabIndex={0}
+              hidden={tab !== name}
+              className="min-h-[16rem] flex-1 overflow-y-auto px-4 pb-5 pt-2 focus-visible:outline-offset-[-4px] sm:px-5 lg:min-h-0"
+            >
+              {name === "Exhibits" ? <ExhibitsPanel exhibits={exhibits} /> : null}
+              {name === "Notes" ? <NotesPanel sessionId={sessionId} /> : null}
+              {name === "Calculator" ? <Calculator /> : null}
+              {name === "Timer" ? <Timer seconds={elapsed} estMinutes={estMinutes} /> : null}
+            </div>
+          ))}
         </aside>
       </div>
     </div>
@@ -526,7 +537,7 @@ function ExhibitsPanel({ exhibits }: { exhibits: Exhibit[] }) {
         </span>
         <p className="mt-4 font-medium text-ink">No exhibits yet</p>
         <p className="mt-1 max-w-[18rem] text-sm leading-relaxed text-muted">
-          Ask the interviewer for data when you know what you need. Exhibits appear here.
+          The interviewer shares exhibits during the analysis, when you ask for data or as the case moves on. They appear here.
         </p>
       </div>
     );
@@ -699,7 +710,7 @@ function Timer({ seconds, estMinutes }: { seconds: number; estMinutes: number })
         </div>
       </div>
       <p className="mt-5 text-sm leading-relaxed text-muted">
-        A real case interview usually lasts 25 to 40 minutes. This is just for your own pacing.
+        This case is written to take about {estMinutes} minutes. The clock is just for your own pacing.
       </p>
     </div>
   );

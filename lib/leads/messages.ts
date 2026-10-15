@@ -19,14 +19,33 @@ export const LEAD_FIELD_HINTS: Record<LeadField, string> = {
   message: "Keep the message under 5,000 characters.",
 };
 
-export function leadErrorMessage(code: string | undefined): string | null {
-  if (!code) return null;
-  return (LEAD_ERROR_MESSAGES as Record<string, string>)[code] ?? LEAD_ERROR_MESSAGES.unsupported;
+/**
+ * The message for an error code we know, or undefined. Only the map's own keys count, so a
+ * crafted ?error=__proto__ or ?error=toString can't pull in an inherited object or function.
+ */
+export function knownLeadErrorMessage(code: string | undefined): string | undefined {
+  return code && Object.hasOwn(LEAD_ERROR_MESSAGES, code) ? LEAD_ERROR_MESSAGES[code as LeadErrorCode] : undefined;
 }
 
-/** Field names from the ?fields= list of a form post that failed, known names only. */
-export function fieldsFromQuery(value: string | undefined): LeadField[] {
-  if (!value) return [];
+/** A query value as a page receives it: a repeated parameter (?a=1&a=2) arrives as a list. */
+export type QueryValue = string | string[] | undefined;
+
+/** The first value of a query parameter, so a repeated one can't crash the page. */
+export function firstQueryValue(value: QueryValue): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+/** The message for ?error= on the page: null when there is none, a general one for a code we don't know. */
+export function leadErrorMessage(value: QueryValue): string | null {
+  const code = firstQueryValue(value);
+  if (!code) return null;
+  return knownLeadErrorMessage(code) ?? LEAD_ERROR_MESSAGES.unsupported;
+}
+
+/** Field names from the ?fields= list of a form post that failed, known names only, each once. */
+export function fieldsFromQuery(value: QueryValue): LeadField[] {
+  const text = Array.isArray(value) ? value.join(",") : value;
+  if (!text) return [];
   const known: LeadField[] = ["org", "email", "size", "message"];
-  return value.split(",").filter((f): f is LeadField => (known as string[]).includes(f));
+  return [...new Set(text.split(","))].filter((f): f is LeadField => (known as string[]).includes(f));
 }

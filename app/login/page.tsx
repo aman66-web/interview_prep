@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { MockDebrief, MockStageBar } from "@/components/marketing/mocks";
 import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { Check, Lock, Sparkle } from "@/components/ui/icons";
+import { ownValue } from "@/lib/app/own-key";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
 import { getUser } from "@/lib/auth/session";
 import { LoginForm } from "./login-form";
@@ -19,7 +20,7 @@ const notices: Record<string, string> = {
 
 const POINTS = [
   "An AI interviewer that pushes back, stage by stage",
-  "Exhibits when you ask for the right data",
+  "Exhibits during the analysis, when you ask for data or the case moves on",
   "Maths checked by code, not by opinion",
   "A debrief that scores five skills out of 5",
 ];
@@ -49,7 +50,7 @@ export default async function LoginPage({
               No password and no card. We email you a one-time sign-in link; new accounts are created automatically.
             </p>
             <div className="mt-8 rounded-[1.75rem] bg-surface p-5 shadow-float ring-1 ring-inset ring-line sm:p-6">
-              <LoginForm next={next} notice={params.error ? notices[params.error] : undefined} />
+              <LoginForm next={next} notice={ownValue(notices, params.error)} />
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted">
               <Lock size={15} className="shrink-0" />

@@ -202,6 +202,15 @@ export function Play(props: IconProps) {
   );
 }
 
+export function Pause(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M10 9v6M14 9v6" />
+    </svg>
+  );
+}
+
 export function Mail(props: IconProps) {
   return (
     <svg {...base(props)}>

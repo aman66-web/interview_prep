@@ -18,7 +18,7 @@ Use the Tailwind colour names below, never raw hex (except inside `night` sectio
 | Status | `text-success bg-success-soft`, `text-warning bg-warning-soft`, `text-danger bg-danger-soft` |
 | Shadows | `shadow-soft` (resting), `shadow-float` (hover, floating cards) |
 
-Helper classes: `.bg-aurora` (hero wash), `.bg-night-glow`, `.glass` (frosted), `.bg-dots`, `.text-gradient` (brand gradient text), `.serif-accent` (the italic serif phrase), `.wordmark`.
+Helper classes: `.bg-aurora` (hero wash), `.bg-night-glow`, `.glass` (frosted), `.glass-bar` (the header: 94% opaque so text stays readable where blur is unavailable), `.bg-dots`, `.text-gradient` (brand gradient text), `.serif-accent` (the italic serif phrase), `.wordmark`.
 
 Fonts: Inter Tight (`font-sans`, default), Instrument Serif via `.serif-accent` only, Geist Mono (`font-mono`) for kickers, timers and numbers in tables.
 
@@ -31,6 +31,10 @@ Fonts: Inter Tight (`font-sans`, default), Instrument Serif via `.serif-accent` 
 - `Faq` + `faqJsonLd` + `JsonLd`, `Marquee`, `Prose` + `TableOfContents` (renders content blocks), icons in `icons.tsx` (add new line icons there in the same style: 24px viewBox, stroke `currentColor`, `aria-hidden`).
 - Marketing pieces: `components/marketing/case-card.tsx` (`CaseCard`, `DifficultyMeter`, `CASE_TYPE_TONES`), `components/marketing/mocks.tsx` (decorative product pictures).
 
+## Contrast
+
+Every text token meets WCAG AA (4.5:1) on canvas, surface, surface-2 and surface-3 in both themes; the ratios are in the comment at the top of `app/globals.css`, and `tests/site-shell.test.ts` checks them. If you change a colour, keep that test passing.
+
 ## Patterns
 
 - **Inner page:** `<PageHeader eyebrow title intro>` then `<Container>` sections with `mt-10`/`mt-16` spacing. Headings: h1 only in PageHeader; h2 `text-2xl sm:text-3xl font-medium tracking-tight`.
@@ -40,11 +44,12 @@ Fonts: Inter Tight (`font-sans`, default), Instrument Serif via `.serif-accent` 
 - **Notices:** `rounded-2xl p-4` in a status tone, with `role="status"` (or `role="alert"` for errors).
 - **Tables:** inside a `rounded-[1.5rem] ring-1 ring-line overflow-x-auto` wrapper; header row `bg-surface-2 text-xs uppercase tracking-wide text-muted`; numbers `tabular-nums text-right`.
 - **Empty states:** a soft card with one sentence and one button.
+- **Header:** the main links show from 56rem (about 900px) wide; below that the menu button opens the phone menu. On `/app` and `/admin` the header and footer swap their sign-up prompts for a Dashboard link (`components/site-nav.tsx`).
 - **Mobile first:** check 390px wide. No horizontal page scroll (wide tables scroll inside their wrapper). Tap targets at least 40px.
 - **Accessibility:** keyboard reachable, visible focus (global outline), `aria-current` on active nav, decorative pictures `aria-hidden` with a text alternative nearby, contrast AA in both themes. `prefers-reduced-motion` is handled globally.
 
 ## Honesty rules that affect design (rules 2.3, 2.4)
 
 - No logos of firms or universities, no testimonials, star ratings, user counts, "as seen in" strips or offer claims. Marquees and stat strips show product facts counted from data.
-- Product pictures use real case numbers and say "Example" where scores are shown.
+- Product pictures (`components/marketing/mocks.tsx`) use the free profitability guide's worked example (`MOCK_EXAMPLE`), never a case from the library (that would give its answers away), and carry an "Example" tag.
 - The disclaimer (`siteConfig.disclaimer`) is in the footer; firm pages and the pricing page must also show it in the page body.

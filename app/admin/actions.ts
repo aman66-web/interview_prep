@@ -40,14 +40,17 @@ export async function loadAdminDashboard(): Promise<AdminDashboard> {
   // A little more than 30 days, so the oldest whole UTC day is complete.
   const since = new Date(now.getTime() - 31 * DAY_MS).toISOString();
 
+  // Newest rows first: if a table ever has more rows than fetchAllRows reads, the cap
+  // drops the oldest days of the 30-day window, never the latest signups and purchases.
+  const NEWEST = { ascending: false } as const;
   const [events, usage, completed, leads, latest] = await Promise.all([
     fetchAllRows<EventFact>((from, to) =>
       db
         .from("events")
         .select("name, user_id, path, utm_source, created_at")
         .gte("created_at", since)
-        .order("created_at")
-        .order("id")
+        .order("created_at", NEWEST)
+        .order("id", NEWEST)
         .range(from, to),
     ),
     fetchAllRows<UsageFact>((from, to) =>
@@ -55,15 +58,15 @@ export async function loadAdminDashboard(): Promise<AdminDashboard> {
         .from("ai_usage")
         .select("created_at, input_tokens, output_tokens, cost_estimate_usd")
         .gte("created_at", since)
-        .order("created_at")
-        .order("id")
+        .order("created_at", NEWEST)
+        .order("id", NEWEST)
         .range(from, to),
     ),
     fetchAllRows<CompletedFact>((from, to) =>
-      db.from("case_sessions").select("completed_at").gte("completed_at", since).order("completed_at").order("id").range(from, to),
+      db.from("case_sessions").select("completed_at").gte("completed_at", since).order("completed_at", NEWEST).order("id", NEWEST).range(from, to),
     ),
     fetchAllRows<LeadFact>((from, to) =>
-      db.from("leads").select("created_at").gte("created_at", since).order("created_at").order("id").range(from, to),
+      db.from("leads").select("created_at").gte("created_at", since).order("created_at", NEWEST).order("id", NEWEST).range(from, to),
     ),
     db.from("leads").select("org, email, size, created_at").order("created_at", { ascending: false }).limit(5),
   ]);

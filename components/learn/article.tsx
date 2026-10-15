@@ -110,13 +110,16 @@ export function Notice({ tone = "info", title, children, className }: { tone?: "
   );
 }
 
-/** A quiet line for previews only: this page is still a draft. */
-export function DraftNote({ children }: { children: ReactNode }) {
+/**
+ * The banner on a page whose status is still "draft" (about, FAQ and the legal pages).
+ * It shows on the live site too, so nobody mistakes the founder's square-bracket notes
+ * for final text. Legal pages also say they are not yet in force.
+ */
+export function DraftNotice({ legal = false, className }: { legal?: boolean; className?: string }) {
   return (
-    <p className="inline-flex items-center gap-2 rounded-full bg-warning-soft px-3 py-1 text-xs font-medium text-warning">
-      <span aria-hidden="true" className="size-1.5 rounded-full bg-warning" />
-      {children}
-    </p>
+    <Notice tone="warning" title={legal ? "Draft: being reviewed before launch. Not yet in force." : "Draft: being reviewed before launch."} className={className}>
+      Text in square brackets is still to be filled in or confirmed.
+    </Notice>
   );
 }
 

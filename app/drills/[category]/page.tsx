@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { breadcrumbJsonLd } from "@/components/learn/seo";
+import { clipText, DESCRIPTION_MAX, pageTitle } from "@/components/practice/metadata";
 import { Tag } from "@/components/ui/badge";
+import { JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Book, ChevronRight, Sparkle } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
 import { allGuides, splitTitle } from "@/lib/content/writing";
@@ -22,8 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   if (!isDrillCategory(category)) return {};
   const info = CATEGORY_INFO[category];
   return {
-    title: `${info.title} drills for case interviews`,
-    description: `${info.blurb} Free practice with instant feedback.`,
+    // Fitted to what search results show: "Frameworks and structure drills for case interviews"
+    // drops the brand suffix rather than run past 60 characters.
+    title: pageTitle(`${info.title} drills for case interviews`),
+    description: clipText(`${info.blurb} Free practice with instant feedback.`, DESCRIPTION_MAX),
+    alternates: { canonical: `/drills/${category}` },
   };
 }
 
@@ -50,6 +56,12 @@ export default async function DrillCategoryPage({ params }: { params: Promise<{ 
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Drills", path: "/drills" },
+          { name: info.title, path: `/drills/${category}` },
+        ])}
+      />
       <Container className="pt-6 sm:pt-8">
         <div className="bg-aurora relative overflow-hidden rounded-[2rem] px-6 py-9 ring-1 ring-inset ring-line sm:px-10 sm:py-12">
           <nav aria-label="Breadcrumb">

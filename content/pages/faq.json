@@ -11,11 +11,26 @@
       "type": "links",
       "title": "More detail",
       "items": [
-        { "label": "Pricing", "href": "/pricing" },
-        { "label": "Refund policy", "href": "/legal/refunds" },
-        { "label": "Privacy policy", "href": "/legal/privacy" },
-        { "label": "Terms of service", "href": "/legal/terms" },
-        { "label": "About CaseSpar", "href": "/about" }
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "Refund policy",
+          "href": "/legal/refunds"
+        },
+        {
+          "label": "Privacy policy",
+          "href": "/legal/privacy"
+        },
+        {
+          "label": "Terms of service",
+          "href": "/legal/terms"
+        },
+        {
+          "label": "About CaseSpar",
+          "href": "/about"
+        }
       ]
     }
   ],
@@ -29,7 +44,7 @@
         },
         {
           "q": "How does an AI interview work?",
-          "a": "The interviewer presents the case, then takes you through five stages: clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers questions only from the case facts, and shares exhibits (tables and charts) when you ask for relevant data. Beside the chat you have the exhibits, a notes box, a calculator and a timer. You can move to the next stage whenever you like, or finish early once you have sent at least one message. Either way you get a debrief."
+          "a": "The interviewer presents the case, then takes you through five stages: clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers questions only from the case facts, and shares exhibits (tables and charts) during the analysis, when you ask for relevant data or when it moves the case on. Beside the chat you have the exhibits, a notes box, a calculator and a timer. You can move to the next stage whenever you like, or finish early once you have sent at least one message. Either way you get a debrief."
         },
         {
           "q": "What is in the debrief?",
@@ -78,7 +93,7 @@
         },
         {
           "q": "Can I get a refund?",
-          "a": "Yes, within 7 days of paying, if you have used 2 or fewer AI interviews. Email [support email] from the address on your account. Our refund policy has the details."
+          "a": "Yes, within 7 days of paying, if you have used 2 or fewer AI interviews. Email [support email] from the address on your account. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. Our refund policy has the details."
         }
       ]
     },
@@ -95,15 +110,15 @@
         },
         {
           "q": "How long do you keep my transcripts?",
-          "a": "Interview transcripts are deleted 365 days after they were written. Your account, scores and drill history stay until you delete your account."
+          "a": "Interview transcripts are deleted 365 days after they were written, by a clean-up that runs every day. The quotes and written feedback in those interviews' debriefs are removed at the same point, and their scores stay. Your account, scores and drill history stay until you delete your account."
         },
         {
           "q": "How do I download or delete my data?",
-          "a": "On your account page, choose Download my data to get a file of everything we hold about you. To delete your account, type your email address to confirm. This deletes your account, practice history and transcripts, and cancels any subscription. It can't be undone, so ask for any refund first."
+          "a": "On your account page, choose Download my data to get a file of everything we hold about you. To delete your account, type your email address to confirm. This deletes your account, practice history and transcripts, and cancels any subscription. It can't be undone, so ask for any refund first. Share links you made keep working, because each one holds only what is on its card. To take one down, delete the post where you shared it."
         },
         {
           "q": "Do you use cookies or trackers?",
-          "a": "Only the cookies needed to keep you logged in. We don't use advertising pixels or third-party trackers. Your browser tab also remembers your interview notes and your place in the drills. That stays in your browser, is cleared when you close the tab, and is never sent to us."
+          "a": "Only the cookies needed to keep you logged in. We don't use advertising pixels or third-party trackers. Your browser tab also remembers your interview notes and your place in the drills. That stays in your browser, is cleared when you close the tab, and is never sent to us. The one exception: if the link you arrived by had campaign tags (such as utm_source), the tab keeps them and sends them to us when you sign in, so we can count which campaigns bring sign-ups."
         }
       ]
     },

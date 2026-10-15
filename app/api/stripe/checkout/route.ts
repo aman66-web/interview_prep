@@ -1,8 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { recordEvent } from "@/lib/analytics/events";
+import { recordOncePerDay } from "@/lib/analytics/funnel";
 import { getUser } from "@/lib/auth/session";
 import { isSameOrigin } from "@/lib/http/same-origin";
-import { buildCheckoutParams } from "@/lib/stripe/checkout";
+import { buildCheckoutParams, CANCEL_WAIVER, hasCancelWaiver } from "@/lib/stripe/checkout";
 import { isStripeConfigured, StripeError } from "@/lib/stripe/client";
 import { checkPurchase, isPlanId } from "@/lib/stripe/plans";
 import { createStripeApi } from "@/lib/stripe/client";
@@ -26,6 +26,8 @@ export async function POST(request: NextRequest) {
   const form = await request.formData().catch(() => null);
   const plan = form?.get("plan");
   if (!isPlanId(plan)) return back(request, "/pricing?notice=invalid");
+  // The buyer must ask for access to start straight away and accept losing the 14-day right to cancel.
+  if (!hasCancelWaiver(form)) return back(request, "/pricing?notice=consent");
   if (!isStripeConfigured()) return back(request, "/pricing?notice=unavailable");
 
   try {
@@ -42,10 +44,12 @@ export async function POST(request: NextRequest) {
         origin: request.nextUrl.origin,
         priceIds: { monthly: process.env.STRIPE_PRICE_MONTHLY, pass90: process.env.STRIPE_PRICE_PASS90 },
         taxEnabled: siteConfig.stripeTaxEnabled,
+        cancelWaiver: CANCEL_WAIVER.version,
       }),
     );
     if (!session.url) throw new Error("Stripe returned no checkout address.");
-    await recordEvent("checkout_started", { userId: user.id, path: `/pricing?plan=${plan}` }, createAdminClient); // funnel
+    // funnel: at most once per person, plan and UTC day, so repeated posts cannot flood the events table
+    await recordOncePerDay(createAdminClient, "checkout_started", { userId: user.id, path: `/pricing?plan=${plan}`, perPath: true });
     return NextResponse.redirect(session.url, 303);
   } catch (error) {
     console.error("stripe: could not start checkout", error instanceof StripeError ? { status: error.status, code: error.code } : "unexpected error");

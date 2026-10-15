@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { CASE_TYPE_TONES } from "@/components/marketing/case-card";
 import { typeCounts } from "@/components/practice/case-list";
-import { caseShortName } from "@/components/practice/wording";
+import { collectionPageJsonLd, joinWithAnd } from "@/components/practice/metadata";
+import { caseShortName, lowerFirst } from "@/components/practice/wording";
 import { Eyebrow, Tag } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
+import { JsonLd } from "@/components/ui/faq";
 import { Check, Coins, Layers, Search, Sparkle } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { visibleCases } from "@/lib/content/cases";
@@ -14,10 +16,20 @@ import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 import { CaseBrowser } from "./case-browser";
 
+// Every case type the library is built for, in the site's order (tests check it stays within 160 characters).
+const TYPE_LIST = joinWithAnd(
+  Object.entries(CASE_TYPE_LABELS)
+    .filter(([type]) => type !== "other")
+    .map(([, label]) => lowerFirst(label)),
+);
+
+const TITLE = "Case interview library";
+const DESCRIPTION = `Original ${TYPE_LIST} cases. Read any prompt free, then practise with an AI interviewer.`;
+
 export const metadata: Metadata = {
-  title: "Case interview library",
-  description:
-    "Original practice cases for consulting interviews: profitability, market entry, market sizing, pricing and growth. Read the prompt free, then practise with an AI interviewer.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/cases" },
 };
 
 // Every number on this page is counted from the case files (rule 2.4).
@@ -117,6 +129,14 @@ export default function CasesPage() {
 
   return (
     <>
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: TITLE,
+          description: DESCRIPTION,
+          path: "/cases",
+          items: cases.map((c) => ({ name: c.title, path: `/cases/${c.slug}` })),
+        })}
+      />
       <PageHeader
         eyebrow={<Eyebrow icon={<Layers size={14} />}>{cases.length > 0 ? `${cases.length} original cases` : "The case library"}</Eyebrow>}
         title={

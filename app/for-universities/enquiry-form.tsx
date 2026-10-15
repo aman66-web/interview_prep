@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { buttonClasses } from "@/components/ui/button";
 import { ArrowUpRight, Check } from "@/components/ui/icons";
-import { LEAD_ERROR_MESSAGES, LEAD_FIELD_HINTS } from "@/lib/leads/messages";
+import { knownLeadErrorMessage, LEAD_ERROR_MESSAGES, LEAD_FIELD_HINTS } from "@/lib/leads/messages";
 import { GROUP_SIZES, LEAD_FIELDS, LEAD_LIMITS, type LeadField } from "@/lib/leads/fields";
 import { cn } from "@/lib/ui/cn";
 
@@ -45,7 +45,7 @@ export function EnquiryForm({ initialSent, initialError, initialFields }: { init
         requestAnimationFrame(() => doneRef.current?.focus());
         return;
       }
-      const message = (body.error && (LEAD_ERROR_MESSAGES as Record<string, string>)[body.error]) || LEAD_ERROR_MESSAGES.server;
+      const message = knownLeadErrorMessage(body.error) ?? LEAD_ERROR_MESSAGES.server;
       setStatus({ kind: "error", message, fields: body.fields ?? {} });
       const first = body.fields ? (Object.keys(body.fields)[0] as LeadField | undefined) : undefined;
       if (first) requestAnimationFrame(() => (formRef.current?.elements.namedItem(LEAD_FIELDS[first]) as HTMLElement | null)?.focus());

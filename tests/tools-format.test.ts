@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
+  COMMA_DECIMAL_MESSAGE,
   formatCompact,
   formatMoney,
   formatMoneyCompact,
   formatNumber,
   formatPercent,
   formatYearsMonths,
+  invalidNumberMessage,
   NOT_A_NUMBER,
   numberOrNull,
   parseNumberInput,
@@ -37,10 +39,44 @@ describe("tools: reading typed numbers", () => {
     expect(parseNumberInput("")).toEqual({ kind: "empty" });
     expect(parseNumberInput("   ")).toEqual({ kind: "empty" });
     for (const bad of ["abc", "1.2.3", "4 apples", "1e6", "--2", "12%%", "%", "$", "4x"]) {
-      expect(parseNumberInput(bad), bad).toEqual({ kind: "invalid" });
+      expect(parseNumberInput(bad), bad).toEqual({ kind: "invalid", reason: "format" });
     }
     expect(numberOrNull("")).toBeNull();
     expect(numberOrNull("nope")).toBeNull();
+  });
+});
+
+describe("tools: commas in typed numbers", () => {
+  it("reads commas that separate thousands, with a sign, decimals, % or a short form", () => {
+    expect(numberOrNull("1,234.5")).toBe(1234.5);
+    expect(numberOrNull("-1,200")).toBe(-1200);
+    expect(numberOrNull("12,500%")).toBe(12_500);
+    expect(numberOrNull("1,125m")).toBe(1_125_000_000);
+    expect(numberOrNull("$1,000,000")).toBe(1_000_000);
+    expect(numberOrNull("-3")).toBe(-3);
+    expect(numberOrNull("-3.5%")).toBe(-3.5);
+  });
+
+  it("refuses a decimal comma instead of reading 4,5 as 45", () => {
+    for (const bad of ["4,5", "12,5", "12,5%", "-4,5", "0,5", ",5", "1,2345", "1,23", "1,200,5", "1.234,5", "4,5m", "1,2,3", "1234,567"]) {
+      expect(parseNumberInput(bad), bad).toEqual({ kind: "invalid", reason: "comma" });
+      expect(numberOrNull(bad), bad).toBeNull();
+    }
+  });
+
+  it("asks for a decimal point when a comma is the problem, and uses the field's own example otherwise", () => {
+    const comma = parseNumberInput("4,5");
+    const other = parseNumberInput("abc");
+    if (comma.kind !== "invalid" || other.kind !== "invalid") throw new Error("expected invalid");
+    expect(invalidNumberMessage(comma, "Enter a number.")).toBe(COMMA_DECIMAL_MESSAGE);
+    expect(COMMA_DECIMAL_MESSAGE).toMatch(/point/);
+    expect(invalidNumberMessage(other, "Enter a number.")).toBe("Enter a number.");
+  });
+
+  it("only takes its own short forms, never inherited object keys", () => {
+    for (const bad of ["4constructor", "4tostring", "4valueof", "4__proto__", "4hasownproperty"]) {
+      expect(parseNumberInput(bad), bad).toEqual({ kind: "invalid", reason: "format" });
+    }
   });
 });
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArticleHeader, MetaRow, Notice, tocFromBlocks } from "@/components/learn/article";
+import { ArticleHeader, DraftNotice, MetaRow, tocFromBlocks } from "@/components/learn/article";
 import { DesktopToc, MobileToc } from "@/components/learn/article-toc";
 import { pageOpenGraph } from "@/components/learn/seo";
 import { Eyebrow } from "@/components/ui/badge";
@@ -114,9 +114,7 @@ export default async function LegalPage({ params }: { params: Promise<{ slug: st
 
       {isDraft ? (
         <Container className="mt-6">
-          <Notice tone="warning" title="Draft: being reviewed before launch. Not yet in force." className="mx-auto lg:max-w-[61.5rem] xl:max-w-[63rem]">
-            Text in square brackets is still to be filled in or confirmed.
-          </Notice>
+          <DraftNotice legal className="mx-auto lg:max-w-[61.5rem] xl:max-w-[63rem]" />
         </Container>
       ) : null}
 

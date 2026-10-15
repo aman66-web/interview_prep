@@ -5,19 +5,25 @@ import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
 import { Faq, faqJsonLd, JsonLd, type FaqItem } from "@/components/ui/faq";
+import { pageOpenGraph } from "@/components/learn/seo";
 import { Bolt, Calculator, Chat, Check, GraduationCap, Lock, Mail, Shield } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { allDrills } from "@/lib/drills";
-import { fieldsFromQuery, leadErrorMessage } from "@/lib/leads/messages";
+import { fieldsFromQuery, firstQueryValue, leadErrorMessage, type QueryValue } from "@/lib/leads/messages";
 import { siteConfig } from "@/site.config";
 import { EnquiryForm } from "./enquiry-form";
 
+// Search results show about 60 characters of a title (with " | CaseSpar") and 155-160 of a
+// description; tests/tools-pages.test.ts checks both.
+const DESCRIPTION =
+  "Group access for university consulting clubs and careers services: every case and drill, and the AI interviewer for each member. Pricing agreed by email.";
+
 export const metadata: Metadata = {
-  title: "For universities, consulting clubs and careers services",
-  description:
-    "Group access to CaseSpar for university consulting clubs and careers services: every case and drill, plus the AI case interviewer with a scored debrief for each member. Pricing agreed by email.",
+  title: "For universities, clubs and careers services",
+  description: DESCRIPTION,
   alternates: { canonical: "/for-universities" },
+  openGraph: pageOpenGraph({ title: `${siteConfig.brandName} for universities and consulting clubs`, description: DESCRIPTION, path: "/for-universities" }),
 };
 
 // Rule 2.4: no university or club logos, no "used by" claims and no quotes from users here.
@@ -62,7 +68,7 @@ const STEPS = [
   { t: "Members sign in and practise", d: "Each member signs in with their own email address, and we switch on group access for their account." },
 ];
 
-export default async function ForUniversitiesPage({ searchParams }: { searchParams: Promise<{ sent?: string; error?: string; fields?: string }> }) {
+export default async function ForUniversitiesPage({ searchParams }: { searchParams: Promise<{ sent?: QueryValue; error?: QueryValue; fields?: QueryValue }> }) {
   const { sent, error, fields } = await searchParams;
   const drillCount = allDrills.length;
 
@@ -233,7 +239,7 @@ export default async function ForUniversitiesPage({ searchParams }: { searchPara
               </p>
             ) : null}
           </div>
-          <EnquiryForm initialSent={sent === "1"} initialError={sent === "1" ? null : leadErrorMessage(error)} initialFields={fieldsFromQuery(fields)} />
+          <EnquiryForm initialSent={firstQueryValue(sent) === "1"} initialError={firstQueryValue(sent) === "1" ? null : leadErrorMessage(error)} initialFields={fieldsFromQuery(fields)} />
         </section>
       </Container>
 

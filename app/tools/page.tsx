@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { pageOpenGraph } from "@/components/learn/seo";
 import { TOOL_ICONS } from "@/components/tools/tool-meta";
 import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { IconBadge } from "@/components/ui/card";
@@ -16,11 +17,15 @@ import { sizeMarket } from "@/lib/tools/market-sizing";
 import { exampleQuestions } from "@/lib/tools/mental-maths";
 import { cn } from "@/lib/ui/cn";
 
+// Kept to about 60 characters (title) and 160 (description); tests/tools-pages.test.ts checks.
+const DESCRIPTION =
+  "Free tools for case interview maths: market sizing, break-even and growth rate calculators, plus a timed mental maths trainer. No login needed.";
+
 export const metadata: Metadata = {
   title: "Free case interview tools",
-  description:
-    "Free tools for case interview maths: a market sizing calculator, a break-even calculator, a growth rate calculator and a timed mental maths trainer. No login needed.",
+  description: DESCRIPTION,
   alternates: { canonical: "/tools" },
+  openGraph: pageOpenGraph({ title: "Free case interview tools", description: DESCRIPTION, path: "/tools" }),
 };
 
 // The pictures on each card are drawn from the tools' own example numbers, worked out
@@ -106,7 +111,7 @@ function GrowthPreview() {
     return `${x},${y.toFixed(1)}`;
   }).join(" ");
   return (
-    <div aria-hidden="true" className="grid gap-3 sm:grid-cols-[1.4fr_1fr]">
+    <div aria-hidden="true" className="grid gap-3 sm:grid-cols-[1.4fr_1fr] [&>*]:min-w-0">
       <div className="rounded-2xl bg-surface p-4 ring-1 ring-inset ring-ink/5">
         <svg viewBox="0 0 200 80" className="h-auto w-full">
           <polyline points={pts} fill="none" className="stroke-brand" strokeWidth="2.5" strokeLinecap="round" />
@@ -204,7 +209,7 @@ export default function ToolsPage() {
       />
 
       <Container className="mt-6">
-        <ul className="grid gap-4 md:grid-cols-6">
+        <ul className="grid gap-4 md:grid-cols-6 [&>*]:min-w-0">
           <ToolCard tool={tool("market-sizing-calculator")} tone="bg-butter" className="md:col-span-4" preview={<SizingPreview />} wide />
           <ToolCard tool={tool("break-even-calculator")} tone="bg-mint" className="md:col-span-2" preview={<BreakEvenPreview />} />
           <ToolCard tool={tool("mental-maths-trainer")} tone="bg-night-glow" className="md:col-span-2" preview={<TrainerPreview />} onNight />

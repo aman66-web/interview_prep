@@ -5,7 +5,21 @@ import type { Block } from "@/lib/content/blocks";
 import { allCases } from "@/lib/content/cases";
 import { evaluate, variablesIn } from "@/lib/content/expr";
 import { CASE_TYPE_GUIDES } from "@/lib/content/guide-links";
-import { allFirms, allGuides, findFirm, findPage, glossary, LEGAL_SLUGS, visibleFirms } from "@/lib/content/writing";
+import { DEFAULT_SHARE_IMAGE, pageOpenGraph } from "@/components/learn/seo";
+import { MOCK_EXAMPLE } from "@/components/marketing/mocks";
+import {
+  allFirms,
+  allGuides,
+  fillPlaceholders,
+  FILLABLE_PLACEHOLDERS,
+  findFirm,
+  findPage,
+  glossary,
+  LEGAL_SLUGS,
+  unfilledPlaceholders,
+  visibleFirms,
+  withoutPlaceholders,
+} from "@/lib/content/writing";
 import { firmSchema, glossarySchema, guideSchema, pageSchema } from "@/lib/content/writing-schema";
 import { DRILL_CATEGORIES } from "@/lib/drills/types";
 import { TOOLS } from "@/lib/tools";
@@ -215,6 +229,67 @@ describe("placeholders", () => {
     expect(after.fillPlaceholders("From [effective date].", { effective: "2026-11-01" })).toBe("From 1 November 2026.");
     expect(after.fillPlaceholders("From [effective date].", {})).toBe("From [effective date].");
   });
+
+  it("finds every square-bracket note left in a value, in strings, lists and objects", () => {
+    expect(unfilledPlaceholders("Nothing to fill.")).toEqual([]);
+    expect(unfilledPlaceholders({ a: "Run by [legal entity name].", b: ["[Founder to confirm.]", "ok"], c: { d: "[Lawyer to confirm.]" } }).sort()).toEqual(
+      ["[Founder to confirm.]", "[Lawyer to confirm.]", "[legal entity name]"].sort(),
+    );
+    expect(unfilledPlaceholders(["[support email]", "[support email]"])).toEqual(["[support email]"]);
+    expect(withoutPlaceholders([{ q: "Ready?", a: "Yes." }, { q: "Refunds?", a: "[Founder to confirm.]" }])).toEqual([{ q: "Ready?", a: "Yes." }]);
+  });
+
+  it("leaves no founder or lawyer notes in a page once it is approved (rule 2.2)", () => {
+    // Drafts may hold "[Founder to confirm ...]" notes: they carry a visible draft banner.
+    // An approved page is shown as final text, so only the placeholders filled from
+    // config may remain, and "[effective date]" only if the page has an effective date.
+    for (const file of pageFiles) {
+      const page = pageSchema.parse(read(file));
+      if (page.status !== "approved") continue;
+      const left = unfilledPlaceholders(fillPlaceholders(page, page)).filter((p) => p !== "[support email]");
+      expect(left, `${file} is approved but still has placeholders`).toEqual([]);
+    }
+  });
+
+  it("only fills the placeholders it lists", () => {
+    expect(FILLABLE_PLACEHOLDERS).toEqual(["[support email]", "[effective date]"]);
+  });
+});
+
+describe("draft about and FAQ pages", () => {
+  const source = (path: string) => readFileSync(path, "utf8");
+
+  it("show their draft banner on the live site too, not only on previews", () => {
+    for (const path of ["app/about/page.tsx", "app/faq/page.tsx"]) {
+      const text = source(path);
+      expect(text, path).toContain('page.status === "draft"');
+      expect(text, path).toContain("<DraftNotice");
+      expect(text, path).not.toContain("showDrafts()");
+    }
+  });
+
+  it("stay out of search results while they are drafts, and are indexed once approved", async () => {
+    const about = await import("@/app/about/page");
+    const faq = await import("@/app/faq/page");
+    for (const [slug, meta] of [
+      ["about", about.generateMetadata()],
+      ["faq", faq.generateMetadata()],
+    ] as const) {
+      const robots = meta.robots as { index?: boolean } | undefined;
+      if (findPage(slug)?.status === "draft") expect(robots?.index, slug).toBe(false);
+      else expect(robots, slug).toBeUndefined();
+    }
+  });
+
+  it("keep founder notes out of the FAQ's structured data", () => {
+    const faq = findPage("faq");
+    expect(faq).toBeDefined();
+    const items = faq!.faq.flatMap((g) => g.items);
+    const finished = withoutPlaceholders(items);
+    expect(unfilledPlaceholders(finished)).toEqual([]);
+    if (faq!.status === "draft") expect(finished.length).toBeLessThan(items.length); // today's draft has founder notes
+    expect(source("app/faq/page.tsx")).toContain("faqJsonLd(finishedItems)");
+  });
 });
 
 describe("sitemap.xml and robots.txt", () => {
@@ -227,7 +302,9 @@ describe("sitemap.xml and robots.txt", () => {
     expect(new Set(paths).size, "no duplicates").toBe(paths.length);
     for (const g of allGuides()) expect(paths).toContain(`/guides/${g.slug}`);
     for (const s of LEGAL_SLUGS) expect(paths).toContain(`/legal/${s}`);
-    for (const p of ["/", "/guides", "/glossary", "/about", "/faq", "/tools", "/cases", "/drills"]) expect(paths).toContain(p);
+    for (const p of ["/", "/guides", "/glossary", "/tools", "/cases", "/drills"]) expect(paths).toContain(p);
+    // About and FAQ are noindex while drafts, so they are listed only once approved.
+    for (const slug of ["about", "faq"]) expect(paths.includes(`/${slug}`), slug).toBe(findPage(slug)?.status === "approved");
     for (const f of allFirms()) expect(paths.includes(`/guides/firms/${f.slug}`), f.slug).toBe(f.status === "ready");
     for (const c of allCases) expect(paths.includes(`/cases/${c.slug}`), c.slug).toBe(c.status === "reviewed");
   });
@@ -239,6 +316,16 @@ describe("sitemap.xml and robots.txt", () => {
     expect(disallow).toEqual(expect.arrayContaining(["/app", "/api", "/auth", "/admin"]));
     expect(robots().sitemap).toMatch(/\/sitemap\.xml$/);
   });
+
+  it("let social sites fetch the share-card pictures under /api/og/", async () => {
+    const { default: robots } = await import("@/app/robots");
+    const rules = robots().rules;
+    const rule = Array.isArray(rules) ? rules[0] : rules;
+    const allow = ([] as string[]).concat(rule.allow ?? []);
+    expect(allow).toContain("/");
+    // The longest matching rule wins, so this must be longer than "/api".
+    expect(allow).toContain("/api/og/");
+  });
 });
 
 describe("search titles and descriptions", () => {
@@ -249,5 +336,71 @@ describe("search titles and descriptions", () => {
     const descriptions = all.map((x) => x.description.toLowerCase());
     expect(titles.filter((t, i) => titles.indexOf(t) !== i), "duplicate seo_title").toEqual([]);
     expect(descriptions.filter((d, i) => descriptions.indexOf(d) !== i), "duplicate description").toEqual([]);
+  });
+});
+
+describe("share pictures for pages with their own Open Graph", () => {
+  // A page's openGraph replaces the layout's, picture and all, so pageOpenGraph adds it back.
+  it("always include the site's default share picture", () => {
+    for (const og of [
+      pageOpenGraph({ title: "T", description: "D", path: "/about" }),
+      pageOpenGraph({ type: "article", title: "T", description: "D", path: "/guides/x", modifiedTime: "2026-10-15" }),
+    ]) {
+      expect(og.images).toEqual([DEFAULT_SHARE_IMAGE]);
+      expect(og.siteName).toBe("CaseSpar");
+    }
+    expect(DEFAULT_SHARE_IMAGE.url).toBe("/opengraph-image");
+    expect(existsSync("app/opengraph-image.tsx"), "the picture DEFAULT_SHARE_IMAGE points at").toBe(true);
+  });
+
+  it("are set on the about, FAQ, legal, guides and glossary pages", async () => {
+    const about = (await import("@/app/about/page")).generateMetadata();
+    const faq = (await import("@/app/faq/page")).generateMetadata();
+    const legal = await (await import("@/app/legal/[slug]/page")).generateMetadata({ params: Promise.resolve({ slug: "privacy" }) });
+    const guides = (await import("@/app/guides/page")).metadata;
+    const glossaryPage = (await import("@/app/glossary/page")).metadata;
+    for (const [name, meta] of Object.entries({ about, faq, legal, guides, glossaryPage })) {
+      expect((meta.openGraph as { images?: unknown }).images, name).toEqual([DEFAULT_SHARE_IMAGE]);
+    }
+  });
+});
+
+describe("the home page's product pictures", () => {
+  // They must not give away any case: the numbers come from the free profitability
+  // guide's worked example, which is public and recomputed above.
+  const guide = allGuides().find((g) => g.slug === MOCK_EXAMPLE.guide);
+  const checks = new Map(
+    (guide?.blocks ?? []).flatMap((b) => (b.type === "example" ? b.checks : [])).map((c) => [c.label, c.expected] as const),
+  );
+  const expected = (label: string) => {
+    expect(checks.has(label), `the guide has no check called "${label}"`).toBe(true);
+    return checks.get(label);
+  };
+
+  it("use the guide's worked example, number for number", () => {
+    expect(guide, `content/guides/${MOCK_EXAMPLE.guide}.json`).toBeDefined();
+    expect(expected("Ticket sales (£m)")).toBe(MOCK_EXAMPLE.ticketSales);
+    expect(expected("Food and drink sales last year (£m)")).toBe(MOCK_EXAMPLE.foodSalesLast);
+    expect(expected("Food and drink sales this year (£m)")).toBe(MOCK_EXAMPLE.foodSalesNow);
+    expect(expected("Profit last year (£m)")).toBe(MOCK_EXAMPLE.profitLast);
+    expect(expected("Profit this year (£m)")).toBe(MOCK_EXAMPLE.profitNow);
+    expect(expected("Food and drink contribution last year (£m)")).toBe(MOCK_EXAMPLE.foodContributionLast);
+    expect(expected("Food and drink contribution this year (£m)")).toBe(MOCK_EXAMPLE.foodContributionNow);
+    expect(expected("Share of the profit fall from food and drink")).toBe(MOCK_EXAMPLE.shareOfFall);
+    expect(expected("Net rise in fixed costs (£m)")).toBe(MOCK_EXAMPLE.fixedNow - MOCK_EXAMPLE.fixedLast);
+    const example = JSON.stringify(guide?.blocks);
+    for (const text of [MOCK_EXAMPLE.company.split(" ")[0], `${MOCK_EXAMPLE.visitsM} million`, `£${MOCK_EXAMPLE.filmHire}m film hire`, `£${MOCK_EXAMPLE.fixedLast}m fixed costs`]) {
+      expect(example, text).toContain(text);
+    }
+  });
+
+  it("name no case from the library and show none of its insights", () => {
+    const files = ["app/page.tsx", "components/marketing/mocks.tsx"];
+    const text = files.map((f) => readFileSync(f, "utf8")).join("\n");
+    for (const c of allCases) {
+      const company = c.title.split(":")[0].trim();
+      expect(text, `${company} (${c.slug}) appears in the home page pictures`).not.toContain(company);
+      for (const e of c.exhibits) expect(text, `${c.slug} exhibit insight`).not.toContain(e.insight);
+    }
   });
 });

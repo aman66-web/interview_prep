@@ -45,7 +45,12 @@ export function CaseCard({ c, headingLevel = "h3" }: { c: CaseSummary; headingLe
         {c.isDraft ? <Tag tone="warning">Draft, not yet reviewed</Tag> : null}
       </div>
       <Heading className="mt-5 text-lg font-semibold leading-snug tracking-tight text-ink">
-        <Link href={`/cases/${c.slug}`} className="after:absolute after:inset-0 after:rounded-[1.75rem] focus-visible:outline-none">
+        {/* The link's ::after covers the whole card, so the keyboard focus outline goes on it (around the card)
+            instead of round the title text. Same 2px brand outline as the global :focus-visible rule. */}
+        <Link
+          href={`/cases/${c.slug}`}
+          className="after:absolute after:inset-0 after:rounded-[1.75rem] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-3 focus-visible:after:outline-brand"
+        >
           {c.title}
         </Link>
       </Heading>

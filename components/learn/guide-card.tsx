@@ -47,6 +47,9 @@ export function GuideCard({
     <article
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] p-6 transition-[transform,box-shadow] duration-300 focus-within:shadow-float hover:-translate-y-0.5 hover:shadow-float sm:p-7",
+        // The title's link covers the card but draws no outline of its own, so the card
+        // shows the site's focus outline instead (visible in both themes).
+        "has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-3 has-[a:focus-visible]:outline-brand has-[a:focus-visible]:outline-solid",
         t.card,
       )}
     >

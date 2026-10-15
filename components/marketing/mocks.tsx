@@ -1,10 +1,41 @@
 import { cn } from "@/lib/ui/cn";
 import { Calculator, ChartBars, Check, Clock, Notes, Sparkle } from "@/components/ui/icons";
 
-// Illustrations of the real product, drawn in code. They use the free starter case
-// (Harbourline Bakeries) so every number shown is a real number from a real case.
+// Illustrations of the real product, drawn in code. Their numbers come from the worked
+// example in the free profitability guide (Northgate Cinemas, an invented cinema chain,
+// in content/guides/profitability-case-interview.json), never from a case in the library,
+// so the pictures give away no case's exhibits, insights or maths answers.
+// tests/content-writing.test.ts checks MOCK_EXAMPLE against the guide's recomputed numbers.
 // They are decorative: callers wrap them in a <figure> with a text description,
 // and the mocks themselves are hidden from screen readers.
+
+/** The numbers the pictures use, all from the guide's worked example (£m unless noted). */
+export const MOCK_EXAMPLE = {
+  guide: "profitability-case-interview",
+  company: "Northgate Cinemas",
+  visitsM: 4,
+  profitLast: 10,
+  profitNow: 6,
+  ticketSales: 40,
+  foodSalesLast: 20,
+  foodSalesNow: 16,
+  filmHire: 20,
+  fixedLast: 25,
+  fixedNow: 26,
+  foodContributionLast: 15,
+  foodContributionNow: 12,
+  /** The share of the profit fall that food and drink explains. */
+  shareOfFall: 0.75,
+} as const;
+
+const E = MOCK_EXAMPLE;
+const contributionDrop = E.foodContributionLast - E.foodContributionNow;
+const profitDrop = E.profitLast - E.profitNow;
+
+/** A small "Example" label, so no picture reads as a real result. */
+function ExampleTag() {
+  return <span className="rounded-full bg-lavender px-2 py-0.5 text-[10.5px] font-medium text-ink">Example</span>;
+}
 
 const SCORES = [
   { label: "Structure", value: 4 },
@@ -61,18 +92,26 @@ export function MockInterview({ className }: { className?: string }) {
     <div aria-hidden="true" className={cn("rounded-[1.75rem] bg-surface p-4 shadow-float ring-1 ring-inset ring-line sm:p-5", className)}>
       <div className="flex items-center justify-between gap-3">
         <div>
-          <p className="text-[11px] font-medium text-subtle">Profitability · Harbourline Bakeries</p>
+          <p className="text-[11px] font-medium text-subtle">Profitability · {E.company}</p>
           <p className="text-sm font-semibold text-ink">Why did profit fall?</p>
         </div>
-        <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 font-mono text-[11px] text-muted ring-1 ring-inset ring-line">
-          <Clock size={12} /> 12:40
-        </span>
+        <div className="flex items-center gap-1.5">
+          <ExampleTag />
+          <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 font-mono text-[11px] text-muted ring-1 ring-inset ring-line">
+            <Clock size={12} /> 12:40
+          </span>
+        </div>
       </div>
       <MockStageBar className="mt-3" />
       <div className="mt-4 space-y-3">
-        <Bubble who="interviewer">Profit per café fell from £200k to £80k, with the same customers and prices. How would you approach this?</Bubble>
-        <Bubble who="you">I&rsquo;d split profit into revenue and costs. Revenue held at £2.0m, so which cost lines moved?</Bubble>
-        <Bubble who="interviewer">Good. Here&rsquo;s the profit and loss per café. What stands out?</Bubble>
+        <Bubble who="interviewer">
+          Profit fell from £{E.profitLast}m to £{E.profitNow}m this year, though visits held at {E.visitsM} million. How would you approach this?
+        </Bubble>
+        <Bubble who="you">
+          I&rsquo;d split profit into revenue and costs. With visits and ticket prices flat, ticket sales held at £{E.ticketSales}m, so what changed in
+          food and drink, or in costs?
+        </Bubble>
+        <Bubble who="interviewer">Good. Here&rsquo;s revenue and costs for both years. What stands out?</Bubble>
       </div>
       <div className="mt-4 flex items-center gap-2 border-t border-line pt-3">
         {[
@@ -101,7 +140,7 @@ export function MockDebrief({ className, compact = false }: { className?: string
     <div aria-hidden="true" className={cn("rounded-[1.75rem] bg-surface p-5 shadow-float ring-1 ring-inset ring-line", className)}>
       <div className="flex items-center justify-between gap-2">
         <p className="text-sm font-semibold text-ink">Your debrief</p>
-        <span className="rounded-full bg-lavender px-2 py-0.5 text-[10.5px] font-medium text-ink">Example</span>
+        <ExampleTag />
       </div>
       <ul className="mt-4 space-y-2.5">
         {(compact ? SCORES.slice(0, 3) : SCORES).map((s) => (
@@ -137,34 +176,42 @@ export function MockMathsCheck({ className, solid = false }: { className?: strin
         <span className="grid size-8 place-items-center rounded-full bg-lime text-lime-ink">
           <Check size={16} strokeWidth={2.6} />
         </span>
-        <div>
-          <p className="text-[11px] font-medium text-subtle">Maths check</p>
-          <p className="text-[13px] font-semibold text-ink">⅔ of the fall: ingredients</p>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[11px] font-medium text-subtle">Maths check</p>
+            <ExampleTag />
+          </div>
+          <p className="text-[13px] font-semibold leading-snug text-ink">¾ of the fall: food and drink</p>
         </div>
       </div>
-      <p className="mt-2 text-[11px] text-muted">£80k of the £120k drop · checked by code</p>
+      <p className="mt-2 text-[11px] text-muted">
+        £{contributionDrop}m of the £{profitDrop}m drop · checked by code
+      </p>
     </div>
   );
 }
 
-/** The case's first exhibit as a small grouped bar chart (£ thousand per café). */
+/** The example's revenue and costs as a small grouped bar chart (£m, last year and this year). */
 export function MockExhibit({ className }: { className?: string }) {
   const rows = [
-    { label: "Ingredients", last: 560, now: 640 },
-    { label: "Labour", last: 640, now: 680 },
-    { label: "Rent", last: 400, now: 400 },
-    { label: "Other", last: 200, now: 200 },
+    { label: "Tickets", last: E.ticketSales, now: E.ticketSales },
+    { label: "Food", last: E.foodSalesLast, now: E.foodSalesNow },
+    { label: "Film hire", last: E.filmHire, now: E.filmHire },
+    { label: "Fixed", last: E.fixedLast, now: E.fixedNow },
   ];
-  const max = 700;
+  const max = 45;
   return (
     <div aria-hidden="true" className={cn("rounded-[1.5rem] bg-surface p-4 ring-1 ring-inset ring-line", className)}>
-      <p className="text-[12px] font-semibold text-ink">Costs per café (£k)</p>
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-[12px] font-semibold text-ink">Revenue and costs (£m)</p>
+        <ExampleTag />
+      </div>
       <div className="mt-3 flex h-28 items-end gap-3">
         {rows.map((r) => (
           <div key={r.label} className="flex flex-1 flex-col items-center gap-1.5">
             <div className="flex h-24 w-full items-end justify-center gap-1">
               <div className="w-2.5 rounded-t bg-surface-3" style={{ height: `${(r.last / max) * 100}%` }} />
-              <div className={cn("w-2.5 rounded-t", r.now > r.last ? "bg-brand" : "bg-line-strong")} style={{ height: `${(r.now / max) * 100}%` }} />
+              <div className={cn("w-2.5 rounded-t", r.now !== r.last ? "bg-brand" : "bg-line-strong")} style={{ height: `${(r.now / max) * 100}%` }} />
             </div>
             <span className="text-[10px] text-muted">{r.label}</span>
           </div>

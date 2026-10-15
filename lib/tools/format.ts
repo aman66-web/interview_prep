@@ -4,27 +4,44 @@
 
 export const NOT_A_NUMBER = "–";
 
-export type Parsed = { kind: "empty" } | { kind: "invalid" } | { kind: "number"; value: number };
+/**
+ * What a typed number reads as. An invalid entry says why: "comma" when a comma is used
+ * other than to separate thousands (4,5 or 12,5%), so the field can ask for a decimal point
+ * instead of guessing; "format" for anything else that isn't a number.
+ */
+export type Parsed = { kind: "empty" } | { kind: "invalid"; reason: "format" | "comma" } | { kind: "number"; value: number };
 
-const SUFFIXES: Record<string, number> = {
-  k: 1e3,
-  thousand: 1e3,
-  m: 1e6,
-  mn: 1e6,
-  mil: 1e6,
-  million: 1e6,
-  b: 1e9,
-  bn: 1e9,
-  billion: 1e9,
-  t: 1e12,
-  tn: 1e12,
-  trillion: 1e12,
-};
+/** What to show under a field when someone uses a comma as a decimal point. */
+export const COMMA_DECIMAL_MESSAGE = "Use a point for decimals, like 4.5. A comma can only separate thousands, like 1,200.";
+
+/** The message for a field that couldn't be read: the comma advice, or the field's own example. */
+export function invalidNumberMessage(parsed: Extract<Parsed, { kind: "invalid" }>, example: string): string {
+  return parsed.reason === "comma" ? COMMA_DECIMAL_MESSAGE : example;
+}
+
+// A Map, so only these words count: a typed "constructor" is not a suffix.
+const SUFFIXES = new Map<string, number>([
+  ["k", 1e3],
+  ["thousand", 1e3],
+  ["m", 1e6],
+  ["mn", 1e6],
+  ["mil", 1e6],
+  ["million", 1e6],
+  ["b", 1e9],
+  ["bn", 1e9],
+  ["billion", 1e9],
+  ["t", 1e12],
+  ["tn", 1e12],
+  ["trillion", 1e12],
+]);
+
+const invalid = (reason: "format" | "comma"): Parsed => ({ kind: "invalid", reason });
 
 /**
- * Reads what someone typed into a number field. Accepts thousands separators,
- * spaces, a currency sign, a trailing % and short forms such as 4.8bn, 250k or
- * 3 million. A leading minus (hyphen or the typographic minus) makes it negative.
+ * Reads what someone typed into a number field. Accepts spaces, a currency sign, a
+ * trailing % and short forms such as 4.8bn, 250k or 3 million. A leading minus (hyphen
+ * or the typographic minus) makes it negative. A comma counts only as a thousands
+ * separator (1,200 or 1,234.5); a decimal comma such as 4,5 is refused, never read as 45.
  */
 export function parseNumberInput(raw: string): Parsed {
   if (raw.trim() === "") return { kind: "empty" };
@@ -32,19 +49,27 @@ export function parseNumberInput(raw: string): Parsed {
     .trim()
     .toLowerCase()
     .replace(/[−–]/g, "-")
-    .replace(/[\s  ,_]/g, "")
+    .replace(/[\s\u00a0\u202f_]/g, "")
     .replace(/[$£€]/g, "")
     .replace(/%$/, "");
-  const match = /^(-?)(\d+\.?\d*|\.\d+)([a-z]*)$/.exec(text);
-  if (!match) return { kind: "invalid" };
-  const [, sign, digits, suffix] = match;
+  const match = /^(-?)([\d,]*\.?\d*)([a-z]*)$/.exec(text);
+  if (!match) return invalid(text.includes(",") ? "comma" : "format");
+  const [, sign, written, suffix] = match;
+  let digits = written;
+  if (digits.includes(",")) {
+    // Thousands groups only: 1-3 digits, then groups of exactly 3, then an optional decimal part.
+    if (!/^\d{1,3}(,\d{3})+(\.\d*)?$/.test(digits)) return invalid("comma");
+    digits = digits.replace(/,/g, "");
+  }
+  if (!/^(\d+\.?\d*|\.\d+)$/.test(digits)) return invalid("format");
   let multiplier = 1;
   if (suffix) {
-    if (!(suffix in SUFFIXES)) return { kind: "invalid" };
-    multiplier = SUFFIXES[suffix];
+    const scale = SUFFIXES.get(suffix);
+    if (scale === undefined) return invalid("format");
+    multiplier = scale;
   }
   const value = Number(digits) * multiplier * (sign ? -1 : 1);
-  if (!Number.isFinite(value)) return { kind: "invalid" };
+  if (!Number.isFinite(value)) return invalid("format");
   return { kind: "number", value: value === 0 ? 0 : value };
 }
 

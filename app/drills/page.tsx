@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { collectionPageJsonLd } from "@/components/practice/metadata";
 import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { IconBadge } from "@/components/ui/card";
+import { JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Bolt, Book, Calculator, ChartBars, Check, Layers, Lock, Sparkle, Target } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { allGuides, splitTitle } from "@/lib/content/writing";
@@ -12,10 +14,14 @@ import { findTool } from "@/lib/tools";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
+const TITLE = "Case interview drills";
+const DESCRIPTION =
+  "Practise the skills case interviews test: mental maths, market sizing, structuring problems and reading charts. Free to try, with instant feedback.";
+
 export const metadata: Metadata = {
-  title: "Case interview drills",
-  description:
-    "Practise the skills case interviews test: mental maths, market sizing, structuring problems and reading charts. Free to try, with instant feedback.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/drills" },
 };
 
 // Every count here comes from the drills themselves or site.config.ts (rule 2.4).
@@ -99,6 +105,14 @@ export default function DrillsPage() {
 
   return (
     <>
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: TITLE,
+          description: DESCRIPTION,
+          path: "/drills",
+          items: DRILL_CATEGORIES.map((category) => ({ name: `${CATEGORY_INFO[category].title} drills`, path: `/drills/${category}` })),
+        })}
+      />
       <PageHeader
         eyebrow={<Eyebrow icon={<Bolt size={14} />}>{allDrills.length} drills, free to try</Eyebrow>}
         title={

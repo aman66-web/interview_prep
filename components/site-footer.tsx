@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
 import { siteConfig } from "@/site.config";
+import { AccountLink, OutsideApp } from "./site-nav";
 
 const COLUMNS = [
   {
@@ -27,7 +28,7 @@ const COLUMNS = [
     links: [
       { href: "/about", label: "About CaseSpar" },
       { href: "/for-universities", label: "For universities and clubs" },
-      { href: "/login", label: "Log in" },
+      { href: "/login", label: "Log in", account: true },
     ],
   },
   {
@@ -41,22 +42,27 @@ const COLUMNS = [
   },
 ];
 
+const FOOTER_LINK = "text-[15px] text-white/85 transition-colors hover:text-white";
+
 export function SiteFooter() {
   return (
     <footer className="px-3 pb-3 pt-8 sm:px-4 sm:pt-10">
       <div className="bg-night-glow relative mx-auto w-full max-w-[88rem] overflow-hidden rounded-[2rem] text-on-night">
         <div className="mx-auto max-w-[76rem] px-6 pt-14 sm:px-10 sm:pt-20">
-          <div className="flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-12 md:flex-row md:items-end">
-            <div className="max-w-xl">
-              <p className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-[2.6rem]">
-                Your next case interview <span className="serif-accent text-lime">starts here.</span>
-              </p>
-              <p className="mt-4 text-on-night-muted">Your first full AI interview and scored debrief are free. No card needed.</p>
+          {/* The sign-up banner, left out on the signed-in pages (they already have an account). */}
+          <OutsideApp>
+            <div className="flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-12 md:flex-row md:items-end">
+              <div className="max-w-xl">
+                <p className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-[2.6rem]">
+                  Your next case interview <span className="serif-accent text-lime">starts here.</span>
+                </p>
+                <p className="mt-4 text-on-night-muted">Your first full AI interview and scored debrief are free. No card needed.</p>
+              </div>
+              <ButtonLink href="/login" variant="inverse" size="lg" arrow>
+                Start practising free
+              </ButtonLink>
             </div>
-            <ButtonLink href="/login" variant="inverse" size="lg" arrow>
-              Start practising free
-            </ButtonLink>
-          </div>
+          </OutsideApp>
 
           <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
             <div className="max-w-xs">
@@ -76,9 +82,13 @@ export function SiteFooter() {
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-[15px] text-white/85 transition-colors hover:text-white">
-                        {link.label}
-                      </Link>
+                      {"account" in link ? (
+                        <AccountLink className={FOOTER_LINK} />
+                      ) : (
+                        <Link href={link.href} className={FOOTER_LINK}>
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

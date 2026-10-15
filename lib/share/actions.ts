@@ -10,7 +10,8 @@ import { cleanFirstName, shareSigningKey, signShareCard } from "./token";
 // Makes a share link for one finished interview. Only its owner can: the session is
 // read with the signed-in person's own database client, so Row Level Security returns
 // nothing for anyone else's interview. The link carries only the five scores, the case,
-// the day and (if typed) a first name.
+// the day and (if typed) a first name. The name is checked by cleanFirstName (only
+// letters the share picture's font can draw, see lib/share/token.ts) and is never logged.
 
 export type ShareLinkState =
   | { status: "idle" }
@@ -49,15 +50,21 @@ export async function createShareLink(_prev: ShareLinkState, form: FormData): Pr
   const c = allCases.find((x) => x.id === session.case_id);
   if (!debrief.success || !c) return { status: "error", message: "These scores can't be shared." };
 
-  const token = signShareCard(
-    {
-      scores: debrief.data.scores,
-      caseSlug: c.slug,
-      date: new Date(session.completed_at).toISOString().slice(0, 10),
-      ...(name.name ? { firstName: name.name } : {}),
-    },
-    key,
-  );
+  let token: string;
+  try {
+    token = signShareCard(
+      {
+        scores: debrief.data.scores,
+        caseSlug: c.slug,
+        date: new Date(session.completed_at).toISOString().slice(0, 10),
+        ...(name.name ? { firstName: name.name } : {}),
+      },
+      key,
+    );
+  } catch {
+    // Not logged: the card being signed may hold the person's first name.
+    return { status: "error", message: "These scores can't be shared." };
+  }
   return {
     status: "ready",
     path: `/share/${token}`,

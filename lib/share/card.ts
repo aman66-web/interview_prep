@@ -1,6 +1,6 @@
 import { allCases } from "@/lib/content/cases";
 import { siteConfig } from "@/site.config";
-import { overallScore, SKILL_KEYS, SKILL_LABELS, type ShareCard } from "./token";
+import { isDrawableName, overallScore, SKILL_KEYS, SKILL_LABELS, type ShareCard } from "./token";
 
 // What a share card shows, worked out once for the image, the share page and its
 // metadata, so all three always agree.
@@ -44,6 +44,18 @@ export function cardView(card: ShareCard): CardView {
     .map((s) => `${s.label} ${s.score} out of 5`)
     .join(", ")}.`;
   return { caseTitle, heading, dateLabel: formatDay(card.date), overall, overallLabel, skills, description };
+}
+
+/**
+ * The card as the picture draws it. A token can only hold a name the bundled font can
+ * draw (lib/share/token.ts), but this checks again just before drawing: a name with
+ * any other character is left off the picture (it then says "Practice scores"), so
+ * next/og never fetches a font from Google with the name in the request, and never
+ * logs the name when that fetch fails.
+ */
+export function imageCardView(card: ShareCard): CardView {
+  if (card.firstName === undefined || isDrawableName(card.firstName)) return cardView(card);
+  return cardView({ scores: card.scores, caseSlug: card.caseSlug, date: card.date });
 }
 
 /** "casespar.com" style host for the card's footer: the configured site address, else the one this request came in on. */

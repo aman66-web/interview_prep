@@ -12,6 +12,8 @@ import { cn } from "@/lib/ui/cn";
 // else about them goes on the card. Sharing uses plain links to LinkedIn and X that
 // open in a new tab: no scripts or trackers from those sites are loaded here.
 
+// The same limit as lib/share/token.ts, which is server only. The server checks the
+// name and explains any character the card cannot draw.
 const FIRST_NAME_MAX = 30;
 
 export function ShareScore({ sessionId, className }: { sessionId: string; className?: string }) {
@@ -85,7 +87,8 @@ export function ShareScore({ sessionId, className }: { sessionId: string; classN
           </Button>
         </form>
         <p id={ids.help} className="mt-2 text-sm text-muted">
-          Letters, spaces, hyphens and apostrophes, up to {FIRST_NAME_MAX} characters. Leave it empty to stay anonymous.
+          Letters A to Z (accents such as é or ł are fine) or Cyrillic letters, spaces, hyphens and apostrophes, up to {FIRST_NAME_MAX}{" "}
+          characters. Leave it empty to stay anonymous.
         </p>
 
         {state.status === "error" ? (
@@ -151,7 +154,9 @@ export function ShareScore({ sessionId, className }: { sessionId: string; classN
                 </a>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-subtle">
-                Anyone with the link can see this card. It is labelled as a practice score from an AI-scored mock interview.
+                Anyone with the link can see this card. It is labelled as a practice score from an AI-scored mock interview. The link holds
+                only what is on the card, so it keeps working even if you delete your account. To take it down, delete the post where you
+                shared it.
               </p>
             </div>
           </div>

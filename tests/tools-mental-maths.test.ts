@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { makeRng } from "@/lib/drills/rng";
+import { COMMA_DECIMAL_MESSAGE, parseNumberInput } from "@/lib/tools/format";
 import {
   ALL_TOPICS,
   checkAnswer,
+  exactShort,
   exampleQuestions,
   formatAnswer,
   kindsForTopics,
@@ -77,6 +79,50 @@ describe("tools: mental maths questions", () => {
     expect(checkAnswer(multiply, `${multiply.answer / 1e6}m`)).toMatchObject({ correct: true });
     expect(checkAnswer(multiply, `${multiply.answer / 1e6} million`)).toMatchObject({ correct: true });
     expect(checkAnswer(multiply, `${multiply.answer / 1e5}m`)).toMatchObject({ correct: false }); // a slipped zero is wrong
+  });
+
+  it("writes big numbers in words only when the words are exact (rule 2.9)", () => {
+    expect(exactShort(1_125_000_000)).toBe("1.125 billion");
+    expect(exactShort(1_875_000_000)).toBe("1.875 billion");
+    expect(exactShort(37_500_000)).toBe("37.5 million");
+    expect(exactShort(6_000_000)).toBe("6 million");
+    expect(exactShort(450_000)).toBe("450,000");
+  });
+
+  for (const kind of ["multiply", "divide"] as const) {
+    it(`${kind}: every figure in words in the working is exact, and typing it counts as right`, () => {
+      for (const q of many(kind, 3000)) {
+        const exact = new Set([q.answer, q.inputs.total, q.inputs.people].filter((v) => v !== undefined));
+        const figures = [...q.explanation.matchAll(/(\d[\d,]*(?:\.\d+)?) (million|billion)/g)];
+        expect(figures.length, q.explanation).toBeGreaterThan(0);
+        for (const [text] of figures) {
+          const parsed = parseNumberInput(text);
+          expect(parsed.kind, text).toBe("number");
+          const value = parsed.kind === "number" ? parsed.value : NaN;
+          expect([...exact].some((v) => Math.abs(v - value) < 1e-6), `${text} in: ${q.explanation}`).toBe(true);
+          if (Math.abs(value - q.answer) < 1e-6) expect(checkAnswer(q, text.replace(" ", ""))).toMatchObject({ valid: true, correct: true });
+        }
+        // The short form the working suggests typing ("1,125m") counts as right too.
+        const suggested = /You can type it as ([\d,.]+m)\./.exec(q.explanation);
+        if (kind === "multiply") expect(checkAnswer(q, suggested![1]), q.explanation).toMatchObject({ valid: true, correct: true });
+      }
+    });
+  }
+
+  it("the multiply working never shows a rounded figure (45 × 25 million is $1.125 billion, not $1.13 billion)", () => {
+    const seen = new Set<string>();
+    for (const q of many("multiply", 3000)) seen.add(`${q.inputs.people}x${q.inputs.spend}`);
+    // 16 audiences × 11 spends: the generator reaches every combination in 3,000 tries.
+    expect(seen.size).toBe(176);
+    const q = many("multiply", 3000).find((m) => m.inputs.people === 45e6 && m.inputs.spend === 25)!;
+    expect(q.explanation).toContain("$1.125 billion, or $1,125,000,000");
+    expect(q.explanation).not.toContain("1.13 billion");
+  });
+
+  it("asks for a decimal point when an answer uses a decimal comma, instead of reading 82,5 as 825", () => {
+    const q = makeQuestion(makeRng(11), "up-then-down");
+    expect(checkAnswer(q, "82,5")).toEqual({ valid: false, message: COMMA_DECIMAL_MESSAGE });
+    expect(checkAnswer(q, "1,125m")).toMatchObject({ valid: true });
   });
 
   it("accepts a $ million answer typed as millions or in full", () => {

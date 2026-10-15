@@ -8,6 +8,7 @@ import { Card, IconBadge } from "@/components/ui/card";
 import { Download, Lock, Shield, Trash } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
 import { isPaid } from "@/lib/access";
+import { ownValue } from "@/lib/app/own-key";
 import { requireUser } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/ui/cn";
@@ -65,9 +66,7 @@ export default async function AccountPage({
         : "Thank you! We're confirming your payment. Refresh this page in a minute."
       : checkout === "pending"
         ? "Thank you! We're confirming your payment. Refresh this page in a minute."
-        : notice
-          ? notices[notice]
-          : undefined;
+        : ownValue(notices, notice);
   const messageTone: NoticeTone = checkout === "success" && paid ? "success" : checkout ? "info" : "warning";
 
   return (

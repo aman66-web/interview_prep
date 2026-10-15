@@ -77,6 +77,30 @@ export function formatDate(iso: string, month: "long" | "short" = "long"): strin
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month, year: "numeric", timeZone: "UTC" });
 }
 
+/** The placeholders fillPlaceholders() can fill from config; every other "[...]" is for a person to fill. */
+export const FILLABLE_PLACEHOLDERS = ["[support email]", "[effective date]"] as const;
+
+/**
+ * Every square-bracket note still in a value's text, such as "[Founder to confirm ...]",
+ * "[legal entity name]" or an unfilled "[support email]". Walks strings, arrays and
+ * objects; keys are not read. Run it on a page after findPage() to see what is left.
+ */
+export function unfilledPlaceholders(value: unknown): string[] {
+  const found = new Set<string>();
+  const walk = (v: unknown): void => {
+    if (typeof v === "string") for (const m of v.matchAll(/\[[^[\]]+\]/g)) found.add(m[0]);
+    else if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === "object") Object.values(v).forEach(walk);
+  };
+  walk(value);
+  return [...found];
+}
+
+/** Only the items with no square-bracket note left in them, e.g. FAQ answers fit for structured data. */
+export function withoutPlaceholders<T>(items: T[]): T[] {
+  return items.filter((item) => unfilledPlaceholders(item).length === 0);
+}
+
 /**
  * Replaces the placeholders we can fill from config: "[support email]" once
  * NEXT_PUBLIC_SUPPORT_EMAIL is set, and "[effective date]" once a page has `effective`.

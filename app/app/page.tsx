@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppHeader } from "@/components/app/app-header";
+import { PaywallSeen } from "@/components/app/paywall-seen";
 import { ScoreBars, ScoreRing } from "@/components/app/score-bars";
 import { CASE_TYPE_TONES, DIFFICULTY_LABELS } from "@/components/marketing/case-card";
 import { Kicker, Tag } from "@/components/ui/badge";
@@ -10,7 +11,7 @@ import { ArrowUpRight, Book, Calculator, ChartBars, Check, Clock, Layers, Lock, 
 import { Container } from "@/components/ui/layout";
 import { hasAccess, isPaid } from "@/lib/access";
 import { formatDay, nextStep, summariseProgress, toProgressSessions, usageCounts, type SessionRow } from "@/lib/app/progress";
-import { formatScore, overallScore, SKILLS, skillInfo, weakestSkill, type SkillScores } from "@/lib/app/skills";
+import { focusSkill, formatScore, overallScore, SKILLS, skillInfo, type SkillKey, type SkillScores } from "@/lib/app/skills";
 import { getEntitlement } from "@/lib/auth/entitlement";
 import { requireUser } from "@/lib/auth/session";
 import { visibleCases } from "@/lib/content/cases";
@@ -61,14 +62,16 @@ export default async function DashboardPage() {
   const caseById = new Map(cases.map((c) => [c.id, c]));
   const progress = summariseProgress(sessions);
   const usage = usageCounts(sessions);
-  const finishedCount = sessions.filter((s) => s.completedAt !== null).length;
+  const finishedCount = sessions.filter((s) => s.completedAt !== null && !s.closed).length;
   const step = nextStep({ sessions, cases, paid, freeAllowance: siteConfig.limits.free.aiCasesTotal });
+  const freeUsed = usage.total >= siteConfig.limits.free.aiCasesTotal;
 
   // Paid plans see averages across every finished interview; free accounts see their latest debrief.
   const latest = progress.scored[0];
   const shown: SkillScores | null = tracking ? progress.averages : (latest?.debrief.scores ?? null);
   const shownOverall = shown ? overallScore(shown) : null;
-  const focus = shown ? weakestSkill(shown) : null;
+  // The lowest skill, or null when all five are level (the debrief page does the same).
+  const focus = shown ? focusSkill(shown) : null;
 
   return (
     <>
@@ -90,7 +93,7 @@ export default async function DashboardPage() {
             Signed in as <strong className="font-medium text-ink">{user.email}</strong>.
           </p>
         }
-        aside={<NextStepCard step={step} caseById={caseById} sessions={sessions} />}
+        aside={<NextStepCard step={step} caseById={caseById} sessions={sessions} freeUsed={freeUsed} />}
       >
         <ul className="mb-4 flex flex-wrap gap-2 text-sm text-muted">
           {(sessions.length === 0
@@ -212,8 +215,9 @@ export default async function DashboardPage() {
           planId={entitlement?.plan ?? "free"}
           expires={paid && entitlement?.expires_at ? formatDay(entitlement.expires_at) : null}
           usage={usage}
-          freeUsed={usage.total >= siteConfig.limits.free.aiCasesTotal}
+          freeUsed={freeUsed}
           freeInProgress={progress.inProgress.length > 0}
+          freeNotOpen={step.kind === "starter_unavailable"}
         />
 
         {/* Recent interviews */}
@@ -250,10 +254,10 @@ export default async function DashboardPage() {
                     const title = c?.title ?? "A case that is no longer available";
                     return (
                       <li key={s.id} className="flex flex-wrap items-center gap-x-4 gap-y-3 px-6 py-4 sm:flex-nowrap sm:px-8">
-                        <div className="min-w-0 flex-1">
+                        <div className="min-w-0 grow basis-full sm:basis-0">
                           <div className="flex flex-wrap items-center gap-2">
                             {c ? <Tag tone={CASE_TYPE_TONES[c.type] ?? "neutral"}>{CASE_TYPE_LABELS[c.type]}</Tag> : null}
-                            {s.completedAt ? null : <Tag tone="warning">In progress</Tag>}
+                            {s.closed ? <Tag>Closed, not finished</Tag> : s.completedAt ? null : <Tag tone="warning">In progress</Tag>}
                           </div>
                           <p className="mt-1.5 truncate font-medium text-ink">{title}</p>
                           <p className="text-sm text-muted">
@@ -271,7 +275,7 @@ export default async function DashboardPage() {
                             </span>
                           </div>
                         ) : null}
-                        {c ? (
+                        {c && !s.closed ? (
                           <Link
                             href={s.completedAt ? `/app/debrief/${s.id}` : `/app/interview/${s.id}`}
                             className={cn(
@@ -302,7 +306,7 @@ export default async function DashboardPage() {
           </section>
         </Card>
 
-        <FocusCard focus={focus} score={focus && shown ? shown[focus] : null} />
+        <FocusCard focus={focus} score={focus && shown ? shown[focus] : null} levelScore={shown && !focus ? shown.structure : null} averaged={tracking} />
       </Container>
 
       <Container className="mt-12 sm:mt-16">
@@ -373,10 +377,13 @@ function NextStepCard({
   step,
   caseById,
   sessions,
+  freeUsed,
 }: {
   step: ReturnType<typeof nextStep>;
   caseById: Map<string, CaseInfo>;
   sessions: { id: string; startedAt: string }[];
+  /** Whether this account has started as many interviews as the free plan allows. */
+  freeUsed: boolean;
 }) {
   let title: React.ReactNode;
   let text: React.ReactNode;
@@ -403,7 +410,9 @@ function NextStepCard({
       c = caseById.get(step.caseId);
       if (step.locked) {
         title = "Ready for the next case?";
-        text = "You've used your free AI interview. A paid plan opens every case, like this one:";
+        text = freeUsed
+          ? "You've used your free AI interview. A paid plan opens every case, like this one:"
+          : "A paid plan opens every case, like this one:";
         action = { href: "/pricing", label: "Compare plans" };
         secondary = { href: `/cases/${step.slug}`, label: "Read the case" };
       } else {
@@ -413,9 +422,15 @@ function NextStepCard({
       }
       break;
     case "upgrade":
-      title = "You've used your free interview";
+      title = freeUsed ? "You've used your free interview" : "Ready for more cases?";
       text = "A paid plan opens every case, unlimited drills and progress across interviews.";
       action = { href: "/pricing", label: "Compare plans" };
+      break;
+    case "starter_unavailable":
+      title = "Your free interview isn't open yet";
+      text = "The free starter case is still being checked before it goes live, so your free interview is unused. Warm up with the drills in the meantime.";
+      action = { href: "/drills", label: "Try the drills" };
+      if (caseById.size > 0) secondary = { href: "/cases", label: "Read the case prompts" };
       break;
     case "browse":
       title = "You've tried every case";
@@ -424,8 +439,11 @@ function NextStepCard({
       break;
   }
 
+  const paywall = step.kind === "upgrade" || (step.kind === "case" && step.locked);
+
   return (
     <section aria-labelledby="next-title" className="bg-night-glow relative flex flex-col overflow-hidden rounded-[1.75rem] p-6 text-on-night shadow-float sm:p-7">
+      {paywall ? <PaywallSeen place="dashboard" /> : null}
       <Kicker onNight>Up next</Kicker>
       <h2 id="next-title" className="mt-4 text-2xl font-medium leading-tight tracking-tight text-white">
         {title}
@@ -472,6 +490,7 @@ function PlanCard({
   usage,
   freeUsed,
   freeInProgress,
+  freeNotOpen,
 }: {
   paid: boolean;
   planName: string;
@@ -480,6 +499,8 @@ function PlanCard({
   usage: { total: number; today: number; month: number };
   freeUsed: boolean;
   freeInProgress: boolean;
+  /** The free starter case is not shown yet, so the free interview cannot be started. */
+  freeNotOpen: boolean;
 }) {
   const { limits } = siteConfig;
   return (
@@ -510,8 +531,13 @@ function PlanCard({
           <ul className="mt-6 space-y-3 text-sm">
             <li className="flex items-start justify-between gap-3 rounded-2xl bg-surface-2 p-3.5 ring-1 ring-inset ring-line">
               <span className="text-ink">Free AI interview</span>
-              <span className={cn("shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium", freeUsed ? "bg-surface-3 text-muted" : "bg-lime text-lime-ink")}>
-                {freeInProgress ? "In progress" : freeUsed ? "Used" : "Ready"}
+              <span
+                className={cn(
+                  "shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium",
+                  freeUsed || (freeNotOpen && !freeInProgress) ? "bg-surface-3 text-muted" : "bg-lime text-lime-ink",
+                )}
+              >
+                {freeInProgress ? "In progress" : freeUsed ? "Used" : freeNotOpen ? "Not open yet" : "Ready"}
               </span>
             </li>
             <li className="flex items-start justify-between gap-3 rounded-2xl bg-surface-2 p-3.5 ring-1 ring-inset ring-line">
@@ -557,7 +583,39 @@ function Meter({ label, used, max }: { label: string; used: number; max: number 
   );
 }
 
-function FocusCard({ focus, score }: { focus: ReturnType<typeof weakestSkill> | null; score: number | null }) {
+function FocusCard({
+  focus,
+  score,
+  levelScore,
+  averaged,
+}: {
+  focus: SkillKey | null;
+  score: number | null;
+  /** Set when there are scores but all five are equal: then no skill is the lowest. */
+  levelScore: number | null;
+  averaged: boolean;
+}) {
+  if (levelScore !== null) {
+    return (
+      <Card tone="peach" className="flex flex-col">
+        <section aria-labelledby="focus-title" className="flex h-full flex-col">
+          <Kicker>Practise next</Kicker>
+          <h2 id="focus-title" className="mt-4 text-2xl font-medium tracking-tight text-ink">
+            Your five skills are level
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-ink/75">
+            All five scored {formatScore(levelScore)} out of 5{averaged ? " on average" : ""}, so no one skill is behind the others. Pick any
+            drill, or try a case type you haven&rsquo;t done yet.
+          </p>
+          <div className="mt-auto pt-6">
+            <ButtonLink href="/drills" variant="primary" full arrow>
+              Browse the drills
+            </ButtonLink>
+          </div>
+        </section>
+      </Card>
+    );
+  }
   if (!focus || score === null) {
     return (
       <Card tone="peach" className="flex flex-col">

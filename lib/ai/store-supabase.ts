@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { recordCaseCompleted } from "@/lib/analytics/funnel";
+import { transcriptCutoff } from "@/lib/retention/expired";
 import type { MathCheck } from "./maths";
 import type { Stage } from "./stages";
 import type { CommitTurn, InterviewStore, MessageRow, SessionRow, StartResult, UsageRow } from "./store";
@@ -97,6 +98,8 @@ export function createSupabaseStore(db: SupabaseClient): InterviewStore {
         .eq("user_id", userId)
         .eq("case_id", caseId)
         .is("completed_at", null)
+        // Past the retention period the transcript is being deleted: start afresh instead.
+        .gte("started_at", transcriptCutoff().toISOString())
         .order("started_at", { ascending: false })
         .limit(1)
         .maybeSingle();

@@ -10,6 +10,19 @@ function fail(what: string, error: { message: string; code?: string }): never {
 
 export function createRetentionStore(db: Pick<SupabaseClient, "from">): RetentionStore {
   return {
+    async closeUnfinishedBefore(cutoffIso, scores) {
+      // One statement, so it cannot race an interview being finished at the same moment:
+      // only rows still unfinished match. completed_at is the cutoff (a year back), not
+      // today, so the admin page's "finished in the last 30 days" never counts these.
+      const { count, error } = await db
+        .from("case_sessions")
+        .update({ completed_at: cutoffIso, scores, summary: null, summary_covers: 0 }, { count: "exact" })
+        .is("completed_at", null)
+        .lt("started_at", cutoffIso);
+      if (error) fail("closing old unfinished sessions", error);
+      return count ?? 0;
+    },
+
     async deleteMessagesBefore(cutoffIso) {
       const { count, error } = await db.from("session_messages").delete({ count: "exact" }).lt("created_at", cutoffIso);
       if (error) fail("deleting old messages", error);

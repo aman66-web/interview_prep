@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { AccentTitle, DraftNote, splitSections } from "@/components/learn/article";
+import { AccentTitle, DraftNotice, splitSections } from "@/components/learn/article";
 import { absoluteUrl, pageOpenGraph } from "@/components/learn/seo";
 import { ButtonLink } from "@/components/ui/button";
 import { JsonLd } from "@/components/ui/faq";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { Prose } from "@/components/ui/prose";
-import { showDrafts, visibleCases } from "@/lib/content/cases";
+import { visibleCases } from "@/lib/content/cases";
 import { allGuides, findPage, formatDate } from "@/lib/content/writing";
 import { allDrills } from "@/lib/drills";
 import { siteConfig } from "@/site.config";
@@ -21,6 +21,9 @@ export function generateMetadata(): Metadata {
     description: page.description,
     alternates: { canonical: "/about" },
     openGraph: pageOpenGraph({ title: page.seo_title, description: page.description, path: "/about" }),
+    // A draft still holds the founder's square-bracket notes: keep it out of search
+    // results (and the sitemap) until it is approved.
+    ...(page.status === "draft" ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -49,12 +52,14 @@ export default function AboutPage() {
             Browse the cases
           </ButtonLink>
         </div>
-        {showDrafts() && page.status === "draft" ? (
-          <div className="mt-6">
-            <DraftNote>Draft: waiting for the founder&rsquo;s approval. This note shows on previews only.</DraftNote>
-          </div>
-        ) : null}
       </PageHeader>
+
+      {/* Shown on the live site too while the page is a draft (like the legal pages). */}
+      {page.status === "draft" ? (
+        <Container className="mt-6">
+          <DraftNotice />
+        </Container>
+      ) : null}
 
       <Container className="mt-6">
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.75rem] bg-line ring-1 ring-inset ring-line lg:grid-cols-4">

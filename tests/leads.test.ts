@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { handleLeadPost, MAX_BODY_BYTES, type LeadDeps } from "@/lib/leads/handler";
-import { fieldsFromQuery, leadErrorMessage } from "@/lib/leads/messages";
+import { fieldsFromQuery, firstQueryValue, knownLeadErrorMessage, LEAD_ERROR_MESSAGES, leadErrorMessage } from "@/lib/leads/messages";
 import { clientAddress, createRateLimiter } from "@/lib/leads/rate-limit";
 import { GROUP_SIZES, parseLead, stripControl, type Lead } from "@/lib/leads/schema";
 import { createLeadStore, LeadStoreError } from "@/lib/leads/store-supabase";
@@ -175,6 +175,74 @@ describe("leads: POST /api/leads as a plain form", () => {
     expect(saved).toEqual([]);
   });
 
+  it("refuses a body that grows past the limit while it is read, even with no Content-Length (chunked)", async () => {
+    const { deps, saved } = fakeDeps();
+    const big = JSON.stringify({ org: "Club", email: EMAIL, message: "x".repeat(200 * 1024) });
+    const chunked = (body: string, type: string) => {
+      const bytes = new TextEncoder().encode(body);
+      let at = 0;
+      let pulled = 0;
+      const stream = new ReadableStream<Uint8Array>({
+        pull(controller) {
+          if (at >= bytes.length) return controller.close();
+          controller.enqueue(bytes.slice(at, at + 8192));
+          at += 8192;
+          pulled++;
+        },
+      });
+      const req = new NextRequest(`${SITE}/api/leads`, {
+        method: "POST",
+        headers: { origin: SITE, host: "localhost:3077", "content-type": type, accept: "application/json" },
+        body: stream,
+        // A stream body needs duplex "half" in Node; Next's RequestInit type doesn't list it.
+        duplex: "half",
+      } as ConstructorParameters<typeof NextRequest>[1]);
+      return { req, pulled: () => pulled };
+    };
+    const json = chunked(big, "application/json");
+    expect(json.req.headers.get("content-length")).toBeNull();
+    const res = await handleLeadPost(json.req, deps);
+    expect(res.status).toBe(413);
+    expect(await res.json()).toEqual({ ok: false, error: "too-large" });
+    // It stopped reading soon after the limit instead of taking the whole 200 KB.
+    expect(json.pulled() * 8192).toBeLessThanOrEqual(MAX_BODY_BYTES + 2 * 8192);
+
+    const formBody = form({ ...valid, message: "y".repeat(100 * 1024) });
+    const plain = await handleLeadPost(chunked(formBody, "application/x-www-form-urlencoded").req, deps);
+    expect(plain.status).toBe(413);
+
+    // A small chunked body is read normally.
+    const small = await handleLeadPost(chunked(JSON.stringify({ org: "Club", email: EMAIL }), "application/json").req, deps);
+    expect(small.status).toBe(200);
+    expect(saved).toEqual([{ org: "Club", email: EMAIL, size: null, message: null }]);
+  });
+
+  it("refuses a multipart upload with a big file part, and ignores small file parts", async () => {
+    const { deps, saved } = fakeDeps();
+    const big = new FormData();
+    big.set("org", "Club");
+    big.set("email", EMAIL);
+    big.set("attachment", new Blob(["z".repeat(MAX_BODY_BYTES + 1)]), "big.txt");
+    const res = await handleLeadPost(new NextRequest(`${SITE}/api/leads`, { method: "POST", headers: { origin: SITE, host: "localhost:3077", accept: "application/json" }, body: big }), deps);
+    expect(res.status).toBe(413);
+
+    const small = new FormData();
+    small.set("org", "Club");
+    small.set("email", EMAIL);
+    small.set("website", new Blob(["not text"]), "honeypot.txt"); // a file is not a filled-in honeypot
+    small.set("message", new Blob(["hello"]), "message.txt"); // nor a message
+    const ok = await handleLeadPost(new NextRequest(`${SITE}/api/leads`, { method: "POST", headers: { origin: SITE, host: "localhost:3077" }, body: small }), deps);
+    expect(ok.status).toBe(303);
+    expect(saved).toEqual([{ org: "Club", email: EMAIL, size: null, message: null }]);
+  });
+
+  it("treats fields named like object built-ins as unknown fields", async () => {
+    const { deps, saved } = fakeDeps();
+    const res = await handleLeadPost(post({ body: `__proto__=x&constructor=y&toString=z&${form({ org: "Club", email: EMAIL })}` }), deps);
+    expect(new URL(res.headers.get("location")!).searchParams.get("sent")).toBe("1");
+    expect(saved).toEqual([{ org: "Club", email: EMAIL, size: null, message: null }]);
+  });
+
   it("refuses a body that is neither a form nor JSON", async () => {
     const { deps } = fakeDeps();
     const res = await handleLeadPost(post({ body: "org=x", headers: { "content-type": "text/plain", accept: "application/json" } }), deps);
@@ -313,7 +381,27 @@ describe("leads: messages on the page", () => {
     for (const code of ["invalid", "busy", "server", "too-large", "unsupported", "forbidden"]) expect(leadErrorMessage(code)).toBeTruthy();
     expect(leadErrorMessage(undefined)).toBeNull();
     expect(leadErrorMessage("<script>")).toBe(leadErrorMessage("unsupported"));
+    // Inherited object keys are not error codes (a crafted ?error= must not crash the page).
+    for (const code of ["__proto__", "constructor", "toString", "hasOwnProperty", "valueOf"]) {
+      expect(leadErrorMessage(code), code).toBe(LEAD_ERROR_MESSAGES.unsupported);
+      expect(knownLeadErrorMessage(code), code).toBeUndefined();
+    }
+    expect(knownLeadErrorMessage("busy")).toBe(LEAD_ERROR_MESSAGES.busy);
+    expect(knownLeadErrorMessage(undefined)).toBeUndefined();
+    expect(fieldsFromQuery("__proto__,constructor,email")).toEqual(["email"]);
     expect(fieldsFromQuery("org,email,evil")).toEqual(["org", "email"]);
     expect(fieldsFromQuery(undefined)).toEqual([]);
+  });
+
+  it("copes with a parameter sent twice (?fields=org&fields=email arrives as a list)", () => {
+    expect(fieldsFromQuery(["org", "email"])).toEqual(["org", "email"]);
+    expect(fieldsFromQuery(["org,email", "email", "toString"])).toEqual(["org", "email"]);
+    expect(fieldsFromQuery([])).toEqual([]);
+    expect(leadErrorMessage(["busy", "invalid"])).toBe(LEAD_ERROR_MESSAGES.busy);
+    expect(leadErrorMessage(["__proto__"])).toBe(LEAD_ERROR_MESSAGES.unsupported);
+    expect(leadErrorMessage([])).toBeNull();
+    expect(firstQueryValue(["1", "2"])).toBe("1");
+    expect(firstQueryValue("1")).toBe("1");
+    expect(firstQueryValue(undefined)).toBeUndefined();
   });
 });

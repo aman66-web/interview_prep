@@ -5,6 +5,7 @@ import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { IconBadge } from "@/components/ui/card";
 import { Faq, faqJsonLd, JsonLd, type FaqItem } from "@/components/ui/faq";
 import { ArrowLeft, ArrowUpRight, Book, Bolt, Lock, Sparkle, Target } from "@/components/ui/icons";
+import { pageOpenGraph } from "@/components/learn/seo";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { findTool, TOOLS, type ToolInfo } from "@/lib/tools";
 import { relatedLinks } from "@/lib/tools/related";
@@ -27,7 +28,9 @@ export function toolMetadata(slug: string): Metadata {
     title: `${tool.title} for case interviews`,
     description: tool.description,
     alternates: { canonical: `/tools/${tool.slug}` },
-    openGraph: { title: `Free ${tool.title.toLowerCase()} | case interview practice`, description: tool.description, url: `/tools/${tool.slug}` },
+    // pageOpenGraph repeats the site name, type and default share picture, which a page's
+    // own openGraph would otherwise drop.
+    openGraph: pageOpenGraph({ title: `Free ${tool.title.toLowerCase()} | case interview practice`, description: tool.description, path: `/tools/${tool.slug}` }),
   };
 }
 

@@ -33,3 +33,7 @@ The whole of mckinsey.com refused requests from Claude's environment on 15 Oct 2
 - Bain: whether Bain's case interviews are interviewer-led or candidate-led. Not stated. The practice cases suggest you walk the interviewer through your structure and propose where to start, which the guide reports in those terms. Looked: `/careers/hiring-process/case-interview/` and `/careers/hiring-process/interviewing/fashion-case-study/`, 15 Oct 2026.
 - Bain: whether consulting candidates have a written case or group exercise. The interviewing page lists a take-home written assignment as an interview type for some roles, without saying which roles. Looked: `/careers/hiring-process/interviewing/`, 15 Oct 2026.
 - Bain: which offices use Sova and which use Test Gorilla, and what each test contains. Bain says only that the email after you apply tells you which one. Looked: `/careers/hiring-process/digital-assessment/`, 15 Oct 2026.
+
+### Interview format (general)
+
+- How long a real consulting case interview usually lasts. The interview room used to say "25 to 40 minutes" with no source; it now uses each case's own written estimate instead. Add a general figure only from an official firm careers page, with the URL and date. Noted 15 Oct 2026.

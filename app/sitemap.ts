@@ -31,8 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/tools"),
     ...TOOLS.map((t) => entry(`/tools/${t.slug}`)),
     entry("/for-universities"),
-    entry("/about", findPage("about")?.updated),
-    entry("/faq", findPage("faq")?.updated),
+    // About and FAQ are noindex while they are drafts (founder notes), so they are
+    // listed only once approved.
+    ...(["about", "faq"] as const).flatMap((slug) => {
+      const page = findPage(slug);
+      return page?.status === "approved" ? [entry(`/${slug}`, page.updated)] : [];
+    }),
     ...LEGAL_SLUGS.map((s) => entry(`/legal/${s}`, findPage(s)?.updated)),
   ];
 }

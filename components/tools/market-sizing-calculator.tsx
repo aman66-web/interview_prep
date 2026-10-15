@@ -4,10 +4,10 @@ import { useId, useRef, useState } from "react";
 import { buttonClasses } from "@/components/ui/button";
 import { Plus, Trash } from "@/components/ui/icons";
 import { SIZING_EXAMPLE } from "@/lib/tools/examples";
-import { formatCompact, formatMoneyCompact, formatNumber, formatPercent, parseNumberInput } from "@/lib/tools/format";
+import { formatCompact, formatMoneyCompact, formatNumber, formatPercent, invalidNumberMessage, parseNumberInput } from "@/lib/tools/format";
 import { MAX_STEPS, RANGE_OPTIONS, sizeMarket, STEP_OPS, type SizingInput, type SizingResult, type StepOp } from "@/lib/tools/market-sizing";
 import { cn } from "@/lib/ui/cn";
-import { Announcer, CURRENCIES, type CurrencySymbol, NumberField, SelectField, TextField } from "./fields";
+import { Announcer, CURRENCIES, type CurrencySymbol, NumberField, ScrollRegion, SelectField, TextField } from "./fields";
 
 // The market sizing calculator (/tools/market-sizing-calculator). A chain of steps
 // the visitor names and edits, worked out in the browser by lib/tools/market-sizing.ts.
@@ -20,7 +20,7 @@ const OP_SELECT = STEP_OPS.map((o) => ({ value: o.value, label: o.label }));
 function readValue(raw: string): { value: number | null; error: string | null } {
   const p = parseNumberInput(raw);
   if (p.kind === "number") return { value: p.value, error: null };
-  return { value: null, error: p.kind === "empty" ? "Enter a number." : "Enter a number, like 50,000,000 or 50m." };
+  return { value: null, error: p.kind === "empty" ? "Enter a number." : invalidNumberMessage(p, "Enter a number, like 50,000,000 or 50m.") };
 }
 
 export function MarketSizingCalculator() {
@@ -62,7 +62,7 @@ export function MarketSizingCalculator() {
   const start = readValue(startValue);
   const stepReads = steps.map((s) => readValue(s.value));
   const price = parseNumberInput(priceValue);
-  const priceError = price.kind === "invalid" ? "Enter a number, or leave it empty for a count only." : null;
+  const priceError = price.kind === "invalid" ? invalidNumberMessage(price, "Enter a number, or leave it empty for a count only.") : null;
   const allRead = start.value !== null && stepReads.every((r) => r.value !== null) && !priceError;
 
   let result: SizingResult | null = null;
@@ -300,7 +300,40 @@ function Sensitivity({ result, show }: { result: Extract<SizingResult, { ok: tru
           Your answer: <span className="font-medium text-ink tabular-nums">{show(result.base)}</span>
         </p>
       </div>
-      <div className="relative mt-6 overflow-x-auto rounded-[1.5rem] ring-1 ring-inset ring-line">
+      {/* Phones and tablets: one card per assumption, so the low and high answers are never off
+          screen and long names are never cut short. The table needs a laptop-wide screen. */}
+      <ol className="mt-6 space-y-3 lg:hidden" aria-label="The answer at the low and high end of each assumption’s range, widest swing first">
+        {rows.map((r, rank) => {
+          const biggest = rank === 0 && r.swing > 0 && !result.allEqual;
+          return (
+            <li key={r.i} className="rounded-[1.25rem] bg-surface-2 p-4 ring-1 ring-inset ring-line">
+              <div className="flex items-start justify-between gap-3">
+                <p className="min-w-0 text-sm font-medium leading-snug text-ink [overflow-wrap:anywhere]">
+                  {biggest ? <span className="mr-2 inline-block rounded-full bg-lime px-2 py-0.5 align-[1px] text-[11px] font-medium text-lime-ink">Biggest</span> : null}
+                  {r.label}
+                </p>
+                <p className="shrink-0 text-sm text-muted tabular-nums">
+                  <span className="sr-only">Could be off by </span>±{r.rangePct}%
+                </p>
+              </div>
+              <div className="mt-3" aria-hidden="true">
+                <SwingBar low={pos(r.low)} high={pos(r.high)} base={pos(result.base)} strong={biggest} />
+              </div>
+              <dl className="mt-2.5 grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <dt className="text-xs text-muted">Low</dt>
+                  <dd className="text-ink tabular-nums">{show(r.low)}</dd>
+                </div>
+                <div className="text-right">
+                  <dt className="text-xs text-muted">High</dt>
+                  <dd className="text-ink tabular-nums">{show(r.high)}</dd>
+                </div>
+              </dl>
+            </li>
+          );
+        })}
+      </ol>
+      <ScrollRegion label="Table of what moves the answer" className="mt-6 hidden lg:block">
         <table className="w-full min-w-[36rem] text-sm">
           <caption className="sr-only">The answer at the low and high end of each assumption&rsquo;s range, widest swing first</caption>
           <thead className="bg-surface-2 text-xs uppercase tracking-wide text-muted">
@@ -328,26 +361,30 @@ function Sensitivity({ result, show }: { result: Extract<SizingResult, { ok: tru
                 <th scope="row" className="max-w-[16rem] px-4 py-3 text-left font-medium text-ink">
                   <span className="flex items-center gap-2">
                     {rank === 0 && r.swing > 0 && !result.allEqual ? <span className="rounded-full bg-lime px-2 py-0.5 text-[11px] font-medium text-lime-ink">Biggest</span> : null}
-                    <span className="truncate">{r.label}</span>
+                    <span className="min-w-0 [overflow-wrap:anywhere]">{r.label}</span>
                   </span>
                 </th>
                 <td className="px-4 py-3 text-right text-muted tabular-nums">±{r.rangePct}%</td>
                 <td className="px-4 py-3 text-right text-ink tabular-nums">{show(r.low)}</td>
                 <td className="px-4 py-3" aria-hidden="true">
-                  <div className="relative h-3 rounded-full bg-surface-3">
-                    <div
-                      className={cn("absolute top-0 h-3 rounded-full", rank === 0 && !result.allEqual ? "bg-brand" : "bg-ink/70")}
-                      style={{ left: `${pos(r.low)}%`, width: `${Math.max(0.8, pos(r.high) - pos(r.low))}%` }}
-                    />
-                    <div className="absolute -top-1 h-5 w-0.5 rounded bg-ink" style={{ left: `calc(${pos(result.base)}% - 1px)` }} />
-                  </div>
+                  <SwingBar low={pos(r.low)} high={pos(r.high)} base={pos(result.base)} strong={rank === 0 && !result.allEqual} />
                 </td>
                 <td className="px-4 py-3 text-right text-ink tabular-nums">{show(r.high)}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
+      </ScrollRegion>
     </section>
+  );
+}
+
+/** One assumption's swing: a bar from its low to its high answer, with a tick at your answer. Positions in percent. */
+function SwingBar({ low, high, base, strong }: { low: number; high: number; base: number; strong: boolean }) {
+  return (
+    <div className="relative h-3 rounded-full bg-surface-3">
+      <div className={cn("absolute top-0 h-3 rounded-full", strong ? "bg-brand" : "bg-ink/70")} style={{ left: `${low}%`, width: `${Math.max(0.8, high - low)}%` }} />
+      <div className="absolute -top-1 h-5 w-0.5 rounded bg-ink" style={{ left: `calc(${base}% - 1px)` }} />
+    </div>
   );
 }

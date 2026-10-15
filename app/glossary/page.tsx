@@ -67,7 +67,7 @@ export default function GlossaryPage() {
                 {groups.has(letter) ? (
                   <a
                     href={`#${groupId(letter)}`}
-                    aria-label={letter === "#" ? "Numbers" : undefined}
+                    aria-label={letter === "#" ? "0–9 (numbers)" : undefined}
                     className="grid size-9 place-items-center rounded-full text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-ink-contrast"
                   >
                     {letter === "#" ? "0–9" : letter}

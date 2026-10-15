@@ -1,3 +1,4 @@
+import { IMAGE_SIZE } from "@/lib/share/images";
 import { absoluteUrl, siteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/site.config";
 
@@ -34,11 +35,23 @@ export function articleJsonLd({ headline, description, path, dateModified }: { h
 }
 
 /**
+ * The site's default share picture (app/opengraph-image.tsx, drawn at build time and
+ * served at /opengraph-image). Relative: metadataBase in app/layout.tsx makes it absolute.
+ */
+export const DEFAULT_SHARE_IMAGE = {
+  url: "/opengraph-image",
+  width: IMAGE_SIZE.width,
+  height: IMAGE_SIZE.height,
+  alt: `${siteConfig.brandName}: ${siteConfig.tagline}`,
+} as const;
+
+/**
  * Open Graph for one page. A page's openGraph replaces the layout's whole object,
- * so the site name and type are repeated here.
+ * including the default picture, so the site name, type and picture are repeated here.
  */
 export function pageOpenGraph({ title, description, path, type = "website", modifiedTime }: { title: string; description: string; path: string; type?: "website" | "article"; modifiedTime?: string }) {
+  const common = { siteName: siteConfig.brandName, title, description, url: path, images: [DEFAULT_SHARE_IMAGE] };
   return type === "article"
-    ? { type, siteName: siteConfig.brandName, title, description, url: path, ...(modifiedTime ? { modifiedTime } : {}) }
-    : { type, siteName: siteConfig.brandName, title, description, url: path };
+    ? { type, ...common, ...(modifiedTime ? { modifiedTime } : {}) }
+    : { type, ...common };
 }

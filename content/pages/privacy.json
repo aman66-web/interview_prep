@@ -97,7 +97,8 @@
       "type": "ul",
       "items": [
         "Cookies: we use only the cookies needed to keep you logged in. Our login system sets them, using Supabase. Because they are strictly necessary, we don't ask for consent for them.",
-        "Browser storage: your browser tab remembers your interview notes, your place in each set of drills, and how many drills you have tried without an account. This uses your browser's session storage, which is cleared when you close the tab. It is never sent to us.",
+        "Browser storage: your browser tab remembers your interview notes, your place in each set of drills, and how many drills you have tried without an account. This uses your browser's session storage, which is cleared when you close the tab. None of this is sent to us.",
+        "Campaign tags: if the link you arrived by had campaign tags (such as utm_source), your browser tab keeps those in the same session storage. They are sent to us when you sign in, and recorded with your sign-up if you are new. They are then kept with your usage events, which are deleted after 180 days.",
         "Page-view counts: if we count page views, we use Vercel Web Analytics, which doesn't use cookies.",
         "We don't use advertising pixels or third-party trackers. If that ever changes, we will ask for your consent first."
       ]
@@ -110,6 +111,7 @@
       "columns": ["Data", "How long we keep it"],
       "rows": [
         ["Interview transcripts (the messages)", "Deleted 365 days after they were written"],
+        ["The summary, quotes and written feedback in an interview's debrief", "Removed 365 days after the interview started. Its scores and maths results stay until you delete your account"],
         ["Usage events", "Deleted after 180 days"],
         ["Your account, plan, scores, drill answers and AI usage records", "Until you delete your account"],
         ["Enquiries from universities and clubs", "[Founder to decide]"],
@@ -118,7 +120,21 @@
     },
     {
       "type": "p",
-      "text": "[Founder: the automatic clean-up of transcripts and usage events is not built yet (milestone P6). It must be running before this policy goes live. It should also clear the interview summary and the quotes in each debrief, because they repeat parts of the transcript.]"
+      "text": "A clean-up runs automatically every day. It deletes transcripts and usage events, and removes the text from old debriefs, once they reach the ages above."
+    },
+    {
+      "type": "p",
+      "text": "[Founder: the daily clean-up is built. It runs only once CRON_SECRET and SUPABASE_SECRET_KEY are set in Vercel (Production). Check one successful run in Vercel's Cron log before this policy goes live.]"
+    },
+
+    { "type": "h2", "id": "share-links", "text": "Share links" },
+    {
+      "type": "p",
+      "text": "After an interview you can make a link that shows your scores as a card. The link itself holds everything on the card: your five skill scores, the case, the day of the interview, and a first name only if you type one. We don't store share links or keep a list of them."
+    },
+    {
+      "type": "p",
+      "text": "Anyone with the link can see the card. Sites where you post it may keep their own copy of the preview picture. Because the link holds nothing that identifies your account, it keeps working even if you delete your account. To take a card down, delete the post or message where you shared it."
     },
 
     { "type": "h2", "id": "your-rights", "text": "Your rights" },
@@ -127,7 +143,7 @@
       "type": "ul",
       "items": [
         "Get a copy of your data. On your account page, choose Download my data to get a file (in JSON format) of everything we hold about you.",
-        "Delete your account and data. On your account page, type your email address to confirm. This deletes your account, practice history and transcripts straight away. It also deletes your Stripe customer record, which cancels any subscription. Stripe keeps the payment records it is legally required to keep.",
+        "Delete your account and data. On your account page, type your email address to confirm. This deletes your account, practice history and transcripts straight away. It also deletes your Stripe customer record, which cancels any subscription. Stripe keeps the payment records it is legally required to keep. Share links you made keep working (see Share links above).",
         "Ask us to correct data that is wrong.",
         "Object to how we use your data, or ask us to restrict it.",
         "Take your data to another service. The download above is in a common, machine-readable format.",

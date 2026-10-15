@@ -2,35 +2,69 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Notice, type NoticeTone } from "@/components/app/notice";
+import { PaywallSeen } from "@/components/app/paywall-seen";
 import { Kicker, Tag } from "@/components/ui/badge";
 import { Button, ButtonLink, type ButtonVariant } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Faq, faqJsonLd, JsonLd, type FaqItem } from "@/components/ui/faq";
 import { Check, Lock, Shield, Sparkle } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
+import { ownValue } from "@/lib/app/own-key";
 import { PLANS, type PlanId } from "@/lib/plans";
+import { CANCEL_WAIVER } from "@/lib/stripe/checkout";
+import { pageOpenGraph } from "@/components/learn/seo";
 import { PURCHASE_NOTICES } from "@/lib/stripe/plans";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
+const PRICING_DESCRIPTION = `Practise free, or go unlimited from $${siteConfig.prices.monthly} a month or $${siteConfig.prices.pass90} for a 90-day pass.`;
+
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `Practise free, or go unlimited from $${siteConfig.prices.monthly} a month or $${siteConfig.prices.pass90} for a 90-day pass.`,
+  description: PRICING_DESCRIPTION,
+  alternates: { canonical: "/pricing" },
+  openGraph: pageOpenGraph({ title: "CaseSpar pricing", description: PRICING_DESCRIPTION, path: "/pricing" }),
 };
 
 const { limits, prices } = siteConfig;
 
+const NOTICES: Record<string, string> = { ...PURCHASE_NOTICES, consent: CANCEL_WAIVER.notice };
+
 const NOTICE_TONES: Record<string, NoticeTone> = {
   unavailable: "warning",
   invalid: "warning",
+  consent: "warning",
   error: "danger",
 };
 
-function BuyButton({ plan, variant, children }: { plan: "monthly" | "pass90"; variant: ButtonVariant; children: ReactNode }) {
+function BuyButton({
+  plan,
+  variant,
+  onNight = false,
+  children,
+}: {
+  plan: "monthly" | "pass90";
+  variant: ButtonVariant;
+  onNight?: boolean;
+  children: ReactNode;
+}) {
   // A plain form post: it works without JavaScript. Signed-out visitors are sent to sign in first.
+  // The tick box is required here and checked again by /api/stripe/checkout.
+  const id = `cancel-waiver-${plan}`;
   return (
     <form method="post" action="/api/stripe/checkout">
       <input type="hidden" name="plan" value={plan} />
+      <label htmlFor={id} className={cn("mb-4 flex cursor-pointer items-start gap-3 text-[13px] leading-snug", onNight ? "text-on-night-muted" : "text-muted")}>
+        <input
+          id={id}
+          type="checkbox"
+          name={CANCEL_WAIVER.field}
+          value={CANCEL_WAIVER.version}
+          required
+          className={cn("mt-px size-5 shrink-0 cursor-pointer rounded", onNight ? "accent-lime" : "accent-ink")}
+        />
+        <span>{CANCEL_WAIVER.text}</span>
+      </label>
       <Button type="submit" variant={variant} full arrow size="lg">
         {children}
       </Button>
@@ -39,7 +73,12 @@ function BuyButton({ plan, variant, children }: { plan: "monthly" | "pass90"; va
 }
 
 function PlanAction({ id }: { id: PlanId }) {
-  if (id === "monthly") return <BuyButton plan="monthly" variant="inverse">Choose Monthly</BuyButton>;
+  if (id === "monthly")
+    return (
+      <BuyButton plan="monthly" variant="inverse" onNight>
+        Choose Monthly
+      </BuyButton>
+    );
   if (id === "pass90") return <BuyButton plan="pass90" variant="primary">Get the 90-Day Pass</BuyButton>;
   return (
     <ButtonLink href="/login" variant="secondary" full arrow size="lg">
@@ -100,7 +139,7 @@ function CellView({ value, paid = false }: { value: Cell; paid?: boolean }) {
 
 export default async function PricingPage({ searchParams }: { searchParams: Promise<{ notice?: string }> }) {
   const { notice } = await searchParams;
-  const message = notice ? PURCHASE_NOTICES[notice] : undefined;
+  const message = ownValue(NOTICES, notice);
 
   return (
     <>
@@ -116,8 +155,10 @@ export default async function PricingPage({ searchParams }: { searchParams: Prom
       />
 
       <Container className="mt-6">
+        {/* Counts a signed-in free user seeing the plans (the server ignores guests and paying users). */}
+        <PaywallSeen place="pricing" />
         {message ? (
-          <Notice tone={NOTICE_TONES[notice ?? ""] ?? "info"} className="mx-auto mb-6 max-w-3xl">
+          <Notice tone={ownValue(NOTICE_TONES, notice) ?? "info"} className="mx-auto mb-6 max-w-3xl">
             {message}
           </Notice>
         ) : null}
@@ -174,7 +215,29 @@ export default async function PricingPage({ searchParams }: { searchParams: Prom
             </h2>
             <p className="mt-4 text-muted sm:text-lg">Monthly and the 90-Day Pass include the same things. Only how you pay differs.</p>
           </div>
-          <div className="relative mt-10 overflow-x-auto rounded-[1.5rem] bg-surface ring-1 ring-inset ring-line">
+          {/* Phones: one card per feature, with both plans side by side, so the paid column is never off screen. */}
+          <ul className="mt-10 divide-y divide-line overflow-hidden rounded-[1.5rem] bg-surface ring-1 ring-inset ring-line sm:hidden">
+            {[...COMPARISON, { feature: "Price", free: "$0", paid: `$${prices.monthly} a month, or $${prices.pass90} once` } as const].map((row) => (
+              <li key={row.feature} className="px-4 py-4">
+                <p className="font-medium text-ink">{row.feature}</p>
+                <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
+                  <div className="rounded-2xl bg-surface-2 p-3 ring-1 ring-inset ring-line">
+                    <dt className="text-xs font-medium uppercase tracking-wide text-muted">Free</dt>
+                    <dd className="mt-1.5">
+                      <CellView value={row.free} />
+                    </dd>
+                  </div>
+                  <div className="rounded-2xl bg-lime/25 p-3 ring-1 ring-inset ring-lime/60">
+                    <dt className="text-xs font-medium uppercase tracking-wide text-ink/70">Monthly or Pass</dt>
+                    <dd className="mt-1.5">
+                      <CellView value={row.paid} paid />
+                    </dd>
+                  </div>
+                </dl>
+              </li>
+            ))}
+          </ul>
+          <div className="relative mt-10 hidden overflow-x-auto rounded-[1.5rem] bg-surface ring-1 ring-inset ring-line sm:block">
             <table className="w-full min-w-[34rem] border-collapse text-left text-[15px]">
               <caption className="sr-only">What the free plan and the paid plans include</caption>
               <thead>
@@ -240,7 +303,8 @@ export default async function PricingPage({ searchParams }: { searchParams: Prom
                   </>
                 ) : (
                   ". Use the support address on this site."
-                )}
+                )}{" "}
+                This does not affect your legal rights.
               </p>
               <p>
                 The full terms are on the{" "}

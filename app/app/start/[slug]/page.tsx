@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppHeader } from "@/components/app/app-header";
 import { Notice } from "@/components/app/notice";
+import { PaywallSeen } from "@/components/app/paywall-seen";
 import { CASE_TYPE_TONES, DifficultyMeter } from "@/components/marketing/case-card";
 import { Kicker, Tag } from "@/components/ui/badge";
 import { Button, ButtonLink } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import { ArrowLeft, Calculator, ChartBars, Chat, Clock, Lock, Notes, Shield } fr
 import { Container } from "@/components/ui/layout";
 import { hasAccess } from "@/lib/access";
 import { blockedMessage, canStartCase, SESSION_CAPS, type Blocked } from "@/lib/ai/limits";
+import { ownValue } from "@/lib/app/own-key";
 import { isAiConfigured } from "@/lib/ai/llm";
 import { requireUser } from "@/lib/auth/session";
 import { getEntitlement } from "@/lib/auth/entitlement";
@@ -19,6 +21,7 @@ import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { createClient } from "@/lib/supabase/server";
 import { siteConfig } from "@/site.config";
 import { startInterviewAction } from "../actions";
+import { isClosedUnfinished, isExpiredUnfinished } from "@/lib/retention/expired";
 
 export const metadata: Metadata = { title: "Start an interview", robots: { index: false } };
 
@@ -39,7 +42,7 @@ const STAGES = [
 ];
 
 const TOOLS = [
-  { icon: <ChartBars size={16} />, name: "Exhibits", text: "Shared when you ask for the right data" },
+  { icon: <ChartBars size={16} />, name: "Exhibits", text: "Shared in the analysis, when you ask for data or as the case moves on" },
   { icon: <Notes size={16} />, name: "Notes", text: "A scratchpad kept in this browser tab only" },
   { icon: <Calculator size={16} />, name: "Calculator", text: "For checking, not for thinking" },
   { icon: <Clock size={16} />, name: "Timer", text: "So you learn the pace" },
@@ -62,16 +65,19 @@ export default async function StartPage({
   const paid = hasAccess(await getEntitlement(supabase), "all_cases");
   const { data: sessions } = await supabase
     .from("case_sessions")
-    .select("id, case_id, completed_at")
+    .select("id, case_id, started_at, completed_at, scores")
     .eq("user_id", user.id) // Row Level Security already limits this to the user; the filter is belt and braces.
     .order("started_at", { ascending: false });
-  const mine = (sessions ?? []) as { id: string; case_id: string; completed_at: string | null }[];
-  const active = mine.find((s) => s.case_id === c.id && !s.completed_at);
-  const finished = mine.find((s) => s.case_id === c.id && s.completed_at);
+  const mine = (sessions ?? []) as { id: string; case_id: string; started_at: string; completed_at: string | null; scores: unknown }[];
+  // An interview the retention clean-up closed (or is about to) is neither continuable nor finished.
+  const closed = (s: (typeof mine)[number]) =>
+    isClosedUnfinished(s.scores) || isExpiredUnfinished({ startedAt: s.started_at, completedAt: s.completed_at });
+  const active = mine.find((s) => s.case_id === c.id && !s.completed_at && !closed(s));
+  const finished = mine.find((s) => s.case_id === c.id && s.completed_at && !closed(s));
   const usedFreeAllowance = !paid && mine.length >= siteConfig.limits.free.aiCasesTotal && !active;
 
   const allowed = canStartCase(c, paid);
-  const message = notice ? notices[notice] : undefined;
+  const message = ownValue(notices, notice);
   const blocked: Blocked | null = usedFreeAllowance ? "total" : null;
   const configured = isAiConfigured();
 
@@ -131,6 +137,7 @@ export default async function StartPage({
                     </span>
                     {notices.upgrade}
                   </p>
+                  <PaywallSeen place="start" slug={c.slug} />
                   <div className="mt-auto pt-6">
                     <ButtonLink href="/pricing" full arrow>
                       See plans
@@ -151,6 +158,7 @@ export default async function StartPage({
               ) : blocked ? (
                 <>
                   <p className="text-[15px] leading-relaxed text-ink">{blockedMessage(blocked)}</p>
+                  <PaywallSeen place="start" slug={c.slug} />
                   <div className="mt-auto flex flex-col gap-2 pt-6">
                     {finished ? (
                       <ButtonLink href={`/app/debrief/${finished.id}`} variant="secondary" full arrow>
@@ -234,7 +242,7 @@ export default async function StartPage({
             <h2 className="text-lg font-medium tracking-tight text-ink">Good to know</h2>
             <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink/80">
               <li>Up to {siteConfig.limits.candidateTurnsPerSession} replies, {SESSION_CAPS.maxMessageChars.toLocaleString("en-US")} characters each.</li>
-              <li>A real case interview usually lasts 25 to 40 minutes.</li>
+              <li>This case is written to take about {c.est_minutes} minutes. The timer is only for your own pacing.</li>
               <li className="flex gap-2">
                 <Shield size={16} className="mt-0.5 shrink-0" />
                 <span>Don&rsquo;t share personal details in the chat.</span>

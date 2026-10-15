@@ -2,13 +2,13 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0 to P4 built. The Supabase project is up and its tables are locked down. Still open (founder): the sign-in settings and secret key (see Handoff), an Anthropic key, and Stripe test keys. Then a real sign-in test, a real interview and a real test-mode purchase.
+**Current milestone:** P0 to P6 built (new design across the whole site, 20 draft cases, guides, tools, dashboard, admin, share card, clean-up job). The Supabase project is up and its tables are locked down. Still open (founder): the sign-in settings and secret key (see Handoff), an Anthropic key, Stripe test keys, and the new Vercel settings `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` (`docs/SETUP.md` section 3). Then a real sign-in test, a real interview and a real test-mode purchase.
 
 ## Handoff (14 Oct 2026)
 
 Read this first in a new session.
 
-- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`.
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, Hobby plan, personal account) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`, `CRON_SECRET` (without it the daily transcript clean-up refuses to run, so the 365-day promise is not kept), `ADMIN_EMAILS` (to open `/admin`) and `NEXT_PUBLIC_SUPPORT_EMAIL`.
 - **Supabase project exists (14 Oct 2026).** Second account, organisation "aman662002@gmail.com's Org" (Free plan, $0). Project `interview-prep`, ref `jkvnarskslswdwrdzefa`, London (`eu-west-2`), URL `https://jkvnarskslswdwrdzefa.supabase.co`. The first account (menumacros, drone-test-prep, cscs-test-app) was never touched.
   - **Done with the founder's go ("try supabase now"):** created the project; applied the three files in `supabase/migrations/` in order; checked the real database with read-only queries (11 tables, all with Row Level Security and a policy, `anon` has no table access, `authenticated` has only the intended grants, the two interview functions and `handle_new_user` are not callable from browsers, the sign-up trigger exists); the security advisor returns no findings; `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` added to Vercel (Production and Preview).
   - **`supabase/tests/rls.sql` could not be run through the connector:** it timed out after 60 s (scripts containing `delete` also stalled on the other project) and left nothing behind (checked). The same script passes on a local Postgres and in CI against the same migration files. The founder can also paste it into the Supabase SQL Editor for a belt-and-braces run.
@@ -111,7 +111,10 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
   - [ ] Stripe live mode
   - [ ] A real test purchase **and** refund
   - [ ] An Anthropic monthly spend limit
-  - [ ] A final read of the legal pages
+  - [ ] A final read of the legal pages, and fill in their square-bracket placeholders (company name, address, effective date, minimum age)
+  - [ ] A lawyer checks the refund policy (7 days, 2 or fewer interviews) against the UK 14-day right to cancel, and the wording of the "start straight away" tick box before checkout
+  - [ ] `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` set in Vercel (Production), then check the daily clean-up has run successfully (Vercel, project, Cron Jobs)
+  - [ ] Approve the About and FAQ pages (fill in their square-bracket notes, then set `"status": "approved"`). Until then they show a draft notice and are left out of Google and the sitemap
   - [ ] Real email sending connected to Supabase (its built-in sender only reaches your own team) and CAPTCHA switched on for sign-in (`docs/SETUP.md`)
 - Claude Code:
   - [ ] Check every funnel event fires

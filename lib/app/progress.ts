@@ -1,4 +1,5 @@
 import { storedDebriefSchema, type StoredDebrief } from "@/lib/ai/schema";
+import { isClosedUnfinished, isExpiredUnfinished } from "@/lib/retention/expired";
 import { overallScore, SKILL_KEYS, type SkillScores } from "./skills";
 
 // The dashboard's progress view, worked out from the user's own case_sessions rows
@@ -22,6 +23,11 @@ export type ProgressSession = {
   completedAt: string | null;
   /** The stored debrief, or null while the interview is unfinished (or if it cannot be read). */
   debrief: StoredDebrief | null;
+  /**
+   * Never finished and past the retention period: its transcript is (or is about to be)
+   * deleted, so it can be neither continued nor shown as a debrief (lib/retention/expired.ts).
+   */
+  closed: boolean;
 };
 
 /** What the recommendation needs to know about a case (no answer keys). */
@@ -33,15 +39,19 @@ export type CaseLite = {
   free_starter: boolean;
 };
 
-export function toProgressSessions(rows: SessionRow[]): ProgressSession[] {
+export function toProgressSessions(rows: SessionRow[], now: Date = new Date()): ProgressSession[] {
   return rows.map((r) => {
-    const parsed = r.completed_at ? storedDebriefSchema.safeParse(r.scores) : null;
+    const closed =
+      isClosedUnfinished(r.scores) || isExpiredUnfinished({ startedAt: r.started_at, completedAt: r.completed_at }, now);
+    const parsed = r.completed_at && !closed ? storedDebriefSchema.safeParse(r.scores) : null;
     return {
       id: r.id,
       caseId: r.case_id,
       startedAt: r.started_at,
-      completedAt: r.completed_at,
+      // A closed interview never finished: the clean-up's end date is not a finish date.
+      completedAt: closed ? null : r.completed_at,
       debrief: parsed?.success ? parsed.data : null,
+      closed,
     };
   });
 }
@@ -64,7 +74,7 @@ export type Progress = {
 export function summariseProgress(sessions: ProgressSession[]): Progress {
   const sorted = [...sessions].sort(newestFirst);
   const scored = sorted.filter((s): s is ProgressSession & { debrief: StoredDebrief } => s.completedAt !== null && s.debrief !== null);
-  const inProgress = sorted.filter((s) => s.completedAt === null);
+  const inProgress = sorted.filter((s) => s.completedAt === null && !s.closed);
 
   let averages: SkillScores | null = null;
   if (scored.length > 0) {
@@ -125,6 +135,8 @@ export type NextStep =
   | { kind: "start_free"; caseId: string; slug: string }
   | { kind: "case"; caseId: string; slug: string; locked: boolean; newType: boolean }
   | { kind: "upgrade" }
+  /** A free user who has not used their free interview, but the free starter case is not shown yet (drafts are hidden until reviewed). */
+  | { kind: "starter_unavailable" }
   | { kind: "browse" };
 
 /** The one thing the dashboard suggests doing next. */
@@ -141,14 +153,18 @@ export function nextStep({
   freeAllowance: number;
 }): NextStep {
   const visible = new Set(cases.map((c) => c.id));
-  const active = [...sessions].sort(newestFirst).find((s) => s.completedAt === null && visible.has(s.caseId));
+  const active = [...sessions].sort(newestFirst).find((s) => s.completedAt === null && !s.closed && visible.has(s.caseId));
   if (active) return { kind: "continue", sessionId: active.id, caseId: active.caseId };
 
   if (!paid) {
     const starter = cases.find((c) => c.free_starter);
-    if (starter && sessions.length < freeAllowance && !sessions.some((s) => s.caseId === starter.id)) {
+    const freeLeft = sessions.length < freeAllowance;
+    if (starter && freeLeft && !sessions.some((s) => s.caseId === starter.id)) {
       return { kind: "start_free", caseId: starter.id, slug: starter.slug };
     }
+    // Never tell someone they have used their free interview when they have not:
+    // the free starter is simply not visible yet.
+    if (!starter && freeLeft) return { kind: "starter_unavailable" };
   }
 
   const rec = recommendCase(cases, sessions, paid);

@@ -69,6 +69,16 @@ export function weakestSkill(scores: SkillScores): SkillKey {
   return SKILL_KEYS.reduce((low, k) => (scores[k] < scores[low] ? k : low), SKILL_KEYS[0]);
 }
 
+/**
+ * The skill to work on next: the lowest-scored one (first listed on a tie), or null when
+ * all five scores are equal, because then no skill is lower than the others. Shared by
+ * the debrief and the dashboard so they always agree about the same interview.
+ */
+export function focusSkill(scores: SkillScores): SkillKey | null {
+  const values = SKILL_KEYS.map((k) => scores[k]);
+  return Math.max(...values) > Math.min(...values) ? weakestSkill(scores) : null;
+}
+
 /** The highest-scored skill; on a tie, the one listed first. */
 export function strongestSkill(scores: SkillScores): SkillKey {
   return SKILL_KEYS.reduce((high, k) => (scores[k] > scores[high] ? k : high), SKILL_KEYS[0]);

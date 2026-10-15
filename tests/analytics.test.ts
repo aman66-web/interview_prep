@@ -208,11 +208,12 @@ describe("case_started and paywall_viewed", () => {
     expect(calls[0].payload).toMatchObject({ name: "case_started", path: "/cases/harbourline-bakeries" });
   });
 
-  it("records a plan refusal as paywall_viewed", async () => {
+  it("records a plan refusal as paywall_viewed (once a day: see tests/funnel-once.test.ts)", async () => {
     for (const outcome of [{ status: "needs_upgrade" } as const, { status: "blocked", blocked: "total" } as const]) {
-      const { db, calls } = fakeDb();
+      const { db, calls } = fakeDb((c) => (c.op === "select" ? { data: [] } : {}));
       expect(await recordStartOutcome(db, outcome, { userId: USER, slug: "x" })).toBe(true);
-      expect(calls[0].payload).toMatchObject({ name: "paywall_viewed", path: "/app/start/x" });
+      expect(calls.map((c) => c.op)).toEqual(["select", "insert"]);
+      expect(calls[1].payload).toMatchObject({ name: "paywall_viewed", path: "/app/start/x" });
     }
   });
 

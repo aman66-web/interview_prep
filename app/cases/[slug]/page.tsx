@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseCard, CASE_TYPE_TONES, DifficultyMeter } from "@/components/marketing/case-card";
+import { breadcrumbJsonLd } from "@/components/learn/seo";
 import { relatedCases } from "@/components/practice/case-list";
 import { ExhibitView } from "@/components/practice/exhibit-view";
+import { caseDescription, pageTitle } from "@/components/practice/metadata";
 import { caseOfType, caseShortName, lowerFirst } from "@/components/practice/wording";
 import { Eyebrow, Kicker, Tag } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
+import { JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Book, Calculator, ChartBars, Check, ChevronRight, Clock, Lightbulb, Lock, Notes } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
 import { findVisibleCase, visibleCases } from "@/lib/content/cases";
@@ -33,8 +36,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const found = findVisibleCase(slug);
   if (!found) return {};
   return {
-    title: found.title,
-    description: `${CASE_TYPE_LABELS[found.type]} case interview practice: ${found.prompt.slice(0, 140).trim()}…`,
+    // Fitted to what search results show (components/practice/metadata.ts): no brand suffix
+    // when it would push the title past 60 characters, and the prompt cut at a sentence or word.
+    title: pageTitle(found.title),
+    description: caseDescription(CASE_TYPE_LABELS[found.type] ?? found.type, found.prompt),
+    alternates: { canonical: `/cases/${found.slug}` },
   };
 }
 
@@ -60,7 +66,7 @@ const STAGES = [
 
 const UNLOCKS = [
   "Answers to your clarifying questions, from the case facts",
-  "Every exhibit, handed over when you ask for the right data",
+  "Exhibits during the analysis, when you ask for data or the case moves on",
   "Maths questions, with your answers checked by code",
   "A scored debrief: five skills out of 5 and one thing to fix next",
 ];
@@ -135,6 +141,12 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Cases", path: "/cases" },
+          { name: c.title, path: `/cases/${c.slug}` },
+        ])}
+      />
       {/* Hero */}
       <Container className="pt-6 sm:pt-8">
         <div className="bg-aurora relative overflow-hidden rounded-[2rem] px-6 py-10 ring-1 ring-inset ring-line sm:px-10 sm:py-14 lg:px-12">

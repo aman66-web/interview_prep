@@ -1,5 +1,5 @@
 import { allCases } from "@/lib/content/cases";
-import { EVENT_RETENTION_DAYS, recordEvent, resolveDb, warn, type DbSource } from "./events";
+import { cleanPath, EVENT_RETENTION_DAYS, recordEvent, resolveDb, warn, type DbSource, type FunnelEvent } from "./events";
 import type { Utm } from "./utm";
 
 // The funnel steps that need more than a plain recordEvent() call, each recorded
@@ -50,6 +50,78 @@ export async function recordSignupOnce(
 }
 
 // ---------------------------------------------------------------------------
+// paywall_viewed and checkout_started: at most once per person per UTC day
+// ---------------------------------------------------------------------------
+
+/** Midnight UTC at the start of the day `now` falls in. */
+export function utcDayStart(now: Date): Date {
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+}
+
+/**
+ * Records `name` for this account at most once per UTC day (with `perPath`, once per
+ * path per day). These steps can be triggered again and again by a signed-in person
+ * (reloading a page, posting a form), so without this one scripted account could fill
+ * the events table. The funnel counts people, so nothing is lost by keeping one row a day.
+ * Like recordSignupOnce, it skips when unsure (a failed check). Two requests at the very
+ * same moment could both pass the check; that is one extra row, not a flood.
+ */
+export async function recordOncePerDay(
+  source: DbSource | null | undefined,
+  name: Extract<FunnelEvent, "paywall_viewed" | "checkout_started">,
+  options: { userId: string; path: string; perPath?: boolean; now?: Date },
+): Promise<boolean> {
+  try {
+    if (!UUID.test(options.userId)) return false; // only real accounts can be counted once
+    const path = cleanPath(options.path);
+    if (!path) return false;
+    const db = resolveDb(source);
+    if (!db) return false;
+
+    const since = utcDayStart(options.now ?? new Date()).toISOString();
+    let query = db.from("events").select("id").eq("name", name).eq("user_id", options.userId).gte("created_at", since);
+    if (options.perPath) query = query.eq("path", path);
+    const { data, error } = await query.limit(1);
+    if (error) {
+      warn(`could not check for an earlier ${name}`, error.code);
+      return false;
+    }
+    if ((data ?? []).length > 0) return false;
+    return recordEvent(name, { userId: options.userId, path }, db);
+  } catch {
+    warn(`could not record ${name}`);
+    return false;
+  }
+}
+
+/** Where a signed-in free user can be shown the paywall (the paths recorded for paywall_viewed). */
+export const PAYWALL_PLACES = ["pricing", "dashboard", "start"] as const;
+export type PaywallPlace = (typeof PAYWALL_PLACES)[number];
+
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+/**
+ * The fixed path recorded for a paywall view, or null. Only known places are accepted;
+ * a case page needs the slug of a case that exists (checked by the caller's `caseExists`).
+ */
+export function paywallPath(place: unknown, slug: unknown, caseExists: (slug: string) => boolean): string | null {
+  if (place === "pricing") return "/pricing";
+  if (place === "dashboard") return "/app";
+  if (place === "start" && typeof slug === "string" && slug.length <= 120 && SLUG.test(slug) && caseExists(slug)) {
+    return `/app/start/${slug}`;
+  }
+  return null;
+}
+
+/** A free user was shown the paywall: recorded at most once per person per UTC day. */
+export async function recordPaywallViewed(
+  source: DbSource | null | undefined,
+  context: { userId: string; path: string; now?: Date },
+): Promise<boolean> {
+  return recordOncePerDay(source, "paywall_viewed", context);
+}
+
+// ---------------------------------------------------------------------------
 // case_started and paywall_viewed: what happened when someone pressed "Start"
 // ---------------------------------------------------------------------------
 
@@ -61,19 +133,22 @@ export type StartOutcomeLike =
 /**
  * A new interview is a case_started. Being refused because of the plan (a paid case
  * on the free plan, or the free interview already used) is a paywall_viewed: the
- * start page then shows the upgrade button. Resuming, or a paid plan's daily or
- * monthly limit, records nothing.
+ * start page then shows the upgrade button. That only happens in a race (a stale tab,
+ * or a plan that ended between loading the page and pressing Start), because the start
+ * page shows the paywall instead of the Start button and records the view itself
+ * (components/app/paywall-seen.tsx). Like that view, it counts once per person per day.
+ * Resuming, or a paid plan's daily or monthly limit, records nothing.
  */
 export async function recordStartOutcome(
   source: DbSource | null | undefined,
   outcome: StartOutcomeLike,
-  context: { userId: string; slug: string },
+  context: { userId: string; slug: string; now?: Date },
 ): Promise<boolean> {
   if (outcome.status === "started") {
     return recordEvent("case_started", { userId: context.userId, path: `/cases/${context.slug}` }, source);
   }
   if (outcome.status === "needs_upgrade" || (outcome.status === "blocked" && outcome.blocked === "total")) {
-    return recordEvent("paywall_viewed", { userId: context.userId, path: `/app/start/${context.slug}` }, source);
+    return recordPaywallViewed(source, { userId: context.userId, path: `/app/start/${context.slug}`, now: context.now });
   }
   return false;
 }

@@ -38,7 +38,7 @@
         },
         {
           "title": "Work through it with the AI interviewer",
-          "text": "The interviewer takes you through clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers from the case facts and shares exhibits when you ask for data. Notes, a calculator and a timer sit beside the chat."
+          "text": "The interviewer takes you through clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers from the case facts and shares exhibits during the analysis, when you ask for relevant data or when it moves the case on. Notes, a calculator and a timer sit beside the chat."
         },
         {
           "title": "Read your scored debrief",
@@ -71,7 +71,7 @@
       "type": "ul",
       "items": [
         "It is set up to answer your questions only from the case facts. If something isn't in the case, it says so or asks you to make an assumption.",
-        "It shares an exhibit when you ask for relevant data. It probes your structure and reasoning instead of giving you the answer.",
+        "It shares exhibits during the analysis, when you ask for relevant data or when it moves the case on. It probes your structure and reasoning instead of giving you the answer.",
         "It writes your debrief from what you actually said. Quotes in the debrief are checked against your own messages, and dropped if they don't match."
       ]
     },

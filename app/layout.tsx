@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
-    default: `${siteConfig.brandName}: consulting case interview practice with an AI interviewer`,
+    // Kept to 60 characters or fewer so search results show it whole.
+    default: `${siteConfig.brandName}: consulting case interview practice with AI`,
     template: `%s | ${siteConfig.brandName}`,
   },
   description: siteConfig.tagline,

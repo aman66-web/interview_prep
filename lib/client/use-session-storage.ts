@@ -4,7 +4,8 @@ import { useCallback, useSyncExternalStore } from "react";
 // as "which drill was I on" or the notes box in an interview). Read through
 // useSyncExternalStore so the server-rendered page and the first browser render
 // agree, then the stored value is picked up. This is the only file that touches
-// sessionStorage (tests/repo-rules.test.ts checks), and nothing here is sent to us.
+// sessionStorage (tests/repo-rules.test.ts checks). The only value ever sent to us is the
+// first visit's campaign tags, posted with the sign-in form (components/utm-fields.tsx).
 
 const EVENT = "session-storage-change";
 

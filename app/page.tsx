@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseCard } from "@/components/marketing/case-card";
-import { MockDebrief, MockExhibit, MockInterview, MockMathsCheck, MockStageBar } from "@/components/marketing/mocks";
+import { MOCK_EXAMPLE, MockDebrief, MockExhibit, MockInterview, MockMathsCheck, MockStageBar } from "@/components/marketing/mocks";
 import { Eyebrow, Kicker, Tag } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
@@ -22,6 +23,7 @@ import {
   Target,
   Users,
 } from "@/components/ui/icons";
+import { absoluteUrl } from "@/components/learn/seo";
 import { Container, Section, SectionHeading } from "@/components/ui/layout";
 import { Marquee } from "@/components/ui/marquee";
 import { visibleCases } from "@/lib/content/cases";
@@ -32,9 +34,16 @@ import { PLANS } from "@/lib/plans";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 // The home page. Every number on it is counted from the content or read from
-// site.config.ts, and the product pictures use a real case's real numbers (rule 2.4:
-// no invented users, ratings or results).
+// site.config.ts (rule 2.4: no invented users, ratings or results). The product pictures
+// use the worked example from the free profitability guide (MOCK_EXAMPLE), never a case
+// from the library, so the home page gives away no case's exhibits or maths answers.
+
+const EXAMPLE_GUIDE = `/guides/${MOCK_EXAMPLE.guide}`;
 
 const PRACTISE = [
   ...Object.entries(CASE_TYPE_LABELS)
@@ -63,7 +72,7 @@ const FAQ: FaqItem[] = [
   },
   {
     q: "How does the AI interviewer work?",
-    a: "It runs a written case with you stage by stage. It answers clarifying questions, hands over exhibits only when you ask for the right data, pushes back on weak structures and asks for your recommendation at the end. Then it scores five skills and tells you what to fix next.",
+    a: "It runs a written case with you stage by stage. It answers clarifying questions, pushes back on weak structures and shares exhibits during the analysis, when you ask for relevant data or when it moves the case on. At the end it asks for your recommendation. Then it scores five skills and tells you what to fix next.",
   },
   {
     q: "Is the maths in the debrief marked by the AI?",
@@ -98,8 +107,8 @@ function Hero({ drillCount }: { drillCount: number }) {
               <span className="serif-accent">practised</span> <span className="text-gradient">properly.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              Run a realistic mock case with an AI interviewer that pushes back, hands you exhibits when you ask, and
-              checks your maths. Then get a scored debrief that shows exactly what to fix.
+              Run a realistic mock case with an AI interviewer that pushes back, shares exhibits as the analysis unfolds,
+              and checks your maths. Then get a scored debrief that shows exactly what to fix.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/login" size="lg" arrow>
@@ -127,8 +136,7 @@ function Hero({ drillCount }: { drillCount: number }) {
             <MockMathsCheck solid className="relative z-20 mt-4 sm:absolute sm:bottom-2 sm:left-0 sm:mt-0 sm:w-64 sm:animate-float lg:-left-2" />
             <MockDebrief compact className="relative z-20 mt-4 hidden sm:absolute sm:-bottom-6 sm:right-0 sm:mt-0 sm:block sm:w-60 sm:rotate-2" />
             <figcaption className="sr-only">
-              An example of the interview room for the free starter case, Harbourline Bakeries: the stage bar, a short
-              exchange with the interviewer, a maths check and part of the scored debrief.
+              {`An example of the interview room, using the worked example from our free profitability guide (${MOCK_EXAMPLE.company}, an invented cinema chain whose profit fell from £${MOCK_EXAMPLE.profitLast}m to £${MOCK_EXAMPLE.profitNow}m): the stage bar, a short exchange with the interviewer, a maths check and part of an example scored debrief.`}
             </figcaption>
           </figure>
         </div>
@@ -191,7 +199,8 @@ function Why({ drillCount }: { drillCount: number }) {
                   I&rsquo;d look at revenue and costs separately.
                 </p>
                 <p className="w-fit max-w-[90%] rounded-2xl rounded-tl-md bg-surface px-3.5 py-2.5 text-[13px] text-ink ring-1 ring-inset ring-line">
-                  Fine, but revenue didn&rsquo;t move. What in the costs would you check first, and why?
+                  Fine, but ticket sales didn&rsquo;t move. Where else could £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m
+                  have gone, and where would you look first?
                 </p>
               </div>
             </div>
@@ -204,7 +213,7 @@ function Why({ drillCount }: { drillCount: number }) {
             <h3 className="mt-5 text-2xl font-medium tracking-tight">Maths marked by code</h3>
             <p className="mt-3 leading-relaxed text-lime-ink/80">
               Every numeric answer is checked against an expected value our tests recompute. No model opinions on
-              whether 80 divided by 120 is two thirds.
+              whether 3 divided by 4 is three quarters.
             </p>
           </Card>
 
@@ -212,8 +221,10 @@ function Why({ drillCount }: { drillCount: number }) {
             <IconBadge>
               <ChartBars size={20} />
             </IconBadge>
-            <h3 className="mt-5 text-2xl font-medium tracking-tight">Exhibits when you ask</h3>
-            <p className="mt-3 leading-relaxed text-muted">Ask for the right data and the chart appears. Ask vaguely and you get a vague answer.</p>
+            <h3 className="mt-5 text-2xl font-medium tracking-tight">Exhibits during the analysis</h3>
+            <p className="mt-3 leading-relaxed text-muted">
+              Tables and charts appear in the analysis, when you ask for relevant data or when the interviewer moves the case on.
+            </p>
             <MockExhibit className="mt-6" />
           </Card>
 
@@ -254,12 +265,13 @@ function Why({ drillCount }: { drillCount: number }) {
             <h3 className="mt-5 text-2xl font-medium tracking-tight">Notes, calculator, timer</h3>
             <p className="mt-3 leading-relaxed text-muted">A scratchpad beside the chat, a calculator for checking, and a clock so you learn the pace.</p>
             <div aria-hidden="true" className="mt-6 rounded-2xl bg-butter p-4 font-mono text-[12px] leading-relaxed text-ink/80">
-              <p>Revenue flat at £2.0m</p>
-              <p>Costs up £120k</p>
+              <p>Visits flat at {MOCK_EXAMPLE.visitsM}m</p>
+              <p>Profit down £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m</p>
               <p>
-                Ingredients +£80k <span className="rounded bg-surface px-1 text-ink">⅔ of fall</span>
+                Food &amp; drink −£{MOCK_EXAMPLE.foodContributionLast - MOCK_EXAMPLE.foodContributionNow}m{" "}
+                <span className="rounded bg-surface px-1 text-ink">¾ of fall</span>
               </p>
-              <p>Labour +£40k</p>
+              <p>Fixed costs +£{MOCK_EXAMPLE.fixedNow - MOCK_EXAMPLE.fixedLast}m</p>
             </div>
             <div className="mt-3 flex flex-wrap gap-2" aria-hidden="true">
               {[
@@ -376,7 +388,9 @@ function DebriefShowcase() {
                 <MockMathsCheck />
                 <div aria-hidden="true" className="rounded-2xl bg-surface p-4 shadow-float ring-1 ring-inset ring-line">
                   <p className="text-[11px] font-medium text-subtle">Best moment</p>
-                  <p className="mt-1 text-[13px] leading-snug text-ink">&ldquo;Revenue held at £2.0m, so which cost lines moved?&rdquo;</p>
+                  <p className="mt-1 text-[13px] leading-snug text-ink">
+                    &ldquo;Ticket sales held at £{MOCK_EXAMPLE.ticketSales}m, so the drop came from food and drink or from costs.&rdquo;
+                  </p>
                 </div>
                 <div aria-hidden="true" className="rounded-2xl bg-surface p-4 shadow-float ring-1 ring-inset ring-line">
                   <p className="text-[11px] font-medium text-subtle">Stage reached</p>
@@ -407,7 +421,13 @@ function DebriefShowcase() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-subtle">The pictures on this page use the free starter case. The scores are an example.</p>
+            <p className="mt-6 text-sm text-subtle">
+              The pictures on this page use the worked example from our free{" "}
+              <Link href={EXAMPLE_GUIDE} className="underline underline-offset-4 hover:text-ink">
+                profitability guide
+              </Link>
+              , not a case from the library. The scores are an example.
+            </p>
           </div>
         </div>
       </Container>
@@ -682,6 +702,7 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: siteConfig.brandName,
+          url: absoluteUrl("/"),
           description: siteConfig.tagline,
         }}
       />
