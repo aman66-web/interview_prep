@@ -2,83 +2,38 @@
   "slug": "refunds",
   "title": "Refund policy",
   "seo_title": "Refund policy | Mock Partner",
-  "description": "When you can get a refund for a Mock Partner plan: within 7 days of paying, if you have used 2 or fewer AI interviews. How to ask and what happens next.",
+  "description": "Mock Partner plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
   "updated": "2026-10-15",
   "status": "draft",
-  "intro": "If a paid plan isn't right for you, this page explains when you can get your money back and how to ask. Effective date: [effective date].",
+  "intro": "This page explains our refund policy and how cancelling works. Effective date: [effective date].",
   "blocks": [
     {
       "type": "callout",
       "tone": "warning",
       "title": "Note for the founder",
-      "text": "[Founder: ask a lawyer to check the 7-day policy and the tick-box wording against the 14-day cancellation right.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout now asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
+      "text": "[Founder: ask a lawyer to check this no-refunds policy and the tick-box wording against UK consumer law before taking real payments.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
     },
     {
       "type": "callout",
       "tone": "key",
       "title": "The short version",
-      "text": "You can get a full refund within 7 days of paying, as long as you have used 2 or fewer AI interviews. Email [support email] from the address on your account."
+      "text": "All sales are final: we don't offer refunds, except where the law requires them. You can cancel the Monthly plan at any time to stop future payments."
     },
 
-    { "type": "h2", "id": "who-can-get-one", "text": "Who can get a refund" },
-    { "type": "p", "text": "You can get a full refund of a payment if both of these are true:" },
+    { "type": "h2", "id": "no-refunds", "text": "No refunds" },
     {
-      "type": "ul",
-      "items": [
-        "You ask within 7 days of the payment. [Founder to confirm: does this cover only the first payment, or each monthly renewal too?]",
-        "You have used 2 or fewer AI interviews. [Founder to confirm: an interview counts as used once it is started; and does the free interview count?]"
-      ]
+      "type": "p",
+      "text": "Your first full AI interview and scored debrief are free, so you can try Mock Partner properly before you pay. Because of that, payments for the Monthly plan and the 90-Day Pass are final and we don't refund them, in full or in part."
     },
     {
       "type": "p",
-      "text": "This applies to both the Monthly plan and the 90-Day Pass. Drills don't count towards the limit."
-    },
-    {
-      "type": "p",
-      "text": "Before you pay, we ask you to confirm that you want access to start straight away and that you understand you lose the 14-day right to cancel once you start using your plan. This refund policy is on top of that, and it does not affect your other legal rights."
-    },
-
-    { "type": "h2", "id": "how-to-ask", "text": "How to ask for a refund" },
-    {
-      "type": "steps",
-      "items": [
-        {
-          "title": "Email us",
-          "text": "Write to [support email] from the email address you use to log in. Say which payment you would like refunded."
-        },
-        {
-          "title": "We check",
-          "text": "We check the payment date and how many AI interviews you have used."
-        },
-        {
-          "title": "We refund through Stripe",
-          "text": "If you qualify, we refund the full amount through Stripe, our payment provider. It goes back to the card or payment method you paid with. How long it takes to appear depends on your bank."
-        }
-      ]
-    },
-    {
-      "type": "p",
-      "text": "We aim to reply within [number, founder to confirm] working days."
-    },
-
-    { "type": "h2", "id": "your-access", "text": "What happens to your access" },
-    {
-      "type": "ul",
-      "items": [
-        "90-Day Pass: a full refund removes the 90 days that payment bought. If that leaves no paid time, your account goes back to the free plan straight away.",
-        "Monthly: when we refund a monthly payment, we also cancel your subscription, so you won't be charged again, and your paid access ends. [Founder: cancel the subscription in Stripe when you refund it. The site does not end access by itself after a monthly refund.]",
-        "Your interviews, debriefs and drill history stay in your account unless you delete it."
-      ]
+      "text": "Before you pay, we ask you to confirm that you want access to start straight away and that you understand you lose the 14-day right to cancel once you start using your plan."
     },
 
     { "type": "h2", "id": "cancelling-monthly", "text": "Cancelling the Monthly plan" },
     {
       "type": "p",
-      "text": "You can cancel at any time from your account page: choose Manage billing, then cancel in Stripe's billing portal. You won't be charged again. [Founder to confirm: access continues until the end of the month already paid for.]"
-    },
-    {
-      "type": "p",
-      "text": "Cancelling doesn't refund the current month by itself. If you meet the refund rules above, ask us for a refund as well."
+      "text": "You can cancel at any time from your account page: choose Manage billing, then cancel in Stripe's billing portal. You won't be charged again, and you keep access until the end of the month you have already paid for."
     },
 
     { "type": "h2", "id": "the-pass", "text": "The 90-Day Pass" },
@@ -90,13 +45,13 @@
     { "type": "h2", "id": "deleting-your-account", "text": "If you delete your account" },
     {
       "type": "p",
-      "text": "Deleting your account cancels any subscription straight away, but it doesn't refund you by itself. It also deletes the interview history we use to check a refund request. So please ask for a refund before you delete your account."
+      "text": "Deleting your account cancels any subscription straight away and ends any paid time left. It doesn't refund you."
     },
 
     { "type": "h2", "id": "legal-rights", "text": "Your legal rights" },
     {
       "type": "p",
-      "text": "This policy is in addition to your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a remedy whatever this policy says. [Lawyer to confirm wording.]"
+      "text": "This policy does not affect your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a repair, a replacement or a refund whatever this policy says. If you think that applies, email [support email]. [Lawyer to confirm wording.]"
     },
 
     { "type": "h2", "id": "contact", "text": "Contact" },

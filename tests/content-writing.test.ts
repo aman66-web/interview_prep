@@ -158,8 +158,13 @@ describe("draft firm guides", () => {
     for (const d of drafts) expect(findFirm(d.slug), d.slug).toBeDefined();
   });
 
-  it("keeps McKinsey a draft until its own careers pages have been read (docs/RESEARCH_TODO.md)", () => {
-    expect(allFirms().find((f) => f.slug === "mckinsey")?.status).toBe("draft");
+  it("builds each firm guide only from that firm's own careers pages (rule 2.2)", () => {
+    const domains: Record<string, string> = { bain: "www.bain.com", bcg: "careers.bcg.com", mckinsey: "www.mckinsey.com" };
+    for (const firm of allFirms()) {
+      const host = domains[firm.slug];
+      expect(host, firm.slug).toBeDefined();
+      for (const source of firm.sources) expect(new URL(source.url).host, `${firm.slug}: ${source.url}`).toBe(host);
+    }
   });
 });
 
@@ -299,7 +304,6 @@ describe("draft about and FAQ pages", () => {
     const items = faq!.faq.flatMap((g) => g.items);
     const finished = withoutPlaceholders(items);
     expect(unfilledPlaceholders(finished)).toEqual([]);
-    if (faq!.status === "draft") expect(finished.length).toBeLessThan(items.length); // today's draft has founder notes
     expect(source("app/faq/page.tsx")).toContain("faqJsonLd(finishedItems)");
   });
 });

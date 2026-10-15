@@ -32,9 +32,9 @@ export const siteConfig = {
     candidateTurnsPerSession: 40,
   },
 
-  // Refund applies only if the user has used this many AI sessions or fewer.
-  refundWindowDays: 7,
-  refundMaxAiSessions: 2,
+  // No refunds (founder, 15 Oct 2026): all sales are final, except where the law
+  // requires a refund. The first full interview is free, so people can try before paying.
+  refunds: "final-sale",
 
   transcriptRetentionDays: 365,
 

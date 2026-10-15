@@ -18,9 +18,8 @@ describe("siteConfig", () => {
     expect(siteConfig.limits.candidateTurnsPerSession).toBe(40);
   });
 
-  it("has the agreed refund and retention settings", () => {
-    expect(siteConfig.refundWindowDays).toBe(7);
-    expect(siteConfig.refundMaxAiSessions).toBe(2);
+  it("has the agreed refund and retention settings (no refunds: founder, 15 Oct 2026)", () => {
+    expect(siteConfig.refunds).toBe("final-sale");
     expect(siteConfig.transcriptRetentionDays).toBe(365);
   });
 

@@ -164,6 +164,7 @@
       "type": "ul",
       "items": [
         "Your data sits in a database that only lets you read your own records.",
+        "We don't read your interview transcripts. The only exception is when you ask us for help with a problem in a particular interview: then we may read that interview's transcript, only to fix the problem.",
         "Secret keys stay on our servers and never reach your browser.",
         "Card details never touch our site."
       ]

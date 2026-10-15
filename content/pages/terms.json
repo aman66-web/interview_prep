@@ -61,17 +61,17 @@
     },
     {
       "type": "p",
-      "text": "We may change our prices. A new price never applies to time you have already paid for. If the Monthly price changes, we will tell you at least [notice period, founder to confirm, for example 30 days] before your first renewal at the new price, so you can cancel first if you want to."
+      "text": "We may change our prices. A new price never applies to time you have already paid for. If the Monthly price changes, we will tell you at least 30 days before your first renewal at the new price, so you can cancel first if you want to."
     },
 
     { "type": "h2", "id": "cancelling", "text": "5. Cancelling and refunds" },
     {
       "type": "ul",
       "items": [
-        "You can cancel Monthly at any time. Open your account page, choose Manage billing and cancel in Stripe's billing portal. You won't be charged again. [Founder to confirm: access continues until the end of the month already paid for.]",
+        "You can cancel Monthly at any time. Open your account page, choose Manage billing and cancel in Stripe's billing portal. You won't be charged again, and you keep access until the end of the month you have already paid for.",
         "The 90-Day Pass doesn't need cancelling, because it never renews.",
-        "Refunds follow our refund policy: you can ask within 7 days of paying, if you have used 2 or fewer AI interviews. Before you pay, you confirm that you want access to start straight away and understand that you lose the 14-day right to cancel once you start using your plan. Nothing here affects your other legal rights as a consumer.",
-        "Deleting your account cancels any subscription straight away. It doesn't give you a refund by itself, so ask for any refund first."
+        "All sales are final: we don't offer refunds, except where the law requires them (see our refund policy). Before you pay, you confirm that you want access to start straight away and understand that you lose the 14-day right to cancel once you start using your plan. Nothing here affects your other legal rights as a consumer.",
+        "Deleting your account cancels any subscription straight away and ends any paid time left. It doesn't give you a refund."
       ]
     },
     { "type": "p", "text": "Nothing in these terms takes away your legal rights as a consumer." },
@@ -89,7 +89,7 @@
     },
     {
       "type": "p",
-      "text": "We may change these limits to keep Mock Partner fair and affordable. We will tell you before we reduce the limits of a plan you have paid for. [Founder to confirm.]"
+      "text": "We may change these limits to keep Mock Partner fair and affordable. We will tell you at least 30 days before we reduce the limits of a plan you have paid for."
     },
 
     { "type": "h2", "id": "fair-play", "text": "7. Using Mock Partner fairly" },
@@ -128,7 +128,7 @@
     },
     {
       "type": "p",
-      "text": "[Founder to confirm whether you will ever read users' transcripts, for example to fix a problem they report or to improve the interviewer, and say so here and in the privacy policy.]"
+      "text": "We don't read your interview transcripts. The only exception is when you ask us for help with a problem in a particular interview: then we may read that interview's transcript, only to fix the problem."
     },
     {
       "type": "p",

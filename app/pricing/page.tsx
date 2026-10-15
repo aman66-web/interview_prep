@@ -292,25 +292,26 @@ export default async function PricingPage({ searchParams }: { searchParams: Prom
             <div className="mt-5 space-y-3 text-[15px] leading-relaxed text-ink/80">
               <p>Prices are in US dollars. Payments are taken by Stripe, so we never see or store your card details.</p>
               <p>
-                Not happy? Ask for a refund within {siteConfig.refundWindowDays} days if you have used {siteConfig.refundMaxAiSessions} or fewer AI interviews
+                Your first full interview is free, so you can try it properly first. After that, all sales are final: we don&rsquo;t offer refunds,
+                except where the law requires them. This does not affect your legal rights.
+              </p>
+              <p>
+                Monthly renews each month until you cancel. Cancel any time in Manage billing on your account page; you keep access until the end
+                of the month you&rsquo;ve paid for. The 90-Day Pass never renews.
+              </p>
+              <p>
+                Details are on the{" "}
+                <Link href="/legal/refunds" className="font-medium text-ink underline underline-offset-4">
+                  refund policy
+                </Link>
                 {siteConfig.supportEmail ? (
                   <>
-                    : email{" "}
+                    . Questions? Email{" "}
                     <a className="font-medium text-ink underline underline-offset-4" href={`mailto:${siteConfig.supportEmail}`}>
                       {siteConfig.supportEmail}
                     </a>
-                    .
                   </>
-                ) : (
-                  ". Use the support address on this site."
-                )}{" "}
-                This does not affect your legal rights.
-              </p>
-              <p>
-                The full terms are on the{" "}
-                <Link href="/legal/refunds" className="font-medium text-ink underline underline-offset-4">
-                  refunds page
-                </Link>
+                ) : null}
                 .
               </p>
               <p className="border-t border-ink/10 pt-4 text-sm text-ink/70">{siteConfig.disclaimer}</p>

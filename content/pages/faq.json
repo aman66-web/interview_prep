@@ -85,7 +85,7 @@
         },
         {
           "q": "How do I cancel the Monthly plan?",
-          "a": "Go to your account page and choose Manage billing. This opens Stripe's billing portal, where you can cancel. Once you cancel, you won't be charged again. [Founder to confirm: you keep access until the end of the month you have paid for, if the billing portal is set to cancel at the end of the billing period.]"
+          "a": "Go to your account page and choose Manage billing. This opens Stripe's billing portal, where you can cancel. Once you cancel, you won't be charged again. You keep access until the end of the month you have already paid for."
         },
         {
           "q": "Does the 90-Day Pass renew?",
@@ -93,7 +93,7 @@
         },
         {
           "q": "Can I get a refund?",
-          "a": "Yes, within 7 days of paying, if you have used 2 or fewer AI interviews. Email [support email] from the address on your account. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. Our refund policy has the details."
+          "a": "No. Your first full interview and debrief are free, so you can try Mock Partner properly before paying. After that all sales are final, except where the law requires a refund. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. The refund policy has the details."
         }
       ]
     },
@@ -106,7 +106,7 @@
         },
         {
           "q": "Who can see my interview transcripts?",
-          "a": "Only you can see them in your account. To run the interviewer and write your debrief, the text of your interview is sent to Anthropic, our AI provider. We don't send it your email address. We never sell your data."
+          "a": "Only you can see them in your account. We don't read your interview transcripts. The only exception is when you ask us for help with a problem in a particular interview: then we may read that interview's transcript, only to fix the problem. To run the interviewer and write your debrief, the text of your interview is sent to Anthropic, our AI provider. We don't send it your email address. We never sell your data."
         },
         {
           "q": "How long do you keep my transcripts?",
@@ -114,7 +114,7 @@
         },
         {
           "q": "How do I download or delete my data?",
-          "a": "On your account page, choose Download my data to get a file of everything we hold about you. To delete your account, type your email address to confirm. This deletes your account, practice history and transcripts, and cancels any subscription. It can't be undone, so ask for any refund first. Share links you made keep working, because each one holds only what is on its card. To take one down, delete the post where you shared it."
+          "a": "On your account page, choose Download my data to get a file of everything we hold about you. To delete your account, type your email address to confirm. This deletes your account, practice history and transcripts, and cancels any subscription. It can't be undone. Share links you made keep working, because each one holds only what is on its card. To take one down, delete the post where you shared it."
         },
         {
           "q": "Do you use cookies or trackers?",

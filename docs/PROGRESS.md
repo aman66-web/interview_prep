@@ -89,7 +89,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 ### P5 Content and search
 - [x] 20 cases written (case-001 to case-020: profitability, market entry, market sizing, M&A, pricing, growth, operations), every number recomputed by tests. **All drafts until a person with consulting experience reads them**
 - [x] Case-type guides: 10 guides (the seven case types plus structuring, case maths and practising alone), every worked number recomputed by tests; a 60-term glossary
-- [x] Firm guides (verified facts only): Bain and BCG from their own careers pages (checked 15 Oct 2026). McKinsey is hidden: its site could not be reached, see `docs/RESEARCH_TODO.md`
+- [x] Firm guides (verified facts only): Bain, BCG and McKinsey, each from the firm's own careers pages (checked 15 Oct 2026); facts that could not be verified are in `docs/RESEARCH_TODO.md`
 - [x] Free tools: market sizing, break-even, mental maths trainer, growth rate (`/tools`)
 - [x] Sitemap, robots, page titles and descriptions, structured data, default and per-score share images
 - [x] Tests passing (725 unit tests, database security checks in CI, four browser suites), Vercel preview link and plain-English report (15 Oct 2026)
@@ -112,7 +112,9 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
   - [ ] A real test purchase **and** refund
   - [ ] An Anthropic monthly spend limit
   - [ ] A final read of the legal pages and their remaining square-bracket notes. Company details (MARTZEY LTD, chosen 15 Oct 2026) and the minimum age (18) now come from `site.config.ts`; the effective date is set when the pages are approved
-  - [ ] A lawyer checks the refund policy (7 days, 2 or fewer interviews) against the UK 14-day right to cancel, and the wording of the "start straight away" tick box before checkout
+  - [ ] A lawyer checks the no-refunds policy (founder, 15 Oct 2026: all sales final, except where the law requires a refund) and the wording of the "start straight away" tick box before checkout
+  - [ ] ICO data protection fee for MARTZEY LTD (due once the site collects sign-ups; the founder plans to pay it at launch, 15 Oct 2026)
+  - [ ] A trade mark attorney's view on "Mock Partner": no registered mark found in the UK, EU or US on 15 Oct 2026, but a US firm trades as "MOCK Partners" (mockpartners.com) and "mock" is descriptive. Also search trademarks.ipo.gov.uk directly (it blocked automated search)
   - [ ] `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` set in Vercel (Production), then check the daily clean-up has run successfully (Vercel, project, Cron Jobs)
   - [ ] Approve the About and FAQ pages (fill in their square-bracket notes, then set `"status": "approved"`). Until then they show a draft notice and are left out of Google and the sitemap
   - [ ] Real email sending connected to Supabase (its built-in sender only reaches your own team) and CAPTCHA switched on for sign-in (`docs/SETUP.md`)

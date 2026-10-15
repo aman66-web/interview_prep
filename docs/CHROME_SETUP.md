@@ -74,7 +74,7 @@ The preview site is `https://interview-prep-git-claude-gifted-shannon-r42f73-ama
 ## D. Stripe (TEST MODE only)
 
 1. Open the Stripe dashboard. **Make sure the Test mode switch is ON** (top right) before you do anything. If you cannot confirm it, stop.
-2. Go to **Billing**, then **Customer portal**. Click **Activate** (test link). Tick "Customers can cancel subscriptions" and "Customers can update payment methods". Save.
+2. Go to **Billing**, then **Customer portal**. Click **Activate** (test link). Tick "Customers can cancel subscriptions" and choose **Cancel at end of billing period** (not immediately), so people keep the month they paid for. Tick "Customers can update payment methods". Save.
 3. Go to **Developers**, then **API keys**. Click **Copy** on the **Secret key** (it starts with `sk_test_`). Do not read it.
 4. In Vercel, **Environment Variables**, **Add**:
    - Name: `STRIPE_SECRET_KEY`, tick **Production** and **Preview**, turn on **Sensitive**.

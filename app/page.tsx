@@ -587,7 +587,7 @@ function PricingTeaser() {
           ))}
         </ul>
         <p className="mt-6 text-center text-sm text-muted">
-          Prices in US dollars. Payments by Stripe; we never see your card. <Link href="/pricing" className="underline underline-offset-4">Full pricing and refund terms</Link>
+          Prices in US dollars. Payments by Stripe; we never see your card. <Link href="/pricing" className="underline underline-offset-4">Full pricing and terms</Link>
         </p>
       </Container>
     </Section>
