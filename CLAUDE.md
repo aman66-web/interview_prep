@@ -14,6 +14,7 @@ The founder (Aman) is a non-developer. Follow rule 2.13 when talking to him.
 | `docs/CONTENT.md` | Case file format (the case JSON schema), `content:check` tests, launch targets, writing and review rules (kit section 7), and how the content and drill engine works |
 | `docs/PROGRESS.md` | Milestone checklist P0-P7, the founder's setup checklist, and the handoff notes |
 | `docs/SETUP.md` | Click-by-click setup for Supabase, Vercel and where keys go |
+| `docs/REVIEWER_GUIDE.md` | Hiring and briefing the human case reviewer, and how a sign-off is recorded |
 | `docs/DESIGN.md` | The design system: colour tokens, fonts, shared UI components and page patterns. Read before building or changing any page |
 | `docs/KIT.md` | The original build kit, unchanged. Reference only; do not edit |
 | `docs/RESEARCH_TODO.md` | Facts that could not be verified (rule 2.2). Create when first needed |
