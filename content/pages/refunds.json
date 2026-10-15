@@ -10,12 +10,6 @@
     {
       "type": "callout",
       "tone": "warning",
-      "title": "Draft",
-      "text": "This is a draft for the founder and a lawyer to review. It is not in force yet. Anything in square brackets must be filled in or confirmed."
-    },
-    {
-      "type": "callout",
-      "tone": "warning",
       "title": "Note for the founder",
       "text": "[Founder: check with a lawyer how the 7-day policy fits the 14-day cancellation right; the checkout may need a consent tick box.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. The checkout does not ask for that consent yet."
     },

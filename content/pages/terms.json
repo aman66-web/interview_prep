@@ -7,13 +7,6 @@
   "status": "draft",
   "intro": "These terms are the agreement between you and us when you use CaseSpar. Please read them before you buy a plan. Effective date: [effective date].",
   "blocks": [
-    {
-      "type": "callout",
-      "tone": "warning",
-      "title": "Draft",
-      "text": "This is a draft for the founder and a lawyer to review. It is not in force yet. Anything in square brackets must be filled in or confirmed."
-    },
-
     { "type": "h2", "id": "who-we-are", "text": "1. Who we are" },
     {
       "type": "p",

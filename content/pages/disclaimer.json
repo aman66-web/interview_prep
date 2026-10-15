@@ -7,13 +7,6 @@
   "status": "draft",
   "intro": "Please read this before you rely on anything on CaseSpar. Effective date: [effective date].",
   "blocks": [
-    {
-      "type": "callout",
-      "tone": "warning",
-      "title": "Draft",
-      "text": "This is a draft for the founder and a lawyer to review. It is not in force yet. Anything in square brackets must be filled in or confirmed."
-    },
-
     { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },
     {
       "type": "callout",

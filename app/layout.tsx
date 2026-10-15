@@ -3,6 +3,7 @@ import { Geist_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { siteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/site.config";
 import "./globals.css";
 
@@ -12,10 +13,9 @@ const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tig
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument-serif", display: "swap" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl()),
   title: {
     default: `${siteConfig.brandName}: consulting case interview practice with an AI interviewer`,
     template: `%s | ${siteConfig.brandName}`,

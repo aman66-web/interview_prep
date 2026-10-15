@@ -44,6 +44,11 @@ export const firmSchema = z
   .object({
     slug: slugLike,
     name: text,
+    /**
+     * "draft" guides are hidden on the live site (404, not listed, not in the sitemap) and shown,
+     * with a draft notice, only where SHOW_DRAFT_CONTENT=1. Set "ready" once every fact is sourced.
+     */
+    status: z.enum(["draft", "ready"]),
     short_name: text,
     seo_title: seoTitle,
     description: seoDescription,
@@ -87,6 +92,8 @@ export const pageSchema = z
     updated: isoDate,
     /** Legal pages start as drafts; the founder (and ideally a lawyer) approves them. */
     status: z.enum(["draft", "approved"]),
+    /** When the page takes effect (legal pages). Fills the "[effective date]" placeholder once set. */
+    effective: isoDate.optional(),
     intro: text.optional(),
     blocks: z.array(blockSchema).default([]),
     faq: z
