@@ -197,10 +197,13 @@ body {
   color: var(--lime-ink);
 }
 
-:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 3px;
-  border-radius: 6px;
+/* In the base layer so a component's own utilities (outline-none plus a ring, rounded-*)
+   take precedence over this default. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+  }
 }
 
 /* Headings are tight and confident, like the reference designs. */

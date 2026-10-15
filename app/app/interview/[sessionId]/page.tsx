@@ -5,6 +5,7 @@ import { SESSION_CAPS } from "@/lib/ai/limits";
 import { isStage } from "@/lib/ai/stages";
 import { requireUser } from "@/lib/auth/session";
 import { visibleCases } from "@/lib/content/cases";
+import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { createClient } from "@/lib/supabase/server";
 import { InterviewRoom } from "./interview-room";
 
@@ -40,6 +41,8 @@ export default async function InterviewPage({ params }: { params: Promise<{ sess
     <InterviewRoom
       sessionId={session.id}
       caseTitle={c.title}
+      caseType={CASE_TYPE_LABELS[c.type] ?? "Case"}
+      estMinutes={c.est_minutes}
       startedAt={session.started_at}
       initialMessages={((messages ?? []) as { role: "user" | "assistant"; content: string }[]).map((m) => ({
         role: m.role,
@@ -48,6 +51,7 @@ export default async function InterviewPage({ params }: { params: Promise<{ sess
       initialStage={session.stage}
       initialTurns={session.turns}
       turnsMax={SESSION_CAPS.maxTurns}
+      maxChars={SESSION_CAPS.maxMessageChars}
       initialExhibits={publicExhibits(c, (session.revealed_exhibits as string[] | null) ?? [])}
     />
   );

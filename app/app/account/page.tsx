@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { AppHeader } from "@/components/app/app-header";
+import { Notice, type NoticeTone } from "@/components/app/notice";
+import { Kicker, Tag } from "@/components/ui/badge";
+import { Button, ButtonLink, buttonClasses } from "@/components/ui/button";
+import { Card, IconBadge } from "@/components/ui/card";
+import { Download, Lock, Shield, Trash } from "@/components/ui/icons";
+import { Container } from "@/components/ui/layout";
 import { isPaid } from "@/lib/access";
 import { requireUser } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import Link from "next/link";
+import { cn } from "@/lib/ui/cn";
+import { siteConfig } from "@/site.config";
 import { DeleteAccountForm } from "./delete-account-form";
 
 export const metadata: Metadata = {
@@ -59,71 +68,128 @@ export default async function AccountPage({
         : notice
           ? notices[notice]
           : undefined;
+  const messageTone: NoticeTone = checkout === "success" && paid ? "success" : checkout ? "info" : "warning";
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-12">
-      <h1 className="text-2xl font-semibold tracking-tight">Account</h1>
+    <>
+      <AppHeader
+        eyebrow="Settings"
+        title={
+          <>
+            Your plan and <span className="serif-accent">your data</span>
+          </>
+        }
+        intro={<p>Manage billing, download everything we hold about you, or delete your account.</p>}
+      />
 
-      {message ? (
-        <p role="status" className="mt-4 rounded-md border border-border p-4">
-          {message}
-        </p>
-      ) : null}
+      <Container className="mt-4 space-y-4">
+        {message ? <Notice tone={messageTone}>{message}</Notice> : null}
 
-      <section aria-labelledby="details" className="mt-8">
-        <h2 id="details" className="text-lg font-semibold">
-          Your details
-        </h2>
-        <dl className="mt-3 grid grid-cols-[max-content_1fr] gap-x-6 gap-y-2">
-          <dt className="text-muted">Email</dt>
-          <dd>{user.email}</dd>
-          <dt className="text-muted">Plan</dt>
-          <dd>
-            {plan}
-            {expires ? (entitlement?.plan === "monthly" ? ` (paid until ${expires})` : ` (until ${expires})`) : ""}
-          </dd>
-        </dl>
-        <div className="mt-4 flex flex-wrap items-center gap-4">
-          {!paid || entitlement?.plan === "pass90" ? (
-            <Link href="/pricing" className="rounded-md bg-accent px-4 py-2 font-medium text-accent-foreground">
-              {paid ? "Add 90 more days" : "See plans"}
-            </Link>
-          ) : null}
-          {hasBilling ? (
-            <form method="post" action="/api/stripe/portal">
-              <button type="submit" className="rounded-md border border-border px-4 py-2 font-medium">
-                Manage billing
-              </button>
-            </form>
-          ) : null}
+        <div className="grid gap-4 lg:grid-cols-3">
+          <Card tone={paid ? "lavender" : "surface"} className="lg:col-span-2" padding="none">
+            <section aria-labelledby="details" className="flex h-full flex-col p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h2 id="details" className="text-2xl font-medium tracking-tight text-ink">
+                  Your details
+                </h2>
+                {paid ? <Tag tone="lime">Active</Tag> : <Tag>Free plan</Tag>}
+              </div>
+              <dl className="mt-6 divide-y divide-line overflow-hidden rounded-2xl bg-surface ring-1 ring-inset ring-line">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 px-4 py-3.5 sm:px-5">
+                  <dt className="text-sm text-muted">Email</dt>
+                  <dd className="min-w-0 break-all font-medium text-ink">{user.email}</dd>
+                </div>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 px-4 py-3.5 sm:px-5">
+                  <dt className="text-sm text-muted">Plan</dt>
+                  <dd className="font-medium text-ink">
+                    {plan}
+                    {expires ? (entitlement?.plan === "monthly" ? ` (paid until ${expires})` : ` (until ${expires})`) : ""}
+                  </dd>
+                </div>
+              </dl>
+              <p className="mt-4 text-sm text-muted">
+                {paid
+                  ? entitlement?.plan === "monthly"
+                    ? "Your Monthly plan renews each month. You can cancel any time from Manage billing."
+                    : entitlement?.plan === "pass90"
+                      ? "Your pass never renews by itself. Buy another to add 90 more days."
+                      : "Your plan is managed by your group."
+                  : `One full AI interview with a scored debrief and ${siteConfig.limits.free.drillsPerDay} drills a day. Upgrade for every case.`}
+              </p>
+              <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                {!paid || entitlement?.plan === "pass90" ? (
+                  <ButtonLink href="/pricing" arrow>
+                    {paid ? "Add 90 more days" : "See plans"}
+                  </ButtonLink>
+                ) : null}
+                {hasBilling ? (
+                  <form method="post" action="/api/stripe/portal">
+                    <Button type="submit" variant="secondary">
+                      Manage billing
+                    </Button>
+                  </form>
+                ) : null}
+              </div>
+            </section>
+          </Card>
+
+          <Card className="flex flex-col" padding="none">
+            <section aria-labelledby="export" className="flex h-full flex-col p-6 sm:p-8">
+              <IconBadge>
+                <Download size={20} />
+              </IconBadge>
+              <h2 id="export" className="mt-5 text-xl font-medium tracking-tight text-ink">
+                Download your data
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted">Get a copy of everything we hold about you as a JSON file.</p>
+              <div className="mt-auto pt-6">
+                <a href="/api/account/export" className={cn(buttonClasses({ variant: "secondary", full: true }))}>
+                  <Download size={17} />
+                  Download my data
+                </a>
+              </div>
+            </section>
+          </Card>
         </div>
-      </section>
 
-      <section aria-labelledby="export" className="mt-10">
-        <h2 id="export" className="text-lg font-semibold">
-          Download your data
-        </h2>
-        <p className="mt-2 text-muted">
-          Get a copy of everything we hold about you as a JSON file.
-        </p>
-        <a
-          href="/api/account/export"
-          className="mt-4 inline-block rounded-md border border-border px-4 py-2 font-medium"
-        >
-          Download my data
-        </a>
-      </section>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <Card tone="butter" className="flex flex-col">
+            <Kicker>Privacy</Kicker>
+            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink/80">
+              <li className="flex gap-2.5">
+                <Shield size={17} className="mt-0.5 shrink-0" />
+                <span>No ad trackers. Cookies only to keep you logged in.</span>
+              </li>
+              <li className="flex gap-2.5">
+                <Lock size={17} className="mt-0.5 shrink-0" />
+                <span>Payments are taken by Stripe, so we never see or store your card details.</span>
+              </li>
+            </ul>
+            <p className="mt-auto pt-5 text-sm">
+              <Link href="/legal/privacy" className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
+                Read the privacy policy
+              </Link>
+            </p>
+          </Card>
 
-      <section aria-labelledby="delete" className="mt-10">
-        <h2 id="delete" className="text-lg font-semibold">
-          Delete your account
-        </h2>
-        <p className="mt-2 text-muted">
-          This permanently deletes your account, your practice history and your
-          interview transcripts. It cannot be undone.
-        </p>
-        <DeleteAccountForm email={user.email ?? ""} />
-      </section>
-    </div>
+          <section aria-labelledby="delete" className="rounded-[1.75rem] bg-surface p-6 ring-1 ring-inset ring-danger/40 sm:p-8 lg:col-span-2">
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="grid size-10 place-items-center rounded-2xl bg-danger-soft text-danger">
+                <Trash size={19} />
+              </span>
+              <h2 id="delete" className="text-xl font-medium tracking-tight text-ink">
+                Delete your account
+              </h2>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              This permanently deletes your account, your practice history and your interview transcripts. It cannot be
+              undone.{hasBilling ? " Any subscription is cancelled first, so you are not charged again." : ""}
+            </p>
+            <DeleteAccountForm email={user.email ?? ""} />
+          </section>
+        </div>
+      </Container>
+      <div className="h-6 sm:h-10" />
+    </>
   );
 }
