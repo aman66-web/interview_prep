@@ -1,0 +1,203 @@
+{
+  "id": "case-008",
+  "slug": "cobbleway-parcel-hub",
+  "title": "Cobbleway Parcels: why is the hub falling behind?",
+  "track": "consulting",
+  "type": "operations",
+  "industry": "Logistics",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 25,
+  "prompt": "Cobbleway Parcels is a UK parcel carrier. Its main sorting hub in the Midlands has fallen behind: on most nights it cannot sort every parcel in time for the morning delivery vans, so thousands of parcels arrive a day late. The operations director wants to spend £15 million on a second sorting machine. The CEO has asked you to work out what is going wrong and whether the new machine is the right fix. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "How the night works",
+      "answer": "Lorries arrive from 7pm to midnight and wait in the yard until a dock door is free. The hub sorts from 8pm to 4am, eight hours. All four steps run at the same time as one flow, and vans leave from 5am."
+    },
+    {
+      "question_topic": "Volume",
+      "answer": "The hub now handles about 240,000 parcels a night, up from 180,000 two years ago. Volume is growing about 10% a year."
+    },
+    {
+      "question_topic": "The process",
+      "answer": "There are four steps: unloading lorries at the docks; induction, where staff place each parcel label-up on the sorting machine's belts; the automated sorting machine, which reads each label and sends the parcel to the chute for its delivery route; and loading the route cages onto vans."
+    },
+    {
+      "question_topic": "Late parcels and customers",
+      "answer": "On a typical night tens of thousands of parcels miss the 4am cut-off. A small day shift sorts them and they go out a day late. Complaints have tripled this year, and two large online retailers have warned they may move to another carrier."
+    },
+    {
+      "question_topic": "Induction staffing",
+      "answer": "The hub has 50 induction stations, each needing one person. Most induction staff are agency workers, and on a typical night about 10 stations are empty because workers do not turn up."
+    },
+    {
+      "question_topic": "Parcel mix",
+      "answer": "Small soft parcels in plastic bags, mostly from online clothing sellers, have grown as a share of volume. They slide on the belts and take longer to place label-up than boxes."
+    },
+    {
+      "question_topic": "The sorting machine",
+      "answer": "The current machine is reliable, with less than 2% downtime. A second machine would cost £15m and take 18 months to install. The building has space for it."
+    },
+    {
+      "question_topic": "Cost of more staff",
+      "answer": "Hiring 12 permanent night staff, enough to fill 8 more induction stations every night after holidays and sickness, would cost about £0.4m a year."
+    },
+    {
+      "question_topic": "Other hubs and finance",
+      "answer": "Other hubs are not part of this case. The CEO would prefer not to spend £15m unless it is clearly needed."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Demand: parcels per night and the rate per hour needed to finish by 4am",
+      "Capacity of each step: unloading, induction, sorting machine, loading",
+      "The bottleneck and why it is slow: staffing, speed per person, parcel mix",
+      "Options to fix it, with cost and time: staff, process changes, equipment",
+      "Future growth: where the next bottleneck will be"
+    ],
+    "good_signs": [
+      "Turns parcels per night into a required rate per hour and compares it with each step",
+      "Recognises that the slowest step sets the hub's output, so a faster machine elsewhere does not help",
+      "Asks why the bottleneck step is slow before suggesting fixes",
+      "Thinks about next year's volume and where the bottleneck moves"
+    ],
+    "red_flags": [
+      "Accepts the second machine as the answer without checking which step is the constraint",
+      "Looks only at total capacity and ignores the hour-by-hour flow",
+      "Ignores the staffing problem at induction"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "stage-capacity",
+      "title": "Hub capacity by step on a typical night (parcels per hour)",
+      "kind": "bar",
+      "data": {
+        "columns": ["Step", "Parcels per hour"],
+        "rows": [
+          ["Unloading lorries", 36000],
+          ["Induction (placing parcels on the machine)", 25000],
+          ["Sorting machine", 40000],
+          ["Loading vans", 32000]
+        ]
+      },
+      "reveal_hint": "Ask for the capacity of each step in the hub, or where parcels are getting stuck.",
+      "insight": "Induction is the slowest step at 25,000 parcels an hour, below the 30,000 needed. The sorting machine has the most spare capacity (40,000), so a second machine would not raise output."
+    },
+    {
+      "id": "induction-detail",
+      "title": "Induction: two years ago versus now",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Two years ago", "Now"],
+        "rows": [
+          ["Stations staffed on a typical night", 48, 40],
+          ["Parcels placed per person per hour", 700, 625],
+          ["Induction capacity (parcels per hour)", 33600, 25000],
+          ["Small soft parcels (% of volume)", 20, 40]
+        ]
+      },
+      "reveal_hint": "Ask why induction is slow, or for induction staffing and speed over time.",
+      "insight": "Induction capacity fell from 33,600 to 25,000 an hour for two reasons: 8 fewer stations are staffed, and each person is slower because soft parcels doubled from 20% to 40% of volume."
+    }
+  ],
+  "math": [
+    {
+      "id": "required-rate",
+      "question": "How many parcels an hour must the hub handle to sort every parcel by 4am?",
+      "inputs": {
+        "parcels_per_night": 240000,
+        "sort_hours": 8
+      },
+      "expression": "parcels_per_night / sort_hours",
+      "expected": 30000,
+      "tolerance_pct": 2,
+      "working": "240,000 parcels over 8 hours (8pm to 4am) is 30,000 parcels an hour."
+    },
+    {
+      "id": "parcels-missed",
+      "question": "With induction as the slowest step, how many parcels a night miss the 4am cut-off?",
+      "inputs": {
+        "parcels_per_night": 240000,
+        "induction_capacity": 25000,
+        "sort_hours": 8
+      },
+      "expression": "parcels_per_night - induction_capacity * sort_hours",
+      "expected": 40000,
+      "tolerance_pct": 2,
+      "working": "Induction handles 25,000 an hour x 8 hours = 200,000 parcels. 240,000 - 200,000 = 40,000 parcels miss the cut-off, about one in six.",
+      "input_sources": [
+        { "input": "induction_capacity", "exhibit_id": "stage-capacity", "row": 1, "column": "Parcels per hour" }
+      ]
+    },
+    {
+      "id": "stations-needed",
+      "question": "At today's speed per person, how many induction stations must be staffed to keep up with tonight's volume?",
+      "inputs": {
+        "parcels_per_night": 240000,
+        "sort_hours": 8,
+        "rate_per_person": 625
+      },
+      "expression": "parcels_per_night / sort_hours / rate_per_person",
+      "expected": 48,
+      "tolerance_pct": 2,
+      "working": "30,000 parcels an hour / 625 per person = 48 stations. The hub has 50, so it needs 8 more staffed than the 40 it has on a typical night, with almost no slack.",
+      "input_sources": [
+        { "input": "rate_per_person", "exhibit_id": "induction-detail", "row": 1, "column": "Now" }
+      ]
+    },
+    {
+      "id": "next-year-rate",
+      "question": "If volume grows 10% next year, how many parcels an hour will the hub need to handle?",
+      "inputs": {
+        "parcels_per_night": 240000,
+        "growth_pct": 10,
+        "sort_hours": 8
+      },
+      "expression": "parcels_per_night * (100 + growth_pct) / 100 / sort_hours",
+      "expected": 33000,
+      "tolerance_pct": 2,
+      "working": "240,000 x 1.1 = 264,000 parcels a night. 264,000 / 8 = 33,000 an hour. That is above loading's 32,000, so loading becomes the next bottleneck. The sorting machine (40,000) still has room."
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Cobbleway do to raise induction output quickly, and what should it plan for next?",
+    "idea_bank": [
+      "Replace unreliable agency workers with permanent night staff, or pay a bonus for turning up",
+      "Keep a pool of trained standby staff to fill empty stations each night",
+      "Move staff from unloading, which has spare capacity, to induction during the busiest hours",
+      "Send small soft parcels to trays or a separate hand-sort line so they do not slow the main belts",
+      "Ask large senders to use boxes or pre-sort their parcels, with a discount for machine-friendly packaging",
+      "Redesign stations so parcels reach each person at the right height and pace",
+      "Ask some lorries to arrive earlier so sorting can start before 8pm",
+      "Add automatic induction equipment for standard boxes later on",
+      "Add van loading capacity before next year's growth",
+      "Track output per hour at every step each night to see where the bottleneck moves"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Induction is the bottleneck: 25,000 parcels an hour against 30,000 needed, so about 40,000 parcels a night miss the cut-off",
+      "The sorting machine already has spare capacity (40,000 an hour), so a £15m second machine would not fix the problem",
+      "Fix induction: staff at least 48 of the 50 stations every night and speed up the handling of small soft parcels"
+    ],
+    "good_signs": [
+      "Notes that loading (32,000 an hour) becomes the next bottleneck when volume grows to 33,000 an hour next year",
+      "Compares the cost: about £0.4m a year for permanent staff against £15m and 18 months for a machine",
+      "Gives quick wins, a timeline and what to track each night"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 240,000 parcels a night must be sorted between 8pm and 4am; volume grows 10% a year; about 40,000 parcels a night are late; the proposed fix is a £15m second machine.",
+    "Structure: required rate, capacity of each step, the bottleneck and why it is slow, options with cost and time, future growth.",
+    "Analysis: the hub needs 30,000 parcels an hour. Unloading (36,000), the machine (40,000) and loading (32,000) can cope; induction (25,000) cannot, so output is 200,000 a night and 40,000 are late.",
+    "Root cause: induction fell from 33,600 to 25,000 an hour because only 40 of 50 stations are staffed and soft parcels (now 40% of volume) slow each person from 700 to 625 an hour.",
+    "Maths: 48 staffed stations are needed at today's speed. Next year the hub needs 33,000 an hour, so it also needs faster handling (50 stations at 700 gives 35,000) and more loading capacity.",
+    "Recommendation: do not buy the second machine now. Hire permanent night staff (about £0.4m a year) to fill at least 48 stations, set up a separate line for soft parcels, and plan extra loading capacity before next year. Revisit the machine in about three years, when volume nears its 40,000-an-hour limit."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

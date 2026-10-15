@@ -1,0 +1,269 @@
+{
+  "slug": "profitability-case-interview",
+  "kind": "case_type",
+  "case_type": "profitability",
+  "title": "Profitability case interviews: how to find why profit fell",
+  "seo_title": "Profitability Case Interview: Structure, Maths and Example",
+  "description": "How to solve a profitability case: split profit into revenue and costs, find the driver that changed, size it and recommend fixes. Worked example included.",
+  "updated": "2026-10-15",
+  "reading_minutes": 9,
+  "summary": "A profitability case asks why a company's profit has fallen, or how it could rise. You solve it by splitting profit into revenue (price × volume) and costs (fixed and variable), comparing each piece with the past or with competitors to find which one changed, asking why it changed, and recommending actions sized against that cause.",
+  "blocks": [
+    { "type": "h2", "id": "what-it-is", "text": "What a profitability case is" },
+    {
+      "type": "p",
+      "text": "In a profitability case the client's profit has dropped, or is lower than it should be, and you are asked to find out why and what to do about it. Common variations are “how could we raise profit by 10%?”, “one division is losing money: should we fix it or close it?” and “our margins are below our competitors': why?”."
+    },
+    {
+      "type": "p",
+      "text": "Profit questions also sit inside other case types, because most business decisions are judged in the end by what they do to profit. A market entry, a price change or an acquisition all come back to the same equation, so this structure is worth knowing thoroughly."
+    },
+    { "type": "h2", "id": "the-profit-equation", "text": "The profit equation" },
+    {
+      "type": "p",
+      "text": "Everything in this case comes from one line: profit = revenue − costs. Each side then breaks down further."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Revenue = price × volume, added up across products, customer groups or regions.",
+        "Volume = number of customers × units each customer buys (or market size × market share).",
+        "Costs = fixed costs + variable costs.",
+        "Variable costs = cost per unit × volume. Fixed costs, such as rent and salaries, don't change with volume in the short run."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Because these pieces add up exactly to profit, a structure built on them has no gaps and no overlaps. Any change in profit has to show up in at least one of them, which is why this is such a reliable place to start."
+    },
+    { "type": "h2", "id": "sample-structure", "text": "A starting structure" },
+    {
+      "type": "framework",
+      "title": "Profit tree (a starting point)",
+      "branches": [
+        {
+          "name": "Revenue",
+          "items": [
+            "Price: list price, discounts and promotions",
+            "Volume: number of customers and how much each buys",
+            "Mix: a shift towards cheaper or lower-margin products"
+          ]
+        },
+        {
+          "name": "Variable costs",
+          "items": [
+            "Cost per unit: materials, packaging, delivery, payment fees, commissions",
+            "Changes in suppliers, input prices or waste"
+          ]
+        },
+        {
+          "name": "Fixed costs",
+          "items": [
+            "Rent and utilities",
+            "Salaried staff, marketing, IT and head office",
+            "New sites, contracts or hires that added cost"
+          ]
+        },
+        {
+          "name": "Outside the company",
+          "items": [
+            "Market: is demand rising or falling for everyone?",
+            "Competitors: new entrants or price moves",
+            "Customers and rules: changing tastes, new regulations or taxes"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Use this as a skeleton and rename the branches in the client's own terms. For a cinema, revenue is visits × (ticket price + food and drink spend per visit). For a software company it is customers × subscription price, with the number of customers who cancel each month as a key driver. For an airline it is flights × seats × the share of seats filled × average fare. Speaking the client's language shows you understand how this particular business makes money."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Segment early",
+      "text": "A profit fall is often concentrated in one place: one product, one region, one channel or one customer group. Ask whether the fall is spread evenly or concentrated before you dig into every cost line."
+    },
+    { "type": "h2", "id": "questions-to-ask", "text": "Questions to ask first" },
+    {
+      "type": "ul",
+      "items": [
+        "What exactly has changed: profit in money, or profit margin as a percentage? By how much, and over what period?",
+        "Is it the whole company or one part of it, such as a product, region or channel?",
+        "Have competitors seen the same thing? If they have, the cause is probably in the market; if not, it is probably inside the company.",
+        "Has anything changed recently: prices, products, suppliers, sites, staffing or a large customer?",
+        "What is the goal? Back to last year's profit, or a specific target, and by when?",
+        "Are any options ruled out, such as closing sites or raising prices?"
+      ]
+    },
+    { "type": "h2", "id": "finding-the-cause", "text": "How to find the cause" },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Lay the numbers side by side",
+          "text": "Put this year next to last year (or next to a competitor) for revenue and each cost line. Changes jump out of a two-column table in a way they never do from a list of facts."
+        },
+        {
+          "title": "Decide: revenue or costs?",
+          "text": "Work out how much of the profit change came from each side. If profit fell £4m because revenue fell £3m and costs rose £1m, revenue is three-quarters of the problem and should be explored first."
+        },
+        {
+          "title": "Within revenue: price, volume or mix?",
+          "text": "Did each customer pay less, did fewer customers come, did each buy less, or did sales shift to cheaper products?"
+        },
+        {
+          "title": "Within costs: per unit or fixed?",
+          "text": "Look for cost lines growing faster than revenue. A rising cost per unit points to suppliers, input prices or waste; a jump in fixed costs points to a new site, contract or hire."
+        },
+        {
+          "title": "Ask why",
+          "text": "Once you know which number moved, look for the reason: something the company did, something competitors did, or a change in the market."
+        },
+        {
+          "title": "Check the size",
+          "text": "Make sure the cause you found explains most of the change. If it explains only a fifth, keep looking."
+        }
+      ]
+    },
+    { "type": "h2", "id": "the-maths", "text": "The maths to expect" },
+    {
+      "type": "table",
+      "caption": "Formulas worth knowing by heart",
+      "columns": ["Measure", "Formula", "Quick example"],
+      "rows": [
+        ["Profit margin", "Profit ÷ revenue", "£2m profit on £20m revenue = 10%"],
+        ["Percentage change", "(New − old) ÷ old", "Revenue from £20m to £18m = −10%"],
+        ["Contribution per unit", "Price − variable cost per unit", "£8 price − £5 cost = £3"],
+        ["Contribution margin", "Contribution per unit ÷ price", "£3 ÷ £8 = 37.5%"],
+        ["Break-even volume", "Fixed costs ÷ contribution per unit", "£300,000 ÷ £3 = 100,000 units"],
+        ["Change in percentage points", "New margin − old margin", "A margin falling from 12% to 9% drops 3 points, which is 25% of the old margin"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Watch the last row. “Margin fell by 3%” and “margin fell by 3 percentage points” mean different things, and mixing them up is a quick way to make an interviewer doubt the rest of your numbers."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Fix or close?",
+      "text": "If the question is whether to close a loss-making product, shop or division, compare the money it brings in with only the costs that would actually disappear if it closed. Shared costs such as head office or a warehouse are often split across units on paper but stay after a closure, so a unit that looks loss-making may still be helping to pay for them."
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Jumping straight to ideas",
+      "text": "Listing ways to cut costs or raise prices before you know what changed. Ideas only count once they target the cause you have found and sized."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Looking only inside the company, without checking whether competitors had the same fall.",
+        "Ignoring mix: total volume can stay flat while customers switch to cheaper products.",
+        "Confusing profit with margin, or percent with percentage points.",
+        "Naming a cause without sizing it, so you can't tell whether it explains £100,000 or £4m.",
+        "Treating a one-off, such as one bad month or a single legal bill, as a lasting trend.",
+        "Recommending cuts that save money but lose more revenue than they save, like the staff cut in the example below."
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "Worked example: a cinema chain" },
+    {
+      "type": "example",
+      "title": "Why did Northgate Cinemas' profit fall?",
+      "question": "Northgate is an invented UK chain of 20 cinemas. Its profit fell from £10m last year to £6m this year, even though visits stayed at 4 million. The chief executive asks why, and what to do. (The company and every number here are invented for practice.)",
+      "answer": [
+        "Clarify: profit here is operating profit for the whole chain. No cinemas opened or closed, and the average ticket price stayed at £10.",
+        "Structure: profit = revenue − costs. Revenue = visits × (ticket price + food and drink spend per visit). Costs are film hire (the share of ticket money paid to film distributors, here 50%), food and drink costs (25% of food and drink sales) and fixed costs such as rent and staff.",
+        "Last year: tickets brought in 4m visits × £10 = £40m and food and drink 4m × £5 per visit = £20m. Profit = £40m + £20m − £20m film hire − £5m food and drink costs − £25m fixed costs = £10m.",
+        "This year: tickets were still £40m, but food and drink spend fell to £4 per visit, so food and drink sales were 4m × £4 = £16m. Fixed costs rose to £26m. Profit = £40m + £16m − £20m − £4m − £26m = £6m. That matches the reported figure, so nothing is missing.",
+        "Where did the £4m go? Food and drink keeps 75p of every £1 sold after its own costs, so its contribution fell from £20m × 75% = £15m to £16m × 75% = £12m, a drop of £3m. Fixed costs rose £1m. Food and drink explains £3m ÷ £4m = 75% of the fall, so explore it first.",
+        "Why did food and drink spend fall? The data shows spend per buyer stayed at £10, but the share of visitors buying anything fell from 50% to 40%, and 40% × £10 = £4 per visit. Fewer people are buying, rather than buyers spending less.",
+        "Why are fewer people buying? Asked what changed, the client says it cut counter staff this year to save £0.5m, and queues before films got longer. Rent also rose £1.5m, so fixed costs rose by £1.5m − £0.5m = £1m overall.",
+        "Insight: a £0.5m staff saving appears to have cost about £3m of food and drink contribution. If bringing the staff back returned buying to 50% of visitors, profit would rise to £6m + £3m − £0.5m = £8.5m. The rest of the gap to £10m is the £1.5m rent rise, a separate problem.",
+        "Recommendation: restore counter staff at the busiest times first, test letting customers pre-order snacks when they book tickets so queues stop putting them off, and deal with the rent separately, for example at the next lease review. Track the share of visitors buying food and drink each week, since that is the number that moved."
+      ],
+      "checks": [
+        { "label": "Ticket sales (£m)", "inputs": { "visits_m": 4, "ticket_price": 10 }, "expression": "visits_m * ticket_price", "expected": 40 },
+        { "label": "Food and drink sales last year (£m)", "inputs": { "visits_m": 4, "spend_per_visit": 5 }, "expression": "visits_m * spend_per_visit", "expected": 20 },
+        {
+          "label": "Profit last year (£m)",
+          "inputs": { "tickets": 40, "food": 20, "film_share": 0.5, "food_cost_share": 0.25, "fixed": 25 },
+          "expression": "tickets + food - film_share * tickets - food_cost_share * food - fixed",
+          "expected": 10
+        },
+        { "label": "Food and drink sales this year (£m)", "inputs": { "visits_m": 4, "spend_per_visit": 4 }, "expression": "visits_m * spend_per_visit", "expected": 16 },
+        {
+          "label": "Profit this year (£m)",
+          "inputs": { "tickets": 40, "food": 16, "film_share": 0.5, "food_cost_share": 0.25, "fixed": 26 },
+          "expression": "tickets + food - film_share * tickets - food_cost_share * food - fixed",
+          "expected": 6
+        },
+        { "label": "Food and drink contribution last year (£m)", "inputs": { "food": 20, "food_cost_share": 0.25 }, "expression": "food * (1 - food_cost_share)", "expected": 15 },
+        { "label": "Food and drink contribution this year (£m)", "inputs": { "food": 16, "food_cost_share": 0.25 }, "expression": "food * (1 - food_cost_share)", "expected": 12 },
+        { "label": "Share of the profit fall from food and drink", "inputs": { "contribution_drop": 3, "profit_last": 10, "profit_now": 6 }, "expression": "contribution_drop / (profit_last - profit_now)", "expected": 0.75 },
+        { "label": "Food and drink spend per visit last year (£)", "inputs": { "buyer_share": 0.5, "spend_per_buyer": 10 }, "expression": "buyer_share * spend_per_buyer", "expected": 5 },
+        { "label": "Food and drink spend per visit this year (£)", "inputs": { "buyer_share": 0.4, "spend_per_buyer": 10 }, "expression": "buyer_share * spend_per_buyer", "expected": 4 },
+        { "label": "Net rise in fixed costs (£m)", "inputs": { "rent_rise": 1.5, "staff_saving": 0.5 }, "expression": "rent_rise - staff_saving", "expected": 1 },
+        { "label": "Profit if buying recovers (£m)", "inputs": { "profit_now": 6, "contribution_back": 3, "staff_cost": 0.5 }, "expression": "profit_now + contribution_back - staff_cost", "expected": 8.5 }
+      ]
+    },
+    { "type": "h2", "id": "recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "p",
+      "text": "Lead with the answer, then the reasons, then the next steps. A strong close takes about a minute and covers four things."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "The cause, with its size: what moved and how much of the profit change it explains.",
+        "Two or three actions, starting with the one that targets the cause most directly, each with a rough sense of its impact.",
+        "The main risk, or what you would want to check next.",
+        "How to track progress: the one number the client should watch."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Example close",
+      "text": "“Profit fell by £4m. Three-quarters of that came from fewer visitors buying food and drink after counter staff were cut; the rest is a rent rise. I'd bring back staff at peak times, which costs about £0.5m and could recover up to £3m, and test pre-ordering snacks with tickets. Before rolling that out everywhere, I'd confirm the link between queues and sales in a few cinemas.”"
+    },
+    {
+      "type": "links",
+      "title": "Keep practising",
+      "items": [
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Chart-reading drills", "href": "/drills/chart-reading" },
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Case interview maths", "href": "/guides/case-interview-maths" },
+        { "label": "Pricing case interviews", "href": "/guides/pricing-case-interview" },
+        { "label": "How to structure a case interview", "href": "/guides/how-to-structure-a-case-interview" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Should I always start a profitability case with revenue and costs?",
+      "a": "For a profit question it is usually the cleanest first split, because the two add up exactly to profit. But name the branches in the client's terms, segment by product or region early, and go straight to costs if the interviewer has already told you revenue is flat."
+    },
+    {
+      "q": "What's the difference between profit and profit margin?",
+      "a": "Profit is an amount of money: revenue minus costs. Margin is profit as a share of revenue. A company can grow its profit while its margin falls, for example by adding lots of low-margin sales, so check which one the client cares about."
+    },
+    {
+      "q": "What if both revenue and costs changed?",
+      "a": "Size each one. Work out how much of the profit change came from each side and start with the bigger. Mention the smaller one in your recommendation so it isn't forgotten."
+    },
+    {
+      "q": "How do I come up with ideas to improve profit?",
+      "a": "Start from the cause, then walk through the profit tree: raise price, sell more, improve the mix, cut cost per unit, cut fixed costs. Separate quick wins from longer projects, and say which you would do first and why."
+    },
+    {
+      "q": "Is it a good idea to suggest cutting staff?",
+      "a": "It can be, but first think through what those staff do for revenue and service. The worked example on this page shows a staff cut that saved less than it lost."
+    }
+  ],
+  "related_drills": ["mental-maths", "chart-reading", "frameworks"]
+}

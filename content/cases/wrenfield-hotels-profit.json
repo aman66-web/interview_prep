@@ -1,0 +1,224 @@
+{
+  "id": "case-009",
+  "slug": "wrenfield-hotels-profit",
+  "title": "Wrenfield Hotels: why is profit per room down?",
+  "track": "consulting",
+  "type": "profitability",
+  "industry": "Hospitality",
+  "difficulty": 1,
+  "style": "interviewer_led",
+  "est_minutes": 25,
+  "prompt": "Wrenfield Hotels owns 10 boutique hotels in US cities. Its hotels are about as busy as last year, yet profit per room has fallen sharply. The CEO wants to know why, and what to do about it. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The business",
+      "answer": "Wrenfield owns and runs 10 boutique hotels in US cities, each with 100 rooms, so 1,000 rooms in total. All hotels are open every night of the year. No hotels opened or closed in either year."
+    },
+    {
+      "question_topic": "Restaurants and bars",
+      "answer": "The restaurants and bars are run by a partner that pays Wrenfield a fixed rent. Ignore them; this case is about rooms only."
+    },
+    {
+      "question_topic": "Occupancy and prices",
+      "answer": "In both years, 80% of rooms were filled on an average night, at an average price of $250 a night. Guests pay about the same price whichever way they book."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants profit per room per night back to last year's $50 within 18 months."
+    },
+    {
+      "question_topic": "How guests book",
+      "answer": "Guests book either directly, through Wrenfield's own website or phone line, or through online travel agencies (booking websites that list many hotels). The booking data by channel is available."
+    },
+    {
+      "question_topic": "Booking commissions",
+      "answer": "Online travel agencies charge Wrenfield 20% of the room price on every booking they bring. Direct bookings have no commission."
+    },
+    {
+      "question_topic": "Website",
+      "answer": "In January Wrenfield moved to a new website and booking system. Since then, guests have complained that booking on a phone is slow and often fails. The number of people visiting the website is about the same as last year."
+    },
+    {
+      "question_topic": "Staff and labor",
+      "answer": "Hourly wages rose about 5% this year in line with local labor markets. Staffing levels per hotel are unchanged."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "New boutique hotels opened in two of Wrenfield's cities, but Wrenfield's occupancy and prices held up. It is not the main issue."
+    },
+    {
+      "question_topic": "Guests",
+      "answer": "About 40% of guests have stayed with Wrenfield before. Many of them used to book directly."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Revenue: rooms filled (occupancy) and average price",
+      "Costs: booking commissions, staff, supplies, building and other costs",
+      "Comparison: per room per night, this year versus last year, line by line",
+      "What changed: booking channels, the new website, wages",
+      "Ways to recover profit: win back direct bookings, cut commissions, control staff costs"
+    ],
+    "good_signs": [
+      "Starts from profit = revenue minus costs and checks revenue first",
+      "Rules out revenue quickly because occupancy and price are flat",
+      "Asks to compare costs line by line, year on year",
+      "Links the jump in commissions to the shift in how guests book and to the new website"
+    ],
+    "red_flags": [
+      "Spends a long time on competitors or prices after hearing they did not change",
+      "Treats commissions as fixed costs instead of asking why they rose",
+      "Jumps to cutting staff without diagnosing the cause"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "pl-per-room-night",
+      "title": "Profit per room per night, averaged over all rooms ($)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Last year", "This year"],
+        "rows": [
+          ["Room revenue", 200, 200],
+          ["Booking commissions", 12, 28],
+          ["Staff", 80, 84],
+          ["Laundry and supplies", 30, 30],
+          ["Building and other costs", 28, 28],
+          ["Profit", 50, 30]
+        ]
+      },
+      "reveal_hint": "Ask for revenue and costs per room, this year versus last year.",
+      "insight": "Revenue is flat at $200 per room per night, but profit fell $20, from $50 to $30. Booking commissions rose $16 and staff $4; all other costs are unchanged."
+    },
+    {
+      "id": "booking-mix",
+      "title": "How guests booked: share of nights by channel",
+      "kind": "bar",
+      "data": {
+        "columns": ["Channel", "Commission (% of room price)", "Last year (% of nights)", "This year (% of nights)"],
+        "rows": [
+          ["Direct (own website and phone)", 0, 70, 30],
+          ["Online travel agencies", 20, 30, 70]
+        ]
+      },
+      "reveal_hint": "Ask why booking commissions rose, or how guests booked this year versus last year.",
+      "insight": "Direct bookings fell from 70% to 30% of nights, and online travel agencies rose from 30% to 70%. That shift started when the new website made booking on phones hard."
+    }
+  ],
+  "math": [
+    {
+      "id": "profit-fall-pct",
+      "question": "By what percentage did profit per room per night fall?",
+      "inputs": {
+        "profit_last": 50,
+        "profit_this": 30
+      },
+      "expression": "(profit_last - profit_this) / profit_last * 100",
+      "expected": 40,
+      "tolerance_pct": 2,
+      "working": "Profit fell from $50 to $30, a fall of $20. $20 / $50 = 40%.",
+      "input_sources": [
+        { "input": "profit_last", "exhibit_id": "pl-per-room-night", "row": 5, "column": "Last year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-room-night", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "commission-share-of-fall",
+      "question": "What percentage of the fall in profit is explained by higher booking commissions?",
+      "inputs": {
+        "commission_last": 12,
+        "commission_this": 28,
+        "profit_last": 50,
+        "profit_this": 30
+      },
+      "expression": "(commission_this - commission_last) / (profit_last - profit_this) * 100",
+      "expected": 80,
+      "tolerance_pct": 2,
+      "working": "Commissions rose $16 ($28 - $12). Profit fell $20. $16 / $20 = 80%. The other $4 is the rise in staff costs.",
+      "input_sources": [
+        { "input": "commission_last", "exhibit_id": "pl-per-room-night", "row": 1, "column": "Last year" },
+        { "input": "commission_this", "exhibit_id": "pl-per-room-night", "row": 1, "column": "This year" },
+        { "input": "profit_last", "exhibit_id": "pl-per-room-night", "row": 5, "column": "Last year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-room-night", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "group-profit-fall",
+      "question": "Across all 1,000 rooms, how much less profit is Wrenfield making in a year, in $ million?",
+      "inputs": {
+        "rooms": 1000,
+        "nights": 365,
+        "profit_last": 50,
+        "profit_this": 30
+      },
+      "expression": "rooms * nights * (profit_last - profit_this) / 1000000",
+      "expected": 7.3,
+      "tolerance_pct": 2,
+      "working": "$20 less per room per night x 1,000 rooms = $20,000 a night. x 365 nights = $7.3 million a year.",
+      "input_sources": [
+        { "input": "profit_last", "exhibit_id": "pl-per-room-night", "row": 5, "column": "Last year" },
+        { "input": "profit_this", "exhibit_id": "pl-per-room-night", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "profit-if-half-direct",
+      "question": "If Wrenfield won back enough direct bookings that half of all nights were booked through travel agencies, what would profit per room per night be, in dollars?",
+      "inputs": {
+        "profit_this": 30,
+        "commission_this": 28,
+        "room_revenue": 200,
+        "agency_share_pct": 50,
+        "commission_pct": 20
+      },
+      "expression": "profit_this + commission_this - room_revenue * agency_share_pct / 100 * commission_pct / 100",
+      "expected": 38,
+      "tolerance_pct": 2,
+      "working": "Commission would be $200 x 50% x 20% = $20 per room per night, down from $28. Profit rises by $8, from $30 to $38. Getting all the way back to 70% direct would give $46; the last $4 needs work on staff costs.",
+      "input_sources": [
+        { "input": "profit_this", "exhibit_id": "pl-per-room-night", "row": 5, "column": "This year" },
+        { "input": "commission_this", "exhibit_id": "pl-per-room-night", "row": 1, "column": "This year" },
+        { "input": "room_revenue", "exhibit_id": "pl-per-room-night", "row": 0, "column": "This year" },
+        { "input": "commission_pct", "exhibit_id": "booking-mix", "row": 1, "column": "Commission (% of room price)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "How could Wrenfield win back direct bookings and cut what it pays in commission?",
+    "idea_bank": [
+      "Fix the new website's phone booking as the top priority, and test it on real phones",
+      "Offer perks only for direct bookings, such as free breakfast, late checkout or a room upgrade",
+      "Promise the best price on Wrenfield's own website",
+      "Start a simple loyalty program for repeat guests that rewards booking direct",
+      "Email past guests with an offer to book direct",
+      "Invite guests who came through travel agencies to book direct next time, for example at checkout",
+      "Run search ads on Wrenfield's own name so people reach its website, not an agency",
+      "Negotiate a lower commission with the travel agencies, or offer them fewer rooms at busy times",
+      "Make the phone booking line easy to reach and well staffed"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Profit per room per night fell $20 (from $50 to $30, down 40%) while revenue stayed flat",
+      "Higher commissions explain $16 of the fall (80%), because bookings shifted from direct to online travel agencies after the new website made booking on phones hard",
+      "A clear recommendation: fix the website and win back direct bookings first, with next steps"
+    ],
+    "good_signs": [
+      "Sizes the problem: about $7.3 million a year across the group",
+      "Shows the payoff: back to half direct gives $38 a night; back to 70% direct gives $46",
+      "Deals with the $4 rise in staff costs separately and names what to track, such as the weekly share of direct bookings"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goal (profit per room per night back to $50 within 18 months) and confirm that occupancy, prices and the number of hotels are unchanged.",
+    "Structure: profit = revenue minus costs. Revenue (80% occupancy x $250 = $200 per room per night) is flat, so focus on costs line by line.",
+    "Analysis: profit fell $20 (40%). Booking commissions rose $16 and staff $4; everything else is flat. Commissions explain 80% of the fall.",
+    "Root cause: direct bookings fell from 70% to 30% of nights after the new website made booking on phones hard, while website visits held steady. Travel agencies charge 20%, so commission rose from $12 to $28.",
+    "Size and payoff: $20 x 1,000 rooms x 365 nights = $7.3 million a year. Getting back to half direct lifts profit to $38; back to 70% direct gives $46.",
+    "Recommendation: fix the phone booking flow now, add perks for booking direct and a loyalty program for repeat guests, and handle the $4 staff rise through scheduling. Track the share of direct bookings weekly against the 70% target."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

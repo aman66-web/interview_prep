@@ -1,43 +1,301 @@
 @import "tailwindcss";
 
+/*
+ * CaseSpar design tokens (docs/DESIGN.md).
+ * Calm, credible and fast: a warm light canvas, white cards with large radii,
+ * near-black pill buttons, one lime accent used sparingly, and indigo for data.
+ * Every colour has a dark-mode twin; the theme follows the visitor's system setting.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --muted: #525252;
-  --border: #e5e5e5;
-  --accent: #1d4ed8;
+  --canvas: #f3f3f0;
+  --surface: #ffffff;
+  --surface-2: #f7f7f4;
+  --surface-3: #ecece8;
+  --ink: #0d0d10;
+  --ink-contrast: #ffffff;
+  --muted: #55555e;
+  --subtle: #8b8b94;
+  --line: #e3e3de;
+  --line-strong: #cfcfc8;
+
+  --lime: #d6f55c;
+  --lime-ink: #1b2300;
+  --brand: #4f46e5;
+  --brand-2: #7c5cf5;
+  --brand-ink: #3730a3;
+  --brand-soft: #eef0ff;
+
+  --lavender: #ece8ff;
+  --mint: #e2f5e8;
+  --peach: #ffe8dc;
+  --sky: #e5efff;
+  --butter: #fff6d6;
+
+  --night: #0b1020;
+  --night-2: #141b31;
+  --on-night: #f5f6fa;
+  --on-night-muted: #a9afc4;
+
+  --success: #15803d;
+  --success-soft: #e6f6ec;
+  --warning: #a16207;
+  --warning-soft: #fdf3dc;
+  --danger: #c2271d;
+  --danger-soft: #fdecea;
+
+  --shadow-soft: 0 1px 2px rgb(16 17 26 / 0.04), 0 10px 30px -18px rgb(16 17 26 / 0.18);
+  --shadow-float: 0 1px 2px rgb(16 17 26 / 0.05), 0 30px 60px -28px rgb(16 17 26 / 0.35);
+
+  /* Older names, kept so every page keeps working while it is restyled. */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --border: var(--line);
+  --accent: var(--brand);
   --accent-foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --muted: #a3a3a3;
-    --border: #262626;
-    --accent: #3b82f6;
-    --accent-foreground: #0a0a0a;
+    --canvas: #0b0b0d;
+    --surface: #141417;
+    --surface-2: #1a1a1e;
+    --surface-3: #232328;
+    --ink: #f3f3f4;
+    --ink-contrast: #0d0d10;
+    --muted: #a7a7b0;
+    --subtle: #7d7d87;
+    --line: #2a2a30;
+    --line-strong: #3a3a42;
+
+    --lime: #d6f55c;
+    --lime-ink: #1b2300;
+    --brand: #8c93ff;
+    --brand-2: #b19cff;
+    --brand-ink: #c7caff;
+    --brand-soft: #1c1e38;
+
+    --lavender: #1f1b33;
+    --mint: #13241a;
+    --peach: #2c1d15;
+    --sky: #152039;
+    --butter: #2a2412;
+
+    --night: #070a14;
+    --night-2: #10162a;
+
+    --success: #4ade80;
+    --success-soft: #10261a;
+    --warning: #fbbf24;
+    --warning-soft: #2a2110;
+    --danger: #f87171;
+    --danger-soft: #2c1414;
+
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px -18px rgb(0 0 0 / 0.6);
+    --shadow-float: 0 1px 2px rgb(0 0 0 / 0.5), 0 30px 60px -24px rgb(0 0 0 / 0.8);
+
+    --accent-foreground: #0d0d10;
   }
 }
 
 @theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ink: var(--ink);
+  --color-ink-contrast: var(--ink-contrast);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-lime: var(--lime);
+  --color-lime-ink: var(--lime-ink);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-lavender: var(--lavender);
+  --color-mint: var(--mint);
+  --color-peach: var(--peach);
+  --color-sky: var(--sky);
+  --color-butter: var(--butter);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-on-night: var(--on-night);
+  --color-on-night-muted: var(--on-night-muted);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  /* Older names */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-float: var(--shadow-float);
+
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--lime-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Headings are tight and confident, like the reference designs. */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* A soft wash of colour behind the hero and other feature panels. */
+.bg-aurora {
+  background:
+    radial-gradient(60% 70% at 85% 10%, rgb(124 92 245 / 0.18), transparent 60%),
+    radial-gradient(50% 60% at 10% 0%, rgb(79 70 229 / 0.12), transparent 60%),
+    radial-gradient(60% 60% at 60% 100%, rgb(214 245 92 / 0.22), transparent 60%),
+    var(--surface);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-aurora {
+    background:
+      radial-gradient(60% 70% at 85% 10%, rgb(124 92 245 / 0.22), transparent 60%),
+      radial-gradient(50% 60% at 10% 0%, rgb(79 70 229 / 0.18), transparent 60%),
+      radial-gradient(60% 60% at 60% 100%, rgb(214 245 92 / 0.08), transparent 60%),
+      var(--surface);
+  }
+}
+
+/* The deep blue gradient used for the closing call to action and the footer. */
+.bg-night-glow {
+  background:
+    radial-gradient(70% 90% at 50% -10%, rgb(79 70 229 / 0.55), transparent 60%),
+    radial-gradient(40% 60% at 100% 100%, rgb(124 92 245 / 0.25), transparent 60%),
+    var(--night);
+}
+
+/* Frosted glass for cards that float over colour. */
+.glass {
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* A faint dot grid for texture. */
+.bg-dots {
+  background-image: radial-gradient(var(--line-strong) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Gradient text for one highlighted phrase in a heading. */
+.text-gradient {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* One accent phrase in a heading, in the italic serif. The serif runs small, so it is set a touch larger. */
+.serif-accent {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+}
+
+/* The giant brand name at the foot of the footer: white fading to nothing. */
+.wordmark {
+  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.18), rgb(255 255 255 / 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hide the default disclosure triangle on <summary> (FAQ and menus draw their own). */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

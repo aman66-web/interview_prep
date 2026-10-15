@@ -2,9 +2,46 @@
 // reading at run time). When you add a file to content/cases/, add it here too:
 // tests/content-library.test.ts fails if a file is missing from this list.
 import aurora from "@/content/cases/aurora-kitchen-uk-entry.json";
+import bramblecup from "@/content/cases/bramblecup-uk-supermarket-deal.json";
+import brinmoor from "@/content/cases/brinmoor-bike-share-repairs.json";
 import evChargers from "@/content/cases/city-ev-chargers.json";
+import cobalt from "@/content/cases/cobalt-basin-ski-resort.json";
+import cobbleway from "@/content/cases/cobbleway-parcel-hub.json";
+import corvane from "@/content/cases/corvane-vets-acquisition.json";
+import cragwell from "@/content/cases/cragwell-climbing-growth.json";
 import flexora from "@/content/cases/flexora-gym-software-pricing.json";
 import harbourline from "@/content/cases/harbourline-bakeries.json";
+import hollinsway from "@/content/cases/hollinsway-pet-insurance.json";
+import larkmoor from "@/content/cases/larkmoor-meal-kit-acquisition.json";
+import londonCargo from "@/content/cases/london-cargo-bikes.json";
 import lumen from "@/content/cases/lumen-tutoring-growth.json";
+import ostrander from "@/content/cases/ostrander-pumps-sensor-deal.json";
+import parlune from "@/content/cases/parlune-subscriber-growth.json";
+import pellbrook from "@/content/cases/pellbrook-clinics-waiting-times.json";
+import stowline from "@/content/cases/stowline-backup-pricing.json";
+import dogWalking from "@/content/cases/us-dog-walking-market.json";
+import wrenfield from "@/content/cases/wrenfield-hotels-profit.json";
 
-export const rawCases: unknown[] = [harbourline, aurora, evChargers, flexora, lumen];
+// In case-id order (case-001 first): the order the library lists them in.
+export const rawCases: unknown[] = [
+  harbourline,
+  aurora,
+  evChargers,
+  flexora,
+  lumen,
+  corvane,
+  ostrander,
+  cobbleway,
+  wrenfield,
+  stowline,
+  pellbrook,
+  brinmoor,
+  bramblecup,
+  hollinsway,
+  parlune,
+  londonCargo,
+  dogWalking,
+  cragwell,
+  larkmoor,
+  cobalt,
+];

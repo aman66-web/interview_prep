@@ -1,0 +1,234 @@
+{
+  "slug": "pricing-case-interview",
+  "kind": "case_type",
+  "case_type": "pricing",
+  "title": "Pricing case interviews: how to set or change a price",
+  "seo_title": "Pricing Case Interview: Framework, Maths and Example",
+  "description": "How to solve a pricing case interview: start from the objective, use cost, competitor and value anchors, do the break-even volume maths, then recommend.",
+  "updated": "2026-10-15",
+  "reading_minutes": 12,
+  "summary": "A pricing case asks what a company should charge for something new, or whether it should change an existing price. Pin down the objective first, then place the price between two anchors: the cost floor (below it, every sale loses money) and the value ceiling (the most a customer would rationally pay, given their alternatives), using competitors' prices as a reference point. Finish by working out how much volume the price can gain or lose before profit changes, and recommend one price with a way to test it.",
+  "blocks": [
+    { "type": "h2", "id": "what-a-pricing-case-looks-like", "text": "What a pricing case looks like" },
+    {
+      "type": "p",
+      "text": "Pricing cases come in two families. In the first, a company has something new (a product, a service, a new version of an app) and needs to decide what to charge. In the second, a company already sells something and is wondering whether to raise or cut the price, often because costs have gone up, a competitor has moved or sales have stalled. Both need the same thinking, but a price change has one extra question at its heart: how many customers will you gain or lose? Typical prompts look like these (all invented):"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A medical devices company has built a faster blood-testing machine for hospitals. What should it charge?",
+        "A streaming service wants to raise its monthly price by 15%. Should it?",
+        "A competitor has cut its price by 10%. Should our client follow?",
+        "A software company sells a one-off licence and is thinking of switching to a monthly subscription. How should it price it?",
+        "A theme park wants to know whether to charge different prices on weekdays and at weekends."
+      ]
+    },
+    { "type": "h2", "id": "start-with-the-objective", "text": "Start with the objective" },
+    {
+      "type": "p",
+      "text": "Before any framework, ask what the company is trying to achieve, because the right price depends on it. A price that maximises profit this year can be very different from one that wins market share, fills spare capacity or keeps a new product affordable while it builds a customer base. Ask about the time frame and any constraints too, such as contracts that fix prices for a year, regulation, or a premium brand that discounting would damage."
+    },
+    { "type": "h3", "text": "Clarifying questions worth asking" },
+    {
+      "type": "ul",
+      "items": [
+        "What is the goal: profit, revenue, market share or something else? Over what time frame?",
+        "Who are the customers, and do different groups use or value the product differently?",
+        "What does it cost to make and deliver one unit, and which costs are fixed?",
+        "What do customers use today instead, and what does that cost them?",
+        "What do competitors charge, and how do their products compare?",
+        "How are prices set and sold today: list prices, negotiated deals, discounts, subscriptions?",
+        "Is there any evidence on how sales respond to price, such as past price changes, surveys or tests?"
+      ]
+    },
+    { "type": "h2", "id": "a-structure-to-start-from", "text": "A structure to start from" },
+    {
+      "type": "framework",
+      "title": "Pricing: a starting structure",
+      "branches": [
+        { "name": "Objective and constraints", "items": ["What the company wants: profit, share, volume or a successful launch", "Time frame", "Contracts, regulation and brand limits"] },
+        { "name": "Costs (the floor)", "items": ["Variable cost per unit", "Fixed costs the price must help cover", "Contribution margin at each possible price"] },
+        { "name": "Customers and value (the ceiling)", "items": ["Customer segments and what each one values", "The benefit in money: savings, extra revenue, time saved", "The next-best alternative and the cost of switching"] },
+        { "name": "Competitors and market", "items": ["Competitor prices and how the products compare", "How competitors are likely to react", "Where the company wants to sit: premium, mid-market or low price"] },
+        { "name": "Volume and profit", "items": ["How many units sell at each price", "Total contribution at each price", "Effect on the company's other products (cannibalisation)"] },
+        { "name": "Putting it in place", "items": ["One price, tiers or prices by segment", "Launch offers, staged rises or contract terms", "How to test before a full roll-out"] }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Tailor it to the case",
+      "text": "The structure above covers what most pricing cases need, but treat it as a checklist, not a script to recite: name the branches in the language of the case, drop what doesn't matter and go deeper where the case is. For a business-to-business product that saves customers money, the value branch is usually the heart of the case, so go deep on what the customer saves. For a consumer product with many look-alikes, competitor prices and how sales respond to price matter more. For a regulated business, start with what the rules allow. Saying why you are putting weight on one branch shows judgement."
+    },
+    { "type": "h2", "id": "cost-competitors-and-value", "text": "The three anchors: cost, competitors and value" },
+    {
+      "type": "table",
+      "caption": "Three ways to anchor a price (strong answers use all three, because each answers a different question)",
+      "columns": ["Approach", "What it tells you", "What to watch out for"],
+      "rows": [
+        ["Cost-based (cost plus a margin)", "The floor: below the variable cost, every sale loses money", "It ignores what customers would pay, so it can leave a lot of money on the table when the product is valuable"],
+        ["Competitor-based", "Where the market sits and what customers will compare you with", "It assumes the products are alike, and following a rival's cut can start a price war"],
+        ["Value-based", "The ceiling: the most a customer would rationally pay, given what the product is worth to them and their alternatives", "It needs evidence of the benefit, and the value differs between customer groups"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The price usually ends up between the floor and the ceiling. The real question is how much of the value the company keeps and how much it leaves with the customer to make buying an easy decision. A price near the ceiling earns more per sale but sells fewer units and invites competitors in; a price near the floor sells more but may not cover the fixed costs."
+    },
+    { "type": "h2", "id": "price-change-maths", "text": "The key maths: how much volume can a price change gain or lose?" },
+    {
+      "type": "p",
+      "text": "Most pricing cases come down to one calculation. A price change moves the margin on every unit and the number of units sold, usually in opposite directions. Profit improves only if the margin effect beats the volume effect. Work with contribution margin (price minus variable cost per unit), because fixed costs don't change when the price does."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "The break-even rule for a price change",
+      "text": "For a price rise, sales can fall by up to the price increase divided by the new contribution margin per unit before profit drops. For a price cut, sales must rise by the price cut divided by the new contribution margin per unit just to keep profit where it was. The thinner the margin, the more expensive a price cut becomes."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: why a 10% price cut needs a big rise in sales",
+      "question": "An invented headphone brand sells a pair for $50. Each pair costs $30 to make and ship. The marketing team wants to cut the price by 10% to $45 and expects sales to rise by 20%. Is that a good idea?",
+      "answer": [
+        "Contribution margin today: $50 − $30 = $20 a pair.",
+        "Margin after the cut: $45 − $30 = $15 a pair. The price fell by 10%, but the margin fell by 25%.",
+        "Sales rise needed just to break even: the cut is $5 and the new margin is $15, so sales must rise by 5 ÷ 15 = 33.3%.",
+        "The team expects only 20%. For every 100 pairs sold today, earning 100 × $20 = $2,000, the company would sell 120 pairs earning 120 × $15 = $1,800.",
+        "Contribution falls by 10%. Sales rising 20% for a 10% cut is a price elasticity of −2, which sounds strong, yet it still isn't enough because the margin is thin.",
+        "So what: don't cut the price unless there is evidence sales would rise by more than a third, or the cut brings another benefit, such as filling spare factory capacity."
+      ],
+      "checks": [
+        { "label": "Margin today", "inputs": { "price": 50, "cost": 30 }, "expression": "price - cost", "expected": 20 },
+        { "label": "Margin after the cut", "inputs": { "new_price": 45, "cost": 30 }, "expression": "new_price - cost", "expected": 15 },
+        { "label": "Fall in margin (%)", "inputs": { "old_margin": 20, "new_margin": 15 }, "expression": "(old_margin - new_margin) / old_margin * 100", "expected": 25 },
+        { "label": "Sales rise needed to break even (%)", "inputs": { "cut": 5, "new_margin": 15 }, "expression": "cut / new_margin * 100", "expected": 33.3333 },
+        { "label": "Contribution per 100 pairs today", "inputs": { "units": 100, "margin": 20 }, "expression": "units * margin", "expected": 2000 },
+        { "label": "Contribution after the cut", "inputs": { "units": 120, "margin": 15 }, "expression": "units * margin", "expected": 1800 },
+        { "label": "Change in contribution (%)", "inputs": { "after": 1800, "before": 2000 }, "expression": "(after - before) / before * 100", "expected": -10 },
+        { "label": "Price elasticity", "inputs": { "volume_change": 20, "price_change": -10 }, "expression": "volume_change / price_change", "expected": -2 }
+      ]
+    },
+    { "type": "h2", "id": "worked-example-new-product", "text": "A full worked example: pricing a new product" },
+    {
+      "type": "example",
+      "title": "Worked example: Corvane's pallet-wrapping robot (an invented case)",
+      "question": "Corvane, an invented equipment maker, has built a robot that wraps pallets in plastic film automatically. Its target customers are mid-sized warehouses, which wrap pallets by hand today. The CEO asks: what price should we launch at? The interviewer shares this data. A typical warehouse wraps 200 pallets a day, 250 days a year. Hand wrapping takes a worker 3 minutes a pallet, at $20 an hour. The robot also uses less film, saving $0.20 a pallet. It needs $5,000 a year of servicing, paid by the customer, and lasts 5 years. Warehouses expect new equipment to pay for itself within 2 years. Each robot costs Corvane $40,000 to build and install. A rival sells a semi-automatic machine for $25,000, but it still needs a worker beside it. Market research estimates yearly sales of 500 robots at $70,000, 400 at $85,000 and 250 at $100,000.",
+      "answer": [
+        "Objective first: the CEO confirms the goal is the most profit from the robot each year.",
+        "Floor: each robot costs $40,000, so any price below that loses money on every sale.",
+        "Value to one warehouse. Pallets a year: 200 × 250 = 50,000. Hand-wrapping time: 50,000 × 3 minutes = 150,000 minutes, or 2,500 hours. Labour saved: 2,500 × $20 = $50,000 a year.",
+        "Film saved: 50,000 × $0.20 = $10,000 a year. After servicing, the warehouse saves $50,000 + $10,000 − $5,000 = $55,000 a year.",
+        "Ceiling: with a 2-year payback rule, a warehouse would pay up to 2 × $55,000 = $110,000. Over the robot's 5-year life it saves 5 × $55,000 = $275,000, so the value is real; the payback rule is what limits the price.",
+        "Competitor check: the rival's machine is far cheaper at $25,000, but it only removes part of the labour cost, so it does not cap Corvane's price at $25,000. It does mean Corvane's sales pitch must show the extra savings clearly.",
+        "Yearly contribution at each price (units × (price − $40,000)): at $70,000, 500 × $30,000 = $15m; at $85,000, 400 × $45,000 = $18m; at $100,000, 250 × $60,000 = $15m.",
+        "$85,000 gives the most contribution. The customer's payback is $85,000 ÷ $55,000 = about 1.5 years (around 18.5 months), inside the 2-year rule, and over five years the warehouse is $275,000 − $85,000 = $190,000 better off.",
+        "Show the trade-off: if the CEO cared more about winning customers fast, $70,000 would sell (500 − 400) ÷ 400 = 25% more robots, at a cost of $18m − $15m = $3m of yearly contribution. Making that choice visible is part of a good answer.",
+        "Recommendation: launch at about $85,000. Test it with a few pilot customers first, and consider a leasing option for warehouses that can't find $85,000 of capital at once. Watch for the rival launching a fully automatic machine, which would lower the ceiling."
+      ],
+      "checks": [
+        { "label": "Pallets wrapped a year", "inputs": { "per_day": 200, "days": 250 }, "expression": "per_day * days", "expected": 50000 },
+        { "label": "Hand-wrapping minutes a year", "inputs": { "pallets": 50000, "minutes_each": 3 }, "expression": "pallets * minutes_each", "expected": 150000 },
+        { "label": "Hand-wrapping hours a year", "inputs": { "minutes": 150000 }, "expression": "minutes / 60", "expected": 2500 },
+        { "label": "Labour saved a year", "inputs": { "hours": 2500, "wage": 20 }, "expression": "hours * wage", "expected": 50000 },
+        { "label": "Film saved a year", "inputs": { "pallets": 50000, "saving_each": 0.2 }, "expression": "pallets * saving_each", "expected": 10000 },
+        { "label": "Net saving a year", "inputs": { "labour": 50000, "film": 10000, "servicing": 5000 }, "expression": "labour + film - servicing", "expected": 55000 },
+        { "label": "Price ceiling with a 2-year payback", "inputs": { "years": 2, "saving": 55000 }, "expression": "years * saving", "expected": 110000 },
+        { "label": "Savings over the robot's life", "inputs": { "life": 5, "saving": 55000 }, "expression": "life * saving", "expected": 275000 },
+        { "label": "Contribution at $70,000", "inputs": { "units": 500, "price": 70000, "cost": 40000 }, "expression": "units * (price - cost)", "expected": 15000000 },
+        { "label": "Contribution at $85,000", "inputs": { "units": 400, "price": 85000, "cost": 40000 }, "expression": "units * (price - cost)", "expected": 18000000 },
+        { "label": "Contribution at $100,000", "inputs": { "units": 250, "price": 100000, "cost": 40000 }, "expression": "units * (price - cost)", "expected": 15000000 },
+        { "label": "Customer payback in years at $85,000", "inputs": { "price": 85000, "saving": 55000 }, "expression": "price / saving", "expected": 1.54545 },
+        { "label": "Customer payback in months at $85,000", "inputs": { "price": 85000, "saving": 55000 }, "expression": "price / saving * 12", "expected": 18.5455 },
+        { "label": "Warehouse gain over five years", "inputs": { "lifetime_saving": 275000, "price": 85000 }, "expression": "lifetime_saving - price", "expected": 190000 },
+        { "label": "Extra robots sold at $70,000 (%)", "inputs": { "units_low": 500, "units_mid": 400 }, "expression": "(units_low - units_mid) / units_mid * 100", "expected": 25 },
+        { "label": "Contribution given up at $70,000", "inputs": { "at_85k": 18000000, "at_70k": 15000000 }, "expression": "at_85k - at_70k", "expected": 3000000 }
+      ]
+    },
+    { "type": "h2", "id": "ideas-beyond-one-price", "text": "Ideas beyond a single price" },
+    {
+      "type": "p",
+      "text": "Once the numbers are done, you may be asked for other options. A short, organised list beats a long, random one, so group your ideas, for example by who pays, how they pay and when they pay. And remember that a price does not land in a vacuum: ask how competitors are likely to respond, how existing customers will take a rise (and whether contracts protect them), and whether a very low price could make a premium brand look cheap."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Tiers: a basic, standard and premium version, so customers who value more can pay more.",
+        "Prices by segment: different prices for different customer groups, such as by company size, usage or region, where the difference can be justified and the groups kept apart.",
+        "Bundles: selling products together, which can raise the average spend, or unbundling, which lets price-sensitive buyers pay less for less.",
+        "Payment model: a one-off price, a subscription, leasing or pay-per-use, which spreads the cost for customers with tight budgets.",
+        "Timing: launch offers, staged price rises, or keeping existing customers on the old price for a while.",
+        "Testing: trying a price in one region, channel or customer group first and measuring the response before a full roll-out."
+      ]
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Mistakes that sink pricing answers",
+      "text": "Setting a price from cost alone, forgetting that volume changes when the price changes, and comparing revenue instead of profit. Each of these can lead to the wrong answer even when the arithmetic is perfect."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pricing from cost alone. Cost gives you the floor, not the answer.",
+        "Ignoring the volume response. A higher price nearly always means fewer units; the question is how many fewer.",
+        "Comparing revenue, not profit. The price with the highest revenue is often not the one with the highest profit.",
+        "Treating all customers as one group. Different segments often value the same product very differently.",
+        "Forgetting the objective. A launch price meant to win share and a price meant to maximise this year's profit can be far apart.",
+        "Ending with a range. Saying the price should be somewhere between $40,000 and $110,000 is analysis, not a recommendation. Pick a number and say why."
+      ]
+    },
+    { "type": "h2", "id": "finish-with-a-recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Lead with the answer", "text": "State the price, or the decision, in your first sentence: for example, 'I recommend launching at $85,000.'" },
+        { "title": "Give two or three reasons, with numbers", "text": "Take them from your analysis: the profit at that price compared with the alternatives, and why customers will still buy (their payback, or the comparison with competitors)." },
+        { "title": "Name the main risks", "text": "For example, a competitor's response, customers leaving after a rise, or weak evidence on demand." },
+        { "title": "Say what to do next", "text": "Suggest how to test or roll out the price: a pilot, one region first, a launch offer, or watching cancellations closely for three months after a rise." }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For the Corvane example, a strong close might be: 'Corvane should launch the robot at about $85,000. Of the prices tested, that one gives the highest yearly contribution, about $18m, and customers still earn back the cost in about 18 months. The main risk is a rival launching a fully automatic machine, so I would confirm demand with a few pilot customers and offer leasing to warehouses with tight budgets.'"
+    },
+    { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
+    {
+      "type": "links",
+      "title": "Practise pricing and the skills behind it",
+      "items": [
+        { "label": "Practice cases, including pricing cases", "href": "/cases" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Profitability case interview guide", "href": "/guides/profitability-case-interview" },
+        { "label": "Case interview maths guide", "href": "/guides/case-interview-maths" },
+        { "label": "Glossary of case interview terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the best framework for a pricing case?",
+      "a": "There is no single best one. A reliable starting point covers the objective, costs (the price floor), customer value (the ceiling), competitors, volume and profit at each price, and how to put the price in place. Tailor it: lead with customer value for a product that saves customers money, and with competitors when there are close substitutes."
+    },
+    {
+      "q": "Do I need to calculate price elasticity in a pricing case?",
+      "a": "Sometimes. Price elasticity is the percentage change in sales divided by the percentage change in price. More often you need the simpler and more useful number: how far sales can fall after a rise, or how much they must grow after a cut, before profit changes. That depends on the contribution margin, not just on the elasticity."
+    },
+    {
+      "q": "What if the interviewer gives me no data on demand?",
+      "a": "Say how you would get it: past price changes, customer surveys, interviews with the sales team, competitors' prices or a small test in one region. Then make a clearly labelled assumption so you can still finish the maths, and show how the answer would change if the assumption were wrong."
+    },
+    {
+      "q": "Should a company follow a competitor's price cut?",
+      "a": "Not automatically. Compare the profit lost by holding the price (the customers who switch) with the profit lost by matching (lower margin on every sale). Also consider whether customers really see the products as the same, whether the competitor can keep the low price up, and whether matching could start a price war."
+    },
+    {
+      "q": "How is a pricing case different from a profitability case?",
+      "a": "A profitability case asks why profit has changed and looks at every revenue and cost driver. A pricing case focuses on one lever, the price, and how it moves margin and volume. Pricing questions often turn up inside profitability cases, so the break-even maths is worth knowing well."
+    }
+  ],
+  "related_drills": ["mental-maths", "frameworks", "chart-reading"]
+}

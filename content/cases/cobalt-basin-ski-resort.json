@@ -1,0 +1,235 @@
+{
+  "id": "case-020",
+  "slug": "cobalt-basin-ski-resort",
+  "title": "Cobalt Basin: why did profit fall in a record snow season?",
+  "track": "consulting",
+  "type": "profitability",
+  "industry": "Travel and leisure",
+  "difficulty": 3,
+  "style": "candidate_led",
+  "est_minutes": 30,
+  "prompt": "Cobalt Basin is an independent ski resort in the US Rocky Mountains. This winter it had record snowfall and more skier visits than ever, yet its profit halved, from $20 million to $10 million. The CEO wants to know why, and what to do before next season. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The resort",
+      "answer": "Cobalt Basin owns its lifts, ski school, rental shops and restaurants. It does not own any hotels; lodging nearby is run by other companies. It is about two hours' drive from a large city."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants profit back to at least $20 million next season, without cutting safety or the quality of the slopes."
+    },
+    {
+      "question_topic": "Season and weather",
+      "answer": "Snowfall was the highest on record and conditions were excellent all season. The season was the usual length."
+    },
+    {
+      "question_topic": "Prices",
+      "answer": "Day-ticket prices did not change, at about $100 per visit on average. Last spring the resort cut the season pass price from $800 to $400 to build loyalty and sell more passes before the season. Data on visits and passes is available."
+    },
+    {
+      "question_topic": "Visitors",
+      "answer": "Day-ticket visitors mostly come from the city or from other states, and many rent equipment or take lessons. Pass holders are mostly locals and city regulars who own their gear. A pass holder skis about 10 days a season."
+    },
+    {
+      "question_topic": "Spending on extras",
+      "answer": "Day-ticket visitors spend about $50 per visit on food, rentals and lessons. Pass holders spend about $20 per visit."
+    },
+    {
+      "question_topic": "Costs",
+      "answer": "Staff costs are mostly fixed for the season. Snow operations (grooming, clearing parking lots and avalanche control) rose with the record snow. Other costs did not change. A profit and loss by season is available."
+    },
+    {
+      "question_topic": "Crowding",
+      "answer": "On peak weekends and holidays the lift lines were long and the parking lots were full by 9am. Some day-ticket visitors were turned away or went to other resorts."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "Two larger resorts nearby kept their season passes at about $900 and their day tickets at about $110."
+    },
+    {
+      "question_topic": "Next winter's snow",
+      "answer": "Nobody can forecast it. Assume a normal snow year for planning."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Lift revenue: visits by type (day ticket or season pass) x lift revenue per visit",
+      "Revenue from extras: food, rentals and lessons per visit, by type of visitor",
+      "Costs: staff, snow operations and other costs, this season versus last",
+      "What changed: weather, prices, the pass and the visitor mix, crowding",
+      "Fixes for next season and their effect on profit"
+    ],
+    "good_signs": [
+      "Notices the puzzle: visits rose but profit fell, so revenue per visit or costs must explain it",
+      "Separates one-off weather effects from lasting effects of the resort's own decisions",
+      "Segments visitors into day-ticket buyers and pass holders",
+      "Quantifies each driver's share of the fall"
+    ],
+    "red_flags": [
+      "Blames the weather without checking revenue",
+      "Looks only at costs",
+      "Suggests cutting staff or slope quality without evidence"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "profit-by-season",
+      "title": "Cobalt Basin profit and loss by season ($ million)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Last season", "This season"],
+        "rows": [
+          ["Lift tickets and passes", 48, 42],
+          ["Food, rentals and lessons", 22, 21],
+          ["Total revenue", 70, 63],
+          ["Staff", 25, 25],
+          ["Snow operations", 10, 13],
+          ["Other operating costs", 15, 15],
+          ["Profit", 20, 10]
+        ]
+      },
+      "reveal_hint": "Ask for revenue and costs by line, this season versus last.",
+      "insight": "Profit fell $10 million. Revenue fell $7 million (lift tickets and passes down $6 million, extras down $1 million) even though visits rose, and snow operations rose $3 million. Lower revenue explains 70% of the fall; the snow costs only 30%."
+    },
+    {
+      "id": "visits-and-passes",
+      "title": "Visits and season passes by season",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Last season", "This season"],
+        "rows": [
+          ["Day-ticket visits (thousand)", 400, 300],
+          ["Average day-ticket price ($)", 100, 100],
+          ["Season passes sold (thousand)", 10, 30],
+          ["Season pass price ($)", 800, 400],
+          ["Visits per pass holder", 10, 10],
+          ["Total visits (thousand)", 500, 600]
+        ]
+      },
+      "reveal_hint": "Ask how visits, ticket types or pass sales changed, or why lift revenue fell when visits rose.",
+      "insight": "Total visits rose 20%, but all the growth was pass visits (from 100,000 to 300,000) while day-ticket visits fell by 100,000. Halving the pass price meant it paid for itself after 4 days instead of 8, so many day-ticket buyers switched. Lift revenue per visit fell from $96 to $70."
+    }
+  ],
+  "math": [
+    {
+      "id": "lift-revenue-per-visit",
+      "question": "What was lift revenue per visit this season, in dollars?",
+      "inputs": {
+        "lift_m": 42,
+        "visits_k": 600
+      },
+      "expression": "lift_m * 1000 / visits_k",
+      "expected": 70,
+      "tolerance_pct": 3,
+      "working": "$42 million / 600,000 visits = $70 per visit, down from $96 last season ($48 million / 500,000 visits).",
+      "input_sources": [
+        { "input": "lift_m", "exhibit_id": "profit-by-season", "row": 0, "column": "This season" },
+        { "input": "visits_k", "exhibit_id": "visits-and-passes", "row": 5, "column": "This season" }
+      ]
+    },
+    {
+      "id": "extras-this-season",
+      "question": "Using the spending per visit for each type of visitor, how much did the resort make from food, rentals and lessons this season, in $ million?",
+      "inputs": {
+        "day_visits_k": 300,
+        "day_extras": 50,
+        "passes_k": 30,
+        "visits_per_pass": 10,
+        "pass_extras": 20
+      },
+      "expression": "(day_visits_k * day_extras + passes_k * visits_per_pass * pass_extras) / 1000",
+      "expected": 21,
+      "tolerance_pct": 3,
+      "working": "Day-ticket visitors: 300,000 x $50 = $15 million. Pass holders: 30,000 passes x 10 visits = 300,000 visits x $20 = $6 million. Total $21 million, $1 million less than last season despite 100,000 more visits.",
+      "input_sources": [
+        { "input": "day_visits_k", "exhibit_id": "visits-and-passes", "row": 0, "column": "This season" },
+        { "input": "passes_k", "exhibit_id": "visits-and-passes", "row": 2, "column": "This season" },
+        { "input": "visits_per_pass", "exhibit_id": "visits-and-passes", "row": 4, "column": "This season" }
+      ]
+    },
+    {
+      "id": "share-of-fall-from-revenue",
+      "question": "What percentage of the $10 million fall in profit comes from lower revenue?",
+      "inputs": {
+        "lift_last": 48,
+        "lift_this": 42,
+        "extras_last": 22,
+        "extras_this": 21,
+        "profit_last": 20,
+        "profit_this": 10
+      },
+      "expression": "((lift_last - lift_this) + (extras_last - extras_this)) / (profit_last - profit_this) * 100",
+      "expected": 70,
+      "tolerance_pct": 3,
+      "working": "Lift revenue fell $6 million and extras $1 million: $7 million of the $10 million fall, or 70%. The other 30% is the $3 million rise in snow operations, which should not repeat in a normal winter.",
+      "input_sources": [
+        { "input": "lift_last", "exhibit_id": "profit-by-season", "row": 0, "column": "Last season" },
+        { "input": "lift_this", "exhibit_id": "profit-by-season", "row": 0, "column": "This season" },
+        { "input": "extras_last", "exhibit_id": "profit-by-season", "row": 1, "column": "Last season" },
+        { "input": "extras_this", "exhibit_id": "profit-by-season", "row": 1, "column": "This season" },
+        { "input": "profit_last", "exhibit_id": "profit-by-season", "row": 6, "column": "Last season" },
+        { "input": "profit_this", "exhibit_id": "profit-by-season", "row": 6, "column": "This season" }
+      ]
+    },
+    {
+      "id": "pass-price-to-restore",
+      "question": "With this season's 30,000 passes and 300,000 day-ticket visits, what season pass price would have kept lift revenue at last season's $48 million, in dollars?",
+      "inputs": {
+        "lift_last_m": 48,
+        "day_visits_k": 300,
+        "day_price": 100,
+        "passes_k": 30
+      },
+      "expression": "(lift_last_m - day_visits_k * day_price / 1000) * 1000 / passes_k",
+      "expected": 600,
+      "tolerance_pct": 3,
+      "working": "Day tickets brought in 300,000 x $100 = $30 million. The gap to $48 million is $18 million. $18 million / 30,000 passes = $600 per pass.",
+      "input_sources": [
+        { "input": "lift_last_m", "exhibit_id": "profit-by-season", "row": 0, "column": "Last season" },
+        { "input": "day_visits_k", "exhibit_id": "visits-and-passes", "row": 0, "column": "This season" },
+        { "input": "day_price", "exhibit_id": "visits-and-passes", "row": 1, "column": "This season" },
+        { "input": "passes_k", "exhibit_id": "visits-and-passes", "row": 2, "column": "This season" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "How could Cobalt Basin bring profit back to at least $20 million next season?",
+    "idea_bank": [
+      "Raise the season pass price to about $600, still well below rivals' $900, with an early-bird discount",
+      "Offer tiers: a cheaper midweek-only pass and a full pass that costs more",
+      "Add blackout dates on peak weekends and holidays to the cheaper passes",
+      "Cap the number of season passes sold",
+      "Use dynamic day-ticket prices: higher on peak days, cheaper midweek and when bought in advance",
+      "Introduce reservations or paid parking on peak days to manage crowding",
+      "Sell extras to pass holders, such as lesson packs, prepaid food cards and lockers",
+      "Win back day visitors with bus packages from the city and midweek group and school deals",
+      "Add summer activities such as mountain biking and hiking so the lifts earn money all year",
+      "Plan snow operations better, for example with fuel contracts and grooming schedules, to soften costs in heavy snow years"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Profit halved mainly because of the pass price cut: lower lift and extras revenue explain $7 million (70%) of the $10 million fall, while one-off snow costs explain $3 million (30%)",
+      "The cheap pass moved day-ticket buyers onto passes, so lift revenue per visit fell from $96 to $70",
+      "Reprice the pass: about $600 would have kept lift revenue at $48 million, and tiered or blackout-date passes protect peak days for day-ticket buyers"
+    ],
+    "good_signs": [
+      "Checks the target: with lift revenue back at $48 million, extras at about $21 million and normal snow costs, profit would be about $19 million, so winning back day visitors closes the rest",
+      "Names the risks: pass holders may react badly to a 50% increase, and rivals may respond",
+      "Proposes what to track, such as spring pass sales and day-ticket visits on peak days"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: profit fell from $20 million to $10 million in a record snow season with more visits. The goal is at least $20 million next season. Day-ticket prices did not change, but the pass price was cut from $800 to $400.",
+    "Structure: profit = revenue - costs. Revenue = visits by type x (lift revenue per visit + extras per visit). Costs split into staff, snow operations and other. Then ask what changed: the weather or the resort's own decisions.",
+    "Diagnosis: revenue fell $7 million (lift tickets and passes $6 million, extras $1 million) and snow operations rose $3 million, so lower revenue is 70% of the fall.",
+    "Root cause: passes tripled to 30,000 at half the price, and day-ticket visits fell from 400,000 to 300,000. Lift revenue per visit fell from $96 to $70, and pass holders spend $20 on extras against $50 for day visitors. Crowding on peak days pushed away more day visitors.",
+    "Math: a pass price of about $600 would have kept lift revenue at $48 million at this season's volumes. With normal snow costs, profit would then be about $19 million.",
+    "Recommendation: reprice the pass to about $600 (still well below rivals' $900), add a cheaper midweek-only pass and blackout dates on peak days, use dynamic day-ticket prices, and sell extras to pass holders. Track spring pass sales and day-ticket visits on peak days."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

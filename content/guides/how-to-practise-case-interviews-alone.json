@@ -1,0 +1,217 @@
+{
+  "slug": "how-to-practise-case-interviews-alone",
+  "kind": "skill",
+  "title": "How to practise case interviews alone: a realistic weekly plan",
+  "seo_title": "How to Practise Case Interviews Alone: A Weekly Plan",
+  "description": "A realistic plan for practising case interviews without a partner: daily maths drills, solo cases out loud, timing, recording and an honest self-review.",
+  "updated": "2026-10-15",
+  "reading_minutes": 11,
+  "summary": "You can practise most case interview skills alone: mental maths, structuring, chart reading, market sizing and talking through a whole case out loud against a timer. Do short drills most days, run two full cases a week out loud while recording yourself, and score each one honestly against the same checklist. Save live practice with a partner or an AI interviewer for what you can't test alone, such as asking for data, being challenged and being interrupted.",
+  "blocks": [
+    { "type": "h2", "id": "what-you-can-practise-alone", "text": "What you can and can't practise alone" },
+    {
+      "type": "p",
+      "text": "A case interview tests a handful of separate skills. Most of them can be built on your own, as long as you practise out loud and review honestly. A few need another person, or at least something that reacts to you, because they are about handling what you didn't expect."
+    },
+    {
+      "type": "table",
+      "caption": "Which case skills you can build alone",
+      "columns": ["Skill", "Alone?", "How to practise it"],
+      "rows": [
+        ["Mental maths", "Yes, fully", "Short timed drills most days, without a calculator"],
+        ["Structuring a problem", "Mostly", "Write a structure for a new prompt in two minutes, then compare it with a checklist"],
+        ["Reading charts and tables", "Yes", "Look at a chart for 30 seconds and say its main message in one sentence"],
+        ["Market sizing", "Yes", "Estimate out loud, then check the answer with a second method"],
+        ["Speaking clearly and summing up", "Mostly, with recordings", "Record yourself and listen back"],
+        ["Asking for data and handling follow-up questions", "Only partly", "A partner or an AI interviewer that answers only what you ask"],
+        ["Being challenged, interrupted or steered", "No", "A partner or an AI interviewer"],
+        ["Building rapport and reading reactions", "No", "Practice with a person, even someone outside consulting"]
+      ]
+    },
+    { "type": "h2", "id": "the-weekly-plan", "text": "A weekly plan you can stick to" },
+    {
+      "type": "p",
+      "text": "The plan below takes about five and a half hours a week, in sessions of 30 to 60 minutes. It assumes you have several weeks before your interviews; squeeze or stretch it to fit your diary. The mix matters more than the exact days: a little maths most days, two full cases a week done properly, and one proper review. If you are short of time, cut the number of cases, not the reviews: most of the learning happens when you look back at what went wrong, and one reviewed case is worth more than three rushed ones."
+    },
+    {
+      "type": "table",
+      "caption": "A sample week (about five and a half hours)",
+      "columns": ["Day", "Time", "What to do"],
+      "rows": [
+        ["Monday", "45 minutes", "15 minutes of mental maths drills. Then three new case prompts: two minutes to write a structure for each, then present it out loud and compare it with a checklist."],
+        ["Tuesday", "60 minutes", "One full case out loud, recorded (about 35 minutes), then review the recording against your scorecard (about 25 minutes)."],
+        ["Wednesday", "45 minutes", "15 minutes of mental maths, 15 minutes of chart drills and one market-sizing estimate out loud."],
+        ["Thursday", "45 minutes", "15 minutes of maths. Redo the weakest part of Tuesday's case from scratch, then a few framework drills."],
+        ["Friday", "60 minutes", "A second full case of a different type from Tuesday's: solo and recorded, or with a partner or an AI interviewer. Then review it."],
+        ["Saturday", "45 minutes", "Weekly review: update your log and pick two fixes for next week. Then read one business news story and explain it out loud in 60 seconds."],
+        ["Sunday", "30 minutes", "Light: 15 minutes of maths and 15 minutes reading back through your mistakes log. Or take the day off."]
+      ]
+    },
+    { "type": "h2", "id": "daily-drills", "text": "Daily drills: little and often" },
+    {
+      "type": "p",
+      "text": "Mental maths and chart reading respond well to short, frequent practice. Keep each drill session to 10 to 20 minutes, work without a calculator, and say your working out loud, the way you would in an interview."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Mix the types: percentages, growth, division with big numbers, break-even and weighted averages.",
+        "Write numbers with units and visible zeros, for example 4.5m rather than 4500000.",
+        "Track two things in every session: how many you got right, and your average time per question.",
+        "When you get one wrong, write down why (lost a zero, wrong formula, rushed) rather than just the right answer."
+      ]
+    },
+    {
+      "type": "example",
+      "title": "Worked example: tracking your drill progress",
+      "question": "Suppose you log your mental maths drills. In your first week you get 14 of 20 right, taking 48 seconds per question on average. Three weeks later you get 18 of 20 right, in 35 seconds per question. How much have you improved?",
+      "answer": [
+        "Accuracy rose from 14 ÷ 20 = 70% to 18 ÷ 20 = 90%, a gain of 20 percentage points.",
+        "Time per question fell from 48 to 35 seconds: 13 seconds faster, a drop of about 27%.",
+        "So what: in an interview a wrong answer costs far more than a slow one, so get your accuracy steady before you push hard on speed."
+      ],
+      "checks": [
+        { "label": "First-week accuracy (%)", "inputs": { "right": 14, "total": 20 }, "expression": "right / total * 100", "expected": 70 },
+        { "label": "Later accuracy (%)", "inputs": { "right": 18, "total": 20 }, "expression": "right / total * 100", "expected": 90 },
+        { "label": "Gain in percentage points", "inputs": { "later": 90, "first": 70 }, "expression": "later - first", "expected": 20 },
+        { "label": "Seconds saved per question", "inputs": { "before": 48, "after": 35 }, "expression": "before - after", "expected": 13 },
+        { "label": "Change in time per question (%)", "inputs": { "before": 48, "after": 35 }, "expression": "(after - before) / before * 100", "expected": -27.0833 }
+      ]
+    },
+    { "type": "h2", "id": "run-a-solo-case", "text": "How to run a full case on your own" },
+    {
+      "type": "p",
+      "text": "The hard part of practising alone is that you can read ahead and see what comes next. Use cases where the facts and exhibits are kept apart from the prompt, so you only see each one once you have asked for it. Then run the case as if someone were listening."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Read the prompt, then play it back out loud", "text": "Restate it in your own words, including the objective. Write down the clarifying questions you would ask, then look up only those answers in the case facts." },
+        { "title": "Structure against the clock", "text": "Give yourself 90 seconds to write a structure, then present it out loud as if to an interviewer, saying why each branch matters for this case." },
+        { "title": "Choose where to start, and say why", "text": "Pick the branch you would dig into first and give a reason. Only then open the data or exhibit for that branch." },
+        { "title": "Do the maths out loud", "text": "Say what you are calculating before you start, write each step, and state the answer with its units. Then say what it means for the client." },
+        { "title": "Brainstorm with a structure", "text": "When the case asks for ideas, give yourself two minutes and group them, for example into internal and external, or quick wins and longer-term moves." },
+        { "title": "Recommend standing up", "text": "Set a 60-second timer and give your recommendation: the answer first, then two or three reasons, the main risks and next steps." },
+        { "title": "Stop the recording and review", "text": "Listen back the same day, while you still remember what you were thinking at each point." }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Always talk out loud",
+      "text": "Reading a case silently and thinking 'I would have done that' feels like practice but tests almost nothing. Speaking forces you to find the words, exposes gaps in your logic and shows you how long each part really takes."
+    },
+    {
+      "type": "p",
+      "text": "Time every case. Running out of time before the recommendation is an easy problem to fix with a timer. The budget below is a rough guide for a case of about 30 minutes, not a rule: real cases vary in length and in how the time splits between parts."
+    },
+    {
+      "type": "table",
+      "caption": "A rough time budget for a 30-minute case",
+      "columns": ["Part", "Rough time"],
+      "rows": [
+        ["Hearing the prompt and asking clarifying questions", "3 minutes"],
+        ["Thinking time and presenting a structure", "4 minutes"],
+        ["Analysis: data, exhibits and maths", "15 minutes"],
+        ["Brainstorming ideas", "4 minutes"],
+        ["Recommendation", "2 minutes"],
+        ["Spare time for questions and follow-ups", "2 minutes"]
+      ]
+    },
+    { "type": "h2", "id": "recording-and-review", "text": "Recording and reviewing yourself" },
+    {
+      "type": "p",
+      "text": "Record every full case, even if only the audio on your phone. Listening back is uncomfortable, and it is the closest you can get on your own to hearing what an interviewer hears. Review against the same scorecard every time and score each line from 1 to 5, so you can see trends rather than impressions."
+    },
+    {
+      "type": "framework",
+      "title": "A self-review scorecard (score each line from 1 to 5)",
+      "branches": [
+        { "name": "Opening", "items": ["Did I restate the question and the objective before starting?", "Were my clarifying questions few and useful?"] },
+        { "name": "Structure", "items": ["Was it built for this case, or a generic list I could have used anywhere?", "Did I explain why I started with one branch rather than another?"] },
+        { "name": "Analysis and maths", "items": ["Did I say what I was calculating before calculating it, with units on every answer?", "Did I check each number was the right size before using it?", "After each number or chart, did I say what it meant for the client?"] },
+        { "name": "Communication", "items": ["How often did I go silent, ramble or fill gaps with 'um'?", "Could a listener follow where I was in the case?"] },
+        { "name": "Recommendation", "items": ["Did I lead with the answer and keep it under a minute?", "Did I give reasons with numbers, risks and next steps?"] }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Make the scorecard your own: add a line for any habit you keep repeating, and drop lines you now score well on every time, so it measures your current weak spots. Keep a simple log in a notebook or spreadsheet: the date, the case and its type, how long it took, your scores, and the two things you will fix next time. Before each new case, read your last two fixes."
+    },
+    { "type": "h2", "id": "when-to-use-a-partner-or-ai", "text": "When to use a partner or an AI interviewer" },
+    {
+      "type": "p",
+      "text": "Some skills only show up when something reacts to you: asking for the right data and getting only what you asked for, being pushed on an assumption, or being steered to a new question halfway through. Plan to add some live practice once your basics are steady. A partner can be a classmate, a member of a university consulting club, or a friend outside consulting who reads out a case that comes with interviewer notes and only shares each fact when you ask for it."
+    },
+    {
+      "type": "p",
+      "text": "An AI interviewer sits in between. CaseSpar's runs a full case in text, shares facts and exhibits when you ask for relevant data, and ends with a debrief that scores structure, analysis and maths, business judgement, communication and synthesis; your maths answers are checked by code rather than judged by the model. It is useful for running more realistic cases on your own schedule, but it is text-based, so it doesn't replace speaking to a person, and its feedback is a guide to what to work on, not a verdict."
+    },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "The limits of practising alone",
+      "text": "On your own you tend to mark yourself generously, you are rarely surprised, and you can slide into rehearsing a script rather than thinking. You also get no practice at being interrupted or at building rapport. Counter this with a strict scorecard, cases you haven't seen before, a mix of case types, and some live practice before the real thing."
+    },
+    { "type": "h2", "id": "how-the-plan-changes", "text": "How the plan should change over the weeks" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "First weeks: foundations", "text": "Maths most days, plenty of short structuring exercises, and two full solo cases a week across different case types. Focus on getting the process right, not on speed." },
+        { "title": "Middle weeks: full cases under time pressure", "text": "Keep the drills, time every case strictly, and take on harder cases, especially the types you have been avoiding. Start adding live practice." },
+        { "title": "Final weeks: realism", "text": "Most full cases with a partner or an AI interviewer, cases you have never seen, and drills only as a warm-up. Practise your opening and your closing until they feel natural." }
+      ]
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes when practising alone" },
+    {
+      "type": "ul",
+      "items": [
+        "Volume without review: doing case after case and never looking at what went wrong.",
+        "Practising only the case types you already like.",
+        "Reading the model answer before trying the case yourself.",
+        "Doing the maths on a calculator, or silently in your head.",
+        "Never timing yourself, then running out of time in the real interview.",
+        "Memorising frameworks and forcing every case into one of them.",
+        "Skipping the recommendation because the analysis felt like the hard part.",
+        "Only redoing cases you have already seen, so nothing surprises you."
+      ]
+    },
+    { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
+    {
+      "type": "links",
+      "title": "Where to practise next",
+      "items": [
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Chart-reading drills", "href": "/drills/chart-reading" },
+        { "label": "Market sizing drills", "href": "/drills/market-sizing" },
+        { "label": "How to structure a case interview", "href": "/guides/how-to-structure-a-case-interview" },
+        { "label": "Case interview maths guide", "href": "/guides/case-interview-maths" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can you prepare for case interviews alone?",
+      "a": "You can build most of the skills alone: mental maths, structuring, chart reading, market sizing and talking through a full case out loud. What you can't fully practise alone is reacting to a live interviewer, so add some practice with a partner or an AI interviewer before your real interviews."
+    },
+    {
+      "q": "How many practice cases should I do?",
+      "a": "There is no reliable magic number, and quality counts for more than quantity. A better test is whether you can run each common case type (profitability, market entry, market sizing, pricing, growth, operations, mergers and acquisitions) from start to finish, out loud and on time, and whether your review scores keep improving."
+    },
+    {
+      "q": "How long should I spend on mental maths each day?",
+      "a": "Ten to twenty minutes on most days is a sensible routine. Short, regular sessions are easier to keep up than one long session a week. Track your accuracy and speed so you know when to move on to harder questions."
+    },
+    {
+      "q": "Should I memorise case frameworks?",
+      "a": "Learn the logic behind common structures, not the lists. A recited framework that doesn't fit the case is easy to spot. Practise building a structure from the question itself for every new prompt, and use the common structures as a checklist for anything you missed."
+    },
+    {
+      "q": "Is an AI interviewer as good as practising with a person?",
+      "a": "They do different jobs. An AI interviewer is available whenever you are, can run many cases and gives consistent, structured feedback. A person is better for spoken delivery, rapport and the unexpected. Use both if you can, and treat any score as feedback on what to fix, not a prediction of your result."
+    }
+  ],
+  "related_drills": ["mental-maths", "frameworks", "chart-reading", "market-sizing"]
+}

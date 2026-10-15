@@ -1,0 +1,188 @@
+{
+  "slug": "privacy",
+  "title": "Privacy policy",
+  "seo_title": "Privacy policy | CaseSpar",
+  "description": "What personal data CaseSpar collects, why, who processes it, how long we keep it, and how to download or delete your data under UK GDPR.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "This policy explains what personal data we collect when you use CaseSpar, why we collect it, who helps us process it, and your rights under UK data protection law (UK GDPR). Effective date: [effective date].",
+  "blocks": [
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Draft",
+      "text": "This is a draft for the founder and a lawyer to review. It is not in force yet. Anything in square brackets must be filled in or confirmed."
+    },
+
+    { "type": "h2", "id": "who-we-are", "text": "Who we are" },
+    {
+      "type": "p",
+      "text": "[legal entity name] runs CaseSpar and is the controller of your personal data. Company number: [company number]. Registered address: [registered address]. Contact: [support email]."
+    },
+    {
+      "type": "p",
+      "text": "[Founder: check whether you need to pay the ICO data protection fee and, if so, add the registration number here.]"
+    },
+
+    { "type": "h2", "id": "what-we-collect", "text": "What we collect" },
+    {
+      "type": "ul",
+      "items": [
+        "Your email address, to create your account and log you in.",
+        "Your profile: an optional country, and whether you want marketing emails (off unless you say yes).",
+        "Your plan: which plan you are on, its status and when it ends.",
+        "Your interviews: the messages you and the AI interviewer write (the transcript), a short summary of longer interviews, the numbers you give for maths questions and whether they were right, and your debrief and scores.",
+        "Your drill answers: which drills you tried, whether you got them right and how long you took.",
+        "AI usage: how much text (in tokens) each interview used and an estimate of what it cost. We use this to apply fair-use limits and control costs.",
+        "Payments: your Stripe customer reference and a reference for your subscription or payment. Stripe takes your card details on its own page. We never see or store them.",
+        "Usage events: simple records such as \"started a case\" or \"started checkout\", with the page and any campaign tags in the link you arrived from. They may be linked to your account. We don't store IP addresses in them.",
+        "Enquiries: if you contact us for a university or club, your organisation's name, your email address, the group's size and your message."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "We don't ask for your name, school or employer, and the AI interviewer is set up not to ask for them. Please don't include them in your answers."
+    },
+    {
+      "type": "p",
+      "text": "Our hosting and login providers receive your IP address and browser details when you use the site, as part of running and protecting it. [Founder to confirm how long Vercel and Supabase keep these logs.]"
+    },
+
+    { "type": "h2", "id": "why-we-use-it", "text": "Why we use it, and our lawful basis" },
+    {
+      "type": "table",
+      "caption": "What we use your data for, and the lawful basis for each use",
+      "columns": ["What we do", "Data used", "Lawful basis"],
+      "rows": [
+        ["Create your account and log you in", "Email address", "Contract: we need it to provide CaseSpar to you"],
+        ["Run AI interviews and write your debrief", "Interview transcripts, maths answers, scores", "Contract"],
+        ["Run drills and the free daily limit", "Drill answers", "Contract"],
+        ["Take payments and manage your plan", "Plan, Stripe references", "Contract, and legal obligation for tax and accounting records"],
+        ["Apply fair-use limits and control AI costs", "AI usage, interview counts", "Legitimate interests: keeping CaseSpar fair and affordable"],
+        ["Understand how people use the site, in total", "Usage events", "Legitimate interests: improving CaseSpar"],
+        ["Keep the site secure and stop abuse", "Login records, usage records, provider logs", "Legitimate interests: security"],
+        ["Send marketing emails, only if you say yes", "Email address, marketing choice", "Consent, which you can withdraw at any time"],
+        ["Reply to enquiries", "Enquiry details", "Legitimate interests: answering your request"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "We never sell your data, and we never use it for advertising."
+    },
+    {
+      "type": "p",
+      "text": "Your debrief scores are produced automatically, by an AI model and by code checks of your maths. They are practice feedback only. We don't use them to make any decision about you, and no firm sees them."
+    },
+
+    { "type": "h2", "id": "who-processes-it", "text": "Who processes your data for us" },
+    {
+      "type": "p",
+      "text": "We use these service providers. They process data for us only to provide their service. [Founder to confirm a data processing agreement is in place with each provider.]"
+    },
+    {
+      "type": "table",
+      "caption": "Our service providers",
+      "columns": ["Provider", "What it does for us", "Where"],
+      "rows": [
+        ["Supabase", "Our database and login, including sending sign-in emails. [Founder: add the email-sending service here once one is chosen.]", "Our database is hosted in London (eu-west-2). Supabase is a US company. [Founder to confirm the transfer safeguard.]"],
+        ["Vercel", "Hosts the website and runs our server code.", "US company. [Founder to confirm the hosting region and the transfer safeguard.]"],
+        ["Anthropic", "Runs the AI interviewer and writes your debrief. It receives the case materials and the text of your interview, not your email address.", "US company. [Founder to confirm the transfer safeguard, and how long Anthropic keeps API data and whether it is used for training.]"],
+        ["Stripe", "Takes payments and runs the billing portal. It receives your email address and your payment details.", "[Founder to confirm which Stripe company you contract with, and the transfer safeguard.]"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Some of these providers may process data outside the UK, for example in the US. Where that happens, the transfer is covered by the safeguards those providers offer. [Founder to confirm the transfer safeguard for each provider.]"
+    },
+    {
+      "type": "p",
+      "text": "We may also share data if the law requires us to."
+    },
+
+    { "type": "h2", "id": "cookies", "text": "Cookies and browser storage" },
+    {
+      "type": "ul",
+      "items": [
+        "Cookies: we use only the cookies needed to keep you logged in. Our login system sets them, using Supabase. Because they are strictly necessary, we don't ask for consent for them.",
+        "Browser storage: your browser tab remembers your interview notes, your place in each set of drills, and how many drills you have tried without an account. This uses your browser's session storage, which is cleared when you close the tab. It is never sent to us.",
+        "Page-view counts: if we count page views, we use Vercel Web Analytics, which doesn't use cookies.",
+        "We don't use advertising pixels or third-party trackers. If that ever changes, we will ask for your consent first."
+      ]
+    },
+
+    { "type": "h2", "id": "how-long", "text": "How long we keep it" },
+    {
+      "type": "table",
+      "caption": "How long we keep each kind of data",
+      "columns": ["Data", "How long we keep it"],
+      "rows": [
+        ["Interview transcripts (the messages)", "Deleted 365 days after they were written"],
+        ["Usage events", "Deleted after 180 days"],
+        ["Your account, plan, scores, drill answers and AI usage records", "Until you delete your account"],
+        ["Enquiries from universities and clubs", "[Founder to decide]"],
+        ["Payment records held by Stripe", "As long as Stripe and the law require, even after you delete your account"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "[Founder: the automatic clean-up of transcripts and usage events is not built yet (milestone P6). It must be running before this policy goes live. It should also clear the interview summary and the quotes in each debrief, because they repeat parts of the transcript.]"
+    },
+
+    { "type": "h2", "id": "your-rights", "text": "Your rights" },
+    { "type": "p", "text": "Under UK GDPR you have the right to:" },
+    {
+      "type": "ul",
+      "items": [
+        "Get a copy of your data. On your account page, choose Download my data to get a file (in JSON format) of everything we hold about you.",
+        "Delete your account and data. On your account page, type your email address to confirm. This deletes your account, practice history and transcripts straight away. It also deletes your Stripe customer record, which cancels any subscription. Stripe keeps the payment records it is legally required to keep.",
+        "Ask us to correct data that is wrong.",
+        "Object to how we use your data, or ask us to restrict it.",
+        "Take your data to another service. The download above is in a common, machine-readable format.",
+        "Withdraw your consent to marketing emails at any time."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For anything you can't do from your account page, email [support email]. We will reply within one month."
+    },
+    {
+      "type": "p",
+      "text": "If you are unhappy with how we use your data, please tell us first. You can also complain to the Information Commissioner's Office (ICO), the UK's data protection regulator, at ico.org.uk."
+    },
+
+    { "type": "h2", "id": "security", "text": "Keeping your data safe" },
+    {
+      "type": "ul",
+      "items": [
+        "Your data sits in a database that only lets you read your own records.",
+        "Secret keys stay on our servers and never reach your browser.",
+        "Card details never touch our site."
+      ]
+    },
+
+    { "type": "h2", "id": "age", "text": "Age" },
+    {
+      "type": "p",
+      "text": "CaseSpar is for people aged [minimum age, founder to confirm] and over. We don't knowingly collect data from anyone younger."
+    },
+
+    { "type": "h2", "id": "changes", "text": "Changes to this policy" },
+    {
+      "type": "p",
+      "text": "If we change this policy, we will update the date on this page. If a change matters, we will email account holders before it applies."
+    },
+
+    { "type": "h2", "id": "contact", "text": "Contact" },
+    { "type": "p", "text": "[legal entity name], [registered address]. Email: [support email]." },
+
+    {
+      "type": "links",
+      "title": "Related pages",
+      "items": [
+        { "label": "Terms of service", "href": "/legal/terms" },
+        { "label": "Refund policy", "href": "/legal/refunds" },
+        { "label": "FAQ", "href": "/faq" }
+      ]
+    }
+  ]
+}

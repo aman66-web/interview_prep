@@ -1,0 +1,235 @@
+{
+  "id": "case-015",
+  "slug": "parlune-subscriber-growth",
+  "title": "Parlune: why have paid subscribers stopped growing?",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Education technology",
+  "difficulty": 3,
+  "style": "candidate_led",
+  "est_minutes": 30,
+  "prompt": "Parlune is a US language-learning app. Its number of paid subscribers grew quickly for several years, but it has been stuck at about 500,000 for the last year. The CEO says marketing is working as well as ever. She wants to know why growth has stalled and how to get it going again. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The app",
+      "answer": "Parlune teaches 12 languages through short daily lessons on phones. Anyone can use a free version with limits and ads; a paid subscription removes them. Most users are in the US."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants 600,000 paid subscribers by the end of next year, without raising marketing spend."
+    },
+    {
+      "question_topic": "Plans and prices",
+      "answer": "There are two paid plans with the same features: annual, at $120 a year paid up front (so $10 a month), and monthly, at $15 a month. Prices have not changed for three years and are in line with competitors."
+    },
+    {
+      "question_topic": "Marketing and new subscribers",
+      "answer": "Marketing spend rose from $5 million to $5.5 million a quarter over the last two years, and new paid subscribers rose from about 100,000 to 110,000 a quarter. The marketing cost per new paid subscriber has stayed at about $50."
+    },
+    {
+      "question_topic": "Free users",
+      "answer": "Parlune has about 11 million free users, up from 10 million two years ago. About 1% of them become paid subscribers each quarter."
+    },
+    {
+      "question_topic": "Checkout",
+      "answer": "Just under two years ago the checkout screen was redesigned. It now shows the monthly plan first, already selected; the annual plan is behind a 'See other plans' link. Before the change, about 6 in 10 new subscribers chose the annual plan. Now almost 9 in 10 choose monthly."
+    },
+    {
+      "question_topic": "How subscribers leave",
+      "answer": "Monthly subscribers can cancel at any time. Annual subscribers leave by not renewing: about 4 in 10 do not renew, which works out at about 10% of annual subscribers leaving each quarter. Leaving rates for each plan have not changed in two years."
+    },
+    {
+      "question_topic": "Why people cancel",
+      "answer": "In exit surveys the most common reasons are 'not using it enough' and 'finished what I needed it for, such as a trip'. Very few mention price or the quality of the app."
+    },
+    {
+      "question_topic": "Early use",
+      "answer": "Subscribers who take a lesson on at least 4 days in their first two weeks cancel about half as often as those who do not."
+    },
+    {
+      "question_topic": "Product and competition",
+      "answer": "App store reviews are mostly positive and have not changed. Competitors have not changed their prices or launched anything major."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Subscriber flow: new subscribers in, cancellations out",
+      "Acquisition: free users, conversion to paid, marketing spend and cost per subscriber",
+      "Retention: who leaves, how often and why, by plan and by group of subscribers",
+      "Plans and pricing: annual versus monthly, and how people choose at checkout",
+      "Levers, their size, and how to test them"
+    ],
+    "good_signs": [
+      "Splits net growth into new subscribers minus cancellations before looking for causes",
+      "Spots that new subscribers kept rising while cancellations rose much faster",
+      "Breaks cancellations down by plan and separates a change in plan mix from a change in each plan's leaving rate",
+      "Compares the lifetime revenue of annual and monthly subscribers"
+    ],
+    "red_flags": [
+      "Recommends more marketing spend without looking at cancellations",
+      "Assumes the app has got worse without checking each plan's leaving rate",
+      "Lists retention ideas without first finding what changed"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "subscriber-flow",
+      "title": "Paid subscribers in one quarter (thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Same quarter two years ago", "Last quarter"],
+        "rows": [
+          ["Subscribers at start of quarter", 400, 500],
+          ["New paid subscribers", 100, 110],
+          ["Cancellations", 64, 110],
+          ["Subscribers at end of quarter", 436, 500]
+        ]
+      },
+      "reveal_hint": "Ask how many subscribers join and how many leave each quarter, now compared with before growth stalled.",
+      "insight": "New subscribers rose 10% (100,000 to 110,000), but cancellations rose by more than 70% (64,000 to 110,000). The share of subscribers leaving each quarter rose from 16% to 22%, so cancellations now match every new subscriber."
+    },
+    {
+      "id": "subscribers-by-plan",
+      "title": "Paid subscribers by plan",
+      "kind": "table",
+      "data": {
+        "columns": [
+          "Plan",
+          "Price ($)",
+          "Billed",
+          "Share of subscribers two years ago (%)",
+          "Share of subscribers now (%)",
+          "Leave each quarter, then and now (%)"
+        ],
+        "rows": [
+          ["Annual", 120, "Once a year", 70, 40, 10],
+          ["Monthly", 15, "Every month", 30, 60, 30]
+        ]
+      },
+      "reveal_hint": "Ask how cancellations differ by plan, or how the mix of plans has changed.",
+      "insight": "Each plan's leaving rate is unchanged, but the mix has flipped from 70% annual to 60% monthly. Monthly subscribers leave three times as often as annual ones, so the change in mix alone explains the rise from 16% to 22%."
+    }
+  ],
+  "math": [
+    {
+      "id": "leaving-rate-now",
+      "question": "What percentage of subscribers left last quarter?",
+      "inputs": {
+        "cancellations": 110,
+        "start": 500
+      },
+      "expression": "cancellations / start * 100",
+      "expected": 22,
+      "tolerance_pct": 2,
+      "working": "110,000 / 500,000 = 22%. In the same quarter two years ago it was 64,000 / 400,000 = 16%.",
+      "input_sources": [
+        { "input": "cancellations", "exhibit_id": "subscriber-flow", "row": 2, "column": "Last quarter" },
+        { "input": "start", "exhibit_id": "subscriber-flow", "row": 0, "column": "Last quarter" }
+      ]
+    },
+    {
+      "id": "leaving-rate-from-plan-mix",
+      "question": "Using each plan's leaving rate and today's plan mix, what percentage of subscribers would you expect to leave each quarter?",
+      "inputs": {
+        "annual_share": 40,
+        "annual_leave": 10,
+        "monthly_share": 60,
+        "monthly_leave": 30
+      },
+      "expression": "(annual_share * annual_leave + monthly_share * monthly_leave) / 100",
+      "expected": 22,
+      "tolerance_pct": 2,
+      "working": "40% x 10% = 4 points, and 60% x 30% = 18 points, so 22% in total. That matches the actual 22%, so the change in plan mix explains the whole rise. At the old mix: 70% x 10% + 30% x 30% = 7 + 9 = 16%.",
+      "input_sources": [
+        { "input": "annual_share", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Share of subscribers now (%)" },
+        { "input": "annual_leave", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Leave each quarter, then and now (%)" },
+        { "input": "monthly_share", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Share of subscribers now (%)" },
+        { "input": "monthly_leave", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Leave each quarter, then and now (%)" }
+      ]
+    },
+    {
+      "id": "lifetime-revenue-ratio",
+      "question": "Roughly how many times more revenue does an average annual subscriber bring in over their life than an average monthly subscriber?",
+      "inputs": {
+        "annual_price": 120,
+        "annual_leave": 10,
+        "monthly_price": 15,
+        "monthly_leave": 30
+      },
+      "expression": "(annual_price / 4 * 100 / annual_leave) / (monthly_price * 3 * 100 / monthly_leave)",
+      "expected": 2,
+      "tolerance_pct": 5,
+      "working": "An annual subscriber pays $30 a quarter and 10% leave each quarter, so they stay about 1 / 10% = 10 quarters: about $300. A monthly subscriber pays $45 a quarter and 30% leave each quarter, so they stay about 1 / 30% = 3.3 quarters: about $150. $300 / $150 = 2.",
+      "input_sources": [
+        { "input": "annual_price", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Price ($)" },
+        { "input": "annual_leave", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Leave each quarter, then and now (%)" },
+        { "input": "monthly_price", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Price ($)" },
+        { "input": "monthly_leave", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Leave each quarter, then and now (%)" }
+      ]
+    },
+    {
+      "id": "growth-at-old-plan-mix",
+      "question": "If today's 500,000 subscribers had the plan mix of two years ago, and 110,000 new subscribers still joined each quarter, by how many would the base grow each quarter, in thousands?",
+      "inputs": {
+        "new_subscribers": 110,
+        "start": 500,
+        "old_annual_share": 70,
+        "annual_leave": 10,
+        "old_monthly_share": 30,
+        "monthly_leave": 30
+      },
+      "expression": "new_subscribers - start * (old_annual_share * annual_leave + old_monthly_share * monthly_leave) / 10000",
+      "expected": 30,
+      "tolerance_pct": 4,
+      "working": "At the old mix, 70% x 10% + 30% x 30% = 16% leave each quarter, and 16% of 500,000 = 80,000. With 110,000 joining, the base grows by 110,000 - 80,000 = 30,000 a quarter. At that pace it would pass 600,000 in a little under a year.",
+      "input_sources": [
+        { "input": "new_subscribers", "exhibit_id": "subscriber-flow", "row": 1, "column": "Last quarter" },
+        { "input": "start", "exhibit_id": "subscriber-flow", "row": 0, "column": "Last quarter" },
+        { "input": "old_annual_share", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Share of subscribers two years ago (%)" },
+        { "input": "annual_leave", "exhibit_id": "subscribers-by-plan", "row": 0, "column": "Leave each quarter, then and now (%)" },
+        { "input": "old_monthly_share", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Share of subscribers two years ago (%)" },
+        { "input": "monthly_leave", "exhibit_id": "subscribers-by-plan", "row": 1, "column": "Leave each quarter, then and now (%)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Parlune do to keep more of its paid subscribers, or to move more of them onto annual plans?",
+    "idea_bank": [
+      "Show the annual plan first again, with the saving made clear ($10 a month against $15)",
+      "Offer monthly subscribers a discounted switch to annual after their first month or two",
+      "Let people pause their subscription between trips instead of cancelling",
+      "Build a habit in the first two weeks with goals, streaks and reminders",
+      "Make an offer at the moment of cancelling, such as a discount or a cheaper plan",
+      "Win back recent leavers with offers timed to moments such as the new year or before summer travel",
+      "Add a family or two-person plan",
+      "Add a middle option, such as a six-month plan, for people learning for one trip",
+      "Set longer learning goals, such as a level to reach, so subscribers have a reason to stay after a trip"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Growth stalled because cancellations rose from 64,000 to 110,000 a quarter (16% to 22% of subscribers), while new subscribers kept rising",
+      "Each plan's leaving rate is unchanged: the shift from 70% annual to 60% monthly after the checkout redesign explains the whole rise",
+      "Recommendation: make the annual plan the main choice again and move monthly subscribers onto annual plans, rather than spending more on marketing"
+    ],
+    "good_signs": [
+      "Uses lifetime revenue: an annual subscriber is worth about twice a monthly one ($300 against $150)",
+      "Sizes the prize: at the old mix the base would grow by about 30,000 a quarter, passing 600,000 in about a year, while noting the mix will take time to shift back",
+      "Proposes testing the new checkout on a share of visitors first, since some people might not subscribe at all if pushed toward annual",
+      "Warns that with almost 9 in 10 new subscribers choosing monthly, cancellations will keep rising if nothing changes"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: paid subscribers stuck at about 500,000 for a year; a goal of 600,000 by the end of next year without more marketing; two plans, annual ($120 a year) and monthly ($15 a month).",
+    "Structure: net growth = new subscribers minus cancellations. Check acquisition (free users, conversion, cost per subscriber), then retention by plan and the reasons people leave.",
+    "Analysis: new subscribers rose from 100,000 to 110,000 a quarter at a steady $50 each, but cancellations rose from 64,000 to 110,000 (16% to 22% of subscribers). Acquisition is fine; retention is the problem.",
+    "Root cause: each plan's leaving rate is unchanged (10% a quarter for annual, 30% for monthly), but the mix moved from 70% annual to 60% monthly after the checkout redesign made monthly the default. 40% x 10% + 60% x 30% = 22%, which explains the whole rise.",
+    "Maths: an annual subscriber brings in about $300 over their life, against $150 for a monthly one. At the old mix, 16% would leave each quarter and the base would grow by about 30,000 a quarter.",
+    "Recommendation: test an annual-first checkout with the saving clearly shown, offer monthly subscribers a discounted switch to annual, add a pause option and features that build a habit in the first two weeks, and track the plan mix and leaving rate monthly. Hold marketing spend flat until retention improves."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

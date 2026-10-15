@@ -1,0 +1,196 @@
+{
+  "id": "case-014",
+  "slug": "hollinsway-pet-insurance",
+  "title": "Hollinsway: should a home insurer sell pet insurance?",
+  "track": "consulting",
+  "type": "market_entry",
+  "industry": "Insurance",
+  "difficulty": 1,
+  "style": "interviewer_led",
+  "est_minutes": 20,
+  "prompt": "Hollinsway sells home insurance online and by phone to about 1 million UK households. It sells no other kind of insurance. The board is considering launching pet insurance for dogs and cats, sold mainly to its existing home insurance customers, and has asked for your recommendation. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Hollinsway sells buildings and contents insurance to about 1 million UK households, directly online and by phone. It has no experience of pet insurance."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board wants pet insurance to make at least £1m of profit a year by its third year, and to pay back its set-up cost within about three years of reaching that size."
+    },
+    {
+      "question_topic": "The plan",
+      "answer": "Hollinsway would sell its own pet policy covering vet bills for dogs and cats. It would offer it to existing customers by email, on its website and with renewal letters, with a small discount for holding both policies. Assume one pet policy per pet-owning household."
+    },
+    {
+      "question_topic": "Expected take-up",
+      "answer": "Based on a customer survey, the team expects about 10% of its pet-owning customers to buy a policy within three years."
+    },
+    {
+      "question_topic": "Price",
+      "answer": "The average policy would cost £300 a year, in line with similar policies from other insurers."
+    },
+    {
+      "question_topic": "Costs",
+      "answer": "An outside firm would handle claims for a fee, which is included in the cost per policy. Fixed costs (a small team, marketing and systems) would be about £1.2m a year. The one-off set-up cost is about £2.4m."
+    },
+    {
+      "question_topic": "Claims",
+      "answer": "Claims are expected to cost about 70% of premiums. Hollinsway's actuaries (its risk experts) think claims could cost more over time as vet treatment gets more expensive."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Many specialist pet insurers already sell pet insurance, and comparison websites make prices easy to compare. Hollinsway would not try to be the cheapest; it would rely on reaching its own customers cheaply and on the discount for holding two policies."
+    },
+    {
+      "question_topic": "Effect on home insurance",
+      "answer": "In Hollinsway's experience, customers who hold more than one product renew more often. Launching pet insurance would not need any changes to the home insurance business."
+    },
+    {
+      "question_topic": "Permissions",
+      "answer": "Hollinsway already holds the permissions it needs to sell pet insurance. Not important for this case."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Customers: how many of Hollinsway's customers own pets and might buy",
+      "Economics: premium, claims, other costs, fixed costs and set-up cost",
+      "Competition and Hollinsway's advantage",
+      "Capabilities: claims handling, pricing and systems",
+      "Risks and how to launch"
+    ],
+    "good_signs": [
+      "Starts from Hollinsway's own customers rather than the whole UK pet market",
+      "Builds the profit step by step: customers, pet owners, policies, margin, fixed costs",
+      "Checks the result against the board's £1m profit and payback goals"
+    ],
+    "red_flags": [
+      "Sizes the whole UK pet insurance market and assumes Hollinsway wins a share of it",
+      "Gives a recommendation without using the numbers",
+      "Ignores claims costs, which take most of each premium and are the biggest risk to the margin"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "customer-pet-ownership",
+      "title": "Pet ownership among Hollinsway customers (survey of 2,000 customers)",
+      "kind": "table",
+      "data": {
+        "columns": ["Answer", "Share of customers (%)"],
+        "rows": [
+          ["Own a dog only", 22],
+          ["Own a cat only", 15],
+          ["Own a dog and a cat", 3],
+          ["Own neither", 60]
+        ]
+      },
+      "reveal_hint": "Ask how many of Hollinsway's customers own pets.",
+      "insight": "40% of customers (22% + 15% + 3%) own a dog or a cat, so about 400,000 of Hollinsway's 1 million households could buy pet insurance."
+    },
+    {
+      "id": "pet-policy-economics",
+      "title": "Expected yearly economics per pet policy (£)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "£ per policy per year"],
+        "rows": [
+          ["Premium paid by the customer", 300],
+          ["Claims paid", 210],
+          ["Claims handling and admin", 30],
+          ["Margin per policy", 60]
+        ]
+      },
+      "reveal_hint": "Ask about the price, claims and other costs of a pet policy.",
+      "insight": "Claims take 70% of the premium and handling another 10%, leaving £60 (20%) per policy to cover fixed costs. The margin is thin, so claims costs are the main risk: if claims rose to 80% of premiums, the margin would halve to £30."
+    }
+  ],
+  "math": [
+    {
+      "id": "pet-owning-customers",
+      "question": "How many of Hollinsway's customers own a dog or a cat, in thousands?",
+      "inputs": {
+        "customers_k": 1000,
+        "dog_only": 22,
+        "cat_only": 15,
+        "dog_and_cat": 3
+      },
+      "expression": "customers_k * (dog_only + cat_only + dog_and_cat) / 100",
+      "expected": 400,
+      "tolerance_pct": 2,
+      "working": "22% + 15% + 3% = 40% own a dog or a cat (the 3% who own both are counted once). 40% of 1,000,000 households = 400,000.",
+      "input_sources": [
+        { "input": "dog_only", "exhibit_id": "customer-pet-ownership", "row": 0, "column": "Share of customers (%)" },
+        { "input": "cat_only", "exhibit_id": "customer-pet-ownership", "row": 1, "column": "Share of customers (%)" },
+        { "input": "dog_and_cat", "exhibit_id": "customer-pet-ownership", "row": 2, "column": "Share of customers (%)" }
+      ]
+    },
+    {
+      "id": "year3-profit",
+      "question": "If 10% of pet-owning customers buy a policy by year 3, what is the yearly profit from pet insurance, in £ million?",
+      "inputs": {
+        "pet_owners_k": 400,
+        "take_up_pct": 10,
+        "margin": 60,
+        "fixed_costs_m": 1.2
+      },
+      "expression": "pet_owners_k * take_up_pct / 100 * margin / 1000 - fixed_costs_m",
+      "expected": 1.2,
+      "tolerance_pct": 3,
+      "working": "10% of 400,000 = 40,000 policies. 40,000 x £60 margin = £2.4m. Minus £1.2m of fixed costs leaves £1.2m a year, above the board's £1m goal.",
+      "input_sources": [
+        { "input": "margin", "exhibit_id": "pet-policy-economics", "row": 3, "column": "£ per policy per year" }
+      ]
+    },
+    {
+      "id": "payback-years",
+      "question": "At that yearly profit, how many years would it take to pay back the £2.4m set-up cost?",
+      "inputs": {
+        "setup_cost_m": 2.4,
+        "annual_profit_m": 1.2
+      },
+      "expression": "setup_cost_m / annual_profit_m",
+      "expected": 2,
+      "tolerance_pct": 4,
+      "working": "£2.4m / £1.2m a year = 2 years, within the board's three years."
+    }
+  ],
+  "brainstorm": {
+    "question": "What are the main risks of launching pet insurance, and how could Hollinsway reduce them?",
+    "idea_bank": [
+      "Claims cost more than expected: review prices every year and include an excess that the customer pays on each claim",
+      "Fewer customers buy than expected: pilot with a group of customers first and track take-up",
+      "Poor claims service damages the home insurance brand: choose the claims firm carefully and set service standards",
+      "Older pets claim more: price by the pet's age and breed, and set clear rules for illnesses the pet already has",
+      "Competitors cut prices: compete on convenience and the two-policy discount rather than on price",
+      "Inflated or false claims: check vet invoices and use the claims firm's fraud checks",
+      "A bad year for claims: buy reinsurance (insurance for the insurer) to cap losses",
+      "Weak reach: use renewal letters and the website, where reaching customers costs little"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "About 400,000 customers own a dog or a cat, and 10% take-up gives about 40,000 policies",
+      "Profit of about £1.2m a year by year 3, above the £1m goal, with a 2-year payback on the £2.4m set-up cost",
+      "Recommendation: go ahead, with claims costs as the main risk to manage"
+    ],
+    "good_signs": [
+      "Tests sensitivity: if claims rise to 80% of premiums, the margin halves to £30 and profit falls to zero",
+      "Finds the break-even point: about 20,000 policies, or 5% take-up",
+      "Mentions the extra benefit that customers with two policies renew their home insurance more often",
+      "Suggests a pilot with a group of customers to test take-up before the full launch"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 1 million home insurance customers; an own-brand pet policy sold mainly to them; a goal of at least £1m profit a year by year 3 and payback within about three years.",
+    "Structure: customers who might buy, economics per policy and in total, competition and Hollinsway's advantage, capabilities, then risks.",
+    "Customers: 22% + 15% + 3% = 40% own a dog or a cat, about 400,000 households. At 10% take-up that is 40,000 policies.",
+    "Economics: a £300 premium minus £210 of claims and £30 of handling leaves £60 a policy. 40,000 x £60 = £2.4m, minus £1.2m of fixed costs = £1.2m profit a year; the £2.4m set-up cost pays back in 2 years.",
+    "Risks: the margin is thin, so claims are the key risk (at 80% claims, profit falls to zero), and take-up could be lower than planned (break-even is about 5%).",
+    "Recommendation: go ahead. Pilot with a group of customers to confirm take-up, price with an excess and yearly reviews, choose a strong claims partner, and track claims as a share of premiums every month."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

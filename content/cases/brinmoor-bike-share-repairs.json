@@ -1,0 +1,241 @@
+{
+  "id": "case-012",
+  "slug": "brinmoor-bike-share-repairs",
+  "title": "Brinmoor Bike Share: why are so many bikes out of service?",
+  "track": "consulting",
+  "type": "operations",
+  "industry": "Transport",
+  "difficulty": 3,
+  "style": "candidate_led",
+  "est_minutes": 30,
+  "prompt": "Brinmoor Bike Share runs 4,000 public bikes from 300 docking stations in a mid-sized US city, under a contract with the city government. On an average day, a quarter of its bikes are out of service, and riders complain about empty docks and broken bikes. The contract requires at least 90% of the fleet to be available, and the city has started charging penalties. The general manager has asked you to find out what is going wrong and how to fix it. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The scheme",
+      "answer": "Brinmoor has 4,000 bikes, 3,000 pedal bikes and 1,000 e-bikes, at 300 docking stations. Riders pay per ride or buy a membership. Brinmoor runs the scheme for the city under a 10-year contract."
+    },
+    {
+      "question_topic": "Objective and penalties",
+      "answer": "Get availability to at least 90% of the fleet (3,600 bikes on an average day) within 6 months, at the lowest sensible cost. The city charges a $50,000 penalty for every month in which average availability is below 90%."
+    },
+    {
+      "question_topic": "What changed",
+      "answer": "A year ago about 10% of the fleet was out of service. Since then Brinmoor added the 1,000 e-bikes (the fleet grew from 3,000 to 4,000 bikes), and breakdowns rose from about 50 to about 100 bikes a day. The number of bikes out of service has crept up every month."
+    },
+    {
+      "question_topic": "How a broken bike gets fixed",
+      "answer": "A rider or the dock's sensor reports a fault, and the bike is locked so no one can ride it. A truck collects it and takes it to Brinmoor's single central workshop, where mechanics repair bikes in the order they arrive. Repaired bikes then wait for a truck to take them back to a station."
+    },
+    {
+      "question_topic": "The workshop",
+      "answer": "On an average day 8 mechanics are on shift; the team has not grown in two years. Each does about 400 minutes of hands-on repair work a day; the rest of the shift goes on breaks, paperwork and moving bikes around. The building has room for about 4 more mechanics. A mechanic costs about $60,000 a year."
+    },
+    {
+      "question_topic": "Trucks",
+      "answer": "Two trucks collect broken bikes and return repaired ones, on fixed daily routes. They are separate from the trucks that move bikes between busy and quiet stations."
+    },
+    {
+      "question_topic": "Repairs at the station",
+      "answer": "Some faults, such as flat tires, loose chains and broken seats, can be fixed at the dock with hand tools. Brinmoor does not do this today. A mobile crew (one mechanic and a van) could fix about 25 such bikes a day at stations, including driving time, and costs about $100,000 a year."
+    },
+    {
+      "question_topic": "Parts",
+      "answer": "Most parts are in stock. E-bike batteries and motors sometimes take a week or more to arrive."
+    },
+    {
+      "question_topic": "Buying more bikes",
+      "answer": "A new bike costs about $2,000 on average. Stations have spare docks for about 1,000 more bikes."
+    },
+    {
+      "question_topic": "Vandalism and theft",
+      "answer": "Vandalism and theft cause under 5% of breakdowns and have not changed. Not important for this case."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Inflow: how many bikes break each day, what kinds of faults, and why breakdowns rose",
+      "The repair pipeline: pickup, workshop queue, repair and parts, return to a station, and the time spent in each",
+      "Capacity at the bottleneck: mechanic time needed versus mechanic time available",
+      "Options and their cost: more mechanics, repairs at the station, faster pickup and return, prevention, more bikes",
+      "The 90% target, the penalties and the timeline"
+    ],
+    "good_signs": [
+      "Links bikes out of service to breakdowns per day times days out of service, even informally",
+      "Follows a broken bike through each stage to find where the time goes",
+      "Measures the workshop's load in mechanic-minutes, not just in bikes",
+      "Checks each option against the 90% target with numbers before recommending it"
+    ],
+    "red_flags": [
+      "Goes straight to buying more bikes",
+      "Treats every repair as the same size of job",
+      "Recommends more mechanics without checking whether that alone reaches 90%"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "out-of-service-by-stage",
+      "title": "Out-of-service bikes today, by stage",
+      "kind": "table",
+      "data": {
+        "columns": ["Stage", "Bikes", "Average days in stage"],
+        "rows": [
+          ["Broken at a station, waiting for pickup", 200, 2],
+          ["At the workshop, waiting for a mechanic", 500, 5],
+          ["Being repaired or waiting for parts", 200, 2],
+          ["Repaired, waiting to go back to a station", 100, 1],
+          ["Total out of service", 1000, 10]
+        ]
+      },
+      "reveal_hint": "Ask where the out-of-service bikes are, or how long a broken bike takes to get back into service.",
+      "insight": "1,000 bikes (25% of the fleet) are out of service, and a broken bike takes 10 days to come back. Half of that time (5 days, 500 bikes) is spent waiting for a mechanic, so the workshop is the bottleneck. Even with no wait at all, pickup, repair and return still take 5 days."
+    },
+    {
+      "id": "daily-breakdowns-by-repair",
+      "title": "Bikes reported broken per day, by repair needed",
+      "kind": "table",
+      "data": {
+        "columns": ["Repair needed", "Bikes per day", "Mechanic minutes per bike", "Can be fixed at the station?"],
+        "rows": [
+          ["Quick fix (flat tire, chain, seat)", 50, 12, "Yes"],
+          ["Brakes or gears", 30, 40, "No"],
+          ["Major (wheel, frame, e-bike electrics)", 20, 90, "No"],
+          ["All repairs", 100, "Varies", "Half of bikes"]
+        ]
+      },
+      "reveal_hint": "Ask what kinds of repairs broken bikes need, how long each takes, or how much work the workshop has each day.",
+      "insight": "The workshop needs 3,600 mechanic-minutes a day (600 + 1,200 + 1,800) but 8 mechanics provide 3,200, so its queue keeps growing. Half of broken bikes need only a 12-minute quick fix that could be done at the station, yet they spend about 10 days out of service waiting behind bigger repairs."
+    }
+  ],
+  "math": [
+    {
+      "id": "days-out-of-service",
+      "question": "On average, how many days is a broken bike out of service?",
+      "inputs": {
+        "out_of_service": 1000,
+        "breakdowns_per_day": 100
+      },
+      "expression": "out_of_service / breakdowns_per_day",
+      "expected": 10,
+      "tolerance_pct": 3,
+      "working": "About 100 bikes break each day and about 1,000 are out of service at any time, so each one is out for about 1,000 / 100 = 10 days. This matches the stage times: 2 + 5 + 2 + 1 = 10.",
+      "input_sources": [
+        { "input": "out_of_service", "exhibit_id": "out-of-service-by-stage", "row": 4, "column": "Bikes" },
+        { "input": "breakdowns_per_day", "exhibit_id": "daily-breakdowns-by-repair", "row": 3, "column": "Bikes per day" }
+      ]
+    },
+    {
+      "id": "workshop-shortfall",
+      "question": "How many more mechanic-minutes a day does the workshop need than it has?",
+      "inputs": {
+        "quick_bikes": 50,
+        "quick_minutes": 12,
+        "brake_bikes": 30,
+        "brake_minutes": 40,
+        "major_bikes": 20,
+        "major_minutes": 90,
+        "mechanics": 8,
+        "minutes_per_mechanic": 400
+      },
+      "expression": "quick_bikes * quick_minutes + brake_bikes * brake_minutes + major_bikes * major_minutes - mechanics * minutes_per_mechanic",
+      "expected": 400,
+      "tolerance_pct": 3,
+      "working": "Work needed: 50 x 12 = 600, 30 x 40 = 1,200 and 20 x 90 = 1,800, so 3,600 minutes a day. Capacity: 8 x 400 = 3,200 minutes. The shortfall is 400 minutes a day, about one mechanic, so the queue keeps growing.",
+      "input_sources": [
+        { "input": "quick_bikes", "exhibit_id": "daily-breakdowns-by-repair", "row": 0, "column": "Bikes per day" },
+        { "input": "quick_minutes", "exhibit_id": "daily-breakdowns-by-repair", "row": 0, "column": "Mechanic minutes per bike" },
+        { "input": "brake_bikes", "exhibit_id": "daily-breakdowns-by-repair", "row": 1, "column": "Bikes per day" },
+        { "input": "brake_minutes", "exhibit_id": "daily-breakdowns-by-repair", "row": 1, "column": "Mechanic minutes per bike" },
+        { "input": "major_bikes", "exhibit_id": "daily-breakdowns-by-repair", "row": 2, "column": "Bikes per day" },
+        { "input": "major_minutes", "exhibit_id": "daily-breakdowns-by-repair", "row": 2, "column": "Mechanic minutes per bike" }
+      ]
+    },
+    {
+      "id": "out-of-service-more-mechanics",
+      "question": "Suppose Brinmoor hires enough mechanics that bikes wait only 1 day for a mechanic, and nothing else changes. How many bikes would be out of service on an average day?",
+      "inputs": {
+        "breakdowns_per_day": 100,
+        "pickup_days": 2,
+        "queue_days": 1,
+        "repair_days": 2,
+        "return_days": 1
+      },
+      "expression": "breakdowns_per_day * (pickup_days + queue_days + repair_days + return_days)",
+      "expected": 600,
+      "tolerance_pct": 3,
+      "working": "Each bike is now out for 2 + 1 + 2 + 1 = 6 days. 100 bikes a day x 6 days = 600 bikes, or 15% of the fleet. Availability rises only to 85%, still short of the 90% target.",
+      "input_sources": [
+        { "input": "breakdowns_per_day", "exhibit_id": "daily-breakdowns-by-repair", "row": 3, "column": "Bikes per day" },
+        { "input": "pickup_days", "exhibit_id": "out-of-service-by-stage", "row": 0, "column": "Average days in stage" },
+        { "input": "repair_days", "exhibit_id": "out-of-service-by-stage", "row": 2, "column": "Average days in stage" },
+        { "input": "return_days", "exhibit_id": "out-of-service-by-stage", "row": 3, "column": "Average days in stage" }
+      ]
+    },
+    {
+      "id": "out-of-service-station-repairs",
+      "question": "Instead, suppose two mobile crews fix every quick-fix bike at its station within 1 day, the workshop queue falls to 1 day for all other repairs, and the other stages take as long as today. How many bikes would be out of service on an average day?",
+      "inputs": {
+        "quick_per_day": 50,
+        "station_days": 1,
+        "brake_per_day": 30,
+        "major_per_day": 20,
+        "pickup_days": 2,
+        "queue_days": 1,
+        "repair_days": 2,
+        "return_days": 1
+      },
+      "expression": "quick_per_day * station_days + (brake_per_day + major_per_day) * (pickup_days + queue_days + repair_days + return_days)",
+      "expected": 350,
+      "tolerance_pct": 3,
+      "working": "Quick fixes: 50 a day x 1 day = 50 bikes. The other 50 a day still go through the workshop: 50 x (2 + 1 + 2 + 1) = 50 x 6 = 300 bikes. Total 350 bikes, about 9% of the fleet, so availability is about 91%, above the 90% target. The workshop's load also falls to 3,000 minutes a day, below its 3,200, so a 1-day queue is realistic.",
+      "input_sources": [
+        { "input": "quick_per_day", "exhibit_id": "daily-breakdowns-by-repair", "row": 0, "column": "Bikes per day" },
+        { "input": "brake_per_day", "exhibit_id": "daily-breakdowns-by-repair", "row": 1, "column": "Bikes per day" },
+        { "input": "major_per_day", "exhibit_id": "daily-breakdowns-by-repair", "row": 2, "column": "Bikes per day" },
+        { "input": "pickup_days", "exhibit_id": "out-of-service-by-stage", "row": 0, "column": "Average days in stage" },
+        { "input": "repair_days", "exhibit_id": "out-of-service-by-stage", "row": 2, "column": "Average days in stage" },
+        { "input": "return_days", "exhibit_id": "out-of-service-by-stage", "row": 3, "column": "Average days in stage" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Beyond repairing bikes faster, what else could Brinmoor do to cut breakdowns or get broken bikes back into service sooner?",
+    "idea_bank": [
+      "Regular preventive checks at stations (tire pressure, brakes, chains) to stop faults before they happen",
+      "Give quick jobs their own fast lane in the workshop so they never wait behind major repairs",
+      "Add a second workshop shift or weekend overtime to clear the current backlog",
+      "Keep spare e-bike batteries and motors in stock, or swap in a working part and repair the old one later",
+      "Ask riders to report the exact fault in the app, with a photo, so the right crew and parts are sent",
+      "Return repaired bikes on the trucks that already move bikes between stations",
+      "Collect broken bikes more often, or have the mobile crews bring back the bikes they cannot fix",
+      "Push the e-bike supplier to repair faults under warranty or to supply sturdier parts",
+      "Reward riders for reporting faults quickly"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "1,000 bikes are out of service because about 100 break each day and each is out for about 10 days, half of it waiting for a mechanic",
+      "The workshop needs 3,600 mechanic-minutes a day but has 3,200, and half the broken bikes need only a quick fix",
+      "Recommendation: fix quick faults at the station with two mobile crews and clear the workshop queue, which cuts bikes out of service to about 350 (about 91% available); more mechanics alone reach only 85%"
+    ],
+    "good_signs": [
+      "Rules out buying bikes: at 75% availability, 3,600 available bikes would need a fleet of 4,800, so 800 more bikes at about $1.6m, and they would break too",
+      "Compares the cost of two crews (about $200,000 a year) with the penalties (about $600,000 a year)",
+      "Plans a one-off push, such as overtime, to clear the 500-bike backlog",
+      "Notes that 91% leaves little room for error, so faster pickup or prevention is needed as a buffer",
+      "Names prevention and e-bike parts as next steps, with availability tracked weekly"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 4,000 bikes, 25% out of service, a target of 90% available (3,600 bikes) within 6 months and penalties of $50,000 a month. Breakdowns doubled to about 100 a day after 1,000 e-bikes were added, with no extra mechanics.",
+    "Structure: bikes out of service = breakdowns per day x days out of service. Look at the inflow (how many break and why), follow a bike through pickup, workshop queue, repair and return, then weigh the options and their costs.",
+    "Analysis: 1,000 / 100 = 10 days out of service, 5 of them waiting for a mechanic. The workshop needs 3,600 mechanic-minutes a day against 3,200 available, so its queue keeps growing.",
+    "Insight: half of broken bikes need a 12-minute quick fix that could be done at the station, yet each spends about 10 days out of service. Hiring mechanics alone cuts the wait, but every bike still takes about 6 days, leaving 600 out of service (85% available).",
+    "Maths: with two mobile crews fixing quick faults within a day and a 1-day workshop queue for the rest, bikes out of service fall to 50 + 300 = 350, about 91% available.",
+    "Recommendation: start two mobile repair crews (about $200,000 a year, against $600,000 a year of penalties), clear the backlog with temporary overtime and give quick jobs a fast lane. Do not buy more bikes (about $1.6m for 800). Next, add preventive checks, keep e-bike parts in stock and track availability weekly."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

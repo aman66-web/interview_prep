@@ -1,0 +1,223 @@
+{
+  "id": "case-019",
+  "slug": "larkmoor-meal-kit-acquisition",
+  "title": "Larkmoor Markets: should it buy a meal-kit company?",
+  "track": "consulting",
+  "type": "m_and_a",
+  "industry": "Grocery retail",
+  "difficulty": 3,
+  "style": "interviewer_led",
+  "est_minutes": 35,
+  "prompt": "Larkmoor Markets is a regional supermarket chain with 120 stores in the southeastern US. Its shoppers are buying fewer ingredients for dinner as meal kits and food delivery grow. The founders of Hearthbox, a meal-kit delivery company that operates in the same region, have offered to sell it to Larkmoor for $180 million. The CEO asks: should Larkmoor buy Hearthbox?",
+  "facts": [
+    {
+      "question_topic": "Larkmoor",
+      "answer": "Larkmoor runs 120 supermarkets with about $3 billion of yearly sales and an operating margin of about 3%, which is normal for supermarkets. It has its own distribution centers, a home-delivery van fleet and a loyalty program with 2 million members."
+    },
+    {
+      "question_topic": "Hearthbox",
+      "answer": "Hearthbox delivers weekly boxes of recipes with measured ingredients for customers to cook at home. It was founded six years ago, had $120 million of revenue last year and has never made a profit. Its profit and loss is available."
+    },
+    {
+      "question_topic": "Hearthbox customers",
+      "answer": "Last year Hearthbox had 100,000 active customers on average, each spending about $100 a month. The average customer stays about 6 months before canceling. Hearthbox won 200,000 new customers last year."
+    },
+    {
+      "question_topic": "Objective and how Larkmoor values a deal",
+      "answer": "Larkmoor wants to win back dinner spending and to grow. Its board approves a deal only if the business is worth more than the price. It values a business like this at about 8 times the yearly operating profit it expects in year 3."
+    },
+    {
+      "question_topic": "Synergies",
+      "answer": "Larkmoor has a plan for Hearthbox in year 3. It counts on buying ingredients at Larkmoor's prices and on marketing to loyalty members instead of buying online ads. The figures are available. Assume the customer base is steady by year 3."
+    },
+    {
+      "question_topic": "Selling kits in stores",
+      "answer": "Larkmoor could also sell Hearthbox kits in its stores, but it has never tested this, so it is not in the plan."
+    },
+    {
+      "question_topic": "Overlap with Larkmoor's shoppers",
+      "answer": "About half of Hearthbox customers also shop at Larkmoor. Some of them may buy fewer groceries in its stores when they cook from kits. This is not in the plan."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Two national meal-kit brands deliver in the region and offer big discounts to win new customers."
+    },
+    {
+      "question_topic": "Other bidders and timing",
+      "answer": "No other bidder is known. The founders want an answer within two months."
+    },
+    {
+      "question_topic": "Funding",
+      "answer": "Larkmoor could pay $180 million in cash. Funding is not the issue."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Strategic fit: why a supermarket would want a meal-kit business",
+      "Hearthbox on its own: revenue, costs and the economics of each customer",
+      "Synergies: cheaper ingredients, cheaper marketing through the loyalty program, in-store sales, and how likely each is",
+      "Value versus price: what Hearthbox is worth to Larkmoor against the $180 million asked",
+      "Risks and alternatives: lost grocery sales, integration, building or partnering instead"
+    ],
+    "good_signs": [
+      "Looks at the economics of one customer: the cost to win them against what they bring in over their life",
+      "Separates what Hearthbox is worth on its own from what it is worth with Larkmoor's synergies",
+      "Asks how likely each synergy is and does not count untested in-store sales",
+      "Compares the value with the price and thinks about a walk-away price"
+    ],
+    "red_flags": [
+      "Recommends buying because meal kits are growing, without valuing the business",
+      "Counts every synergy as certain",
+      "Is willing to pay the seller for synergies that only Larkmoor can create"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "hearthbox-pl",
+      "title": "Hearthbox profit and loss last year ($ million)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Last year"],
+        "rows": [
+          ["Revenue", 120],
+          ["Food and packaging", 60],
+          ["Packing and delivery", 36],
+          ["Marketing", 30],
+          ["Overhead", 10],
+          ["Operating profit", -16]
+        ]
+      },
+      "reveal_hint": "Ask for Hearthbox's revenue and costs, or why it is not profitable.",
+      "insight": "After food, packing and delivery, Hearthbox keeps $24 million, which is $20 per customer per month. Marketing of $30 million wipes that out: it costs $150 to win a customer who stays only 6 months and brings in $120, so Hearthbox loses about $30 on every customer it wins."
+    },
+    {
+      "id": "year3-plan",
+      "title": "Larkmoor's plan for Hearthbox in year 3",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Year 3 plan"],
+        "rows": [
+          ["Active customers (thousand)", 150],
+          ["Contribution per customer per month ($)", 25],
+          ["Average customer life (months)", 6],
+          ["Cost to win a new customer ($)", 50],
+          ["Overhead ($ million)", 10]
+        ]
+      },
+      "reveal_hint": "Ask what Larkmoor expects Hearthbox to achieve after a deal, or which synergies it is counting on.",
+      "insight": "Keeping 150,000 customers who each stay 6 months needs 300,000 new customers a year; at $50 each, marketing falls to $15 million. Contribution is $45 million and overhead $10 million, giving $20 million of operating profit. Each new customer now earns about $100 over their life ($25 x 6 - $50) instead of losing $30, and cheaper marketing is by far the bigger lever."
+    }
+  ],
+  "math": [
+    {
+      "id": "cost-per-new-customer",
+      "question": "What did it cost Hearthbox to win each new customer last year, in dollars?",
+      "inputs": {
+        "marketing_m": 30,
+        "new_customers_k": 200
+      },
+      "expression": "marketing_m * 1000 / new_customers_k",
+      "expected": 150,
+      "tolerance_pct": 2,
+      "working": "$30 million of marketing / 200,000 new customers = $150 per new customer.",
+      "input_sources": [
+        { "input": "marketing_m", "exhibit_id": "hearthbox-pl", "row": 3, "column": "Last year" }
+      ]
+    },
+    {
+      "id": "loss-per-customer",
+      "question": "How much does Hearthbox lose on each new customer over that customer's life, in dollars?",
+      "inputs": {
+        "cost_to_win": 150,
+        "revenue_m": 120,
+        "food_m": 60,
+        "delivery_m": 36,
+        "active_k": 100,
+        "life_months": 6
+      },
+      "expression": "cost_to_win - (revenue_m - food_m - delivery_m) * 1000 / (active_k * 12) * life_months",
+      "expected": 30,
+      "tolerance_pct": 5,
+      "working": "Contribution is $120m - $60m - $36m = $24 million. Spread over 100,000 customers x 12 months, that is $20 per customer per month. A customer stays 6 months, so brings in $120, but cost $150 to win: a loss of $30 per customer.",
+      "input_sources": [
+        { "input": "revenue_m", "exhibit_id": "hearthbox-pl", "row": 0, "column": "Last year" },
+        { "input": "food_m", "exhibit_id": "hearthbox-pl", "row": 1, "column": "Last year" },
+        { "input": "delivery_m", "exhibit_id": "hearthbox-pl", "row": 2, "column": "Last year" }
+      ]
+    },
+    {
+      "id": "year3-operating-profit",
+      "question": "Under Larkmoor's plan, what is Hearthbox's operating profit in year 3, in $ million?",
+      "inputs": {
+        "active_k": 150,
+        "contribution": 25,
+        "life_months": 6,
+        "cost_to_win": 50,
+        "overhead_m": 10
+      },
+      "expression": "active_k * contribution * 12 / 1000 - active_k * 12 / life_months * cost_to_win / 1000 - overhead_m",
+      "expected": 20,
+      "tolerance_pct": 5,
+      "working": "Contribution: 150,000 x $25 x 12 months = $45 million. Each customer stays 6 months, so keeping 150,000 active needs 150,000 x 12 / 6 = 300,000 new customers a year; at $50 each that is $15 million of marketing. $45m - $15m - $10m overhead = $20 million.",
+      "input_sources": [
+        { "input": "active_k", "exhibit_id": "year3-plan", "row": 0, "column": "Year 3 plan" },
+        { "input": "contribution", "exhibit_id": "year3-plan", "row": 1, "column": "Year 3 plan" },
+        { "input": "life_months", "exhibit_id": "year3-plan", "row": 2, "column": "Year 3 plan" },
+        { "input": "cost_to_win", "exhibit_id": "year3-plan", "row": 3, "column": "Year 3 plan" },
+        { "input": "overhead_m", "exhibit_id": "year3-plan", "row": 4, "column": "Year 3 plan" }
+      ]
+    },
+    {
+      "id": "value-to-larkmoor",
+      "question": "Using Larkmoor's rule of 8 times year-3 operating profit, what is Hearthbox worth to Larkmoor, in $ million?",
+      "inputs": {
+        "profit_m": 20,
+        "multiple": 8
+      },
+      "expression": "profit_m * multiple",
+      "expected": 160,
+      "tolerance_pct": 5,
+      "working": "8 x $20 million = $160 million. That is $20 million less than the $180 million asking price, even if every part of the plan is delivered."
+    }
+  ],
+  "brainstorm": {
+    "question": "What are the biggest risks in this deal, and what could Larkmoor do instead of paying $180 million?",
+    "idea_bank": [
+      "Loyalty members may not sign up as cheaply as $50 each, which would wipe out much of the profit",
+      "Customers may still cancel after about 6 months, so Larkmoor must keep paying to replace them",
+      "Kit customers who already shop at Larkmoor may buy fewer groceries in its stores",
+      "National meal-kit brands may answer with deeper discounts",
+      "Hearthbox's founders and staff may leave after the deal, and the two cultures may clash",
+      "Offer a lower price, around $100 million to $130 million, and be ready to walk away",
+      "Tie part of the price to results (an earn-out), such as hitting customer and cost targets",
+      "Run a pilot first: sell Hearthbox kits to loyalty members or in a few stores through a partnership",
+      "Build Larkmoor's own meal-kit range for its stores and delivery vans",
+      "Buy a minority stake now with an option to buy the rest later"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Do not buy at $180 million: even if the plan is fully delivered, Hearthbox is worth about $160 million (8 x $20 million)",
+      "On its own Hearthbox loses about $30 on every customer it wins ($150 to win, $120 of contribution), so almost all the value comes from Larkmoor's own loyalty program and buying power",
+      "A clear next step: a lower offer with a walk-away price, an earn-out, or a pilot before buying"
+    ],
+    "good_signs": [
+      "Tests the plan: at $75 per new customer instead of $50, year-3 profit falls to about $12.5 million and the value to about $100 million",
+      "Raises the risk that kit customers buy fewer groceries in Larkmoor's stores",
+      "Uses the lack of other bidders as negotiating leverage"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goal: Larkmoor wants to win back dinner spending; the board approves only if Hearthbox is worth more than the price, valued at 8 times year-3 operating profit.",
+    "Structure: strategic fit, Hearthbox's economics today, synergies and how likely they are, value versus the $180 million price, then risks and alternatives.",
+    "Hearthbox today: $120 million of revenue but a $16 million loss. Contribution is $20 per customer per month; customers stay 6 months ($120) but each costs $150 to win, so Hearthbox loses about $30 per customer.",
+    "With Larkmoor: cheaper ingredients lift contribution to $25 a month, and loyalty marketing cuts the cost to win a customer to $50. Year 3: $45 million contribution - $15 million marketing (300,000 new customers) - $10 million overhead = $20 million.",
+    "Value: 8 x $20 million = $160 million, below the $180 million asked, and only if every part of the plan works. At $75 per new customer the value falls to about $100 million.",
+    "Recommendation: do not pay $180 million. Offer around $100 million to $130 million, with part of it as an earn-out tied to customer and cost targets, and walk away above $160 million. Before or instead of buying, pilot meal kits with loyalty members through a partnership, or build an in-store range."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

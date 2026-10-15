@@ -1,0 +1,117 @@
+{
+  "slug": "refunds",
+  "title": "Refund policy",
+  "seo_title": "Refund policy | CaseSpar",
+  "description": "When you can get a refund for a CaseSpar plan: within 7 days of paying, if you have used 2 or fewer AI interviews. How to ask and what happens next.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "If a paid plan isn't right for you, this page explains when you can get your money back and how to ask. Effective date: [effective date].",
+  "blocks": [
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Draft",
+      "text": "This is a draft for the founder and a lawyer to review. It is not in force yet. Anything in square brackets must be filled in or confirmed."
+    },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Note for the founder",
+      "text": "[Founder: check with a lawyer how the 7-day policy fits the 14-day cancellation right; the checkout may need a consent tick box.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. The checkout does not ask for that consent yet."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "The short version",
+      "text": "You can get a full refund within 7 days of paying, as long as you have used 2 or fewer AI interviews. Email [support email] from the address on your account."
+    },
+
+    { "type": "h2", "id": "who-can-get-one", "text": "Who can get a refund" },
+    { "type": "p", "text": "You can get a full refund of a payment if both of these are true:" },
+    {
+      "type": "ul",
+      "items": [
+        "You ask within 7 days of the payment. [Founder to confirm: does this cover only the first payment, or each monthly renewal too?]",
+        "You have used 2 or fewer AI interviews. [Founder to confirm: an interview counts as used once it is started; and does the free interview count?]"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "This applies to both the Monthly plan and the 90-Day Pass. Drills don't count towards the limit."
+    },
+
+    { "type": "h2", "id": "how-to-ask", "text": "How to ask for a refund" },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Email us",
+          "text": "Write to [support email] from the email address you use to log in. Say which payment you would like refunded."
+        },
+        {
+          "title": "We check",
+          "text": "We check the payment date and how many AI interviews you have used."
+        },
+        {
+          "title": "We refund through Stripe",
+          "text": "If you qualify, we refund the full amount through Stripe, our payment provider. It goes back to the card or payment method you paid with. How long it takes to appear depends on your bank."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "We aim to reply within [number, founder to confirm] working days."
+    },
+
+    { "type": "h2", "id": "your-access", "text": "What happens to your access" },
+    {
+      "type": "ul",
+      "items": [
+        "90-Day Pass: a full refund removes the 90 days that payment bought. If that leaves no paid time, your account goes back to the free plan straight away.",
+        "Monthly: when we refund a monthly payment, we also cancel your subscription, so you won't be charged again, and your paid access ends. [Founder: cancel the subscription in Stripe when you refund it. The site does not end access by itself after a monthly refund.]",
+        "Your interviews, debriefs and drill history stay in your account unless you delete it."
+      ]
+    },
+
+    { "type": "h2", "id": "cancelling-monthly", "text": "Cancelling the Monthly plan" },
+    {
+      "type": "p",
+      "text": "You can cancel at any time from your account page: choose Manage billing, then cancel in Stripe's billing portal. You won't be charged again. [Founder to confirm: access continues until the end of the month already paid for.]"
+    },
+    {
+      "type": "p",
+      "text": "Cancelling doesn't refund the current month by itself. If you meet the refund rules above, ask us for a refund as well."
+    },
+
+    { "type": "h2", "id": "the-pass", "text": "The 90-Day Pass" },
+    {
+      "type": "p",
+      "text": "The pass is a one-off payment and never renews, so there is nothing to cancel. Buying another pass while one is running adds 90 days to its end date."
+    },
+
+    { "type": "h2", "id": "deleting-your-account", "text": "If you delete your account" },
+    {
+      "type": "p",
+      "text": "Deleting your account cancels any subscription straight away, but it doesn't refund you by itself. It also deletes the interview history we use to check a refund request. So please ask for a refund before you delete your account."
+    },
+
+    { "type": "h2", "id": "legal-rights", "text": "Your legal rights" },
+    {
+      "type": "p",
+      "text": "This policy is in addition to your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a remedy whatever this policy says. [Lawyer to confirm wording.]"
+    },
+
+    { "type": "h2", "id": "contact", "text": "Contact" },
+    { "type": "p", "text": "Email [support email]." },
+
+    {
+      "type": "links",
+      "title": "Related pages",
+      "items": [
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "Terms of service", "href": "/legal/terms" },
+        { "label": "FAQ", "href": "/faq" }
+      ]
+    }
+  ]
+}

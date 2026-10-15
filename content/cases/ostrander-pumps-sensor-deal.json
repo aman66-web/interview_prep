@@ -1,0 +1,237 @@
+{
+  "id": "case-007",
+  "slug": "ostrander-pumps-sensor-deal",
+  "title": "Ostrander Pumps: is a sensor startup worth $120 million?",
+  "track": "consulting",
+  "type": "m_and_a",
+  "industry": "Industrial equipment",
+  "difficulty": 3,
+  "style": "candidate_led",
+  "est_minutes": 35,
+  "prompt": "Ostrander Pumps is a US maker of industrial pumps with about $800 million in yearly revenue. It is thinking about buying Thrumline, a startup whose clip-on sensors and software warn customers before a pump breaks down. Thrumline's owners are asking $120 million. Ostrander's CEO wants your view: should Ostrander buy Thrumline at that price? Take me through how you would decide.",
+  "facts": [
+    {
+      "question_topic": "Ostrander's business",
+      "answer": "Ostrander makes pumps for water utilities, chemical plants and food factories. About 60% of revenue comes from new pumps and 40% from parts and repairs. New-pump sales have been flat for three years. Parts and repairs are the most profitable part of the business, earning a 40% margin."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The CEO wants to grow parts and repair revenue and protect it from local repair shops that fit cheaper parts made by other companies."
+    },
+    {
+      "question_topic": "How the board values a deal",
+      "answer": "Ostrander's board values an acquisition at 10 times the yearly operating profit it expects the deal to bring in year 5, and will not pay more than that. Use this simple rule; ignore discounting."
+    },
+    {
+      "question_topic": "Thrumline's product and pricing",
+      "answer": "Thrumline's wireless sensors clip onto any make of pump or motor and send vibration and temperature readings to an app that warns of likely breakdowns. It charges $400 per monitored pump per year. Sensors, connectivity, hosting and support cost it $100 per pump per year."
+    },
+    {
+      "question_topic": "Thrumline's costs and plan",
+      "answer": "Thrumline's other costs (engineering, sales and offices) are about $8 million a year and would barely change if it served more pumps. It has a five-year plan that assumes no help from Ostrander; the plan is available."
+    },
+    {
+      "question_topic": "Thrumline's customers",
+      "answer": "Thrumline monitors about 15,000 pumps today. About 70% of them are made by other companies, including Ostrander's rivals. Some of those customers might leave if a pump maker owned Thrumline."
+    },
+    {
+      "question_topic": "Ostrander's installed base",
+      "answer": "About 200,000 Ostrander pumps are in service in the US and young enough to be worth monitoring. Ostrander's service reps visit almost every customer site at least once a year, so every one of these pumps could be offered monitoring within five years. Sign-ups from this base would come on top of Thrumline's own plan."
+    },
+    {
+      "question_topic": "Pilot with Ostrander customers",
+      "answer": "Last year Ostrander and Thrumline ran a joint pilot. Customers were offered a free six-month trial, then a paid subscription. Ostrander also compared parts and repair spending on monitored and unmonitored pumps. The pilot results are available."
+    },
+    {
+      "question_topic": "Building it in-house",
+      "answer": "Three years ago Ostrander spent $10 million on its own monitoring project and dropped it because it had no software team. Its engineers think a second attempt would take at least three years and about $30 million, with a real chance of failing again."
+    },
+    {
+      "question_topic": "Other bidders and the team",
+      "answer": "A rival pump maker has also approached Thrumline. Thrumline has 60 staff, mostly engineers. Its two founders would stay for two years if offered retention bonuses."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Strategic reason: protecting and growing Ostrander's parts and repair business",
+      "Thrumline's value on its own: its plan and year-5 profit",
+      "Synergies: subscriptions sold to Ostrander's installed base and the extra parts and repair profit they bring",
+      "Price versus value: what sign-up rate is needed to justify $120 million",
+      "Risks and alternatives: other-brand customers leaving, adoption, team retention, building in-house, a rival buying Thrumline"
+    ],
+    "good_signs": [
+      "Values Thrumline on its own first, then adds synergies separately",
+      "Works out the extra profit from each signed-up pump, including the parts and repair uplift",
+      "Calculates the break-even sign-up rate and compares it with the pilot",
+      "Considers buy versus build and the threat of a rival buying Thrumline"
+    ],
+    "red_flags": [
+      "Values Thrumline only on its own plan and rejects the deal without looking at synergies",
+      "Assumes most of Ostrander's 200,000 pumps will sign up without evidence",
+      "Ignores that most of Thrumline's current customers use rival pumps"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "thrumline-plan",
+      "title": "Thrumline's own five-year plan, without Ostrander",
+      "kind": "table",
+      "data": {
+        "columns": ["Year", "Monitored pumps (thousand)", "Revenue ($ million)", "Operating profit ($ million)"],
+        "rows": [
+          ["Today", 15, 6, -3.5],
+          ["Year 1", 20, 8, -2],
+          ["Year 2", 25, 10, -0.5],
+          ["Year 3", 30, 12, 1],
+          ["Year 4", 35, 14, 2.5],
+          ["Year 5", 40, 16, 4]
+        ]
+      },
+      "reveal_hint": "Ask for Thrumline's financials, growth plan or expected profit.",
+      "insight": "Thrumline is losing money today and on its own plan reaches only $4 million of profit in year 5. At 10 times profit that is worth about $40 million, a third of the asking price."
+    },
+    {
+      "id": "pilot-sign-up",
+      "title": "Pilot: Ostrander pumps offered monitoring, and how many stayed",
+      "kind": "bar",
+      "data": {
+        "columns": ["Stage", "Pumps"],
+        "rows": [
+          ["Offered monitoring", 10000],
+          ["Took the free six-month trial", 2500],
+          ["Became paying subscribers after the trial", 1000]
+        ]
+      },
+      "reveal_hint": "Ask how many Ostrander customers signed up for monitoring in the pilot.",
+      "insight": "A quarter of pumps offered took the free trial, but only 40% of those went on to pay, so 10% of pumps offered became paying subscribers."
+    },
+    {
+      "id": "pilot-results",
+      "title": "Pilot: monitored versus unmonitored Ostrander pumps",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Pumps without monitoring", "Pumps with monitoring"],
+        "rows": [
+          ["Parts and repair revenue to Ostrander ($ per pump per year)", 1000, 1500],
+          ["Unplanned breakdowns (per 100 pumps per year)", 8, 3]
+        ]
+      },
+      "reveal_hint": "Ask whether monitoring changed customers' parts and repair spending with Ostrander, or how monitored pumps performed.",
+      "insight": "Monitored pumps brought Ostrander $500 more parts and repair revenue a year, because alerts go to Ostrander's service team instead of local repair shops. They also broke down far less often."
+    }
+  ],
+  "math": [
+    {
+      "id": "standalone-value",
+      "question": "Using the board's rule, what is Thrumline worth on its own plan, in $ million?",
+      "inputs": {
+        "profit_year5": 4,
+        "multiple": 10
+      },
+      "expression": "profit_year5 * multiple",
+      "expected": 40,
+      "tolerance_pct": 2,
+      "working": "Year-5 operating profit is $4 million. 10 x $4 million = $40 million, so $80 million of the $120 million price would have to come from synergies.",
+      "input_sources": [
+        { "input": "profit_year5", "exhibit_id": "thrumline-plan", "row": 5, "column": "Operating profit ($ million)" }
+      ]
+    },
+    {
+      "id": "extra-profit-per-pump",
+      "question": "How much extra yearly profit does each Ostrander pump that signs up for monitoring bring, in dollars?",
+      "inputs": {
+        "subscription_price": 400,
+        "cost_to_serve": 100,
+        "parts_unmonitored": 1000,
+        "parts_monitored": 1500,
+        "parts_margin_pct": 40
+      },
+      "expression": "(subscription_price - cost_to_serve) + (parts_monitored - parts_unmonitored) * parts_margin_pct / 100",
+      "expected": 500,
+      "tolerance_pct": 2,
+      "working": "The subscription earns $400 - $100 = $300. Parts and repair revenue rises by $1,500 - $1,000 = $500, and at a 40% margin that is $200 of profit. $300 + $200 = $500 per pump per year.",
+      "input_sources": [
+        { "input": "parts_unmonitored", "exhibit_id": "pilot-results", "row": 0, "column": "Pumps without monitoring" },
+        { "input": "parts_monitored", "exhibit_id": "pilot-results", "row": 0, "column": "Pumps with monitoring" }
+      ]
+    },
+    {
+      "id": "breakeven-sign-up-pct",
+      "question": "What percentage of Ostrander's 200,000 installed pumps must be paying for monitoring by year 5 for Thrumline to be worth the $120 million asking price?",
+      "inputs": {
+        "asking_price": 120,
+        "multiple": 10,
+        "profit_year5": 4,
+        "extra_profit_per_pump": 500,
+        "installed_base": 200000
+      },
+      "expression": "(asking_price / multiple - profit_year5) * 1000000 / extra_profit_per_pump / installed_base * 100",
+      "expected": 8,
+      "tolerance_pct": 3,
+      "working": "$120 million / 10 = $12 million of year-5 profit needed. Thrumline's plan gives $4 million, so synergies must add $8 million. $8 million / $500 per pump = 16,000 pumps. 16,000 / 200,000 = 8%.",
+      "input_sources": [
+        { "input": "profit_year5", "exhibit_id": "thrumline-plan", "row": 5, "column": "Operating profit ($ million)" }
+      ]
+    },
+    {
+      "id": "value-at-pilot-rate",
+      "question": "If the pilot's paying rate held across the whole installed base by year 5, what would Thrumline be worth to Ostrander, in $ million?",
+      "inputs": {
+        "profit_year5": 4,
+        "installed_base": 200000,
+        "pilot_offered": 10000,
+        "pilot_paying": 1000,
+        "extra_profit_per_pump": 500,
+        "multiple": 10
+      },
+      "expression": "(profit_year5 + installed_base * pilot_paying / pilot_offered * extra_profit_per_pump / 1000000) * multiple",
+      "expected": 140,
+      "tolerance_pct": 3,
+      "working": "The pilot's paying rate is 1,000 / 10,000 = 10%. 10% of 200,000 = 20,000 pumps x $500 = $10 million. Add Thrumline's own $4 million: $14 million x 10 = $140 million, about $20 million above the asking price.",
+      "input_sources": [
+        { "input": "profit_year5", "exhibit_id": "thrumline-plan", "row": 5, "column": "Operating profit ($ million)" },
+        { "input": "pilot_offered", "exhibit_id": "pilot-sign-up", "row": 0, "column": "Pumps" },
+        { "input": "pilot_paying", "exhibit_id": "pilot-sign-up", "row": 2, "column": "Pumps" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "If Ostrander buys Thrumline, how should it run the business to get the most value and keep the risks down?",
+    "idea_bank": [
+      "Keep Thrumline as a separate brand that works with any make of pump, so other-brand customers stay",
+      "Set clear rules on how other-brand customers' data is used, so rivals' customers trust it",
+      "Train service reps and distributors to offer monitoring on every repair visit and new-pump sale",
+      "Fit sensors at the factory on new pumps, with the first year included in the price",
+      "Send alerts on Ostrander pumps to Ostrander's service team so customers book genuine parts and repairs",
+      "Sell bundles of monitoring plus a service contract with a guaranteed response time",
+      "Pay part of the price later, tied to sign-up targets",
+      "Offer retention bonuses to the founders and key engineers",
+      "Use breakdown data to improve pump designs and plan spare-parts stock"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "On its own Thrumline is worth about $40 million, so the $120 million price only makes sense with synergies from Ostrander's installed base",
+      "Each signed-up pump adds about $500 a year ($300 from the subscription and $200 of extra parts and repair profit); the deal breaks even at 8% of the installed base, or 16,000 pumps",
+      "A clear recommendation: buy, since the pilot's 10% paying rate implies about $140 million of value, but the margin of safety is thin, so protect it (a lower price or part paid later, and keep Thrumline open to all pump brands)"
+    ],
+    "good_signs": [
+      "Tests the risk of other-brand customers leaving: losing 10,000 of the 40,000 year-5 pumps cuts $3 million of profit and drops the value to about $110 million, below the price",
+      "Questions whether the pilot is representative, for example whether customers who signed up already spent more on parts",
+      "Weighs buying against building ($30 million, three years, a past failure) and the risk of a rival buying Thrumline first"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: the goal is to grow and protect parts and repair revenue; the board values a deal at 10 times year-5 profit; the asking price is $120 million; Thrumline's plan assumes no help from Ostrander.",
+    "Structure: strategic reason, Thrumline's value on its own, synergies with the installed base, price versus value and break-even, risks and alternatives (build, partner, a rival buying it).",
+    "On its own: year-5 profit of $4 million gives $40 million, so $80 million of the price must come from synergies.",
+    "Synergies: each signed-up pump adds $300 of subscription profit and $200 of parts and repair profit, $500 a year. Break-even is $8 million / $500 = 16,000 pumps, 8% of the installed base. The pilot's 10% paying rate gives 20,000 pumps, $10 million and a value of $140 million.",
+    "Risks: the headroom is thin (10% expected against 8% needed); 70% of Thrumline's pumps are rival brands and losing a quarter of its year-5 base would cut value to about $110 million; the pilot may not hold at scale; the founders could leave. Building in-house is cheaper but slow and has failed once, and a rival could buy Thrumline first and steer repairs away from Ostrander.",
+    "Recommendation: buy, but negotiate below $120 million or pay part of the price later against sign-up targets; keep Thrumline brand-neutral; sell monitoring through service reps and fit it on new pumps; track paying sign-ups each quarter against the 16,000-pump break-even."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

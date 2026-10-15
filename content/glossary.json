@@ -1,0 +1,397 @@
+{
+  "updated": "2026-10-15",
+  "terms": [
+    {
+      "slug": "80-20-rule",
+      "term": "80/20 rule",
+      "definition": "The observation that a small share of causes often accounts for a large share of results, for example a minority of customers bringing in most of the profit. In a case, it is a prompt to check whether a problem is concentrated in a few products, customers or sites.",
+      "example": "If 20% of a wholesaler's customers bring in 75% of its profit, start the analysis with those customers.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "acquisition-premium",
+      "term": "Acquisition premium",
+      "definition": "The amount a buyer pays for a company above what it was worth before the deal (for a listed company, its share price before the offer). For the deal to create value, the synergies or other gains need to be at least as large as the premium plus the costs of doing the deal.",
+      "example": "Paying $120m for a company valued at $100m is a 20% premium, so the deal needs at least $20m of extra value to pay off.",
+      "related_guide": "mergers-and-acquisitions-case-interview"
+    },
+    {
+      "slug": "answer-first",
+      "term": "Answer first",
+      "definition": "A way of communicating that opens with the conclusion and then gives the reasons, rather than building up to it. A recommendation that starts with the answer is easier to follow and still makes sense if it is cut short.",
+      "example": "'I recommend launching at $85,000, for three reasons' rather than walking through every step before saying the price.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "arpu",
+      "term": "Average revenue per user (ARPU)",
+      "definition": "Total revenue in a period divided by the number of users or customers in that period. It is one half of the basic growth equation: revenue = customers × revenue per customer.",
+      "example": "$6m of monthly revenue from 200,000 customers is an ARPU of $30 a month.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "barriers-to-entry",
+      "term": "Barriers to entry",
+      "definition": "Anything that makes it hard for a new company to enter a market, such as high start-up costs, regulation, patents, strong existing brands, or customers who would find it costly to switch.",
+      "related_guide": "market-entry-case-interview"
+    },
+    {
+      "slug": "benchmark",
+      "term": "Benchmark",
+      "definition": "A point of comparison used to judge whether a number is good or bad, such as last year's figure, another site, a competitor or a target. A number on its own says little until you compare it with something.",
+      "example": "A 4% defect rate looks fine until you learn the client's other factory runs at 1%.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "bottleneck",
+      "term": "Bottleneck",
+      "definition": "The step in a process with the lowest capacity. It limits the output of the whole process, so adding capacity anywhere else does not raise output.",
+      "example": "If assembly can build 300 units a week and every other step can handle 400, the plant makes 300 a week.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "bottom-up-estimate",
+      "term": "Bottom-up estimate",
+      "definition": "An estimate built up from small units, for example number of stores × customers per store × spend per customer. It is often more convincing than a top-down estimate when you understand how the business works.",
+      "related_guide": "market-sizing-case-interview"
+    },
+    {
+      "slug": "break-even-point",
+      "term": "Break-even point",
+      "definition": "The sales volume (or revenue) at which total contribution exactly covers fixed costs, so profit is zero. Break-even volume = fixed costs ÷ contribution per unit.",
+      "example": "Fixed costs of $1.2m and $15 of contribution per unit give a break-even volume of 80,000 units.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "candidate-led-case",
+      "term": "Candidate-led and interviewer-led cases",
+      "definition": "In a candidate-led case, you decide the order of the analysis and drive the case yourself. In an interviewer-led case, the interviewer steers you from one question to the next. The skills are the same, but a candidate-led case tests more of your judgement about where to go next.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "cannibalisation",
+      "term": "Cannibalisation",
+      "definition": "When a company's new product, price or channel takes sales from its own existing products rather than winning new customers. When sizing a new product, count only the net gain.",
+      "example": "If a new budget range sells 10,000 units but 4,000 of those buyers would otherwise have bought the standard range, the net gain is 6,000 units.",
+      "related_guide": "pricing-case-interview"
+    },
+    {
+      "slug": "capacity",
+      "term": "Capacity",
+      "definition": "The most output a person, machine, step or site can produce in a given time. Capacity = time available ÷ time per unit × number of stations doing the same job.",
+      "example": "Two stations with 2,400 minutes a week each, taking 16 minutes per unit, can make 300 units a week.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "capex",
+      "term": "Capital expenditure (capex)",
+      "definition": "Spending on long-lasting assets such as buildings, machines and equipment, which the business uses over several years. It is different from operating expenditure, the day-to-day costs of running the business.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "churn",
+      "term": "Churn rate",
+      "definition": "The share of customers who stop buying or cancel in a period. High churn means a company must win many new customers just to stay the same size.",
+      "example": "Starting the month with 1,000 subscribers and losing 30 of them is a monthly churn rate of 3%.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "clarifying-questions",
+      "term": "Clarifying questions",
+      "definition": "The questions you ask at the start of a case to understand the objective, the business and any constraints before you structure the problem. Good ones are few, specific and would change how you approach the case.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "competitive-advantage",
+      "term": "Competitive advantage",
+      "definition": "Something that lets a company win customers or earn higher margins than its rivals in a way that is hard to copy, such as lower costs, a stronger brand, better technology or exclusive access to a resource.",
+      "related_guide": "market-entry-case-interview"
+    },
+    {
+      "slug": "cagr",
+      "term": "Compound annual growth rate (CAGR)",
+      "definition": "The steady yearly growth rate that would take a value from its starting level to its final level over a number of years. CAGR = (end ÷ start) to the power of (1 ÷ years), minus 1.",
+      "example": "Growing from 50,000 to 72,000 over two years is a CAGR of 20%, because 50,000 × 1.2 × 1.2 = 72,000.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "contribution-margin",
+      "term": "Contribution margin",
+      "definition": "Price minus variable cost per unit: what each extra sale adds towards covering fixed costs and then profit. It can also be given as a percentage of the price.",
+      "example": "A $50 product with $30 of variable cost has a contribution margin of $20, or 40%.",
+      "related_guide": "pricing-case-interview"
+    },
+    {
+      "slug": "cost-plus-pricing",
+      "term": "Cost-plus pricing",
+      "definition": "Setting a price by adding a chosen markup to the cost of a product. It is simple and avoids selling at a loss, but it ignores what customers would be willing to pay.",
+      "related_guide": "pricing-case-interview"
+    },
+    {
+      "slug": "customer-acquisition-cost",
+      "term": "Customer acquisition cost (CAC)",
+      "definition": "What it costs on average to win one new customer: sales and marketing spend in a period divided by the number of new customers won in that period.",
+      "example": "$500,000 of marketing that brings in 10,000 new customers is a CAC of $50.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "customer-lifetime-value",
+      "term": "Customer lifetime value (CLV)",
+      "definition": "The total profit a company expects from a customer over the whole time they stay. A simple version is profit per period × the number of periods a typical customer stays. Comparing it with the cost of winning a customer shows whether growth is worth paying for.",
+      "example": "A customer who brings $8 of profit a month and stays 25 months on average is worth about $200.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "cycle-time",
+      "term": "Cycle time",
+      "definition": "Usually the time a step takes to complete one unit, or the time between finished units leaving a line. It is different from lead time, the total time from start (or order) to finished unit. Check which meaning the interviewer is using.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "due-diligence",
+      "term": "Due diligence",
+      "definition": "The detailed checks a buyer makes before an acquisition or investment: the target's finances, customers, contracts, legal risks and operations. It tests whether the price and the expected synergies are realistic.",
+      "related_guide": "mergers-and-acquisitions-case-interview"
+    },
+    {
+      "slug": "ebitda",
+      "term": "EBITDA",
+      "definition": "Earnings before interest, taxes, depreciation and amortisation: a rough measure of the profit a business makes from its operations, before interest, tax and the accounting charges for the wearing out of its assets. It is often used to compare companies and to value them as a multiple.",
+      "example": "A company with $50m of EBITDA bought at 8 times EBITDA costs $400m.",
+      "related_guide": "mergers-and-acquisitions-case-interview"
+    },
+    {
+      "slug": "economies-of-scale",
+      "term": "Economies of scale",
+      "definition": "Cost advantages from producing more. As volume rises, fixed costs are spread over more units and buying power often improves, so the cost per unit falls.",
+      "example": "$1m of fixed costs is $10 per unit at 100,000 units but $5 per unit at 200,000.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "exhibit",
+      "term": "Exhibit",
+      "definition": "A chart, table or other piece of data the interviewer shares during a case. Your job is to find the main message quickly, do any maths it needs and say what it means for the question."
+    },
+    {
+      "slug": "fixed-costs",
+      "term": "Fixed costs",
+      "definition": "Costs that stay the same in the short term whatever the volume, such as rent, salaried staff and insurance. Because the total is fixed, fixed cost per unit falls as volume rises.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "gross-margin",
+      "term": "Gross margin",
+      "definition": "Revenue minus the direct cost of the goods or services sold, as a share of revenue. It shows how much of each sale is left to pay for overheads and profit.",
+      "example": "Revenue of $10m and $6m of cost of goods sold is a gross margin of 40%.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "hypothesis",
+      "term": "Hypothesis",
+      "definition": "A clearly stated best guess at the answer, used to decide what to look at first. In a case you state it, test it with data, and change it when the data disagree.",
+      "example": "'My hypothesis is that profit fell because a new competitor forced us to cut prices, so I'd like to start with price and volume.'",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "inorganic-growth",
+      "term": "Inorganic growth",
+      "definition": "Growth that comes from buying or combining with other businesses, through acquisitions, mergers or joint ventures, rather than from the company's own operations.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "issue-tree",
+      "term": "Issue tree",
+      "definition": "A diagram that breaks a big question into smaller ones, branch by branch, until each can be answered with analysis. In a good tree the branches don't overlap and together cover the whole question.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "joint-venture",
+      "term": "Joint venture",
+      "definition": "A business owned and run jointly by two or more companies, which share its costs, risks and profits. It is often used to enter a market where a partner brings local knowledge, licences or access to customers.",
+      "related_guide": "market-entry-case-interview"
+    },
+    {
+      "slug": "like-for-like-sales",
+      "term": "Like-for-like sales",
+      "definition": "Sales growth measured only on stores, sites or products that existed in both periods being compared, so that openings and closures don't distort the picture.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "market-share",
+      "term": "Market share",
+      "definition": "A company's sales as a share of the total sales in its market, by value or by volume. Say which one you mean, and define the market clearly, because both change the answer.",
+      "example": "$30m of sales in a $200m market is a 15% share by value.",
+      "related_guide": "market-sizing-case-interview"
+    },
+    {
+      "slug": "market-sizing",
+      "term": "Market sizing",
+      "definition": "Estimating the size of a market, in customers, units or money, from logical assumptions when there is no figure to look up. It tests your structure, your assumptions and your maths, not whether you know the true number.",
+      "related_guide": "market-sizing-case-interview"
+    },
+    {
+      "slug": "markup",
+      "term": "Markup",
+      "definition": "Profit as a share of cost, rather than of the selling price. It is always a bigger percentage than the margin on the same sale.",
+      "example": "A product that costs $60 and sells for $80 has a markup of 33% but a margin of 25%.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "mece",
+      "term": "MECE",
+      "definition": "Short for mutually exclusive, collectively exhaustive: splitting a problem so the parts don't overlap and together cover everything. It is a test of a good structure, not a structure in itself.",
+      "example": "Revenue and costs are a MECE split of profit.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "net-present-value",
+      "term": "Net present value (NPV)",
+      "definition": "The value today of all the future cash an investment brings in, minus what it costs, with future amounts reduced (discounted) because money later is worth less than money now. A positive NPV means the investment earns more than the rate used to discount it.",
+      "example": "$110 received in one year, discounted at 10% a year, is worth $100 today.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "opex",
+      "term": "Operating expenditure (opex)",
+      "definition": "The day-to-day costs of running a business, such as salaries, rent, utilities and marketing, counted in the period they are spent.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "operating-margin",
+      "term": "Operating margin",
+      "definition": "Operating profit (revenue minus all operating costs, including overheads) as a share of revenue. It shows how profitable the core business is before interest and tax.",
+      "example": "Revenue of $50m and operating costs of $45m give an operating margin of 10%.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "organic-growth",
+      "term": "Organic growth",
+      "definition": "Growth from a company's own operations, such as more customers, higher spend per customer, new products or new markets, without buying other businesses.",
+      "related_guide": "growth-case-interview"
+    },
+    {
+      "slug": "payback-period",
+      "term": "Payback period",
+      "definition": "How long an investment takes to earn back what it cost: the investment divided by the yearly profit or cash it brings in. It is simple to work out, but it ignores what happens after payback and the fact that later money is worth less.",
+      "example": "A $3m investment that brings in $300,000 a year pays back in 10 years.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "percentage-points",
+      "term": "Percentage points",
+      "definition": "The simple difference between two percentages. It is not the same as the percentage change between them, so say which one you mean.",
+      "example": "A margin moving from 12% to 15% has risen by 3 percentage points, which is a 25% increase.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "price-elasticity",
+      "term": "Price elasticity of demand",
+      "definition": "How strongly sales respond to a change in price: the percentage change in quantity sold divided by the percentage change in price. Demand is called elastic when sales change by proportionally more than the price.",
+      "example": "If a 10% price cut raises sales by 20%, the price elasticity is −2.",
+      "related_guide": "pricing-case-interview"
+    },
+    {
+      "slug": "profit-equation",
+      "term": "Profit equation",
+      "definition": "Profit = revenue − costs, where revenue = price × volume and costs = fixed costs + variable cost per unit × volume. Most profitability cases start by breaking profit down this way.",
+      "example": "Selling 10,000 units at $20 with $8 of variable cost each and $50,000 of fixed costs gives a profit of $70,000.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "revenue",
+      "term": "Revenue",
+      "definition": "The money a company takes in from selling its goods or services, before any costs are taken off. Revenue = price × volume, or customers × revenue per customer.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "sensitivity-check",
+      "term": "Sensitivity check",
+      "definition": "Testing how much an answer changes when a key assumption changes, for example if sales come in 20% below forecast. If a small change flips the recommendation, say so and suggest how to firm up that assumption.",
+      "example": "A launch that pays back in 10 years at 100,000 units a year but in about 3 years at 150,000 is very sensitive to volume.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "so-what",
+      "term": "So-what",
+      "definition": "What a number or finding means for the client's decision. Stating the so-what after each piece of analysis shows you are solving the problem, not just doing sums.",
+      "example": "'Costs per unit are 15% above our other plant, so the cost problem is in this site, not in our suppliers.'",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "sunk-cost",
+      "term": "Sunk cost",
+      "definition": "Money already spent that cannot be recovered whatever you decide next. It should not affect a decision, which depends only on future costs and benefits.",
+      "example": "Having spent $2m developing a product is not, on its own, a reason to launch it.",
+      "related_guide": "case-interview-maths"
+    },
+    {
+      "slug": "synergies",
+      "term": "Synergies",
+      "definition": "The extra value from combining two businesses, beyond what they would earn apart. Cost synergies come from things like merging back offices or buying in bulk; revenue synergies come from things like selling each other's products. Revenue synergies are often harder to deliver.",
+      "related_guide": "mergers-and-acquisitions-case-interview"
+    },
+    {
+      "slug": "synthesis",
+      "term": "Synthesis",
+      "definition": "Pulling the findings of a case together into a short, clear answer to the original question, usually at the end: the recommendation, the main reasons, the risks and the next steps.",
+      "related_guide": "how-to-structure-a-case-interview"
+    },
+    {
+      "slug": "throughput",
+      "term": "Throughput",
+      "definition": "The amount a process actually produces in a period. It is limited by whichever is lower: demand, or the capacity of the bottleneck.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "top-down-estimate",
+      "term": "Top-down estimate",
+      "definition": "An estimate that starts from a large known total and narrows it down with percentages, for example population × share who own a dog × share who buy dog food online. It is quick, but each percentage needs a reason.",
+      "related_guide": "market-sizing-case-interview"
+    },
+    {
+      "slug": "total-addressable-market",
+      "term": "Total addressable market (TAM)",
+      "definition": "The total revenue available if a product won every possible customer in its market. It is useful as a ceiling; the realistic prize is the share the company can actually win.",
+      "related_guide": "market-sizing-case-interview"
+    },
+    {
+      "slug": "unit-economics",
+      "term": "Unit economics",
+      "definition": "The revenue and costs of a single unit of the business, such as one order, one customer or one store. If each unit loses money, growing faster only makes the losses bigger.",
+      "example": "A delivery that earns $9 but costs $11 to fulfil loses $2 every time, however many are sold.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "utilisation",
+      "term": "Utilisation",
+      "definition": "How much of the available capacity is actually used: output ÷ capacity. In services, planning for close to 100% usually means long queues, because work rarely arrives evenly.",
+      "example": "A team that can handle 400 jobs a week and does 300 is at 75% utilisation.",
+      "related_guide": "operations-case-interview"
+    },
+    {
+      "slug": "value-based-pricing",
+      "term": "Value-based pricing",
+      "definition": "Setting a price from what the product is worth to the customer, such as the money it saves them or the revenue it earns them, compared with their next-best alternative.",
+      "related_guide": "pricing-case-interview"
+    },
+    {
+      "slug": "variable-costs",
+      "term": "Variable costs",
+      "definition": "Costs that rise and fall with volume, such as materials, packaging, delivery and sales commission.",
+      "related_guide": "profitability-case-interview"
+    },
+    {
+      "slug": "vertical-integration",
+      "term": "Vertical integration",
+      "definition": "Owning more steps of the supply chain, for example a manufacturer buying one of its suppliers, or buying a retailer that sells its products. It can lower costs or secure supply, but it ties up capital and reduces flexibility.",
+      "related_guide": "mergers-and-acquisitions-case-interview"
+    },
+    {
+      "slug": "weighted-average",
+      "term": "Weighted average",
+      "definition": "An average in which each value counts in proportion to its weight, such as its share of sales. Use it whenever the groups being averaged are different sizes.",
+      "example": "If 60% of sales are at $3 and 40% at $4.50, the average price is $3.60, not $3.75.",
+      "related_guide": "case-interview-maths"
+    }
+  ]
+}

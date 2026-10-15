@@ -1,0 +1,205 @@
+{
+  "id": "case-013",
+  "slug": "bramblecup-uk-supermarket-deal",
+  "title": "Bramblecup: is a UK supermarket deal worth taking?",
+  "track": "consulting",
+  "type": "market_entry",
+  "industry": "Consumer food",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 25,
+  "prompt": "Bramblecup is a US maker of oat-based, dairy-free yoghurts, sold in grocery stores across the United States. A large UK supermarket chain has offered to stock Bramblecup in all 400 of its stores, on condition that Bramblecup sells only through that chain for its first two years in the UK. Bramblecup's board has asked whether it should accept the offer and launch in the UK. All figures in this case are in pounds. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Bramblecup makes oat-based yoghurts in several flavours, sold in about 6,000 US grocery stores. It is profitable in the US but has never sold outside the country."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board will go ahead only if the UK business can cover all of its own costs (break even) within its first two years. Bramblecup cannot afford to fund UK losses for longer than that."
+    },
+    {
+      "question_topic": "The offer",
+      "answer": "The chain would stock Bramblecup in all 400 of its stores for two years. In return, Bramblecup could not sell through any other UK supermarket during that time. The chain sells about a quarter of all plant-based yoghurt in the UK."
+    },
+    {
+      "question_topic": "Production",
+      "answer": "Chilled yoghurt keeps for only about four weeks, so it cannot be shipped from the US. A UK contract manufacturer would make it to Bramblecup's recipes."
+    },
+    {
+      "question_topic": "Fixed costs",
+      "answer": "Running the UK business would cost about £3m a year in fixed costs: a small team, launch marketing and in-store promotions. These do not change with sales volume."
+    },
+    {
+      "question_topic": "Market growth",
+      "answer": "UK plant-based yoghurt sales grew by about 20% a year until recently, but growth has slowed to about 5% a year."
+    },
+    {
+      "question_topic": "Customers",
+      "answer": "Shoppers buy plant-based yoghurt mainly to avoid dairy, and many switch brands when one is on promotion. Oat-based yoghurt is a small but growing part of the category; coconut and soya are the largest. In a small UK taste test, shoppers slightly preferred Bramblecup's plain oat yoghurt to the market leader's, but nobody in the test had heard of the brand."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "The leading brand has been on UK shelves for more than ten years. The only sizeable oat brand launched about five years ago. Supermarkets also sell their own cheaper own-label ranges."
+    },
+    {
+      "question_topic": "Other supermarkets",
+      "answer": "Two other large chains have said they would consider stocking Bramblecup without exclusivity, but only after it has a year of UK sales data. The chain making the offer has said it might accept a one-year exclusive instead of two."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Market: size and growth of UK plant-based yoghurt",
+      "Competition: who holds share, and how a new oat brand could win",
+      "The deal: what the exclusive listing gives and what it shuts off",
+      "Economics: price, the supermarket's margin, costs per pot, fixed costs and the sales needed to break even",
+      "Risks and alternatives: other ways to enter, or not entering"
+    ],
+    "good_signs": [
+      "Frames the decision around the board's test: break even within two years",
+      "Works out the sales needed to break even, then asks whether that share is realistic",
+      "Notices that the exclusive deal limits Bramblecup to about a quarter of the market",
+      "Compares the share needed with what existing brands hold"
+    ],
+    "red_flags": [
+      "Treats the 400-store offer as good news without asking what it costs Bramblecup",
+      "Talks only about the market and ignores Bramblecup's own economics",
+      "Assumes success in the US will carry over to the UK without checking"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "uk-plant-yoghurt-by-brand",
+      "title": "UK plant-based yoghurt sales by brand, last year",
+      "kind": "table",
+      "data": {
+        "columns": ["Brand", "Sales (£ million)", "Share (%)"],
+        "rows": [
+          ["Leading brand (coconut and soya)", 70, 35],
+          ["Second brand (soya)", 40, 20],
+          ["Supermarket own-label (all chains)", 50, 25],
+          ["Third brand (oat)", 16, 8],
+          ["Other small brands", 24, 12],
+          ["Total", 200, 100]
+        ]
+      },
+      "reveal_hint": "Ask about the size of the UK market and who sells in it.",
+      "insight": "The market is £200m and concentrated: two brands and own-label hold 80%. The only sizeable oat brand has 8% after about five years. Any share Bramblecup needs should be compared with these."
+    },
+    {
+      "id": "price-and-cost-per-pot",
+      "title": "Bramblecup UK: price and cost per 400g pot (pence)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Pence per pot"],
+        "rows": [
+          ["Shelf price", 200],
+          ["Supermarket's margin", 60],
+          ["Price paid to Bramblecup", 140],
+          ["Ingredients and making (contract manufacturer)", 55],
+          ["Packaging", 15],
+          ["Chilled delivery to stores", 20],
+          ["Left to cover fixed costs", 50]
+        ]
+      },
+      "reveal_hint": "Ask about Bramblecup's planned price, the supermarket's cut, or its costs per pot.",
+      "insight": "The supermarket keeps 30% of the £2.00 shelf price. After 90p of its own costs, Bramblecup keeps 50p a pot, a quarter of the shelf price, to cover £3m a year of fixed costs."
+    }
+  ],
+  "math": [
+    {
+      "id": "pence-left-per-pot",
+      "question": "How much does Bramblecup keep from each pot after the supermarket's margin and its own costs per pot, in pence?",
+      "inputs": {
+        "shelf_price": 200,
+        "supermarket_margin": 60,
+        "making": 55,
+        "packaging": 15,
+        "delivery": 20
+      },
+      "expression": "shelf_price - supermarket_margin - making - packaging - delivery",
+      "expected": 50,
+      "tolerance_pct": 2,
+      "working": "The £2.00 shelf price minus 60p for the supermarket leaves £1.40. Minus 55p for making, 15p for packaging and 20p for delivery (90p in all) leaves 50p a pot.",
+      "input_sources": [
+        { "input": "shelf_price", "exhibit_id": "price-and-cost-per-pot", "row": 0, "column": "Pence per pot" },
+        { "input": "supermarket_margin", "exhibit_id": "price-and-cost-per-pot", "row": 1, "column": "Pence per pot" },
+        { "input": "making", "exhibit_id": "price-and-cost-per-pot", "row": 3, "column": "Pence per pot" },
+        { "input": "packaging", "exhibit_id": "price-and-cost-per-pot", "row": 4, "column": "Pence per pot" },
+        { "input": "delivery", "exhibit_id": "price-and-cost-per-pot", "row": 5, "column": "Pence per pot" }
+      ]
+    },
+    {
+      "id": "break-even-shelf-sales",
+      "question": "What yearly sales, measured at shelf prices, does Bramblecup need to cover its £3m of fixed costs, in £ million?",
+      "inputs": {
+        "fixed_costs_m": 3,
+        "kept_per_pot_p": 50,
+        "shelf_price_p": 200
+      },
+      "expression": "fixed_costs_m / kept_per_pot_p * shelf_price_p",
+      "expected": 12,
+      "tolerance_pct": 3,
+      "working": "£3m / 50p = 6 million pots a year. At £2.00 a pot that is £12m of shelf sales, which is 6% of the £200m UK market.",
+      "input_sources": [
+        { "input": "kept_per_pot_p", "exhibit_id": "price-and-cost-per-pot", "row": 6, "column": "Pence per pot" },
+        { "input": "shelf_price_p", "exhibit_id": "price-and-cost-per-pot", "row": 0, "column": "Pence per pot" }
+      ]
+    },
+    {
+      "id": "break-even-share-of-chain",
+      "question": "The chain sells about a quarter of the UK's plant-based yoghurt. Using last year's market size, what percentage of the chain's plant-based yoghurt sales would Bramblecup need to break even?",
+      "inputs": {
+        "break_even_sales_m": 12,
+        "market_m": 200,
+        "chain_share_pct": 25
+      },
+      "expression": "break_even_sales_m / (market_m * chain_share_pct / 100) * 100",
+      "expected": 24,
+      "tolerance_pct": 3,
+      "working": "The chain sells about 25% of £200m = £50m of plant-based yoghurt a year. £12m / £50m = 24%. That is more than the second brand's 20% share of the whole UK market, and three times the share of the only sizeable oat brand.",
+      "input_sources": [
+        { "input": "market_m", "exhibit_id": "uk-plant-yoghurt-by-brand", "row": 5, "column": "Sales (£ million)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "If Bramblecup still wants to be in the UK, what other ways could it enter, or how could it make this deal work?",
+    "idea_bank": [
+      "Negotiate a one-year exclusive instead of two, then sell through other chains",
+      "Cut fixed costs with a smaller launch team and less marketing up front, growing spend only as sales come in",
+      "License its recipes and brand to a UK yoghurt maker for a royalty, so it carries no fixed costs",
+      "Launch with only the best-selling flavours to keep the range simple",
+      "Sell first through online grocers or health-food shops to build a sales record",
+      "Ask the chain to share launch costs, such as free promotional space, in return for exclusivity",
+      "Partner with or buy a small UK plant-based brand that already has shelf space",
+      "Wait a year and re-check market growth and the other chains' interest",
+      "Use the taste-test result in in-store tastings to win first purchases"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Bramblecup keeps 50p a pot, so it needs about 6 million pots, or £12m of shelf sales, a year to cover £3m of fixed costs",
+      "Under the exclusive deal it can reach only the chain's £50m of sales, so it would need 24% of them: more than the second brand's national share, as an unknown brand in a market growing only 5%",
+      "A clear recommendation: do not accept the deal as offered, and name a better route"
+    ],
+    "good_signs": [
+      "Sets out the conditions under which a UK launch could work, such as a one-year exclusive and lower fixed costs",
+      "Tests sensitivity: with £1.5m of fixed costs and every supermarket open to it, break-even falls to £6m, or 3% of the market",
+      "Names next steps, such as renegotiating with the chain and talking to possible UK licensing partners"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: the offer is a two-year exclusive listing in 400 stores of a chain that sells about a quarter of UK plant-based yoghurt; the board needs the UK business to break even within two years.",
+    "Structure: the market (size, growth, competition), the deal (reach and exclusivity), the economics (what Bramblecup keeps per pot, fixed costs, break-even), then risks and alternatives.",
+    "Market: £200m a year, with growth slowing from about 20% to 5% a year. Two brands and own-label hold 80%; the only sizeable oat brand has 8% after about five years.",
+    "Economics: a £2.00 shelf price, 60p to the supermarket and 90p of costs leaves 50p a pot. £3m of fixed costs needs 6 million pots, or £12m of shelf sales, which is 6% of the UK market.",
+    "The deal: exclusivity limits Bramblecup to the chain's £50m of sales, so it would need 24% of them within two years, more than the second brand's national share. That is very unlikely for an unknown brand.",
+    "Recommendation: decline the deal as offered. Ask for a one-year exclusive and launch with lower fixed costs, or license the recipes to a UK maker; check the other chains' interest before committing money."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}
