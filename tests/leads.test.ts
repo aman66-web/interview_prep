@@ -348,6 +348,21 @@ describe("leads: the rate limit", () => {
     expect(limiter.size()).toBeLessThanOrEqual(50);
   });
 
+  it("forgets an address within two windows, even when no one else posts from it", () => {
+    let now = 0;
+    const limiter = createRateLimiter({ limit: 5, windowMs: 600_000, now: () => now });
+    limiter.take("203.0.113.5");
+    now = 599_999;
+    limiter.take("198.51.100.7");
+    expect(limiter.size()).toBe(2);
+    now = 1_199_998; // the first window has ended; the next attempt clears it
+    limiter.take("192.0.2.1");
+    expect(limiter.size()).toBe(2); // 203.0.113.5 is gone; 198.51.100.7's window is still open
+    now = 1_800_000;
+    limiter.take("192.0.2.1");
+    expect(limiter.size()).toBe(1);
+  });
+
   it("reads the caller's address from the platform's headers", () => {
     const h = (o: Record<string, string>) => new Headers(o);
     expect(clientAddress(h({ "x-forwarded-for": "203.0.113.5, 10.0.0.1" }))).toBe("203.0.113.5");

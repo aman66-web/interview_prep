@@ -1,7 +1,8 @@
 // A small fixed-window rate limit for the enquiry form, kept in memory.
 // Each server instance counts on its own, so this only slows down someone hammering
-// one instance; it is not a security boundary. Addresses are held in memory for the
-// window only: never stored, never logged (rule 2.7).
+// one instance; it is not a security boundary. Addresses are held in memory for at
+// most two windows (expired ones are cleared at least once a window): never stored,
+// never logged (rule 2.7).
 
 export type RateLimiter = {
   /** Records one attempt and says whether it is allowed. */
@@ -12,8 +13,10 @@ export type RateLimiter = {
 
 export function createRateLimiter({ limit, windowMs, now = Date.now, maxKeys = 5000 }: { limit: number; windowMs: number; now?: () => number; maxKeys?: number }): RateLimiter {
   const windows = new Map<string, { start: number; count: number }>();
+  let lastSweep = now();
 
   function prune(at: number) {
+    lastSweep = at;
     for (const [key, w] of windows) if (at - w.start >= windowMs) windows.delete(key);
     // Still too many (a flood of different addresses): forget the oldest.
     while (windows.size >= maxKeys) {
@@ -26,6 +29,8 @@ export function createRateLimiter({ limit, windowMs, now = Date.now, maxKeys = 5
   return {
     take(key) {
       const at = now();
+      // Forget addresses whose window has ended, so none stays in memory for long.
+      if (at - lastSweep >= windowMs) prune(at);
       const current = windows.get(key);
       if (!current || at - current.start >= windowMs) {
         if (!current && windows.size >= maxKeys) prune(at);

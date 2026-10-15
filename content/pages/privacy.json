@@ -29,7 +29,7 @@
         "AI usage: how much text (in tokens) each interview used and an estimate of what it cost. We use this to apply fair-use limits and control costs.",
         "Payments: your Stripe customer reference and a reference for your subscription or payment. Stripe takes your card details on its own page. We never see or store them.",
         "Usage events: simple records such as \"started a case\" or \"started checkout\", with the page and any campaign tags in the link you arrived from. They may be linked to your account. We don't store IP addresses in them.",
-        "Enquiries: if you contact us for a university or club, your organisation's name, your email address, the group's size and your message."
+        "Enquiries: if you contact us for a university or club, your organisation's name, your email address, the group's size and your message. To stop the form being flooded, our server also keeps your IP address in its memory for up to 20 minutes. It is never saved or logged."
       ]
     },
     {
@@ -38,7 +38,11 @@
     },
     {
       "type": "p",
-      "text": "Our hosting and login providers receive your IP address and browser details when you use the site, as part of running and protecting it. [Founder to confirm how long Vercel and Supabase keep these logs.]"
+      "text": "Our hosting provider, Vercel, receives your IP address and browser details when you use the site, as part of running and protecting it. Vercel's documentation says the logs from our server code (its \"runtime logs\") are kept for 1 day on our plan, or 30 days if its Observability Plus feature is switched on. [Founder to check whether Observability Plus is on (Vercel, your team's Settings, Billing, Observability Plus) and whether interview-prep is left out of it under Manage projects, then keep only the figure that applies.] Your browser doesn't connect to Supabase, our database and login provider, directly: our server does, and it doesn't pass your IP address on. Supabase's pricing page says it keeps API and database logs for 1 day, and records of sign-ins and other login events for 1 hour, on our plan."
+    },
+    {
+      "type": "p",
+      "text": "[Founder: Supabase can also copy its login records (sign-ins, sign-ups, sign-outs and similar events, with the email address and an IP address) into a table in our own database (Supabase, Authentication, Configuration, Audit Logs, \"Write audit logs to the database\"). Its documentation doesn't say how long they stay there. Check whether this is on. If it is, switch it off or say here how long we keep those records.]"
     },
 
     { "type": "h2", "id": "why-we-use-it", "text": "Why we use it, and our lawful basis" },
@@ -70,22 +74,34 @@
     { "type": "h2", "id": "who-processes-it", "text": "Who processes your data for us" },
     {
       "type": "p",
-      "text": "We use these service providers. They process data for us only to provide their service. [Founder to confirm a data processing agreement is in place with each provider.]"
+      "text": "We use these service providers. They process data for us to provide their service. Each one's data processing agreement is part of the standard terms we accept when we use it: Supabase's Data Processing Addendum (part of its Terms of Service), Vercel's Data Processing Addendum (part of its Terms of Service), Anthropic's Data Processing Addendum (part of its Commercial Terms of Service) and Stripe's Data Processing Agreement (part of the Stripe Services Agreement)."
     },
     {
       "type": "table",
       "caption": "Our service providers",
       "columns": ["Provider", "What it does for us", "Where"],
       "rows": [
-        ["Supabase", "Our database and login, including sending sign-in emails. [Founder: add the email-sending service here once one is chosen.]", "Our database is hosted in London (eu-west-2). Supabase is a US company. [Founder to confirm the transfer safeguard.]"],
-        ["Vercel", "Hosts the website and runs our server code.", "US company. [Founder to confirm the hosting region and the transfer safeguard.]"],
-        ["Anthropic", "Runs the AI interviewer and writes your debrief. It receives the case materials and the text of your interview, not your email address.", "US company. [Founder to confirm the transfer safeguard, and how long Anthropic keeps API data and whether it is used for training.]"],
-        ["Stripe", "Takes payments and runs the billing portal. It receives your email address and your payment details.", "[Founder to confirm which Stripe company you contract with, and the transfer safeguard.]"]
+        ["Supabase", "Our database and login, including sending sign-in emails. [Founder: add the email-sending service here once one is chosen.]", "Our database is hosted in London (eu-west-2). Our contract is with Supabase Pte. Ltd., a company in Singapore. Supabase and the companies it uses may also process data in other countries. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Supabase's Data Processing Addendum."],
+        ["Vercel", "Hosts the website and runs our server code.", "US company (Vercel Inc.). Vercel serves the site's fixed files from the location nearest to you. Our server code runs in Washington, D.C., USA. The small piece of code that checks you are logged in before account pages open runs in Vercel's locations around the world. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Vercel's Data Processing Addendum."],
+        ["Anthropic", "Runs the AI interviewer and writes your debrief. It receives the case materials and the text of your interview, not your email address.", "US company (Anthropic PBC, San Francisco). For UK customers the contract is with Anthropic Ireland, Limited. Anthropic's documentation says it stores API data in the US, and that the AI model may run in any of the locations Anthropic uses. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Anthropic's Data Processing Addendum."],
+        ["Stripe", "Takes payments and runs the billing portal. We send it your email address, your account reference, the plan you chose and that you ticked the \"start straight away\" box. On its own payment page it collects your card details, and it may also collect details about your device and connection, such as your IP address.", "For a UK Stripe account, the Stripe Services Agreement is with Stripe Payments Europe, Limited (Stripe Payments UK Ltd joins it for some services). Data sent to Stripe, LLC in the US is covered first by the Data Privacy Framework (for UK data, the UK Extension to the EU-US Data Privacy Framework, which Stripe's privacy policy says it follows). If that doesn't apply, the EU Standard Contractual Clauses with the UK International Data Transfer Addendum do. Stripe's Data Transfers Addendum sets this order."]
       ]
     },
     {
       "type": "p",
-      "text": "Some of these providers may process data outside the UK, for example in the US. Where that happens, the transfer is covered by the safeguards those providers offer. [Founder to confirm the transfer safeguard for each provider.]"
+      "text": "Stripe also uses some payment data for its own purposes, such as preventing fraud and meeting its legal duties. For that use, Stripe is responsible for the data itself, as its Data Processing Agreement explains."
+    },
+    {
+      "type": "p",
+      "text": "Vercel also uses some usage data and metadata created when you use our site for its own purposes, such as running, securing and improving its service. For that use, Vercel is responsible for the data itself, under its own privacy notice, as its Data Processing Addendum explains."
+    },
+    {
+      "type": "p",
+      "text": "Anthropic's Commercial Terms say it may not train its models on what we send it. Anthropic's privacy centre says it deletes API inputs and outputs within 30 days. It may keep them longer to enforce its Usage Policy (up to 2 years if its automated systems flag an interview as breaking that policy, and the safety scores for that interview for up to 7 years) or where the law requires it."
+    },
+    {
+      "type": "p",
+      "text": "Some of these providers process data outside the UK, for example in the US. Each transfer is covered by the safeguard named in the table above."
     },
     {
       "type": "p",
@@ -99,7 +115,7 @@
         "Cookies: we use only the cookies needed to keep you logged in. Our login system sets them, using Supabase. Because they are strictly necessary, we don't ask for consent for them.",
         "Browser storage: your browser tab remembers your interview notes, your place in each set of drills, and how many drills you have tried without an account. This uses your browser's session storage, which is cleared when you close the tab. None of this is sent to us.",
         "Campaign tags: if the link you arrived by had campaign tags (such as utm_source), your browser tab keeps those in the same session storage. They are sent to us when you sign in, and recorded with your sign-up if you are new. They are then kept with your usage events, which are deleted after 180 days.",
-        "Page-view counts: if we count page views, we use Vercel Web Analytics, which doesn't use cookies.",
+        "Page-view counts: if we count page views, we use Vercel Web Analytics. Vercel says it doesn't use third-party cookies: it counts visitors with a code (a hash) made from each request, and discards it after 24 hours.",
         "We don't use advertising pixels or third-party trackers. If that ever changes, we will ask for your consent first."
       ]
     },
@@ -115,7 +131,7 @@
         ["Usage events", "Deleted after 180 days"],
         ["Your account, plan, scores, drill answers and AI usage records", "Until you delete your account"],
         ["Enquiries from universities and clubs", "[Founder to decide]"],
-        ["Payment records held by Stripe", "As long as Stripe and the law require, even after you delete your account"]
+        ["Payment records held by Stripe", "As long as Stripe needs them for its legal, tax and accounting duties and to prevent fraud, even after you delete your account"]
       ]
     },
     {
@@ -143,7 +159,7 @@
       "type": "ul",
       "items": [
         "Get a copy of your data. On your account page, choose Download my data to get a file (in JSON format) of everything we hold about you.",
-        "Delete your account and data. On your account page, type your email address to confirm. This deletes your account, practice history and transcripts straight away. It also deletes your Stripe customer record, which cancels any subscription. Stripe keeps the payment records it is legally required to keep. Share links you made keep working (see Share links above).",
+        "Delete your account and data. On your account page, type your email address to confirm. This deletes your account, practice history and transcripts straight away. It also deletes your Stripe customer record, which cancels any subscription. Stripe may keep some payment records after that, for example to meet its legal, tax and accounting duties and to prevent fraud (see Stripe's privacy policy). Share links you made keep working (see Share links above).",
         "Ask us to correct data that is wrong.",
         "Object to how we use your data, or ask us to restrict it.",
         "Take your data to another service. The download above is in a common, machine-readable format.",
