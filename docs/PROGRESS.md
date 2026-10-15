@@ -16,6 +16,7 @@ Read this first in a new session.
   - **Then:** push (or redeploy) so the new variables reach a build, and test a real sign-in. **The built-in Supabase email sender only sends to members of the Supabase organisation**, which for this account is `aman662002@gmail.com`; test with that address (or invite another address to the organisation first).
 - **Keys (rule 2.5):** the Supabase URL and publishable key can go straight to Vercel without appearing in chat. The secret key (`SUPABASE_SECRET_KEY`) must not pass through chat: if the connector cannot place it directly, the founder pastes it into Vercel himself, marked Sensitive.
 - **Still the founder's:** paying for any Supabase upgrade, choosing an email-sending service for real students (and the domain it needs; decided 15 Oct to set this up later).
+- **Growth playbook (15 Oct 2026):** the founder follows a 90-day, day-by-day plan from Fri 16 Oct (Day 1) at https://claude.ai/artifact/1kgsULhHkJX4bh7mdQmNzq; a copy is in `docs/playbook/`. Its honest view: $10,000 a month is very unlikely inside 90 days; the 90-day goal is going live by Day 10, 30 reviewed cases, about 70 paying customers and a run rate of about $3,000 a month in early January, with the first $10,000 month aimed at November 2027.
 - PR: https://github.com/aman66-web/interview_prep/pull/1 (CI green on the P0 + P1 commit).
 
 ## Milestones (kit section 13)
