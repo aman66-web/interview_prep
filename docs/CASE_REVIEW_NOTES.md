@@ -1,6 +1,6 @@
 # Case review notes (15 and 16 Oct 2026)
 
-These notes are for the human case reviewer (see `docs/REVIEWER_GUIDE.md`). The bank-style case studies added on 16 Oct 2026 (case-021 to case-026) have their own section at the end. The notes from 15 Oct 2026 cover the first 20 practice cases (case-001 to case-020), each of which went through two rounds of checks by Claude:
+These notes are for the human case reviewer (see `docs/REVIEWER_GUIDE.md`). Two later sections have their own introductions: the bank-style case studies added on 16 Oct 2026 (case-021 to case-026), and the firm-style consulting cases added the same day (case-027 to case-036), which come last. The notes from 15 Oct 2026 cover the first 20 practice cases (case-001 to case-020), each of which went through two rounds of checks by Claude:
 
 1. **Expert-style review and rewrite.** One reviewer for every two cases read each case as an interviewer would, fixed what was unrealistic, unclear or inconsistent, and listed the judgement calls a person with consulting experience should make.
 2. **Second, skeptical check.** A separate checker for every three cases tried to find what the first reviewer got wrong: every number in the prose recomputed by hand, real-world claims (laws, wage rates, regulations) checked on the web, the original-content and invented-company rules, and anything that could make a correct answer score as wrong.
@@ -1012,3 +1012,278 @@ Every case's maths is also recomputed by the automated tests (`npm run content:c
 - Pace: four maths questions in 30 minutes, plus a long recommendation.
 - The upside of her reinvested £60 million is described only in words, because the buyer has not said what it expects to sell Fennick for. Each £1 of growth in Fennick's value adds about 40p to her stake after the IPO, against about 14p in the sale.
 - Name check: no "Fennick Software" found. The nearest names are Fenwick Software (Australia), Fennech Financial (a UK fintech) and Fennicus Ltd (an IT services company in Devon), none in this trade. The buyer, the fund, the stock exchange and the founder are not named. Tax is assumed equal under both routes.
+
+## Firm-style cases (16 Oct 2026)
+
+These ten consulting cases are each built to feel like the practice cases one consulting firm publishes. The founder asked for cases like each firm's published examples. Rule 2.1 forbids copying or paraphrasing them, so on 16 Oct 2026 they were made in a clean-room process:
+
+1. **Format notes.** One agent recorded only the generic format of each firm's published examples: who leads the interview, the order of the question types, the kinds of exhibits and how much maths there is.
+2. **Stripped.** A second agent removed anything content-specific from those notes.
+3. **Written.** Separate writers, who never saw the firms' examples, wrote an original case from the format notes alone, with an invented client and invented, internally consistent numbers. The industries were chosen to avoid the examples' topics and our existing cases.
+4. **Reviewed twice, separately.** One reviewer read each case for realism against the firm's format. Another checked the maths, consistency and originality: every number recomputed by hand, the facts checked against the exhibits, and anything that could make a correct answer score as wrong. Where a reviewer found a likeness to a firm's published example, the fixer worked from the reviewer's description only and did not open the firm's material.
+5. **Fixed.** A third pass applied the must-fix points and most of the smaller ones, and said what it rejected and why.
+
+BCG's and EY-Parthenon's published examples could not be read, so Fellwick (BCG) and Lanebrook (EY-Parthenon) follow the firms' own published guidance and our general format. Every case's maths is recomputed by the automated tests (`npm run content:check`), and the whole check passes (195 tests, run on 16 Oct 2026). All ten have track `consulting` and are listed in `lib/content/all-cases.ts`. **All ten are still drafts.** Only a human reviewer can sign one off (CLAUDE.md: "Never set a case to `reviewed` yourself"). Ideally that is someone with consulting interview experience who knows the firms' published practice cases.
+
+| Id | Case | Type | Format it follows |
+|---|---|---|---|
+| case-027 | Tarnmoor Water: should it invest in leak sensors? | Operations | McKinsey-style, interviewer-led |
+| case-028 | Fellwick Garden Centres: how to get sales growing again | Growth | BCG-style (from BCG's published guidance), candidate-led |
+| case-029 | Larchmere Padel: should it open a club in a new city? | Market entry | Bain-style, candidate-led |
+| case-030 | Kelstow Luggage: why is it losing share to an online rival? | Growth | Deloitte-style, candidate-led |
+| case-031 | Fernmoor Dental: should it offer clear aligners? | Market entry | Accenture-style, candidate-led |
+| case-032 | Sorrelby: how big is the UK houseplant delivery market? | Market sizing | PwC and Strategy&-style, interviewer-led |
+| case-033 | Lanebrook Swim Schools: is the seller's plan believable? | M&A | EY-Parthenon-style (from its published guidance), candidate-led |
+| case-034 | Silverbeck Linen: should it bid for a hospital contract? | Growth | Oliver Wyman-style, interviewer-led |
+| case-035 | Hollowlatch: why does its Birmingham venue lose money? | Profitability | L.E.K.-style, candidate-led |
+| case-036 | Hartstow Storage: should it build three more stores? | Growth | OC&C-style, interviewer-led |
+
+**Points that apply to all ten**
+
+- Resemblance (rule 2.1). The writers never saw the firms' examples, but each case follows its firm's format closely, so it can still end up close to a published case. For every case, please confirm it does not resemble any published practice case you know, from the firms or from university casebooks. Reviewers found a likeness in six cases: Larchmere (Bain), Kelstow (Deloitte), Fernmoor (Accenture), Silverbeck (Oliver Wyman), Hollowlatch (L.E.K.) and Hartstow (OC&C). Each entry below says what was found and what was changed.
+- Our engine runs every case through the same stages (structure, analysis with exhibits and maths checked by code, a brainstorm, then the recommendation). Where a firm gives the numbers for a calculation as bullet points inside a question, here they sit in an exhibit or a fact so the code can check them. Some cases also carry more scored maths than the firm's format. Each entry notes the main differences.
+- Names that sound alike: four "-moor" clients (Brinmoor, Larkmoor, Tarnmoor, Fernmoor), three "-stow" ones (Stowline, Kelstow, Hartstow), Larchmere and Larkmoor, Hollowlatch and Hollinsway, and Fellwick and Fennick. Every name check was a web search (plus Companies House for Hollowlatch and Hartstow) that found no business of that name in the same field; none is a trade mark check. The fixers did not rename, because a new name means a new slug and file name. Please decide whether any should change before the cases go live.
+- The library's leisure and local-sites cases are filling up: Cragwell (case-018), Cobalt Basin (case-020), Larchmere, Lanebrook and Hollowlatch. Reviewers noted likenesses to Cragwell in Fellwick and Lanebrook, and between Larchmere and Hollowlatch. All are our own cases, so there is no copying problem, but they may feel repetitive.
+- Every number is the client's own or the case's own, and no real company, statistic or regulation is stated as a fact (rule 2.2). Please say if any invented figure would strike someone in that industry as unrealistic.
+
+## case-027: Tarnmoor Water: should it invest in leak sensors?
+
+`content/cases/tarnmoor-water-leak-sensors.json`, on the preview at `/cases/tarnmoor-water-leak-sensors`. Operations, McKinsey-style (interviewer-led), difficulty 2, about 30 minutes. A regional water company in northern England loses a quarter of its water to leaks and must cut leakage by 20% within five years, and the candidate judges its operations director's plan to fit acoustic leak sensors across the whole network, starting in the town centres.
+
+**What the reviews changed**
+
+- Both reviewers found the case contradicted itself on why rural leaks run so long. In the trial the sensors heard leaks within days, yet leaks still ran about 75 of their 100 days, because each alert still waits to be pinpointed, for a crew and for access to the land. The facts now say so, and the exhibit insight and model answer now say the sensors cut only the time before a leak is found (about 25 days on each of 3,200 rural leaks). A new good sign rewards asking whether faster repairs and agreed land access would help as well, and a fact says the director has not costed those on their own.
+- Half of the £4 million gross yearly saving is fewer bursts, which the trial could not test. The trial fact now says the district was too small and 12 months too short to show it. A new good sign rewards spotting it: at £1 million a year of burst savings payback is 6 years, and with none it is 12, beyond the sensors' 10-year life. The model answer no longer says the town centres go last "mainly to prevent bursts", because no fact says where bursts happen, and a fact now says Tarnmoor has not split its burst costs by area.
+- The prompt now gives the director's town-first plan and the board's five-year payback rule. The AI interviewer shares a fact only when asked, so a candidate who never asked would not have known two things the answer depends on.
+- The rubric had credited moving inspectors into repair crews without any number to back it. The inspectors fact now says the director has not worked out how many would still be needed, and a good sign rewards the break-even: with four extra crews, payback is back at five years only if about 8 of the 30 inspectors (£0.4 million a year) can move into crews.
+- New good sign for noticing that savings build up over the 18-month rollout, so payback from the first spend is nearer 4¾ years. The payback working tells the interviewer to accept 4 as the answer.
+- Smaller fixes: the next steps now include redoing the business case for the rural phase alone; "a landowner's permission" is now "access arranged with the landowner", since water companies usually have powers to enter land; and the claims about replacing mains and lowering pressure are now Tarnmoor's engineers' estimates.
+- Rejected: a fact saying exactly how many inspectors would be freed (it would tie up the crew problem too neatly), and a fifth maths question for the burst or inspector sums (four is already a lot for 30 minutes).
+
+**Please check or decide**
+
+- Main judgement call: approve, in phases, starting in the rural areas (80% of the water lost) rather than the town centres, with repair crews and land access agreed first. Check you agree that "start rural, not in the town centres" should be a required point.
+- Format: McKinsey's examples give the numbers for a calculation as bullet points inside the question. Here they are a small exhibit the interviewer shares, so the code can check every input. The format reviewer asked for this to be recorded here.
+- Name: Tarnmoor is the fourth "-moor" client (see the points that apply to all ten). The fixer left the choice to whoever adds the case to the site. A web search found no water or leak-detection company called Tarnmoor ("Tarn Moor" is common land in Cumbria).
+- The rubric's burst, inspector and rollout figures are worked numbers checked by hand, not by the tests. With four maths questions as well, check the pace fits 30 minutes.
+- The regulator, its target and its penalty appear only as the client's own statements; no real regulator or rule is named. Check the invented figures (a quarter of water lost, £100,000 a year saved per megalitre a day, £250,000 per repair crew, 20,000 sensors for £10 million) feel right for a UK water company.
+- Resemblance check: no reviewer found a likeness to a published case. The case does follow McKinsey's interviewer-led shape closely (a brief, a structuring question, an exhibit to read, a multi-step payback, an implementation question). Please confirm it does not resemble any published practice case you know.
+
+## case-028: Fellwick Garden Centres: how to get sales growing again
+
+`content/cases/fellwick-garden-centres-growth.json`, on the preview at `/cases/fellwick-garden-centres-growth`. Growth, BCG-style (candidate-led), difficulty 2, about 35 minutes. A family-owned chain of six Midlands garden centres has had flat sales of £36 million for three years and wants £45 million within four, and the candidate finds that the flat total hides a shrinking garden shop before choosing where the growth should come from, including whether to build the chair's favoured seventh centre.
+
+**What the reviews changed**
+
+- Both reviewers found the case unfair to the seventh centre: the £3.6 million from winning back lost shoppers was added only to the plan without it, and had no cost. A new fact, "Winning back shoppers", gives the marketing team's programme a cost of about £2 million of the £8 million budget and about £0.5 million of year-4 profit. The plans are now compared like for like: without the centre, about £45.1 million for £5 million (or £46.1 million for £6 million with the online shop); with it, at most about £43 million. The insight now admits that, on the shortlist alone, the chair's mix (£43 million) slightly beats the four cheaper options (£42.5 million).
+- The money held back did not add up, and "revisit the centre in year 2 with the £4 million held back" could not work, because the centre costs £6 million. The recommendation now spends about £5 million and holds about £3 million back, puts the online shop last as the fallback, and says to look at the centre again after year 2 as growth for after year 4, needing a bigger loan or the new businesses' profits. A next step asks whether the family can hold on to the site meanwhile.
+- The flat £36 million base is itself at risk. The sales history fact now says it rests on price rises the buyers expect to slow and a café that is full at weekend lunchtimes. The must-mention now says the win-back first stops sales falling and only then adds to them.
+- "Win back half" had no evidence. A new test result gives some: a 10%-off voucher brought back 1 in 10 lapsed members, while help carrying to the car, delivery and a small-garden range brought back 1 in 3. Half is now called a stretch target, and a good sign rewards testing it: at a third, the plan reaches only about £43.9 million.
+- Both reviewers found that Sorrelby (case-032) was also a garden-centre chain thinking about an online shop. Sorrelby was changed into a plant grower, so Fellwick is now the only garden-centre client, and its website sentence was reworded.
+- Smaller fixes: the new centre's payback now reads "more than 10 years"; a garden-care milestone (about 250 households per centre by the end of year 2) and winter work for the crews; "last summer" became "last year" for a pilot that included spring planting; café visits now rise 9%, so the café's 20% growth adds up; the chain moved from the north of England to the Midlands, away from Fenwick's home ground; and wording that echoed Cragwell (case-018) and Kelstow (case-030) was changed.
+- Rejected: moving the centre's opening to year 4 with £1 million of sales (the win-back's cost already stops the centre's mix reaching £45 million), and a maths question on the share of lost shoppers that must come back (the numbers are not easy by hand).
+
+**Please check or decide**
+
+- Main judgement call: do not build the seventh centre now; roll out garden care centre by centre, run the win-back, enlarge the cafés and open the trade counter, with the online shop as the fallback. Without the online shop the plan clears £45 million by only about £0.1 million. Check you agree, and that a candidate who backs the new centre with good reasons is scored fairly.
+- Name: Fellwick sounds like Fenwick, a real family-owned retailer from Newcastle (department stores, a different field), and like Fennick Software (case-026). The fixer moved the chain to the Midlands rather than renaming it and said the founder can rename it later. A web search found no garden centre, nursery or UK company called Fellwick.
+- Library likeness: Cragwell (case-018) is also a candidate-led growth case about a chain of English sites choosing between new sites and growing the ones it has. Decide whether the two feel too alike.
+- Garden care needs about 500 households per centre against 120 in the pilot's first two months, and about 60 gardeners for seasonal work. Check this reads as a stretch rather than impossible. The rubric names, but does not size, the risk of counting the same customers twice (garden-care households and won-back shoppers).
+- BCG's published examples could not be read, so the case follows BCG's own published guidance (a short overview, then candidate-led, with quick maths that feeds decisions, a creative question and pushback on the answer) and our general format.
+- Resemblance check: the format reviewer found no published garden-centre case. Please confirm it does not resemble any published practice case you know.
+
+## case-029: Larchmere Padel: should it open a club in a new city?
+
+`content/cases/larchmere-padel-new-city-club.json`, on the preview at `/cases/larchmere-padel-new-city-club`. Market entry, Bain-style (candidate-led), difficulty 2, about 30 minutes. A padel operator with five clubs in the south of England has found a warehouse for an eight-court club in a northern city, and the candidate sizes the local market, works out break-even and payback against the board's two tests, and recommends whether to sign the lease next week.
+
+**What the reviews changed**
+
+- Payback is now counted from opening, as the board's test is. The old question asked for "years of mature profit" (4), so a candidate who rightly said 4.8 years would have been marked wrong by the code. The new question's answer is 4.8 years (within 2%), and the plan table now has the year-1 and year-2 fill rates. The working tells the interviewer to ask a candidate who says 4 to count from opening.
+- The three months rent-free are now tied to the timeline: rent starts at signing, fitting out takes three months, and signing after the six-week offer means about £45,000 of rent before opening, which pushes payback to about 4.95 years.
+- Both reviewers found the competition logic overstated what the 28,000 court-hours played outside the catchment prove. Those players leave at peak times, but about 9,600 of the club's 24,000 mature hours are off-peak. The insight and model answer now say the lost play covers break-even twice over and most of the peak hours, while off-peak hours must be built with coaching and leagues. If the national operator also opens, about half (not "most") of the two clubs' hours would have to come from the rivals or from new players.
+- Rule 2.1: the format reviewer found that the "good answer" sentence followed the model answer of Bain's published Coffee Shop Co. practice case with the numbers changed. The good answer now rests on this case's own test ("Yes: it passes the board's first test...").
+- The market inputs changed from 4% of adults playing 20 hours a year to 2% playing 40 hours, which is more believable for people who play at least monthly. The market is still 140,000 court-hours and £5.6 million. The price row is now labelled as Larchmere's planning figure.
+- Smaller fixes: almost all rival players live in the catchment, so the competition table adds up to the market; hiring by the hour is Larchmere's own practice, not a general claim about padel; the next steps are split into before and after signing; other income (about 15% on top) is now a cushion in the rubric; staff and other fixed costs were rebalanced so business rates are believable (the total is still £420,000); and the time went up from 25 to 30 minutes.
+- Rejected: renaming, a reviewer's alternative rent-free timing that contradicted the must-fix, and moving the case to a US city in dollars (it would touch every figure).
+
+**Please check or decide**
+
+- Main judgement call: go ahead, with conditions. The club passes the second test only just (about 4.8 years against five) and needs about 58% of its hours sold from year 3. Check you agree, and that a reasoned "not yet" (find out the national operator's plans first) is scored fairly.
+- Name: Larchmere is close to Larkmoor (case-019). The fixer flagged it as a mild clash for you rather than renaming. A web search found no padel, tennis or racket club called Larchmere.
+- Library likeness: Hollowlatch (case-035) shares part of the premise (leased units, a large new eight-unit site, hourly bookings, a lease question), and Hollowlatch uses a similar break-even sum for a different decision.
+- Setting: the format reviewer noted the library leans to the north of England, while CONTENT.md asks for a mix of UK and US settings.
+- Pace: Bain's format has one or two light calculations, with payback inside the better answer. This case has three scored questions plus several worked numbers in the rubric.
+- Resemblance check: the format reviewer raised this. Besides the good-answer wording (now changed), the case shares the broad skeleton of Bain's Coffee Shop Co. case: one new outlet in an English city, a market of local residents only, a top-down market size, then break-even, then a better answer that adds payback and competition. That skeleton comes from the format notes, so only the wording was changed. Please confirm the case does not read as a re-skin of Coffee Shop Co. or any other published practice case you know.
+
+## case-030: Kelstow Luggage: why is it losing share to an online rival?
+
+`content/cases/kelstow-luggage-lost-share.json`, on the preview at `/cases/kelstow-luggage-lost-share`. Growth, Deloitte-style (candidate-led), difficulty 2, about 35 minutes. A family-owned UK luggage brand has lost a third of its market share in four years while an online-only rival has more than tripled its share, and the candidate works out why, sizes the opportunity with 18 to 34 year olds and decides whether to cut prices by 25% to match the rival.
+
+**What the reviews changed**
+
+- The model answer and idea bank suggested offering stores the new lighter range at £90, which the case's own numbers show loses about 50p a case once the store keeps its 45% margin. Stores now get it in store-only colours at a shelf price that covers their margin (at about £110 Kelstow makes about £10.50 a case), and a good sign rewards checking this.
+- The £14-a-case profit at £90 was also applied to online marketplaces, but it uses own-website costs and the case gives no marketplace fees. It now applies only to Kelstow's own website, with marketplaces as a later step.
+- The prompt now lists every set of data the team holds (shares, channels, the survey with buying criteria and ratings, and price and cost per case, with the rival's as estimates). In a candidate-led case the interviewer rarely offers data, so the candidate needs to know what to ask for.
+- The "Who buys Tramlo" fact gave away the first maths answer (it said the rival had "a quarter" of young people's spending, worth £40 million). It now gives only the rival's sales by age group.
+- The price-cut working said selling more cases would "only add to the loss", which treats marketing and overheads as costs that grow with every case. It now says Kelstow would keep £11.50 a case after making and shipping instead of £28, so store sales would have to rise about 2.4 times just to earn the same. A good sign rewards this.
+- The price-cut question now asks for a profit or a loss and how much, with a loss given as a positive number, and is worked from the 25% cut rather than from the rival's price.
+- New good signs: the 35 to 54 group (Kelstow lost £10 million there, and the rival has already overtaken it); the size of the prize (each 5 points of share among 18 to 34s is worth about £8 million a year); and two new risks (warranty costs if the lighter case breaks more often, and paying for the push from Kelstow's own profits, with no outside investors).
+- Smaller fixes: channel wording now says "brands' own websites and online marketplaces" rather than "online"; the structure no longer asks for data on the move online that the case does not have; and the exhibit titles are shorter, with definitions moved into the column headings.
+- Rejected: switching to interviewer-led, lowering the rival's estimated £20 profit a case, raising the time to 40 minutes (the writers' brief capped cases at 35) and renaming.
+
+**Please check or decide**
+
+- Main judgement call: no to the 25% price cut; launch a lighter range that keeps the 10-year warranty, sold mainly on Kelstow's own website, with a store version at a higher shelf price. Check you agree.
+- Style: Deloitte's format is a written pack the candidate works through alone, with three fixed questions. The realism reviewer suggested interviewer-led; the fixer kept candidate-led and made the prompt list every data set. Decide which suits it better.
+- Length: five exhibits and four maths questions make this the heaviest case in the library, at 35 minutes.
+- Tramlo's estimated profit of £20 a case (22% of its price) is generous for a six-year-old brand that spends heavily on social media. It is labelled as the team's estimate; lowering it would muddle the comparison with selling direct.
+- Name: Kelstow shares the "-stow" ending with Hartstow (case-036) and Stowline (case-010). The fixer left renaming to the person adding the case to the site. A web search found no luggage brand called Kelstow or Tramlo.
+- Resemblance check: both reviewers raised this. The format notes came from Deloitte's published written sample case, which is about footwear. Kelstow differs in industry, country, customer groups (age, not occupation), the kind of rival, every number and the yes or no question (a price cut, not a sub-brand). But it follows that sample's "why the rival wins" outline: the client is not sold where the key group buys, the rival matches that group's top buying criteria, and the rival pays no retailer's margin. Its storyline is also an established brand losing a younger group to a newer rival, with a yes or no on one option. Please confirm it is not a re-skin of that sample or of any other published practice case you know.
+
+## case-031: Fernmoor Dental: should it offer clear aligners?
+
+`content/cases/fernmoor-dental-clear-aligners.json`, on the preview at `/cases/fernmoor-dental-clear-aligners`. Market entry, Accenture-style (candidate-led), difficulty 2, about 35 minutes. A group of 20 private dental practices in north-west England wants to launch clear aligners in every practice at once after a six-month pilot in two, and the candidate works out the break-even, tests whether the pilot can be trusted and recommends how to launch.
+
+**What the reviews changed**
+
+- Timing: the pilot and the referral counts were both "last year", so the pilot practices' high referrals could have been counted while they were treating mild cases themselves. The pilot now ran from January to June this year, and every comparison figure is from last year, before it.
+- A good sign had credited the shallow answer "the pilot points to 600 a year against a break-even of 500, so launch everywhere", which is also a red flag in the structure rubric. It now credits getting 500 and 600 right and flagging the thin headroom, and says launching everywhere on 600 "is not a good answer here". The better answer re-bases the forecast to about 375 a year, a loss of about £125,000.
+- The recommended first wave could not be checked against the partners' break-even rule, because nothing said what a smaller launch costs or how often the other practices refer patients. New facts give both. A 10-practice first wave costs about £200,000, so it needs 200 starts, and is forecast at about 240, with £180,000 of scanner lease commitments instead of £360,000.
+- The rule for going further now rests on two lower-spend practices included in the first wave as a test (about 20 starts a year each), not on the six that look like the pilot practices, which would repeat the very bias the case teaches.
+- The pilot is now shown as biased both ways: volunteer practices with richer patients push it up, and no paid marketing or coordinators push it down, so the £320,000 of marketing and coordinators is the unproven part.
+- New maths question on capacity: 500 treatments use about 25% of the dentists' unfilled hours, which answers the partners' worry about routine care.
+- To fit Accenture's "more facts than needed" case type, the prompt now carries extra details, some of them irrelevant (hygienists, chairs, visits a year). The interviewer now asks for the candidate's own estimate before sharing the patient table.
+- Smaller fixes: a fact says each treatment counts in the year it starts; treatment length and which cases suit aligners are now Fernmoor's own plan (rule 2.2); price is a new lever (at £3,000 the break-even falls to about 333); the timing fact gives a real reason for the two-month lead time; new risks (pent-up demand in the pilot, whether self-employed dentists want the work at £600, training time); and the time went up from 30 to 35 minutes.
+- Rejected: renaming, and maths questions for the 25-a-practice bar, the first wave and the 375 figure (the first would share an answer with the capacity question, and the others would give away the twist).
+
+**Please check or decide**
+
+- Main judgement call: go ahead, but in a first wave of 10 practices, not all 20 at once. The model answer says "extend the pilot first" or "launch only in the practices like the pilot" can score as well if argued with the numbers. Check you agree.
+- The numbers that carry the twist (about 375 a year, the £125,000 loss, the first wave's 200 against about 240) are checked by hand, not by the tests. The first-wave forecast is 237.5, written as "about 240", and its profit of about £37,500 is worked from 237.5.
+- Name: Fernmoor is one of four "-moor" clients. The fixer kept it; the nearest real use found was Fernmoor Homes, a homebuilder in the US.
+- Check the invented figures feel right for UK private dentistry: £2,500 a treatment against about £3,500 at local orthodontists, £700 to the supplier, £600 to the dentist for about 3 hours, and £6,000 a year for each scanner lease.
+- Resemblance check: the format reviewer raised this, and the fixer asked for it to be recorded here. It found the maths chain follows Accenture's own workbook example step by step: a food company launching fresh meals after a limited consumer test, with the margin per unit, fixed costs, break-even, a small market size inside it, the share of customers needed and whether that is realistic. The method is generic and the industry, numbers and pilot twist are original, and a rubric line that echoed the workbook's wording was rewritten. Please confirm the break-even chain does not make the case read as a re-skin of that example or of any other published practice case you know.
+
+## case-032: Sorrelby: how big is the UK houseplant delivery market?
+
+`content/cases/sorrelby-houseplant-delivery.json`, on the preview at `/cases/sorrelby-houseplant-delivery`. Market sizing, PwC and Strategy&-style (interviewer-led), difficulty 2, about 30 minutes. A family-owned houseplant grower that has only ever sold wholesale is thinking of launching its own delivery service, and the candidate sizes the UK houseplant delivery market two ways, works out which kinds of sellers are winning, and recommends whether and where to enter.
+
+**What the reviews changed**
+
+- The client was a chain of 30 garden centres, which overlapped Fellwick (case-028) and even repeated its website sentence. It is now a grower with two nurseries and about £40 million of wholesale sales to supermarkets, DIY chains and garden centres, mostly under the retailers' own labels. Its strengths and gaps, the idea bank and the model answer were rewritten to match, and a new fact says how its two biggest customers would react to it selling direct.
+- The gift figures did not fit the market size: about a third of orders as gifts, mostly at the premium sellers, would have been more than those sellers' total sales. Gifts are now about a fifth of sales by value, half of it at the premium sellers.
+- Value and mid-market sellers were tied at £55 million each, yet the answer key said value was the largest. Two rows of the table changed, so value is now £60 million and the middle £50 million; the rows the maths uses did not change.
+- VAT: the market figures included VAT, but a finance team's margins would not, which made the margins unrealistic and could have marked correct answers wrong. Everything is now excluding VAT and including delivery charges. No numbers changed.
+- The premium-share question could be read two ways (8 of 80, or 8 of 88); it now says the doubled premium end includes Sorrelby's own sales.
+- Rule 2.2: figures that read like real UK market statistics now start with "Assume" or are credited to Sorrelby's own research or survey.
+- Smaller fixes: the sellers table is shared only after both market estimates (otherwise it gives the size away); new good signs note that the middle passes the profit test only just (£0.4 million) and is shrinking, and that the board's test ignores the £3 million set-up cost; segmenting the market is now a structure good sign; the brainstorm question no longer assumes the premium end; the expected premium growth is now a fact; and the margins now allow for replacing damaged orders.
+- Not done: the same change to the "candidate's own guesses" wording in case-017 (see below).
+
+**Please check or decide**
+
+- Main judgement call: go ahead, at the premium end and under its own brand, not as another mid-priced seller. £8 million needs about 10% of a premium end that doubles to about £80 million, and makes about £1.6 million of profit. Check you agree.
+- Check the client's invented margins after delivery (45% at premium prices, 30% at average and 20% at low prices) and the £2 million a year of running costs "whatever the prices", which simplifies marketing that would really grow with sales.
+- The UK figures (28 million households, 50 million adults, 40% buying houseplants, £1 billion of total spending) are rounded case assumptions, not real statistics.
+- Sorrelby's vans cover much of England, while the market is the whole UK. The fixer left this as it is.
+- Library-wide choice: case-017 still tells the interviewer to call every guess a candidate offers "a fair guess". Sorrelby now has the interviewer say briefly whether the guess seems sensible, then give the case figure. Decide which wording all cases should use.
+- The eight sellers' price index, weighted by sales, averages about 103, so the rest of the market would average a little under 100. It is consistent, and worth knowing if a candidate asks.
+- Name: a web search found no grower, nursery or other business called Sorrelby. The writer dropped two earlier names that were close to real garden centres.
+- Resemblance check: the format reviewer noted that PwC UK's own online practice case could not be opened (the site did not load; this is in `docs/RESEARCH_TODO.md`), so it could not compare the two, and a web search found no casebook case on houseplant delivery. Please confirm the case does not resemble any PwC, Strategy& or other published practice case you know, and that it shares only the format (two separate ways to size the market, a chart of who is winning and losing, a creative question and a recommendation).
+
+## case-033: Lanebrook Swim Schools: is the seller's plan believable?
+
+`content/cases/lanebrook-swim-schools-due-diligence.json`, on the preview at `/cases/lanebrook-swim-schools-due-diligence`. M&A, EY-Parthenon-style (candidate-led), difficulty 2, about 35 minutes. A private equity fund is bidding for a chain of 60 children's swim schools whose seller says revenue will double from £18 million to £36 million in five years, and the candidate, doing the checks on the market and the plan before the bid, tests each assumption and gives a year-5 revenue the fund can believe.
+
+**What the reviews changed**
+
+- Year-5 revenue was never defined, and the code marks the base case within 2%. The facts, the plan table and the base-case question now say it is the yearly rate at the end of year 5: children enrolled then x the year-5 monthly fee x 12. The question also says new sites open at the start of each year.
+- The base case used 5 openings a year, called "the most Lanebrook has ever opened in a year", while the facts read as about 4 a year. The fact now says Lanebrook opened 5 a year for four years, eight to eleven years ago, and the base case calls that the pace it kept up and what its property team expects. A second downside (4 a year, about £27.8 million) was added.
+- All the market's growth comes from a higher share of children taking lessons while the number of children falls, and nothing said why. The research fact now says the higher share comes from parents of children under 3 saying they plan to pay for lessons: a stated plan, not a past trend. The model answer calls it the softest of the assumptions that hold. A logic slip ("depends on parents continuing to pay") now reads "depends on more families starting paid lessons".
+- The retention working wrongly said reaching the plan's 2.5% monthly leaving rate would mean keeping children who can already swim. It now says it needs all the lesson-time and unhappy leavers plus half of those who leave over cost, while fees rise every year. The must-mention was reworded so a candidate who says cost is fixable is not marked down.
+- The recommendation called Lanebrook "a steadily growing business", though enrolment has been flat for three years. It now says "a stable business whose fee rises have stuck", and the model answer notes the plan needs 67% more children after three flat years.
+- Capacity is now spelled out: peak slots hold about 555 children a site, so the plan's 600 fails whatever the leaving rate, and the base case's 550 leaves sites effectively full.
+- Smaller fixes: a market-share check (the plan would take Lanebrook from 10% to about 15% of the market, two-thirds of its growth); a good sign on weak evidence (only half of leaving parents give a reason, and the app pilot was small); the existing-site gap is £2.2 million everywhere; the advice now also gives profit for the fund's model (about £5.8 million at the plan's 20% margin, against £7.2 million); the ramp-up table's last row now says "today" rather than "mature"; and empty table cells were filled.
+- Rejected: changing the plan's "double in five years" target to reduce the likeness with Cragwell (it would change every number), and making capacity a required must-mention (a candidate who explains the gap through retention alone should not fail a required point).
+
+**Please check or decide**
+
+- Main judgement call: nothing found should stop the deal, but the fund should base its bid on about £29 million of year-5 revenue rather than £36 million, and treat the plan as upside. Check you agree.
+- Library likeness: as in Cragwell (case-018), revenue doubles in five years, peak slots are nearly full with spare daytime capacity, and growth relies on new sites maturing. Both reviewers rated this acceptable, because this case tests a seller's plan rather than building a growth strategy. Decide whether it feels repetitive.
+- The base case's 5 openings a year for five years (25 sites) is more than Lanebrook's earlier burst (20 sites in four years), and its teachers have never staffed more than 5 new sites in a year. The 4-a-year downside covers this; check it carries enough weight.
+- Noticed while writing these notes: the year-5 share (30%) applies the plans of parents of children under 3 to every child aged 3 to 11 in year 5, though many of those children are already of lesson age today. Decide whether to accept this simplification or explain it in the fact.
+- EY-Parthenon's published examples could not be read, so the case follows our general format. Candidate-led was the writer's choice, based on our EY-Parthenon guide (from the firm's careers pages), which says candidates should ask questions and explain their thinking.
+- Names: web searches found no swim school called Lanebrook and no investment firm called Mosswick Capital. The writer dropped "Tarnfield Capital", which was close to a real UK investment company.
+- Resemblance check: the format reviewer found no published swim-school case. Please confirm it does not resemble any published practice case you know.
+
+## case-034: Silverbeck Linen: should it bid for a hospital contract?
+
+`content/cases/silverbeck-hospital-laundry-bid.json`, on the preview at `/cases/silverbeck-hospital-laundry-bid`. Growth, Oliver Wyman-style (interviewer-led), difficulty 2, about 30 minutes. A family-owned laundry with one plant in the north of England is invited to bid for a five-year, wash-only contract with a hospital trust, and the candidate works out the extra costs and profit against the chief executive's two tests and recommends whether, and on what terms, to bid.
+
+**What the reviews changed**
+
+- Both reviewers found the 10% margin test ambiguous. A candidate who spread the £1.5 million set-up cost over the five years would get about 5% and say the contract fails, against an answer key that says it passes. The fact now says the test is before the set-up cost, which is judged only by the three-year payback test. A good sign adds that over five years, after set-up, the contract earns about £1.5 million on £28 million of revenue, about 5%, half today's margin.
+- The price-gap fact said other customers pay more because their price includes linen hire, but linen costs only about 4p of the 10p gap. It now says the rest is because the other customers are far smaller. A good sign and a new red flag cover the point that 40p is below today's average cost per piece (45p, or about 41p without linen), so the contract pays only because the building and the managers are already paid for.
+- The answer key said capacity was fine (42 of 48 million pieces), but private volume grows about 1 million pieces a year. It now says capacity fits at the start (about 43 million) but is nearly full by year five, and that private growth alone would outgrow the plant's two-shift limit in about four years.
+- No fact covered what happens at the guaranteed minimum of 12 million pieces. A new fact says labour and delivery stay about the same, and a good sign works it through: the profit falls to about £60,000 and both tests fail, so the bid should ask for a higher price below an agreed volume.
+- New good signs on the fixed price (a 1% rise in the contract's costs breaks the 10% test, so a yearly price review is the main condition) and on energy (a 20% rise pushes payback to 3.75 years and fails both tests).
+- Each maths working now ends with what to find out next, as Oliver Wyman's format does.
+- Smaller fixes: "near the plant" is now "in the same region" (the furthest hospital is 40 miles away); the capacity fact now makes the 48 million add up; the hygiene fact no longer contradicts itself; the staffing fact says none of the trust's laundry staff move to the winner; the insurance point is the finance director's judgement; the penalty point no longer depends on rounding; and the must-mention now says only the 10% margin test is passed narrowly (payback at 2.5 years against three is comfortable).
+- Rejected: raising the linen costs (it would rework every cost line and maths answer), rebuilding the thin-margin ending (see the resemblance check), cutting to three maths questions (the 25% labour headroom stays checked by code) and a maths question for the 12 million case (its answer is near zero, which percentage tolerances handle badly).
+
+**Please check or decide**
+
+- Main judgement call: bid, but not on the guide terms as they stand (a yearly price review or a price a little above 40p, a higher price below an agreed volume, and a plan to staff the night shift), or do not bid. Check you agree.
+- Linen costs look low: about 3.6p a piece (£1 million for 28 million pieces), while hire customers pay about 10p more than this wash-only price. The new price-gap fact makes the case consistent, but an industry reviewer may find the figure odd. The fixer flagged this for you.
+- Staff moving across: when a public service moves to a contractor, a UK candidate may expect the trust's laundry staff to transfer to the winner with their pay and pensions. The case avoids this with a fact saying none move (the trust gives them other jobs). Check this reads as realistic. The case deliberately names no law.
+- Format: Oliver Wyman's format has one to three calculation questions and four to six steps; this case has four scored maths questions. The fixer kept four so the labour headroom stays checked by code, and made the payback question a follow-up to the profit question.
+- Name: a web search found no laundry or linen business called Silverbeck (the nearest was Silverberry Limited, unrelated).
+- Resemblance check: the format reviewer raised this. The outline is close to Oliver Wyman's published Urban Grocers case (about switching truck sizes): cost lines that each rise by a different percentage, costs that do not rise in line with volume, overheads unchanged, and an extra profit that beats the extra cost by a thin cushion (about £40,000 here) that a small upset wipes out, followed by risks with fixes and a creative extra. The industry, question, numbers, the two tests, payback, the price lever and the volume guarantee all differ, and the ending now leans more on the fixed price and the guaranteed volume. The fixer did not rebuild the thin-margin ending, because cost lines rising by different percentages are the format's own named calculation and, working clean-room, it could not see the firm's case. Please judge whether the thin-margin ending makes the case too close to Urban Grocers, and confirm it does not resemble any other published practice case you know.
+
+## case-035: Hollowlatch: why does its Birmingham venue lose money?
+
+`content/cases/hollowlatch-escape-rooms-birmingham.json`, on the preview at `/cases/hollowlatch-escape-rooms-birmingham`. Profitability, L.E.K.-style (candidate-led), difficulty 2, about 30 minutes. An escape-room company with seven venues has one, its newest and largest in Birmingham city centre, that keeps losing money, and the candidate finds the cause is too many rooms for its demand rather than too few customers, then recommends what to do before the board meets.
+
+**What the reviews changed**
+
+- The staffing facts contradicted each other: the core rota covered every room at all times, yet extra hosts were a cost per game. The core rota now covers the manager, front desk and core hosts set by opening hours and the number of rooms, and casual hosts are booked only for games that are actually booked.
+- The answer key said both "the problem is not a lack of customers" and "Birmingham is limited by demand". It now says Birmingham does not have fewer customers than the other sites (it has more) but has too much capacity for its demand, so a candidate who says it has too few customers for eight rooms is not marked down.
+- Break-even is now defined as site profit before head-office costs, in the objective fact and in the maths question, so a candidate who spreads head-office costs is not marked wrong on an answer the code checks.
+- Rule 2.1: the prompt's closing questions closely followed the two questions in L.E.K.'s published Brewery Profits sample case. They now read "what is holding Birmingham back and what she should do about it before her board meets in three months".
+- Too close to Larchmere (case-029), written in the same batch: the build cost is now £1.5 million (it was £1.2 million, the same as Larchmere's fit-out); there are seven sites, not six (Derby was added, with the table re-derived so the other sites' averages stay the same); and the slots and fill rates changed, so the benchmark is 75% of slots filled rather than the 60% Larchmere also uses.
+- Closer to L.E.K.'s spoken style: the ratings table became a spoken fact (three exhibits now), and a new fact (about 100 offices with 50 or more staff within a mile) gives the candidate something to estimate from their own assumptions.
+- Business rates (about £60,000 a year) now stay due on an empty unit, so closing the whole site would raise the loss from £160,000 to about £380,000, and even closing and subletting part of it would lose well over £200,000.
+- Smaller fixes: new facts on depreciation, on why closing three rooms saves less than the average cost per room, and on repeat visits; the sublet's real cost is shown to be peak headroom (five rooms would be about 92% full at peak); the second goal (an average site's £120,000) is now covered; the expansion advice is softer ("do not commit the two planned sites to eight rooms without evidence the city can fill them"); the gym failing to pay is a named risk; and the title now says "venue" rather than "escape room".
+- Rejected: renaming, and a reviewer's suggestion that business rates would stop if the empty unit were used for storage (a unit used for storage still pays rates).
+
+**Please check or decide**
+
+- Main judgement call: accept the gym's offer to sublet the space of three rooms (about £20,000 of profit instead of a £160,000 loss) and grow off-peak demand in the remaining five. Check you agree.
+- Library likeness: the fixer changed several numbers, but Hollowlatch and Larchmere still share part of their premise (leased units, a large new eight-unit site, hourly bookings, a lease question). Decide whether more should change.
+- Name: Hollowlatch starts like Hollinsway (case-014). A web search and Companies House found no escape room or UK company called Hollowlatch.
+- Format: L.E.K.'s format has no exhibits, and the candidate supplies all the numbers. This case still hands over most numbers in three tables, so the code can check the maths, and one estimate is now the candidate's own.
+- Check the invented figures for a city-centre leisure unit: rent of £320,000 a year, business rates of about £60,000, and about £25 a player.
+- Resemblance check: the format reviewer raised this. Besides the prompt wording (now changed), the answer's theme is close to L.E.K.'s Brewery Profits sample: a profit gap between sites explained by cost structure. The escape-room setting and every number are original. Please confirm the case does not resemble that sample or any other published practice case you know.
+
+## case-036: Hartstow Storage: should it build three more stores?
+
+`content/cases/hartstow-storage-demand.json`, on the preview at `/cases/hartstow-storage-demand`. Growth, OC&C-style (interviewer-led, a data-interpretation case), difficulty 2, about 30 minutes. A self-storage company with eight Midlands stores plans to build three more for £18 million after five years of rising occupancy, and the candidate reads a set of demand and supply exhibits, one of them deliberately irrelevant, finds that recent growth came from one group that has stalled while rivals are overbuilding, and recommends what to do.
+
+**What the reviews changed**
+
+- Rule 2.1, the biggest change: the format reviewer found the second half of the case retold OC&C's published Leisure Clubs data-interpretation sample. A chain asks whether to build more sites, rivals' building plans come up, the critical issue is supply growing faster than demand, and the answer is to build where no rival is building because customers are loyal. Working only from the reviewer's description, the fixer rewrote it. All three proposed sites are now in towns where Hartstow already trades and a rival is opening; about a third of each new store's customers would come from Hartstow's own store in that town; the critical issue is that Hartstow's own plan is the joint-largest addition and would make the glut worse in its own towns; and a new maths question puts the rent at risk at its existing stores at about £1.3 million a year. The demand half (online sellers and the fulfilment centre) was judged original and kept.
+- OC&C's format ends with the interviewer revealing what the client actually did and asking why it worked. A new fact holds an invented outcome: Hartstow let the land options lapse, kept the £18 million, offered long-stay customers 12-month fixed rents before rivals opened, turned empty ground-floor space into drive-up trade units for about £1 million, matched rivals' move-in offers only for new customers, and two years later bought a rival's under-filled new store for about two-thirds of its build cost. A good sign rewards explaining why it worked with competitive reasoning rather than repeating the numbers.
+- A good sign had labelled the board's mistaken view ("demand grew by a third, so build") as a good answer. It is now the weak rung of a weak, good and excellent ladder.
+- The central claim (underlying growth of about 4% a year) assumed online sellers' space stops growing, but no fact said so, and the trend line's latest year was its fastest. The fulfilment centre now opened three months ago, online sellers' space has been flat since, nearly all of this year's rise came before it opened, and the study expects it to stay flat.
+- The advice on long-stay customers now says the same thing everywhere: across-the-board discounts are wasted on them, but a 12-month fixed rent offered before rivals open is a cheap lock-in, because a big move-in offer next door is the one thing that might make them switch.
+- The structure rubric had marked down a candidate for answering the prompt's own question (what drives demand) without raising supply. Supply and the board's 75% test are now "excellent" extras rather than required parts.
+- Smaller fixes: the supply table's labels are clearer; archives now stay five years or more, fixing a contradiction; supply and demand are compared in square feet (250,000 of rivals' new space against about 96,000 of new demand); the growth question asks for the three-year total, not the yearly rate; a new fact on past supply explains why everyone is building at once; claims that read like industry facts are credited to the study or Hartstow's records; the interviewer has a pushback cue; the customer-group data was rebalanced so "movers barely grew" is true; the maths went from four questions to three; and the title changed from "will demand keep growing?" to "should it build three more stores?".
+- Rejected: a second irrelevant exhibit (one already tests filtering, and the case would run long) and renaming.
+
+**Please check or decide**
+
+- The reveal of what Hartstow did relies on the AI interviewer offering a fact as its one follow-up, which goes against its rule to share facts only when asked (`lib/ai/prompt.ts`). It has not been tried with a real model. If a real run shows it does not work, the case should say the format's last step is adapted, not followed.
+- Main judgement call: do not build the three stores now; protect and make better use of the existing stores. The rubric also accepts asking the landowners to extend the options and deciding later. Check you agree, and that building all three is rightly the weak answer.
+- The board's best case gives about 74% against its 75% bar, which the case pairs with new stores filling more slowly than established ones. Check the argument is convincing at that margin.
+- Name: Hartstow shares the "-stow" ending with Kelstow (case-030) and Stowline (case-010). A web search and Companies House found no storage business or UK company called Hartstow.
+- Format: OC&C's sample has several irrelevant charts among the demand data; this case has one.
+- Resemblance check: both reviewers raised this, and the second half was rewritten as described above. The question order still follows OC&C's format closely (what drives demand, several demand charts with one irrelevant, a supply chart and the critical issue, how to segment, then what the client did). Please confirm that, beyond that order, the case does not resemble OC&C's Leisure Clubs sample or any other published practice case you know.
