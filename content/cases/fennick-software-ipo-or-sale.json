@@ -154,7 +154,7 @@
           ["Fees paid by the sellers (% of what their shares sell for)", 2, 3],
           ["One-off costs paid by Fennick itself (£ million)", 1, 5],
           ["Extra yearly running costs afterwards (£ million)", 0, 2],
-          ["Months until the sellers are paid", 4, 7],
+          ["Months until the sellers are paid (if she decides now)", 4, 7],
           ["When the price becomes final", "When signed, after about 6 weeks of the buyer's checks", "At the end of the bookbuild, just before listing at about month 7"],
           ["Lock-up for the founder (months)", "None", 12],
           ["Lock-up for the venture capital fund (months)", "None", 6]

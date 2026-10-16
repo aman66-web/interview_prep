@@ -1,6 +1,6 @@
-# Case review notes (15 Oct 2026)
+# Case review notes (15 and 16 Oct 2026)
 
-These notes are for the human case reviewer (see `docs/REVIEWER_GUIDE.md`). On 15 Oct 2026 every one of the 20 practice cases went through two rounds of checks by Claude:
+These notes are for the human case reviewer (see `docs/REVIEWER_GUIDE.md`). The bank-style case studies added on 16 Oct 2026 (case-021 to case-026) have their own section at the end. The notes from 15 Oct 2026 cover the first 20 practice cases (case-001 to case-020), each of which went through two rounds of checks by Claude:
 
 1. **Expert-style review and rewrite.** One reviewer for every two cases read each case as an interviewer would, fixed what was unrealistic, unclear or inconsistent, and listed the judgement calls a person with consulting experience should make.
 2. **Second, skeptical check.** A separate checker for every three cases tried to find what the first reviewer got wrong: every number in the prose recomputed by hand, real-world claims (laws, wage rates, regulations) checked on the web, the original-content and invented-company rules, and anything that could make a correct answer score as wrong.
@@ -825,3 +825,190 @@ For each case below: what changed, what the second check fixed, and the points t
 - Recomputed the visitor-mix breakdown, which matches the exhibits exactly. Lift revenue: -$4m (existing 10,000 holders paying $400 less), -$1.5m (15,000 switchers), +$2m (5,000 new holders), -$2.5m (25,000 day visits lost to crowding) = -$6m. Extras: -$0.75m, +$1m, -$1.25m = -$1m.
 - Judgement call, not fixed: the profit-with-pass-at-600 question assumes this season's volumes at $600. At $600 a pass pays for itself after 6 days, so many of the 5-day switchers would likely not renew. It is a stated assumption, and the edited good sign now flags it.
 - UK terms (car parks, queues, 'Maths' in the model answer) in a US-set case match the house style used across the other cases.
+
+## Bank-style case studies (16 Oct 2026)
+
+These six cases are practice for the case studies some banks use at assessment centres and final-round interviews. They have track `banking`, so the AI interviewer plays a senior banker and writes the debrief as one. On 16 Oct 2026 each case went through three steps:
+
+1. **Written** from scratch, with an invented company and invented, internally consistent numbers.
+2. **Reviewed twice, separately.** One reviewer read it for banking realism: would a UK banker accept the story, the terms and the answer? Another checked the maths, consistency, originality and format: every number recomputed by hand, the facts checked against the exhibits, and anything that could make a correct answer score as wrong.
+3. **Fixed.** A third pass applied the must-fix points and most of the smaller ones, and said what it rejected and why.
+
+Every case's maths is also recomputed by the automated tests (`npm run content:check`), and all six pass. **All six cases are still drafts.** Only a human reviewer can sign one off (CLAUDE.md: "Never set a case to `reviewed` yourself"). Ideally that is someone with banking experience: lending, mergers and acquisitions, or capital markets.
+
+| Id | Case title | Type |
+|---|---|---|
+| case-021 | Thornbury Foods: what to pay for a snack brand? | M&A |
+| case-022 | Quillmere Packaging: can it carry a £25 million loan? | Other (a lending decision) |
+| case-023 | Wyncliffe Bank: should it launch a savings app for young people? | Market entry |
+| case-024 | Harlow Building Society: what next for its branches? | Profitability |
+| case-025 | Calder Instruments: should it hedge its dollar income? | Other (currency hedging) |
+| case-026 | Fennick Software: list on a stock exchange or sell? | M&A |
+
+**Points that apply to all six**
+
+- The bank's rules in each case are that case's own invented figures, presented as one bank's policy. They include the valuation multiples, the 3 times debt limit, the 1.25 times cover minimum, the 4-year payback rule, interest rates, fees and discounts. No real bank, rate, statistic or regulation is stated as a fact (rule 2.2). Please say if any of them would strike a banker as unrealistic.
+- Four cases put the candidate in "our bank", advising a client. Two put the candidate inside the organisation instead: Wyncliffe (a graduate in the bank's own strategy team) and Harlow (a graduate in the building society's strategy team). The AI banker's instructions say it has given the candidate "a client situation" (`lib/ai/prompt.ts`). Please decide whether the in-house framing works, or whether those two should be rewritten as clients of our bank.
+- Two names changed along the way. The reviewers renamed Kestrel Plastics to Quillmere Packaging, and the writer renamed Brightwell to Wyncliffe. The name checks were web searches (plus Companies House for Quillmere), not trade mark checks.
+
+## case-021: Thornbury Foods: what to pay for a snack brand?
+
+`content/cases/thornbury-foods-snack-deal.json`, on the preview at `/cases/thornbury-foods-snack-deal`. M&A, difficulty 2, about 30 minutes. A UK own-label biscuit maker wants to buy Hedgewick, a fast-growing snack brand sold at auction. The candidate, in a bank's mergers and acquisitions team, values it, sets the most to pay and names the risks.
+
+**What the reviews changed**
+
+- Both reviewers found that the recommended earn-out (part of the price paid later, only if the largest customer's sales hold up) did not cover the risk it was meant to cover. If that customer halves its orders, the stand-alone value falls by £60 million, yet the full £100 million is paid up front. The offer is still £100 million up front plus up to £20 million later, with £120 million as the walk-away price. But the model answer now says the £20 million covers only a third of that fall, so the binding offer depends on due diligence. It also lowers the walk-away price to about £111 million if the crisp production move looks doubtful (£100 million plus half of the £22 million from the high-confidence savings). A new good sign rewards spotting this.
+- The idea bank suggested using Thornbury's own relationship with the supermarket chain. In an auction, bidders sign a confidentiality letter that bars contact with the target's customers, so that would be wrong advice. A new fact says so, and the advice is now a customer call arranged by the sellers' adviser in the second round.
+- Question 4 (the largest customer halves its orders, so the value falls to £40 million) keeps its answer. Its working now says this is the first-year hit with marketing unchanged. Once marketing is cut back to 20% of sales, EBITDA recovers to about £6.4 million (about £64 million), though the multiple might fall too. A new good sign gives credit for that point.
+- New model-answer point on how the deal would really go. The sellers may resist an earn-out because the sales founder leaves. An all-cash rival bid may look stronger. And the £120 million headline already equals the walk-away price, so the second round can change only the mix, not the total.
+- New fact on the asking price: the sellers' forecast is £12.5 million of EBITDA next year, so £150 million is 12 times forecast; the bank uses the latest full year because the forecast relies on more growth at the largest customer.
+- Other facts clarified: the business is handed over with a normal level of working capital; delivery is a fixed yearly contract, so it does not fall with sales; sales to other customers grew about 13% a year (the old fact said "only slowly"); the second-largest customer is another supermarket chain; and Thornbury's operations team estimated the synergies and the bank checked them (banks do not usually build those estimates).
+- Leverage now reads "about 2 times, a little more once the one-off costs and deal fees are paid" (£160 million / £80 million, about 2.1 times with the £10 million of one-off costs).
+- The prompt now says who the candidate is, like the other bank cases. "Own-label" and "years to repay" are explained, and "headroom" is replaced with plain words.
+- Rejected: "trial the crisp production move during due diligence". Thornbury cannot run a trial before it owns the business, because it does not yet have the seasoning and packing line. The model answer says to check the plan in detail instead.
+
+**Please check or decide**
+
+- Main judgement call on price: about £100 million up front plus up to £20 million later, walking away at £120 million (about £111 million without the crisp move). Decide what range should score well. Should a candidate who lowers the up-front amount, rather than relying on an earn-out, get equal credit?
+- Is 10 times the latest year's EBITDA believable for a fast-growing UK challenger snack brand, with the sellers hoping for 15 times (12 times their forecast)? The banking reviewer thought so. Both are stated only as this bank's own figures.
+- Two simplifications to accept or change. Synergies are valued at the same 10 times, ignoring tax and timing. And the board has its own rule of paying the sellers at most half of the synergy value.
+- Question 4 is harsh on purpose: a 20% fall in revenue takes 60% off the value, because marketing and overheads stay fixed in year one. Check you are happy that the answer key stays at £40 million and that a candidate who argues for about £64 million gets credit through the good sign.
+- Check the realism of a 50% gross margin, marketing at 20% of revenue and an EBITDA margin of about 17% for a brand that uses contract manufacturers.
+- The gluten-free risk (making the crisps in a wheat biscuit factory) is presented as Thornbury's own operational point, with no regulation named.
+- The confidentiality fact is invented for the case: no contact with Hedgewick's customers, and a possible customer call for the best bidders in the second round. Check it matches how a UK sale by auction is usually run.
+- Name check: web searches found no "Thornbury Foods" food company (Thornbury is a real town, and there is an unrelated Thornbury Motors) and no snack brand called Hedgewick. The writer also found a real 2019 deal of the same broad kind (Tayto Group buying Bite UK) and took nothing from it. You may want to confirm the case does not resemble it.
+
+## case-022: Quillmere Packaging: can it carry a £25 million loan?
+
+`content/cases/quillmere-packaging-term-loan.json`, on the preview at `/cases/quillmere-packaging-term-loan`. Other (a lending decision), difficulty 2, about 30 minutes. A family-owned packaging maker asks its bank of 12 years for a £25 million loan towards a new production line. The candidate, in the bank's corporate lending team, decides whether to lend as asked, lend with conditions, or decline.
+
+**What the reviews changed**
+
+- Renamed from Kestrel Plastics to Quillmere Packaging, with a new slug, file name and exhibit id, and every mention in the text. Real UK plastics firms trade under the Kestrel name (Kestrel Mouldings in Plymouth, Kestrel Thermoplastics), and case-006 already has a Kestrel Vale. A case about a firm that fails a bank's lending policy should not carry a name readers could link to a real firm in the same trade. On 16 Oct Companies House and two web searches found no Quillmere.
+- The owners' £5 million must go in as new shares (equity), not as a loan. Under the case's own definition, a loan from the owners counts as debt and would take leverage back to 3.5 times. The model answer, idea bank and must-mention now say so. The leverage fact now says owner loans are debt and new shares are not. The "Cash and dividends" fact leaves open which form the owners have in mind, so the candidate has to raise it.
+- The model answer now shows that both fixes are needed together. £20 million on the original schedule still gives year-1 cover of only about 1.15 times (7 / 6.1), and a one-year repayment holiday at £25 million gives year-2 cover of about 1.17 times (8.5 / 7.28). The writer's summary had claimed the first was already shown; it was not. The must-mention now requires both a smaller loan and interest only during the build.
+- The recommendation stays the same: about £20 million, interest only during the 12-month build, then repaid over nine years. It now admits that year 2 rests on management's untested forecast. Cover drops below 1.25 times if year-2 cash is about £0.6 million short of plan, and to about 1.1 times if it stays at £7 million. So it now also asks for a minimum cash balance or an owners' guarantee.
+- New good sign for sizing the loan on cover as well as leverage: cover allows a new loan of only about £17 million without a holiday and about £22.5 million with one, so the £20 million leverage limit is the one that binds.
+- New good sign for noticing that £20 million leaves no room under the 3.0 times limit. The model answer now suggests about £18 million (2.8 times) if the owners can put in a little more or the line's cost can be cut.
+- New good signs for questioning the new line's 20% margin against 12.5% for the business today, for asking about the extra stock and customer credit (working capital) the new revenue needs, and for checking that the 10-year loan is shorter than the line's expected life, now stated as about 15 years.
+- Wording fixes: the covenant idea now puts the leverage limit above forecast leverage and the cover minimum below forecast cover (the old line was backwards for cover); the security is now "thin", not "weak"; the tax fact explains that £1 million is the tax paid in cash on last year's figures; the £25 million-with-a-holiday figure is now "about 1.17 times", not "about 1.2"; and the brainstorm question no longer assumes the bank lends.
+
+**Please check or decide**
+
+- Main judgement call (the fixer asked for it to be recorded here): a flat decline misses must-mention 3, which asks for lend with conditions "rather than lending as asked or declining outright". Should a decline that comes with a smaller, restructured counter-offer count as "lend with conditions"? An example: "no to £25 million as asked, but we would offer £20 million on these terms". The banking reviewer's view: lend with conditions is what a UK relationship bank would do here, because Quillmere is a 12-year client with a sound business that fails on the structure of its request, not on its quality. The rubric was left as it is.
+- The bank's rules are invented: total debt at most 3.0 times EBITDA, cover of at least 1.25 times in every year, and 8% interest. Check they feel right for a UK corporate lending case.
+- A 10-year loan repaid in equal amounts is on the long side for machinery. The writer chose it to keep the cover sums round. It is now inside the line's stated 15-year life.
+- The recommended £20 million sits exactly at the 3.0 times limit. Check the rubric is right to reward noticing that rather than requiring a smaller loan.
+- The recommendation lists many conditions: payment in stages, binding contracts for half the line's output, covenants tested every six months, no dividends, a charge over the factory and the line, and a minimum cash balance or guarantee. Check a candidate is not expected to name all of them.
+- The leverage fact now tells a candidate who asks that owner loans count as debt. Decide whether that gives away too much of the equity point.
+- Display: on the page, the repayment schedule shows £2.0 million and £7.0 million as "2" and "7", next to "1.8" and "6.8", because the site drops a trailing ".0". It is cosmetic. Harlow's exhibit was restated in thousands for the same reason, and this one could be too.
+
+## case-023: Wyncliffe Bank: should it launch a savings app for young people?
+
+`content/cases/wyncliffe-young-savers-app.json`, on the preview at `/cases/wyncliffe-young-savers-app`. Market entry, difficulty 2, about 30 minutes. A regional UK bank whose customers are mostly over 40 wants a separate savings app for 18 to 25 year olds. The candidate, in the bank's own strategy team, judges it against the board's 4-year payback rule.
+
+**What the reviews changed**
+
+- The pilot's test on customers staying was "most customers staying", which is far too loose. The simpler £1 million version pays back within 4 years only if no more than about 1 in 40 customers leave each year (£3 million / (£0.8 million - 40,000 x r x £50) is 4 or less only when r is 2.5% or less). At the bank's usual 1 in 10 it takes 5 years. The test is now "no more than about 1 in 40 leaving a year", and the model answer calls customers staying the make-or-break test.
+- The simpler version's 3.75-year payback rested on assumptions no fact stated. The "Cheaper ways to build the app" fact now says running costs stay at £0.4 million. It also says the plan assumes the same customers and balances for the same marketing and bonuses, but without the savings challenges with friends. Every mention of 3.75 years now carries that condition, and a new risk says take-up may fall without the friends feature.
+- The deposit margin was defined as what Wyncliffe earns by lending the money out. That is a lending margin, and it invites double counting with later mortgages. It is now what Treasury (the team that manages the bank's money) credits the app for each £1 of deposits, minus the interest paid to the saver; lending profit stays with the mortgage and loan business. The 2% and all the maths are unchanged.
+- New fact, so the interviewer does not have to invent an answer: adding savings to the existing Wyncliffe app would cost about £0.5 million, but only current-account customers could use it, and the head of retail thinks young people see its look as their parents' bank. The idea bank lists it as an alternative and the recommendation says why it is not chosen.
+- New fact: a typical first mortgage with Wyncliffe is about £200,000 and earns the bank about £1,000 a year. The model answer now says the £0.2 million a year gap to the rule equals the yearly profit on about 200 first mortgages, so the decision turns on whether the link between joining young and taking a Wyncliffe mortgage is real.
+- The recommendation is split into "Recommendation" and "Tests and next steps". The one-region start is now judged on its test results, not on payback: the £1 million build is fixed, so one region alone cannot pay back in 4 years.
+- New good sign for noting that the payback rule ignores what the app earns after it has paid back, and that money earned later is worth less than money now.
+- New risks in the idea bank: Treasury may value these deposits below 2% if they prove quick to leave, and existing young savers moving their money across would bring no new deposits, add a little running cost and, if the app paid more than Wyncliffe's normal rate, cost the bank margin on money it already holds.
+- Smaller fixes: identity checks for new customers moved into the cost to win them; the low running costs explained (the app runs on the bank's existing systems and customer service team); the £15 welcome bonus is for customers new to Wyncliffe only; age bands now match the 18 to 25 target ("25 or under"); the claim about young savers' habits now comes from Wyncliffe's own records; and the exhibit's target-customer label matches the fact.
+- The slug changed from wyncliffe-student-savings-app to wyncliffe-young-savers-app, because the case covers all 18 to 25 year olds, not only students.
+
+**Please check or decide**
+
+- The payback rule (one-off costs divided by yearly profit at full size, within 4 years) is the bank's own invented rule. The writer noted that a real bank would look at return on capital. The banking reviewer said to keep it as a recognisable hurdle. Decide whether a banking case should use it.
+- The structure is close to Hollinsway (case-014): a new product, survey-based take-up, year 3 as the first full-size year, and payback against a fixed limit. Both cases are our own, so there is no copying problem, but they may feel repetitive. Decide whether one should change.
+- In-house framing: the candidate works in the bank's own strategy team rather than advising a client (see the points that apply to all six). The fixer left a rewrite to you.
+- Check the realism of the invented figures: a £2 million build, £50 to win each customer (£35 of marketing plus a £15 bonus), a 2% deposit margin, a £1,500 average balance, £0.4 million a year to run, and the new £0.5 million existing-app cost and £1,000 a year per mortgage.
+- Main judgement call: do not launch the full plan; build the simpler version and start in one region with go or no-go tests. That answer has almost no room for error (it takes 5 years if customers leave at the usual rate). Check you agree it is the best answer, and that a well-argued "do not launch yet" or "make the mortgage case with numbers first" is scored fairly.
+- Real rules were deliberately left out: deposit protection limits, real interest rates, tax-free savings accounts and the Bank of England rate. A UK candidate may raise them.
+- Name check: a web search found no bank, savings or finance business called Wyncliffe. The only UK companies with the exact name are a machine-tools firm in liquidation, a residents' management company and a dissolved hotel company.
+
+## case-024: Harlow Building Society: what next for its branches?
+
+`content/cases/harlow-building-society-branches.json`, on the preview at `/cases/harlow-building-society-branches`. Profitability, difficulty 2, about 30 minutes. A regional building society's branch profit has fallen from £13 million to £1 million as members move to its app. The candidate, in the society's strategy team, works out why and what to do with the weakest branches.
+
+**What the reviews changed**
+
+- Framing: the prompt had a bank's financial institutions team giving the society's chief executive "an independent view" on branch closures. That is strategy consulting work rather than banking, and the prompt never said who the candidate was. It now puts the candidate in Harlow's own strategy team, like Wyncliffe.
+- The £0.6 million for opening the 12 remote branches three days a week was ambiguous. It is the improvement (12 x £50k), not the profit (12 x £20k = £0.24 million). The model answer now says so, so a candidate who says £240k of profit is not marked wrong.
+- The model answer kept the remote branches open as if the maths decided it, but the money points the other way. A small branch costs £180k and is credited with £150k, so closing it pays even if every member left. Closing all 12 remote branches would add about £1.8 million a year, against £0.6 million for opening three days a week. The model answer now says keeping them is a judgement about members: they are older, many use cash, 5 are the last branch in town, 1 in 5 new savers name a local branch as a reason to join, and a mutual can accept a lower return. A new good sign rewards seeing this, and the must-mention now also accepts a reasoned case for closing the remote branches not covered by the pledge, with a plan for their members.
+- The problem is network-wide. On the case's own trend (about 22% fewer counter transactions next year), every type of branch, large ones included, would make a loss next year: about £3 million in total. The small-branch plan is worth about £1.8 million a year against a fall of about £4 million, so the model answer now calls for a cost plan across the whole network.
+- A date clash fixed: the app now launched six years ago, so the two closures five years ago no longer come before it.
+- New fact, "Rules on closing branches": treat the board's own pledge as everything Harlow must do; the real UK rules are not tested. Without it, a candidate who asked would have led the AI interviewer to describe real regulation.
+- Other new facts: Harlow's overall profit is about £20 million a year, about the same as three years ago; the mortgage and savings advisers' costs and income sit outside the branch figures; many older members use a passbook savings account as their everyday account, which explains the high counter use; and the profit Harlow keeps is its main way to build capital.
+- Smaller fixes: "net interest income" and "net interest margin" are now used correctly; the closure cost now includes ending the lease, so the 8-month payback holds; the channel exhibit is restated in thousands, so its numbers display evenly; the first exhibit's title and hint are tighter; and the £4.70 against 25p cost per transaction is now flagged as not like for like.
+- The society moved from the East of England to the south-west, so it is no longer named after a real Essex town in that town's own region.
+
+**Please check or decide**
+
+- Main judgement call: close the 8 small branches near another branch, open the 12 remote ones three days a week, and keep face-to-face help in the 5 towns where Harlow's branch is the last one. Check you agree, and that a reasoned case for closing more of the remote branches (now accepted by the rubric) is scored fairly.
+- Name: Harlow is a real town in Essex. Moving the society to the south-west weakens the link, but a fully invented name (for example "Fenmere") would remove it. That needs a new slug and file name, so the fixer left it to you.
+- The format reviewer noted that the board's "12 weeks' notice" matches the notice period in real UK branch-closure guidance. The real UK rules on access to cash are deliberately left out. A banker may expect a strong UK candidate to raise regulation, and the new fact steers them away from it. Decide whether that is right for a banking case.
+- Simplifications for clean maths: branch income moves exactly in line with counter transactions at £5 each, every branch type lost exactly 40% of its transactions, and branch costs stayed flat. Real internal accounts would credit income on balances and new sales.
+- The 20% income loss after a closure comes from two closures about 2 miles from another branch, so it may understate the loss for remote branches. The three-day result comes from one branch over six months. Both are now listed as risks; check they carry enough weight.
+- In-house framing (see the points that apply to all six).
+- Check the volumes: 30 million transactions a year for 300,000 members is about 100 each, now explained by passbook use.
+
+## case-025: Calder Instruments: should it hedge its dollar income?
+
+`content/cases/calder-instruments-currency-risk.json`, on the preview at `/cases/calder-instruments-currency-risk`. Other (currency hedging), difficulty 2, about 30 minutes. A UK instrument maker earns most of its sales in dollars and has a loan covenant to keep. The candidate, in a bank's global markets team, decides how much of next year's dollar income it should fix in advance (hedge).
+
+**What the reviews changed**
+
+- Lower sales: the certainty exhibit calls $10 million of US sales "uncertain", and losing them would take £8 million off revenue. That could threaten the covenant more than a 10% weaker dollar. A new fact says lower sales are a separate threat, already being discussed with the lending team, and the covenant test uses the budgeted sales. The model answer now says the covenant holds "in the budget case" and that a hedge protects against the exchange rate, not against lower sales. A new good sign rewards saying so.
+- The right-answer zone is now in the rubric: hedge roughly $27 million to $35 million (for example about $30 million). $27 million is the least that keeps the covenant if the dollar weakens 10%, $35 million is the net dollar income Calder is likely to receive, and all of it is within the bank's $40 million limit. Before, a well-argued $35 million could have been marked down.
+- The model answer now adds forwards up to about $35 million as repeat orders are signed. It also admits that $30 million is about $10 million more than the near-certain $20 million: if repeat orders fall short and the dollar strengthens to £0.88, buying $10 million to deliver would cost about £1 million.
+- The bank's margin: one fact said it was built into the forward rate, while others put the whole £0.02 gap down to interest rates. They now agree: mostly the interest-rate gap, plus the bank's small margin.
+- The bank's two roles: a good sign rewarded hedging partly because it protects the bank's own loan. It now rewards seeing the conflict instead. The bank is both the lender and the seller of the hedge, so it must size the hedge to Calder's real exposure, explain it fairly and let Calder decide. A new red flag: recommending the full $40 million limit, or hedging mainly to protect the bank's loan.
+- The certainty exhibit said $30 million to $35 million matched dollars Calder was "very likely" to receive, which its own table contradicted. It now says "likely", and explains why hedging only the near-certain $20 million is not enough (profit would be £3.6 million in the weak case).
+- New case assumption: for the covenant test, forwards count in operating profit at the forward rate, and an option's premium counts as a cost. The options fact now also says options use none of the $40 million forward limit.
+- New fact on late payments: Calder can move a forward's date, or use forwards that can be drawn on over a window of dates. A matching idea replaced an idea-bank entry that described something Calder already does (paying dollar costs from the dollars it receives).
+- New good signs for seeing that the £0.80 budget rate cannot be locked in (£5.1 million is the best fixed profit), and that options do not do the covenant work (options alone on $45 million leave profit at £3.3 million).
+- Smaller fixes: "In this case, today $1 is worth £0.80", so it does not read as a real quote; a note that markets usually quote the pair as dollars per pound; "our desk does not advise clients on where the rate will go"; and hedging all $45 million is labelled a benchmark only, because it is over the $40 million limit.
+- The fixer softened two claims the case data cannot support. Missing $10 million of sales "could" hurt more than a weaker dollar, because the case gives no figure for the costs saved. And "a company might" set its budget rate at the forward rate, so it does not read as a real-world fact.
+
+**Please check or decide**
+
+- The case defines "the dollar weakens 10%" as each dollar being worth 10% fewer pounds (£0.72). Read the other way (the pound buying 10% more dollars, $1.375), the answer comes out about 9% off and is marked wrong. The definition is in a fact, the exhibit and the question. Markets quote this pair as dollars per pound, so some candidates will think the other way round; check the case makes it clear enough.
+- Main judgement call: hedge about $30 million, with anything from about $27 million to $35 million accepted. At $30 million, profit is only £0.2 million above the covenant in the weak case. Check this is a fair central answer.
+- The option (the right to sell dollars at £0.75 for £0.01 a dollar) is priced by the case. Both reviewers thought that plausible for a fairly calm currency. The banking reviewer worked out that the forward rate being 2.5% below today's rate implies dollar interest rates about 3% a year above pound rates; the case says only that dollar rates are the higher of the two, as its own assumption. A markets person should confirm both.
+- Simplifications: one forward rate for every month of next year; the hedge counted in operating profit for the covenant; and the budgeted sales taken as given for the covenant test.
+- Check that the conflict between the bank's two roles is handled the way you would want a candidate to handle it. No real mis-selling case or regulation is named.
+- Name check: no "Calder Instruments" found. Similar names exist in nearby fields: Calder Testers (valve testing, Houston), Calder Limited (pumps, Worcester) and Calder Temperature Controls (Elland, West Yorkshire). The factory is placed near Cambridge so it does not hint at Yorkshire. Renaming is optional.
+
+## case-026: Fennick Software: list on a stock exchange or sell?
+
+`content/cases/fennick-software-ipo-or-sale.json`, on the preview at `/cases/fennick-software-ipo-or-sale`. M&A, difficulty 2, about 30 minutes. The founder of a UK software company that she half owns must choose between a £600 million private equity offer and listing on a stock exchange (an IPO). The candidate, in a bank's equity capital markets team, works out her cash under each route and recommends one.
+
+**What the reviews changed**
+
+- The decision rule went against the founder's own goals. Her first goal is to stay in charge and her second is £60 million of cash, yet the model answer told her to take the sale if the value came in below about £707 million. That would give up control to make up a small cash shortfall. Now a fall alone is no reason to sell: she can sell a little more (about 11% of Fennick still gives £60 million after a 20% fall, and the bank would allow up to about 12%). The real test is value. If the estimate falls below about £686 million (a fall of about 14%), the IPO price drops below the buyer's £600 million, and the bank should put the choice between value and control to her.
+- The fallback did not cover the riskiest months: the buyer's offer lapses at about month 3, but the IPO price is fixed only at about month 7. The facts, must-mention and model answer now say so. The buyer would do its checks in parallel and pay at about month 5 or 6 if chosen at month 3. It might keep its offer open until the IPO is priced, but will not promise to. A new good sign rewards spotting the gap.
+- The prompt said the bank thought Fennick "could list at a value of about £800 million", which the exhibit then contradicted: the shares are sold at £700 million after the 12.5% discount. It now says £800 million is the value once the shares trade freely, so the discount is a fair test rather than a trick.
+- The first red flag could have penalised a correct answer (the IPO is worth more on paper). It now targets missing the discount and the fact that she sells only 10% at the IPO.
+- Wording fix: the venture capital fund "reaches the end of its fixed life" in about two years. The old "its fund closes" means the opposite to a banker (the end of fundraising).
+- New fact on valuation multiples, as the bank's own view: similar listed companies are valued at about 6 to 7 times next year's revenue. £800 million is about 6.7 times, and £600 million is 5 times (or 20 times this year's EBITDA). A matching good sign was added.
+- Other new facts: why the buyer will not pay more (it could not reach its target return with the borrowing its lenders allow); that the reinvested stake cannot be valued from the case; that staff options are counted as shares; and that at 40% she would in practice usually carry most votes.
+- Growth was lowered from 30% to 20% a year, so the multiples look believable. No maths depends on it.
+- A recommendation to sell can now earn the must-mention, but only if it explains why certainty should outweigh staying in charge, and how her role would be protected. A matching good sign was added. Because our bank earns more if Fennick lists, the idea bank, a good sign and the next steps now also say she may want independent advice on the choice.
+- Smaller fixes: the IPO definition no longer contradicts itself; the price is now "fixed at the end of the bookbuild", just before listing; "leverage" is used only for debt, and negotiating strength is now "bargaining power"; and question 4's tolerance is tightened from 2.5% to 2%.
+- Question 4's working now tells the interviewer that its answer (£54.3 million) is not the gap between the two routes on paper (about £54 million), since the two figures are close.
+
+**Please check or decide**
+
+- Main judgement call: the rubric leans towards the IPO, following the founder's stated order of goals, with the private equity offer kept as a fallback and the choice made at about month 3. Check you agree, and that a sale recommendation that explains how her control would be protected gets fair credit.
+- Check the realism of the invented terms: a 12.5% IPO discount, 3% commission, 2% sale fees, 20% reinvestment, lock-ups of 12 and 6 months, about £2 million a year of listed-company costs, and the new 12% cap on what she can sell.
+- Valuations: 20% growth with a 30% EBITDA margin, 6 to 7 times next year's revenue, and a private equity buyer offering less than the listed value. A strong candidate may say that buyers of a whole company usually pay more for control. Check the case's stated reason is enough.
+- Check the bookbuild timing: the price is fixed in "the last two weeks or so before listing at about month 7".
+- The "Months until the sellers are paid" row still shows 4 months for the sale, which assumes she signs now. In the recommended dual track the sale would pay at about month 5 or 6 (in the "Doing both at once" fact). Check this does not confuse.
+- The gap between the routes on paper (about £54 million) is close to question 4's answer (£54.3 million). The fixer kept the 20% market fall, because at 25% she would need about 11.8% of Fennick, right at the 12% cap. It added a warning to the working instead. Decide whether that is enough.
+- Pace: four maths questions in 30 minutes, plus a long recommendation.
+- The upside of her reinvested £60 million is described only in words, because the buyer has not said what it expects to sell Fennick for. Each £1 of growth in Fennick's value adds about 40p to her stake after the IPO, against about 14p in the sale.
+- Name check: no "Fennick Software" found. The nearest names are Fenwick Software (Australia), Fennech Financial (a UK fintech) and Fennicus Ltd (an IT services company in Devon), none in this trade. The buyer, the fund, the stock exchange and the founder are not named. Tax is assumed equal under both routes.
