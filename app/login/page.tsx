@@ -80,11 +80,14 @@ export default async function LoginPage({
             </ul>
           </div>
           {photo ? (
-            // A desk lamp at night (decorative), with part of an example debrief laid over it.
+            // A desk lamp at night (decorative), with part of an example debrief laid over it. It is the
+            // largest picture on a wide screen, so it is preloaded; phones hide the panel and fetch only a
+            // tiny copy (sizes ends in 1px).
             <figure className="relative mt-12 min-h-[22rem] flex-1">
               <Photo
                 photo={photo}
                 decorative
+                preload
                 backdrop={false}
                 sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 1px"
                 className="absolute inset-0 rounded-[1.75rem]"

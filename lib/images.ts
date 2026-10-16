@@ -218,7 +218,7 @@ export const GUIDE_PHOTOS: Record<string, Photo> = {
     "guides",
     "guide-profitability",
     RATIO["16:9"],
-    "A brass balance scale in warm sunlight, with a few coins and a small stack of blank receipts at its base.",
+    "A brass balance scale in warm sunlight, with a few coins and a small stack of paper receipts at its base.",
     { objectPosition: "65% 50%", darkDim: 0.85 },
   ),
   "market-entry-case-interview": photo(
@@ -380,7 +380,8 @@ export const PAGE_PHOTOS = {
     "An open oak card-catalogue drawer filled with rows of blank cream index cards, warm sunlight across the wood.",
     { objectPosition: "45% 50%", darkDim: 0.9 },
   ),
-  // Shown as decoration only: a generic lobby must never read as a named firm's office (rule 2.3).
+  // Only on the firm guides section of /guides, as decoration, under a heading that names no firm. Never on a
+  // single firm's guide: beside a firm's name it would read as that firm's office (rules 2.3 and 2.4).
   "firm-guides": photo(
     "pages",
     "page-firm-guides",

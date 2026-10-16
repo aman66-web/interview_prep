@@ -47,7 +47,6 @@ export function ArticleHeader({
   meta,
   aside,
   image,
-  imageDecorative = false,
   children,
 }: {
   crumbs: Crumb[];
@@ -57,8 +56,6 @@ export function ArticleHeader({
   meta?: ReactNode;
   aside?: ReactNode;
   image?: PhotoData;
-  /** Hide the photo from screen readers (for example a generic lobby on a firm guide). */
-  imageDecorative?: boolean;
   children?: ReactNode;
 }) {
   const side = aside || image;
@@ -86,7 +83,6 @@ export function ArticleHeader({
                 <Photo
                   photo={image}
                   preload
-                  decorative={imageDecorative}
                   sizes="(min-width: 1280px) 440px, (min-width: 1024px) 36vw, (min-width: 640px) calc(100vw - 8rem), calc(100vw - 4rem)"
                   className="aspect-[16/10] rounded-[1.5rem]"
                 />

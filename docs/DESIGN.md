@@ -64,6 +64,6 @@ The site's photos were made in Midjourney to `docs/IMAGE_BRIEF.md`, checked one 
 ## Honesty rules that affect design (rules 2.3, 2.4)
 
 - No logos of firms or universities, no testimonials, star ratings, user counts, "as seen in" strips or offer claims. Marquees and stat strips show product facts counted from data.
-- Photos are illustrations: never caption one as our students, customers, a real club or event, or a real office. People appear only from behind or blurred. The office lobby on the firm guides is decorative (empty alt) so it never reads as a named firm's office.
+- Photos are illustrations: never caption one as our students, customers, a real club or event, or a real office. People appear only from behind or blurred. The office lobby appears only in the firm guides section of /guides, as decoration under a heading that names no firm. It is never on a single firm's guide, because beside a firm's name a sighted reader would take it for that firm's office whatever the alt text says (`tests/images.test.ts` checks).
 - Product pictures (`components/marketing/mocks.tsx`) use the free profitability guide's worked example (`MOCK_EXAMPLE`), never a case from the library (that would give its answers away), and carry an "Example" tag.
 - The disclaimer (`siteConfig.disclaimer`) is in the footer; firm pages and the pricing page must also show it in the page body.

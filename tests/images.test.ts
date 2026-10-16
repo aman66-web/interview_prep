@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import { describe, expect, it } from "vitest";
 import { allCases } from "@/lib/content/cases";
-import { allGuides } from "@/lib/content/writing";
+import { allFirms, allGuides } from "@/lib/content/writing";
 import { DRILL_CATEGORIES } from "@/lib/drills";
 import {
   allPhotos,
@@ -78,8 +78,16 @@ describe("the photo registry (lib/images.ts)", () => {
     for (const { group, key, photo } of photos) {
       if (photo.decorative) continue;
       expect(photo.alt.trim().length, `${group}/${key} needs alt text`).toBeGreaterThan(20);
-      // Rule 2.4: a description of the scene, never a claim about who is in it.
-      expect(photo.alt, `${group}/${key}`).not.toMatch(/\b(student|customer|client|member|user|our team|office of)\b/i);
+      // Rule 2.4: a description of the scene, never a claim about who is in it (plurals too).
+      expect(photo.alt, `${group}/${key}`).not.toMatch(/\b(students?|customers?|clients?|members?|users?|candidates?|our team|office of)\b/i);
+    }
+  });
+
+  it("never names a firm in alt text (rule 2.3)", () => {
+    const names = allFirms().flatMap((f) => [f.name, f.short_name]).filter((n): n is string => typeof n === "string" && n.length > 2);
+    expect(names.length).toBeGreaterThan(0);
+    for (const { group, key, photo } of photos) {
+      for (const name of names) expect(photo.alt.toLowerCase(), `${group}/${key} names ${name}`).not.toContain(name.toLowerCase());
     }
   });
 
@@ -163,6 +171,12 @@ describe("where the photos are used", () => {
     // (A plain <img> is fine for a picture our own routes generate, like the share card.)
     const rawImages = sourceFiles.filter((f) => f.path !== "components/ui/photo.tsx" && /from ["']next\/image["']/.test(f.text)).map((f) => f.path);
     expect(rawImages, "use <Photo> from components/ui/photo.tsx").toEqual([]);
+  });
+
+  it("puts no photo on a single firm's guide, where it would read as that firm's office (rules 2.3, 2.4)", () => {
+    const firmPage = sourceFiles.find((f) => f.path === "app/guides/firms/[firm]/page.tsx");
+    expect(firmPage, "the firm guide page moved; update this test").toBeDefined();
+    expect(firmPage!.text).not.toMatch(/\b(pageImage|guideImage|caseImage|Photo)\b|image=\{/);
   });
 
   it("only allowed local photos to be resized (next.config.ts)", () => {
