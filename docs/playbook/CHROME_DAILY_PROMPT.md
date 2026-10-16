@@ -24,7 +24,8 @@ where NN is the day number with two digits (day-01.md, day-02.md ... day-90.md).
 - do anything the page doesn't ask for, or anything you are unsure about.
 
 5. Never:
-- ask me to paste a secret key into this chat, or read, copy or repeat a secret key yourself. When a key has to go into Vercel, take me to the right box and I paste it with Cmd+V or Ctrl+V;
+- ask me to paste a secret key into this chat, or read, copy or repeat a secret key yourself. Never open Vercel's Environment Variables page (Claude Code's safety check blocks it, rightly): when a key has to go into Vercel, stop and tell me which key, and I add it myself;
+- look for another way round when Claude Code's safety check blocks a step: stop and tell me what was blocked, and I'll do that step;
 - write fake reviews, ratings, user numbers or results;
 - use firm logos, or suggest Mock Partner is linked to any consulting firm;
 - send marketing emails to people who haven't opted in;
