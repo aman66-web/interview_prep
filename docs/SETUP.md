@@ -75,7 +75,7 @@ Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack
 ## 2b. Anthropic (the AI interviewer)
 
 1. Go to console.anthropic.com and sign in.
-2. **Settings, Limits:** set a **monthly spend limit** first (for example $20 while testing). This is the safety net that stops a surprise bill.
+2. **Billing:** set a **monthly spend limit** first (for example $20 while testing). This is the safety net that stops a surprise bill. (Checked 16 Oct 2026: the spend limit is under Billing; the "Limits" page holds only rate limits.)
 3. **API keys, Create key.** Copy it once; it is shown only one time.
 4. Add `ANTHROPIC_API_KEY` (private) and `ANTHROPIC_MODEL` (for example `claude-sonnet-5-5`) in Vercel, Production and Preview. Sonnet costs about 12 cents per interview; see `docs/PROGRESS.md` for the full cost table.
 5. Until both are set, the site shows "The AI interviewer isn't switched on yet" and nothing is charged.

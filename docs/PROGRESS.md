@@ -2,13 +2,14 @@
 
 Tick items off as they are done. Every milestone ends with tests passing, a Vercel preview link and a short plain-English report (rule 2.13).
 
-**Current milestone:** P0 to P6 built (new design across the whole site, 20 draft cases, guides, tools, dashboard, admin, share card, clean-up job). The Supabase project is up and its tables are locked down. Still open (founder): the sign-in settings and secret key (see Handoff), an Anthropic key, Stripe test keys, and the new Vercel settings `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` (`docs/SETUP.md` section 3). Then a real sign-in test, a real interview and a real test-mode purchase.
+**Current milestone:** P0 to P6 built (new design across the whole site, 36 draft cases including bank and firm-style ones, firm and bank guides with practice pages, tools, dashboard, admin, share card, clean-up job, photos). The Supabase project is up and its tables are locked down. Keys checked in Vercel on 16 Oct 2026 (see Handoff): everything the preview needs is set, so the AI interviewer is live on the preview. Still open (founder): a first real interview, the sign-in email (waits for an email-sending service, Day 2), the Stripe webhook and `NEXT_PUBLIC_SUPPORT_EMAIL` (both wait for the domain), then a real test-mode purchase.
 
 ## Handoff (14 Oct 2026)
 
 Read this first in a new session.
 
-- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, personal account; the founder has Vercel Pro) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. Still missing: `SUPABASE_SECRET_KEY` (founder), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL`, `CRON_SECRET` (without it the daily transcript clean-up refuses to run, so the 365-day promise is not kept), `ADMIN_EMAILS` (to open `/admin`) and `NEXT_PUBLIC_SUPPORT_EMAIL`.
+- **Vercel is done, apart from settings.** Project `interview-prep` (id `prj_rHyF4UXcRyr0HdTrS25EoRe9DrhT`, personal account; the founder has Vercel Pro) is linked to the GitHub repo. The PR branch built successfully. Preview: `https://interview-prep-git-claude-gifted-shannon-r42f73-aman-moneysave.vercel.app`. Vercel Authentication is on, so only the founder (logged in to Vercel) can open it. Vercel labelled that first deployment "production"; nothing is public. Environment variables set: `SHOW_DRAFT_CONTENT=1` for **Preview** only (so draft cases can be reviewed on previews; never for Production), and `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production and Preview. **Checked 16 Oct 2026 (read-only, names only):** the founder has also added `SUPABASE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `STRIPE_SECRET_KEY` and `CRON_SECRET` (all Sensitive, Production and Preview), plus `ANTHROPIC_MODEL=claude-sonnet-5-5` and `ADMIN_EMAILS=aman662002@gmail.com` (Production and Preview) and `PREVIEW_QUICK_LOGIN=1` (Preview only). Every build since 11:30 UTC on 16 Oct has them. Still missing: `STRIPE_WEBHOOK_SECRET` (the webhook needs a public address, so it waits for the domain; on previews the return page switches a plan on by itself) and `NEXT_PUBLIC_SUPPORT_EMAIL` (needs a support inbox). `SHARE_SIGNING_SECRET` is optional.
+- **Founder's Claude in Chrome, 16 Oct 2026 (read-only, nothing changed):** the Anthropic monthly spend limit is $20 (it now lives under Billing, not Settings, Limits; $0 spent so far); Supabase URL Configuration already has the preview as Site URL and both redirect patterns; the UK IPO register has no live or dead text mark containing MOCK PARTNER or MOCKPARTNER (the "similar" search found only MEKOPARTNER and WorkPartner, both class 7 machinery). Text marks only, not legal advice.
 - **Supabase project exists (14 Oct 2026).** Second account, organisation "aman662002@gmail.com's Org" (Free plan, $0). Project `interview-prep`, ref `jkvnarskslswdwrdzefa`, London (`eu-west-2`), URL `https://jkvnarskslswdwrdzefa.supabase.co`. The first account (menumacros, drone-test-prep, cscs-test-app) was never touched.
   - **Done with the founder's go ("try supabase now"):** created the project; applied the three files in `supabase/migrations/` in order; checked the real database with read-only queries (11 tables, all with Row Level Security and a policy, `anon` has no table access, `authenticated` has only the intended grants, the two interview functions and `handle_new_user` are not callable from browsers, the sign-up trigger exists); the security advisor returns no findings; `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` added to Vercel (Production and Preview).
   - **`supabase/tests/rls.sql` could not be run through the connector:** it timed out after 60 s (scripts containing `delete` also stalled on the other project) and left nothing behind (checked). The same script passes on a local Postgres and in CI against the same migration files. The founder can also paste it into the Supabase SQL Editor for a belt-and-braces run.
@@ -41,7 +42,8 @@ Read this first in a new session.
 - [x] Account deletion and data export (`/app/account`)
 - [x] Tests passing (48), including a browser run of the whole login flow against a fake Supabase
 - [x] Supabase project created and migrations applied (14 Oct, see Handoff); public keys in Vercel
-- [ ] Founder: Auth URL configuration, the two email templates and `SUPABASE_SECRET_KEY` in Vercel (`docs/SETUP.md`)
+- [x] Founder: Auth URL configuration (checked 16 Oct) and `SUPABASE_SECRET_KEY` in Vercel
+- [ ] Founder: the two email templates (Supabase only allows this once a custom email sender is connected; Day 2)
 - [ ] Test a real sign-in email end to end (needs the project above; confirms the email template)
 - [ ] Vercel preview link
 - [ ] Plain-English report
@@ -61,7 +63,7 @@ Read this first in a new session.
 - [x] The debrief stores its maths results inside `case_sessions.scores` when the interview finishes, so the debrief page reads only that and `math_checks` (which holds answer keys) is never readable by browsers
 - [x] **Estimated cost per session reported** (see below)
 - [x] Tests passing, browser test passing
-- [ ] Founder: Anthropic key and monthly spend limit, then set `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` (a model ID such as `claude-sonnet-5-5`) in Vercel
+- [x] Founder: Anthropic key and monthly spend limit ($20), `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL=claude-sonnet-5-5` in Vercel (checked 16 Oct)
 - [ ] First real run with a real model: read the transcript and debrief of the free starter case and tune the prompts in `lib/ai/prompt.ts` if needed
 - [ ] Vercel preview link and plain-English report
 
@@ -115,11 +117,11 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
   - [ ] Custom domain (mockpartner.com; the founder buys it once the site is finished)
   - [ ] Stripe live mode
   - [ ] A real test purchase **and** refund
-  - [ ] An Anthropic monthly spend limit
+  - [x] An Anthropic monthly spend limit ($20, checked 16 Oct 2026; raise it before launch if needed)
   - [ ] A final read of the legal pages and their remaining square-bracket notes. Company details (MARTZEY LTD, chosen 15 Oct 2026) and the minimum age (18) now come from `site.config.ts`; the effective date is set when the pages are approved
   - [ ] A lawyer checks the no-refunds policy (founder, 15 Oct 2026: all sales final, except where the law requires a refund) and the wording of the "start straight away" tick box before checkout
   - [ ] ICO data protection fee for MARTZEY LTD (due once the site collects sign-ups; the founder plans to pay it at launch, 15 Oct 2026)
-  - [ ] A trade mark attorney's view on "Mock Partner": no registered mark found in the UK, EU or US on 15 Oct 2026, but a US firm trades as "MOCK Partners" (mockpartners.com) and "mock" is descriptive. Also search trademarks.ipo.gov.uk directly (it blocked automated search)
+  - [ ] A trade mark attorney's view on "Mock Partner": no registered mark found in the UK, EU or US on 15 Oct 2026, but a US firm trades as "MOCK Partners" (mockpartners.com) and "mock" is descriptive. The founder's Claude in Chrome searched trademarks.ipo.gov.uk directly on 16 Oct 2026: no text mark containing MOCK PARTNER or MOCKPARTNER, live or dead
   - [ ] `CRON_SECRET`, `ADMIN_EMAILS` and `NEXT_PUBLIC_SUPPORT_EMAIL` set in Vercel (Production), then check the daily clean-up has run successfully (Vercel, project, Cron Jobs)
   - [ ] Approve the About and FAQ pages (fill in their square-bracket notes, then set `"status": "approved"`). Until then they show a draft notice and are left out of Google and the sitemap
   - [ ] Real email sending connected to Supabase (its built-in sender only reaches your own team) and CAPTCHA switched on for sign-in (`docs/SETUP.md`)
@@ -150,7 +152,7 @@ Claude Code: give click-by-click steps whenever he asks.
   - [ ] Test keys and webhook (`docs/SETUP.md` section 2c). No products needed: checkout creates the prices.
   - [ ] Decide on Stripe Tax with an accountant.
   - [ ] Switch to live mode only at P7.
-- [ ] **6. Anthropic:** create an API key in the console and set a monthly spend limit.
+- [x] **6. Anthropic:** API key in Vercel and a $20 monthly spend limit (checked 16 Oct 2026).
 - [ ] **6b. Email sending for login:** Supabase's built-in sender only emails your own team. Pick an email service (needs your approval) before real students sign up. See `docs/SETUP.md`.
 - [ ] **7. Support email:** a separate inbox just for this site.
 - [ ] **8. Case reviewer (recommended):** someone with consulting experience to check the 20 launch cases before they go live.
