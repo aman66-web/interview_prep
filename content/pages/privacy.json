@@ -3,7 +3,7 @@
   "title": "Privacy policy",
   "seo_title": "Privacy policy | Mock Partner",
   "description": "What personal data Mock Partner collects, why, who processes it, how long we keep it, and how to download or delete your data under UK GDPR.",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "status": "draft",
   "intro": "This policy explains what personal data we collect when you use Mock Partner, why we collect it, who helps us process it, and your rights under UK data protection law (UK GDPR). Effective date: [effective date].",
   "blocks": [
@@ -24,7 +24,7 @@
         "Your email address, to create your account and log you in.",
         "Your profile: an optional country, and whether you want marketing emails (off unless you say yes).",
         "Your plan: which plan you are on, its status and when it ends.",
-        "Your interviews: the messages you and the AI interviewer write (the transcript), a short summary of longer interviews, the numbers you give for maths questions and whether they were right, and your debrief and scores.",
+        "Your interviews: the messages you and the AI interviewer write (the transcript; in voice mode, the text your browser made from what you said), a short summary of longer interviews, the numbers you give for maths questions and whether they were right, and your debrief and scores.",
         "Your drill answers: which drills you tried, whether you got them right and how long you took.",
         "AI usage: how much text (in tokens) each interview used and an estimate of what it cost. We use this to apply fair-use limits and control costs.",
         "Payments: your Stripe customer reference and a reference for your subscription or payment. Stripe takes your card details on its own page. We never see or store them.",
@@ -151,6 +151,24 @@
     {
       "type": "p",
       "text": "Anyone with the link can see the card. Sites where you post it may keep their own copy of the preview picture. Because the link holds nothing that identifies your account, it keeps working even if you delete your account. To take a card down, delete the post or message where you shared it."
+    },
+
+    { "type": "h2", "id": "voice-mode", "text": "Voice mode in interviews" },
+    {
+      "type": "p",
+      "text": "Voice mode lets you speak your answers and hear the interviewer's replies. It is off until you switch it on in an interview, and it is off again each time you open one. It uses your browser's own speech features. We never record, receive or keep any audio, and voice mode stores nothing in your browser."
+    },
+    {
+      "type": "p",
+      "text": "While voice mode is on, your browser listens through your microphone and turns what you say into text. Many browsers do this with an online speech service run by the browser's maker: Chrome, for example, sends your audio to Google's speech service, and Safari uses Apple's speech recognition, which may send audio to Apple. Where your browser says it can turn speech into text on your device instead, voice mode asks it to. To read replies aloud, your browser uses one of its voices. Some run on your device; others, such as Chrome's Google voices, are online services that receive the text of the interviewer's reply. All of this happens between you and your browser maker, under its own privacy terms. It is not a service we use or control, and our servers never connect to it."
+    },
+    {
+      "type": "p",
+      "text": "Only the resulting text reaches us. We treat it exactly like a typed answer: it becomes part of your interview transcript and is kept and deleted in the same way (see How long we keep it). You can switch voice mode off at any time and type instead."
+    },
+    {
+      "type": "p",
+      "text": "[Founder: before this page goes live, check that the browser makers' own privacy pages still describe their speech services this way, in particular Apple's for Safari (see docs/RESEARCH_TODO.md, Voice mode).]"
     },
 
     { "type": "h2", "id": "your-rights", "text": "Your rights" },

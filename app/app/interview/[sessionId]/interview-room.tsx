@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { bareField, fieldShell, noOutline } from "@/components/app/field";
 import { StageBar } from "@/components/app/stage-bar";
+import { useVoiceMode, VoiceControls } from "@/components/app/voice-mode";
 import { Chart } from "@/components/chart";
 import { ExhibitTable } from "@/components/exhibit-table";
 import { exhibitChartSpec } from "@/components/practice/exhibit-chart";
@@ -97,6 +98,23 @@ export function InterviewRoom({
   const keepGoingRef = useRef<HTMLButtonElement>(null);
   const elapsed = useElapsedSeconds(startedAt);
 
+  // Voice mode (off until the candidate switches it on). What they say fills the reply box and
+  // is sent through send() below, exactly like a typed answer, so every limit still applies.
+  const voice = useVoiceMode({
+    maxChars,
+    onTranscript: setInput,
+    onSubmit: (text) => {
+      if (stage === "debrief") return "refused";
+      if (busy) return "busy";
+      void send("message", text, text);
+      return "sent";
+    },
+    startContext: () => {
+      const last = messages.at(-1);
+      return { prefix: input, readAloud: !busy && last?.role === "assistant" ? last.content : "" };
+    },
+  });
+
   // Keep the newest message in view, inside the conversation panel (the page itself does not jump).
   useEffect(() => {
     const log = logRef.current;
@@ -134,6 +152,7 @@ export function InterviewRoom({
     setNotice(null);
     setNoticeIsExhibit(false);
     setConfirmFinish(false);
+    voice.turnStarted();
     const previous = input;
     if (shown) {
       setMessages((m) => [...m, { role: "user", content: shown }]);
@@ -160,6 +179,7 @@ export function InterviewRoom({
         if (event.t === "delta") {
           reply += event.text;
           setDraft(reply);
+          voice.replyDelta(event.text);
         } else if (event.t === "notice") {
           setNotice(event.message);
         } else if (event.t === "error") {
@@ -178,7 +198,12 @@ export function InterviewRoom({
             setNoticeIsExhibit(true);
           }
           setExhibits(event.exhibits);
-          if (event.finished) router.push(`/app/debrief/${sessionId}`);
+          if (event.finished) {
+            voice.stop();
+            router.push(`/app/debrief/${sessionId}`);
+          } else {
+            voice.replyEnded();
+          }
         }
       };
       for (;;) {
@@ -199,6 +224,7 @@ export function InterviewRoom({
     } finally {
       if (failed) {
         // The turn was not saved: take back the message so the candidate can send it again.
+        voice.turnFailed();
         setDraft("");
         if (shown) {
           setMessages((m) => (m.at(-1)?.content === shown ? m.slice(0, -1) : m));
@@ -207,7 +233,8 @@ export function InterviewRoom({
       }
       setBusy(false);
       setScoring(false);
-      inputRef.current?.focus();
+      // In voice mode, leave focus where it is (on a phone, focusing the box opens the keyboard).
+      if (!voice.isOn()) inputRef.current?.focus();
     }
   }
 
@@ -367,6 +394,8 @@ export function InterviewRoom({
               </div>
             ) : null}
 
+            <VoiceControls voice={voice} disabled={busy || finished} draft={input} />
+
             <div className="rounded-[1.4rem] bg-surface-2 ring-1 ring-inset ring-line transition-shadow focus-within:ring-2 focus-within:ring-brand">
               <div className="flex items-center justify-between gap-3 px-4 pt-3">
                 <label htmlFor="reply" className="text-xs font-medium text-muted">
@@ -380,7 +409,10 @@ export function InterviewRoom({
                 id="reply"
                 ref={inputRef}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  voice.userTyped(); // typing pauses listening, so the typing is not overwritten
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && (e.ctrlKey || e.metaKey) && canSend) {
                     e.preventDefault();
@@ -392,7 +424,9 @@ export function InterviewRoom({
                 disabled={busy || finished}
                 aria-describedby="reply-help"
                 style={noOutline}
-                placeholder={finished ? "This interview has finished." : "Answer as you would out loud…"}
+                placeholder={
+                  finished ? "This interview has finished." : voice.phase === "listening" ? "Listening… say your answer out loud" : "Answer as you would out loud…"
+                }
                 className="block max-h-60 min-h-[3.5rem] w-full resize-none bg-transparent px-4 pb-2 pt-1.5 text-[15px] leading-relaxed text-ink placeholder:text-subtle disabled:opacity-60"
               />
               <div className="flex flex-wrap items-center gap-1.5 px-2 pb-2">
