@@ -16,6 +16,7 @@ The founder (Aman) is a non-developer. Follow rule 2.13 when talking to him.
 | `docs/SETUP.md` | Click-by-click setup for Supabase, Vercel and where keys go |
 | `docs/REVIEWER_GUIDE.md` | Hiring and briefing the human case reviewer, and how a sign-off is recorded |
 | `docs/playbook/` | The founder's 90-day growth playbook (15 Oct 2026): strategy, Days 1-90 with the exact messages he sends Claude, and the research behind it. When he mentions a day, a build (B1-B22) or "the playbook's rule", look it up here |
+| `docs/IMAGE_BRIEF.md` | The 66 Midjourney images for the site (file names, where each goes, ratios, prompts, honesty rules) and how they reach the `images-raw` branch |
 | `docs/CASE_REVIEW_NOTES.md` | Per case: what Claude's two review rounds changed (15 Oct 2026) and the points the human reviewer should decide |
 | `docs/DESIGN.md` | The design system: colour tokens, fonts, shared UI components and page patterns. Read before building or changing any page |
 | `docs/KIT.md` | The original build kit, unchanged. Reference only; do not edit |
