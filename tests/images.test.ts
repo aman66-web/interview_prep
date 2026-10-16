@@ -98,8 +98,28 @@ describe("the photo registry (lib/images.ts)", () => {
     }
   });
 
+  it.each(photos.map((p) => [`${p.group}/${p.key}`, p.photo] as const))("%s has its 800 px copy for small frames", (_name, photo) => {
+    const small = publicFile(photo.src.replace(/\.webp$/, "-800.webp"));
+    expect(existsSync(small), small).toBe(true);
+    const buf = readFileSync(small);
+    const size = webpSize(buf);
+    expect(size.width).toBe(Math.min(800, photo.width));
+    expect(Math.abs(size.height - Math.round((photo.height * size.width) / photo.width))).toBeLessThanOrEqual(1);
+    expect(statSync(small).size).toBeLessThan(150 * 1024);
+  });
+
+  it("serves the small copy to small frames and the original to large ones, with no resizing service", async () => {
+    const { default: loader } = await import("@/lib/image-loader");
+    expect(loader({ src: "/images/cases/case-harbourline-bakeries.webp", width: 640 })).toBe("/images/cases/case-harbourline-bakeries-800.webp");
+    expect(loader({ src: "/images/cases/case-harbourline-bakeries.webp", width: 800 })).toBe("/images/cases/case-harbourline-bakeries-800.webp");
+    expect(loader({ src: "/images/cases/case-harbourline-bakeries.webp", width: 1200 })).toBe("/images/cases/case-harbourline-bakeries.webp");
+    expect(loader({ src: "/icon.svg", width: 640 })).toBe("/icon.svg");
+    const config = readFileSync(join(root, "next.config.ts"), "utf8");
+    expect(config).toMatch(/loader:\s*"custom"/);
+  });
+
   it("lists every file in public/images, and nothing else is in there", () => {
-    const listed = new Set(photos.map((p) => publicFile(p.photo.src)));
+    const listed = new Set(photos.flatMap((p) => [publicFile(p.photo.src), publicFile(p.photo.src.replace(/\.webp$/, "-800.webp"))]));
     const files = walk(join(root, "public", "images"));
     const unlisted = files.filter((f) => !listed.has(f)).map((f) => relative(root, f).split(sep).join("/"));
     expect(unlisted, "add these to lib/images.ts or delete them").toEqual([]);
@@ -179,9 +199,9 @@ describe("where the photos are used", () => {
     expect(firmPage!.text).not.toMatch(/\b(pageImage|guideImage|caseImage|Photo)\b|image=\{/);
   });
 
-  it("only allowed local photos to be resized (next.config.ts)", () => {
+  it("uses only our own pre-sized photos: no resizing service, no remote images (next.config.ts)", () => {
     const config = readFileSync(join(root, "next.config.ts"), "utf8");
-    expect(config).toMatch(/localPatterns:\s*\[\{\s*pathname:\s*"\/images\/\*\*"/);
-    expect(config).not.toMatch(/remotePatterns/);
+    expect(config).toMatch(/loaderFile:\s*"\.\/lib\/image-loader\.ts"/);
+    expect(config).not.toMatch(/remotePatterns|domains:/);
   });
 });
