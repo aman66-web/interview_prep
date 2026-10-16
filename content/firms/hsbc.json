@@ -1,0 +1,192 @@
+{
+  "slug": "hsbc",
+  "name": "HSBC",
+  "status": "ready",
+  "sector": "banking",
+  "short_name": "HSBC",
+  "seo_title": "HSBC interview process: what to expect",
+  "description": "What HSBC's own careers pages say about its online assessments, interviews and assessment centre, each line linked to its source.",
+  "updated": "2026-10-16",
+  "intro": "This guide sums up what HSBC's own careers pages say about applying and interviewing, from how to apply to preparation and rules on AI. It reflects those pages as we checked them on 16 October 2026. Processes differ by programme, role and country, so check HSBC's careers site for your role before you apply.",
+  "sections": [
+    {
+      "heading": "How to apply",
+      "items": [
+        {
+          "text": "For its student and graduate programmes, HSBC describes a three-step process: an online application form (10 to 15 minutes), an online assessment (90 minutes) and an assessment centre (3 hours), which it calls Super Days in the US.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "HSBC says that for its insight and work experience programmes, the third stage is usually an online interview.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "HSBC says that during its student application process you meet its people and simulate the work you would be doing.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "HSBC says students cannot apply for more than one of its programmes.",
+          "source": "hsbc-students-faqs"
+        }
+      ]
+    },
+    {
+      "heading": "Online assessments",
+      "items": [
+        {
+          "text": "For its student and graduate programmes, HSBC says the online assessments have one or two stages depending on the market and programme, and each assessment takes around 40 minutes.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "HSBC says its assessments may use different question formats, including audio or video content, mock emails, data tables and graphs, or written articles.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "For its student and graduate programmes, HSBC says its online assessments use real-life scenarios to test how your skills fit the role, and ask for some short written and video responses.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "HSBC says its assessments may include time-recorded assessments or time-limited video responses.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "In its student and graduate FAQs, HSBC says applicants to its engineering and cyber roles complete a coding assessment, so some coding ability is needed, although it need not have been formally studied.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "HSBC says it gives the outcome of the online assessment within a couple of days, and sends a decision with developmental feedback by email at each stage.",
+          "source": "hsbc-students-faqs"
+        }
+      ]
+    },
+    {
+      "heading": "Interviews",
+      "items": [
+        {
+          "text": "HSBC says its student assessment process is mostly virtual, but final-stage interviews or assessment centres may be held in person, and the programme description says which.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "In its general careers application guide, HSBC says on-demand video interviews let you answer interview questions by video, without an interviewer, at a time that suits you.",
+          "source": "hsbc-careers-application-guide"
+        },
+        {
+          "text": "In its general careers application guide, HSBC says interviews may be by live video, telephone or in person, could last about 30 to 60 minutes depending on the role, and that more than one interview is common.",
+          "source": "hsbc-careers-application-guide"
+        },
+        {
+          "text": "In the same guide, HSBC says interviewers ask about specific occasions when you showed a particular ability, and suggests explaining the situation, the task, your actions and the outcome for each example.",
+          "source": "hsbc-careers-application-guide"
+        }
+      ]
+    },
+    {
+      "heading": "Assessment centre",
+      "items": [
+        {
+          "text": "HSBC says its assessment centres for students are mostly virtual but sometimes held in person at its offices, usually last three hours and include plenty of breaks.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "HSBC says that at the assessment centre you meet HSBC employees and complete different interviews and exercises to show your skills.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "For the third step of its student process, HSBC's step-by-step guide says you complete exercises showing your skills and interest in the area you applied to, and answer questions from the team you would work with and ask your own.",
+          "source": "hsbc-students-application-guide"
+        }
+      ]
+    },
+    {
+      "heading": "What HSBC looks for",
+      "items": [
+        {
+          "text": "HSBC says it is interested in students' behavioural and cognitive skills rather than what they studied, and that any required academic background is listed on the programme description.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "For its business analysis and consulting programmes, HSBC says behavioural skills such as collaboration, communication and influencing are key, and any technical skills needed are taught on the programme.",
+          "source": "hsbc-business-analysis-consulting"
+        }
+      ]
+    },
+    {
+      "heading": "Preparation and rules on AI",
+      "items": [
+        {
+          "text": "HSBC offers students a Practice Zone to get ready for its assessments and a Candidate Zone that guides them through the application process.",
+          "source": "hsbc-students-application-guide"
+        },
+        {
+          "text": "HSBC suggests researching HSBC and your chosen programme for the assessment centre so you can clearly explain why you want to join.",
+          "source": "hsbc-students-faqs"
+        },
+        {
+          "text": "In its careers FAQs on doing well at interview, HSBC says to be ready to explain your motivation for joining HSBC, the financial industry and the business area you applied to.",
+          "source": "hsbc-careers-faqs"
+        },
+        {
+          "text": "In a video transcript it hosts about its process for emerging talent roles, HSBC suggests having a pen, paper and calculator to hand when completing assessments, in case you need to note information.",
+          "source": "hsbc-application-process-transcript"
+        },
+        {
+          "text": "HSBC's general careers application guide says candidates may use generative AI to research HSBC and its roles, to help structure a CV that accurately reflects their own experience, and to practise for interviews.",
+          "source": "hsbc-careers-application-guide"
+        },
+        {
+          "text": "The same guide says candidates must not use generative AI to generate responses during live or recorded interviews, to fabricate or exaggerate skills, or to submit work they cannot personally explain.",
+          "source": "hsbc-careers-application-guide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hsbc-students-application-guide",
+      "title": "Application guide | Students and graduates | Careers | HSBC",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/careers/students-and-graduates/application-guide",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "hsbc-students-faqs",
+      "title": "FAQs | Students and graduates | Careers | HSBC Holdings plc",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/careers/students-and-graduates/faqs",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "hsbc-careers-application-guide",
+      "title": "Application Guide | HSBC Holdings plc",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/careers/application-guide",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "hsbc-careers-faqs",
+      "title": "Careers FAQs | Careers opportunities | HSBC Holdings plc",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/careers/careers-faqs",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "hsbc-business-analysis-consulting",
+      "title": "Business analysis and consulting | Careers | HSBC",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/careers/students-and-graduates/university-students-and-graduates/business-analysis-and-consulting",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "hsbc-application-process-transcript",
+      "title": "Your guide to HSBC’s application process (video transcript)",
+      "publisher": "HSBC Holdings plc",
+      "url": "https://www.hsbc.com/-/files/hsbc/careers/students-and-graduates/pdf/250103-the-application-process-transcript.pdf?download=1",
+      "checked": "2026-10-16"
+    }
+  ],
+  "practice_advice": [
+    "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
+    "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
+    "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
+  ]
+}

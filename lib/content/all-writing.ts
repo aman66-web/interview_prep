@@ -2,9 +2,16 @@
 // imported directly so it is bundled into the app (no file reading at run time).
 // When you add a file to content/guides/, content/firms/ or content/pages/, add it
 // here too: tests/content-writing.test.ts fails if a file is missing from these lists.
+import accenture from "@/content/firms/accenture.json";
 import bain from "@/content/firms/bain.json";
 import bcg from "@/content/firms/bcg.json";
+import deloitte from "@/content/firms/deloitte.json";
+import eyParthenon from "@/content/firms/ey-parthenon.json";
+import goldmanSachs from "@/content/firms/goldman-sachs.json";
+import hsbc from "@/content/firms/hsbc.json";
+import jpMorgan from "@/content/firms/jp-morgan.json";
 import mckinsey from "@/content/firms/mckinsey.json";
+import pwcStrategy from "@/content/firms/pwc-strategy.json";
 import glossaryFile from "@/content/glossary.json";
 import caseInterviewMaths from "@/content/guides/case-interview-maths.json";
 import growth from "@/content/guides/growth-case-interview.json";
@@ -38,7 +45,21 @@ export const rawGuides: unknown[] = [
 ];
 
 /** In the order /guides lists them. */
-export const rawFirms: unknown[] = [bain, bcg, mckinsey];
+/** In the order /guides lists them within each sector: the best-known names first. */
+export const rawFirms: unknown[] = [
+  // Consulting firms
+  mckinsey,
+  bcg,
+  bain,
+  deloitte,
+  accenture,
+  pwcStrategy,
+  eyParthenon,
+  // Banks
+  jpMorgan,
+  goldmanSachs,
+  hsbc,
+];
 
 export const rawPages: unknown[] = [about, faq, terms, privacy, refunds, disclaimer];
 

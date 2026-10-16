@@ -159,11 +159,25 @@ describe("draft firm guides", () => {
   });
 
   it("builds each firm guide only from that firm's own careers pages (rule 2.2)", () => {
-    const domains: Record<string, string> = { bain: "www.bain.com", bcg: "careers.bcg.com", mckinsey: "www.mckinsey.com" };
+    // Each firm's own sites. Hosts on a recruiting platform (Pinpoint, Oracle) are the
+    // firm's own job pages there, linked from its careers site; adding a host here needs
+    // that same check.
+    const domains: Record<string, string[]> = {
+      bain: ["www.bain.com"],
+      bcg: ["careers.bcg.com"],
+      mckinsey: ["www.mckinsey.com"],
+      deloitte: ["www.deloitte.com", "usrecruiting.deloitte.com"],
+      accenture: ["www.accenture.com", "accenture.pinpointhq.com"],
+      "pwc-strategy": ["www.pwc.co.uk", "www.pwc.com", "www.strategyand.pwc.com"],
+      "ey-parthenon": ["www.ey.com", "ukstudents.ey.com"],
+      "jp-morgan": ["www.jpmorganchase.com", "careers.jpmorgan.com", "privatebank.jpmorgan.com", "jpmc.fa.oraclecloud.com"],
+      "goldman-sachs": ["www.goldmansachs.com"],
+      hsbc: ["www.hsbc.com"],
+    };
     for (const firm of allFirms()) {
-      const host = domains[firm.slug];
-      expect(host, firm.slug).toBeDefined();
-      for (const source of firm.sources) expect(new URL(source.url).host, `${firm.slug}: ${source.url}`).toBe(host);
+      const hosts = domains[firm.slug];
+      expect(hosts, firm.slug).toBeDefined();
+      for (const source of firm.sources) expect(hosts, `${firm.slug}: ${source.url}`).toContain(new URL(source.url).host);
     }
   });
 });

@@ -1,0 +1,205 @@
+{
+  "slug": "deloitte",
+  "name": "Deloitte",
+  "status": "ready",
+  "sector": "consulting",
+  "short_name": "Deloitte",
+  "seo_title": "Deloitte interview process: what to expect",
+  "description": "What Deloitte's own careers pages say about its online assessment, job simulation, final stage and case interviews, each line linked to its source.",
+  "updated": "2026-10-16",
+  "intro": "This guide sums up what Deloitte's own careers pages say about applying and interviewing, from how to apply to AI rules and preparation. It reflects those pages as we checked them on 16 October 2026. Processes differ by programme, role and country, so check Deloitte's careers site for your role before you apply.",
+  "sections": [
+    {
+      "heading": "How to apply",
+      "items": [
+        {
+          "text": "Deloitte UK says its Summer Vacation Scheme, Industrial Placement, Graduate and BrightStart programmes all follow the same assessment structure: an online application, the Immersive Online Assessment, a Job Simulation, a Final Stage Assessment, then the outcome.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "For its UK Graduate and work experience programmes, Deloitte says you will typically need to be on track for, or already have, a 2:1 or higher in your undergraduate degree.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK runs a strict one-application-per-year policy for early-careers roles and does not let you move an application to a different role after submitting it.",
+          "source": "deloitte-uk-early-careers-application-timelines"
+        },
+        {
+          "text": "Deloitte UK's early-careers Consulting page says it is looking for people who love networking, building relationships and learning, and asks whether you are a curious, open-minded person who enjoys working with others.",
+          "source": "deloitte-uk-early-careers-consulting"
+        }
+      ]
+    },
+    {
+      "heading": "Online assessments",
+      "items": [
+        {
+          "text": "Deloitte UK says its Immersive Online Assessment has two parts: a Behavioural Assessment based on realistic workplace scenarios, and a Cognitive Assessment of numerical and verbal reasoning questions.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says the Immersive Online Assessment has no overall time limit, but some questions are timed and how quickly you answer counts towards your score.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says the Job Simulation uses work-based scenarios in which you rank options, pick the most suitable responses, write answers and record video responses.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says some Job Simulation scenarios may mention workplace tools such as AI, but you need no previous AI experience and will not be asked to use an AI tool.",
+          "source": "deloitte-uk-early-careers-assessment"
+        }
+      ]
+    },
+    {
+      "heading": "Final stage assessment",
+      "items": [
+        {
+          "text": "Deloitte UK says the Final Stage Assessment for Graduate, Industrial Placement and BrightStart roles takes place in person at the Deloitte office linked to your application, while for the Summer Vacation Scheme it is held virtually.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says that before the final stage you must complete mandatory preparation that involves researching and analysing a topic.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says one final-stage exercise is a two-way discussion of your topic preparation with an assessor, typically lasting about 30 to 40 minutes, with the assessor asking questions throughout.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says the other final-stage exercise is a skills and motivation interview of about 50 minutes, which explores how well you match the capabilities it looks for.",
+          "source": "deloitte-uk-early-careers-assessment"
+        },
+        {
+          "text": "Deloitte UK says Summer Vacation Scheme applicants complete only one final-stage exercise, the skills and motivation interview.",
+          "source": "deloitte-uk-early-careers-assessment"
+        }
+      ]
+    },
+    {
+      "heading": "Experienced hires",
+      "items": [
+        {
+          "text": "For UK experienced (professional) hires, Deloitte says its process can vary by business area and grade; in outline, a recruiter reviews your CV, then, if your experience is relevant, you complete a digital assessment or a 30-minute initial call, and the hiring manager decides whether to interview you.",
+          "source": "deloitte-uk-professional-careers-assessment"
+        },
+        {
+          "text": "For UK experienced hires, Deloitte says interviews may be virtual (the most common type, typically about an hour), face to face, with a panel or one or two people, or an assessment centre where several people are assessed at once.",
+          "source": "deloitte-uk-professional-careers-assessment"
+        },
+        {
+          "text": "For UK experienced hires, Deloitte says that, depending on the role, assessment can include case studies, either on the spot or to be presented back at interview, alongside technical and behavioural questions.",
+          "source": "deloitte-uk-professional-careers-assessment"
+        }
+      ]
+    },
+    {
+      "heading": "Case interviews (Deloitte US)",
+      "items": [
+        {
+          "text": "Deloitte US says case and scenario interviews test problem-solving, analytical ability and strategic and logical thinking, and that it looks for answers showing clear thinking, practical judgement and a professional manner.",
+          "source": "deloitte-us-case-scenario-interview-tips"
+        },
+        {
+          "text": "Deloitte US suggests a five-step approach: understand the issue (asking clarifying questions), identify the underlying assumptions, summarise the issues and findings, state recommendations, and outline next steps and expected results.",
+          "source": "deloitte-us-case-scenario-interview-tips"
+        },
+        {
+          "text": "Deloitte US says you are not expected to give the right answer in a case or scenario interview, but to explain your logic and thought process clearly.",
+          "source": "deloitte-us-case-scenario-interview-tips"
+        },
+        {
+          "text": "Deloitte US advises taking notes throughout the interview and developing and stating a framework and an initial hypothesis.",
+          "source": "deloitte-us-case-scenario-interview-tips"
+        }
+      ]
+    },
+    {
+      "heading": "AI rules and preparation",
+      "items": [
+        {
+          "text": "Deloitte UK's early-careers integrity guidance says AI must not be used in its online assessments (the Immersive Online Assessment, OneStop and Job Simulation) or in interviews, whether in person or virtual.",
+          "source": "deloitte-uk-integrity-guidance"
+        },
+        {
+          "text": "For the final-stage topic research, Deloitte UK says it asks candidates to use generative AI tools alongside other research methods, and to check that any AI-generated content is accurate and backed by reliable sources.",
+          "source": "deloitte-uk-integrity-guidance"
+        },
+        {
+          "text": "Deloitte UK says you will record a short integrity statement on camera before the online assessment, and that anyone it believes used AI in breach of its guidance is removed from the selection process.",
+          "source": "deloitte-uk-integrity-guidance"
+        },
+        {
+          "text": "Deloitte UK points candidates to its free Candidate Zone for practice assessments, says it never charges for assessment advice, and says using answers from websites that sell assessment insights breaches its integrity guidelines.",
+          "source": "deloitte-uk-early-careers-assessment"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "deloitte-uk-early-careers-assessment",
+      "title": "Early Careers Assessment | Deloitte UK",
+      "publisher": "Deloitte UK",
+      "url": "https://www.deloitte.com/uk/en/careers/early-careers/early-careers-assessment.html",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "deloitte-uk-early-careers-application-timelines",
+      "title": "Early Careers Application Timelines | Deloitte UK",
+      "publisher": "Deloitte UK",
+      "url": "https://www.deloitte.com/uk/en/careers/early-careers/early-careers-application-timelines.html",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "deloitte-uk-early-careers-consulting",
+      "title": "Early Careers Consulting | Deloitte UK",
+      "publisher": "Deloitte UK",
+      "url": "https://www.deloitte.com/uk/en/careers/discover-deloitte/our-business-areas/early-careers-consulting.html",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "deloitte-uk-integrity-guidance",
+      "title": "Integrity Guidance | Deloitte UK",
+      "publisher": "Deloitte UK",
+      "url": "https://www.deloitte.com/uk/en/careers/early-careers/integrity-guidance.html",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "deloitte-uk-professional-careers-assessment",
+      "title": "Professional Careers Assessment | Deloitte UK",
+      "publisher": "Deloitte UK",
+      "url": "https://www.deloitte.com/uk/en/careers/professional-careers/professional-careers-assessment-support.html",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "deloitte-us-case-scenario-interview-tips",
+      "title": "Preparing for the Case and Scenario Interview | Deloitte US",
+      "publisher": "Deloitte US",
+      "url": "https://www.deloitte.com/us/en/careers/join-deloitte/recruiting-tips/case-and-scenario-interview-tips.html",
+      "checked": "2026-10-16"
+    }
+  ],
+  "practice_advice": [
+    "Practise saying your structure out loud before you start any analysis, so the interviewer can follow your plan.",
+    "Do short, timed mental maths drills most days, with pen and paper only. Mock Partner's drills cover mental maths, chart reading and market sizing.",
+    "After each practice case, write down one thing to do better and choose your next case to work on it."
+  ],
+  "practice": {
+    "seo_title": "Deloitte-style case interview practice",
+    "description": "Practise for Deloitte-style interviews and case studies with original cases and an AI interviewer. What Deloitte says, sourced, plus cases to run.",
+    "intro": "Run original practice cases out loud with an AI interviewer and get a scored debrief with every number checked by code. Below: what Deloitte itself publishes about its final stage assessment and case interviews, and the cases we suggest starting with.",
+    "show_sections": [
+      "Final stage assessment",
+      "Case interviews (Deloitte US)"
+    ],
+    "cases": [
+      "harbourline-bakeries",
+      "hollinsway-pet-insurance",
+      "cobbleway-parcel-hub",
+      "flexora-gym-software-pricing",
+      "london-cargo-bikes",
+      "corvane-vets-acquisition"
+    ]
+  }
+}
