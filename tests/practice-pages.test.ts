@@ -240,7 +240,8 @@ describe("case and drill page metadata", () => {
 
   it("describe the case library with every case type it holds", () => {
     check(casesMetadata, "/cases");
-    for (const type of new Set(allCases.map((c) => c.type))) {
+    // "Other" is left out of the description on purpose: "other cases" tells a searcher nothing.
+    for (const type of new Set(allCases.map((c) => c.type).filter((t) => t !== "other"))) {
       expect(String(casesMetadata.description)).toContain(lowerFirst(CASE_TYPE_LABELS[type]));
     }
   });
