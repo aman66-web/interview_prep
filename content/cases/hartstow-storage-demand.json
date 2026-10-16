@@ -1,0 +1,290 @@
+{
+  "id": "case-036",
+  "slug": "hartstow-storage-demand",
+  "title": "Hartstow Storage: should it build three more stores?",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Self-storage",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "This is a data-interpretation case. Hartstow Storage runs eight self-storage stores in towns across the English Midlands. The share of its space that is rented out has risen every year for five years, and the board now plans to build three more stores at a cost of about £18 million. Before it commits, it has asked you whether demand for storage in its area will keep growing, and whether it should go ahead with the new stores. To start: what do you think drives demand for self-storage?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Hartstow Storage is privately owned and profitable. It runs 8 stores, one in each of eight towns, with 400,000 sq ft of space it can rent out (about 50,000 sq ft each). It rents indoor units, from small lockers to rooms the size of a garage, to households and businesses on monthly contracts, so customers can leave with a month's notice."
+    },
+    {
+      "question_topic": "Occupancy and rents",
+      "answer": "80% of Hartstow's space is rented out today (320,000 sq ft), up every year for five years. Its average rent is about £20 per sq ft a year, so its stores bring in about £6.4 million a year in rent. Hartstow has raised rents by about 3% a year for the last three years, and its rivals charge similar rents."
+    },
+    {
+      "question_topic": "Hartstow's empty space",
+      "answer": "About 80,000 sq ft of Hartstow's space is empty, mostly large units. About 30,000 sq ft of it is on the ground floor beside the loading bays and could be refitted as drive-up trade units with their own roller doors, for about £1 million across all eight stores."
+    },
+    {
+      "question_topic": "The expansion plan",
+      "answer": "Three new stores of 50,000 sq ft each, opening about one a year over the next three years, at about £6 million each (£18 million in all), paid for from cash and a bank loan. The board's view is that demand has grown strongly and will keep doing so."
+    },
+    {
+      "question_topic": "Objective and the board's test",
+      "answer": "The board wants to know whether demand in its area will keep growing, and whether to build the three stores. Its rule is that a new store must reach 75% occupancy within three years of opening, at today's rents. Hartstow's past new stores took about three years to reach the area's average occupancy, filling more slowly than its established stores."
+    },
+    {
+      "question_topic": "Timing and land",
+      "answer": "Hartstow holds options to buy the three sites. The options expire in six months, so the board must decide by then. It has not asked the landowners whether they would extend them."
+    },
+    {
+      "question_topic": "Trading area and market data",
+      "answer": "The market figures in this case come from a study Hartstow commissioned last month, which counted every store in the area and surveyed operators and customers. It found that nine in ten customers live within about 15 minutes' drive of their store, so Hartstow's market is the towns within about 15 minutes of its stores: its trading area. Hartstow has 40% of the area's space."
+    },
+    {
+      "question_topic": "Past supply",
+      "answer": "Almost nothing was built in the area for five years. Total space stayed at about 1 million sq ft, so occupancy across the area rose from about 55% to 80% as demand grew. With stores this full, every operator is now planning to build at the same time."
+    },
+    {
+      "question_topic": "Customer groups",
+      "answer": "The study splits customers into five groups: households moving home, households short of space at home, tradespeople and other local businesses, businesses storing document archives, and online sellers holding stock."
+    },
+    {
+      "question_topic": "Length of stay and switching",
+      "answer": "Hartstow's customer records show that households moving home stay about four months and shop around on price. Households short of space at home stay two years or more on average and rarely move to another store, because moving their belongings is a hassle; the few who do switch are mostly tempted by a large move-in offer at a new store nearby. Tradespeople and online sellers stay one to two years, and document archives often stay five years or more."
+    },
+    {
+      "question_topic": "Online sellers",
+      "answer": "These are small businesses selling through online marketplaces, renting 100 to 200 sq ft for stock and packing. Three months ago a large fulfilment centre opened in the area; it stores stock and packs orders for small online sellers for a fee. Since then, new online sellers moving in at Hartstow's stores have roughly halved and about as many have left as arrived, so their space at Hartstow's stores has stayed flat. Nearly all of this year's rise came before the centre opened, and the study expects online sellers' space across the area to stay about flat from here."
+    },
+    {
+      "question_topic": "What tradespeople want",
+      "answer": "In the study, tradespeople said drive-up access, van parking and opening from 6am matter more to them than price. Today none of the area's staffed stores, Hartstow's included, offers drive-up units, and rivals' new stores will be standard indoor units in multi-storey buildings. Container sites can be driven up to, but they have no staff to take deliveries and open only in the daytime."
+    },
+    {
+      "question_topic": "Housing and the local economy",
+      "answer": "House moves in the area have been roughly flat for three years. Several blocks of flats with little storage space are being built in two of the towns. The local economy is steady, with no large employers arriving or leaving."
+    },
+    {
+      "question_topic": "Seasonality",
+      "answer": "Move-ins peak in the summer, when more people move home. The exhibits use the same point in each year, so seasonality does not affect the comparison."
+    },
+    {
+      "question_topic": "Online booking",
+      "answer": "Hartstow added online booking six years ago and has promoted it since. Customers can also book by phone or at a store."
+    },
+    {
+      "question_topic": "Competitors today",
+      "answer": "A national chain has 5 stores in the area and a regional rival has 4. The rest of the space is container sites and small independent operators. All charge rents similar to Hartstow's."
+    },
+    {
+      "question_topic": "Rivals' plans",
+      "answer": "All the new space rivals plan is either announced or has planning permission, and it opens over the next three years. The national chain is building three stores of about 50,000 sq ft each; two of them are in towns where Hartstow has a store. The regional rival is opening one new store of about 50,000 sq ft, also in a town where Hartstow has a store. Container operators are adding sites around the area. The study expects rivals to open their new stores with large move-in offers, such as two months at half price."
+    },
+    {
+      "question_topic": "Hartstow's proposed sites",
+      "answer": "All three sites are in towns where Hartstow already has a store: two are in the towns where the national chain is building, and the third is in the town where the regional rival is opening its new store. Hartstow's planning team expects about a third of each new store's customers to come from its existing store in the same town."
+    },
+    {
+      "question_topic": "What Hartstow actually did (interviewer: never share this earlier, even if asked; once the candidate has given their recommendation, use your one follow-up to tell them this in your own words and ask why it worked)",
+      "answer": "Hartstow let all three land options lapse and kept the £18 million. Before rivals opened, it offered long-stay households a 12-month contract with no rent rise that year, and most signed. It refitted about 30,000 sq ft of empty ground-floor space as drive-up trade units with van parking and 6am opening, for about £1 million, and matched rivals' move-in offers only for new customers. Two years later its stores were still about 78% full and the trade units were almost all let, while the two new stores the national chain had opened by then were about half full. The regional rival's new store was about 40% full, and Hartstow bought it for about £4 million, about two-thirds of what it had cost to build."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Household demand: moving home, short of space at home (smaller homes, flats with little storage), life events such as a new baby, a divorce or a death in the family, and home renovations",
+      "Business demand: tradespeople's tools and materials, online sellers' stock, document archives",
+      "What turns a need into a rental: awareness, price against free alternatives (a loft, a garage, a friend's spare room) and how close a store is",
+      "What shifts demand over time: house moves and new homes, the number of small businesses and online sellers, and substitutes such as fulfilment centres or outdoor containers"
+    ],
+    "good_signs": [
+      "Good: splits demand into households and businesses, and households by reason (moving home versus short of space at home)",
+      "Good: separates one-off, short needs (moving home) from long-term needs (no room at home), because they behave differently on price and on how long they stay",
+      "Excellent: suggests unusual proxy indicators to track demand, for example local house sales and rental moves, van-hire bookings, new flats with little storage, or the number of small online sellers in the area",
+      "Excellent: adds unprompted that supply matters as much as demand (whether new stores fill depends on rivals' new space too), and asks for the board's test for a new store (75% occupancy within three years) so the answer can be framed around it",
+      "Excellent: defends a point with reasons when the interviewer pushes back, rather than dropping it at once"
+    ],
+    "red_flags": [
+      "Recites a generic framework (for example the 4Ps) with no link to storage demand",
+      "Treats demand as one number and never splits it by customer group",
+      "Assumes the growth of the last two years will simply continue"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "occupied-space-trend",
+      "title": "Occupied self-storage space in Hartstow's trading area, all operators (thousand sq ft)",
+      "kind": "line",
+      "data": {
+        "columns": ["Year", "Occupied space (thousand sq ft)"],
+        "rows": [
+          ["5 years ago", 550],
+          ["4 years ago", 575],
+          ["3 years ago", 600],
+          ["2 years ago", 650],
+          ["Last year", 720],
+          ["This year", 800]
+        ]
+      },
+      "reveal_hint": "Ask for data on how demand has changed over time. This is one of three demand exhibits (with the customer-group table and the online-booking chart): share them one after another, then ask what they mean for demand.",
+      "insight": "Occupied space grew from 600k to 800k sq ft in three years (+33%), and growth sped up: about 25k a year before, then 50k, 70k and 80k (about 10% a year lately). The board reads this as a new, faster trend. On its own the line cannot say whether the speed-up will last. Good: notes the speed-up and asks whether it will last. Excellent: reads it with the customer-group table to find where the speed-up came from."
+    },
+    {
+      "id": "space-by-customer-group",
+      "title": "Occupied space by customer group, all operators in the trading area (thousand sq ft)",
+      "kind": "table",
+      "data": {
+        "columns": ["Customer group", "3 years ago", "This year"],
+        "rows": [
+          ["Households moving home", 200, 205],
+          ["Households short of space at home", 160, 195],
+          ["Tradespeople and other local businesses", 90, 120],
+          ["Business document archives", 50, 40],
+          ["Online sellers holding stock", 100, 240],
+          ["Total", 600, 800]
+        ]
+      },
+      "reveal_hint": "Ask who the customers are or where the growth came from. One of the three demand exhibits: share it with the trend line and the online-booking chart. After the candidate has read the demand exhibits, push back once with the board's view, for example: 'Occupied space grew by a third in three years. Why isn't that enough to build?', and see whether they defend their reading.",
+      "insight": "Online sellers grew from 100k to 240k sq ft: 140k of the 200k growth, 70%. All the other groups together grew from 500k to 560k, 12% in three years (about 4% a year), close to the pace before the speed-up in the trend line. Movers were flat (+2.5%, as house moves were flat), households short of space grew about 22% (new flats with little storage), tradespeople grew 33% (the fastest-growing group after online sellers) and archives shrank. The fulfilment centre opened only three months ago, so its effect is too recent to show in this year's figures; the facts say online sellers' space has been flat since, and the study expects it to stay flat. So underlying demand growth is about 4% a year, not the 10% or so of the last two years. Good: spots that online sellers drove most of the growth. Excellent: combines this table with the trend line to show the speed-up came from one group that has now stalled."
+    },
+    {
+      "id": "online-booking-share",
+      "title": "Share of Hartstow's new customers who booked online rather than by phone or in a store (%)",
+      "kind": "line",
+      "data": {
+        "columns": ["Year", "Booked online (%)"],
+        "rows": [
+          ["5 years ago", 30],
+          ["4 years ago", 36],
+          ["3 years ago", 42],
+          ["2 years ago", 50],
+          ["Last year", 58],
+          ["This year", 65]
+        ]
+      },
+      "reveal_hint": "One of the three demand exhibits: share it with the trend line and the customer-group table when the candidate asks for data on demand or on customers.",
+      "insight": "Deliberately irrelevant to how much demand there is. It shows how Hartstow's new customers book (a share), not how many customers there are, so it says nothing about whether demand will grow. A strong candidate says so quickly and moves on. A candidate may fairly add one link without being marked down: online booking makes prices easy to compare, so rivals' move-in offers will reach new customers quickly, and it matters for where Hartstow spends on marketing. Reading the rising line as rising demand is a mistake."
+    },
+    {
+      "id": "planned-new-space",
+      "title": "Total lettable self-storage space in the trading area, let and empty: today and planned in the next three years (thousand sq ft; Hartstow's planned figure is its three proposed stores)",
+      "kind": "table",
+      "data": {
+        "columns": ["Operator", "Today", "Planned in the next three years"],
+        "rows": [
+          ["Hartstow", 400, 150],
+          ["National chain", 250, 150],
+          ["Regional rival", 200, 50],
+          ["Container sites and small operators", 150, 50],
+          ["Total", 1000, 400]
+        ]
+      },
+      "reveal_hint": "Ask about competitors, their plans or new supply in the area; otherwise share it after the demand exhibits. Once the candidate has read it, ask what the critical issue for Hartstow is.",
+      "insight": "Rivals plan 250k sq ft of new space, 25% more than today, against about 96k sq ft of new demand (12% of 800k): about 2.5 times as much. With Hartstow's 150k, space grows 40% (400k). Hartstow's own plan is the joint-largest addition, level with the national chain's, and all three of its sites are in towns where it already has a store and a rival is opening. If demand grows 12% (to 896k) and all planned space opens, occupancy across the area falls from 80% to 64% (about 72% without Hartstow's stores). Even in the board's best case, demand growing 80k a year (to 1,040k), the area only gets back to about the 75% bar on average (74%), new stores fill more slowly than established ones, and that best case needs online-seller growth that has already stalled. The critical issue is not whether demand grows, nor only that rivals are overbuilding: Hartstow's own stores would make the glut worse in the towns where it already earns its £6.4 million a year, taking customers from its existing stores and adding to the price pressure on them. Good: says supply will grow faster than demand. Excellent: sees that Hartstow's own plan is a large part of the problem and puts a number on the risk to its existing stores."
+    }
+  ],
+  "math": [
+    {
+      "id": "underlying-demand-growth",
+      "question": "Leaving out online sellers, by what percentage did occupied space grow in total over the last three years (the three-year total, not the yearly rate)?",
+      "inputs": {
+        "online_before": 100,
+        "online_now": 240,
+        "total_before": 600,
+        "total_now": 800
+      },
+      "expression": "((total_now - online_now) - (total_before - online_before)) / (total_before - online_before) * 100",
+      "expected": 12,
+      "tolerance_pct": 2,
+      "working": "Without online sellers, occupied space went from 500k (600 - 100) to 560k (800 - 240): up 60k. 60 / 500 = 12% over three years, about 4% a year, against roughly 10% a year for the whole market in the last two years. Online sellers' 140k (240 - 100) was 70% of the 200k total growth.",
+      "input_sources": [
+        { "input": "online_before", "exhibit_id": "space-by-customer-group", "row": 4, "column": "3 years ago" },
+        { "input": "online_now", "exhibit_id": "space-by-customer-group", "row": 4, "column": "This year" },
+        { "input": "total_before", "exhibit_id": "space-by-customer-group", "row": 5, "column": "3 years ago" },
+        { "input": "total_now", "exhibit_id": "space-by-customer-group", "row": 5, "column": "This year" }
+      ]
+    },
+    {
+      "id": "occupancy-in-three-years",
+      "question": "Suppose total demand grows by the underlying 12% over the next three years and all the planned space opens, including Hartstow's three stores. What share of the area's space will be occupied, in percent?",
+      "inputs": {
+        "demand_now": 800,
+        "growth_pct": 12,
+        "space_today": 1000,
+        "planned_new": 400
+      },
+      "expression": "demand_now * (1 + growth_pct / 100) / (space_today + planned_new) * 100",
+      "expected": 64,
+      "tolerance_pct": 2,
+      "working": "Demand grows to 800k x 1.12 = 896k sq ft. Space grows to 1,000k + 400k = 1,400k. 896 / 1,400 = 64%, down from 80% today and well below the 75% a new store needs. This is an area-wide proxy: the board's test is on each new store three years after it opens, and new stores fill more slowly than established ones, so they would do worse than the average. Other checks point the same way: without Hartstow's stores, 896 / 1,250 is about 72%; holding online sellers flat, as the study expects, gives (560 x 1.12 + 240) / 1,400, about 62%; with the stores opening a year apart, demand at about 4% a year reaches only about 1,000k by year 6, and 1,000 / 1,400 is about 72%; and even if demand kept growing by 80k a year (to 1,040k), occupancy would be about 74%.",
+      "input_sources": [
+        { "input": "demand_now", "exhibit_id": "space-by-customer-group", "row": 5, "column": "This year" },
+        { "input": "space_today", "exhibit_id": "planned-new-space", "row": 4, "column": "Today" },
+        { "input": "planned_new", "exhibit_id": "planned-new-space", "row": 4, "column": "Planned in the next three years" }
+      ]
+    },
+    {
+      "id": "hartstow-rent-at-risk",
+      "question": "Suppose that happens and Hartstow's eight existing stores fall to that area average of 64%. How much rent a year would they lose compared with today, at £20 per sq ft, in £ million?",
+      "inputs": {
+        "hartstow_space": 400,
+        "occupied_now": 320,
+        "future_occupancy_pct": 64,
+        "rent_per_sqft": 20
+      },
+      "expression": "(occupied_now - hartstow_space * future_occupancy_pct / 100) * rent_per_sqft / 1000",
+      "expected": 1.28,
+      "tolerance_pct": 3,
+      "working": "At 64%, Hartstow's 400k sq ft would hold 256k let (400 x 0.64), against 320k today: 64k sq ft fewer. 64k x £20 = £1.28 million a year, about £1.3 million or a fifth of today's £6.4 million, before any price cuts. Without Hartstow's own new stores the area would be about 72% full: 400 x 0.72 is about 287k let, about 33k fewer, or about £0.7 million. So building the new stores would roughly double the rent at risk at Hartstow's existing stores.",
+      "input_sources": [
+        { "input": "hartstow_space", "exhibit_id": "planned-new-space", "row": 0, "column": "Today" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Rivals are about to add a lot of space. How would you segment Hartstow's customers, and which segments should it focus on to protect its stores as the new space opens?",
+    "idea_bank": [
+      "Segment by need and length of stay: short-stay movers (about four months, shop around on price) against long-stay households short of space (two years or more, rarely switch)",
+      "Long-stay households: across-the-board discounts are wasted on them, but a large move-in offer at a new store nearby is the one thing that could beat the hassle of moving. Offering them a 12-month fixed-rent contract before rivals open is a cheap, targeted lock-in: it costs one year's rent rise of about 3%",
+      "Tradespeople: the fastest-growing group after online sellers (+33%). They want drive-up access, van parking and early opening, which no staffed store in the area offers and rivals' new indoor stores will not, so refit empty ground-floor space as trade units",
+      "Movers: win them through estate agents, letting agents and removal firms with flexible short contracts, accepting that this group follows price",
+      "Avoid a price war: match rivals' move-in offers only for new customers, never across the existing base",
+      "Online sellers: either compete with the fulfilment centre (accepting deliveries, packing tables, small business units) or accept that this group has stalled and stop planning around it",
+      "Target the new flats with little storage space through local marketing and move-in offers for new residents",
+      "Segment by unit size: split large empty units into smaller ones if small units fill faster",
+      "Archives are shrinking: do not chase them, but keep the ones there are, since they stay five years or more",
+      "Segment by town: concentrate the defence on the towns where rivals' new stores open, and act before they open",
+      "Do not add space into the glut: let the land options lapse or ask the landowners for an extension, keep the cash, and be ready to buy under-filled rival stores below build cost if rivals overbuild",
+      "Track early signals: rivals' opening dates and move-in offers, enquiries from each town, online sellers moving in and out, local house moves and new flats"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Demand is still growing, but the underlying rate is about 4% a year (12% over three years), not the 10% or so of the last two years: 70% of the recent growth came from online sellers, whose space has stopped growing since a fulfilment centre opened",
+      "Supply will grow much faster than demand: rivals alone add 250k sq ft (25%) against about 96k sq ft of new demand, or 40% with Hartstow's stores, so occupancy across the area would fall from 80% to about 64%, below the 75% a new store needs. Hartstow's own stores would make this worse in its own towns, putting about £1.3 million a year of rent at its existing stores at risk",
+      "A clear recommendation: do not build the three stores now, and protect and make better use of the existing stores"
+    ],
+    "good_signs": [
+      "Goes beyond the weak answer ('demand grew by a third, so build'). Good: spots that the speed-up came from online sellers. Excellent: reads the trend line and the customer-group table together to show the speed-up came from one group that has now stalled, then sets demand against the supply table to show the real issue is too much space, not too little demand",
+      "Says the online-booking chart is irrelevant to how much demand there is, and why (it is a share of how customers book, not a count of customers)",
+      "Tests the board's best case: even if demand kept growing by 80,000 sq ft a year, the area would only get back to about the 75% bar on average (74%), new stores fill more slowly than established ones, and that case needs online-seller growth that has already stalled",
+      "Spots that Hartstow's own plan is the joint-largest addition and every site is in a town where it already trades, so the new stores would take customers from its existing ones and roughly double the rent at risk there",
+      "Proposes using what Hartstow already has instead of building: its 80,000 sq ft of empty space (for example trade units), protecting long-stay customers before rivals open, and matching move-in offers only for new customers",
+      "When told what Hartstow did, explains why it worked with competitive reasoning rather than restating the 70%, 12% and 64% figures: adding space in a glut forces price cuts across the whole existing base, so holding back protected £6.4 million of rent; switching costs keep long-stay customers, and the 12-month deal removed the one thing that might move them; trade units served a growing group no rival served, using space already paid for; pricing new and existing customers differently kept existing rents; and buying a rival's store after the glut cost less than building. If the interviewer did not share it, judge the candidate's own reasons for why their recommendation would work on the same lines",
+      "Defends the recommendation with numbers when pushed, and says what would change it (rivals delaying or cancelling, online-seller demand recovering, new stores filling faster than expected)",
+      "Names risks and next steps: the land options expiring in six months (and whether to ask for an extension), rivals' opening dates and move-in offers, a review in 12 months, and watching for under-filled rival stores coming up for sale"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 8 stores, one in each of eight towns, with 400k sq ft (40% of the area's 1,000k), 80% let (320k at £20, about £6.4m a year) and 80k empty. The plan is 3 new stores of 50k sq ft at about £6m each (£18m), and each must reach 75% occupancy within three years. The land options expire in six months. Almost nothing has been built in the area for five years, which is why occupancy rose from about 55% to 80% and why everyone is now building.",
+    "Demand drivers: households (moving home; short of space at home because of smaller homes and flats; life events; renovations) and businesses (tradespeople, online sellers, archives). Whether a need becomes a rental depends on awareness, price against free alternatives and distance. Demand shifts with house moves, new homes, the number of small businesses and substitutes such as fulfilment centres. Useful proxy indicators include local house moves, van-hire bookings, new flats with little storage and the number of small online sellers. An excellent answer adds that supply matters as much as demand.",
+    "Demand exhibits: occupied space grew from 600k to 800k sq ft in three years (+33%) and sped up. But online sellers grew from 100k to 240k, 70% of the growth; everything else grew 12% (about 4% a year), close to the pace before the speed-up. A fulfilment centre opened three months ago, online sellers' space has been flat since, and the study expects it to stay flat, so the recent pace will not last. The online-booking chart is irrelevant to how much demand there is: it shows how customers book, not how many there are (at most, it means rivals' offers will reach new customers quickly).",
+    "Supply and the critical issue: rivals plan 250k sq ft (+25%) against about 96k sq ft of new demand, about 2.5 times as much. With Hartstow's 150k, space grows 40%. If demand grows 12% to 896k, occupancy falls from 80% to 896 / 1,400 = 64% (about 72% without Hartstow's stores, and only about 74% even at the board's best case of 80k a year). Hartstow's own plan is the joint-largest addition, and all three sites are in towns where it already has a store and a rival is opening: about a third of each new store's customers would come from its own existing store. At 64%, its existing stores would lose about £1.3m a year of rent (about £0.7m without its new stores) before any price cuts. The critical issue is that Hartstow's own stores would make the glut worse where it already earns its money.",
+    "Segments: long-stay households short of space are the most valuable and rarely switch, but a large move-in offer next door could tempt them, so lock them in before rivals open (a 12-month fixed rent costs one year's rise of about 3%). Tradespeople are the fastest-growing group after online sellers and want drive-up access, van parking and early opening, which no staffed store offers, so refit empty ground-floor space for them. Movers follow price: match rivals' offers only for new customers. Online sellers have stalled; archives are shrinking but stay a long time.",
+    "Recommendation: do not build the three stores now; let the options lapse, or ask the landowners for an extension and decide once rivals' openings and fill rates are known. Protect and use the existing stores: lock in long-stay households before rivals open, refit about 30k sq ft of empty space as trade units (about £1m, against £6m for one new store) and match move-in offers only for new customers. Keep the cash: if rivals overbuild, under-filled stores may come up for sale below build cost. Risks and next steps: rivals' opening dates and offers, enquiries from each town, and a review in 12 months.",
+    "What Hartstow did, shared by the interviewer as the follow-up: it let the options lapse, kept the £18m, signed most long-stay households to 12-month contracts with no rise that year, refitted 30k sq ft as trade units for about £1m and matched offers only for new customers. Two years later its stores were about 78% full and the trade units almost all let, while the national chain's first two new stores were about half full, and it bought the regional rival's 40%-full new store for about £4m, two-thirds of its build cost. Why it worked: in a business with high fixed costs, new space in a glut forces price cuts that land on every existing customer, so not adding space protected £6.4m of rent; switching costs keep long-stay customers, and the 12-month deal removed the one reason they might move during the months when rivals' offers were largest; trade units served a growing group that no rival served, using space already paid for; pricing new and existing customers differently kept existing rents up; and buying after the glut got space for less than it cost to build.",
+    "There is no single right answer: building none of the stores now, or asking for an option extension and deciding later, can score equally well if it uses the 70% / 12% demand split, the 25% / 40% supply growth, the 64% occupancy and the rent at risk, and says what would change the decision. Building all three stores now is the weak answer."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

@@ -1,0 +1,248 @@
+{
+  "id": "case-032",
+  "slug": "sorrelby-houseplant-delivery",
+  "title": "Sorrelby: how big is the UK houseplant delivery market?",
+  "track": "consulting",
+  "type": "market_sizing",
+  "industry": "Horticulture (houseplant growing)",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "Sorrelby is a family-owned grower in England. It grows houseplants at two nurseries and sells them wholesale to supermarkets, DIY chains and garden centres, mostly under the retailers' own labels. It has never sold to the public. Its board is thinking about launching its own houseplant delivery service and has asked you three questions. How big is the UK market for houseplant delivery today? Which kinds of sellers are winning in it? And should Sorrelby go ahead, and if so, how? How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "Sorrelby today",
+      "answer": "Sorrelby grows houseplants at two large nurseries in England and sells about £40 million a year of them wholesale (excluding VAT) to supermarkets, DIY chains and garden centres. Most go out under the retailers' own labels, so shoppers do not know the plants are Sorrelby's. Its biggest customers mostly want mid-sized, common plants at low prices, and their buyers push its prices down every year, which is one reason the board is looking at selling direct. It has never sold to the public."
+    },
+    {
+      "question_topic": "The board's goal",
+      "answer": "The board will back an online business only if it can reach sales of at least £8 million a year by its third year (measured the same way as the market: excluding VAT, including delivery charges) and make a profit after its own running costs by then. Otherwise it would rather spend the money on its nurseries."
+    },
+    {
+      "question_topic": "What counts as the market",
+      "answer": "Houseplants, and any pots sold with them, ordered online and delivered to a home in the UK, whether for the buyer's own home or sent as a gift. Measure it by value: what customers pay, excluding VAT and including delivery charges. Leave out outdoor garden plants, cut flowers and bouquets, plants rented to offices, click-and-collect, and plants bought in a shop and carried home."
+    },
+    {
+      "question_topic": "Candidate's own assumptions",
+      "answer": "If the candidate suggests their own figure for households, adults, how many people buy, orders, plants or prices, say briefly whether it seems a sensible guess, then give the case figure and ask them to use it, so that the numbers can be checked."
+    },
+    {
+      "question_topic": "Households",
+      "answer": "Assume there are 28 million households in the UK."
+    },
+    {
+      "question_topic": "Households that order plants online",
+      "answer": "Assume 10% of households order houseplants online for delivery at least once a year, for themselves or as a gift."
+    },
+    {
+      "question_topic": "Orders and order value",
+      "answer": "Assume a household that orders places about 3 orders a year on average, and that the average order is about £25, excluding VAT and including the delivery charge."
+    },
+    {
+      "question_topic": "Adults who buy houseplants",
+      "answer": "Assume there are 50 million adults in the UK, and that 40% of them buy at least one houseplant a year, from any kind of shop or website."
+    },
+    {
+      "question_topic": "Plants per buyer and price",
+      "answer": "Assume a buyer buys about 4 houseplants a year on average, paying about £12.50 per plant excluding VAT, including any pot sold with it and, for online orders, its share of the delivery charge."
+    },
+    {
+      "question_topic": "Share ordered for delivery",
+      "answer": "Sorrelby's research team estimates that about a fifth (20%) of all the money spent on houseplants is spent on online orders delivered to the door. The rest is spent in garden centres, supermarkets, DIY stores and florists' shops."
+    },
+    {
+      "question_topic": "Market growth",
+      "answer": "Sorrelby's research team estimates the houseplant delivery market grew about 10% this year, and expects similar growth for the next few years. It expects the premium end (the highest-priced sellers) to grow faster and roughly double in size over the next three years, and the sellers priced near the average to keep shrinking slowly."
+    },
+    {
+      "question_topic": "The sellers in the table",
+      "answer": "The competitor table comes from research Sorrelby bought. It shows the eight largest online houseplant sellers by letter, because the research firm keeps their names private. Together they make about three-quarters of the market. The rest comes from hundreds of small independent sellers, florists and shops on online marketplaces. Share the table only after both market-size estimates."
+    },
+    {
+      "question_topic": "What the sellers offer",
+      "answer": "A, D and G sell larger and less common plants in designer pots, with gift wrapping and a care guarantee. B and F sell small, common plants in plastic pots at very low prices, with free delivery on most orders. C, E and H sell a broad range of mid-sized plants in plain pots at around average prices, with standard delivery and no gift or care extras."
+    },
+    {
+      "question_topic": "Why customers choose a seller",
+      "answer": "Sorrelby surveyed 2,000 recent online plant buyers. Buyers at the highest-priced sellers mostly buy gifts or large statement plants and say they pay for healthy plants, good pots, careful packaging and a guarantee. Buyers at the cheapest sellers mostly buy small plants for themselves and choose on price and free delivery. Buyers at the sellers priced near the average are the least loyal: most struggle to say why they chose that seller and say they would switch for a lower price or a better plant."
+    },
+    {
+      "question_topic": "Gifts",
+      "answer": "Sorrelby's survey suggests about a fifth of the market's sales by value are gifts sent to someone else's address. About half of that gift spending goes to the three highest-priced sellers, where gifts make up about half of sales."
+    },
+    {
+      "question_topic": "How Sorrelby's retail customers would react",
+      "answer": "Sorrelby's two biggest customers, a supermarket chain and a DIY chain, buy about half of its plants. Its sales director expects them to accept Sorrelby selling online under its own brand at clearly higher prices, with plants they do not stock. He expects them to object, and perhaps buy less from Sorrelby, if it sold the same kind of plants at similar or lower prices than theirs."
+    },
+    {
+      "question_topic": "Sorrelby's strengths and gaps",
+      "answer": "Sorrelby grows about 300 kinds of houseplant, including large and less common ones that it sells to garden centres, and it is known in the trade for healthy plants. It employs trained horticulturists who could give customers care advice. Its own vans already deliver to garden centres across much of England and could take large plants to homes. It runs a free plant-care website with an email list of about 20,000 people. Its gaps: no online shop and no experience of selling to the public; no consumer brand, as its plants are known only as mid-priced supermarket and DIY-store stock under the retailers' labels; and no cost advantage at the low-price end: its plants cost about the same to grow as other growers', while the two biggest low-price sellers buy in huge volumes and pay much less for delivery."
+    },
+    {
+      "question_topic": "Sorrelby's economics online",
+      "answer": "Sorrelby's finance team estimates the gross margin it would make, as a share of sales excluding VAT, after the cost of growing the plants, pots, packaging and delivery: about 45% at premium prices, about 30% at average prices and about 20% at low prices. These margins already allow for replacing damaged orders free of charge. Running the online business (team, website and marketing) would cost about £2 million a year whatever the prices. Setting it up costs about £3 million once, which Sorrelby can pay from its own cash."
+    },
+    {
+      "question_topic": "Damage in delivery",
+      "answer": "In Sorrelby's survey, about 1 order in 20 arrived damaged, mostly from cold in winter or rough handling of large plants, and most of those buyers said the seller replaced it free of charge."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Define the market: houseplants delivered to UK homes, by value excluding VAT, including gifts and delivery charges, and what is left out",
+      "Market size: a driver tree (for example households, share who order, orders a year, order value) and a second, separate route to check it",
+      "Competition: which sellers are winning and losing, grouped by price position and growth",
+      "Sorrelby's ability to win: its strengths and gaps against what customers value in each group, and how its retail customers would react to it selling direct",
+      "Decision: whether Sorrelby can reach £8 million of sales and a profit by year 3, where to position, and the risks"
+    ],
+    "good_signs": [
+      "Pauses, then says how they will tackle the three questions and in what order before calculating anything",
+      "Defines the market (delivered only, by value, including gifts; no cut flowers, outdoor plants or click-and-collect) before estimating",
+      "Lays out a driver tree for the size and plans a second, independent route as a sense-check",
+      "Plans to split the market into segments, such as gifts against plants for the buyer's own home, or small against large plants, and to see which are growing",
+      "Asks about the board's goal for the online business, and what Sorrelby does today",
+      "Plans to group competitors by price and growth and link that to where Sorrelby could win, rather than looking only at market size",
+      "Flags that selling direct could upset the retailers that buy Sorrelby's plants today"
+    ],
+    "red_flags": [
+      "Gives a single number for the market with no driver tree or check",
+      "Treats all UK houseplant spending, including shops, as the delivery market",
+      "Plans to describe each competitor one by one with no grouping",
+      "Recommends entering simply because the market is big, without asking where and how Sorrelby would win"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "online-sellers",
+      "title": "The eight largest online houseplant sellers in the UK this year (from research bought by Sorrelby)",
+      "kind": "table",
+      "data": {
+        "columns": ["Seller", "Price index (typical price in the market = 100)", "Sales growth this year (%)", "Sales this year (£ million)"],
+        "rows": [
+          ["A", 170, 35, 12],
+          ["B", 65, 20, 35],
+          ["C", 100, -5, 20],
+          ["D", 150, 30, 20],
+          ["E", 105, 0, 18],
+          ["F", 70, 15, 25],
+          ["G", 160, 25, 8],
+          ["H", 95, -10, 12]
+        ]
+      },
+      "reveal_hint": "Share this only after both market-size estimates. Then share it when the candidate asks who the competitors are, how they are doing, or for data on sellers' prices, growth or sales, or when moving on to who is winning.",
+      "insight": "The sellers fall into three groups. Premium (A, D and G, price index 150 to 170) grow fastest, 25% to 35% (about 30% as a group), with £40m of sales, about 20% of a £200m market. Value (B and F, index 65 to 70) is the largest group, with £60m, growing 15% to 20% (about 18% as a group). Mid-market (C, E and H, index 95 to 105) is flat or shrinking (0% to -10%, about -5% as a group), with £50m; a year ago it was slightly bigger than value (about £52m against £51m). The middle is being squeezed: it is neither the cheapest nor special. The eight sellers total £150m, about three-quarters of a £200m market, which is a third check on the size."
+    }
+  ],
+  "math": [
+    {
+      "id": "size-from-households",
+      "question": "Starting from the households that order houseplants online, what is the UK market for houseplant delivery worth a year, in £ million?",
+      "inputs": {
+        "households_m": 28,
+        "ordering_pct": 10,
+        "orders_per_year": 3,
+        "order_value": 25
+      },
+      "expression": "households_m * ordering_pct / 100 * orders_per_year * order_value",
+      "expected": 210,
+      "tolerance_pct": 5,
+      "working": "10% of 28 million households is 2.8 million households that order. At 3 orders a year that is 8.4 million orders. At £25 an order, 8.4 million x £25 = £210 million a year."
+    },
+    {
+      "id": "size-from-all-spending",
+      "question": "Now estimate it a second way: start from all the money UK adults spend on houseplants, then take the share ordered for delivery. What do you get, in £ million?",
+      "inputs": {
+        "adults_m": 50,
+        "buyer_pct": 40,
+        "plants_per_buyer": 4,
+        "price_per_plant": 12.5,
+        "delivered_pct": 20
+      },
+      "expression": "adults_m * buyer_pct / 100 * plants_per_buyer * price_per_plant * delivered_pct / 100",
+      "expected": 200,
+      "tolerance_pct": 5,
+      "working": "40% of 50 million adults is 20 million buyers. At 4 plants each, that is 80 million plants a year. At £12.50 a plant, all houseplant spending is £1,000 million (£1 billion). A fifth of it is ordered for delivery: £200 million. The two routes land within 5% of each other (£210m and £200m), so about £200 million a year is a sound working figure."
+    },
+    {
+      "id": "premium-share-needed",
+      "question": "Sorrelby's research team expects the premium end of the market, today the three highest-priced sellers in the table, to double in size over the next three years, counting any sales Sorrelby wins there. What share of the premium end would Sorrelby need in year 3 to reach the board's £8 million a year, in %?",
+      "inputs": {
+        "target_m": 8,
+        "sales_a": 12,
+        "sales_d": 20,
+        "sales_g": 8,
+        "growth_multiple": 2
+      },
+      "expression": "target_m / ((sales_a + sales_d + sales_g) * growth_multiple) * 100",
+      "expected": 10,
+      "tolerance_pct": 5,
+      "working": "The premium sellers A, D and G sell £12m + £20m + £8m = £40m today. If the premium end doubles, it is about £80m in year 3, Sorrelby included. £8m / £80m = 10%. In year 3 Sorrelby would be about as big as the smallest premium seller (G, £8m) is today: a stretch for a new entrant, but not out of reach.",
+      "input_sources": [
+        { "input": "sales_a", "exhibit_id": "online-sellers", "row": 0, "column": "Sales this year (£ million)" },
+        { "input": "sales_d", "exhibit_id": "online-sellers", "row": 3, "column": "Sales this year (£ million)" },
+        { "input": "sales_g", "exhibit_id": "online-sellers", "row": 6, "column": "Sales this year (£ million)" }
+      ]
+    },
+    {
+      "id": "premium-profit-year3",
+      "question": "Sorrelby's finance team has estimated margins at three price levels. Start with premium prices: at £8 million of sales a year, a 45% gross margin and £2 million a year of running costs, what profit would the online business make, in £ million?",
+      "inputs": {
+        "sales_m": 8,
+        "margin_pct": 45,
+        "running_costs_m": 2
+      },
+      "expression": "sales_m * margin_pct / 100 - running_costs_m",
+      "expected": 1.6,
+      "tolerance_pct": 5,
+      "working": "45% of £8m is £3.6m of gross profit. After £2m of running costs, the profit is £1.6m, which passes the board's profit test. For comparison, at average prices (30%) the same sales make £2.4m - £2m = £0.4m, which passes the test only just, and at low prices (20%) £1.6m - £2m = a loss of £0.4m, which fails it."
+    }
+  ],
+  "brainstorm": {
+    "question": "If Sorrelby goes ahead, how could it win customers and reach £8 million of sales a year within three years?",
+    "idea_bank": [
+      "Lead with its own nurseries: larger, less common and healthier plants, sold under its own name with a 'grown by us' story",
+      "Offer a care guarantee (a free replacement if the plant fails early) and care advice from its horticulturists by chat or video",
+      "Build a gift range: gift wrapping, message cards, plant-and-pot gift sets, delivery on a chosen date, and gifts for businesses to send to staff or clients",
+      "Sell designer pots, for example with UK potters or designers",
+      "Use its own vans to deliver large plants across much of England, since they are hard to send by parcel",
+      "Launch to the 20,000 people on its plant-care email list first, with an introductory offer",
+      "Create a consumer brand kept clearly apart from the plants it grows for retailers, and sell online mainly plants they do not stock",
+      "Agree the plan with its two biggest customers before launch, so they do not cut their orders",
+      "Use insulated winter packaging and careful packing to cut damage, a common complaint",
+      "Offer a plant subscription, such as a plant a month or a care-and-feed plan",
+      "Post care videos by its horticulturists on social media to build a following",
+      "Test demand on a premium online marketplace before building its own shop",
+      "Buy a small premium seller, such as one of G's size, to reach the target faster, if the price is right"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "The market is about £200 million a year, and two separate routes land close together (£210m from households, £200m from all houseplant spending)",
+      "Sellers fall into three groups: premium is growing fastest (about 30%), value is the largest (£60m) and growing 15% to 20%, and the mid-market (£50m) is flat or shrinking, so the middle is being squeezed",
+      "A clear recommendation: go ahead, but at the premium end under its own brand and not as another mid-priced seller. £8 million needs about 10% of a premium end that doubles to about £80 million, and makes about £1.6 million of profit"
+    ],
+    "good_signs": [
+      "Good answer: describes each seller in turn. Better answer: sorts them into premium, mid-market and value groups and explains why the middle loses (neither the cheapest nor special)",
+      "Good answer: states one market size. Better answer: gives about £200m, explains why the two routes agree, and notes that the eight sellers' £150m at about three-quarters of the market is a third check",
+      "Compares positions on profit, not just sales: at £8m, premium makes about £1.6m, average prices about £0.4m and low prices a loss of about £0.4m, so the value end fails the board's test even at the same sales",
+      "Good answer: rules out the middle because it makes less profit. Better answer: notes that the middle passes the profit test only just (£0.4m), and that £8m would be about a sixth of a £50m mid-market that keeps shrinking, against 10% of a premium end that is doubling",
+      "Points out that Sorrelby's habit as a supplier, mid-sized common plants at average prices, is exactly the squeezed middle, and that selling similar plants at similar prices would upset the two customers that buy half its plants; a premium range under its own brand avoids both",
+      "Notes that the board's test leaves out the £3m set-up cost and the losses while sales build in years 1 and 2, so even at about £1.6m a year the business pays back only after year 3",
+      "Names risks (premium growth may slow, 10% means matching the smallest premium seller today, its retail customers could cut orders, damage in delivery, no experience of selling to the public) and next steps (talk to its two biggest customers, launch to its email list, trial van delivery of large plants, look at buying a small premium seller)",
+      "Sums up the answer first, then the reasons, and is ready to defend the numbers when challenged"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify and say how you will proceed: three questions in order (size, who is winning, whether and how Sorrelby should enter). The market is houseplants delivered to UK homes, by value, including gifts and delivery charges, excluding VAT. Sorrelby is a wholesale grower with about £40m of sales and no consumer brand. The board's test is £8m of sales and a profit by year 3.",
+    "Route 1, from households: 28 million x 10% = 2.8 million ordering households x 3 orders = 8.4 million orders x £25 = about £210m a year.",
+    "Route 2, from all spending: 50 million adults x 40% = 20 million buyers x 4 plants = 80 million plants x £12.50 = £1bn of houseplant spending, of which a fifth is delivered: about £200m. The routes agree within 5%, so use about £200m, growing about 10% a year. The eight largest sellers' £150m at about three-quarters of the market is a third check.",
+    "Chart: three groups. Premium (A, D, G; price index 150 to 170): £40m, about 20% of the market, growing 25% to 35%. Value (B, F; index 65 to 70): £60m, the largest, growing 15% to 20%. Mid-market (C, E, H; index 95 to 105): £50m, flat to -10%, and overtaken by value this year. The middle is squeezed: buyers either pay more for healthy, larger plants, good pots, gifts and guarantees, or pay least for small common plants; the middle offers neither.",
+    "Fit and economics: Sorrelby's healthy, large and less common plants, its horticulturists and its own vans fit what premium buyers value; it has no cost advantage at the value end, and selling mid-priced common plants would put it in the squeezed middle and up against its own retail customers. If the premium end doubles to £80m, £8m is a 10% share. At a 45% margin and £2m of running costs, £8m makes £1.6m; the same sales make £0.4m at average prices (a profit, but thin, and about a sixth of a shrinking £50m middle) and lose £0.4m at low prices.",
+    "Recommendation: go ahead at the premium end under its own consumer brand, not as another mid-priced seller. Start with gifts and large, less common plants (some delivered by its own vans), agree the plan with its two biggest customers, and set sales milestones before spending more. The board's test leaves out the £3m set-up cost and early losses, so payback comes only after year 3. Risks: premium growth slowing, 10% being as big as the smallest premium seller today, retail customers cutting orders, damage in delivery, and no experience of selling to the public. Next steps: talk to the two biggest customers, a launch to its plant-care email list, a van delivery trial for large plants, and a look at buying a small premium seller."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

@@ -1,0 +1,328 @@
+{
+  "id": "case-031",
+  "slug": "fernmoor-dental-clear-aligners",
+  "title": "Fernmoor Dental: should it offer clear aligners?",
+  "track": "consulting",
+  "type": "market_entry",
+  "industry": "Dental care",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 35,
+  "prompt": "Fernmoor Dental Group runs 20 private dental practices in north-west England, with about 100,000 active patients, 40 dentists and 30 hygienists; each practice has four dental chairs, and patients visit about 1.6 times a year. When adults ask about straightening their teeth, its dentists refer them to outside orthodontists (about 300 last year), and the group earns nothing from that treatment. Earlier this year two practices tried offering clear aligners (custom-made, removable plastic trays that move teeth gradually) for six months. The managing partner now wants to launch aligners in all 20 practices at once, and has asked you whether the group should go ahead. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The group",
+      "answer": "Fernmoor owns all 20 practices outright; there are no franchises. About 40 dentists and 30 hygienists work across them. All of its work is private: patients pay per treatment or through a monthly membership plan that covers check-ups and hygiene visits."
+    },
+    {
+      "question_topic": "Objective and decision rule",
+      "answer": "The partners will launch only if the aligner service at least breaks even in its first full year across the group. They also do not want it to take appointment time away from routine care. Beyond that, they like the idea of keeping patients inside the group rather than sending them elsewhere."
+    },
+    {
+      "question_topic": "How the treatment works",
+      "answer": "A dentist takes a 3D scan of the teeth with an intraoral scanner and plans the treatment in the supplier's software, and the supplier makes the aligners. Fernmoor's plan assumes a typical adult treatment of about 12 months with about 6 appointments, ending with retainers to hold the teeth in place. Its dentists would use aligners only for mild to moderate crowding or gaps, and would still refer complex cases to an orthodontist."
+    },
+    {
+      "question_topic": "Price",
+      "answer": "Fernmoor would charge £2,500 per treatment, including the retainers. Its dentists understand that the local independent orthodontists they refer patients to charge about £3,500 for similar adult treatment."
+    },
+    {
+      "question_topic": "The supplier",
+      "answer": "Fernmoor has shortlisted one large aligner supplier. Its fee covers the aligners and any extra sets needed during treatment. Every dentist who prescribes its aligners must first complete its two-day training course. The supplier has said it is open to talking about volume discounts."
+    },
+    {
+      "question_topic": "Dentists' pay",
+      "answer": "Fernmoor's dentists are self-employed associates paid for each item of work, and each can choose whether to take on aligner work. The plan pays the treating dentist a fixed £600 for each aligner treatment."
+    },
+    {
+      "question_topic": "Chair time and capacity",
+      "answer": "Each treatment needs about 3 hours of a dentist's time in total, spread over the 6 appointments. Each of the 40 dentists works about 1,500 clinical hours a year, and about 10% of those hours are unfilled today (about 150 hours per dentist a year). The supplier's training course takes each dentist two days away from patients."
+    },
+    {
+      "question_topic": "Current referrals",
+      "answer": "Last year, before the pilot, Fernmoor's dentists referred about 300 adult patients to outside orthodontists for straightening, without any marketing. The dentists think most of them had mild to moderate cases that aligners could have treated."
+    },
+    {
+      "question_topic": "The pilot",
+      "answer": "From January to June this year, two practices offered aligners. They put posters in the waiting room and offered a free 3D scan to anyone who asked. There was no paid marketing and no treatment coordinator: reception staff booked the appointments. The supplier lent each practice a scanner free of charge, and one trained dentist at each practice did the treatments. The two practices were chosen because their managers volunteered. Any launch would keep the free scan offer; the £200 of materials per treatment already allows for scans given to people who do not go ahead."
+    },
+    {
+      "question_topic": "Differences between the other practices",
+      "answer": "Of the 18 practices outside the pilot, six have patients who spend about £300 a year on average, between the pilot practices and the rest; last year each of the six referred about 20 adults for straightening. The other twelve average about £225 a year per patient and referred about 11 adults each."
+    },
+    {
+      "question_topic": "Launching in fewer practices",
+      "answer": "A smaller first launch would follow the pilot's set-up. Each practice in it needs its own scanner (£6,000 a year on a three-year lease) and one lead dentist trained (£1,500). Two treatment coordinators (£35,000 each) can cover up to 10 practices. Marketing aimed only at those practices' existing patients would cost about £55,000 a year for up to 10 practices. Patients at practices without the service could be referred to a nearby practice that has it."
+    },
+    {
+      "question_topic": "Scanner leases",
+      "answer": "Scanners are leased for three years at a time, at £6,000 a year per practice, so each practice that gets one commits Fernmoor to £18,000. A scanner can also be used for crowns and other routine work, but the plan does not count any saving from that."
+    },
+    {
+      "question_topic": "Costs after the first year",
+      "answer": "Training is mostly a first-year cost: from year 2 it falls to about £10,000 a year, for new dentists only. The other fixed costs would stay about the same."
+    },
+    {
+      "question_topic": "When the money counts",
+      "answer": "Patients pay the full £2,500 when treatment starts. For the partners' test, count each treatment's full price and costs in the year it starts."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Two other private practices in the area started offering aligners last year. Some patients mention cheaper aligners sold online with remote check-ins; Fernmoor has no figures on how many of its patients buy them."
+    },
+    {
+      "question_topic": "Market beyond Fernmoor's patients",
+      "answer": "For now the partners are interested only in Fernmoor's own patients. There are no figures on the wider local market."
+    },
+    {
+      "question_topic": "Children and teenagers",
+      "answer": "The plan covers adults only. Under-18s with crowding would still be referred to orthodontists."
+    },
+    {
+      "question_topic": "Funding",
+      "answer": "Fernmoor can pay the first year's costs from its own cash, but the partners do not want to fund a service that keeps losing money."
+    },
+    {
+      "question_topic": "Timing",
+      "answer": "The partners want to decide within three months. Scanners take about six weeks to arrive, coordinators need recruiting and training takes two days per dentist, so a launch could start about two months after a decision."
+    },
+    {
+      "question_topic": "Taxes",
+      "answer": "Ignore VAT and tax for this case."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Demand: how many of Fernmoor's own patients are suitable, how many would really pay, today's referrals and the pilot",
+      "Economics: price, variable cost per treatment, fixed costs, the break-even volume and the share of patients it needs",
+      "Ability to deliver: dentist training, chair time, scanners and the supplier",
+      "Competition and price: local orthodontists, other practices offering aligners, aligners sold online",
+      "Risks and how to launch: all 20 practices at once or a smaller first wave, lease commitments, clinical quality"
+    ],
+    "good_signs": [
+      "Listens to the prompt: picks up that the plan is all 20 practices at once, that the group earns nothing from referrals today and that a pilot ran this year, and sets aside details that do not bear on the decision (hygienists, chairs per practice, visits a year)",
+      "Follows a clear path: clarifies the goal, lays out an issue tree, states hypotheses, then says which analysis would test each one",
+      "States a hypothesis early, for example 'the unit economics are simple, so the real question is whether enough of our own patients will start treatment to reach break-even'",
+      "Asks for the partners' decision rule (break even in the first full year) and uses it to frame the analysis",
+      "Focuses on Fernmoor's own patients rather than the whole aligner market",
+      "Asks how the pilot was run and whether the two pilot practices are typical of the group before relying on their results"
+    ],
+    "red_flags": [
+      "Recites a generic framework (for example the marketing mix or five forces) without tying it to this decision",
+      "Sizes the national aligner market instead of Fernmoor's own patients",
+      "Treats survey interest ('would consider') as real demand",
+      "Takes the pilot result as the forecast for every practice without asking whether the pilot practices are typical",
+      "Gets lost in details that do not affect the decision, such as chairs per practice or missed appointments"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "aligner-unit-economics",
+      "title": "Aligner treatment: price and variable costs per treatment (£)",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "£ per treatment"],
+        "rows": [
+          ["Price charged to the patient", 2500],
+          ["Aligners and any extra sets, from the supplier", 700],
+          ["Treating dentist's fee", 600],
+          ["Retainers, scans and other materials", 200]
+        ]
+      },
+      "reveal_hint": "Ask about the price of a treatment and what each treatment costs to deliver.",
+      "insight": "Variable costs are £1,500 per treatment (700 + 600 + 200), so each treatment contributes £1,000, 40% of the £2,500 price. The supplier's fee is the largest cost, so a volume discount from the supplier is the biggest lever on the margin per treatment."
+    },
+    {
+      "id": "launch-fixed-costs",
+      "title": "Aligner service fixed costs in the first full year, all 20 practices (£ thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Cost line", "£ thousand a year"],
+        "rows": [
+          ["Scanner leases (20 practices at £6,000)", 120],
+          ["Treatment coordinators (4 at £35,000)", 140],
+          ["Marketing to patients and locally", 180],
+          ["Dentist training and supplier accreditation (40 dentists at £1,500)", 60],
+          ["Total", 500]
+        ]
+      },
+      "reveal_hint": "Ask about the fixed or set-up costs of running the service.",
+      "insight": "Fixed costs are £500k in the first full year. Marketing (£180k) and coordinators (£140k) are the largest lines, and neither was part of the pilot. Scanners and training grow with the number of practices and dentists, so a launch in fewer practices, or with fewer trained dentists, needs fewer treatments to break even: a 10-practice first wave with one lead dentist each costs about £200k (scanners £60k, training £15k, two coordinators £70k, marketing to existing patients £55k). Training falls to about £10k from year 2, so the full plan's fixed costs then drop to about £450k."
+    },
+    {
+      "id": "patient-base",
+      "title": "Fernmoor's patients, from its records and a patient survey",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Value"],
+        "rows": [
+          ["Active patients (seen in the last two years)", 100000],
+          ["Children under 18", 20000],
+          ["Adults aged 18 and over", 80000],
+          ["Average visits per patient a year", 1.6],
+          ["Adults with crowding or gaps that aligners could treat (%, dentists' review of 2,000 records)", 25],
+          ["Of those, adults who say they would consider aligners at £2,500 (%, survey of 1,200 adult patients whose records show suitable teeth)", 20],
+          ["Patients who missed at least one appointment last year (%)", 6]
+        ]
+      },
+      "reveal_hint": "Ask how many of Fernmoor's patients could be suitable for aligners, or how big the opportunity is among its own patients. Before sharing it, ask the candidate for a rough estimate of their own (how many of the 100,000 patients are adults with teeth that aligners could treat), then share this table to check it.",
+      "insight": "The relevant pool is adults with suitable teeth: 25% of 80,000 = 20,000. A candidate's own round estimate in that range is fine; what matters is the chain (patients, adults, suitable share). Children are outside the plan, and the visits and missed-appointment rows are deliberately irrelevant: a strong candidate says so and moves on. The survey says 20% of suitable adults (4,000 people) would consider aligners, but 'would consider' overstates real uptake: break-even would need one in eight of them to start every year. Today's 300 referrals are 1.5% of the suitable adults a year."
+    },
+    {
+      "id": "pilot-vs-group",
+      "title": "Pilot practices compared with the rest of the group, per practice (last year, before the pilot, except aligner starts, which are from the pilot this January to June)",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Each pilot practice (2)", "Other practices, average (18)"],
+        "rows": [
+          ["Active patients", 5000, 5000],
+          ["Adult patients", 4000, 4000],
+          ["Average spend per patient a year (£)", 350, 250],
+          ["Patients on the membership plan (%)", 60, 40],
+          ["Whitening treatments a year per 1,000 adult patients", 30, 15],
+          ["Adults referred to orthodontists for straightening", 24, 14],
+          ["Dental chairs", 4, 4],
+          ["Aligner treatments started in the six-month pilot (January to June this year)", 15, "Not offered"]
+        ]
+      },
+      "reveal_hint": "Ask for the results of the pilot, or whether the pilot practices are typical of the group.",
+      "insight": "Each pilot practice started 15 treatments in six months, about 30 a year; across 20 practices that would be about 600 a year, above the 500 break-even but only by 20%. The pilot practices are not typical: their patients spend 40% more, more of them are on the membership plan (60% against 40%), they buy twice as much whitening and, before the pilot, they referred more adults for straightening (24 against 14 a practice). If the other 18 practices start 30 treatments a year for every 24 adults they referred (30 x 14 / 24 = 17.5 a year each), the group would start only about 375 a year and lose about £125k. Within the 18, the six higher-spend practices (about 20 referrals each) would start about 25 a year and the twelve others (about 11) about 14. Other measures give the same answer: scaling by spend gives about 446 a year and by whitening about 330, all below 500. The bias runs both ways: volunteer practices with richer, more engaged patients, and perhaps patients who had been waiting for the option, push the pilot up, so 600 is too high for the group; but the pilot had no paid marketing and no coordinators, so the full plan might do better. The £320k of marketing and coordinators is exactly what is unproven, which is why a smaller first wave is the test. Patient numbers and chairs are the same, so they do not explain the difference."
+    }
+  ],
+  "math": [
+    {
+      "id": "contribution-per-treatment",
+      "question": "How much does each aligner treatment contribute towards Fernmoor's fixed costs, in £?",
+      "inputs": {
+        "price": 2500,
+        "supplier_fee": 700,
+        "dentist_fee": 600,
+        "materials": 200
+      },
+      "expression": "price - supplier_fee - dentist_fee - materials",
+      "expected": 1000,
+      "tolerance_pct": 1,
+      "working": "Variable costs are £700 + £600 + £200 = £1,500 per treatment. £2,500 - £1,500 = £1,000 per treatment, a 40% margin.",
+      "input_sources": [
+        { "input": "price", "exhibit_id": "aligner-unit-economics", "row": 0, "column": "£ per treatment" },
+        { "input": "supplier_fee", "exhibit_id": "aligner-unit-economics", "row": 1, "column": "£ per treatment" },
+        { "input": "dentist_fee", "exhibit_id": "aligner-unit-economics", "row": 2, "column": "£ per treatment" },
+        { "input": "materials", "exhibit_id": "aligner-unit-economics", "row": 3, "column": "£ per treatment" }
+      ]
+    },
+    {
+      "id": "break-even-treatments",
+      "question": "How many treatments a year does Fernmoor need to start to break even in the first full year?",
+      "inputs": {
+        "fixed_costs_k": 500,
+        "contribution": 1000
+      },
+      "expression": "fixed_costs_k * 1000 / contribution",
+      "expected": 500,
+      "tolerance_pct": 2,
+      "working": "Fixed costs are £500k. Each treatment contributes £1,000, so break-even is £500,000 / £1,000 = 500 treatments a year, or about 25 a practice. From year 2, with training down to about £10k, it falls to about 450.",
+      "input_sources": [
+        { "input": "fixed_costs_k", "exhibit_id": "launch-fixed-costs", "row": 4, "column": "£ thousand a year" }
+      ]
+    },
+    {
+      "id": "share-of-suitable-patients",
+      "question": "What share of Fernmoor's suitable adult patients would need to start treatment each year for the service to break even, in percent?",
+      "inputs": {
+        "break_even": 500,
+        "adults": 80000,
+        "suitable_pct": 25
+      },
+      "expression": "break_even / (adults * suitable_pct / 100) * 100",
+      "expected": 2.5,
+      "tolerance_pct": 2,
+      "working": "Suitable adults are 25% of 80,000 = 20,000. 500 / 20,000 = 2.5% of them each year (0.5% of all 100,000 patients). Today's 300 referrals are 1.5%, so the service needs well above today's natural demand.",
+      "input_sources": [
+        { "input": "adults", "exhibit_id": "patient-base", "row": 2, "column": "Value" },
+        { "input": "suitable_pct", "exhibit_id": "patient-base", "row": 4, "column": "Value" }
+      ]
+    },
+    {
+      "id": "pilot-rate-all-practices",
+      "question": "If every one of the 20 practices started treatments at the pilot practices' rate, how many treatments a year would Fernmoor start?",
+      "inputs": {
+        "pilot_starts": 15,
+        "pilot_months": 6,
+        "practices": 20
+      },
+      "expression": "pilot_starts * 12 / pilot_months * practices",
+      "expected": 600,
+      "tolerance_pct": 2,
+      "working": "15 starts in six months is 30 a year per practice. 30 x 20 practices = 600 a year: 100 above break-even, a profit of about £100k (600 x £1,000 - £500k). But the pilot practices are not typical of the group, so 600 is likely to be too high.",
+      "input_sources": [
+        { "input": "pilot_starts", "exhibit_id": "pilot-vs-group", "row": 7, "column": "Each pilot practice (2)" }
+      ]
+    },
+    {
+      "id": "capacity-share",
+      "question": "If Fernmoor started 500 aligner treatments a year, what share of its dentists' unfilled clinical hours would they use, in percent?",
+      "inputs": {
+        "treatments": 500,
+        "hours_per_treatment": 3,
+        "dentists": 40,
+        "clinical_hours": 1500,
+        "unfilled_pct": 10
+      },
+      "expression": "treatments * hours_per_treatment / (dentists * clinical_hours * unfilled_pct / 100) * 100",
+      "expected": 25,
+      "tolerance_pct": 2,
+      "working": "500 treatments x 3 hours = 1,500 dentist hours a year. Unfilled time is 10% of 40 x 1,500 = 60,000 hours, so 6,000 hours (about 150 per dentist). 1,500 / 6,000 = 25%, so the service fits in spare time without taking appointments from routine care, as long as it is spread over enough trained dentists: one dentist's 150 spare hours cover about 50 treatments a year."
+    }
+  ],
+  "brainstorm": {
+    "question": "Beyond the current plan, how could Fernmoor get more patients to start aligner treatment, or lower the number of treatments it needs to break even?",
+    "idea_bank": [
+      "Send the mild cases among the 300 adults referred out each year to the group's own aligner dentists instead",
+      "Raise straightening at routine check-ups, using the 3D scan to show patients a preview of the result",
+      "Keep the free scan offer that ran in the pilot, aimed at existing patients",
+      "Let patients spread the £2,500 over monthly payments, or offer a discount to membership-plan patients",
+      "Offer whitening at a reduced price at the end of treatment to raise the value of each patient",
+      "Start with hub practices: lease scanners and train dentists only where patients look most like the pilot practices', and let nearby practices' patients travel to them",
+      "Share scanners between nearby practices on set days, or use them for crowns and other routine work to spread their cost",
+      "Train one lead dentist per practice instead of all 40, as in the pilot: each has about 150 spare hours a year, enough for about 50 treatments, so at least 10 trained dentists are needed for 500 a year without touching routine care",
+      "Negotiate a lower supplier fee in return for volume, since it is the largest cost per treatment",
+      "Charge more: £2,500 is £1,000 below the local orthodontists, and at £3,000 each treatment contributes £1,500, so break-even falls to about 333; but the survey's interest was measured at £2,500 and cheaper aligners are sold online",
+      "Spend more of the marketing budget on existing patients, who are cheap to reach, and less on local advertising",
+      "Use aligners to attract new adult patients to the group, who may then join the membership plan",
+      "Later, consider offering aligners to teenagers, whom the plan leaves out today"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Each treatment contributes £1,000, so the first year's £500k of fixed costs needs 500 treatments a year to break even",
+      "That is 2.5% of the 20,000 suitable adult patients each year: today's 300 referrals are only 1.5%, and the pilot rate (about 600 a year if every practice matched it) clears break-even only narrowly",
+      "The pilot practices are not typical of the group, so launching in all 20 at once is unproven; a clear recommendation, such as a smaller first wave that itself passes the partners' break-even rule, with a rule for when to go further"
+    ],
+    "good_signs": [
+      "Goes beyond the shallow reading. A good answer gets 500 and 600 right and flags the thin 20% headroom and the small, volunteer pilot as the main risks. A better answer notices that the pilot practices' patients spend 40% more, are more often on the membership plan, buy twice as much whitening and referred more adults before the pilot (24 against 14 a practice), re-bases the forecast (about 375 a year if the others follow their referral rate, a loss of about £125k) and designs a first wave to test it. Taking 600 as the forecast and launching everywhere is not a good answer here",
+      "Sees that the pilot is biased both ways: volunteer practices with richer patients, and perhaps patients who had been waiting, push it up; no paid marketing and no coordinators push it down, so the £320k of marketing and coordinators in the full plan is the unproven part",
+      "Checks the recommended first wave against the partners' rule with numbers: for example 10 practices cost about £200k (scanners £60k, one lead dentist trained in each £15k, two coordinators £70k, marketing to existing patients £55k), so they need 200 starts, against a forecast of about 240 (60 from the pilot practices, 150 from the six higher-spend practices at about 25 each, about 28 from two of the twelve), with £180k of lease commitments instead of £360k",
+      "Bases the rule for going further on practices that are not like the pilot: puts one or two of the twelve lower-spend practices in the first wave and extends to the rest only if they reach about 20 starts a year each (about 10 in six months); if they fall short, serves those patients through nearby first-wave practices instead of leasing more scanners",
+      "Turns the break-even into a bar per practice: about 25 starts a year each for the full plan (500 / 20, about 12 in six months), against the pilot's 30",
+      "Lowers the volume needed: fewer scanners and trained dentists, marketing aimed at existing patients, a supplier discount, or a higher price (at £3,000 break-even falls to about 333, at the risk of fewer patients than the survey found at £2,500); notes that break-even falls to about 450 from year 2 as training costs fall away",
+      "Answers the partners' worry about routine care with numbers: 500 treatments x 3 hours = 1,500 dentist hours a year, a quarter of the roughly 6,000 unfilled hours; one dentist's 150 spare hours cover about 50 treatments, so one lead dentist per practice is enough for a first wave",
+      "Names risks and next steps: survey interest overstates real uptake, the pilot's first six months may have caught patients who had been waiting, three-year scanner leases, whether self-employed associates want the work at £600 a treatment, two days of training per dentist away from patients, clinical quality and complaints, the supplier's terms, and a date to decide on the next wave",
+      "Communicates with poise: answer first, then the numbers, then risks; when it turns out the pilot practices are not typical, says so plainly and re-bases the forecast rather than defending the first number"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 20 private practices, 100,000 active patients (80,000 adults). The plan is all 20 practices at once, and today the group earns nothing from the 300 adults it refers out each year. The partners' test is to break even in the first full year without taking time from routine care, counting each treatment in the year it starts. Aligners would cost patients £2,500 and are planned only for adults with mild to moderate cases; complex cases and under-18s still go to orthodontists. Hygienists, chairs and visits a year do not bear on the decision.",
+    "Issue tree: (1) Will enough patients take it up? Suitable adults, real interest, today's referrals, the pilot. (2) Do the economics work? Contribution per treatment, fixed costs, break-even volume. (3) Can Fernmoor deliver? Training, chair time, scanners, the supplier. (4) Risks and how to launch. Hypothesis: the unit economics are simple, so the decision turns on whether demand reaches break-even, and the pilot is the key evidence to test.",
+    "Economics: £2,500 less £1,500 of variable costs (supplier £700, dentist £600, materials £200) leaves £1,000 per treatment. First-year fixed costs are £500k, so break-even is 500 treatments a year (about 25 a practice), about 450 from year 2 when training falls away.",
+    "Demand: 25% of 80,000 adults = 20,000 suitable (a round estimate of the candidate's own is fine), so break-even needs 2.5% of them each year (0.5% of all patients). The survey's 4,000 who 'would consider' overstates uptake. Today's 300 referrals (1.5%) come with no marketing. The pilot (January to June this year, posters and a free scan, no paid marketing) started 15 per practice in six months, 30 a year, or 600 across 20 practices: about £100k of profit, but only 20% above break-even.",
+    "Filter and test: the pilot practices are not typical. Their patients spend 40% more, more are on the membership plan (60% against 40%), they buy twice as much whitening and, before the pilot, they referred more adults for straightening (24 against 14 a practice). If the other 18 start 30 a year for every 24 adults they referred, they start 17.5 each, about 375 for the group: a loss of about £125k. Scaling by spend (about 446) or whitening (about 330) also falls short of 500, so the answer does not hang on the method. The bias runs both ways: volunteer practices with richer patients, and perhaps patients who had been waiting, push the pilot up; no paid marketing and no coordinators push it down. The £320k of marketing and coordinators is the unproven part, and a first wave should test it. Capacity is not the problem: 500 treatments need about 1,500 dentist hours, a quarter of the 6,000 spare hours, and one dentist's spare time covers about 50 treatments. Patient numbers, chairs, visits and missed appointments do not change the answer.",
+    "Recommendation: go ahead, but not in all 20 practices at once. Start a first wave in 10 practices: the two pilot practices, the six whose patients spend about £300, and two of the twelve lower-spend practices as a test, with one lead dentist each (as in the pilot) and marketing aimed at existing patients. It passes the partners' rule: about £200k of costs (10 scanners £60k, 10 lead dentists trained £15k, two coordinators £70k, marketing £55k) needs 200 starts, and scaling the pilot by each practice's referrals gives 60 + 6 x 25 + 2 x about 14 = about 240, a profit of about £37.5k, with £180k of three-year lease commitments instead of £360k. Base the rule for going further on the two test practices, not on the six that look like the pilot: extend to the rest of the twelve only if they reach about 20 starts a year each (about 10 in six months), the first wave's own bar. If they fall short, as their referral rate suggests (about 14 a year), serve the other ten practices' patients through the nearest first-wave practice instead of leasing more scanners.",
+    "Risks: real uptake below survey interest and below the pilot's first six months; three-year scanner leases (£18k per practice); whether self-employed associates want the work at £600 a treatment; two days of training per dentist away from patients; clinical quality and complaints. Next steps: agree volume terms with the supplier, choose the ten practices and their lead dentists, and set a six-month review against the bars above.",
+    "There is no single right answer: 'extend the pilot first' or 'launch only in the practices that look like the pilot' can score as well if it uses the break-even and the pilot evidence, checks the plan against the partners' rule and says what would change the decision."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

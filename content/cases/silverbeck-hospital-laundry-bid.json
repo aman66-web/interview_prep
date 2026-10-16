@@ -1,0 +1,282 @@
+{
+  "id": "case-034",
+  "slug": "silverbeck-hospital-laundry-bid",
+  "title": "Silverbeck Linen: should it bid for a hospital contract?",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Commercial laundry",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "Silverbeck Linen is a family-owned commercial laundry with one plant in the north of England. It washes sheets, towels, gowns and theatre scrubs for private hospitals, care homes and hotels. Its chief executive wants to grow the business, but without putting it at risk. A hospital trust that runs four hospitals in the same region as the plant is closing its own laundry and has invited bids for a five-year contract to wash all its linen. The chief executive has asked you: should Silverbeck bid for this contract? How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Silverbeck has one plant and about 200 customers: private hospitals, care homes and hotels. It washes about 28 million pieces a year. Most customers hire their linen from Silverbeck, which buys, owns and replaces it and charges one price per piece washed."
+    },
+    {
+      "question_topic": "Revenue and profit today",
+      "answer": "Revenue is about £14 million a year: 28 million pieces at an average of 50p each. Costs are £12.6 million, so operating profit is £1.4 million, a 10% margin. All figures exclude VAT."
+    },
+    {
+      "question_topic": "Objective and the chief executive's tests",
+      "answer": "The chief executive has two tests for any new contract. First, its extra yearly profit, counted before the one-off set-up cost, must be at least 10% of its revenue, the margin the business makes today. Second, the set-up cost must be paid back from that profit within three years; this is the only test the set-up cost is judged by. She also does not want service to existing customers to suffer."
+    },
+    {
+      "question_topic": "The contract",
+      "answer": "Five years, starting in 12 months, when the trust's own laundry closes because its building is old and would cost too much to replace. The winner washes, dries, irons or folds and delivers all the linen for the four hospitals, every day including weekends. The trust will choose one supplier for all four hospitals."
+    },
+    {
+      "question_topic": "Volume and price",
+      "answer": "About 14 million pieces a year, half of Silverbeck's volume today. The trust guarantees at least 12 million. Its guide price is 40p a piece, fixed for all five years. Bidders may propose a yearly price review, but the trust scores bids mainly on price."
+    },
+    {
+      "question_topic": "Why the price is below Silverbeck's average",
+      "answer": "The trust owns its linen, so this is a wash-only service: Silverbeck would not buy or replace any linen for it. Buying and replacing linen costs Silverbeck about 4p a piece today, so that explains only part of the gap. The rest is because its other customers are far smaller and pay small-customer prices, while the trust expects a price for a very large contract."
+    },
+    {
+      "question_topic": "How costs would change",
+      "answer": "Silverbeck's operations director has estimated how each cost line would change if it took the contract (share the cost exhibit). The finance director has checked that the lease and business rates would not change, expects any rise in insurance to be too small to matter, and has confirmed that the extra supervisors are already counted in labour."
+    },
+    {
+      "question_topic": "Costs if only the guaranteed 12 million pieces come",
+      "answer": "The operations director expects energy, water and chemicals, and machine maintenance to fall in line with volume. Labour and delivery would cost about the same, because the night shift, the Sunday shift and the daily van routes to all four hospitals would still be needed."
+    },
+    {
+      "question_topic": "Set-up cost and funding",
+      "answer": "About £1.5 million, paid once before the contract starts (share the contract exhibit for the breakdown). Silverbeck can pay it from its own cash, but it would use about half of its cash reserve."
+    },
+    {
+      "question_topic": "Plant capacity",
+      "answer": "The plant runs two shifts, Monday to Saturday, and can wash about 32 million pieces a year that way. Adding a night shift Monday to Friday and one Sunday shift would raise capacity to about 48 million. Volume from private customers has been growing by about 1 million pieces a year."
+    },
+    {
+      "question_topic": "Staffing",
+      "answer": "The night shift and Sunday working need about 80 new staff, many of them on a higher night rate. The plant is in a town where several large warehouses also run night shifts, and Silverbeck has 8 unfilled jobs on its current shifts. Agency staff cost Silverbeck about a third more per hour than its own employees. None of the trust's laundry staff will move to the winning bidder: the trust is moving them all to other jobs within the trust before its laundry closes. Some may still prefer laundry work and could apply to Silverbeck."
+    },
+    {
+      "question_topic": "Energy",
+      "answer": "Silverbeck buys gas and electricity on one-year fixed-price deals. It reviews its existing customers' prices every year and has so far been able to pass energy rises on to them. At a price fixed for five years, it could not do that for the trust."
+    },
+    {
+      "question_topic": "Delivery and penalties",
+      "answer": "Silverbeck delivers 99% of orders on time today. The furthest of the four hospitals is about 40 miles from the plant. If fewer than 98% of a month's deliveries are on time, the trust deducts 5% from that month's invoice."
+    },
+    {
+      "question_topic": "Competition for the contract",
+      "answer": "Two larger national laundry groups are expected to bid. Their nearest plants are further from the hospitals than Silverbeck's. The trust has said it will weigh reliability as well as price, but price carries the most weight."
+    },
+    {
+      "question_topic": "Customers today",
+      "answer": "Silverbeck's largest customer is a private hospital group at about 10% of revenue. No other customer is above 5%."
+    },
+    {
+      "question_topic": "Hygiene standard",
+      "answer": "The trust requires a hospital infection-control standard for washing its linen. Silverbeck already meets that standard for its private hospital customers."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "The decision rule: the chief executive's two tests (at least a 10% margin, set-up paid back within three years) and no harm to existing customers",
+      "Revenue from the contract: volume, price per piece, the guaranteed minimum and the five-year length",
+      "Extra costs: how each cost line changes with half as much volume again, plus the one-off set-up cost",
+      "Ability to deliver: plant capacity, night-shift staffing, delivery reliability and the hygiene standard",
+      "Risks over five years: a fixed price against rising wages and energy, penalties, dependence on one large customer, and the chance of winning the bid"
+    ],
+    "good_signs": [
+      "Spots the key question: does the extra profit justify the cost and the risk, judged against the chief executive's tests",
+      "Separates the one-off set-up cost from the extra yearly costs",
+      "Expects cost lines to behave differently: some fixed, some in line with volume, some faster",
+      "Asks whether the price is fixed for five years or can be reviewed",
+      "Asks whether the plant has the capacity and who would staff the extra shifts",
+      "Thinks about winning as well as delivering: who else bids and what the trust values"
+    ],
+    "red_flags": [
+      "Assumes every cost rises in line with volume, or that none do",
+      "Leans towards yes because revenue would grow by 40%, before looking at costs",
+      "Ignores that the price is fixed for all five years",
+      "Discusses hospital laundry in general rather than this contract and this plant",
+      "Mixes the one-off set-up cost into the yearly costs",
+      "Rejects the bid straight away because 40p is below today's average cost of 45p a piece, without checking which costs would actually rise"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "cost-rise",
+      "title": "Silverbeck's yearly costs today, and the operations director's estimate of how each would rise with the contract",
+      "kind": "table",
+      "data": {
+        "columns": ["Cost line", "Cost today (£ thousand a year)", "Rise with the contract (%)", "Reason"],
+        "rows": [
+          ["Labour", 6000, 40, "A night shift and Sunday working, partly at a night rate; managers and office staff unchanged"],
+          ["Energy (gas and electricity)", 2000, 50, "Rises with the amount washed and dried"],
+          ["Water, detergents and chemicals", 1000, 50, "Rises with the amount washed"],
+          ["Delivery (vans, drivers and fuel)", 1000, 80, "Daily deliveries, weekends included, to four hospitals up to 40 miles away"],
+          ["Machine maintenance", 500, 60, "Machines run through the night, with less time for servicing"],
+          ["Linen purchases", 1000, 0, "The trust owns its linen"],
+          ["Site rent and overheads", 1100, 0, "Same building; the extra supervisors are in labour"],
+          ["Total", 12600, "n/a", "All costs today"]
+        ]
+      },
+      "reveal_hint": "Ask how Silverbeck's costs would change if it took the contract, or for a breakdown of its cost lines.",
+      "insight": "Volume would rise by half (14 million on top of 28 million pieces), but the cost lines do not all move with it. Energy and water rise in line with volume; labour rises less (40%) because managers are unchanged, but it is still the biggest increase at £2.4m; delivery (80%) and maintenance (60%) rise faster than volume; linen and site costs do not rise. The extra cost is £5.0m a year, about 40% on today's £12.6m. Labour is nearly half of it, so staffing the night shift is the biggest single cost risk."
+    },
+    {
+      "id": "contract-terms",
+      "title": "The hospital contract: the trust's tender terms and Silverbeck's set-up estimate",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "Value", "Note"],
+        "rows": [
+          ["Pieces a year (million)", 14, "The trust's estimate; it guarantees at least 12 million"],
+          ["Guide price per piece (pence)", 40, "Fixed for all five years; bidders may propose a yearly price review"],
+          ["Contract length (years)", 5, "Starts in 12 months, when the trust's own laundry closes"],
+          ["One-off set-up cost for Silverbeck (£ thousand)", 1500, "New ironer £900k; cages and trolleys £200k; hiring and training the new staff £200k; IT link to the trust's ordering system £200k"],
+          ["On-time delivery target (%)", 98, "In any month below this, the trust deducts 5% of that month's invoice"]
+        ]
+      },
+      "reveal_hint": "Ask about the contract's volume, price, length or set-up cost, or how much revenue it would bring.",
+      "insight": "At about 14 million pieces and 40p, the contract brings £5.6m a year, 40% more revenue than today's £14m. At the guaranteed 12 million it would be £4.8m. The price is fixed for five years, so wage and energy rises could not be passed on unless Silverbeck proposes a price review. The £1.5m set-up cost is paid once and is separate from the yearly costs. Each 1p on the price is worth £140k a year."
+    }
+  ],
+  "math": [
+    {
+      "id": "extra-yearly-cost",
+      "question": "Using the operations director's estimates, by how much would Silverbeck's yearly costs rise if it took the contract, in £ million?",
+      "inputs": {
+        "labour": 6000,
+        "labour_rise_pct": 40,
+        "energy": 2000,
+        "energy_rise_pct": 50,
+        "water": 1000,
+        "water_rise_pct": 50,
+        "delivery": 1000,
+        "delivery_rise_pct": 80,
+        "maintenance": 500,
+        "maintenance_rise_pct": 60,
+        "linen": 1000,
+        "linen_rise_pct": 0,
+        "overheads": 1100,
+        "overheads_rise_pct": 0
+      },
+      "expression": "(labour * labour_rise_pct + energy * energy_rise_pct + water * water_rise_pct + delivery * delivery_rise_pct + maintenance * maintenance_rise_pct + linen * linen_rise_pct + overheads * overheads_rise_pct) / 100 / 1000",
+      "expected": 5,
+      "tolerance_pct": 2,
+      "working": "Labour £6,000k x 40% = £2,400k; energy £2,000k x 50% = £1,000k; water and chemicals £1,000k x 50% = £500k; delivery £1,000k x 80% = £800k; maintenance £500k x 60% = £300k; linen and site costs do not rise. Total £5,000k, which is £5.0 million a year, about 40% on today's £12.6 million. So labour is nearly half the extra cost. Next we need the contract's revenue to see whether it covers this, and to know how many of the 80 new staff Silverbeck could hire directly rather than through agencies.",
+      "input_sources": [
+        { "input": "labour", "exhibit_id": "cost-rise", "row": 0, "column": "Cost today (£ thousand a year)" },
+        { "input": "labour_rise_pct", "exhibit_id": "cost-rise", "row": 0, "column": "Rise with the contract (%)" },
+        { "input": "energy", "exhibit_id": "cost-rise", "row": 1, "column": "Cost today (£ thousand a year)" },
+        { "input": "energy_rise_pct", "exhibit_id": "cost-rise", "row": 1, "column": "Rise with the contract (%)" },
+        { "input": "water", "exhibit_id": "cost-rise", "row": 2, "column": "Cost today (£ thousand a year)" },
+        { "input": "water_rise_pct", "exhibit_id": "cost-rise", "row": 2, "column": "Rise with the contract (%)" },
+        { "input": "delivery", "exhibit_id": "cost-rise", "row": 3, "column": "Cost today (£ thousand a year)" },
+        { "input": "delivery_rise_pct", "exhibit_id": "cost-rise", "row": 3, "column": "Rise with the contract (%)" },
+        { "input": "maintenance", "exhibit_id": "cost-rise", "row": 4, "column": "Cost today (£ thousand a year)" },
+        { "input": "maintenance_rise_pct", "exhibit_id": "cost-rise", "row": 4, "column": "Rise with the contract (%)" },
+        { "input": "linen", "exhibit_id": "cost-rise", "row": 5, "column": "Cost today (£ thousand a year)" },
+        { "input": "linen_rise_pct", "exhibit_id": "cost-rise", "row": 5, "column": "Rise with the contract (%)" },
+        { "input": "overheads", "exhibit_id": "cost-rise", "row": 6, "column": "Cost today (£ thousand a year)" },
+        { "input": "overheads_rise_pct", "exhibit_id": "cost-rise", "row": 6, "column": "Rise with the contract (%)" }
+      ]
+    },
+    {
+      "id": "extra-yearly-profit",
+      "question": "At the guide price and the trust's estimated volume, how much extra profit a year would the contract bring, before the one-off set-up cost, in £ million?",
+      "inputs": {
+        "pieces_m": 14,
+        "price_pence": 40,
+        "extra_cost": 5
+      },
+      "expression": "pieces_m * price_pence / 100 - extra_cost",
+      "expected": 0.6,
+      "tolerance_pct": 2,
+      "working": "Revenue: 14 million pieces x 40p = £5.6 million a year. Minus £5.0 million of extra cost = £0.6 million a year. That is a margin of about 10.7% (0.6 / 5.6), just above the 10% test: 10% of £5.6 million is £0.56 million, so the headroom is only about £40k a year, less than 1% of the £5.0 million extra cost. Next we need to know how quickly this pays back the set-up cost, and how secure the 14 million pieces are.",
+      "input_sources": [
+        { "input": "pieces_m", "exhibit_id": "contract-terms", "row": 0, "column": "Value" },
+        { "input": "price_pence", "exhibit_id": "contract-terms", "row": 1, "column": "Value" }
+      ]
+    },
+    {
+      "id": "payback-years",
+      "question": "And at that extra profit, how many years would it take to pay back the one-off set-up cost?",
+      "inputs": {
+        "setup_k": 1500,
+        "extra_profit_k": 600
+      },
+      "expression": "setup_k / extra_profit_k",
+      "expected": 2.5,
+      "tolerance_pct": 4,
+      "working": "£1,500k / £600k a year = 2.5 years, inside the three-year test. Over the five years the contract earns about 5 x £0.6 million - £1.5 million = £1.5 million in total, about 5% of its £28 million of revenue. Next we need to know what could knock the yearly profit down, because a lower profit stretches the payback.",
+      "input_sources": [
+        { "input": "setup_k", "exhibit_id": "contract-terms", "row": 3, "column": "Value" }
+      ]
+    },
+    {
+      "id": "labour-headroom",
+      "question": "Labour is the biggest extra cost. By what percentage could the extra labour cost turn out higher than planned before the contract's extra profit is wiped out completely?",
+      "inputs": {
+        "extra_profit_k": 600,
+        "labour": 6000,
+        "labour_rise_pct": 40
+      },
+      "expression": "extra_profit_k / (labour * labour_rise_pct / 100) * 100",
+      "expected": 25,
+      "tolerance_pct": 2,
+      "working": "Extra labour is £6,000k x 40% = £2,400k. The contract makes £600k a year, so £600k / £2,400k = 25%. If the extra labour costs a quarter more than planned (for example, if about three-quarters of the new hours had to come from agencies, which cost about a third more per hour), the contract makes nothing. It fails the 10% margin test at an overrun of under 2% (£40k / £2,400k). So the next thing to find out is whether the night shift can be staffed mainly with Silverbeck's own employees.",
+      "input_sources": [
+        { "input": "labour", "exhibit_id": "cost-rise", "row": 0, "column": "Cost today (£ thousand a year)" },
+        { "input": "labour_rise_pct", "exhibit_id": "cost-rise", "row": 0, "column": "Rise with the contract (%)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What are the biggest risks of taking on this contract, and how could Silverbeck reduce each one?",
+    "idea_bank": [
+      "Not enough night-shift staff, or too many agency hours: start recruiting well before the start date, pay a competitive night rate, and approach the trust's own laundry staff who would rather keep working in a laundry",
+      "Wages and energy rising while the price stays fixed for five years: propose a yearly price review linked to wages and energy, or fix energy prices for longer with the supplier",
+      "Missing the 98% on-time target and paying penalties: dedicated vans and routes for each hospital, a spare van, and a start phased hospital by hospital so problems show up on a small scale first",
+      "Service to existing customers slipping as the plant gets busier: keep the trust's work on its own shift and lines, and track existing customers' on-time rate every week",
+      "Depending on one customer for nearly 30% of revenue: keep winning private customers, and plan early for the contract's renewal or end",
+      "Volume coming in at the guaranteed 12 million rather than 14 million: labour and delivery barely fall, so the profit almost disappears; ask for a higher price per piece if volume drops below an agreed level",
+      "The plant filling up as private customers grow: it would be nearly full by the fifth year, so plan extra capacity early and keep room for private customers, who pay more per piece",
+      "Machines breaking down when they run around the clock: a maintenance contract with fast call-out, spare parts on site, and a backup agreement with another laundry",
+      "Hygiene failures or disputes over lost linen: regular audits against the trust's standard, and agree at the start how linen is tracked and who pays for losses",
+      "Losing the bid on price to the national groups: compete on reliability and closeness to the hospitals, which the trust says it values, rather than only on price",
+      "Creative extra: later offer the trust linen hire to replace its own ageing linen, at a higher price per piece, once the service has proved itself"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "An answer first: bid, but on conditions that protect the margin (for example a yearly price review for wages and energy, or a price a little above 40p, and a credible plan to staff the night shift), or a clear 'not at these terms'",
+      "The numbers: about £5.6m of revenue and £5.0m of extra yearly costs, so about £0.6m of extra profit a year (a margin of about 10.7%) and payback of the £1.5m set-up cost in 2.5 years",
+      "It passes both of the chief executive's tests, the 10% margin test only just (by about £40k a year), and the main risks (night-shift labour, energy at a fixed price, penalties, volume at the guaranteed minimum) could each push it below them"
+    ],
+    "good_signs": [
+      "Good versus better: a good answer says yes because both tests pass; a better answer sees that the margin clears 10% by only about £40k a year, less than 1% of the £5.0m extra cost, and makes the bid conditional, saying what would turn the answer into a no",
+      "Sees what the fixed price means: a rise of just 1% in the contract's costs (about £50k) takes it below the 10% test, so if wages and energy rise by even 1% a year it fails from the second year. A yearly price review is the main condition, not a nice-to-have",
+      "Quantifies a risk: extra labour under 2% over plan fails the 10% test and 25% over plan wipes out the profit; a 20% rise in energy prices cuts the contract's profit to about £0.4m (about 7%) and stretches payback to 3.75 years, failing both tests; two months of late-delivery penalties (about £23k each) cost more than the £40k headroom",
+      "Tests the guaranteed minimum: at 12 million pieces, revenue falls to £4.8m but extra costs only to about £4.74m (labour £2.4m and delivery £0.8m stay; energy, water and maintenance fall from £1.8m to about £1.54m), so profit is close to nothing (about £0.06m) and both tests fail. That is why the bid should ask for a higher price below an agreed volume",
+      "Looks at the whole five years: after the £1.5m set-up cost, the contract earns about £1.5m on £28m of revenue, about 5%, half the margin the business makes today",
+      "Notices that 40p is below today's average cost per piece (45p, or about 41p without linen), so the contract pays only because the building, its rent and the managers are already paid for: its 10.7% is a margin on extra costs, not the same as today's 10% after all costs",
+      "Uses the price lever: each extra 1p per piece adds about £140k a year, so 42p would give about £0.88m (about 15%), weighed against the trust scoring mainly on price. The national groups' plants are further from the hospitals, so their delivery costs are likely to be higher, which leaves room to bid a little above 40p on reliability",
+      "Notes the effect on the whole business: the trust would be nearly 30% of revenue. Capacity fits at the start (about 43 of 48 million pieces), but with private volume growing about 1 million a year the plant is nearly full by the fifth year, leaving little room for private customers, who pay more per piece. On the other hand, private growth alone would outgrow the two-shift limit of 32 million in about four years, so a night shift may be needed anyway",
+      "Gives risks with a way to reduce each, such as a phased start, early recruitment and a price review, and clear next steps",
+      "Speaks to the chief executive in 30 to 60 seconds, answer first"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: the chief executive's two tests (extra yearly profit, before the set-up cost, at least 10% of the contract's revenue; the set-up cost paid back within three years) and no harm to existing customers. The contract: about 14 million pieces a year (at least 12 million guaranteed), a guide price of 40p fixed for five years, wash-only because the trust owns its linen, daily deliveries to four hospitals. Today: £14m revenue, £1.4m profit, a 10% margin.",
+    "Structure: the contract's revenue; the extra yearly cost line by line plus the one-off set-up cost; profit against the two tests; whether Silverbeck can deliver it (capacity, staff, delivery, hygiene) and win it; then the risks over five years.",
+    "Extra cost: labour £2.4m (40%), energy £1.0m (50%), water and chemicals £0.5m (50%), delivery £0.8m (80%), maintenance £0.3m (60%); linen and site costs unchanged. Total £5.0m a year, nearly half of it labour, so staffing the night shift is the key cost question.",
+    "Profit: £5.6m revenue minus £5.0m is £0.6m a year, a 10.7% margin; the £1.5m set-up is paid back in 2.5 years. Both tests pass, but the margin clears 10% by only about £40k a year, under 1% of the extra cost. Over the five years, after the set-up cost, the contract earns about £1.5m on £28m of revenue, about 5%, half the margin the business makes today. And 40p is below today's average cost of about 41p a piece without linen: the contract pays only because the building and the managers are already paid for.",
+    "What has to be true: with the price fixed, a 1% rise in the contract's costs takes it below 10%; extra labour under 2% over plan fails the margin test and 25% over plan wipes out the profit (about three-quarters of the new hours from agencies would do it); a 20% energy rise cuts profit to about £0.4m (7%) and stretches payback to 3.75 years; two months of penalties cost more than the £40k headroom. At the guaranteed 12 million pieces, revenue falls to £4.8m but extra costs only to about £4.74m, so the profit almost disappears. Capacity fits at the start (about 43 of 48 million pieces) but is nearly full by the fifth year as private volume grows, and the trust would be nearly 30% of revenue.",
+    "Recommendation to the chief executive: yes, bid, but not on the guide terms as they stand. Propose a yearly price review linked to wages and energy, or bid a little above 40p if the trust will not accept one (each 1p is about £140k a year; the national groups' plants are further away, so Silverbeck can compete on reliability rather than match the guide price). Ask for a higher price if volume falls below an agreed level, start recruiting the night shift now, and propose a start phased hospital by hospital. If the night shift cannot be staffed without heavy agency use, or the trust insists on a fixed 40p with no review, do not bid. Next steps: test the local hiring market, get longer energy quotes, and ask the trust how it scores a price review and a volume price step.",
+    "Good versus better: a good answer stops at 'both tests pass'. A better one sees how thin the margin is at a fixed price and at the guaranteed volume, and makes the bid conditional on protecting it."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

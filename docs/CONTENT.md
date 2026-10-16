@@ -24,6 +24,10 @@ status (draft | reviewed), reviewed_by, reviewed_on
 
 A firm guide (`content/firms/<slug>.json`) may carry a `practice` block. It makes `/practice/<slug>`: the guide's own sourced facts from the sections named in `show_sections`, beside the cases listed in `cases` (our own original cases, best first; the free starter first if listed). The title must say "-style" or "practice for", and the intro is in our own words with no facts about the firm (rules 2.2 and 2.3). A page appears only when the guide is visible and at least one listed case is visible, so on the live site it waits for reviewed cases. `tests/practice-by-firm.test.ts` checks all of this.
 
+### Firm-style cases (clean room, 16 Oct 2026)
+
+When a case should feel like a particular firm's published practice cases, rule 2.1 still applies: nothing from those cases may be copied or paraphrased. Use a clean room: one agent records only the generic format of the firm's examples (who leads, the order of question types, kinds of exhibits, maths load), a second strips anything content-specific, and writers who never see the sources write an original case from that note alone, in an industry that avoids the examples' topics and our existing cases. The case title never names the firm; the case is listed on the firm's practice page instead. case-027 to case-036 were made this way (`docs/CASE_REVIEW_NOTES.md`).
+
 ### Tests (`content:check`)
 
 - Every `math.expected` must equal `expression` evaluated with `inputs`, within `tolerance_pct`.

@@ -1,0 +1,332 @@
+{
+  "id": "case-030",
+  "slug": "kelstow-luggage-lost-share",
+  "title": "Kelstow Luggage: why is it losing share to an online rival?",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Luggage (consumer goods)",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 35,
+  "prompt": "Kelstow Luggage is a family-owned UK brand of mid-priced suitcases and cabin bags. In four years it has lost a third of its share of UK spending on suitcases and cabin bags, while Tramlo, an online-only brand founded six years ago, has more than tripled its share. Kelstow's board has asked your team three things: why Tramlo is winning, how big the opportunity is with travellers aged 18 to 34, and what Kelstow should change, including whether to accept the sales director's proposal to cut prices by 25% to match Tramlo. Your team has market shares by brand; where Kelstow, Tramlo and the whole market make their sales; a survey of UK travellers by age group, including what they value most and how they rate each brand; and price and cost per case for Kelstow and, as estimates, for Tramlo. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Kelstow was founded nearly 50 years ago and is still owned by the founding family. It designs its cases in the UK and has them made by contract factories abroad. Its range covers cabin bags and medium and large cases, hard and soft. It is known for strong, heavy cases with metal frames that rarely break."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board wants Kelstow to stop losing share and to grow its sales again within three years, while staying profitable. The family will not sell the company or bring in outside investors."
+    },
+    {
+      "question_topic": "How sales and the market are measured",
+      "answer": "All market figures, brand shares and Kelstow's sales figures in this case are measured at shelf prices (what shoppers paid), excluding VAT, whichever channel the case was sold through. That way Kelstow's sales compare directly with the market. Kelstow's own revenue is lower, because the stores keep their margin."
+    },
+    {
+      "question_topic": "Market size",
+      "answer": "Kelstow's research agency puts UK spending on suitcases and cabin bags at about £550 million this year, up from about £500 million four years ago."
+    },
+    {
+      "question_topic": "Kelstow's sales and profit",
+      "answer": "Kelstow's sales were about £66 million this year, down from about £90 million four years ago. It is still profitable, but its operating profit has fallen by about 40% over the four years, mainly because sales fell."
+    },
+    {
+      "question_topic": "Kelstow's sales by age of buyer",
+      "answer": "From its warranty registrations, Kelstow splits its sales by the buyer's age. This year: about £8 million to 18 to 34s, £25 million to 35 to 54s and £33 million to people aged 55 and over. Four years ago: £20 million, £35 million and £35 million."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "Four groups compete with Kelstow. A large premium international brand charges about twice Kelstow's prices and sells mainly through department stores and its own shops. Department stores' and supermarkets' own-label ranges are cheaper than Kelstow. Many value brands sell at low prices, mostly on online marketplaces and in discount stores. And there is Tramlo."
+    },
+    {
+      "question_topic": "Tramlo",
+      "answer": "Tramlo was founded in the UK six years ago and sells only online: about three-quarters through its own website and a quarter through online marketplaces. It sells light polycarbonate hard cases in about 20 colours, at prices about 25% below Kelstow's across the range. It markets mainly on social media and through travel creators. Its warranty is 3 years and it has no repair service."
+    },
+    {
+      "question_topic": "Who buys Tramlo",
+      "answer": "The survey suggests Tramlo sold about £40 million to 18 to 34s this year, about £29 million to 35 to 54s and only about £8 million to people aged 55 and over."
+    },
+    {
+      "question_topic": "Awareness",
+      "answer": "In the survey, about 30% of 18 to 34s had heard of Kelstow, against about 80% for Tramlo. Among people aged 55 and over it is the other way round: about 85% had heard of Kelstow and about 25% of Tramlo. Several younger people described Kelstow as 'my parents' brand'."
+    },
+    {
+      "question_topic": "Kelstow's products",
+      "answer": "Kelstow's medium hard case weighs about 4.5 kg; Tramlo's weighs about 3 kg. Kelstow sells most cases in four colours: black, navy, grey and red. Every Kelstow case has a 10-year warranty and a free repair service through about 150 specialist luggage shops."
+    },
+    {
+      "question_topic": "Channels and retailer terms",
+      "answer": "About three-quarters of Kelstow's sales are through department stores and specialist luggage shops. They buy from Kelstow and keep a margin of about 45% of the shelf price. Store buyers value Kelstow because its cases rarely come back. Kelstow also sells on its own website and on two marketplaces, but it keeps its website prices the same as the stores' so that it does not undercut them. It has a small online team of three people and spends little on online marketing."
+    },
+    {
+      "question_topic": "The survey",
+      "answer": "The research agency surveyed 3,000 UK adults who travel overnight at least once a year. The number of travellers in each age group is the agency's estimate. Most 18 to 34s said they usually travel with a cabin bag only and find brands on social media before buying online."
+    },
+    {
+      "question_topic": "The price-cut proposal",
+      "answer": "The sales director proposes cutting the shelf price of every Kelstow product by 25%, in every channel, from next season, to match Tramlo. Store buyers have said they would keep their usual margin of about 45% of the shelf price. Kelstow's costs per case would not change. Kelstow has no reliable estimate of how many more cases it would sell, and the survey says people aged 55 and over rarely choose on price."
+    },
+    {
+      "question_topic": "A lighter case",
+      "answer": "Kelstow's product team says it could launch a lighter hard case of about 3 kg within about nine months, keeping the 10-year warranty, for about £26 a case to make (the same as Tramlo). It passes Kelstow's own strength tests but has not yet been tried by customers."
+    },
+    {
+      "question_topic": "Anything unusual",
+      "answer": "Nothing unusual: no product recalls, supply problems or changes in Kelstow's factories over the four years."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "The market: size and growth of spending by age group, and how much of it is bought online",
+      "Customers: what each age group values when it buys, and where it buys",
+      "Competitors: who has gained share, and Tramlo's product, price, channel and marketing",
+      "Kelstow's offer against those needs: product (weight, design), price, channels, awareness, and its cost and margin per case",
+      "Options and the decision: how to respond, including a yes or no on the 25% price cut, weighed against what Kelstow is already good at (durability, warranty and repairs, older buyers, store partners)"
+    ],
+    "good_signs": [
+      "Splits the share loss by customer group and by channel before suggesting fixes",
+      "States a hypothesis early (for example, Kelstow is losing younger buyers who shop online and want light, colourful, cheaper cases) and says which data would test it",
+      "Combines facts from the text with exhibit data, for example Kelstow's own sales by age with the size of each age group",
+      "Asks for the price, cost and margin per case before judging a price cut",
+      "Asks what Kelstow does well and where it still wins, so the recommendation can build on it"
+    ],
+    "red_flags": [
+      "Treats the share loss as one problem across all customers, without segmenting",
+      "Jumps to 'cut prices to match Tramlo' without looking at the retailer's margin and Kelstow's cost per case",
+      "Ignores that 42% of all spending, and three-quarters of 18 to 34s' spending, goes through brands' own websites and online marketplaces",
+      "Recites a named framework (the 4Ps, Porter's five forces) without tying it to why Kelstow is losing share",
+      "Proposes abandoning Kelstow's older customers or its store partners without weighing what that would cost"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "market-shares",
+      "title": "UK spending on suitcases and cabin bags: share by brand (% of spending at shelf prices, excluding VAT)",
+      "kind": "table",
+      "data": {
+        "columns": ["Brand", "Four years ago", "This year"],
+        "rows": [
+          ["Premium international brand", 24, 22],
+          ["Retailers' own-label", 22, 20],
+          ["Kelstow", 18, 12],
+          ["Tramlo", 4, 14],
+          ["Value brands and others", 32, 32],
+          ["Total", 100, 100]
+        ]
+      },
+      "reveal_hint": "Ask for market shares by brand, or how Kelstow's position has changed against its competitors.",
+      "insight": "Kelstow fell 6 points (18% to 12%) while Tramlo gained 10 points (4% to 14%); the premium brand and own-label lost 2 points each and value brands were flat. In money, with the market up from £500m to £550m, Kelstow fell from £90m to £66m (down 27%) while Tramlo grew from £20m to £77m. Tramlo has taken share from several rivals, but most of all from Kelstow, and it is now bigger than Kelstow."
+    },
+    {
+      "id": "traveller-survey",
+      "title": "UK travellers by age group (agency survey and estimates; spending at shelf prices, excluding VAT)",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "18 to 34", "35 to 54", "55 and over"],
+        "rows": [
+          ["Adults who travel overnight at least once a year (million)", 10, 14, 12],
+          ["Bought a suitcase or cabin bag in the last 12 months (%)", 20, 15, 10],
+          ["Average spent per buyer in the last 12 months (£)", 80, 100, 150],
+          ["Spending four years ago (£ million)", 125, 200, 175],
+          ["Bought on a brand's own website or an online marketplace (% of spending)", 75, 40, 15]
+        ]
+      },
+      "reveal_hint": "Ask about customer segments, the traveller survey, or the size and growth of spending by age group.",
+      "insight": "Spending this year is travellers x share who bought x average spend: 18 to 34s £160m (10m x 20% x £80), 35 to 54s £210m (14m x 15% x £100), 55 and over £180m (12m x 10% x £150), adding to the £550m market. The 18 to 34 group is the smallest but grew fastest: up 28% from £125m, against 5% for 35 to 54s and about 3% for over-55s. Three-quarters of its spending is online, against 15% for over-55s. With Kelstow's sales by age (from the facts), Kelstow's share of 18 to 34s fell from 16% (£20m of £125m) to 5% (£8m of £160m), its share of 35 to 54s from 17.5% to about 12% (£25m of £210m), while it held about 18% of over-55s (20% four years ago). Half of its £24m fall (£12m) came from 18 to 34s and £10m from 35 to 54s, the largest group."
+    },
+    {
+      "id": "sales-channels",
+      "title": "Where sales are made this year (% of each brand's sales at shelf prices)",
+      "kind": "table",
+      "data": {
+        "columns": ["Channel", "Kelstow", "Tramlo", "Whole market"],
+        "rows": [
+          ["Department stores (including their own websites)", 45, 0, 25],
+          ["Specialist luggage shops", 30, 0, 13],
+          ["The brand's own website", 15, 75, 20],
+          ["Online marketplaces", 10, 25, 22],
+          ["Other (supermarkets, discount stores, brands' own shops)", 0, 0, 20],
+          ["Total", 100, 100, 100]
+        ]
+      },
+      "reveal_hint": "Ask where Kelstow, Tramlo and the market make their sales, or about online versus store sales.",
+      "insight": "Kelstow makes 75% of its sales through department stores (including their websites) and specialist shops, and only 25% on its own website and online marketplaces. Across the whole market, 42% of spending goes through brands' own websites and online marketplaces (20% plus 22%, which matches the survey: £120m + £84m + £27m = £231m of £550m), and Tramlo sells only there. Kelstow is weakest in the channels where 18 to 34s spend three-quarters of their money."
+    },
+    {
+      "id": "purchase-criteria",
+      "title": "What buyers value most and how they rate each brand (each buyer picked two, so age columns add up to 200%)",
+      "kind": "table",
+      "data": {
+        "columns": [
+          "Purchase criterion",
+          "18 to 34: % with it in their top two",
+          "35 to 54: % with it in their top two",
+          "55 and over: % with it in their top two",
+          "Kelstow rating out of 10 (by buyers who know it)",
+          "Tramlo rating out of 10 (by buyers who know it)"
+        ],
+        "rows": [
+          ["Price", 60, 50, 30, 5, 8],
+          ["Light weight", 55, 45, 40, 5, 9],
+          ["Design and colours", 45, 25, 15, 5, 9],
+          ["Durability", 25, 45, 65, 9, 6],
+          ["Warranty and repairs", 15, 35, 50, 9, 5]
+        ]
+      },
+      "reveal_hint": "Ask what buyers value when they choose luggage, or how they rate Kelstow against Tramlo.",
+      "insight": "18 to 34s rank price, light weight and design highest (60%, 55%, 45%), and those are exactly where Tramlo beats Kelstow (8 against 5, 9 against 5, 9 against 5). Over-55s rank durability and warranty highest (65%, 50%), where Kelstow leads (9 against 6, 9 against 5). Kelstow's strengths match the slowest-growing group; 35 to 54s sit in between. Price is only one of the three things young buyers want, so a price cut alone would not close the gap."
+    },
+    {
+      "id": "price-breakdown",
+      "title": "Where the shelf price of a medium hard case goes (£ per case, excluding VAT)",
+      "kind": "table",
+      "data": {
+        "columns": ["Part of the price", "Kelstow, sold in a department store", "Tramlo, own website (team's estimates)"],
+        "rows": [
+          ["Retailer's margin", 54, 0],
+          ["Making the case (contract factory)", 30, 26],
+          ["Shipping to the UK and import duty", 8, 8],
+          ["Delivery to the customer and returns", 0, 10],
+          ["Marketing", 6, 18],
+          ["Other overheads", 10, 8],
+          ["Brand's profit", 12, 20],
+          ["Shelf price", 120, 90]
+        ]
+      },
+      "reveal_hint": "Ask about prices, costs or margins per case, or how Tramlo can charge less than Kelstow.",
+      "insight": "Tramlo charges 25% less (£90 against £120) yet makes more per case (£20 against £12), because it pays no retailer margin (£54 for Kelstow, 45% of the shelf price). Selling direct costs it £28 of delivery, returns and marketing instead. Its lighter case is also £4 cheaper to make. If Kelstow matched £90 in stores, it would receive £49.50 a case against £54 of costs and lose £4.50 a case. Sold on its own website at £90 with Tramlo's delivery and marketing costs, the same Kelstow case would make £14."
+    }
+  ],
+  "math": [
+    {
+      "id": "young-segment-size",
+      "question": "Using the traveller survey, how much do 18 to 34s spend on suitcases and cabin bags this year, in £ million?",
+      "inputs": {
+        "travellers_m": 10,
+        "bought_pct": 20,
+        "average_spend": 80
+      },
+      "expression": "travellers_m * bought_pct / 100 * average_spend",
+      "expected": 160,
+      "tolerance_pct": 2,
+      "working": "10 million travellers x 20% who bought = 2 million buyers. 2 million x £80 = £160 million. That is up 28% from £125m four years ago, against 5% for 35 to 54s (£210m) and about 3% for over-55s (£180m). The three groups add up to the £550m market.",
+      "input_sources": [
+        { "input": "travellers_m", "exhibit_id": "traveller-survey", "row": 0, "column": "18 to 34" },
+        { "input": "bought_pct", "exhibit_id": "traveller-survey", "row": 1, "column": "18 to 34" },
+        { "input": "average_spend", "exhibit_id": "traveller-survey", "row": 2, "column": "18 to 34" }
+      ]
+    },
+    {
+      "id": "kelstow-young-share",
+      "question": "Kelstow's own sales data splits its sales by the buyer's age. What share of 18 to 34s' spending does Kelstow hold this year, in percent?",
+      "inputs": {
+        "kelstow_young_sales": 8,
+        "young_segment": 160
+      },
+      "expression": "kelstow_young_sales / young_segment * 100",
+      "expected": 5,
+      "tolerance_pct": 2,
+      "working": "Kelstow sold about £8m to 18 to 34s (from its sales by age). £8m / £160m = 5%. That is well below its 12% share of the whole market, and down from 16% four years ago (£20m of £125m). Tramlo's £40m is a quarter (£40m of £160m). Each 5 points of share in this group is worth about £8m a year at shelf prices."
+    },
+    {
+      "id": "price-match-loss",
+      "question": "Under the sales director's proposal, the shelf price of the medium hard case in department stores falls by 25%, from £120 to £90; the store keeps the same percentage margin and Kelstow's costs per case do not change. Would Kelstow make a profit or a loss on each case, and how much, in £? Give a loss as a positive number.",
+      "inputs": {
+        "making": 30,
+        "shipping": 8,
+        "marketing": 6,
+        "overheads": 10,
+        "cut_pct": 25,
+        "retailer_margin": 54,
+        "old_price": 120
+      },
+      "expression": "making + shipping + marketing + overheads - old_price * (1 - cut_pct / 100) * (1 - retailer_margin / old_price)",
+      "expected": 4.5,
+      "tolerance_pct": 3,
+      "working": "A 25% cut takes the shelf price from £120 to £90. The store keeps £54 of £120, which is 45%, so Kelstow receives 55% of the shelf price: 55% of £90 = £49.50. Kelstow's costs per case are £30 + £8 + £6 + £10 = £54. £54 - £49.50 = a loss of £4.50 on every case, a fall of £16.50 from today's £12 profit. Even if the £6 of marketing and £10 of overheads stay the same however many cases are sold, Kelstow would keep only £11.50 a case after making and shipping (£49.50 - £38), against £28 today (£66 - £38), so it would need to sell about 2.4 times as many cases through stores just to earn the same, and it has no evidence of that.",
+      "input_sources": [
+        { "input": "making", "exhibit_id": "price-breakdown", "row": 1, "column": "Kelstow, sold in a department store" },
+        { "input": "shipping", "exhibit_id": "price-breakdown", "row": 2, "column": "Kelstow, sold in a department store" },
+        { "input": "marketing", "exhibit_id": "price-breakdown", "row": 4, "column": "Kelstow, sold in a department store" },
+        { "input": "overheads", "exhibit_id": "price-breakdown", "row": 5, "column": "Kelstow, sold in a department store" },
+        { "input": "retailer_margin", "exhibit_id": "price-breakdown", "row": 0, "column": "Kelstow, sold in a department store" },
+        { "input": "old_price", "exhibit_id": "price-breakdown", "row": 7, "column": "Kelstow, sold in a department store" }
+      ]
+    },
+    {
+      "id": "direct-profit-per-case",
+      "question": "Suppose instead Kelstow sold the same case on its own website at £90, paying Tramlo's delivery-and-returns and marketing costs per case instead of a retailer's margin and its own £6 of marketing. How much would Kelstow make on each case, in £?",
+      "inputs": {
+        "price": 90,
+        "making": 30,
+        "shipping": 8,
+        "delivery_returns": 10,
+        "online_marketing": 18,
+        "overheads": 10
+      },
+      "expression": "price - (making + shipping + delivery_returns + online_marketing + overheads)",
+      "expected": 14,
+      "tolerance_pct": 3,
+      "working": "Costs per case: making £30 + shipping and duty £8 + delivery and returns £10 + marketing £18 + overheads £10 = £76. £90 - £76 = £14 a case, a little more than the £12 Kelstow makes through a store at £120. With the planned lighter case (£26 to make), it would be about £18. This keeps Kelstow's own £10 of overheads; running a bigger online operation could add to them, and selling on marketplaces would add their fee per sale, which the case does not give.",
+      "input_sources": [
+        { "input": "price", "exhibit_id": "price-breakdown", "row": 7, "column": "Tramlo, own website (team's estimates)" },
+        { "input": "making", "exhibit_id": "price-breakdown", "row": 1, "column": "Kelstow, sold in a department store" },
+        { "input": "shipping", "exhibit_id": "price-breakdown", "row": 2, "column": "Kelstow, sold in a department store" },
+        { "input": "delivery_returns", "exhibit_id": "price-breakdown", "row": 3, "column": "Tramlo, own website (team's estimates)" },
+        { "input": "online_marketing", "exhibit_id": "price-breakdown", "row": 4, "column": "Tramlo, own website (team's estimates)" },
+        { "input": "overheads", "exhibit_id": "price-breakdown", "row": 5, "column": "Kelstow, sold in a department store" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Kelstow change to win back younger travellers without losing the older customers and store partners it already serves well?",
+    "idea_bank": [
+      "Launch a lighter hard-shell range (about 3 kg) in more colours that keeps the 10-year warranty: light and built to last",
+      "Sell the new range mainly on Kelstow's own website at around £90, where the £26 lighter build would make about £18 a case (£14 for today's case), and add marketplaces later, once their fees per sale are known",
+      "Lead the cabin-bag range for young travellers, since most of them travel with a cabin bag only",
+      "Turn the warranty and repair service into a message for young buyers: cost per year of use, and repairing instead of throwing away",
+      "Raise awareness among 18 to 34s (about 30% today) through social media, travel creators and student or young-traveller partnerships",
+      "Use a sub-brand or separate range for online so the new prices do not undercut the core range in stores",
+      "Offer stores the lighter range in store-only colours at a shelf price that covers their margin (around £110 gives Kelstow about £10.50 a case; at £90 it would only about break even), so store partners share in the growth instead of fighting it",
+      "Aim the lighter range at 35 to 54s too: they are the largest group, rank light weight as high as durability, and still spend about 60% of their money away from brands' websites and marketplaces, so the store version reaches them",
+      "Fund the push in stages from Kelstow's own profits (the family will not bring in investors), starting with the online team and a pilot",
+      "Keep the core range and its prices for over-55s, and invest in store displays and the specialist-shop repair network",
+      "Pilot the range online before a full launch, and track share among 18 to 34s, awareness, return rates and margin per case",
+      "Build a bigger online team and better online marketing, since three people cannot match Tramlo",
+      "Offer bundles (cabin bag plus medium case) or trade-in deals online to lift spend per buyer"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Tramlo is winning mainly with 18 to 34s, the fastest-growing group (up 28% to £160m), where Kelstow's share fell from 16% to 5% while Tramlo holds about a quarter",
+      "Why: 18 to 34s value price, light weight and design, buy mostly online and rarely know Kelstow; Tramlo leads on all three and sells only online, while Kelstow's strengths (durability, warranty) are what over-55s value",
+      "No to the 25% price cut across the range: through stores Kelstow would lose about £4.50 a case, and it would give away margin with over-55s, who rank price lowest",
+      "A recommendation that builds on what Kelstow is already good at (for example a lighter range sold online that keeps the warranty), with next steps"
+    ],
+    "good_signs": [
+      "Says which exhibit or fact supports each point, as a hypothesis tested with evidence",
+      "Goes from a good answer ('go online' or 'cut prices') to a better one: a targeted product and channel response for 18 to 34s that protects older buyers and store partners",
+      "Uses the direct-sale economics: at £90 on its own website Kelstow would make about £14 a case, more than the £12 it makes through stores at £120",
+      "Checks whether extra sales could pay for the cut: after making and shipping Kelstow would keep £11.50 a case instead of £28, so store sales would need to rise about 2.4 times",
+      "Checks the store economics of the new range before offering it to store partners: at £90 in stores Kelstow would receive £49.50 against about £50 of costs, so a store version needs a higher shelf price (around £110 gives about £10.50 a case)",
+      "Puts a size on the prize: each 5 points of share among 18 to 34s is worth about £8m a year at shelf prices, a third of the £24m lost, in a group that grew 28% in four years",
+      "Notices that Kelstow also lost £10m with 35 to 54s, the largest group, where Tramlo (about 14%) has already overtaken it (about 12%), and aims the lighter range at them too, partly through stores",
+      "Names the risks: store partners' reaction, the new range taking sales from the core range, whether Kelstow can reach young buyers at Tramlo's marketing cost, that the lighter case is untested with customers, that warranty and repair costs could rise if the lighter case breaks more often than the heavy metal-framed cases, and that with no outside investors and profit down about 40% the push must be paid for from Kelstow's own profits",
+      "Gives next steps and what to measure, such as a pilot, share and awareness among 18 to 34s, and return rates"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: the board wants Kelstow to stop losing share and grow sales again within three years while staying profitable and family-owned. All figures are at shelf prices excluding VAT, so shares compare directly. Kelstow's sales fell from £90m to £66m while the market grew from £500m to £550m; Tramlo grew from £20m to £77m.",
+    "Structure: where the share was lost (by age group and by channel), why (what each group values against how Kelstow and Tramlo compare, plus awareness), the economics per case by channel, then options weighed against Kelstow's strengths, including a yes or no on the 25% price cut.",
+    "Size the young group: 10m travellers x 20% x £80 = £160m, the fastest-growing group (up 28% from £125m). Kelstow's £8m is a 5% share, down from 16% and well below its 12% overall; Tramlo has about 25%. Half of Kelstow's £24m fall came from 18 to 34s (£12m), £10m from 35 to 54s and only £2m from over-55s, where it still holds about 18%. The prize: each 5 points of share among 18 to 34s is worth about £8m a year at shelf prices, a third of the £24m lost, so winning back to 10% would add about £8m in a group still growing. Among 35 to 54s, the largest group (£210m), Kelstow's share fell from 17.5% to about 12% and Tramlo (£29m, about 14%) has already overtaken it.",
+    "Why Tramlo wins, with the evidence: product (18 to 34s rank price, light weight and design highest, and Tramlo rates 8 to 9 against Kelstow's 5: purchase criteria exhibit); channel (75% of young spending is on brands' own websites and online marketplaces, where Tramlo makes all its sales and Kelstow only 25% of its own: survey and channel exhibits); awareness (80% against 30% among 18 to 34s: facts); economics (no retailer margin lets Tramlo price 25% lower and still make £20 a case against Kelstow's £12: price breakdown).",
+    "The price cut: no. In stores at £90 Kelstow would receive £49.50 against £54 of costs, a loss of £4.50 a case on three-quarters of its sales. Even if marketing and overheads stay fixed however many cases it sells, it would keep £11.50 a case after making and shipping instead of £28, so store sales would need to rise about 2.4 times just to earn the same, with no evidence they would. It would give away margin with over-55s, who rank price lowest and value what Kelstow does best, and price is only one of the three things young buyers want.",
+    "Recommendation: a targeted response. Launch the lighter (about 3 kg) hard-shell range in more colours, keeping the 10-year warranty and repairs ('light and built to last'), sold mainly on Kelstow's own website at around £90, where today's case would make about £14 and the £26 lighter build about £18; add marketplaces later, once their fees per sale are known. Invest in social media awareness among 18 to 34s. Keep the core range and its prices for over-55s and store partners. Offer stores the lighter range in store-only colours at a shelf price that covers their margin: at about £110 Kelstow would receive £60.50 against about £50 of costs (£26 + £8 + £6 + £10), about £10.50 a case, whereas at £90 in stores it would only about break even. The store version also matters for 35 to 54s, who rank light weight as high as durability and still spend about 60% of their money away from brands' websites and marketplaces.",
+    "Risks and next steps: store partners' reaction, the new range taking sales from the core range, whether Kelstow can reach young buyers at Tramlo's marketing cost per case, that the lighter case is untested with customers, and that warranty and repair costs could rise if it breaks more often than today's heavy metal-framed cases. Funding: the family will not bring in investors and operating profit is down about 40%, so the online team and marketing must be paid for from Kelstow's own profits, which supports a staged approach. Pilot the range online first; track share and awareness among 18 to 34s, return rates and margin per case."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}
