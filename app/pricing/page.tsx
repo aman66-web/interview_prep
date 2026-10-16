@@ -16,6 +16,7 @@ import { pageOpenGraph } from "@/components/learn/seo";
 import { PURCHASE_NOTICES } from "@/lib/stripe/plans";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
+import { pageImage } from "@/lib/images";
 
 const PRICING_DESCRIPTION = `Practise free, or go unlimited from $${siteConfig.prices.monthly} a month or $${siteConfig.prices.pass90} for a 90-day pass.`;
 
@@ -145,6 +146,7 @@ export default async function PricingPage({ searchParams }: { searchParams: Prom
     <>
       <PageHeader
         align="center"
+        image={pageImage("pricing")}
         eyebrow="Pricing"
         title={
           <>

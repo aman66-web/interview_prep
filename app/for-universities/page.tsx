@@ -8,11 +8,14 @@ import { Faq, faqJsonLd, JsonLd, type FaqItem } from "@/components/ui/faq";
 import { pageOpenGraph } from "@/components/learn/seo";
 import { Bolt, Calculator, Chat, Check, GraduationCap, Lock, Mail, Shield } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { allDrills } from "@/lib/drills";
 import { fieldsFromQuery, firstQueryValue, leadErrorMessage, type QueryValue } from "@/lib/leads/messages";
+import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 import { EnquiryForm } from "./enquiry-form";
+import { pageImage, universityImage } from "@/lib/images";
 
 // Search results show about 60 characters of a title (with " | Mock Partner") and 155-160 of a
 // description; tests/tools-pages.test.ts checks both.
@@ -71,10 +74,12 @@ const STEPS = [
 export default async function ForUniversitiesPage({ searchParams }: { searchParams: Promise<{ sent?: QueryValue; error?: QueryValue; fields?: QueryValue }> }) {
   const { sent, error, fields } = await searchParams;
   const drillCount = allDrills.length;
+  const photos = (["workshop", "careers-fair", "practice-pairs"] as const).map(universityImage).filter((p) => p !== undefined);
 
   return (
     <>
       <PageHeader
+        image={pageImage("universities")}
         eyebrow={
           <Eyebrow tone="lime" icon={<GraduationCap size={14} />}>
             For universities and clubs
@@ -176,6 +181,20 @@ export default async function ForUniversitiesPage({ searchParams }: { searchPara
               </p>
             </Card>
           </div>
+
+          {/* Illustrations only, with no captions: never present them as a real club, event or member (rule 2.4). */}
+          {photos.length > 0 ? (
+            <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3">
+              {photos.map((photo, i) => (
+                <Photo
+                  key={photo.src}
+                  photo={photo}
+                  sizes={i === 0 ? "(min-width: 1280px) 384px, (min-width: 768px) 33vw, calc(100vw - 2rem)" : "(min-width: 1280px) 384px, (min-width: 768px) 33vw, 50vw"}
+                  className={cn("aspect-[3/2] rounded-[1.75rem]", i === 0 && "col-span-2 md:col-span-1")}
+                />
+              ))}
+            </div>
+          ) : null}
         </section>
       </Container>
 

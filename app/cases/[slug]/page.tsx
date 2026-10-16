@@ -13,11 +13,13 @@ import { Card, IconBadge } from "@/components/ui/card";
 import { JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Book, Calculator, ChartBars, Check, ChevronRight, Clock, Lightbulb, Lock, Notes } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { findVisibleCase, visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_GUIDES, guideHrefForCaseType } from "@/lib/content/guide-links";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { toCaseSummary, toPublicCase, type PublicCase } from "@/lib/content/public";
 import { findGuide, splitTitle } from "@/lib/content/writing";
+import { caseImage } from "@/lib/images";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
@@ -86,7 +88,8 @@ function startLabel(c: PublicCase) {
   return c.freeStarter ? "Start the interview (free account)" : "Practise this case";
 }
 
-function FactsCard({ c }: { c: PublicCase }) {
+/** `solid` when it overlaps the case photo, so its text never sits on a see-through panel. */
+function FactsCard({ c, solid = false }: { c: PublicCase; solid?: boolean }) {
   const rows = [
     { k: "Industry", v: <span>{c.industry}</span> },
     { k: "Difficulty", v: <DifficultyMeter level={c.difficulty} className="text-sm text-ink" /> },
@@ -102,7 +105,7 @@ function FactsCard({ c }: { c: PublicCase }) {
     { k: "Full interview", v: <span>{c.freeStarter ? "Free with an account" : "Paid plans"}</span> },
   ];
   return (
-    <div className="glass rounded-[1.75rem] p-5 shadow-float ring-1 ring-inset ring-line sm:p-6">
+    <div className={cn("rounded-[1.75rem] p-5 shadow-float ring-1 ring-inset ring-line sm:p-6", solid ? "bg-surface" : "glass")}>
       <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-muted">At a glance</p>
       <dl className="mt-3 divide-y divide-line">
         {rows.map((r) => (
@@ -113,7 +116,14 @@ function FactsCard({ c }: { c: PublicCase }) {
         ))}
       </dl>
       <ButtonLink href={`/app/start/${c.slug}`} arrow full className="mt-4">
-        {startLabel(c)}
+        {/* On a phone the card is too narrow for "(free account)"; the line under the button says it. */}
+        {c.freeStarter ? (
+          <>
+            Start the interview<span className="hidden sm:inline"> (free account)</span>
+          </>
+        ) : (
+          startLabel(c)
+        )}
       </ButtonLink>
       <p className="mt-3 text-center text-xs text-muted">
         {c.freeStarter ? "Free account, no card needed." : `From $${siteConfig.prices.monthly} a month.`}
@@ -138,6 +148,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   const guideHref = guideHrefForCaseType(c.type);
   const guide = CASE_TYPE_GUIDES[c.type] ? findGuide(CASE_TYPE_GUIDES[c.type]) : undefined;
   const guideName = guide ? splitTitle(guide.title).main : `${typeLabel} case interviews`;
+  const photo = caseImage(c.slug);
 
   return (
     <>
@@ -151,7 +162,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       <Container className="pt-6 sm:pt-8">
         <div className="bg-aurora relative overflow-hidden rounded-[2rem] px-6 py-10 ring-1 ring-inset ring-line sm:px-10 sm:py-14 lg:px-12">
           <div aria-hidden="true" className="bg-dots pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(55%_60%_at_80%_30%,black,transparent)]" />
-          <div className="relative grid gap-10 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14">
+          <div className={cn("relative grid gap-10 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14", photo && "xl:grid-cols-[1fr_24rem]")}>
             <div>
               <nav aria-label="Breadcrumb">
                 <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted">
@@ -177,7 +188,22 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                 {caseOfType(typeLabel).replace(/^a/, "A")} in {lowerFirst(c.industry)}. {STYLE[c.style].text}
               </p>
             </div>
-            <FactsCard c={c} />
+            {photo ? (
+              // The case's photo with the facts card overlapping its lower edge (no text sits on the photo).
+              <div className="min-w-0">
+                <Photo
+                  photo={photo}
+                  preload
+                  sizes="(min-width: 1280px) 384px, (min-width: 1024px) 352px, (min-width: 640px) calc(100vw - 8rem), calc(100vw - 5rem)"
+                  className="aspect-[16/10] rounded-[1.5rem]"
+                />
+                <div className="relative -mt-20 sm:px-4">
+                  <FactsCard c={c} solid />
+                </div>
+              </div>
+            ) : (
+              <FactsCard c={c} />
+            )}
           </div>
         </div>
       </Container>

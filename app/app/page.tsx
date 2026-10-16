@@ -15,6 +15,7 @@ import { focusSkill, formatScore, overallScore, SKILLS, skillInfo, type SkillKey
 import { getEntitlement } from "@/lib/auth/entitlement";
 import { requireUser } from "@/lib/auth/session";
 import { visibleCases } from "@/lib/content/cases";
+import { pageImage } from "@/lib/images";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { CATEGORY_INFO, DRILL_CATEGORIES, drillsByCategory, type DrillCategory } from "@/lib/drills";
 import { createClient } from "@/lib/supabase/server";
@@ -76,6 +77,7 @@ export default async function DashboardPage() {
   return (
     <>
       <AppHeader
+        image={pageImage("dashboard")}
         eyebrow="Your practice"
         title={
           sessions.length === 0 ? (

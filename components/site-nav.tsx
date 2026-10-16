@@ -81,6 +81,32 @@ export function OutsideApp({ children }: { children: ReactNode }) {
   return isAppPath(usePathname()) ? null : <>{children}</>;
 }
 
+/**
+ * The layout of the footer's "Start practising free" banner. On the home page it also shows
+ * the closing photo (IMAGE_BRIEF H7), beside the text on wide screens and above it on phones;
+ * elsewhere it is the text and the button on one row.
+ */
+export function FooterSignUp({ text, action, homePhoto }: { text: ReactNode; action: ReactNode; homePhoto?: ReactNode }) {
+  const onHome = usePathname() === "/";
+  if (homePhoto && onHome) {
+    return (
+      <div className="grid gap-8 border-b border-white/10 pb-12 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-12">
+        <div className="md:order-2">{homePhoto}</div>
+        <div className="flex flex-col items-start gap-8">
+          {text}
+          {action}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-12 md:flex-row md:items-end">
+      {text}
+      {action}
+    </div>
+  );
+}
+
 /** The footer's "Log in" link, which reads "Dashboard" on the signed-in pages. */
 export function AccountLink({ className }: { className?: string }) {
   const inApp = isAppPath(usePathname());

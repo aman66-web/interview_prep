@@ -1,12 +1,15 @@
 import type { ReactNode } from "react";
 import { Eyebrow } from "@/components/ui/badge";
 import { Container } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
+import type { Photo as PhotoData } from "@/lib/images";
 import { cn } from "@/lib/ui/cn";
 
 // The top of a signed-in page: a compact version of PageHeader (aurora panel, eyebrow,
 // h1, intro), with an optional panel on the right (`aside`) and content under the
 // heading (`children`). On a phone the aside comes straight after the heading, so the
-// main action is near the top; on wide screens it sits on the right.
+// main action is near the top; on wide screens it sits on the right. An optional `image`
+// (the dashboard's welcome band) is a soft decorative strip across the top of the panel.
 
 export function AppHeader({
   eyebrow,
@@ -14,6 +17,7 @@ export function AppHeader({
   intro,
   aside,
   children,
+  image,
   className,
 }: {
   eyebrow?: ReactNode;
@@ -21,15 +25,28 @@ export function AppHeader({
   intro?: ReactNode;
   aside?: ReactNode;
   children?: ReactNode;
+  image?: PhotoData;
   className?: string;
 }) {
   return (
     <Container className={cn("pt-5", className)}>
-      <div className="bg-aurora relative overflow-hidden rounded-[2rem] p-5 ring-1 ring-inset ring-line sm:p-8 lg:p-10">
+      <div className={cn("bg-aurora relative overflow-hidden rounded-[2rem] p-5 ring-1 ring-inset ring-line sm:p-8 lg:p-10", image && "pt-0 sm:pt-0 lg:pt-0")}>
         <div
           aria-hidden="true"
           className="bg-dots pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(55%_70%_at_20%_10%,black,transparent)]"
         />
+        {/* After the dot texture, so the dots never sit on the photo. */}
+        {image ? (
+          <Photo
+            photo={image}
+            decorative
+            preload
+            ring={false}
+            backdrop={false}
+            sizes="(min-width: 1280px) 1216px, 100vw"
+            className="-mx-5 mb-2 h-24 [mask-image:linear-gradient(to_bottom,black_45%,transparent)] sm:-mx-8 sm:h-32 lg:-mx-10 lg:mb-0 lg:h-36"
+          />
+        ) : null}
         <div
           className={cn(
             "relative grid gap-6",

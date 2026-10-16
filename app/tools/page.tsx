@@ -7,6 +7,7 @@ import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { IconBadge } from "@/components/ui/card";
 import { ArrowUpRight, Bolt, Book, Lock, Sparkle } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { allDrills } from "@/lib/drills";
 import { findTool, type ToolInfo } from "@/lib/tools";
 import { breakEven } from "@/lib/tools/break-even";
@@ -16,6 +17,7 @@ import { cagr, compareDoubling } from "@/lib/tools/growth";
 import { sizeMarket } from "@/lib/tools/market-sizing";
 import { exampleQuestions } from "@/lib/tools/mental-maths";
 import { cn } from "@/lib/ui/cn";
+import { pageImage, toolImage } from "@/lib/images";
 
 // Kept to about 60 characters (title) and 160 (description); tests/tools-pages.test.ts checks.
 const DESCRIPTION =
@@ -141,28 +143,44 @@ function GrowthPreview() {
 function ToolCard({ tool, tone, className, preview, onNight = false, wide = false }: { tool: ToolInfo; tone: string; className?: string; preview: ReactNode; onNight?: boolean; wide?: boolean }) {
   const Icon = TOOL_ICONS[tool.slug];
   const open = <OpenPill onNight={onNight} />;
+  const photo = toolImage(tool.slug);
   return (
     <li className={className}>
       <Link
         href={`/tools/${tool.slug}`}
-        className={cn(
-          "group flex h-full flex-col gap-8 rounded-[1.75rem] p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float sm:p-8",
-          wide && "lg:grid lg:grid-cols-[1fr_1.1fr] lg:gap-10",
-          tone,
-        )}
+        className={cn("group flex h-full flex-col rounded-[1.75rem] p-2 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float", tone)}
       >
-        <div className={cn(wide && "lg:flex lg:flex-col")}>
-          <div className="flex items-start justify-between gap-4">
-            <IconBadge tone={onNight ? "glass" : "surface"}>{Icon ? <Icon size={20} /> : null}</IconBadge>
-            <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", onNight ? "bg-white/10 text-on-night" : "bg-surface/70 text-ink")}>Free, no login</span>
+        {/* The tool's photo, or a dotted panel with its icon for a tool without one. Inside the link, so decorative. */}
+        {photo ? (
+          <Photo
+            photo={photo}
+            decorative
+            sizes={wide ? "(min-width: 768px) 66vw, calc(100vw - 3rem)" : "(min-width: 1280px) 380px, (min-width: 768px) 33vw, calc(100vw - 3rem)"}
+            className="h-40 rounded-[1.4rem] sm:h-48"
+            imageClassName="transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div aria-hidden="true" className={cn("relative grid h-40 place-items-center overflow-hidden rounded-[1.4rem] sm:h-48", onNight ? "bg-white/[0.06]" : "bg-surface/45")}>
+            <div className="bg-dots absolute inset-0 opacity-80 [mask-image:radial-gradient(70%_85%_at_50%_50%,black,transparent)]" />
+            {Icon ? <Icon size={64} strokeWidth={1.25} className={cn("relative", onNight ? "text-white/30" : "text-ink/20")} /> : null}
           </div>
-          <h2 className={cn("mt-6 text-2xl font-medium tracking-tight", onNight ? "text-white" : "text-ink")}>{tool.title}</h2>
-          <p className={cn("mt-2 max-w-md leading-relaxed", onNight ? "text-on-night-muted" : "text-ink/70")}>{tool.short}</p>
-          {wide ? <div className="mt-auto hidden pt-8 lg:block">{open}</div> : null}
-        </div>
-        <div className={cn("mt-auto space-y-6", wide && "lg:mt-0 lg:self-end")}>
-          {preview}
-          <div className={cn(wide && "lg:hidden")}>{open}</div>
+        )}
+        <div className={cn("flex flex-1 flex-col gap-8 px-4 pb-4 sm:px-6 sm:pb-6", wide && "lg:grid lg:grid-cols-[1fr_1.1fr] lg:gap-10")}>
+          <div className={cn(wide && "lg:flex lg:flex-col")}>
+            <div className="relative -mt-6 flex items-end justify-between gap-4 pl-1">
+              <IconBadge tone="surface" className="shadow-soft">
+                {Icon ? <Icon size={20} /> : null}
+              </IconBadge>
+              <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", onNight ? "bg-white/10 text-on-night" : "bg-surface/70 text-ink")}>Free, no login</span>
+            </div>
+            <h2 className={cn("mt-6 text-2xl font-medium tracking-tight", onNight ? "text-white" : "text-ink")}>{tool.title}</h2>
+            <p className={cn("mt-2 max-w-md leading-relaxed", onNight ? "text-on-night-muted" : "text-ink/70")}>{tool.short}</p>
+            {wide ? <div className="mt-auto hidden pt-8 lg:block">{open}</div> : null}
+          </div>
+          <div className={cn("mt-auto space-y-6", wide && "lg:mt-0 lg:self-end")}>
+            {preview}
+            <div className={cn(wide && "lg:hidden")}>{open}</div>
+          </div>
         </div>
       </Link>
     </li>
@@ -195,6 +213,8 @@ export default function ToolsPage() {
   return (
     <>
       <PageHeader
+        // No photo yet: the tools banner (IMAGE_BRIEF P4) was rejected, so this keeps the plain header.
+        image={pageImage("tools")}
         eyebrow={
           <Eyebrow tone="lime" icon={<Sparkle size={14} />}>
             Free tools

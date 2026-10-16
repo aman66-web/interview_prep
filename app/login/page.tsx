@@ -3,9 +3,11 @@ import { redirect } from "next/navigation";
 import { MockDebrief, MockStageBar } from "@/components/marketing/mocks";
 import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { Check, Lock, Sparkle } from "@/components/ui/icons";
+import { Photo } from "@/components/ui/photo";
 import { ownValue } from "@/lib/app/own-key";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
 import { getUser } from "@/lib/auth/session";
+import { pageImage } from "@/lib/images";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
@@ -34,6 +36,7 @@ export default async function LoginPage({
   const next = safeNextPath(params.next);
 
   if (await getUser()) redirect(next);
+  const photo = pageImage("login");
 
   return (
     <section aria-labelledby="login-title" className="px-3 pt-4 sm:px-4">
@@ -76,19 +79,35 @@ export default async function LoginPage({
               ))}
             </ul>
           </div>
-          <figure className="relative mt-12">
-            <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-[#4f46e5]/30 via-transparent to-[#d6f55c]/20 blur-2xl" />
-            <div className="relative grid gap-3 sm:grid-cols-[1fr_0.9fr] sm:items-end">
-              <MockDebrief className="sm:-rotate-1" />
-              <div aria-hidden="true" className="rounded-2xl bg-surface p-4 text-ink shadow-float ring-1 ring-inset ring-line sm:rotate-2">
-                <p className="text-[11px] font-medium text-subtle">Stage reached</p>
-                <MockStageBar active={4} className="mt-2" />
+          {photo ? (
+            // A desk lamp at night (decorative), with part of an example debrief laid over it.
+            <figure className="relative mt-12 min-h-[22rem] flex-1">
+              <Photo
+                photo={photo}
+                decorative
+                backdrop={false}
+                sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 1px"
+                className="absolute inset-0 rounded-[1.75rem]"
+                objectPosition="40% 72%"
+              />
+              <MockDebrief compact className="absolute bottom-5 right-5 w-60 rotate-1" />
+              <figcaption className="sr-only">An example debrief from the free starter case: skills scored out of 5.</figcaption>
+            </figure>
+          ) : (
+            <figure className="relative mt-12">
+              <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-[#4f46e5]/30 via-transparent to-[#d6f55c]/20 blur-2xl" />
+              <div className="relative grid gap-3 sm:grid-cols-[1fr_0.9fr] sm:items-end">
+                <MockDebrief className="sm:-rotate-1" />
+                <div aria-hidden="true" className="rounded-2xl bg-surface p-4 text-ink shadow-float ring-1 ring-inset ring-line sm:rotate-2">
+                  <p className="text-[11px] font-medium text-subtle">Stage reached</p>
+                  <MockStageBar active={4} className="mt-2" />
+                </div>
               </div>
-            </div>
-            <figcaption className="sr-only">
-              An example debrief from the free starter case: five skills scored out of 5 and one thing to practise next.
-            </figcaption>
-          </figure>
+              <figcaption className="sr-only">
+                An example debrief from the free starter case: five skills scored out of 5 and one thing to practise next.
+              </figcaption>
+            </figure>
+          )}
         </div>
       </div>
     </section>

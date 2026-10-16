@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Alert, ArrowUpRight, ChevronRight, Info } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import type { Block } from "@/lib/content/blocks";
+import type { Photo as PhotoData } from "@/lib/images";
 import { cn } from "@/lib/ui/cn";
 import type { TocItem } from "./article-toc";
 
@@ -34,6 +36,8 @@ export function Breadcrumbs({ items, current }: { items: Crumb[]; current: strin
 /**
  * The top of a reading page: the aurora panel, breadcrumbs, eyebrow, h1 and a meta row,
  * with an optional floating card beside it (the guide's short answer, a firm's sources).
+ * With an `image` (the guide's banner from lib/images.ts) the photo sits in that column and
+ * the card overlaps its lower edge. The photo is the page's first picture, so it is preloaded.
  */
 export function ArticleHeader({
   crumbs,
@@ -42,6 +46,8 @@ export function ArticleHeader({
   title,
   meta,
   aside,
+  image,
+  imageDecorative = false,
   children,
 }: {
   crumbs: Crumb[];
@@ -50,13 +56,23 @@ export function ArticleHeader({
   title: ReactNode;
   meta?: ReactNode;
   aside?: ReactNode;
+  image?: PhotoData;
+  /** Hide the photo from screen readers (for example a generic lobby on a firm guide). */
+  imageDecorative?: boolean;
   children?: ReactNode;
 }) {
+  const side = aside || image;
   return (
     <Container className="pt-6 sm:pt-8">
       <div className="bg-aurora relative overflow-hidden rounded-[2rem] ring-1 ring-inset ring-line">
         <div aria-hidden="true" className="bg-dots pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(55%_70%_at_80%_30%,black,transparent)]" />
-        <div className={cn("relative grid gap-10 px-6 py-10 sm:px-12 sm:py-14", aside ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-end lg:gap-14" : undefined)}>
+        <div
+          className={cn(
+            "relative grid gap-10 px-6 py-10 sm:px-12 sm:py-14",
+            side ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-14" : undefined,
+            image ? "lg:items-center lg:py-12" : aside ? "lg:items-end" : undefined,
+          )}
+        >
           <div className="min-w-0">
             <Breadcrumbs items={crumbs} current={current} />
             {eyebrow ? <div className="mt-7 flex flex-wrap items-center gap-2">{eyebrow}</div> : null}
@@ -64,7 +80,20 @@ export function ArticleHeader({
             {children ? <div className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{children}</div> : null}
             {meta ? <div className="mt-7">{meta}</div> : null}
           </div>
-          {aside ? <div className="min-w-0">{aside}</div> : null}
+          {side ? (
+            <div className="min-w-0">
+              {image ? (
+                <Photo
+                  photo={image}
+                  preload
+                  decorative={imageDecorative}
+                  sizes="(min-width: 1280px) 440px, (min-width: 1024px) 36vw, (min-width: 640px) calc(100vw - 8rem), calc(100vw - 4rem)"
+                  className="aspect-[16/10] rounded-[1.5rem]"
+                />
+              ) : null}
+              {aside ? <div className={cn(image && "relative -mt-16 px-3 sm:px-5")}>{aside}</div> : null}
+            </div>
+          ) : null}
         </div>
       </div>
     </Container>

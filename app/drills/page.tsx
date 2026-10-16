@@ -8,11 +8,13 @@ import { IconBadge } from "@/components/ui/card";
 import { JsonLd } from "@/components/ui/faq";
 import { ArrowUpRight, Bolt, Book, Calculator, ChartBars, Check, Layers, Lock, Sparkle, Target } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { allGuides, splitTitle } from "@/lib/content/writing";
 import { allDrills, CATEGORY_INFO, DRILL_CATEGORIES, drillsByCategory, type DrillCategory } from "@/lib/drills";
 import { findTool } from "@/lib/tools";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
+import { drillImage, pageImage } from "@/lib/images";
 
 const TITLE = "Case interview drills";
 const DESCRIPTION =
@@ -114,6 +116,7 @@ export default function DrillsPage() {
         })}
       />
       <PageHeader
+        image={pageImage("drills")}
         eyebrow={<Eyebrow icon={<Bolt size={14} />}>{allDrills.length} drills, free to try</Eyebrow>}
         title={
           <>
@@ -138,32 +141,52 @@ export default function DrillsPage() {
           {DRILL_CATEGORIES.map((category) => {
             const info = CATEGORY_INFO[category];
             const count = drillsByCategory(category).length;
+            const photo = drillImage(category);
             return (
               <li key={category}>
                 <Link
                   href={`/drills/${category}`}
                   className={cn(
-                    "group flex h-full flex-col rounded-[1.75rem] p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float sm:p-8",
+                    "group flex h-full flex-col rounded-[1.75rem] p-2 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float",
                     CARD[category].bg,
                   )}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <IconBadge tone="surface">{CARD[category].icon}</IconBadge>
-                    <span data-drill-count className="rounded-full bg-surface px-3 py-1 text-sm font-medium tabular-nums text-ink">
-                      {count} drills
+                  {/* The photo, or (for a kind of drill without one) a dotted panel with its icon. Inside the link, so decorative. */}
+                  {photo ? (
+                    <Photo
+                      photo={photo}
+                      decorative
+                      sizes="(min-width: 1280px) 580px, (min-width: 768px) calc(50vw - 3rem), calc(100vw - 3rem)"
+                      className="h-44 rounded-[1.4rem] sm:h-52"
+                      imageClassName="transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div aria-hidden="true" className="relative grid h-44 place-items-center overflow-hidden rounded-[1.4rem] bg-surface/45 sm:h-52">
+                      <div className="bg-dots absolute inset-0 opacity-80 [mask-image:radial-gradient(70%_85%_at_50%_50%,black,transparent)]" />
+                      <span className="relative text-ink/20 [&>svg]:size-16">{CARD[category].icon}</span>
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col px-4 pb-4 sm:px-6 sm:pb-6">
+                    <div className="relative -mt-6 flex items-end justify-between gap-3 pl-1">
+                      <IconBadge tone="surface" className="shadow-soft">
+                        {CARD[category].icon}
+                      </IconBadge>
+                      <span data-drill-count className="rounded-full bg-surface px-3 py-1 text-sm font-medium tabular-nums text-ink">
+                        {count} drills
+                      </span>
+                    </div>
+                    <h2 className="mt-6 text-2xl font-medium tracking-tight text-ink sm:text-[1.75rem]">{info.title}</h2>
+                    <p className="mt-2 max-w-sm leading-relaxed text-ink/70">{info.blurb}</p>
+                    <div className="mt-6 sm:mt-8">
+                      <Illustration category={category} />
+                    </div>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-8 text-[15px] font-medium text-ink">
+                      Start practising
+                      <span className="grid size-8 place-items-center rounded-full bg-ink text-ink-contrast transition-transform duration-300 group-hover:rotate-45">
+                        <ArrowUpRight size={15} />
+                      </span>
                     </span>
                   </div>
-                  <h2 className="mt-8 text-2xl font-medium tracking-tight text-ink sm:text-[1.75rem]">{info.title}</h2>
-                  <p className="mt-2 max-w-sm leading-relaxed text-ink/70">{info.blurb}</p>
-                  <div className="mt-6 sm:mt-8">
-                    <Illustration category={category} />
-                  </div>
-                  <span className="mt-auto inline-flex items-center gap-2 pt-8 text-[15px] font-medium text-ink">
-                    Start practising
-                    <span className="grid size-8 place-items-center rounded-full bg-ink text-ink-contrast transition-transform duration-300 group-hover:rotate-45">
-                      <ArrowUpRight size={15} />
-                    </span>
-                  </span>
                 </Link>
               </li>
             );

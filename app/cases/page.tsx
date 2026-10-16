@@ -15,6 +15,7 @@ import { toCaseSummary } from "@/lib/content/public";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 import { CaseBrowser } from "./case-browser";
+import { pageImage } from "@/lib/images";
 
 // Every case type the library is built for, in the site's order (tests check it stays within 160 characters).
 const TYPE_LIST = joinWithAnd(
@@ -138,6 +139,7 @@ export default function CasesPage() {
         })}
       />
       <PageHeader
+        image={pageImage("cases")}
         eyebrow={<Eyebrow icon={<Layers size={14} />}>{cases.length > 0 ? `${cases.length} original cases` : "The case library"}</Eyebrow>}
         title={
           <>

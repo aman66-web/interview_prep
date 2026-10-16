@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Only the site's own photos (public/images, listed in lib/images.ts) are resized, at one quality.
+    localPatterns: [{ pathname: "/images/**", search: "" }],
+    qualities: [75],
+  },
   turbopack: {
     rules: {
       "*.css": {

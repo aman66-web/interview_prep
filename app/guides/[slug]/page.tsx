@@ -16,6 +16,7 @@ import { visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { toCaseSummary } from "@/lib/content/public";
 import { allGuides, findGuide, formatDate, splitTitle } from "@/lib/content/writing";
+import { guideImage } from "@/lib/images";
 import { CATEGORY_INFO, drillsByCategory, type DrillCategory } from "@/lib/drills";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
@@ -116,6 +117,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         current={main}
         eyebrow={<Eyebrow tone="brand">{typeLabel ? `Case type · ${typeLabel}` : "Skill guide"}</Eyebrow>}
         title={<GuideTitle title={guide.title} />}
+        image={guideImage(guide.slug)}
         meta={
           <MetaRow
             items={[

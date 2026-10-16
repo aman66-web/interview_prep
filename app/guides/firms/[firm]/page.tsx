@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/layout";
 import { findPracticeFirm } from "@/lib/content/practice";
 import { findFirm, formatDate, lastChecked, visibleFirms } from "@/lib/content/writing";
 import type { Firm } from "@/lib/content/writing-schema";
+import { pageImage } from "@/lib/images";
 import { siteConfig } from "@/site.config";
 
 // A firm guide: every fact carries a numbered link to its source (rule 2.2), the
@@ -86,6 +87,10 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
             {firm.name}: <span className="serif-accent">what to expect</span>
           </>
         }
+        // The same generic lobby on every firm guide, hidden from screen readers: it must never
+        // read as the firm's own office (rule 2.3).
+        image={pageImage("firm-guides")}
+        imageDecorative
         meta={
           <MetaRow
             items={[
