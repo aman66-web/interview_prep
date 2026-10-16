@@ -43,8 +43,16 @@ export async function requestSignInEmail(
   // Private previews only, for the founder's own address: sign straight in with
   // no email (lib/auth/preview-login.ts). Kept outside any try/catch, because
   // redirect() works by throwing.
-  if (previewQuickLoginAllowed(email) && (await quickSignIn(email, createAdminClient))) {
-    redirect(next);
+  if (previewQuickLoginAllowed(email)) {
+    const quick = await quickSignIn(email, createAdminClient);
+    if (quick.status === "ok") {
+      await recordSignupOnce(createAdminClient, quick.user, { utm: utmFromFormData(formData) }); // funnel: first sign-in only
+      redirect(next);
+    }
+    if (quick.status === "failed") {
+      return { step: "email", email, error: "Quick sign-in didn't work. Please wait a minute and try again." };
+    }
+    // "no-token": nothing was tried, so send the normal email below.
   }
 
   const origin = await requestOrigin();

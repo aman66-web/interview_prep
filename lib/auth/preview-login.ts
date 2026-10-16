@@ -1,6 +1,6 @@
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { isAdminEmail } from "@/lib/analytics/admin-access";
-import { parseSignInOtpType } from "@/lib/auth/schemas";
+import { parseSignInOtpType, type SignInOtpType } from "@/lib/auth/schemas";
 import { createClient } from "@/lib/supabase/server";
 
 /**
@@ -26,15 +26,27 @@ export function previewQuickLoginAllowed(
   return isAdminEmail(email, env.ADMIN_EMAILS);
 }
 
+/** How a quick sign-in went: signed in, nothing tried yet (no token could be made), or failed part-way. */
+export type QuickSignInResult =
+  | { status: "ok"; user: User }
+  | { status: "no-token" }
+  | { status: "failed" };
+
 /**
  * Signs `email` in on this request without sending anything: the secret-key
  * client (passed in by the server action, so only server actions and route
  * handlers ever import it) makes a one-time sign-in token, and the user's own
  * client uses it at once, which sets the login cookies. Only call it after
- * previewQuickLoginAllowed(email) is true. Returns false if anything fails, so
- * the caller can fall back to the normal email.
+ * previewQuickLoginAllowed(email) is true.
+ *
+ * "no-token" means nothing reached Supabase's email clock, so the caller can
+ * send the normal email instead. "failed" means a token was made but not used:
+ * making it counts as an email for Supabase's once-a-minute limit, so sending
+ * the normal email straight away would only be refused.
  */
-export async function quickSignIn(email: string, adminClient: () => SupabaseClient): Promise<boolean> {
+export async function quickSignIn(email: string, adminClient: () => SupabaseClient): Promise<QuickSignInResult> {
+  let tokenHash: string | undefined;
+  let type: SignInOtpType = "magiclink";
   try {
     const admin = adminClient();
     let link = await admin.auth.admin.generateLink({ type: "magiclink", email });
@@ -43,23 +55,29 @@ export async function quickSignIn(email: string, adminClient: () => SupabaseClie
       await admin.auth.admin.createUser({ email, email_confirm: true });
       link = await admin.auth.admin.generateLink({ type: "magiclink", email });
     }
-    const tokenHash = link.data?.properties?.hashed_token;
+    tokenHash = link.data?.properties?.hashed_token;
     if (link.error || !tokenHash) {
       // Never log the email address (personal data).
       console.error("preview quick login: no token", { code: link.error?.code, status: link.error?.status });
-      return false;
+      return { status: "no-token" };
     }
-    const type = parseSignInOtpType(link.data?.properties?.verification_type) ?? "magiclink";
+    type = parseSignInOtpType(link.data?.properties?.verification_type) ?? "magiclink";
+  } catch {
+    // For example SUPABASE_SECRET_KEY missing.
+    console.error("preview quick login: unavailable");
+    return { status: "no-token" };
+  }
+
+  try {
     const supabase = await createClient();
     const { data, error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });
     if (error || !data.user) {
       console.error("preview quick login: sign-in failed", { code: error?.code, status: error?.status });
-      return false;
+      return { status: "failed" };
     }
-    return true;
+    return { status: "ok", user: data.user };
   } catch {
-    // For example SUPABASE_SECRET_KEY missing. Fall back to the normal email.
-    console.error("preview quick login: unavailable");
-    return false;
+    console.error("preview quick login: sign-in failed");
+    return { status: "failed" };
   }
 }

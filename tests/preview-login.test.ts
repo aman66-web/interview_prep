@@ -11,6 +11,7 @@ const fakes = vi.hoisted(() => ({
   adminThrows: false,
   redirectedTo: null as string | null,
   otpSent: 0,
+  signups: [] as unknown[],
 }));
 
 vi.mock("@/lib/supabase/admin", () => ({
@@ -49,6 +50,13 @@ vi.mock("@/lib/supabase/server", () => ({
   }),
 }));
 
+vi.mock("@/lib/analytics/funnel", () => ({
+  recordSignupOnce: async (_source: unknown, user: unknown) => {
+    fakes.signups.push(user);
+    return true;
+  },
+}));
+
 vi.mock("next/headers", () => ({
   headers: async () => new Headers({ host: "example.vercel.app" }),
 }));
@@ -75,6 +83,7 @@ beforeEach(() => {
   fakes.adminThrows = false;
   fakes.redirectedTo = null;
   fakes.otpSent = 0;
+  fakes.signups = [];
   vi.spyOn(console, "error").mockImplementation(() => {});
 });
 
@@ -112,14 +121,14 @@ describe("previewQuickLoginAllowed", () => {
 describe("quickSignIn", () => {
   it("makes a one-time token with the secret key and uses it at once", async () => {
     fakes.linkResults = [goodLink];
-    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toBe(true);
+    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toEqual({ status: "ok", user: { id: "u1" } });
     expect(fakes.calls).toEqual(["generateLink", "verifyOtp"]);
     expect(fakes.verifyArgs).toEqual({ type: "magiclink", token_hash: "hash123" });
   });
 
   it("creates the account first if it does not exist yet", async () => {
     fakes.linkResults = [{ data: null, error: { code: "user_not_found", status: 404 } }, goodLink];
-    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toBe(true);
+    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toMatchObject({ status: "ok" });
     expect(fakes.calls).toEqual(["generateLink", "createUser", "generateLink", "verifyOtp"]);
   });
 
@@ -133,24 +142,24 @@ describe("quickSignIn", () => {
     expect(fakes.verifyArgs).toEqual({ type: "magiclink", token_hash: "h" });
   });
 
-  it("returns false when no token can be made", async () => {
+  it("reports no-token when no token can be made", async () => {
     fakes.linkResults = [
       { data: null, error: { code: "x", status: 500 } },
       { data: null, error: { code: "x", status: 500 } },
     ];
-    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toBe(false);
+    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toEqual({ status: "no-token" });
     expect(fakes.calls).not.toContain("verifyOtp");
   });
 
-  it("returns false when the sign-in step fails", async () => {
+  it("reports failed when the token was made but the sign-in step fails", async () => {
     fakes.linkResults = [goodLink];
     fakes.verify = { data: { user: null }, error: { code: "otp_expired", status: 403 } };
-    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toBe(false);
+    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toEqual({ status: "failed" });
   });
 
-  it("returns false (and does not throw) when the secret key is missing", async () => {
+  it("reports no-token (and does not throw) when the secret key is missing", async () => {
     fakes.adminThrows = true;
-    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toBe(false);
+    await expect(quickSignIn("founder@example.com", createAdminClient)).resolves.toEqual({ status: "no-token" });
   });
 
   it("never logs the email address", async () => {
@@ -195,6 +204,7 @@ describe("the login form's first step", () => {
       await expect(requestSignInEmail({ step: "email" }, form("Founder@Example.com"))).rejects.toThrow("NEXT_REDIRECT");
       expect(fakes.redirectedTo).toBe("/app");
       expect(fakes.otpSent).toBe(0);
+      expect(fakes.signups).toEqual([{ id: "u1" }]); // counted like any other first sign-in
     });
 
     it("keeps the safe next page", async () => {
@@ -218,12 +228,25 @@ describe("the login form's first step", () => {
       expect(fakes.otpSent).toBe(1);
     });
 
-    it("falls back to the email if the shortcut fails", async () => {
+    it("falls back to the email if no token could be made", async () => {
       fakes.adminThrows = true;
       const state = await requestSignInEmail({ step: "email" }, form("founder@example.com"));
       expect(state).toEqual({ step: "code", email: "founder@example.com" });
       expect(fakes.otpSent).toBe(1);
       expect(fakes.redirectedTo).toBeNull();
+    });
+
+    it("asks to try again (and sends no email) if the token was made but not used", async () => {
+      // Making the token counts as an email for Supabase's once-a-minute limit,
+      // so an email now would only be refused.
+      fakes.linkResults = [goodLink];
+      fakes.verify = { data: { user: null }, error: { code: "otp_expired", status: 403 } };
+      const state = await requestSignInEmail({ step: "email" }, form("founder@example.com"));
+      expect(state).toMatchObject({ step: "email", email: "founder@example.com" });
+      expect(state.error).toMatch(/try again/);
+      expect(fakes.otpSent).toBe(0);
+      expect(fakes.redirectedTo).toBeNull();
+      expect(fakes.signups).toEqual([]);
     });
   });
 });

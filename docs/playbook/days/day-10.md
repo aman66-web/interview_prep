@@ -16,7 +16,7 @@ About 100 minutes in total. 4 tasks, in order.
 3. 3. Money: yesterday's FOUNDERTEST purchase worked, the $1 refund shows in Stripe, and the live webhook points at mockpartner.com (Stripe, Developers, Webhooks). The site's side of the refund is checked straight after opening (task d10-4).
 4. 4. ICO: the fee is paid for MARTZEY LTD, or you have confirmed the existing entry covers this site.
 5. 5. Legal: no square brackets left on the terms, privacy, refunds and disclaimer pages, and the lawyer's view on no-refunds and the tick box is in, or you have written down your decision to open without it.
-6. 6. Support and settings: an email to hello@mockpartner.com arrives; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are in Vercel; /admin opens.
+6. 6. Support and settings: an email to hello@mockpartner.com arrives; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are in Vercel; PREVIEW_QUICK_LOGIN is not (Claude deletes it if it is); /admin opens.
 7. 7. AI: you read a real interview, Claude tuned the prompts, and the Anthropic monthly limit is set.
 
 ## d10-2: If all 7 are yes: approve merging the last changes into main.

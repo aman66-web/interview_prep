@@ -19,7 +19,7 @@ The fee is the founder's decision. Agree it in writing before the reviewer start
 
 ## How the reviewer sees the cases
 
-**First, switch off the preview quick log-in** if it is still on (ask Claude: "Please switch off the preview quick log-in before I share a preview"; Claude deletes `PREVIEW_QUICK_LOGIN` in Vercel and rebuilds the preview). While it is on, anyone who can open a preview and types an `ADMIN_EMAILS` address is signed in as that person, with no email.
+**First, switch off the preview quick log-in** if it is still on (ask Claude: "Please switch off the preview quick log-in before I share a preview"; Claude deletes `PREVIEW_QUICK_LOGIN` in Vercel and rebuilds the preview). While it is on, anyone who can open a preview and types an `ADMIN_EMAILS` address is signed in as that person, with no email. Deleting the setting only affects previews built afterwards, so share a preview built after the switch-off, never an older one.
 
 The preview site is protected by Vercel's login. To let the reviewer in without a Vercel account (Vercel's "Shareable Links", available on all plans; docs: https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links, checked 15 Oct 2026): in Vercel open project **interview-prep**, then **Deployments**, select the newest preview deployment, click **Share**, choose **Anyone with the link** in the dropdown, and send that link. To revoke it later, switch the dropdown back to **Only people with access**. The link shows that one deployment, so share a fresh one after big changes. Drafts are visible on previews.
 

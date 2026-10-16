@@ -96,7 +96,8 @@
       "Wait until Claude says its code changes are on the preview before Chrome switches CAPTCHA on in Supabase. If CAPTCHA goes on first, sign-in stops working until the new code is there.",
       "Type logins, 2FA codes and any payment details yourself. Paste any secret key into Vercel yourself with Ctrl+V.",
       "When ImprovMX says Active, send an email to hello@mockpartner.com from another address and check it reaches your inbox.",
-      "When Resend is connected, check the sign-in email: request a code on the preview, and the email should show a big code and no link. Type the code on the sign-in page. If the email still has only a link, ask Chrome to do Part A step 2 of docs/CHROME_SETUP.md (the email templates) now that a custom sender is connected."
+      "When Resend is connected, check the sign-in email with a second address you own, not aman662002@gmail.com (while the preview quick log-in is on, your own address signs straight in and no email is sent). Request a code on the preview: the email should show a big code and no link. Type the code on the sign-in page. If the email still has only a link, ask Chrome to do Part A step 2 of docs/CHROME_SETUP.md (the email templates) now that a custom sender is connected.",
+      "Once that code email works, tell Claude: 'Real sign-in emails work now. Please switch off the preview quick log-in.' From then on you sign in with the emailed code, like everyone else."
      ],
      "paste": "Do the domain, Resend, ImprovMX, Supabase and CAPTCHA steps Claude wrote (B1). Stop for logins, codes and anything that costs money. When hello@mockpartner.com forwarding works, also add NEXT_PUBLIC_SUPPORT_EMAIL with the value hello@mockpartner.com in Vercel, project interview-prep (Production and Preview, not sensitive). Here are Claude's steps:\n\n[paste Claude's steps]"
     },
@@ -634,7 +635,7 @@
       "3. Money: yesterday's FOUNDERTEST purchase worked, the $1 refund shows in Stripe, and the live webhook points at mockpartner.com (Stripe, Developers, Webhooks). The site's side of the refund is checked straight after opening (task d10-4).",
       "4. ICO: the fee is paid for MARTZEY LTD, or you have confirmed the existing entry covers this site.",
       "5. Legal: no square brackets left on the terms, privacy, refunds and disclaimer pages, and the lawyer's view on no-refunds and the tick box is in, or you have written down your decision to open without it.",
-      "6. Support and settings: an email to hello@mockpartner.com arrives; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are in Vercel; /admin opens.",
+      "6. Support and settings: an email to hello@mockpartner.com arrives; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are in Vercel; PREVIEW_QUICK_LOGIN is not (Claude deletes it if it is); /admin opens.",
       "7. AI: you read a real interview, Claude tuned the prompts, and the Anthropic monthly limit is set."
      ]
     },
@@ -2566,7 +2567,7 @@
      "who": "you",
      "steps": [
       "If the preview quick log-in is still on, first tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready.",
-      "Make the shareable link: in Vercel open project interview-prep, then Deployments, pick the preview Claude named, click Share, choose 'Anyone with the link'.",
+      "Make the shareable link: in Vercel open project interview-prep, then Deployments, pick the preview Claude named (if Claude switched the quick log-in off in step 1, pick the new preview it said was ready instead, never an older one), click Share, choose 'Anyone with the link'.",
       "Decide the fee. This costs 5 × the per-case fee you agreed in October. Claude's planning guess was $25 to $50 a case (an estimate), so about $125 to $250. Your decision.",
       "On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.",
       "Fill in the message below, attach the 5 answer-key files and send it (for example on Upwork)."
@@ -3954,7 +3955,8 @@
      "minutes": 15,
      "who": "you",
      "steps": [
-      "Make the shareable link: Vercel, project interview-prep, Deployments, the preview Claude named, Share, 'Anyone with the link'.",
+      "If the preview quick log-in is still on, first tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready.",
+      "Make the shareable link: Vercel, project interview-prep, Deployments, the preview Claude named (if Claude switched the quick log-in off in step 1, the new preview it said was ready instead), Share, 'Anyone with the link'.",
       "Fee: 5 × your per-case fee (Claude's planning guess $125 to $250, an estimate). Only if you approved it on Day 46; your decision.",
       "On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.",
       "Fill in the message below, attach the files and send it."

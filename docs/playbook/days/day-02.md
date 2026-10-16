@@ -33,7 +33,8 @@ Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and se
 2. Wait until Claude says its code changes are on the preview before Chrome switches CAPTCHA on in Supabase. If CAPTCHA goes on first, sign-in stops working until the new code is there.
 3. Type logins, 2FA codes and any payment details yourself. Paste any secret key into Vercel yourself with Ctrl+V.
 4. When ImprovMX says Active, send an email to hello@mockpartner.com from another address and check it reaches your inbox.
-5. When Resend is connected, check the sign-in email: request a code on the preview, and the email should show a big code and no link. Type the code on the sign-in page. If the email still has only a link, ask Chrome to do Part A step 2 of docs/CHROME_SETUP.md (the email templates) now that a custom sender is connected.
+5. When Resend is connected, check the sign-in email with a second address you own, not aman662002@gmail.com (while the preview quick log-in is on, your own address signs straight in and no email is sent). Request a code on the preview: the email should show a big code and no link. Type the code on the sign-in page. If the email still has only a link, ask Chrome to do Part A step 2 of docs/CHROME_SETUP.md (the email templates) now that a custom sender is connected.
+6. Once that code email works, tell Claude: 'Real sign-in emails work now. Please switch off the preview quick log-in.' From then on you sign in with the emailed code, like everyone else.
 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 

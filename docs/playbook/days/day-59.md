@@ -48,10 +48,11 @@ Claude, please export the reviewer pack for the 5 new UK internship-style cases:
 
 **Steps**
 
-1. Make the shareable link: Vercel, project interview-prep, Deployments, the preview Claude named, Share, 'Anyone with the link'.
-2. Fee: 5 × your per-case fee (Claude's planning guess $125 to $250, an estimate). Only if you approved it on Day 46; your decision.
-3. On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.
-4. Fill in the message below, attach the files and send it.
+1. If the preview quick log-in is still on, first tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready.
+2. Make the shareable link: Vercel, project interview-prep, Deployments, the preview Claude named (if Claude switched the quick log-in off in step 1, the new preview it said was ready instead), Share, 'Anyone with the link'.
+3. Fee: 5 × your per-case fee (Claude's planning guess $125 to $250, an estimate). Only if you approved it on Day 46; your decision.
+4. On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.
+5. Fill in the message below, attach the files and send it.
 
 **Text to use (post, email or message)** (copy exactly):
 
