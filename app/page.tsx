@@ -26,10 +26,12 @@ import {
 import { absoluteUrl } from "@/components/learn/seo";
 import { Container, Section, SectionHeading } from "@/components/ui/layout";
 import { Marquee } from "@/components/ui/marquee";
+import { Photo } from "@/components/ui/photo";
 import { visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { toCaseSummary } from "@/lib/content/public";
 import { allDrills, CATEGORY_INFO, DRILL_CATEGORIES, drillsByCategory } from "@/lib/drills";
+import { homeImage } from "@/lib/images";
 import { PLANS } from "@/lib/plans";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
@@ -166,6 +168,50 @@ function Facts({ drillCount }: { drillCount: number }) {
   );
 }
 
+/** Two chairs across a table, with a short example exchange floating over the wall above them. */
+function InterviewerPicture() {
+  const photo = homeImage("interviewer");
+  const bubbles = (
+    <div aria-hidden="true" className="space-y-2.5">
+      <p className="ml-auto w-fit max-w-[90%] rounded-2xl rounded-tr-md bg-ink px-3.5 py-2.5 text-[13px] text-ink-contrast shadow-soft">
+        I&rsquo;d look at revenue and costs separately.
+      </p>
+      <p className="w-fit max-w-[90%] rounded-2xl rounded-tl-md bg-surface px-3.5 py-2.5 text-[13px] text-ink shadow-soft ring-1 ring-inset ring-line">
+        Fine, but ticket sales didn&rsquo;t move. Where else could £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m
+        have gone, and where would you look first?
+      </p>
+    </div>
+  );
+  if (!photo) return <div className="rounded-[1.5rem] bg-surface-2 p-4 ring-1 ring-inset ring-line">{bubbles}</div>;
+  return (
+    <div className="relative min-h-[19rem] overflow-hidden rounded-[1.5rem] sm:min-h-[21rem] lg:h-full">
+      <Photo
+        photo={photo}
+        sizes="(min-width: 1024px) 400px, (min-width: 768px) 60vw, calc(100vw - 5rem)"
+        className="absolute inset-0 rounded-[1.5rem]"
+      />
+      <div className="relative p-3 sm:p-4">{bubbles}</div>
+    </div>
+  );
+}
+
+/** The exhibits card's picture: a hand pointing at printed charts, with the example exhibit laid over the lower edge. */
+function ExhibitsPicture() {
+  const photo = homeImage("exhibits");
+  if (!photo) return <MockExhibit className="mt-6" />;
+  return (
+    <div className="mt-6">
+      <Photo
+        photo={photo}
+        sizes="(min-width: 1024px) 340px, (min-width: 768px) 30vw, calc(100vw - 5rem)"
+        className="aspect-[2/1] rounded-2xl"
+        objectPosition="62% 42%"
+      />
+      <MockExhibit className="relative mx-2 -mt-10 shadow-float" />
+    </div>
+  );
+}
+
 function Why({ drillCount }: { drillCount: number }) {
   return (
     <Section id="why" labelledBy="why-title">
@@ -194,15 +240,7 @@ function Why({ drillCount }: { drillCount: number }) {
                   just like a person across the table would. It never gives you the answer.
                 </p>
               </div>
-              <div aria-hidden="true" className="space-y-2.5 rounded-[1.5rem] bg-surface-2 p-4 ring-1 ring-inset ring-line">
-                <p className="ml-auto w-fit max-w-[90%] rounded-2xl rounded-tr-md bg-ink px-3.5 py-2.5 text-[13px] text-ink-contrast">
-                  I&rsquo;d look at revenue and costs separately.
-                </p>
-                <p className="w-fit max-w-[90%] rounded-2xl rounded-tl-md bg-surface px-3.5 py-2.5 text-[13px] text-ink ring-1 ring-inset ring-line">
-                  Fine, but ticket sales didn&rsquo;t move. Where else could £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m
-                  have gone, and where would you look first?
-                </p>
-              </div>
+              <InterviewerPicture />
             </div>
           </Card>
 
@@ -217,7 +255,7 @@ function Why({ drillCount }: { drillCount: number }) {
             </p>
           </Card>
 
-          <Card tone="soft" className="md:col-span-2">
+          <Card tone="soft" className="flex flex-col md:col-span-2">
             <IconBadge>
               <ChartBars size={20} />
             </IconBadge>
@@ -225,10 +263,10 @@ function Why({ drillCount }: { drillCount: number }) {
             <p className="mt-3 leading-relaxed text-muted">
               Tables and charts appear in the analysis, when you ask for relevant data or when the interviewer moves the case on.
             </p>
-            <MockExhibit className="mt-6" />
+            <ExhibitsPicture />
           </Card>
 
-          <Card tone="night" className="md:col-span-2">
+          <Card tone="night" className="flex flex-col md:col-span-2">
             <IconBadge tone="glass">
               <Target size={20} />
             </IconBadge>
@@ -237,7 +275,7 @@ function Why({ drillCount }: { drillCount: number }) {
               Five skills scored out of 5 with quotes from your own answers, the best moment, the biggest miss and one
               thing to practise next.
             </p>
-            <div className="mt-6 space-y-2" aria-hidden="true">
+            <div className="mt-auto space-y-2 pt-6" aria-hidden="true">
               {[
                 ["Structure", 4],
                 ["Analysis and maths", 4],
@@ -258,32 +296,34 @@ function Why({ drillCount }: { drillCount: number }) {
             </div>
           </Card>
 
-          <Card className="md:col-span-2">
+          <Card className="flex flex-col md:col-span-2">
             <IconBadge>
               <Notes size={20} />
             </IconBadge>
             <h3 className="mt-5 text-2xl font-medium tracking-tight">Notes, calculator, timer</h3>
             <p className="mt-3 leading-relaxed text-muted">A scratchpad beside the chat, a calculator for checking, and a clock so you learn the pace.</p>
-            <div aria-hidden="true" className="mt-6 rounded-2xl bg-butter p-4 font-mono text-[12px] leading-relaxed text-ink/80">
-              <p>Visits flat at {MOCK_EXAMPLE.visitsM}m</p>
-              <p>Profit down £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m</p>
-              <p>
-                Food &amp; drink −£{MOCK_EXAMPLE.foodContributionLast - MOCK_EXAMPLE.foodContributionNow}m{" "}
-                <span className="rounded bg-surface px-1 text-ink">¾ of fall</span>
-              </p>
-              <p>Fixed costs +£{MOCK_EXAMPLE.fixedNow - MOCK_EXAMPLE.fixedLast}m</p>
-            </div>
-            <div className="mt-3 flex flex-wrap gap-2" aria-hidden="true">
-              {[
-                { i: <Notes size={14} />, t: "Notes" },
-                { i: <Calculator size={14} />, t: "Calculator" },
-                { i: <Clock size={14} />, t: "25:00" },
-              ].map((x) => (
-                <span key={x.t} className="inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-3 py-1.5 text-xs font-medium text-muted ring-1 ring-inset ring-line">
-                  {x.i}
-                  {x.t}
-                </span>
-              ))}
+            <div className="mt-auto pt-6">
+              <div aria-hidden="true" className="rounded-2xl bg-butter p-4 font-mono text-[12px] leading-relaxed text-ink/80">
+                <p>Visits flat at {MOCK_EXAMPLE.visitsM}m</p>
+                <p>Profit down £{MOCK_EXAMPLE.profitLast - MOCK_EXAMPLE.profitNow}m</p>
+                <p>
+                  Food &amp; drink −£{MOCK_EXAMPLE.foodContributionLast - MOCK_EXAMPLE.foodContributionNow}m{" "}
+                  <span className="rounded bg-surface px-1 text-ink">¾ of fall</span>
+                </p>
+                <p>Fixed costs +£{MOCK_EXAMPLE.fixedNow - MOCK_EXAMPLE.fixedLast}m</p>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2" aria-hidden="true">
+                {[
+                  { i: <Notes size={14} />, t: "Notes" },
+                  { i: <Calculator size={14} />, t: "Calculator" },
+                  { i: <Clock size={14} />, t: "25:00" },
+                ].map((x) => (
+                  <span key={x.t} className="inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-3 py-1.5 text-xs font-medium text-muted ring-1 ring-inset ring-line">
+                    {x.i}
+                    {x.t}
+                  </span>
+                ))}
+              </div>
             </div>
           </Card>
 
@@ -320,6 +360,7 @@ function Why({ drillCount }: { drillCount: number }) {
 }
 
 function HowItWorks() {
+  const desk = homeImage("practice-desk");
   return (
     <section aria-labelledby="how-title" className="px-3 sm:px-4">
       <div className="bg-night-glow relative mx-auto w-full max-w-[88rem] overflow-hidden rounded-[2.25rem] text-on-night">
@@ -348,20 +389,30 @@ function HowItWorks() {
             ))}
           </ol>
 
-          <div className="mt-14 grid gap-4 lg:grid-cols-3">
-            {[
-              { n: "1", t: "Pick a case", d: "Choose by type, industry and difficulty, or start with the free starter case." },
-              { n: "2", t: "Talk it through", d: "Type your answers as you would say them. Ask for data, use the calculator, take notes." },
-              { n: "3", t: "Read your debrief", d: "Scores for five skills, your maths checked by code, and the one drill to do next." },
-            ].map((s) => (
-              <div key={s.n} className="flex gap-4 rounded-[1.5rem] bg-white p-6 text-[#0b1020]">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-lime font-semibold text-lime-ink">{s.n}</span>
-                <div>
-                  <h3 className="text-lg font-semibold">{s.t}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-[#4a4f63]">{s.d}</p>
+          <div className={cn("mt-14 grid gap-4", desk ? "lg:grid-cols-[1.15fr_1fr]" : "lg:grid-cols-3")}>
+            {desk ? (
+              <Photo
+                photo={desk}
+                backdrop={false}
+                sizes="(min-width: 1024px) 600px, calc(100vw - 4rem)"
+                className="aspect-[3/2] rounded-[1.5rem] lg:aspect-auto lg:h-full lg:min-h-[20rem]"
+              />
+            ) : null}
+            <div className={desk ? "grid gap-3" : "contents"}>
+              {[
+                { n: "1", t: "Pick a case", d: "Choose by type, industry and difficulty, or start with the free starter case." },
+                { n: "2", t: "Talk it through", d: "Type your answers as you would say them. Ask for data, use the calculator, take notes." },
+                { n: "3", t: "Read your debrief", d: "Scores for five skills, your maths checked by code, and the one drill to do next." },
+              ].map((s) => (
+                <div key={s.n} className="flex gap-4 rounded-[1.5rem] bg-white p-6 text-[#0b1020]">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-lime font-semibold text-lime-ink">{s.n}</span>
+                  <div>
+                    <h3 className="text-lg font-semibold">{s.t}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-[#4a4f63]">{s.d}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </Container>
       </div>
@@ -370,6 +421,7 @@ function HowItWorks() {
 }
 
 function DebriefShowcase() {
+  const blocks = homeImage("debrief");
   const points = [
     "Five skills scored out of 5: structure, analysis and maths, business judgement, communication and recommendation",
     "Quotes from your own answers, so every score has a reason",
@@ -381,8 +433,13 @@ function DebriefShowcase() {
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div className="relative order-2 lg:order-1">
-            <div aria-hidden="true" className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[#ece8ff] via-[#e5efff] to-[#e2f5e8] opacity-80 dark:opacity-20" />
-            <div className="relative grid gap-4 p-2 sm:grid-cols-[1fr_0.8fr] sm:p-6">
+            {blocks ? (
+              // Wooden blocks like a bar chart behind the example debrief; the cards leave the blocks in view at the bottom.
+              <Photo photo={blocks} decorative sizes="(min-width: 1024px) 620px, 100vw" className="absolute -inset-4 rounded-[2.5rem]" />
+            ) : (
+              <div aria-hidden="true" className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[#ece8ff] via-[#e5efff] to-[#e2f5e8] opacity-80 dark:opacity-20" />
+            )}
+            <div className={cn("relative grid gap-4 p-2 sm:grid-cols-[1fr_0.8fr] sm:p-6", blocks && "pb-40 sm:pb-48")}>
               <MockDebrief />
               <div className="flex flex-col gap-4">
                 <MockMathsCheck />
@@ -439,26 +496,38 @@ const DRILL_TONES = ["butter", "sky", "mint", "peach"] as const;
 const DRILL_ICONS = [<Calculator key="c" size={20} />, <Target key="t" size={20} />, <Layers key="l" size={20} />, <ChartBars key="b" size={20} />];
 
 function Drills() {
+  const photo = homeImage("drills");
   return (
     <Section labelledBy="drills-title" className="pt-0 sm:pt-0">
-      <Container>
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading
-            align="left"
-            id="drills-title"
-            eyebrow="Drills"
-            title={
-              <>
-                Sharpen the basics in <span className="serif-accent">five minutes</span>
-              </>
-            }
-            intro="Quick questions with instant feedback. Try a few without an account."
-          />
-          <ButtonLink href="/drills" variant="secondary" arrow>
-            All drills
-          </ButtonLink>
+      <Container className={cn(photo && "grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12")}>
+        <div className={cn(photo && "flex flex-col")}>
+          <div className={cn("flex flex-col justify-between gap-6", !photo && "md:flex-row md:items-end")}>
+            <SectionHeading
+              align="left"
+              id="drills-title"
+              eyebrow="Drills"
+              title={
+                <>
+                  Sharpen the basics in <span className="serif-accent">five minutes</span>
+                </>
+              }
+              intro="Quick questions with instant feedback. Try a few without an account."
+            />
+            <div className="shrink-0">
+              <ButtonLink href="/drills" variant="secondary" arrow>
+                All drills
+              </ButtonLink>
+            </div>
+          </div>
+          {photo ? (
+            <Photo
+              photo={photo}
+              sizes="(min-width: 1024px) 520px, calc(100vw - 2rem)"
+              className="mt-10 aspect-[4/3] rounded-[1.75rem] lg:aspect-auto lg:min-h-[16rem] lg:flex-1"
+            />
+          ) : null}
         </div>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className={cn("grid gap-4 sm:grid-cols-2", !photo && "mt-12 lg:grid-cols-4")}>
           {DRILL_CATEGORIES.map((cat, i) => (
             <li key={cat}>
               <Link

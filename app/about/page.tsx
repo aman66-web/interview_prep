@@ -10,6 +10,7 @@ import { visibleCases } from "@/lib/content/cases";
 import { allGuides, findPage, formatDate } from "@/lib/content/writing";
 import { allDrills } from "@/lib/drills";
 import { siteConfig } from "@/site.config";
+import { pageImage } from "@/lib/images";
 
 const SLUG = "about";
 
@@ -43,7 +44,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHeader eyebrow="About" title={<AccentTitle title={page.title} />} intro={page.intro}>
+      <PageHeader image={pageImage("about")} eyebrow="About" title={<AccentTitle title={page.title} />} intro={page.intro}>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <ButtonLink href="/login" size="lg" arrow>
             Start free, no card needed

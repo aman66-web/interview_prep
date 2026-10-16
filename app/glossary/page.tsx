@@ -8,6 +8,7 @@ import { Container, PageHeader } from "@/components/ui/layout";
 import { findGuide, formatDate, glossary, splitTitle } from "@/lib/content/writing";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
+import { pageImage } from "@/lib/images";
 
 const termCount = glossary().terms.length;
 
@@ -46,6 +47,7 @@ export default function GlossaryPage() {
   return (
     <>
       <PageHeader
+        image={pageImage("glossary")}
         eyebrow="Glossary"
         title={
           <>

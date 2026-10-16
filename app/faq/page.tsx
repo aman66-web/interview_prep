@@ -9,6 +9,7 @@ import { Container, PageHeader } from "@/components/ui/layout";
 import { findPage, formatDate, withoutPlaceholders } from "@/lib/content/writing";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
+import { pageImage } from "@/lib/images";
 
 const SLUG = "faq";
 
@@ -77,7 +78,7 @@ export default function FaqPage() {
 
   return (
     <>
-      <PageHeader eyebrow="FAQ" title={<AccentTitle title={page.title} />} intro={page.intro} />
+      <PageHeader image={pageImage("faq")} eyebrow="FAQ" title={<AccentTitle title={page.title} />} intro={page.intro} />
 
       {/* Shown on the live site too while the page is a draft (like the legal pages). */}
       {page.status === "draft" ? (

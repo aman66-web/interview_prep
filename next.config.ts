@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Our photos come pre-sized in two widths (lib/image-loader.ts), so nothing is resized on the
+    // fly and there is no image-optimisation usage to pay for.
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+  },
   turbopack: {
     rules: {
       "*.css": {

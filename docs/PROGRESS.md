@@ -106,6 +106,7 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 - [x] Admin page (`/admin`, only for `ADMIN_EMAILS`): funnel, AI cost, enquiries
 - [x] Retention cron (`/api/cron/cleanup`, daily via `vercel.json`; needs `CRON_SECRET` in Vercel)
 - [x] Legal pages (drafts for the founder to review): terms, privacy, refunds, disclaimer, plus about and FAQ
+- [x] Site photos (16 Oct 2026): 53 of the 62 site images from `docs/IMAGE_BRIEF.md` placed (home sections, 17 case photos, 8 guide banners, 3 drill and 3 tool cards, 13 page banners and panels, 3 on `/for-universities`); 9 rejected by the reviewer keep the plain design. One registry (`lib/images.ts`), checked by `tests/images.test.ts`; how to add one is in `docs/DESIGN.md` ("Photos")
 - [x] Tests passing (725 unit tests, database security checks in CI, four browser suites), Vercel preview link and plain-English report (15 Oct 2026)
 
 ### P7 Launch checklist

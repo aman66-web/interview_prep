@@ -86,6 +86,8 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
             {firm.name}: <span className="serif-accent">what to expect</span>
           </>
         }
+        // No photo here: an office picture beside a firm's name reads as that firm's office,
+        // whatever its alt text says (rules 2.3 and 2.4; tests/images.test.ts checks).
         meta={
           <MetaRow
             items={[

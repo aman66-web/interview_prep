@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Award, Calculator, Check, Cross, Lock, Share, Sparkle, Target } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { hasAccess } from "@/lib/access";
 import { storedDebriefSchema } from "@/lib/ai/schema";
 import { closedUnfinishedMessage, isClosedUnfinished, isExpiredUnfinished } from "@/lib/retention/expired";
@@ -18,6 +19,7 @@ import { requireUser } from "@/lib/auth/session";
 import { visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { CATEGORY_INFO } from "@/lib/drills/types";
+import { pageImage } from "@/lib/images";
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/ui/cn";
 
@@ -129,6 +131,7 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
   const strongest = spread && values.filter((v) => v === Math.max(...values)).length === 1 ? strongestSkill(d.scores) : null;
   const weakest = focusSkill(d.scores); // null when all five scores are equal
   const focus = weakest ? skillInfo(weakest) : null;
+  const stage = pageImage("debrief");
 
   return (
     <>
@@ -137,7 +140,14 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
       {/* Score hero */}
       <section aria-labelledby="debrief-title" className="px-3 pt-2 sm:px-4">
         <div className="bg-night-glow relative mx-auto w-full max-w-[88rem] overflow-hidden rounded-[2.25rem] text-on-night">
-          <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12">
+          {stage ? (
+            // A spotlight on an empty stage behind the scores. Decorative; the deep blue wash keeps the text on near-solid colour.
+            <>
+              <Photo photo={stage} decorative preload ring={false} backdrop={false} sizes="(min-width: 1408px) 1408px, 100vw" className="absolute inset-0" />
+              <div aria-hidden="true" className="absolute inset-0 bg-night/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-night lg:from-35% lg:via-night/70 lg:to-night/25" />
+            </>
+          ) : null}
+          <Container className="relative grid gap-8 py-10 sm:py-14 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12">
             <div className="min-w-0">
               <Kicker onNight>
                 Debrief · {CASE_TYPE_LABELS[c.type]} · {formatDay(session.completed_at)}

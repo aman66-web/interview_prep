@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { IconBadge } from "@/components/ui/card";
 import { ArrowUpRight, Book, Bolt, Calculator, Layers } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
+import { pageImage } from "@/lib/images";
 
 // The 404 page, for unknown addresses and for anything a page hides with notFound()
 // (a draft case or firm guide on the live site, a mistyped case link). It renders inside
@@ -25,6 +26,7 @@ export default function NotFound() {
   return (
     <>
       <PageHeader
+        image={pageImage("not-found")}
         eyebrow="404"
         title={
           <>

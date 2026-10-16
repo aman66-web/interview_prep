@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
 import { ArrowUpRight, Book, Calculator, Check, Info, Layers, Target } from "@/components/ui/icons";
 import { Container, PageHeader, SectionHeading } from "@/components/ui/layout";
+import { Photo } from "@/components/ui/photo";
 import { visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
 import { practiceFirms, SECTOR_LABELS } from "@/lib/content/practice";
@@ -16,6 +17,7 @@ import type { Guide } from "@/lib/content/writing-schema";
 import { TOOLS } from "@/lib/tools";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
+import { pageImage } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Case interview guides",
@@ -72,10 +74,12 @@ export default function GuidesPage() {
     .filter((t) => t !== undefined)
     .slice(0, 8);
   const shownTerms = sampleTerms.length >= 4 ? sampleTerms : terms.slice(0, 8);
+  const firmPhoto = pageImage("firm-guides");
 
   return (
     <>
       <PageHeader
+        image={pageImage("guides")}
         eyebrow="Guides"
         title={
           <>
@@ -174,16 +178,26 @@ export default function GuidesPage() {
       <section id="firms" aria-labelledby="firms-title" className="mt-20 scroll-mt-24 px-3 sm:mt-28 sm:px-4">
         <div className="bg-night-glow relative mx-auto w-full max-w-[88rem] overflow-hidden rounded-[2.25rem] text-on-night">
           <Container className="py-16 sm:py-24">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
+            <div className={cn("grid gap-8 lg:grid-cols-[1fr_1fr]", firmPhoto ? "lg:items-center lg:gap-12" : "lg:items-end")}>
               <div>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-on-night ring-1 ring-inset ring-white/15">Firm guides</span>
                 <h2 id="firms-title" className="mt-5 text-[2rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl">
                   What the firms say, <span className="serif-accent text-lime">sourced line by line</span>
                 </h2>
+                {firmPhoto ? (
+                  <p className="mt-5 max-w-xl text-lg leading-relaxed text-on-night-muted">
+                    Each firm guide sums up what the firm publishes about applying, online tests and interviews. Every line links to its source, with the date we checked it.
+                  </p>
+                ) : null}
               </div>
-              <p className="max-w-xl text-lg leading-relaxed text-on-night-muted lg:justify-self-end">
-                Each firm guide sums up what the firm publishes about applying, online tests and interviews. Every line links to its source, with the date we checked it.
-              </p>
+              {firmPhoto ? (
+                // A generic lobby, shown as decoration only: it is no firm's office (rule 2.3).
+                <Photo photo={firmPhoto} decorative backdrop={false} sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, calc(100vw - 4rem)" className="aspect-[16/9] rounded-[1.75rem]" />
+              ) : (
+                <p className="max-w-xl text-lg leading-relaxed text-on-night-muted lg:justify-self-end">
+                  Each firm guide sums up what the firm publishes about applying, online tests and interviews. Every line links to its source, with the date we checked it.
+                </p>
+              )}
             </div>
 
             {firms.length > 0 ? (
