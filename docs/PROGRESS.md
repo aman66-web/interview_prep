@@ -136,7 +136,8 @@ Recommendation: start with `claude-sonnet-5-5`. A real student doing 10 to 15 in
 - [ ] Later: Python practice through Pyodide
 
 ### Phase 3 (only if usage justifies the cost)
-- [ ] Voice interviewer (speech-to-text plus text-to-speech)
+- [x] Free browser voice mode (16 Oct 2026, founder's request): a "Voice mode" switch in the interview room uses the browser's own speech (`lib/voice/`, `components/app/voice-mode.tsx`); no new service or dependency, no audio recorded or kept by us, `lib/ai` unchanged. Two independent review rounds fixed echo, nods, thinking pauses and phone behaviour (1,081 tests pass). **Not yet tried with a real microphone**: laptop speakers vs headphones, Android, iPhone Safari with Dictation off. The privacy page has a draft "Voice mode in interviews" section; what Chrome and Safari do with audio is listed in `docs/RESEARCH_TODO.md`. The pause before an answer is sent (about 2.5 to 3.5 s) is `DEFAULT_TIMING` in `lib/voice/text.ts`; tune it after real use.
+- [ ] Paid real-time voice (research only, 16 Oct 2026, nothing signed up for): the best fit found is ElevenLabs Agents with our own Claude as its "custom LLM", about $0.08 a minute (about $2 for a 25-minute interview, against about $0.12 typed), audio stored in the US, zero-retention is Enterprise-only, and whether ElevenLabs adds a charge for a custom LLM is unconfirmed. It needs the founder's yes (rule 2.6 and 2.11), its own monthly cap per student, and a new row on the privacy page. Runner-up: Deepgram Voice Agent (about $1.63 an interview, EU endpoint).
 
 ## Founder checklist (kit section 14, Aman)
 
