@@ -212,5 +212,22 @@
     "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
     "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
     "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
-  ]
+  ],
+  "practice": {
+    "seo_title": "Citi-style case study and interview practice",
+    "description": "Practise for Citi interviews with original bank-style case studies and an AI interviewer. What Citi says, sourced, plus cases to run.",
+    "intro": "Practise talking through a client situation and a recommendation out loud, with original bank-style case studies and an AI interviewer who plays a senior banker, then get a scored debrief with every number checked by code. Below: what Citi itself publishes about its interviews, and the case studies we suggest.",
+    "show_sections": [
+      "Final stage and offers",
+      "Interviews"
+    ],
+    "cases": [
+      "calder-instruments-currency-risk",
+      "quillmere-packaging-term-loan",
+      "thornbury-foods-snack-deal",
+      "fennick-software-ipo-or-sale",
+      "wyncliffe-young-savers-app",
+      "harlow-building-society-branches"
+    ]
+  }
 }

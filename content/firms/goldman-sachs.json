@@ -216,5 +216,22 @@
     "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
     "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
     "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
-  ]
+  ],
+  "practice": {
+    "seo_title": "Practice for Goldman Sachs interviews and Superdays",
+    "description": "Practise for Goldman Sachs interviews with original bank-style case studies and an AI interviewer. What Goldman Sachs says, sourced, plus cases to run.",
+    "intro": "Practise talking through a client situation and a recommendation out loud, with original bank-style case studies and an AI interviewer who plays a senior banker, then get a scored debrief with every number checked by code. These are our own practice cases, not a description of Goldman Sachs's process. Below: what Goldman Sachs itself publishes about its interviews, and the case studies we suggest.",
+    "show_sections": [
+      "Superday and final interviews",
+      "What Goldman Sachs looks for"
+    ],
+    "cases": [
+      "thornbury-foods-snack-deal",
+      "fennick-software-ipo-or-sale",
+      "calder-instruments-currency-risk",
+      "quillmere-packaging-term-loan",
+      "harlow-building-society-branches",
+      "wyncliffe-young-savers-app"
+    ]
+  }
 }

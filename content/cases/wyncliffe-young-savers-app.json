@@ -1,0 +1,271 @@
+{
+  "id": "case-023",
+  "slug": "wyncliffe-young-savers-app",
+  "title": "Wyncliffe Bank: should it launch a savings app for young people?",
+  "track": "banking",
+  "type": "market_entry",
+  "industry": "Retail banking",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "Wyncliffe Bank is a UK retail bank with about 1.2 million personal customers and branches across the Midlands and the north of England. Most of its customers are over 40, and it wins very few customers aged 18 to 25. Its head of retail wants to launch a separate savings app for 18 to 25 year olds, and has asked you, a graduate in the bank's strategy team, whether Wyncliffe should launch it. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "Wyncliffe Bank",
+      "answer": "Wyncliffe has about 1.2 million personal customers and 150 branches across the Midlands and the north of England. It offers current accounts, savings accounts, mortgages and personal loans; mortgages are its biggest business. It already has a mobile banking app for its current-account customers, but the new app would be separate, with its own look, aimed only at 18 to 25 year olds."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The head of retail wants a clear recommendation: launch the app as planned, change the plan, or do not launch. The real aim is to win younger customers so the bank does not shrink as its customers get older. The board will only approve a new product that meets the bank's payback rule for new products."
+    },
+    {
+      "question_topic": "How the bank judges new products (the payback rule)",
+      "answer": "The board uses a simple payback rule. Add up the one-off costs (for the app: building it, plus the marketing and welcome bonuses needed to win its full customer base), then divide by the yearly profit once the product is at full size. The answer is the number of years it takes to earn the one-off costs back. New products must pay back within 4 years. For the app, year 3 is the first full-size year. Ignore tax and the smaller numbers in years 1 and 2 while customers are joining."
+    },
+    {
+      "question_topic": "Why young customers matter to Wyncliffe",
+      "answer": "About 70% of Wyncliffe's customers are over 40, and fewer than 1 in 20 are aged 25 or under. Wyncliffe's own records show that customers who opened their first account with it at 25 or younger were about twice as likely as other customers to take their first mortgage with it. Many of them were the children of existing customers. Nobody has turned this into a figure for the app, so it is not in the plan."
+    },
+    {
+      "question_topic": "What the app offers",
+      "answer": "One easy-access savings account: customers can pay money in and take it out at any time. They can set savings goals (for example a holiday, a car or a deposit on a first home) and watch their progress. There is no current account, card or loan in the app. Customers pay money in from an account at any bank."
+    },
+    {
+      "question_topic": "Why a bank wants deposits",
+      "answer": "A deposit is money a customer keeps with the bank. Wyncliffe uses savers' deposits to fund its mortgages and loans, and for Wyncliffe they are a cheaper and steadier source of money than borrowing from other banks or investors. Treasury (the team that manages the bank's money) says Wyncliffe can put all the deposits the app would bring in to use. The deposits themselves are not the bank's income: they belong to the savers. What the app earns is the deposit margin: what Wyncliffe saves by not borrowing the same money elsewhere, minus the interest it pays the savers."
+    },
+    {
+      "question_topic": "The deposit margin",
+      "answer": "The deposit margin is the yearly difference between what Treasury credits the app for each £1 of deposits (what Wyncliffe would otherwise pay to borrow that £1 from other banks or investors) and the interest it pays the saver on that £1, before running costs. Treasury's planning figure for the app's deposits is 2% a year, so every £100 of deposits earns the bank about £2 a year. This is the bank's own figure. It assumes the app pays savers the same interest rate as Wyncliffe's other easy-access savings. Any profit from lending the money out is counted in the mortgage and loan business, not in the app."
+    },
+    {
+      "question_topic": "Interest rate and competitors",
+      "answer": "Several rival apps pay young savers a higher rate on small balances. If Wyncliffe matched them, paying savers an extra 0.5% of their balance each year, Treasury says the deposit margin would fall from 2% to 1.5%. In Wyncliffe's survey, the top reasons young people gave for choosing a savings app were the interest rate, how easy the app is to use and whether their friends use it. About a third already use a savings app or savings feature from another bank."
+    },
+    {
+      "question_topic": "Target customers and take-up",
+      "answer": "Wyncliffe's marketing team estimates there are 800,000 people aged 18 to 25 in the areas where it has branches who use a banking app on their phone and do not already bank with Wyncliffe. These are its target customers. The 5% take-up by year 3 comes from a survey of 2,000 young people in those areas, in which 5% said they would 'definitely' open the app."
+    },
+    {
+      "question_topic": "Average balance",
+      "answer": "The £1,500 average balance is what Wyncliffe's existing 15,000 savers aged 18 to 25 hold today. Most of those accounts were opened by their parents when they were children. Wyncliffe's records show its young savers often save for something specific and then take the money out, so balances rise and fall; £1,500 is an average over the year."
+    },
+    {
+      "question_topic": "Existing young customers",
+      "answer": "Wyncliffe's 15,000 existing savers aged 18 to 25 could also use the app. The £15 welcome bonus is for new-to-Wyncliffe customers only, so they would not get it. If they moved their savings across, that would bring no new deposits, so they are not counted in the plan. They would add a little to running costs, and if the app ever paid more than Wyncliffe's normal savings rate, the bank would lose margin on every £1 that moved across."
+    },
+    {
+      "question_topic": "Cost to win each customer",
+      "answer": "The cost to win each customer (bankers often call it the customer acquisition cost) is everything spent on winning customers divided by the number of customers won. For the app it is the marketing (social media adverts and events at colleges and universities) plus a £15 welcome bonus paid into each new account. Both are in the cost figures, which are available. The small cost of checking each new customer's identity when they join is included in the marketing figure."
+    },
+    {
+      "question_topic": "Customers leaving",
+      "answer": "The plan assumes the customers who join stay, so the customer base is steady from year 3. Wyncliffe has no data on how long young app savers stay. On its other easy-access savings accounts, about 1 in 10 customers leave each year. Replacing a customer who leaves would cost about the same as winning one."
+    },
+    {
+      "question_topic": "Cheaper ways to build the app",
+      "answer": "The £2 million build cost is for the full version, which includes extras such as spending insights and savings challenges with friends. The technology team says a simpler first version, with the savings account and savings goals only, would cost about £1 million, and the extras could be added later if the app does well. The app could also be launched in one region first. Running it would cost the same £0.4 million a year. The plan assumes the simpler version wins the same customers with the same balances, for the same marketing and bonuses, though it would leave out the savings challenges with friends."
+    },
+    {
+      "question_topic": "Adding savings to the existing Wyncliffe app",
+      "answer": "The technology team says adding a basic young savers' account to Wyncliffe's existing mobile app, with no savings goals, would cost about £0.5 million to build. But that app is built for current-account customers: a newcomer would have to open a Wyncliffe current account before they could save in it, and it carries the Wyncliffe look, which the head of retail thinks young people see as their parents' bank. The marketing team expects far fewer young people to sign up than for a separate app, but has not put a figure on it."
+    },
+    {
+      "question_topic": "What a first mortgage is worth to Wyncliffe",
+      "answer": "Wyncliffe's finance team says a typical first mortgage with it is about £200,000 and earns the bank about £1,000 a year after its funding and running costs. Nobody knows how many app customers would later take a mortgage with Wyncliffe, or when: most of the first-time buyers it lends to are over 25, so much of that value would come years after launch."
+    },
+    {
+      "question_topic": "Running costs",
+      "answer": "Running the app covers hosting, customer service, and ongoing fraud and identity checks on accounts. It is kept low because the app runs on Wyncliffe's existing savings systems and customer service team. Its yearly cost is in the cost figures."
+    },
+    {
+      "question_topic": "Permissions and funding",
+      "answer": "Wyncliffe already takes deposits, and the app would use its existing easy-access savings account, so it needs no new permissions. It can pay the launch costs from its own budget; money is not the issue."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Customers and deposits: how many target customers, how many will sign up, and how much each will save",
+      "Income: deposits times the deposit margin, and what drives the margin (what Treasury credits for the money and the interest rate paid to savers)",
+      "Costs: the one-off build cost, the cost to win each customer (marketing and the welcome bonus), and yearly running costs",
+      "The bank's test: payback against the 4-year rule, and how sensitive it is to each assumption",
+      "Strategic value and risks: winning young customers for later products, competition on rates, customers leaving, existing savers moving across, and cheaper ways to launch (a simpler app, one region first, or the existing Wyncliffe app)"
+    ],
+    "good_signs": [
+      "Asks how the bank makes money from deposits (the deposit margin) before doing any maths",
+      "Builds deposits from target customers x take-up x average balance instead of guessing a total",
+      "Asks how the bank judges new products and compares the payback with the 4-year rule",
+      "Questions where the take-up and balance figures come from",
+      "Thinks about why young customers matter beyond this product (later current accounts and mortgages) and asks whether that can be measured",
+      "Asks whether customers will stay, and whether existing young customers would simply move their savings into the app"
+    ],
+    "red_flags": [
+      "Recommends launching because young people use apps, without working out deposits, income and costs",
+      "Treats the £60 million of deposits as the bank's income, instead of the margin earned on them",
+      "Leaves out the cost to win customers, or the yearly running costs",
+      "Counts the later mortgage benefit as certain, or adds it to the payback without any figures"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "customer-deposit-assumptions",
+      "title": "Customer and deposit assumptions for year 3, the first full-size year",
+      "kind": "table",
+      "data": {
+        "columns": ["Assumption", "Year 3 plan"],
+        "rows": [
+          ["Target customers: 18 to 25 year olds in Wyncliffe's areas who use a banking app and do not bank with Wyncliffe (thousand)", 800],
+          ["Share who open an account by year 3 (%)", 5],
+          ["Average savings balance per customer (£)", 1500],
+          ["Deposit margin (% a year)", 2]
+        ]
+      },
+      "reveal_hint": "Ask how many customers the app could win, how much they would save, or how the bank earns money from their deposits.",
+      "insight": "800,000 x 5% = 40,000 customers, each holding £1,500 on average: about £60 million of deposits. At a 2% margin that earns £1.2 million a year, £30 per customer. Every figure is soft: the 5% is what survey respondents said they would 'definitely' do, the £1,500 comes from accounts mostly opened by parents, and the margin falls to 1.5% if the app pays savers more to compete."
+    },
+    {
+      "id": "launch-running-costs",
+      "title": "Launch and running costs of the app (£ thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Cost", "Amount (£ thousand)", "When it is paid"],
+        "rows": [
+          ["Building and launching the app (full version)", 2000, "Once, before launch"],
+          ["Marketing to win customers", 1400, "Spread over years 1 to 3"],
+          ["Welcome bonuses (£15 per new account)", 600, "Years 1 to 3, as customers join"],
+          ["Running the app (hosting, customer service, identity and fraud checks)", 400, "Every year at full size"]
+        ]
+      },
+      "reveal_hint": "Ask what the app would cost to build, market and run, or what it costs to win each customer.",
+      "insight": "One-off costs total £4 million: £2 million to build and £2 million to win 40,000 customers, which is £50 a customer (£35 of marketing plus the £15 bonus). At full size the app earns £1.2 million and costs £0.4 million a year to run, so yearly profit is £0.8 million (£20 a customer) and payback is £4 million / £0.8 million = 5 years, a year longer than the bank's 4-year rule. Each customer takes 2.5 years to earn back their own £50, and the build cost adds another £50 per customer."
+    }
+  ],
+  "math": [
+    {
+      "id": "deposits-year-3",
+      "question": "Using the bank's assumptions, how much money would savers hold in the app in year 3, in £ million?",
+      "inputs": {
+        "target_k": 800,
+        "take_up_pct": 5,
+        "balance": 1500
+      },
+      "expression": "target_k * take_up_pct / 100 * balance / 1000",
+      "expected": 60,
+      "tolerance_pct": 2,
+      "working": "800,000 target customers x 5% = 40,000 customers. 40,000 x £1,500 = £60 million of deposits.",
+      "input_sources": [
+        { "input": "target_k", "exhibit_id": "customer-deposit-assumptions", "row": 0, "column": "Year 3 plan" },
+        { "input": "take_up_pct", "exhibit_id": "customer-deposit-assumptions", "row": 1, "column": "Year 3 plan" },
+        { "input": "balance", "exhibit_id": "customer-deposit-assumptions", "row": 2, "column": "Year 3 plan" }
+      ]
+    },
+    {
+      "id": "yearly-margin-income",
+      "question": "At the 2% deposit margin, how much would those deposits earn Wyncliffe each year, in £ million?",
+      "inputs": {
+        "deposits_m": 60,
+        "margin_pct": 2
+      },
+      "expression": "deposits_m * margin_pct / 100",
+      "expected": 1.2,
+      "tolerance_pct": 2,
+      "working": "£60 million x 2% = £1.2 million a year, which is £30 per customer (£1,500 x 2%). The £60 million itself belongs to the savers; only the margin is income for the bank.",
+      "input_sources": [
+        { "input": "margin_pct", "exhibit_id": "customer-deposit-assumptions", "row": 3, "column": "Year 3 plan" }
+      ]
+    },
+    {
+      "id": "cost-to-win-customer",
+      "question": "Counting the marketing and the welcome bonus, what will it cost Wyncliffe to win each customer, in pounds?",
+      "inputs": {
+        "marketing_k": 1400,
+        "bonus_k": 600,
+        "target_k": 800,
+        "take_up_pct": 5
+      },
+      "expression": "(marketing_k + bonus_k) / (target_k * take_up_pct / 100)",
+      "expected": 50,
+      "tolerance_pct": 2,
+      "working": "Marketing £1.4 million plus welcome bonuses £0.6 million = £2 million, to win 40,000 customers (800,000 x 5%). £2,000,000 / 40,000 = £50 a customer: £35 of marketing plus the £15 bonus.",
+      "input_sources": [
+        { "input": "marketing_k", "exhibit_id": "launch-running-costs", "row": 1, "column": "Amount (£ thousand)" },
+        { "input": "bonus_k", "exhibit_id": "launch-running-costs", "row": 2, "column": "Amount (£ thousand)" },
+        { "input": "target_k", "exhibit_id": "customer-deposit-assumptions", "row": 0, "column": "Year 3 plan" },
+        { "input": "take_up_pct", "exhibit_id": "customer-deposit-assumptions", "row": 1, "column": "Year 3 plan" }
+      ]
+    },
+    {
+      "id": "payback-years",
+      "question": "Using the bank's payback rule, how many years would the app take to earn back its one-off costs once it is at full size?",
+      "inputs": {
+        "build_k": 2000,
+        "marketing_k": 1400,
+        "bonus_k": 600,
+        "income_k": 1200,
+        "running_k": 400
+      },
+      "expression": "(build_k + marketing_k + bonus_k) / (income_k - running_k)",
+      "expected": 5,
+      "tolerance_pct": 5,
+      "working": "One-off costs: £2 million to build + £1.4 million of marketing + £0.6 million of bonuses = £4 million. Yearly profit at full size: £1.2 million of margin - £0.4 million of running costs = £0.8 million. £4 million / £0.8 million = 5 years, one year longer than the bank's 4-year rule.",
+      "input_sources": [
+        { "input": "build_k", "exhibit_id": "launch-running-costs", "row": 0, "column": "Amount (£ thousand)" },
+        { "input": "marketing_k", "exhibit_id": "launch-running-costs", "row": 1, "column": "Amount (£ thousand)" },
+        { "input": "bonus_k", "exhibit_id": "launch-running-costs", "row": 2, "column": "Amount (£ thousand)" },
+        { "input": "running_k", "exhibit_id": "launch-running-costs", "row": 3, "column": "Amount (£ thousand)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "How could Wyncliffe make the app pay back faster or carry less risk, and what are the main risks if it goes ahead?",
+    "idea_bank": [
+      "Build the simpler £1 million first version: one-off costs fall to £3 million and payback to about 3.75 years, inside the rule, if it wins the same 40,000 customers with the same balances and running costs; add the extras only if the app does well",
+      "Launch in one region first with a smaller marketing budget, and set go or no-go tests: cost to win each customer, average balance, and no more than about 1 in 40 customers leaving a year",
+      "Rethink the £15 welcome bonus, which is almost a third of the £50 cost to win a customer and may attract people who take the bonus and leave; for example, pay it only once the account has held money for a few months",
+      "Win customers through cheaper channels: rewards for referring friends, existing customers' children, colleges and universities, employers",
+      "Lift balances with automatic regular saving from payday and savings goals: the full version needs an average of about £1,750 to meet the 4-year rule",
+      "Offer the next product, such as a current account or first-home saving and mortgage advice; later products worth about £0.2 million a year (£5 per customer), the yearly profit on about 200 typical first mortgages, would bring the full version inside the rule",
+      "Risk: survey answers overstate take-up; people who say they will 'definitely' open an app often do not",
+      "Risk: people who join through an app may save less than the £1,500 held in accounts their parents opened",
+      "Risk: to compete with rival apps the bank may have to pay savers more; at a 1.5% margin the full version takes 8 years to pay back",
+      "Risk: customers leave; if 1 in 10 leave each year, replacing 4,000 customers at about £50 each costs £0.2 million a year and stretches payback to about 6.7 years",
+      "Risk: the simpler version leaves out savings challenges with friends, yet whether friends use it is one of the top reasons young people gave for choosing an app, so its take-up may fall short of 5%",
+      "Risk: Treasury may value these app deposits below 2% if they prove quick to leave, and the margin would also shrink if interest rates in general fall",
+      "Risk: Wyncliffe's 15,000 existing young savers move across: no new deposits, a little more running cost, and if the app pays more than the normal rate to compete, the bank loses margin on money it already holds",
+      "Risk: young savers take money out for big purchases, so deposits swing during the year",
+      "Risk: scams and fraud aimed at young people could raise identity and fraud-check costs and harm the bank's name",
+      "Alternative: add a basic savings account to the existing Wyncliffe app for about £0.5 million; cheaper to build, but only people who open a Wyncliffe current account could use it and it has no savings goals, so far fewer young people would sign up",
+      "Alternative: a ready-made app from an outside supplier under Wyncliffe's name, which may cost less to build but charges a fee per customer (not yet priced)",
+      "Upside not in the plan: customers who join young may later take current accounts, loans and first mortgages with Wyncliffe"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "On deposits alone the app misses the bank's rule: about £60 million of deposits earn £1.2 million a year, £0.8 million after running costs, against £4 million of one-off costs, so payback is 5 years against a 4-year limit",
+      "The plan's figures are optimistic (survey take-up, balances from accounts opened by parents, no customers leaving, savers paid the bank's normal rate), so the real payback is probably longer",
+      "A clear recommendation: do not launch the full plan as it stands; launch a cheaper, tested version with go or no-go measures, or make the strategic case with numbers"
+    ],
+    "good_signs": [
+      "Shows what would meet the rule: the £1 million simpler version pays back in about 3.75 years if it wins the same customers with the same balances and running costs, or the full version needs average balances of about £1,750, or about £0.2 million a year (£5 per customer) from later products",
+      "Tests the downside: at a 1.5% margin payback is 8 years; replacing 1 in 10 customers a year costs about £0.2 million a year and stretches payback to about 6.7 years (5 years even for the simpler version), and more than about 1 in 40 leaving a year takes even the simpler version past 4 years",
+      "Keeps the deposit case separate from the strategic case (winning young customers before their first mortgage) and proposes measuring the second in a pilot; notes that the £0.2 million gap to the rule is only the yearly profit on about 200 typical first mortgages, so whether the mortgage link is real decides the case",
+      "Points out that customers who joined young being twice as likely to take a Wyncliffe mortgage may reflect who they are (often children of existing customers), not the account itself",
+      "Looks for ways to lower the £50 cost to win each customer, such as a rethought welcome bonus or referrals",
+      "Notes that the payback rule ignores everything the app earns after it has paid back (£0.8 million a year for as long as customers stay) and that money earned later is worth less than money now, while still answering the rule the board uses"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: Wyncliffe, a regional UK retail bank whose customers are mostly over 40, wants to win 18 to 25 year olds with a savings-only app. The board approves new products only if they pay back within 4 years at full size (year 3): one-off costs (build, marketing, welcome bonuses) divided by yearly profit (deposit margin minus running costs).",
+    "Structure: customers and deposits, income from the deposit margin, costs (build, cost to win each customer, running), payback against the rule and how sensitive it is, then strategic value, risks and a recommendation.",
+    "Deposits and income: 800,000 target customers x 5% = 40,000 customers x £1,500 = £60 million of deposits. At a 2% margin that is £1.2 million a year (£30 a customer); after £0.4 million of running costs, profit is £0.8 million a year (£20 a customer).",
+    "Costs and payback: winning customers costs £2 million, £50 each (£35 of marketing plus the £15 bonus); with the £2 million build, one-off costs are £4 million. £4 million / £0.8 million = 5 years, against the 4-year rule. Each customer earns back their own £50 in 2.5 years, but the build adds another £50 per customer.",
+    "Sensitivity: to meet 4 years the full version needs £1 million of yearly profit, which means average balances of about £1,750, or about £0.2 million a year (£5 per customer) from later products. That gap is small: it is the yearly profit on about 200 typical first mortgages (£1,000 a year each), so the strategic question is whether the link between joining young and taking a Wyncliffe mortgage is real, or just reflects who those customers were. The downside is bigger: at a 1.5% margin payback is 8 years, and if 1 in 10 customers leave each year, replacing them costs about £0.2 million a year and payback becomes about 6.7 years. The 5% take-up and £1,500 balance are both likely to be optimistic.",
+    "Recommendation: do not launch the full £2 million version as planned. Build the simpler £1 million version, which pays back in about 3.75 years on the plan's figures if it wins the same customers with the same balances and running costs, but has almost no room for error (it would take 5 years if customers leave at the usual rate). Prefer it to adding savings to the existing app, which is cheaper to build but open only to people with a Wyncliffe current account. Take the full roll-out of the simpler version to the board, and start in one region as a test of the plan's figures: the one-region launch is judged on its test results, not on payback by itself, because the £1 million build is fixed and one region alone cannot earn it back in 4 years.",
+    "Tests and next steps: set go or no-go tests for the first 6 to 12 months: cost to win at or below £50, average balance at or above £1,500, no more than about 1 in 40 customers leaving a year (at the usual 1 in 10, even the simpler version takes 5 years), and how many go on to open a current account or ask about a mortgage. Rethink the welcome bonus and use cheaper channels such as referrals. Customers staying is the make-or-break test: on the bank's usual leaving rate even the simpler version misses the rule, so if the pilot shows that rate, stop or make the mortgage case with real figures. Roll out across all regions only if these tests are met, and in the meantime check whether the link to later mortgages is real or reflects who the young customers were."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

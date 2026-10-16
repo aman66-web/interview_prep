@@ -188,5 +188,22 @@
     "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
     "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
     "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
-  ]
+  ],
+  "practice": {
+    "seo_title": "Practice for HSBC assessment centre interviews",
+    "description": "Practise for HSBC interviews with original bank-style case studies and an AI interviewer. What HSBC says, sourced, plus cases to run.",
+    "intro": "Practise talking through a client situation and a recommendation out loud, with original bank-style case studies and an AI interviewer who plays a senior banker, then get a scored debrief with every number checked by code. Below: what HSBC itself publishes about its interviews, and the case studies we suggest.",
+    "show_sections": [
+      "Assessment centre",
+      "Interviews"
+    ],
+    "cases": [
+      "wyncliffe-young-savers-app",
+      "quillmere-packaging-term-loan",
+      "harlow-building-society-branches",
+      "calder-instruments-currency-risk",
+      "thornbury-foods-snack-deal",
+      "fennick-software-ipo-or-sale"
+    ]
+  }
 }

@@ -226,5 +226,22 @@
     "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
     "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
     "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
-  ]
+  ],
+  "practice": {
+    "seo_title": "Practice for J.P. Morgan interviews and Superdays",
+    "description": "Practise for J.P. Morgan interviews with original bank-style case studies and an AI interviewer. What J.P. Morgan says, sourced, plus cases to run.",
+    "intro": "Practise talking through a client situation and a recommendation out loud, with original bank-style case studies and an AI interviewer who plays a senior banker, then get a scored debrief with every number checked by code. These are our own practice cases, not a description of J.P. Morgan's process. Below: what J.P. Morgan itself publishes about its interviews, and the case studies we suggest.",
+    "show_sections": [
+      "Interviews and Superdays",
+      "How J.P. Morgan suggests you prepare"
+    ],
+    "cases": [
+      "fennick-software-ipo-or-sale",
+      "thornbury-foods-snack-deal",
+      "calder-instruments-currency-risk",
+      "quillmere-packaging-term-loan",
+      "wyncliffe-young-savers-app",
+      "harlow-building-society-branches"
+    ]
+  }
 }

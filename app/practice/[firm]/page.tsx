@@ -115,7 +115,7 @@ export default async function FirmPracticePage({ params }: { params: Promise<{ f
       <Container size="narrow" className="mt-14 space-y-16 sm:mt-20">
         <section aria-labelledby="what-firm-says">
           <h2 id="what-firm-says" className="text-2xl font-medium leading-tight tracking-tight text-ink sm:text-3xl">
-            What {firm.short_name} <span className="serif-accent">says</span> about its {label.interview}s
+            What {firm.short_name} <span className="serif-accent">says</span> about its {label.interviews}
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-muted">
             In {firm.short_name}&rsquo;s own words, summarised. Each line links to the page it comes from.
@@ -143,7 +143,7 @@ export default async function FirmPracticePage({ params }: { params: Promise<{ f
               Practise with <span className="serif-accent">these cases</span>
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted">
-              Our own cases, picked because they suit this kind of {label.interview}. Run any of them as a live interview with the AI interviewer.
+              Our own cases, picked because they suit this kind of {label.kind}. Run any of them as a live interview with the AI interviewer.
             </p>
           </div>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

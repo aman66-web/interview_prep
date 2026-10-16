@@ -34,7 +34,7 @@ export function practiceSources(firm: PracticeFirm): Firm["sources"] {
   return firm.sources.filter((s) => used.has(s.id));
 }
 
-export const SECTOR_LABELS: Record<Firm["sector"], { group: string; interview: string }> = {
-  consulting: { group: "Consulting firms", interview: "case interview" },
-  banking: { group: "Banks", interview: "interview and case study" },
+export const SECTOR_LABELS: Record<Firm["sector"], { group: string; interviews: string; kind: string }> = {
+  consulting: { group: "Consulting firms", interviews: "case interviews", kind: "case interview" },
+  banking: { group: "Banks", interviews: "interviews", kind: "interview" },
 };

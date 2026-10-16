@@ -21,6 +21,12 @@ import pellbrook from "@/content/cases/pellbrook-clinics-waiting-times.json";
 import stowline from "@/content/cases/stowline-backup-pricing.json";
 import dogWalking from "@/content/cases/us-dog-walking-market.json";
 import wrenfield from "@/content/cases/wrenfield-hotels-profit.json";
+import calder from "@/content/cases/calder-instruments-currency-risk.json";
+import fennick from "@/content/cases/fennick-software-ipo-or-sale.json";
+import harlow from "@/content/cases/harlow-building-society-branches.json";
+import quillmere from "@/content/cases/quillmere-packaging-term-loan.json";
+import thornbury from "@/content/cases/thornbury-foods-snack-deal.json";
+import wyncliffe from "@/content/cases/wyncliffe-young-savers-app.json";
 
 // In case-id order (case-001 first): the order the library lists them in.
 export const rawCases: unknown[] = [
@@ -44,4 +50,11 @@ export const rawCases: unknown[] = [
   cragwell,
   larkmoor,
   cobalt,
+  // Bank-style case studies (track "banking", founder 16 Oct 2026)
+  thornbury,
+  quillmere,
+  wyncliffe,
+  harlow,
+  calder,
+  fennick,
 ];
