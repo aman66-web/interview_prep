@@ -173,6 +173,12 @@ describe("draft firm guides", () => {
       "jp-morgan": ["www.jpmorganchase.com", "careers.jpmorgan.com", "privatebank.jpmorgan.com", "jpmc.fa.oraclecloud.com"],
       "goldman-sachs": ["www.goldmansachs.com"],
       hsbc: ["www.hsbc.com"],
+      "oliver-wyman": ["www.oliverwyman.com", "www.oliverwyman.de", "mmc.wd1.myworkdayjobs.com"],
+      lek: ["www.lek.com", "lek.tal.net"],
+      occ: ["www.occstrategy.com", "careers.occstrategy.com"],
+      barclays: ["search.jobs.barclays", "tbcdn.talentbrew.com"],
+      "morgan-stanley": ["www.morganstanley.com"],
+      citi: ["jobs.citi.com"],
     };
     for (const firm of allFirms()) {
       const hosts = domains[firm.slug];
