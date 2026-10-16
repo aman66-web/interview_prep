@@ -110,6 +110,7 @@ Money rules in the code: card details never touch this site (Stripe's page takes
 | Support inbox shown on the site | `NEXT_PUBLIC_SUPPORT_EMAIL` | No |
 | The real web address, once you have a domain (e.g. `https://mockpartner.com`) | `NEXT_PUBLIC_SITE_URL` | No |
 | Optional: a separate key for share links (any long random text) | `SHARE_SIGNING_SECRET` | **Yes** |
+| Temporary, **Preview only**: `1` lets an `ADMIN_EMAILS` address sign in on the preview with no email. Delete it before sharing a preview link. Never for Production (it is ignored there) | `PREVIEW_QUICK_LOGIN` | No |
 
 - **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY`, `CRON_SECRET` and `SHARE_SIGNING_SECRET` as **Sensitive**.
 - **The daily clean-up** (deletes interview chats after 365 days) runs by itself once `CRON_SECRET` is set in Vercel (Production). Without it the clean-up refuses to run.

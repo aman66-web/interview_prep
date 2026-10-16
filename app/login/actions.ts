@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { recordSignupOnce } from "@/lib/analytics/funnel";
 import { appendUtm, utmFromFormData } from "@/lib/analytics/utm";
 import { emailSchema, otpCodeSchema } from "@/lib/auth/schemas";
+import { previewQuickLoginAllowed, quickSignIn } from "@/lib/auth/preview-login";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -38,6 +39,14 @@ export async function requestSignInEmail(
   }
   const email = parsed.data;
   const next = safeNextPath(formData.get("next"));
+
+  // Private previews only, for the founder's own address: sign straight in with
+  // no email (lib/auth/preview-login.ts). Kept outside any try/catch, because
+  // redirect() works by throwing.
+  if (previewQuickLoginAllowed(email) && (await quickSignIn(email, createAdminClient))) {
+    redirect(next);
+  }
+
   const origin = await requestOrigin();
 
   // The link carries the visit's campaign tags (no personal data) so the signup

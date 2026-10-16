@@ -40,10 +40,11 @@ Claude, I've hired [reviewer's name] to review the cases. Please export the answ
 
 **Steps**
 
-1. In Vercel open project interview-prep, then Deployments.
-2. Select the newest preview deployment and click Share.
-3. Choose 'Anyone with the link' in the dropdown and copy the link.
-4. The link shows that one deployment, so make a fresh one after big changes. To stop it working, switch the dropdown back to 'Only people with access'.
+1. First tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready, then make the link from that newest preview. (While the shortcut is on, anyone who opens the preview and types your email is signed in as you.)
+2. In Vercel open project interview-prep, then Deployments.
+3. Select the newest preview deployment and click Share.
+4. Choose 'Anyone with the link' in the dropdown and copy the link.
+5. The link shows that one deployment, so make a fresh one after big changes. To stop it working, switch the dropdown back to 'Only people with access'.
 
 ## d4-4: Send the reviewer the brief, the link and the answer keys.
 

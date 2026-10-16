@@ -49,10 +49,11 @@ Claude, please export the reviewer pack for the 5 new US MBA-style cases: one fi
 
 **Steps**
 
-1. Make the shareable link: in Vercel open project interview-prep, then Deployments, pick the preview Claude named, click Share, choose 'Anyone with the link'.
-2. Decide the fee. This costs 5 × the per-case fee you agreed in October. Claude's planning guess was $25 to $50 a case (an estimate), so about $125 to $250. Your decision.
-3. On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.
-4. Fill in the message below, attach the 5 answer-key files and send it (for example on Upwork).
+1. If the preview quick log-in is still on, first tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready.
+2. Make the shareable link: in Vercel open project interview-prep, then Deployments, pick the preview Claude named, click Share, choose 'Anyone with the link'.
+3. Decide the fee. This costs 5 × the per-case fee you agreed in October. Claude's planning guess was $25 to $50 a case (an estimate), so about $125 to $250. Your decision.
+4. On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.
+5. Fill in the message below, attach the 5 answer-key files and send it (for example on Upwork).
 
 **Text to use (post, email or message)** (copy exactly):
 

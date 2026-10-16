@@ -248,6 +248,7 @@
      "minutes": 10,
      "who": "you",
      "steps": [
+      "First tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready, then make the link from that newest preview. (While the shortcut is on, anyone who opens the preview and types your email is signed in as you.)",
       "In Vercel open project interview-prep, then Deployments.",
       "Select the newest preview deployment and click Share.",
       "Choose 'Anyone with the link' in the dropdown and copy the link.",
@@ -2564,6 +2565,7 @@
      "minutes": 20,
      "who": "you",
      "steps": [
+      "If the preview quick log-in is still on, first tell Claude: 'Please switch off the preview quick log-in before I share a preview.' Wait until Claude says the new preview is ready.",
       "Make the shareable link: in Vercel open project interview-prep, then Deployments, pick the preview Claude named, click Share, choose 'Anyone with the link'.",
       "Decide the fee. This costs 5 × the per-case fee you agreed in October. Claude's planning guess was $25 to $50 a case (an estimate), so about $125 to $250. Your decision.",
       "On Upwork, add a milestone for these 5 cases to the reviewer's contract (or send a new fixed-price offer) at the fee you choose. Check the total Upwork shows, including any fees, before you pay.",
