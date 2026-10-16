@@ -35,6 +35,14 @@ const MID_THOUGHT = new Set([
   "times", "over", "divided", "multiplied", "equals", "about", "around", "roughly", "maybe", "my", "our", "their",
 ]);
 
+// Thinking sounds with no content. An answer made only of these is never sent on its own.
+const FILLER = new Set(["um", "umm", "uhm", "uh", "er", "erm", "hm", "hmm", "hmmm", "mm", "mmm", "mhm", "ah", "oh", "huh"]);
+
+export function isFillerOnly(text: string): boolean {
+  const all = words(text);
+  return all.length > 0 && all.every((w) => FILLER.has(w));
+}
+
 export function endsMidThought(text: string): boolean {
   const last = words(text).at(-1);
   return last !== undefined && MID_THOUGHT.has(last);

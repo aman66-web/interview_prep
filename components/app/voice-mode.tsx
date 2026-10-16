@@ -112,7 +112,11 @@ export function useVoiceMode(options: VoiceModeOptions) {
         onDevice: onDevice.current,
       },
       {
-        onPhase: setPhase,
+        onPhase: (p) => {
+          setPhase(p);
+          // The "longest answer" note belongs to the answer being spoken, not the next one.
+          if (p === "thinking" || p === "off") setClipped(false);
+        },
         onTranscript: (text, wasClipped) => {
           setClipped(wasClipped);
           latest.current.onTranscript(text);
@@ -174,11 +178,13 @@ const STATE_LABEL: Record<Exclude<VoicePhase, "off">, string> = {
   paused: "Paused",
 };
 
+// 40px tall: the tap-target minimum in docs/DESIGN.md.
 const pill =
-  "inline-flex h-9 items-center gap-1.5 rounded-full bg-surface px-3 text-[13px] font-medium text-ink ring-1 ring-inset ring-line transition-colors hover:bg-surface-3 disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex h-10 items-center gap-1.5 rounded-full bg-surface px-3 text-[13px] font-medium text-ink ring-1 ring-inset ring-line transition-colors hover:bg-surface-3 disabled:pointer-events-none disabled:opacity-50";
 
 /** The voice mode switch, its state and its buttons, shown above the reply box. */
 export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; disabled: boolean; draft: string }) {
+  const switchRef = useRef<HTMLButtonElement>(null);
   if (voice.supported === null) return null; // not known until the page runs in the browser
 
   if (!voice.supported.supported) {
@@ -192,11 +198,22 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
 
   const { phase, on } = voice;
   const status = phase === "off" ? null : STATE_LABEL[phase];
+  // One button whose job follows the state. Keeping it the same element means keyboard focus
+  // stays on it when "Pause to edit" becomes "Resume listening" (a removed button drops focus).
+  const action =
+    phase === "listening"
+      ? { label: "Pause to edit", icon: <Pause size={15} />, onClick: voice.pause, disabled: false }
+      : phase === "paused"
+        ? { label: "Resume listening", icon: <Play size={15} />, onClick: () => voice.resume(draft), disabled }
+        : phase === "speaking"
+          ? { label: "Stop speaking", icon: <StopCircle size={15} />, onClick: voice.stopSpeaking, disabled: false }
+          : null;
 
   return (
     <div className="mb-3 space-y-2">
       <div className="flex flex-wrap items-center gap-2">
         <button
+          ref={switchRef}
           type="button"
           role="switch"
           aria-checked={on}
@@ -216,7 +233,7 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
           {status ? (
             <span
               className={cn(
-                "inline-flex h-9 items-center gap-2 rounded-full px-3 text-[13px] font-medium ring-1 ring-inset",
+                "inline-flex h-10 items-center gap-2 rounded-full px-3 text-[13px] font-medium ring-1 ring-inset",
                 phase === "listening" && "bg-mint text-ink ring-line",
                 phase === "speaking" && "bg-lavender text-ink ring-line",
                 phase === "thinking" && "bg-surface-2 text-muted ring-line",
@@ -239,22 +256,10 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
           ) : null}
         </span>
 
-        {phase === "listening" ? (
-          <button type="button" onClick={voice.pause} className={pill}>
-            <Pause size={15} />
-            Pause to edit
-          </button>
-        ) : null}
-        {phase === "paused" ? (
-          <button type="button" disabled={disabled} onClick={() => voice.resume(draft)} className={pill}>
-            <Play size={15} />
-            Resume listening
-          </button>
-        ) : null}
-        {phase === "speaking" ? (
-          <button type="button" onClick={voice.stopSpeaking} className={pill}>
-            <StopCircle size={15} />
-            Stop speaking
+        {action ? (
+          <button type="button" disabled={action.disabled} onClick={action.onClick} className={pill}>
+            {action.icon}
+            {action.label}
           </button>
         ) : null}
       </div>
@@ -275,7 +280,11 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
           <div className="mt-3 flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={voice.begin}
+              onClick={() => {
+                voice.begin();
+                // The note and its buttons go away: put keyboard focus back on the switch, not the page top.
+                switchRef.current?.focus();
+              }}
               className="inline-flex h-10 items-center gap-2 rounded-full bg-ink px-4 text-sm font-medium text-ink-contrast shadow-soft transition-opacity hover:opacity-90"
             >
               <Mic size={15} />
@@ -283,7 +292,10 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
             </button>
             <button
               type="button"
-              onClick={voice.cancel}
+              onClick={() => {
+                voice.cancel();
+                switchRef.current?.focus();
+              }}
               className="inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-ink ring-1 ring-inset ring-line transition-colors hover:bg-surface"
             >
               Not now
@@ -304,7 +316,7 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
           : voice.halfDuplex
             ? "Speak your answer: it sends when you pause. Tap Stop speaking to interrupt. Typing in the box pauses listening."
             : "Speak your answer: it sends when you pause. Talk over the interviewer to interrupt. Typing in the box pauses listening."}
-        {voice.clipped && on ? <span className="text-warning"> That is the longest answer the box takes; it sends when you pause.</span> : null}
+        {voice.clipped && phase === "listening" ? <span className="text-warning"> That is the longest answer the box takes; it sends when you pause.</span> : null}
       </p>
     </div>
   );

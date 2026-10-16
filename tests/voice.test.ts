@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { VoiceController, type SubmitResult, type VoiceOptions, type VoicePhase, type VoiceProblem } from "@/lib/voice/controller";
 import { bargeInDecision, isMostlyEcho, stripEchoPrefix } from "@/lib/voice/echo";
 import { isIOS, onDeviceAvailable, pickVoice, recognitionConstructor, recognitionLanguage, voiceSupport } from "@/lib/voice/support";
-import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, endsMidThought, joinText, SentenceSplitter, silenceDelay, splitLong, words } from "@/lib/voice/text";
+import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, endsMidThought, isFillerOnly, joinText, SentenceSplitter, silenceDelay, splitLong, words } from "@/lib/voice/text";
 import { dedupeCumulative, readResults } from "@/lib/voice/transcript";
 import { FakeRecognition, FakeSynth, FakeUtterance } from "./helpers/fake-speech";
 
@@ -677,6 +677,35 @@ describe("voice mode and the room", () => {
     s.rec().hear("a", true);
     vi.advanceTimersByTime(10_000);
     expect(s.submits).toEqual([]);
+  });
+
+  it("does not use up a turn on thinking sounds alone, and sends once real words follow", () => {
+    expect(isFillerOnly("Um.")).toBe(true);
+    expect(isFillerOnly("hmm uh")).toBe(true);
+    expect(isFillerOnly("um yes")).toBe(false);
+    expect(isFillerOnly("")).toBe(false);
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("hmm", true);
+    vi.advanceTimersByTime(10_000);
+    expect(s.submits).toEqual([]);
+    expect(s.ctrl.state).toBe("listening");
+    s.rec().hear("I would start with costs", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["hmm I would start with costs"]);
+  });
+
+  it("does not give up when the student pauses and resumes several times", () => {
+    const s = setup();
+    s.ctrl.start();
+    for (let i = 0; i < 8; i++) {
+      s.ctrl.pause();
+      s.ctrl.resume("");
+      vi.advanceTimersByTime(300);
+    }
+    expect(s.problems).toEqual([]);
+    expect(s.ctrl.state).toBe("listening");
+    expect(s.rec().running).toBe(true);
   });
 
   it("stops everything when switched off, and ignores anything after", () => {

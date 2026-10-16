@@ -230,6 +230,10 @@ export function InterviewRoom({
           setMessages((m) => (m.at(-1)?.content === shown ? m.slice(0, -1) : m));
           if (action === "message") setInput(previous || shown);
         }
+      } else {
+        // Normally already told by the "state" event; this covers a reply stream that ended
+        // without one, so voice mode never stays on "Thinking" with the microphone open.
+        voice.replyEnded();
       }
       setBusy(false);
       setScoring(false);

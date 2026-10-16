@@ -1,6 +1,6 @@
 import { bargeInDecision, isMostlyEcho, stripEchoPrefix } from "./echo";
 import { pickVoice, type VoiceLike } from "./support";
-import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, joinText, SentenceSplitter, silenceDelay, type TurnTiming } from "./text";
+import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, isFillerOnly, joinText, SentenceSplitter, silenceDelay, type TurnTiming } from "./text";
 import { dedupeCumulative, readResults, type ResultListLike, type Segment } from "./transcript";
 
 // Hands-free voice mode for the interview room, using only the browser's Web Speech API.
@@ -235,6 +235,9 @@ export class VoiceController {
   /** Starts listening again; new words are added after `prefix` (the box as it is now). */
   resume(prefix: string): void {
     if (this.phase !== "paused") return;
+    // The student chose to listen again, so earlier quick restarts (pausing and resuming
+    // a few times while editing) must not count as the browser failing to listen.
+    this.starts = [];
     this.carried = prefix.trim();
     this.answer = this.carried;
     this.speakFrom = this.segs.length;
@@ -477,7 +480,9 @@ export class VoiceController {
     this.silenceTimer = null;
     if (this.phase !== "listening") return;
     const text = this.answer.trim();
-    if (text.length < this.opts.timing.minAnswerChars) return;
+    // A lone "a", or only "um" / "hmm" while the student thinks, is never sent as an answer:
+    // it would use up one of the interview's turns. The words stay in the box.
+    if (text.length < this.opts.timing.minAnswerChars || isFillerOnly(text)) return;
     const result = this.cb.onSubmit(text);
     if (this.phase !== "listening") return; // the room started the turn
     if (result === "sent") this.turnStarted();
