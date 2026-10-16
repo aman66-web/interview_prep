@@ -111,7 +111,8 @@ Everything brand- or business-specific lives here, so it can change without touc
   - **`/cases/[slug]`:** each case's prompt and first stage are visible to everyone; the rest is locked.
 - **`/drills`.** Mental maths, market sizing, frameworks and charts. Free up to a daily limit.
 - **`/guides`.** One guide per case type (market sizing, profitability, market entry, M&A, pricing, growth, operations).
-  - **`/guides/firms/[firm]`:** firm guides, using verified facts only (rule 2.2).
+  - **`/guides/firms/[firm]`:** firm guides, using verified facts only (rule 2.2). Consulting firms and, since 16 Oct 2026 (founder), banks.
+  - **`/practice` and `/practice/[firm]`:** firm-style practice pages (16 Oct 2026): the firm guide's sourced facts about its interviews beside our own cases that suit them, with the disclaimer in the page body (`docs/CONTENT.md`).
 - **`/tools`.** Free tools that need no login: market sizing calculator, break-even calculator, mental maths trainer, growth rate calculator. Each one links to a related free case or drill.
 - **`/pricing`, `/for-universities`** (group pricing contact form), `/blog` (MDX), `/faq`, `/about`.
 - **`/legal/terms`, `/legal/privacy`, `/legal/refunds`, `/legal/disclaimer`.**

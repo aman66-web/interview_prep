@@ -1,4 +1,4 @@
-import type { Case, CaseType } from "./schema";
+import type { Case, CaseType, Track } from "./schema";
 
 // What a visitor (even one who is not logged in) may see of a case. This is an
 // allow-list: only the fields named here are copied, so answer keys, facts,
@@ -17,6 +17,7 @@ export type PublicExhibit = {
 export type PublicCase = {
   slug: string;
   title: string;
+  track: Track;
   type: CaseType;
   industry: string;
   difficulty: 1 | 2 | 3;
@@ -32,13 +33,14 @@ export type PublicCase = {
 
 export type CaseSummary = Pick<
   PublicCase,
-  "slug" | "title" | "type" | "industry" | "difficulty" | "estMinutes" | "freeStarter" | "freePreview" | "isDraft"
+  "slug" | "title" | "track" | "type" | "industry" | "difficulty" | "estMinutes" | "freeStarter" | "freePreview" | "isDraft"
 >;
 
 export function toCaseSummary(c: Case): CaseSummary {
   return {
     slug: c.slug,
     title: c.title,
+    track: c.track,
     type: c.type,
     industry: c.industry,
     difficulty: c.difficulty,

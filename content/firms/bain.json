@@ -2,6 +2,7 @@
   "slug": "bain",
   "name": "Bain & Company",
   "status": "ready",
+  "sector": "consulting",
   "short_name": "Bain",
   "seo_title": "Bain interview process: what to expect",
   "description": "What Bain & Company's own careers pages say about applying for consulting roles: the digital assessment, case interviews and how to prepare.",
@@ -200,5 +201,22 @@
     "Run full practice cases from the opening question to a final recommendation, and finish each one with a summary of a minute or less.",
     "Prepare two or three stories from your own experience, each with a clear situation, what you did and the result, and practise telling each in about two minutes.",
     "After every practice case, write down one thing to improve and focus on it in the next one."
-  ]
+  ],
+  "practice": {
+    "seo_title": "Bain-style case interview practice",
+    "description": "Practise for Bain-style case interviews with original cases and an AI interviewer that checks your maths. What Bain says, sourced, plus cases to run.",
+    "intro": "Run original practice cases out loud with an AI interviewer and get a scored debrief with every number checked by code. Several of the cases below ask you to propose where to start, so you practise walking the interviewer through your plan. Below: what Bain itself publishes about its case interviews, and the cases we suggest.",
+    "show_sections": [
+      "Case interviews",
+      "How Bain suggests you prepare"
+    ],
+    "cases": [
+      "harbourline-bakeries",
+      "cobalt-basin-ski-resort",
+      "orvessa-subscriber-growth",
+      "bramblecup-uk-supermarket-deal",
+      "wrenfield-hotels-profit",
+      "corvane-vets-acquisition"
+    ]
+  }
 }

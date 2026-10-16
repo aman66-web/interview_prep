@@ -49,6 +49,8 @@ export const firmSchema = z
      * with a draft notice, only where SHOW_DRAFT_CONTENT=1. Set "ready" once every fact is sourced.
      */
     status: z.enum(["draft", "ready"]),
+    /** Groups the guides page and sets the practice page wording (banks: founder, 16 Oct 2026). */
+    sector: z.enum(["consulting", "banking"]),
     short_name: text,
     seo_title: seoTitle,
     description: seoDescription,
@@ -79,8 +81,29 @@ export const firmSchema = z
       .min(1),
     /** General practice advice in our own words. Must not state facts about the firm. */
     practice_advice: z.array(text).min(1),
+    /**
+     * The firm-style practice page (/practice/<slug>). Its intro is in our own words and
+     * states no facts about the firm; the firm facts it shows are this guide's own sourced
+     * items, taken from the sections named in show_sections.
+     */
+    practice: z
+      .object({
+        /** Must say "-style" or "practice for", so it never suggests these are the firm's own cases (rule 2.3). */
+        seo_title: seoTitle.refine((t) => /-style\b|\bpractice for\b/i.test(t), 'say "-style" or "practice for" (rule 2.3)'),
+        description: seoDescription,
+        intro: text,
+        show_sections: z.array(text).min(1),
+        /** Our own cases that suit this kind of interview, best first. Drafts show only where drafts are shown. */
+        cases: z.array(slugLike).min(3).max(8),
+      })
+      .strict()
+      .optional(),
   })
-  .strict();
+  .strict()
+  .refine((f) => !f.practice || f.practice.show_sections.every((h) => f.sections.some((s) => s.heading === h)), {
+    message: "practice.show_sections must name headings of this guide's sections",
+    path: ["practice", "show_sections"],
+  });
 export type Firm = z.infer<typeof firmSchema>;
 
 export const pageSchema = z

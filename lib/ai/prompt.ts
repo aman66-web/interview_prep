@@ -1,4 +1,4 @@
-import type { Case } from "@/lib/content/schema";
+import type { Case, Track } from "@/lib/content/schema";
 import { STAGE_LABELS, type Stage } from "./stages";
 
 // Prompts are built on the server from the case JSON and the current stage
@@ -6,7 +6,16 @@ import { STAGE_LABELS, type Stage } from "./stages";
 // given to the model so it can run a realistic interview; it is told never to
 // reveal them, and code (not the model) decides every score that matters.
 
-const ROLE = `You are the interviewer in a consulting case interview practice session. The person you are talking to is a candidate practising for real interviews, usually a university student or recent graduate. You are a calm, professional, friendly senior consultant.`;
+const ROLE: Record<Track, string> = {
+  consulting: `You are the interviewer in a consulting case interview practice session. The person you are talking to is a candidate practising for real interviews, usually a university student or recent graduate. You are a calm, professional, friendly senior consultant.`,
+  banking: `You are the assessor in a bank case study practice session, like the case study exercise some banks use at assessment centres and final-round interviews. The person you are talking to is a candidate practising for real interviews, usually a university student or recent graduate. You are a calm, professional, friendly senior banker who has given the candidate a client situation to work through out loud.`,
+};
+
+/** Who writes the debrief, matching the interviewer. */
+const DEBRIEF_ROLE: Record<Track, string> = {
+  consulting: "an experienced consulting interviewer",
+  banking: "an experienced banker who assesses graduate candidates",
+};
 
 const HOW_YOU_SPEAK = `HOW YOU SPEAK
 - Natural spoken English, concise: usually one to three short sentences, never more than about 90 words. Ask one question at a time.
@@ -86,7 +95,7 @@ export function caseMaterials(c: Case): string {
 
 /** The full system prompt for one case. It does not change during a session. */
 export function buildSystemPrompt(c: Case): string {
-  return [ROLE, HOW_YOU_SPEAK, HARD_RULES, STAGE_GUIDE, OUTPUT_FORMAT, caseMaterials(c)].join("\n\n");
+  return [ROLE[c.track], HOW_YOU_SPEAK, HARD_RULES, STAGE_GUIDE, OUTPUT_FORMAT, caseMaterials(c)].join("\n\n");
 }
 
 export type MathStatus = { math_id: string; status: "correct" | "incorrect" };
@@ -131,7 +140,7 @@ export function openingMessage(c: Case): string {
 }
 
 export const SUMMARY_SYSTEM =
-  "You compress the earlier part of a consulting case interview into a short factual summary, so the interviewer can continue it. Write in plain text, at most 150 words. Record: the facts the candidate has been given, what the candidate has said about their structure, hypotheses and findings, the numbers they have calculated, which exhibits have been shared, and any open question. Do not add opinions or advice.";
+  "You compress the earlier part of a practice case interview into a short factual summary, so the interviewer can continue it. Write in plain text, at most 150 words. Record: the facts the candidate has been given, what the candidate has said about their structure, hypotheses and findings, the numbers they have calculated, which exhibits have been shared, and any open question. Do not add opinions or advice.";
 
 export function buildSummaryRequest(existingSummary: string | null, older: { role: string; content: string }[]): string {
   const transcript = older.map((m) => `${m.role === "user" ? "Candidate" : "Interviewer"}: ${m.content}`).join("\n");
@@ -139,7 +148,7 @@ export function buildSummaryRequest(existingSummary: string | null, older: { rol
 }
 
 export function debriefSystem(c: Case): string {
-  return `You are an experienced consulting interviewer writing a scored debrief for a candidate who has just finished a practice case interview. Be specific, fair and encouraging but honest. Write plain text with no markdown.
+  return `You are ${DEBRIEF_ROLE[c.track]} writing a scored debrief for a candidate who has just finished a practice case interview. Be specific, fair and encouraging but honest. Write plain text with no markdown.
 
 Score each area from 1 to 5 (1 = weak, 3 = solid, 5 = outstanding for a strong university candidate): structure, analysis (how well they analysed the data and drew insights; the arithmetic itself is scored separately by code, so judge their reasoning and interpretation), business_judgement, communication, synthesis (the final recommendation).
 

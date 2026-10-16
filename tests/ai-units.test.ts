@@ -5,7 +5,7 @@ import { planHistory, type ChatMessage } from "@/lib/ai/history";
 import { blockedMessage, canStartCase, limitsFor, SESSION_CAPS } from "@/lib/ai/limits";
 import { checkMathAnswers, mathsScore, withinTolerance } from "@/lib/ai/maths";
 import { CACHE_READ_MULTIPLIER, estimateCostUsd, priceFor, totalInputTokens } from "@/lib/ai/pricing";
-import { buildSystemPrompt, buildTurnContent, caseMaterials, openingMessage, type TurnNotes } from "@/lib/ai/prompt";
+import { buildSystemPrompt, buildTurnContent, caseMaterials, debriefSystem, openingMessage, type TurnNotes } from "@/lib/ai/prompt";
 import { verifyQuote } from "@/lib/ai/quotes";
 import { checkReply, debriefModelSchema, interviewerReplySchema } from "@/lib/ai/schema";
 import { applyProposedStage, nextStage, STAGES } from "@/lib/ai/stages";
@@ -260,6 +260,16 @@ describe("prompts", () => {
     expect(system).toMatch(/confidential/i);
     expect(system).toMatch(/Never reveal/);
     expect(system).toMatch(/untrusted/);
+  });
+
+  it("plays a consultant for consulting cases and a banker for bank case studies", () => {
+    expect(buildSystemPrompt(bakery)).toMatch(/senior consultant/);
+    const bankCase = { ...bakery, track: "banking" as const };
+    const system = buildSystemPrompt(bankCase);
+    expect(system).toMatch(/senior banker/);
+    expect(system).not.toMatch(/senior consultant/);
+    expect(debriefSystem(bankCase)).toMatch(/experienced banker/);
+    expect(debriefSystem(bakery)).toMatch(/experienced consulting interviewer/);
   });
 
   it("is identical every time for a case, so it can be cached", () => {

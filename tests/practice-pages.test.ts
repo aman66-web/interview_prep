@@ -19,6 +19,7 @@ import { siteUrl } from "@/lib/site-url";
 const make = (slug: string, type: string, industry: string, difficulty: 1 | 2 | 3): CaseSummary => ({
   slug,
   title: slug,
+  track: "consulting",
   type: type as CaseSummary["type"],
   industry,
   difficulty,
@@ -44,14 +45,21 @@ describe("the case library filters", () => {
   });
 
   it("combine type, industry and difficulty", () => {
-    expect(filterCases(cases, { type: "pricing", industry: "", difficulty: "" }).map((c) => c.slug)).toEqual(["b", "e"]);
-    expect(filterCases(cases, { type: "", industry: "Retail", difficulty: "2" }).map((c) => c.slug)).toEqual(["d", "e"]);
-    expect(filterCases(cases, { type: "pricing", industry: "Software", difficulty: "1" })).toEqual([]);
-    expect(isFiltering({ type: "", industry: "Retail", difficulty: "" })).toBe(true);
+    expect(filterCases(cases, { track: "", type: "pricing", industry: "", difficulty: "" }).map((c) => c.slug)).toEqual(["b", "e"]);
+    expect(filterCases(cases, { track: "", type: "", industry: "Retail", difficulty: "2" }).map((c) => c.slug)).toEqual(["d", "e"]);
+    expect(filterCases(cases, { track: "", type: "pricing", industry: "Software", difficulty: "1" })).toEqual([]);
+    expect(isFiltering({ track: "", type: "", industry: "Retail", difficulty: "" })).toBe(true);
+  });
+
+  it("filter by kind: consulting cases or bank case studies", () => {
+    const mixed: CaseSummary[] = [...cases, { ...cases[0], slug: "bank", track: "banking" }];
+    expect(filterCases(mixed, { ...NO_FILTERS, track: "banking" }).map((c) => c.slug)).toEqual(["bank"]);
+    expect(filterCases(mixed, { ...NO_FILTERS, track: "consulting" })).toHaveLength(cases.length);
+    expect(isFiltering({ ...NO_FILTERS, track: "banking" })).toBe(true);
   });
 
   it("count each type given the other filters, ignoring the type already chosen", () => {
-    const facets = typeFacets(cases, { type: "pricing", industry: "Retail", difficulty: "" });
+    const facets = typeFacets(cases, { track: "", type: "pricing", industry: "Retail", difficulty: "" });
     expect(facets.all).toBe(4);
     expect(facets.byType).toEqual({ profitability: 2, growth: 1, pricing: 1 });
   });

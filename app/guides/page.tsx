@@ -10,6 +10,7 @@ import { ArrowUpRight, Book, Calculator, Check, Info, Layers, Target } from "@/c
 import { Container, PageHeader, SectionHeading } from "@/components/ui/layout";
 import { visibleCases } from "@/lib/content/cases";
 import { CASE_TYPE_LABELS } from "@/lib/content/labels";
+import { practiceFirms, SECTOR_LABELS } from "@/lib/content/practice";
 import { allGuides, formatDate, glossary, lastChecked, visibleFirms } from "@/lib/content/writing";
 import type { Guide } from "@/lib/content/writing-schema";
 import { TOOLS } from "@/lib/tools";
@@ -59,6 +60,10 @@ export default function GuidesPage() {
   const caseTypeGuides = guides.filter((g) => g.kind === "case_type");
   const skillGuides = guides.filter((g) => g.kind === "skill");
   const firms = visibleFirms();
+  const firmGroups = (["consulting", "banking"] as const)
+    .map((sector) => ({ sector, items: firms.filter((f) => f.sector === sector) }))
+    .filter((g) => g.items.length > 0);
+  const hasPractice = practiceFirms().length > 0;
   const cases = visibleCases();
   const terms = glossary().terms;
   const checkedExamples = guides.reduce((n, g) => n + g.blocks.filter((b) => b.type === "example" && b.checks.length > 0).length, 0);
@@ -182,33 +187,45 @@ export default function GuidesPage() {
             </div>
 
             {firms.length > 0 ? (
-              <ul className={cn("mt-12 grid gap-4", firms.length > 1 && "md:grid-cols-2", firms.length > 2 && "lg:grid-cols-3")}>
-                {firms.map((f) => (
-                  <li key={f.slug}>
-                    {/* The title's link covers the card; the card shows a lime focus outline for it (brand indigo is too dark on night). */}
-                    <article className="group relative flex h-full flex-col rounded-[1.75rem] bg-white/[0.05] p-6 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.09] has-[a:focus-visible]:bg-white/[0.09] has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-3 has-[a:focus-visible]:outline-lime has-[a:focus-visible]:outline-solid sm:p-7">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white ring-1 ring-inset ring-white/15">
-                          {f.sources.length} source{f.sources.length === 1 ? "" : "s"}
-                        </span>
-                        {f.status === "draft" ? <Tag tone="warning">Draft, preview only</Tag> : null}
-                      </div>
-                      <h3 className="mt-8 text-[1.6rem] font-medium leading-tight tracking-tight text-white">
-                        <Link href={`/guides/firms/${f.slug}`} className="after:absolute after:inset-0 after:rounded-[1.75rem] focus-visible:outline-none">
-                          {f.name}
-                        </Link>
-                      </h3>
-                      <p className="mt-3 text-[14.5px] leading-relaxed text-on-night-muted">{f.description}</p>
-                      <div className="mt-auto flex items-center justify-between gap-3 pt-8">
-                        <span className="text-sm text-on-night-muted">Checked {formatDate(lastChecked(f), "short")}</span>
-                        <span aria-hidden="true" className="grid size-9 place-items-center rounded-full bg-lime text-lime-ink transition-transform duration-300 group-hover:rotate-45">
-                          <ArrowUpRight size={16} />
-                        </span>
-                      </div>
-                    </article>
-                  </li>
+              <div className="mt-12 space-y-12">
+                {firmGroups.map((group) => (
+                  <div key={group.sector}>
+                    <h3 className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-on-night-muted">{SECTOR_LABELS[group.sector].group}</h3>
+                  <ul className={cn("mt-5 grid gap-4", group.items.length > 1 && "md:grid-cols-2", group.items.length > 2 && "lg:grid-cols-3")}>
+                    {group.items.map((f) => (
+                      <li key={f.slug}>
+                        {/* The title's link covers the card; the card shows a lime focus outline for it (brand indigo is too dark on night). */}
+                        <article className="group relative flex h-full flex-col rounded-[1.75rem] bg-white/[0.05] p-6 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.09] has-[a:focus-visible]:bg-white/[0.09] has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-3 has-[a:focus-visible]:outline-lime has-[a:focus-visible]:outline-solid sm:p-7">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white ring-1 ring-inset ring-white/15">
+                              {f.sources.length} source{f.sources.length === 1 ? "" : "s"}
+                            </span>
+                            {f.status === "draft" ? <Tag tone="warning">Draft, preview only</Tag> : null}
+                          </div>
+                          <h4 className="mt-8 text-[1.6rem] font-medium leading-tight tracking-tight text-white">
+                            <Link href={`/guides/firms/${f.slug}`} className="after:absolute after:inset-0 after:rounded-[1.75rem] focus-visible:outline-none">
+                              {f.name}
+                            </Link>
+                          </h4>
+                          <p className="mt-3 text-[14.5px] leading-relaxed text-on-night-muted">{f.description}</p>
+                          <div className="mt-auto flex items-center justify-between gap-3 pt-8">
+                            <span className="text-sm text-on-night-muted">Checked {formatDate(lastChecked(f), "short")}</span>
+                            <span aria-hidden="true" className="grid size-9 place-items-center rounded-full bg-lime text-lime-ink transition-transform duration-300 group-hover:rotate-45">
+                              <ArrowUpRight size={16} />
+                            </span>
+                          </div>
+                        </article>
+                      </li>
+                    ))}
+                  </ul>
+                  </div>
                 ))}
-              </ul>
+                {hasPractice ? (
+                  <Link href="/practice" className="inline-flex items-center gap-1.5 text-sm font-medium text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">
+                    Practice cases picked for each firm and bank <ArrowUpRight size={14} />
+                  </Link>
+                ) : null}
+              </div>
             ) : (
               <p className="mt-12 rounded-[1.75rem] bg-white/[0.05] p-6 text-on-night-muted ring-1 ring-inset ring-white/10">
                 Firm guides are being checked against the firms&rsquo; own pages and will appear here once every fact has a source.

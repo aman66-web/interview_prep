@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/components/learn/seo";
 import { visibleCases } from "@/lib/content/cases";
+import { practiceFirms } from "@/lib/content/practice";
 import { allGuides, findPage, glossary, LEGAL_SLUGS, visibleFirms } from "@/lib/content/writing";
 import { DRILL_CATEGORIES } from "@/lib/drills/types";
 import { TOOLS } from "@/lib/tools";
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/guides", latestGuide),
     ...guides.map((g) => entry(`/guides/${g.slug}`, g.updated)),
     ...visibleFirms().map((f) => entry(`/guides/firms/${f.slug}`, f.updated)),
+    ...(practiceFirms().length > 0 ? [entry("/practice"), ...practiceFirms().map((f) => entry(`/practice/${f.slug}`, f.updated))] : []),
     entry("/glossary", glossary().updated),
     entry("/tools"),
     ...TOOLS.map((t) => entry(`/tools/${t.slug}`)),

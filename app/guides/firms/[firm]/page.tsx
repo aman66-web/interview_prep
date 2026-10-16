@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleHeader, MetaRow, Notice, PractiseCta, slugify } from "@/components/learn/article";
+import { SourcedFactList, SourceList } from "@/components/learn/sourced-facts";
 import { DesktopToc, MobileToc } from "@/components/learn/article-toc";
 import { articleJsonLd, breadcrumbJsonLd, pageOpenGraph } from "@/components/learn/seo";
 import { Eyebrow, Tag } from "@/components/ui/badge";
 import { JsonLd } from "@/components/ui/faq";
-import { ArrowUpRight, Book, Check, ExternalLink, Refresh } from "@/components/ui/icons";
+import { ArrowUpRight, Book, Check, Refresh } from "@/components/ui/icons";
 import { Container } from "@/components/ui/layout";
+import { findPracticeFirm } from "@/lib/content/practice";
 import { findFirm, formatDate, lastChecked, visibleFirms } from "@/lib/content/writing";
 import type { Firm } from "@/lib/content/writing-schema";
 import { siteConfig } from "@/site.config";
@@ -46,11 +48,6 @@ function sectionIds(firm: Firm): string[] {
   });
 }
 
-function displayUrl(url: string): string {
-  const u = new URL(url);
-  return `${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/$/, "")}`;
-}
-
 export default async function FirmGuidePage({ params }: { params: Promise<{ firm: string }> }) {
   const { firm: slug } = await params;
   const firm = findFirm(slug);
@@ -58,12 +55,11 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
 
   const path = `/guides/firms/${firm.slug}`;
   const ids = sectionIds(firm);
-  const sourceNumber = new Map(firm.sources.map((s, i) => [s.id, i + 1]));
-  const sourceById = new Map(firm.sources.map((s) => [s.id, s]));
   const facts = firm.sections.reduce((n, s) => n + s.items.length, 0);
   const checked = lastChecked(firm);
   const publishers = [...new Set(firm.sources.map((s) => s.publisher))];
-  const others = visibleFirms().filter((f) => f.slug !== firm.slug);
+  const others = visibleFirms().filter((f) => f.slug !== firm.slug && f.sector === firm.sector);
+  const practice = findPracticeFirm(firm.slug);
   const toc = [
     ...firm.sections.map((s, i) => ({ id: ids[i], text: s.heading })),
     { id: "practise", text: "How to practise" },
@@ -147,31 +143,7 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
                   <h2 id={ids[i]} className="scroll-mt-28 text-2xl font-medium leading-tight tracking-tight text-ink sm:text-[1.75rem]">
                     {section.heading}
                   </h2>
-                  <ul className="mt-5 divide-y divide-line overflow-hidden rounded-[1.5rem] bg-surface ring-1 ring-inset ring-line">
-                    {section.items.map((item) => {
-                      const n = sourceNumber.get(item.source);
-                      const source = sourceById.get(item.source);
-                      return (
-                        <li key={item.text} className="flex gap-3.5 px-5 py-4 sm:px-6">
-                          <span aria-hidden="true" className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-brand" />
-                          <p className="text-[16px] leading-[1.7] text-ink/90">
-                            {item.text}
-                            {n && source ? (
-                              <sup className="ml-1 align-super">
-                                <a
-                                  href={`#source-${source.id}`}
-                                  aria-label={`Source ${n}: ${source.title}`}
-                                  className="inline-grid h-[1.15rem] min-w-[1.15rem] place-items-center rounded-full bg-brand-soft px-1 text-[10.5px] font-semibold leading-none text-brand-ink no-underline transition-colors hover:bg-brand hover:text-white"
-                                >
-                                  {n}
-                                </a>
-                              </sup>
-                            ) : null}
-                          </p>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <SourcedFactList items={section.items} sources={firm.sources} />
                 </section>
               ))}
 
@@ -190,6 +162,7 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
                 </ol>
                 <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium">
                   {[
+                    ...(practice ? [{ href: `/practice/${practice.slug}`, label: practice.practice.seo_title }] : []),
                     { href: "/drills", label: "Try the drills" },
                     { href: "/cases", label: "Browse the practice cases" },
                     { href: "/guides/how-to-structure-a-case-interview", label: "How to structure a case" },
@@ -210,28 +183,7 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
                     Last checked <time dateTime={checked}>{formatDate(checked)}</time>
                   </p>
                 </div>
-                <ol className="mt-5 space-y-3">
-                  {firm.sources.map((s, i) => (
-                    <li
-                      key={s.id}
-                      id={`source-${s.id}`}
-                      className="flex scroll-mt-28 gap-4 rounded-[1.5rem] bg-surface p-5 ring-1 ring-inset ring-line transition-shadow target:ring-2 target:ring-brand sm:p-6"
-                    >
-                      <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-soft text-sm font-semibold text-brand-ink tabular-nums">{i + 1}</span>
-                      <div className="min-w-0">
-                        <a href={s.url} rel="noopener noreferrer" className="group inline-flex items-start gap-1.5 font-medium leading-snug text-ink hover:underline hover:underline-offset-4">
-                          {s.title}
-                          <ExternalLink size={14} className="mt-1 shrink-0 text-subtle group-hover:text-ink" />
-                          <span className="sr-only">(opens the source)</span>
-                        </a>
-                        <p className="mt-1 text-sm text-muted">
-                          {s.publisher} · checked <time dateTime={s.checked}>{formatDate(s.checked)}</time>
-                        </p>
-                        <p className="mt-1.5 break-all font-mono text-xs text-subtle">{displayUrl(s.url)}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+                <SourceList sources={firm.sources} />
                 <p className="mt-6 text-sm leading-relaxed text-muted">
                   Firms change their processes, so check the firm&rsquo;s own pages before you apply.
                   {siteConfig.supportEmail ? (
@@ -250,8 +202,10 @@ export default async function FirmGuidePage({ params }: { params: Promise<{ firm
             </article>
 
             {others.length > 0 ? (
-              <nav aria-label="Other firm guides" className="mt-16 border-t border-line pt-8">
-                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-muted">Other firm guides</p>
+              <nav aria-label={`Other ${firm.sector === "banking" ? "bank" : "firm"} guides`} className="mt-16 border-t border-line pt-8">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
+                  Other {firm.sector === "banking" ? "bank" : "firm"} guides
+                </p>
                 <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                   {others.map((f) => (
                     <li key={f.slug}>

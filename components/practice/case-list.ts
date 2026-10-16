@@ -5,15 +5,19 @@ import type { CaseSummary } from "@/lib/content/public";
 // No zod and no full case data, so they are safe in client components.
 // tests/practice-pages.test.ts covers them.
 
-export type CaseFilters = { type: string; industry: string; difficulty: string };
+export type CaseFilters = { track: string; type: string; industry: string; difficulty: string };
 
-export const NO_FILTERS: CaseFilters = { type: "", industry: "", difficulty: "" };
+export const NO_FILTERS: CaseFilters = { track: "", type: "", industry: "", difficulty: "" };
+
+/** The kinds of case the library can be filtered by (only shown when there is more than one). */
+export const TRACK_LABELS: Record<string, string> = { consulting: "Consulting cases", banking: "Bank case studies" };
 
 /** Case types in the order the site always lists them (the label order). */
 export const TYPE_ORDER = Object.keys(CASE_TYPE_LABELS);
 
 function matches(c: CaseSummary, f: CaseFilters, ignore?: keyof CaseFilters): boolean {
   return (
+    (ignore === "track" || !f.track || c.track === f.track) &&
     (ignore === "type" || !f.type || c.type === f.type) &&
     (ignore === "industry" || !f.industry || c.industry === f.industry) &&
     (ignore === "difficulty" || !f.difficulty || String(c.difficulty) === f.difficulty)
@@ -25,7 +29,7 @@ export function filterCases(cases: CaseSummary[], f: CaseFilters): CaseSummary[]
 }
 
 export function isFiltering(f: CaseFilters): boolean {
-  return Boolean(f.type || f.industry || f.difficulty);
+  return Boolean(f.track || f.type || f.industry || f.difficulty);
 }
 
 /** How many cases of each type there are, in the site's type order, leaving out types with none. */

@@ -50,8 +50,8 @@ export const siteConfig = {
   // Users must be at least this old (founder, 15 Oct 2026); used in the terms and privacy policy.
   minimumAge: 18,
 
-  // Phase 2 adds "data".
-  tracksEnabled: ["consulting"],
+  // "banking": bank-style case studies (founder, 16 Oct 2026). Phase 2 adds "data".
+  tracksEnabled: ["consulting", "banking"],
 
   // Rule 2.3: shown in the footer, on every firm page and on the pricing page.
   disclaimer:

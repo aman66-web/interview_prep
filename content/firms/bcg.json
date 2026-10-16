@@ -2,6 +2,7 @@
   "slug": "bcg",
   "name": "Boston Consulting Group",
   "status": "ready",
+  "sector": "consulting",
   "short_name": "BCG",
   "seo_title": "BCG interview process: what to expect",
   "description": "What Boston Consulting Group's own careers pages say about applying for consulting roles: the steps, online assessments, case interviews and how to prepare.",
@@ -226,5 +227,22 @@
     "Run full practice cases from the opening question to a final recommendation, and finish each one with a summary of a minute or less.",
     "Prepare two or three stories from your own experience, each with a clear situation, what you did and the result, and practise telling each in about two minutes.",
     "After every practice case, write down one thing to improve and focus on it in the next one."
-  ]
+  ],
+  "practice": {
+    "seo_title": "BCG-style case interview practice",
+    "description": "Practise for BCG-style case interviews with original cases and an AI interviewer that checks your maths. What BCG says, sourced, plus cases to run.",
+    "intro": "Run original practice cases out loud with an AI interviewer and get a scored debrief with every number checked by code. Several of the cases below leave it to you to set the direction, which is good practice for owning the case. Below: what BCG itself publishes about its case interviews, and the cases we suggest.",
+    "show_sections": [
+      "Case interviews",
+      "How BCG suggests you prepare"
+    ],
+    "cases": [
+      "harbourline-bakeries",
+      "city-ev-chargers",
+      "ostrander-pumps-sensor-deal",
+      "stowline-backup-pricing",
+      "cragwell-climbing-growth",
+      "brinmoor-bike-share-repairs"
+    ]
+  }
 }

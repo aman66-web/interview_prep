@@ -1,6 +1,6 @@
 # Interview Prep Platform: project memory
 
-Consulting case-interview practice with a text AI interviewer and a scored debrief. Phase 1 = consulting; Phase 2 = data/SQL; Phase 3 = voice. Tracks, cases and drills are **data, not code**.
+Consulting case-interview practice with a text AI interviewer and a scored debrief. Phase 1 = consulting, plus bank-style case studies and bank guides (founder, 16 Oct 2026); Phase 2 = data/SQL; Phase 3 = voice. Tracks, cases and drills are **data, not code**.
 
 The founder (Aman) is a non-developer. Follow rule 2.13 when talking to him.
 

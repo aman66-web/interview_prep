@@ -40,6 +40,7 @@ export function CaseCard({ c, headingLevel = "h3" }: { c: CaseSummary; headingLe
     <article className="group relative flex h-full flex-col rounded-[1.75rem] bg-surface p-6 ring-1 ring-inset ring-line transition-[box-shadow,transform] duration-300 focus-within:shadow-float hover:-translate-y-0.5 hover:shadow-float">
       <div className="flex flex-wrap items-center gap-2">
         <Tag tone={CASE_TYPE_TONES[c.type] ?? "neutral"}>{CASE_TYPE_LABELS[c.type]}</Tag>
+        {c.track === "banking" ? <Tag tone="sky">Bank case study</Tag> : null}
         {c.freeStarter ? <Tag tone="ink">Free full interview</Tag> : null}
         {c.freePreview && !c.freeStarter ? <Tag tone="brand">Free preview</Tag> : null}
         {c.isDraft ? <Tag tone="warning">Draft, not yet reviewed</Tag> : null}

@@ -23,8 +23,8 @@ describe("siteConfig", () => {
     expect(siteConfig.transcriptRetentionDays).toBe(365);
   });
 
-  it("starts with the consulting track only and tax switched off", () => {
-    expect(siteConfig.tracksEnabled).toEqual(["consulting"]);
+  it("has the consulting and banking tracks (banking: founder, 16 Oct 2026) and tax switched off", () => {
+    expect(siteConfig.tracksEnabled).toEqual(["consulting", "banking"]);
     expect(siteConfig.stripeTaxEnabled).toBe(false);
   });
 

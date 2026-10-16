@@ -2,6 +2,7 @@
   "slug": "mckinsey",
   "name": "McKinsey & Company",
   "status": "ready",
+  "sector": "consulting",
   "short_name": "McKinsey",
   "seo_title": "McKinsey interview process: what to expect",
   "description": "What McKinsey & Company's own careers pages say about applying: the Solve game, problem-solving and experience interviews, and its rules on AI.",
@@ -218,5 +219,22 @@
     "Run full practice cases from the opening question to a final recommendation, and finish each one with a summary of a minute or less.",
     "Pick a few experiences from your own life that really mattered to you, and practise talking through what you did and why, so you can answer follow-up questions instead of reciting a script.",
     "After every practice case, write down one thing to improve and focus on it in the next one."
-  ]
+  ],
+  "practice": {
+    "seo_title": "McKinsey-style case interview practice",
+    "description": "Practise for McKinsey-style case interviews with original cases and an AI interviewer that checks your maths. What McKinsey says, sourced, plus cases to run.",
+    "intro": "Run original practice cases out loud with an AI interviewer, from your first clarifying question to a recommendation, then get a scored debrief with every number checked by code. Below: what McKinsey itself publishes about its problem-solving interviews, and the cases we suggest starting with.",
+    "show_sections": [
+      "Problem-solving (case) interviews",
+      "How McKinsey suggests you prepare"
+    ],
+    "cases": [
+      "harbourline-bakeries",
+      "aurora-kitchen-uk-entry",
+      "larkmoor-meal-kit-acquisition",
+      "us-dog-walking-market",
+      "pellbrook-clinics-waiting-times",
+      "lumen-tutoring-growth"
+    ]
+  }
 }

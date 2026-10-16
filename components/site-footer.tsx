@@ -19,6 +19,7 @@ const COLUMNS = [
     links: [
       { href: "/guides", label: "Case guides" },
       { href: "/guides#firms", label: "Firm guides" },
+      { href: "/practice", label: "Practice by firm" },
       { href: "/glossary", label: "Glossary" },
       { href: "/faq", label: "FAQ" },
     ],

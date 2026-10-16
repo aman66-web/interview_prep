@@ -6,6 +6,9 @@ import { z } from "zod";
 const text = z.string().trim().min(1);
 const slugLike = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "use lowercase letters, numbers and hyphens");
 
+export const TRACKS = ["consulting", "banking"] as const;
+export type Track = (typeof TRACKS)[number];
+
 export const CASE_TYPES = [
   "profitability",
   "market_entry",
@@ -67,7 +70,8 @@ export const caseSchema = z
     id: slugLike,
     slug: slugLike,
     title: text,
-    track: z.literal("consulting"),
+    // "banking": bank assessment-centre style case studies (founder, 16 Oct 2026).
+    track: z.enum(TRACKS),
     type: z.enum(CASE_TYPES),
     industry: text,
     difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),

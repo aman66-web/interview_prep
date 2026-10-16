@@ -33,8 +33,8 @@ describe("the repository rules", () => {
     expect(read("components/site-footer.tsx")).toContain("siteConfig.disclaimer");
     expect(read("app/pricing/page.tsx")).toContain("siteConfig.disclaimer");
     expect(read("app/layout.tsx")).toContain("<SiteFooter");
-    // Any firm guide added later must carry it too.
-    for (const file of walk(join(root, "app/guides/firms"), /\.tsx$/)) {
+    // Any firm guide or firm-style practice page added later must carry it too.
+    for (const file of [...walk(join(root, "app/guides/firms"), /\.tsx$/), ...walk(join(root, "app/practice"), /\.tsx$/)]) {
       expect(readFileSync(file, "utf8"), file).toContain("siteConfig.disclaimer");
     }
   });
@@ -54,10 +54,13 @@ describe("the repository rules", () => {
 
   it("do not ship firm logos (rule 2.3)", () => {
     const files = walk(join(root, "public"), /\.(png|jpe?g|svg|webp|gif|ico)$/i).map((f) => relative(root, f));
-    const firmNames = /mckinsey|boston.?consulting|\bbcg\b|\bbain\b|deloitte|accenture|oliver.?wyman|kearney|roland.?berger|strategy&|\bey\b|\bkpmg\b|\bpwc\b/i;
+    const firmNames =
+      /mckinsey|boston.?consulting|\bbcg\b|\bbain\b|deloitte|accenture|oliver.?wyman|kearney|roland.?berger|strategy&|\bey\b|parthenon|\bkpmg\b|\bpwc\b|l\.?e\.?k\b|oc&c|j\.?p\.?.?morgan|jpmorgan|goldman|\bhsbc\b|barclays|morgan.?stanley|\bciti(group|bank)?\b/i;
     expect(files.filter((f) => firmNames.test(f))).toEqual([]);
     // Firm names may appear in text only to describe something, never as an image source.
-    const imageUsesFirm = code.filter((f) => /<(Image|img)\b[^>]*(mckinsey|bcg|bain)/i.test(f.text)).map((f) => f.path);
+    const imageUsesFirm = code
+      .filter((f) => /<(Image|img)\b[^>]*(mckinsey|bcg|bain|deloitte|accenture|kearney|wyman|parthenon|pwc|jpmorgan|goldman|hsbc|barclays|morgan.?stanley|citi)/i.test(f.text))
+      .map((f) => f.path);
     expect(imageUsesFirm).toEqual([]);
   });
 

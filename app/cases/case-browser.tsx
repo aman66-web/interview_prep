@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { CaseCard, DIFFICULTY_LABELS } from "@/components/marketing/case-card";
-import { filterCases, isFiltering, NO_FILTERS, typeCounts, typeFacets, type CaseFilters } from "@/components/practice/case-list";
+import { filterCases, isFiltering, NO_FILTERS, TRACK_LABELS, typeCounts, typeFacets, type CaseFilters } from "@/components/practice/case-list";
 import { SelectField } from "@/components/practice/select-field";
 import { Button } from "@/components/ui/button";
 import { Cross, Search } from "@/components/ui/icons";
@@ -48,6 +48,7 @@ export function CaseBrowser({ cases }: { cases: CaseSummary[] }) {
   const types = useMemo(() => typeCounts(cases).map((t) => t.type), [cases]);
   const industries = useMemo(() => [...new Set(cases.map((c) => c.industry))].sort(), [cases]);
   const difficulties = useMemo(() => [...new Set(cases.map((c) => c.difficulty))].sort(), [cases]);
+  const tracks = useMemo(() => Object.keys(TRACK_LABELS).filter((t) => cases.some((c) => c.track === t)), [cases]);
 
   const shown = filterCases(cases, filters);
   const facets = typeFacets(cases, filters);
@@ -60,7 +61,12 @@ export function CaseBrowser({ cases }: { cases: CaseSummary[] }) {
         onSubmit={(e) => e.preventDefault()}
         aria-label="Filter cases"
       >
-        <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,17rem)_minmax(0,13rem)] lg:items-end">
+        <div
+          className={cn(
+            "grid gap-6 lg:items-end",
+            tracks.length > 1 ? "lg:grid-cols-[1fr_minmax(0,13rem)_minmax(0,15rem)_minmax(0,11rem)]" : "lg:grid-cols-[1fr_minmax(0,17rem)_minmax(0,13rem)]",
+          )}
+        >
           <div className="min-w-0">
             <p id="filter-type-label" className="text-sm font-medium text-ink">
               Type
@@ -83,6 +89,17 @@ export function CaseBrowser({ cases }: { cases: CaseSummary[] }) {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:contents">
+            {tracks.length > 1 ? (
+              <div className="col-span-2 lg:col-span-1">
+                <SelectField
+                  id="filter-track"
+                  label="Kind"
+                  value={filters.track}
+                  onChange={(track) => set({ track })}
+                  options={[{ value: "", label: "All kinds" }, ...tracks.map((t) => ({ value: t, label: TRACK_LABELS[t] }))]}
+                />
+              </div>
+            ) : null}
             <SelectField
               id="filter-industry"
               label="Industry"

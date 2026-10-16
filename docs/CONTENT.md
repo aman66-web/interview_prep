@@ -7,7 +7,7 @@ Section 7 of the kit. The case file format below is the case JSON schema. When P
 Cases live in `content/cases/*.json` and are validated by zod and `content:check`:
 
 ```
-id, slug, title, track ("consulting"), type (profitability | market_entry | market_sizing | m_and_a |
+id, slug, title, track ("consulting" | "banking"), type (profitability | market_entry | market_sizing | m_and_a |
 pricing | growth | operations | other), industry, difficulty (1–3), style (interviewer_led | candidate_led),
 est_minutes, prompt, facts[] {question_topic, answer},
 structure_rubric {key_buckets[], good_signs[], red_flags[]},
@@ -17,6 +17,12 @@ brainstorm {question, idea_bank[]}, synthesis_rubric {must_mention[], good_signs
 model_answer_outline (paid), free_starter (bool), free_preview (bool),
 status (draft | reviewed), reviewed_by, reviewed_on
 ```
+
+`track: "banking"` (founder, 16 Oct 2026) marks a bank-style case study: a client situation of the kind some banks use at assessment centres and final-round interviews. The AI interviewer then plays a senior banker and the debrief is written as one (`lib/ai/prompt.ts`). The same writing rules apply: original, invented numbers, and no real statistics, banks, rates or rules stated as facts.
+
+### Firm-style practice pages
+
+A firm guide (`content/firms/<slug>.json`) may carry a `practice` block. It makes `/practice/<slug>`: the guide's own sourced facts from the sections named in `show_sections`, beside the cases listed in `cases` (our own original cases, best first; the free starter first if listed). The title must say "-style" or "practice for", and the intro is in our own words with no facts about the firm (rules 2.2 and 2.3). A page appears only when the guide is visible and at least one listed case is visible, so on the live site it waits for reviewed cases. `tests/practice-by-firm.test.ts` checks all of this.
 
 ### Tests (`content:check`)
 
