@@ -27,7 +27,7 @@ async function requestOrigin() {
   return `${proto}://${host}`;
 }
 
-/** Step 1: email a one-time link and code. Creates the account on first use. */
+/** Step 1: email a one-time code (and, with Supabase's default template, a link). Creates the account on first use. */
 export async function requestSignInEmail(
   _prev: LoginState,
   formData: FormData,
@@ -75,7 +75,7 @@ export async function requestSignInEmail(
   return { step: "code", email };
 }
 
-/** Step 2 (alternative to the link): sign in with the code from the email. */
+/** Step 2: sign in with the code from the email. Works on any device, unlike the link. */
 export async function verifySignInCode(
   _prev: LoginState,
   formData: FormData,

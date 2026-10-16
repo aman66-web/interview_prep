@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const notices: Record<string, string> = {
   link_invalid:
-    "That sign-in link has expired or was already used. Enter your email to get a new one.",
+    "That sign-in link has expired, was already used, or was opened in a different browser from the one you started in. Enter your email to get a code instead.",
 };
 
 const POINTS = [
@@ -47,7 +47,7 @@ export default async function LoginPage({
               Log in or <span className="serif-accent">sign up</span>
             </h1>
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-[17px]">
-              No password and no card. We email you a one-time sign-in link; new accounts are created automatically.
+              No password and no card. We email you a one-time code to sign in; new accounts are created automatically.
             </p>
             <div className="mt-8 rounded-[1.75rem] bg-surface p-5 shadow-float ring-1 ring-inset ring-line sm:p-6">
               <LoginForm next={next} notice={ownValue(notices, params.error)} />

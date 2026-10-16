@@ -37,22 +37,25 @@ You can also ask Claude Code to apply it for you. It will ask before touching yo
    - `https://interview-prep-*-aman-moneysave.vercel.app/**` (this covers every Vercel preview of this project)
    - your real domain, `https://yourdomain.com/**`, when you have it
 
-### Make the sign-in email work for university students
+### Make the sign-in email send a code (founder's choice, 16 Oct 2026)
 
-Some university and company email systems open every link in an email to scan it for viruses. That uses up a normal one-click sign-in link before the student clicks it, and they see "link expired". The site is built to cope (the link goes to a page with a **Continue** button, and there is also a 6-digit code), but it needs the email text changed once:
+People sign in by typing a one-time code from the email, not by clicking a link. A code works on any device (read the email on your phone, type the code on your laptop), and it can't be used up by the virus scanners some university email systems run on every link. Supabase's own email only contains a link, and **Supabase lets you change the email only once a custom email sender is connected** (see the next section; on the playbook this is Day 2). Then:
 
 1. **Authentication, Email Templates.**
 2. Open **Magic Link**. Replace the whole message with:
 
    ```html
-   <h2>Your sign-in link</h2>
-   <p><a href="{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email">Sign in</a></p>
-   <p>Or type this code on the sign-in page: <strong>{{ .Token }}</strong></p>
-   <p>The link and code work once and expire soon. If you didn't ask for this, you can ignore this email.</p>
+   <h2>Your Mock Partner sign-in code</h2>
+   <p>Type this code on the sign-in page:</p>
+   <p style="font-size:32px;font-weight:700;letter-spacing:6px;font-family:monospace">{{ .Token }}</p>
+   <p>It works once and expires soon. You can read this email on your phone and type the code on your computer.</p>
+   <p>If you didn't ask for this, you can ignore this email.</p>
    ```
 
 3. Open **Confirm sign up** and paste the same text. (New people get this one the first time.)
-4. Send yourself a test sign-in **using the email address of your Supabase account (aman662002@gmail.com)**, because the built-in sender refuses anyone else, and tell Claude whether the link and the code both worked. This is the one piece that could not be tested without a real project.
+4. Send yourself a test sign-in and type the code on the sign-in page.
+
+Until the template is changed, the email has only a link, and that link works only in the browser where the sign-in was started (the site says so). The sign-in page asks for the code first and explains this.
 
 ### Email sending: needed before anyone but you can log in
 

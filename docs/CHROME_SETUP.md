@@ -43,13 +43,14 @@ The preview site is `https://interview-prep-git-claude-gifted-shannon-r42f73-ama
      - `http://localhost:3000/**`
      - `https://interview-prep-*-aman-moneysave.vercel.app/**`
    - Click Save.
-2. Go to **Authentication**, then **Email Templates**, then **Magic Link**. Replace the whole message body with the text below, and Save. Then open **Confirm sign up**, replace its body with the same text, and Save.
+2. Go to **Authentication**, then **Email Templates**, then **Magic Link**. Replace the whole message body with the text below, and Save. Then open **Confirm sign up**, replace its body with the same text, and Save. (Supabase only allows this once a custom email sender is connected; if the templates are locked, skip this step and say so. It is done on Day 2 with the domain and Resend.)
 
 ```html
-<h2>Your sign-in link</h2>
-<p><a href="{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email">Sign in</a></p>
-<p>Or type this code on the sign-in page: <strong>{{ .Token }}</strong></p>
-<p>The link and code work once and expire soon. If you didn't ask for this, you can ignore this email.</p>
+<h2>Your Mock Partner sign-in code</h2>
+<p>Type this code on the sign-in page:</p>
+<p style="font-size:32px;font-weight:700;letter-spacing:6px;font-family:monospace">{{ .Token }}</p>
+<p>It works once and expires soon. You can read this email on your phone and type the code on your computer.</p>
+<p>If you didn't ask for this, you can ignore this email.</p>
 ```
 
 ## B. The Supabase secret key into Vercel

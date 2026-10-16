@@ -1188,7 +1188,7 @@
    "day": 2,
    "who": "claude",
    "name": "Domain, sign-in emails, support inbox and CAPTCHA",
-   "message": "Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from mockpartner.com and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@mockpartner.com to my inbox, update Supabase's Site URL and Redirect URLs, and switch on CAPTCHA for sign-in, and (3) tell me before anything that costs money. Push to the PR branch, not main.",
+   "message": "Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from mockpartner.com and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@mockpartner.com to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.",
    "needs": "Domain bought (Day 1)."
   },
   {

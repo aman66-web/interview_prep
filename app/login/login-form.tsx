@@ -36,8 +36,8 @@ export function LoginForm({ next, notice }: { next: string; notice?: string }) {
             <Mail size={18} />
           </span>
           <p className="text-[15px] leading-relaxed text-ink">
-            We emailed a sign-in link to <strong className="font-semibold">{email}</strong>. Open it on this device or any
-            other. If your email shows a 6-digit code, you can enter it below instead.
+            We emailed a sign-in code to <strong className="font-semibold">{email}</strong>. Type it below. You can read
+            the email on your phone and type the code here.
           </p>
         </div>
         <form action={codeAction} className="mt-6">
@@ -45,7 +45,7 @@ export function LoginForm({ next, notice }: { next: string; notice?: string }) {
           <input type="hidden" name="email" value={email} />
           <input type="hidden" name="next" value={next} />
           <label htmlFor="code" className="block text-sm font-medium text-ink">
-            Code from the email (optional)
+            Code from the email
           </label>
           <div className={cn(fieldShell, "mt-2")}>
             <input
@@ -68,6 +68,9 @@ export function LoginForm({ next, notice }: { next: string; notice?: string }) {
           </Button>
         </form>
         <p className="mt-5 text-sm text-muted">
+          If the email has a sign-in link instead of a code, open the link in this browser.
+        </p>
+        <p className="mt-2 text-sm text-muted">
           Nothing arrived? Check your spam folder, or{" "}
           <a href="/login" className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
             use a different email
@@ -103,7 +106,7 @@ export function LoginForm({ next, notice }: { next: string; notice?: string }) {
       </div>
       {error ? <ErrorText id="email-error">{error}</ErrorText> : null}
       <Button type="submit" disabled={emailPending} size="lg" full arrow className="mt-4">
-        {emailPending ? "Sending…" : "Email me a sign-in link"}
+        {emailPending ? "Sending…" : "Email me a sign-in code"}
       </Button>
     </form>
   );
