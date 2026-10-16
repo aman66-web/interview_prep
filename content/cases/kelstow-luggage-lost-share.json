@@ -1,328 +1,333 @@
 {
   "id": "case-030",
   "slug": "kelstow-luggage-lost-share",
-  "title": "Kelstow Luggage: why is it losing share to an online rival?",
+  "title": "Kelstow Luggage: is lost share really to blame for falling profit?",
   "track": "consulting",
-  "type": "growth",
+  "type": "profitability",
   "industry": "Luggage (consumer goods)",
   "difficulty": 2,
   "style": "candidate_led",
   "est_minutes": 35,
-  "prompt": "Kelstow Luggage is a family-owned UK brand of mid-priced suitcases and cabin bags. In four years it has lost a third of its share of UK spending on suitcases and cabin bags, while Tramlo, an online-only brand founded six years ago, has more than tripled its share. Kelstow's board has asked your team three things: why Tramlo is winning, how big the opportunity is with travellers aged 18 to 34, and what Kelstow should change, including whether to accept the sales director's proposal to cut prices by 25% to match Tramlo. Your team has market shares by brand; where Kelstow, Tramlo and the whole market make their sales; a survey of UK travellers by age group, including what they value most and how they rate each brand; and price and cost per case for Kelstow and, as estimates, for Tramlo. How would you approach this?",
+  "prompt": "Kelstow Luggage is a UK brand of mid-priced suitcases and cabin bags. Its operating profit has fallen from £9.6 million to £4.6 million in three years. A paper from the sales director blames lost market share (the research agency's figures show Kelstow's share of UK luggage sold falling from 15% to about 11%) and asks for an extra £2 million a year of advertising to win it back. Over the same period, warranty repairs have risen sharply on Aero, the lighter range Kelstow launched two years ago and has made at a new, cheaper factory. The board has asked your team three things: whether the sales director's explanation holds up, what the Aero repairs are really costing, and which of the product team's three options for Aero to choose (cut its warranty from 10 years to 3, fit a stronger wheel housing at the new factory, or move Aero back to the original factory). Your team has Kelstow's results, the agency's market figures, repairs on Aero and Classic cases by the age of the case and by fault, and the product team's estimates for the three options. How would you approach this?",
   "facts": [
     {
       "question_topic": "The company",
-      "answer": "Kelstow was founded nearly 50 years ago and is still owned by the founding family. It designs its cases in the UK and has them made by contract factories abroad. Its range covers cabin bags and medium and large cases, hard and soft. It is known for strong, heavy cases with metal frames that rarely break."
+      "answer": "Kelstow was founded about 25 years ago and is owned by its two founders and a small group of private investors. It designs suitcases and cabin bags in the UK and has them made by contract factories in Asia. About half its cases are sold through department stores and specialist luggage shops and half on its own website, and that mix has not changed in three years."
     },
     {
       "question_topic": "Objective",
-      "answer": "The board wants Kelstow to stop losing share and to grow its sales again within three years, while staying profitable. The family will not sell the company or bring in outside investors."
+      "answer": "The board wants to understand why operating profit has fallen from £9.6 million to £4.6 million, to choose one of the three options for Aero, and to get profit back to about where it was three years ago."
     },
     {
-      "question_topic": "How sales and the market are measured",
-      "answer": "All market figures, brand shares and Kelstow's sales figures in this case are measured at shelf prices (what shoppers paid), excluding VAT, whichever channel the case was sold through. That way Kelstow's sales compare directly with the market. Kelstow's own revenue is lower, because the stores keep their margin."
+      "question_topic": "Prices and revenue per case",
+      "answer": "Kelstow has not changed its prices in three years. Across its channels it receives about £60 a case on average, after the stores keep their margin. Aero is priced the same as Classic."
     },
     {
-      "question_topic": "Market size",
-      "answer": "Kelstow's research agency puts UK spending on suitcases and cabin bags at about £550 million this year, up from about £500 million four years ago."
+      "question_topic": "The sales director's paper",
+      "answer": "The paper says Kelstow's share of UK luggage sold, counted in number of items, has fallen from 15% to about 11% in three years, and that this explains the profit fall. It asks for an extra £2 million a year of advertising to win back 4 points of share."
     },
     {
-      "question_topic": "Kelstow's sales and profit",
-      "answer": "Kelstow's sales were about £66 million this year, down from about £90 million four years ago. It is still profitable, but its operating profit has fallen by about 40% over the four years, mainly because sales fell."
+      "question_topic": "How the market is measured",
+      "answer": "The research agency counts the number of luggage items sold in the UK each year. Two years ago it widened its definition of luggage to include wheeled holdalls and wheeled backpacks, and it did not restate the earlier years. Kelstow makes neither. Its count of suitcases and cabin bags is done the same way as before."
     },
     {
-      "question_topic": "Kelstow's sales by age of buyer",
-      "answer": "From its warranty registrations, Kelstow splits its sales by the buyer's age. This year: about £8 million to 18 to 34s, £25 million to 35 to 54s and £33 million to people aged 55 and over. Four years ago: £20 million, £35 million and £35 million."
+      "question_topic": "The two ranges",
+      "answer": "Classic (hard and soft cases) has always been made by the original factory, which has worked with Kelstow for 20 years; a Classic case costs about £30 to make and ship to the UK. Aero, a lighter hard-shell range, was launched two years ago and is made by a new factory chosen because it charges £4 a case less (about £26). Kelstow sold 500,000 Aero cases last year and 600,000 this year, about 50,000 a month."
     },
     {
-      "question_topic": "Competitors",
-      "answer": "Four groups compete with Kelstow. A large premium international brand charges about twice Kelstow's prices and sells mainly through department stores and its own shops. Department stores' and supermarkets' own-label ranges are cheaper than Kelstow. Many value brands sell at low prices, mostly on online marketplaces and in discount stores. And there is Tramlo."
+      "question_topic": "Warranty and repairs",
+      "answer": "Every Kelstow case has a 10-year warranty. The owner books a repair online, a courier collects the case and one of about 40 independent repair workshops fixes it. Kelstow pays a fixed fee per repair, including the courier both ways: £40 for most repairs and £70 for a cracked wheel housing, because the whole base of the case is replaced. Repair costs are charged to the year in which the repair happens."
     },
     {
-      "question_topic": "Tramlo",
-      "answer": "Tramlo was founded in the UK six years ago and sells only online: about three-quarters through its own website and a quarter through online marketplaces. It sells light polycarbonate hard cases in about 20 colours, at prices about 25% below Kelstow's across the range. It markets mainly on social media and through travel creators. Its warranty is 3 years and it has no repair service."
+      "question_topic": "Repairs this year",
+      "answer": "Kelstow paid for about 150,000 repairs this year: about 100,000 on Aero cases and 50,000 on Classic cases. Three years ago it paid for about 60,000, all on Classic cases."
     },
     {
-      "question_topic": "Who buys Tramlo",
-      "answer": "The survey suggests Tramlo sold about £40 million to 18 to 34s this year, about £29 million to 35 to 54s and only about £8 million to people aged 55 and over."
+      "question_topic": "Why the wheel housings crack",
+      "answer": "Kelstow's engineers traced the cracks to the plastic used for Aero's wheel housings, which the new factory chose in order to keep its price down. The original factory uses a stronger plastic on Classic, whose wheel housings have not cracked in normal use."
     },
     {
-      "question_topic": "Awareness",
-      "answer": "In the survey, about 30% of 18 to 34s had heard of Kelstow, against about 80% for Tramlo. Among people aged 55 and over it is the other way round: about 85% had heard of Kelstow and about 25% of Tramlo. Several younger people described Kelstow as 'my parents' brand'."
+      "question_topic": "Store returns",
+      "answer": "About 4% of Aero cases bought in stores are brought back within 30 days, against about 1% for Classic. Two department-store chains, which together take about a fifth of Kelstow's sales, have said they will cut their Aero orders next season unless returns fall."
     },
     {
-      "question_topic": "Kelstow's products",
-      "answer": "Kelstow's medium hard case weighs about 4.5 kg; Tramlo's weighs about 3 kg. Kelstow sells most cases in four colours: black, navy, grey and red. Every Kelstow case has a 10-year warranty and a free repair service through about 150 specialist luggage shops."
+      "question_topic": "The warranty and the brand",
+      "answer": "Store buyers say the 10-year warranty is one of the main reasons they stock Kelstow, and Kelstow's packaging and website feature it prominently. Kelstow has no estimate of how sales would change if Aero's warranty were cut to 3 years."
     },
     {
-      "question_topic": "Channels and retailer terms",
-      "answer": "About three-quarters of Kelstow's sales are through department stores and specialist luggage shops. They buy from Kelstow and keep a margin of about 45% of the shelf price. Store buyers value Kelstow because its cases rarely come back. Kelstow also sells on its own website and on two marketplaces, but it keeps its website prices the same as the stores' so that it does not undercut them. It has a small online team of three people and spends little on online marketing."
+      "question_topic": "Option B in more detail",
+      "answer": "The new factory would switch Aero's wheel housings to a stronger plastic with a metal insert, for £3 more a case, and Kelstow would pay about £0.5 million for new moulds. In Kelstow's lab drop and wheel tests the new housing did not crack. No customer has used it yet."
     },
     {
-      "question_topic": "The survey",
-      "answer": "The research agency surveyed 3,000 UK adults who travel overnight at least once a year. The number of travellers in each age group is the agency's estimate. Most 18 to 34s said they usually travel with a cabin bag only and find brands on social media before buying online."
+      "question_topic": "Option C in more detail",
+      "answer": "The original factory could make Aero for about £30 a case (£4 more than now), using its stronger plastic. It is fully booked until next year, so its first Aero cases would go on sale in about 12 months. Moving the moulds would cost about £0.3 million. Until then the new factory would keep making today's Aero."
     },
     {
-      "question_topic": "The price-cut proposal",
-      "answer": "The sales director proposes cutting the shelf price of every Kelstow product by 25%, in every channel, from next season, to match Tramlo. Store buyers have said they would keep their usual margin of about 45% of the shelf price. Kelstow's costs per case would not change. Kelstow has no reliable estimate of how many more cases it would sell, and the survey says people aged 55 and over rarely choose on price."
+      "question_topic": "Option A in more detail",
+      "answer": "Aero cases sold from next month would carry a 3-year warranty instead of 10 years; nothing else about the case would change. New packaging and website pages would cost about £0.1 million."
     },
     {
-      "question_topic": "A lighter case",
-      "answer": "Kelstow's product team says it could launch a lighter hard case of about 3 kg within about nine months, keeping the 10-year warranty, for about £26 a case to make (the same as Tramlo). It passes Kelstow's own strength tests but has not yet been tried by customers."
+      "question_topic": "Aero cases already sold",
+      "answer": "About 1.1 million Aero cases have been sold so far (500,000 last year and 600,000 this year). Whichever option is chosen, they keep their 10-year warranty; the options change only cases made from then on."
     },
     {
       "question_topic": "Anything unusual",
-      "answer": "Nothing unusual: no product recalls, supply problems or changes in Kelstow's factories over the four years."
+      "answer": "Nothing else: no price changes, no change in the channel mix, no change in marketing or overheads, and no store has stopped stocking Kelstow so far."
     }
   ],
   "structure_rubric": {
     "key_buckets": [
-      "The market: size and growth of spending by age group, and how much of it is bought online",
-      "Customers: what each age group values when it buys, and where it buys",
-      "Competitors: who has gained share, and Tramlo's product, price, channel and marketing",
-      "Kelstow's offer against those needs: product (weight, design), price, channels, awareness, and its cost and margin per case",
-      "Options and the decision: how to respond, including a yes or no on the 25% price cut, weighed against what Kelstow is already good at (durability, warranty and repairs, older buyers, store partners)"
+      "Test the claim: is Kelstow really losing share? How the agency measures the market, and Kelstow's sales against comparable products",
+      "Where the £5.0 million profit fall comes from: fewer cases, the cost of making cases, warranty repairs, marketing and overheads",
+      "The Aero range: repairs by age and by fault, what each repair costs, and the full cost per case (making plus repairs) against Classic",
+      "Wider effects of the quality problem: store returns and the two chains' warning, the warranty's role in the brand, and the Aero cases already sold",
+      "The three options compared on cost per case, one-off cost, timing, how sure the repair figures are and the risks, leading to one choice"
     ],
     "good_signs": [
-      "Splits the share loss by customer group and by channel before suggesting fixes",
-      "States a hypothesis early (for example, Kelstow is losing younger buyers who shop online and want light, colourful, cheaper cases) and says which data would test it",
-      "Combines facts from the text with exhibit data, for example Kelstow's own sales by age with the size of each age group",
-      "Asks for the price, cost and margin per case before judging a price cut",
-      "Asks what Kelstow does well and where it still wins, so the recommendation can build on it"
+      "Asks how the market share is measured before accepting that share has fallen",
+      "Breaks the profit fall into its parts (volume, making cost, repairs, other costs) before looking for causes",
+      "States a hypothesis early (for example, that the fall is a cost problem linked to the new factory rather than lost customers) and says which data would test it",
+      "Compares the full cost of a case over its life (making plus expected repairs), not just what it costs to make",
+      "Asks when in a case's life the Aero faults happen and what they are, before judging the options"
     ],
     "red_flags": [
-      "Treats the share loss as one problem across all customers, without segmenting",
-      "Jumps to 'cut prices to match Tramlo' without looking at the retailer's margin and Kelstow's cost per case",
-      "Ignores that 42% of all spending, and three-quarters of 18 to 34s' spending, goes through brands' own websites and online marketplaces",
-      "Recites a named framework (the 4Ps, Porter's five forces) without tying it to why Kelstow is losing share",
-      "Proposes abandoning Kelstow's older customers or its store partners without weighing what that would cost"
+      "Takes the reported share fall from 15% to about 11% at face value without asking how the market is measured",
+      "Backs the extra £2 million of advertising without checking that the share loss is real",
+      "Judges the new factory only on its £4-a-case saving and ignores the repairs",
+      "Picks option A because it is quick and cheap, without seeing that most Aero repairs happen in the first three years or how much store buyers value the 10-year warranty",
+      "Recites a named framework without tying it to Kelstow's numbers"
     ]
   },
   "exhibits": [
     {
-      "id": "market-shares",
-      "title": "UK spending on suitcases and cabin bags: share by brand (% of spending at shelf prices, excluding VAT)",
+      "id": "kelstow-results",
+      "title": "Kelstow's results (£ million, except cases sold)",
       "kind": "table",
       "data": {
-        "columns": ["Brand", "Four years ago", "This year"],
+        "columns": ["Line", "Three years ago", "This year"],
         "rows": [
-          ["Premium international brand", 24, 22],
-          ["Retailers' own-label", 22, 20],
-          ["Kelstow", 18, 12],
-          ["Tramlo", 4, 14],
-          ["Value brands and others", 32, 32],
-          ["Total", 100, 100]
+          ["Classic cases sold (thousand)", 1200, 540],
+          ["Aero cases sold (thousand)", 0, 600],
+          ["Revenue", 72, 68.4],
+          ["Making and shipping the cases", 36, 31.8],
+          ["Warranty repairs", 2.4, 8],
+          ["Marketing", 6, 6],
+          ["Other overheads", 18, 18],
+          ["Operating profit", 9.6, 4.6]
         ]
       },
-      "reveal_hint": "Ask for market shares by brand, or how Kelstow's position has changed against its competitors.",
-      "insight": "Kelstow fell 6 points (18% to 12%) while Tramlo gained 10 points (4% to 14%); the premium brand and own-label lost 2 points each and value brands were flat. In money, with the market up from £500m to £550m, Kelstow fell from £90m to £66m (down 27%) while Tramlo grew from £20m to £77m. Tramlo has taken share from several rivals, but most of all from Kelstow, and it is now bigger than Kelstow."
+      "reveal_hint": "Ask for Kelstow's results, or how its revenue and costs have changed over the three years.",
+      "insight": "Operating profit fell £5.0m, from £9.6m to £4.6m (down about 52%). Cases sold fell only 5% (1.2m to 1.14m), so revenue fell £3.6m. Making and shipping fell £4.2m: £1.8m because of fewer cases and £2.4m because Aero is £4 a case cheaper to make (600,000 x £4). Warranty repairs more than tripled, up £5.6m from £2.4m to £8.0m, which is more than the whole fall. Marketing and overheads did not change. The bridge: fewer cases -£1.8m, cheaper making +£2.4m, repairs -£5.6m."
     },
     {
-      "id": "traveller-survey",
-      "title": "UK travellers by age group (agency survey and estimates; spending at shelf prices, excluding VAT)",
+      "id": "agency-market-figures",
+      "title": "The research agency's UK luggage figures (million items sold a year)",
       "kind": "table",
       "data": {
-        "columns": ["Measure", "18 to 34", "35 to 54", "55 and over"],
+        "columns": ["Measure", "Three years ago", "This year"],
         "rows": [
-          ["Adults who travel overnight at least once a year (million)", 10, 14, 12],
-          ["Bought a suitcase or cabin bag in the last 12 months (%)", 20, 15, 10],
-          ["Average spent per buyer in the last 12 months (£)", 80, 100, 150],
-          ["Spending four years ago (£ million)", 125, 200, 175],
-          ["Bought on a brand's own website or an online marketplace (% of spending)", 75, 40, 15]
+          ["Suitcases and cabin bags (counted the same way in both years)", 8, 7.6],
+          ["Wheeled holdalls and wheeled backpacks (counted only since the method changed two years ago)", "Not counted", 2.4],
+          ["UK luggage market as reported", 8, 10],
+          ["Kelstow (suitcases and cabin bags only)", 1.2, 1.14],
+          ["Kelstow's share as reported (%)", 15, 11.4]
         ]
       },
-      "reveal_hint": "Ask about customer segments, the traveller survey, or the size and growth of spending by age group.",
-      "insight": "Spending this year is travellers x share who bought x average spend: 18 to 34s £160m (10m x 20% x £80), 35 to 54s £210m (14m x 15% x £100), 55 and over £180m (12m x 10% x £150), adding to the £550m market. The 18 to 34 group is the smallest but grew fastest: up 28% from £125m, against 5% for 35 to 54s and about 3% for over-55s. Three-quarters of its spending is online, against 15% for over-55s. With Kelstow's sales by age (from the facts), Kelstow's share of 18 to 34s fell from 16% (£20m of £125m) to 5% (£8m of £160m), its share of 35 to 54s from 17.5% to about 12% (£25m of £210m), while it held about 18% of over-55s (20% four years ago). Half of its £24m fall (£12m) came from 18 to 34s and £10m from 35 to 54s, the largest group."
+      "reveal_hint": "Ask how the market share figures are measured, or for the agency's market figures.",
+      "insight": "The reported share fell from 15% to 11.4% because the market grew on paper: the agency added 2.4m wheeled holdalls and backpacks, which Kelstow does not make, taking the reported market from 8.0m to 10.0m. Counted the same way in both years, suitcases and cabin bags fell 5% (8.0m to 7.6m) and Kelstow's cases fell by the same 5% (1.2m to 1.14m), so it still sells 15% of them (1.14m of 7.6m). Kelstow has not lost share of what it makes, so the extra £2m of advertising is aimed at a problem that is not there."
     },
     {
-      "id": "sales-channels",
-      "title": "Where sales are made this year (% of each brand's sales at shelf prices)",
+      "id": "repairs-by-age",
+      "title": "Repairs per 100 cases sold, by year after sale (Classic: Kelstow's long record; Aero: measured for its first two years, then the product team's projection)",
       "kind": "table",
       "data": {
-        "columns": ["Channel", "Kelstow", "Tramlo", "Whole market"],
+        "columns": ["Year after sale", "Classic (original factory)", "Aero (new factory)"],
         "rows": [
-          ["Department stores (including their own websites)", 45, 0, 25],
-          ["Specialist luggage shops", 30, 0, 13],
-          ["The brand's own website", 15, 75, 20],
-          ["Online marketplaces", 10, 25, 22],
-          ["Other (supermarkets, discount stores, brands' own shops)", 0, 0, 20],
-          ["Total", 100, 100, 100]
+          ["First year", 1, 10],
+          ["Second year", 1, 8],
+          ["Third year", 1, 4],
+          ["Fourth to tenth years (all seven together)", 2, 8],
+          ["Total over the 10-year warranty", 5, 30]
         ]
       },
-      "reveal_hint": "Ask where Kelstow, Tramlo and the market make their sales, or about online versus store sales.",
-      "insight": "Kelstow makes 75% of its sales through department stores (including their websites) and specialist shops, and only 25% on its own website and online marketplaces. Across the whole market, 42% of spending goes through brands' own websites and online marketplaces (20% plus 22%, which matches the survey: £120m + £84m + £27m = £231m of £550m), and Tramlo sells only there. Kelstow is weakest in the channels where 18 to 34s spend three-quarters of their money."
+      "reveal_hint": "Ask how often cases need repairing, or when in a case's life the repairs happen.",
+      "insight": "Classic cases need about 5 repairs per 100 over 10 years, spread thinly. Aero needs 10 per 100 in its first year and 8 in its second, and the product team projects 30 per 100 over the warranty, six times Classic's rate. 22 of Aero's 30 repairs come in the first three years, so cutting its warranty to 3 years (option A) would remove only 8 of them. The figures also explain this year's bill: 600,000 first-year Aero cases x 10% plus 500,000 second-year cases x 8% = about 100,000 Aero repairs."
     },
     {
-      "id": "purchase-criteria",
-      "title": "What buyers value most and how they rate each brand (each buyer picked two, so age columns add up to 200%)",
+      "id": "repair-faults",
+      "title": "What the repairs are for: repairs per 100 cases over the 10-year warranty, by fault, and Kelstow's fee per repair",
+      "kind": "table",
+      "data": {
+        "columns": ["Fault", "Classic", "Aero", "Fee per repair, including courier (£)"],
+        "rows": [
+          ["Cracked wheel housing (the whole base is replaced)", 0, 20, 70],
+          ["Worn or broken wheels", 2, 4, 40],
+          ["Broken handles", 1, 3, 40],
+          ["Zips and locks", 2, 3, 40]
+        ]
+      },
+      "reveal_hint": "Ask what the repairs are for, or what each repair costs Kelstow.",
+      "insight": "Two-thirds of Aero's repairs (20 of 30 per 100) are cracked wheel housings, which Classic never has and which cost £70 each instead of £40. Expected repairs cost about £18 per Aero case ((20 x £70 + 10 x £40) / 100) against £2 per Classic case (5 x £40 / 100). The new factory's £4 saving has become a £12-a-case extra cost: an Aero case costs about £44 to make and repair (£26 + £18) against £32 for Classic (£30 + £2). Aero's other faults (10 per 100) are also above Classic's 5, so fixing the housings alone would not bring Aero all the way down to Classic's level."
+    },
+    {
+      "id": "aero-options",
+      "title": "The product team's three options for new Aero cases (estimates)",
       "kind": "table",
       "data": {
         "columns": [
-          "Purchase criterion",
-          "18 to 34: % with it in their top two",
-          "35 to 54: % with it in their top two",
-          "55 and over: % with it in their top two",
-          "Kelstow rating out of 10 (by buyers who know it)",
-          "Tramlo rating out of 10 (by buyers who know it)"
+          "Measure",
+          "A: cut Aero's warranty to 3 years",
+          "B: stronger wheel housing at the new factory",
+          "C: make Aero at the original factory again"
         ],
         "rows": [
-          ["Price", 60, 50, 30, 5, 8],
-          ["Light weight", 55, 45, 40, 5, 9],
-          ["Design and colours", 45, 25, 15, 5, 9],
-          ["Durability", 25, 45, 65, 9, 6],
-          ["Warranty and repairs", 15, 35, 50, 9, 5]
+          ["Change in the cost to make and ship a case (£)", 0, 3, 4],
+          ["Expected repairs per 100 cases under the warranty", 22, 10, 6],
+          ["Average fee per repair (£)", 60, 40, 40],
+          ["One-off cost (£ million)", 0.1, 0.5, 0.3],
+          ["Months until the first changed cases go on sale", 1, 3, 12],
+          ["Warranty on the changed cases", "3 years", "10 years", "10 years"],
+          ["Where the repair figure comes from", "Aero's first three years in the repairs-by-age figures", "Lab tests of the new housing only", "The original factory's record on Classic, plus lab tests"]
         ]
       },
-      "reveal_hint": "Ask what buyers value when they choose luggage, or how they rate Kelstow against Tramlo.",
-      "insight": "18 to 34s rank price, light weight and design highest (60%, 55%, 45%), and those are exactly where Tramlo beats Kelstow (8 against 5, 9 against 5, 9 against 5). Over-55s rank durability and warranty highest (65%, 50%), where Kelstow leads (9 against 6, 9 against 5). Kelstow's strengths match the slowest-growing group; 35 to 54s sit in between. Price is only one of the three things young buyers want, so a price cut alone would not close the gap."
-    },
-    {
-      "id": "price-breakdown",
-      "title": "Where the shelf price of a medium hard case goes (£ per case, excluding VAT)",
-      "kind": "table",
-      "data": {
-        "columns": ["Part of the price", "Kelstow, sold in a department store", "Tramlo, own website (team's estimates)"],
-        "rows": [
-          ["Retailer's margin", 54, 0],
-          ["Making the case (contract factory)", 30, 26],
-          ["Shipping to the UK and import duty", 8, 8],
-          ["Delivery to the customer and returns", 0, 10],
-          ["Marketing", 6, 18],
-          ["Other overheads", 10, 8],
-          ["Brand's profit", 12, 20],
-          ["Shelf price", 120, 90]
-        ]
-      },
-      "reveal_hint": "Ask about prices, costs or margins per case, or how Tramlo can charge less than Kelstow.",
-      "insight": "Tramlo charges 25% less (£90 against £120) yet makes more per case (£20 against £12), because it pays no retailer margin (£54 for Kelstow, 45% of the shelf price). Selling direct costs it £28 of delivery, returns and marketing instead. Its lighter case is also £4 cheaper to make. If Kelstow matched £90 in stores, it would receive £49.50 a case against £54 of costs and lose £4.50 a case. Sold on its own website at £90 with Tramlo's delivery and marketing costs, the same Kelstow case would make £14."
+      "reveal_hint": "Ask about the product team's options for Aero, or their costs, timing and evidence.",
+      "insight": "Cost to make and repair a new Aero case, against about £44 today: A £39.20 (£26 + 22 x £60 / 100), B £33 (£26 + £3 + 10 x £40 / 100), C £32.40 (£26 + £4 + 6 x £40 / 100). A saves only £4.80 a case because most faults come early, and it weakens the warranty that store buyers value. C is 60p a case cheaper than B once running and rests on a real record, but its first cases are 12 months away against 3 for B. B saves £11 a case, about £6.6m on each year's 600,000 Aero cases, and its £0.5m one-off cost is repaid by about a month of sales; its repair figure comes from lab tests only."
     }
   ],
   "math": [
     {
-      "id": "young-segment-size",
-      "question": "Using the traveller survey, how much do 18 to 34s spend on suitcases and cabin bags this year, in £ million?",
+      "id": "volume-profit-effect",
+      "question": "Kelstow sold fewer cases this year than three years ago. Valuing each case it no longer sells at what Kelstow receives for it (about £60) less what a Classic case costs to make and ship (about £30), how much operating profit did the lower volume cost, in £ million?",
       "inputs": {
-        "travellers_m": 10,
-        "bought_pct": 20,
-        "average_spend": 80
+        "classic_before": 1200,
+        "classic_now": 540,
+        "aero_now": 600,
+        "revenue_per_case": 60,
+        "making_per_case": 30
       },
-      "expression": "travellers_m * bought_pct / 100 * average_spend",
-      "expected": 160,
-      "tolerance_pct": 2,
-      "working": "10 million travellers x 20% who bought = 2 million buyers. 2 million x £80 = £160 million. That is up 28% from £125m four years ago, against 5% for 35 to 54s (£210m) and about 3% for over-55s (£180m). The three groups add up to the £550m market.",
+      "expression": "(classic_before - classic_now - aero_now) * (revenue_per_case - making_per_case) / 1000",
+      "expected": 1.8,
+      "tolerance_pct": 3,
+      "working": "1,200,000 cases three years ago against 540,000 + 600,000 = 1,140,000 now: 60,000 fewer. Each lost case brought in £60 and cost £30 to make and ship, so 60,000 x £30 = £1.8m. Operating profit fell £5.0m (£9.6m to £4.6m), so fewer cases explain only about 36% of the fall. The rest of the bridge: repairs up £5.6m (£2.4m to £8.0m), partly offset by £2.4m saved by making Aero at the new factory (600,000 x £4); marketing and overheads did not change. And the lower volume is not lost share: Kelstow's 5% fall matches the 5% fall in suitcases and cabin bags (8.0m to 7.6m), so it still sells 15% of them.",
       "input_sources": [
-        { "input": "travellers_m", "exhibit_id": "traveller-survey", "row": 0, "column": "18 to 34" },
-        { "input": "bought_pct", "exhibit_id": "traveller-survey", "row": 1, "column": "18 to 34" },
-        { "input": "average_spend", "exhibit_id": "traveller-survey", "row": 2, "column": "18 to 34" }
+        { "input": "classic_before", "exhibit_id": "kelstow-results", "row": 0, "column": "Three years ago" },
+        { "input": "classic_now", "exhibit_id": "kelstow-results", "row": 0, "column": "This year" },
+        { "input": "aero_now", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" }
       ]
     },
     {
-      "id": "kelstow-young-share",
-      "question": "Kelstow's own sales data splits its sales by the buyer's age. What share of 18 to 34s' spending does Kelstow hold this year, in percent?",
+      "id": "aero-repair-cost-per-case",
+      "question": "Using the repair figures by fault, what is the expected cost to Kelstow of warranty repairs on one Aero case over its 10-year warranty, in £?",
       "inputs": {
-        "kelstow_young_sales": 8,
-        "young_segment": 160
+        "housing_repairs": 20,
+        "housing_fee": 70,
+        "wheel_repairs": 4,
+        "handle_repairs": 3,
+        "zip_repairs": 3,
+        "standard_fee": 40
       },
-      "expression": "kelstow_young_sales / young_segment * 100",
-      "expected": 5,
-      "tolerance_pct": 2,
-      "working": "Kelstow sold about £8m to 18 to 34s (from its sales by age). £8m / £160m = 5%. That is well below its 12% share of the whole market, and down from 16% four years ago (£20m of £125m). Tramlo's £40m is a quarter (£40m of £160m). Each 5 points of share in this group is worth about £8m a year at shelf prices."
-    },
-    {
-      "id": "price-match-loss",
-      "question": "Under the sales director's proposal, the shelf price of the medium hard case in department stores falls by 25%, from £120 to £90; the store keeps the same percentage margin and Kelstow's costs per case do not change. Would Kelstow make a profit or a loss on each case, and how much, in £? Give a loss as a positive number.",
-      "inputs": {
-        "making": 30,
-        "shipping": 8,
-        "marketing": 6,
-        "overheads": 10,
-        "cut_pct": 25,
-        "retailer_margin": 54,
-        "old_price": 120
-      },
-      "expression": "making + shipping + marketing + overheads - old_price * (1 - cut_pct / 100) * (1 - retailer_margin / old_price)",
-      "expected": 4.5,
+      "expression": "(housing_repairs * housing_fee + (wheel_repairs + handle_repairs + zip_repairs) * standard_fee) / 100",
+      "expected": 18,
       "tolerance_pct": 3,
-      "working": "A 25% cut takes the shelf price from £120 to £90. The store keeps £54 of £120, which is 45%, so Kelstow receives 55% of the shelf price: 55% of £90 = £49.50. Kelstow's costs per case are £30 + £8 + £6 + £10 = £54. £54 - £49.50 = a loss of £4.50 on every case, a fall of £16.50 from today's £12 profit. Even if the £6 of marketing and £10 of overheads stay the same however many cases are sold, Kelstow would keep only £11.50 a case after making and shipping (£49.50 - £38), against £28 today (£66 - £38), so it would need to sell about 2.4 times as many cases through stores just to earn the same, and it has no evidence of that.",
+      "working": "Cracked wheel housings: 20 per 100 cases x £70 = £1,400 per 100 cases. Other faults: 4 + 3 + 3 = 10 per 100 x £40 = £400. Total £1,800 per 100 cases, or £18 a case. A Classic case costs about £2 (5 per 100 x £40). So the new factory saves £4 a case to make but adds about £16 in repairs: an Aero case costs about £44 to make and repair (£26 + £18) against £32 for Classic (£30 + £2), £12 more. On 600,000 Aero cases a year that is about £7.2m more over their warranties than if they cost what Classic does.",
       "input_sources": [
-        { "input": "making", "exhibit_id": "price-breakdown", "row": 1, "column": "Kelstow, sold in a department store" },
-        { "input": "shipping", "exhibit_id": "price-breakdown", "row": 2, "column": "Kelstow, sold in a department store" },
-        { "input": "marketing", "exhibit_id": "price-breakdown", "row": 4, "column": "Kelstow, sold in a department store" },
-        { "input": "overheads", "exhibit_id": "price-breakdown", "row": 5, "column": "Kelstow, sold in a department store" },
-        { "input": "retailer_margin", "exhibit_id": "price-breakdown", "row": 0, "column": "Kelstow, sold in a department store" },
-        { "input": "old_price", "exhibit_id": "price-breakdown", "row": 7, "column": "Kelstow, sold in a department store" }
+        { "input": "housing_repairs", "exhibit_id": "repair-faults", "row": 0, "column": "Aero" },
+        { "input": "housing_fee", "exhibit_id": "repair-faults", "row": 0, "column": "Fee per repair, including courier (£)" },
+        { "input": "wheel_repairs", "exhibit_id": "repair-faults", "row": 1, "column": "Aero" },
+        { "input": "handle_repairs", "exhibit_id": "repair-faults", "row": 2, "column": "Aero" },
+        { "input": "zip_repairs", "exhibit_id": "repair-faults", "row": 3, "column": "Aero" },
+        { "input": "standard_fee", "exhibit_id": "repair-faults", "row": 1, "column": "Fee per repair, including courier (£)" }
       ]
     },
     {
-      "id": "direct-profit-per-case",
-      "question": "Suppose instead Kelstow sold the same case on its own website at £90, paying Tramlo's delivery-and-returns and marketing costs per case instead of a retailer's margin and its own £6 of marketing. How much would Kelstow make on each case, in £?",
+      "id": "option-b-saving",
+      "question": "Under option B, how much less would each year's 600,000 Aero cases cost Kelstow to make and repair over their warranties than today's Aero cases, in £ million?",
       "inputs": {
-        "price": 90,
-        "making": 30,
-        "shipping": 8,
-        "delivery_returns": 10,
-        "online_marketing": 18,
-        "overheads": 10
+        "aero_cases": 600,
+        "today_repair_cost": 18,
+        "b_extra_cost": 3,
+        "b_repairs": 10,
+        "b_fee": 40
       },
-      "expression": "price - (making + shipping + delivery_returns + online_marketing + overheads)",
-      "expected": 14,
+      "expression": "aero_cases * (today_repair_cost - b_extra_cost - b_repairs / 100 * b_fee) / 1000",
+      "expected": 6.6,
       "tolerance_pct": 3,
-      "working": "Costs per case: making £30 + shipping and duty £8 + delivery and returns £10 + marketing £18 + overheads £10 = £76. £90 - £76 = £14 a case, a little more than the £12 Kelstow makes through a store at £120. With the planned lighter case (£26 to make), it would be about £18. This keeps Kelstow's own £10 of overheads; running a bigger online operation could add to them, and selling on marketplaces would add their fee per sale, which the case does not give.",
+      "working": "Today an Aero case carries about £18 of expected repairs. Under B it would cost £3 more to make and carry about 10 repairs per 100 at £40, or £4: £7 in all, so £11 less per case. 600,000 x £11 = £6.6m for each year's Aero cases, more than the £5.0m profit fall. The £0.5m one-off cost is repaid by about a month of sales (50,000 cases x £11 = £550,000). For comparison, A saves £4.80 a case (£18 - 22 x £60 / 100 = £18 - £13.20), about £2.9m a year, and C saves £11.60 (£18 - £4 - £2.40), about £7.0m a year once running. The saving reaches the accounts gradually, as repairs that would have come over the following years do not happen.",
       "input_sources": [
-        { "input": "price", "exhibit_id": "price-breakdown", "row": 7, "column": "Tramlo, own website (team's estimates)" },
-        { "input": "making", "exhibit_id": "price-breakdown", "row": 1, "column": "Kelstow, sold in a department store" },
-        { "input": "shipping", "exhibit_id": "price-breakdown", "row": 2, "column": "Kelstow, sold in a department store" },
-        { "input": "delivery_returns", "exhibit_id": "price-breakdown", "row": 3, "column": "Tramlo, own website (team's estimates)" },
-        { "input": "online_marketing", "exhibit_id": "price-breakdown", "row": 4, "column": "Tramlo, own website (team's estimates)" },
-        { "input": "overheads", "exhibit_id": "price-breakdown", "row": 5, "column": "Kelstow, sold in a department store" }
+        { "input": "aero_cases", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" },
+        { "input": "b_extra_cost", "exhibit_id": "aero-options", "row": 0, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_repairs", "exhibit_id": "aero-options", "row": 1, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_fee", "exhibit_id": "aero-options", "row": 2, "column": "B: stronger wheel housing at the new factory" }
+      ]
+    },
+    {
+      "id": "cost-of-waiting-for-c",
+      "question": "Option C's first cases would go on sale 12 months from now, against 3 months for option B. If Kelstow waited for C instead of doing B, how much more would it pay to make and repair the Aero cases sold in between, in £ million?",
+      "inputs": {
+        "months_c": 12,
+        "months_b": 3,
+        "aero_cases": 600,
+        "today_repair_cost": 18,
+        "b_extra_cost": 3,
+        "b_repairs": 10,
+        "b_fee": 40
+      },
+      "expression": "(months_c - months_b) * aero_cases / 12 * (today_repair_cost - b_extra_cost - b_repairs / 100 * b_fee) / 1000",
+      "expected": 4.95,
+      "tolerance_pct": 3,
+      "working": "The gap is 9 months, about 450,000 Aero cases (50,000 a month). Waiting for C, they would be today's Aero at about £44 each to make and repair (£26 + £18); under B they would cost about £33 (£26 + £3 + £4). £11 x 450,000 = £4.95m. Once running, C is only 60p a case cheaper than B (£32.40 against £33), about £0.36m a year on 600,000 cases, so it would take about 14 years to make up the £4.95m, and its one-off cost is only £0.2m lower. Speed also matters for the two store chains threatening to cut Aero orders. So B now, with C kept as a fallback if B's repairs in use turn out higher than the lab tests suggest.",
+      "input_sources": [
+        { "input": "months_c", "exhibit_id": "aero-options", "row": 4, "column": "C: make Aero at the original factory again" },
+        { "input": "months_b", "exhibit_id": "aero-options", "row": 4, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "aero_cases", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" },
+        { "input": "b_extra_cost", "exhibit_id": "aero-options", "row": 0, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_repairs", "exhibit_id": "aero-options", "row": 1, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_fee", "exhibit_id": "aero-options", "row": 2, "column": "B: stronger wheel housing at the new factory" }
       ]
     }
   ],
   "brainstorm": {
-    "question": "What could Kelstow change to win back younger travellers without losing the older customers and store partners it already serves well?",
+    "question": "Whichever option Kelstow chooses, what else should it do about the Aero problem and the fall in profit?",
     "idea_bank": [
-      "Launch a lighter hard-shell range (about 3 kg) in more colours that keeps the 10-year warranty: light and built to last",
-      "Sell the new range mainly on Kelstow's own website at around £90, where the £26 lighter build would make about £18 a case (£14 for today's case), and add marketplaces later, once their fees per sale are known",
-      "Lead the cabin-bag range for young travellers, since most of them travel with a cabin bag only",
-      "Turn the warranty and repair service into a message for young buyers: cost per year of use, and repairing instead of throwing away",
-      "Raise awareness among 18 to 34s (about 30% today) through social media, travel creators and student or young-traveller partnerships",
-      "Use a sub-brand or separate range for online so the new prices do not undercut the core range in stores",
-      "Offer stores the lighter range in store-only colours at a shelf price that covers their margin (around £110 gives Kelstow about £10.50 a case; at £90 it would only about break even), so store partners share in the growth instead of fighting it",
-      "Aim the lighter range at 35 to 54s too: they are the largest group, rank light weight as high as durability, and still spend about 60% of their money away from brands' websites and marketplaces, so the store version reaches them",
-      "Fund the push in stages from Kelstow's own profits (the family will not bring in investors), starting with the online team and a pilot",
-      "Keep the core range and its prices for over-55s, and invest in store displays and the specialist-shop repair network",
-      "Pilot the range online before a full launch, and track share among 18 to 34s, awareness, return rates and margin per case",
-      "Build a bigger online team and better online marketing, since three people cannot match Tramlo",
-      "Offer bundles (cabin bag plus medium case) or trade-in deals online to lift spend per buyer"
+      "Start option B now and book capacity at the original factory as a fallback, in case the stronger housing does not cut repairs in real use",
+      "Fit the stronger housing whenever an Aero case already sold comes in for a wheel-housing repair, so the same case does not come back a second time",
+      "Ask the new factory to share the cost: it chose the cheaper plastic, so negotiate a contribution to repairs or a lower price for the stronger housing",
+      "Test samples from every batch the new factory makes (drop and wheel tests) before shipping, and add a quality clause with penalties to the contract",
+      "Tell the two department-store chains about the fix and agree a returns target with them, so they keep ordering Aero",
+      "Agree a lower fee with the repair workshops for wheel-housing jobs, given how many there are",
+      "Track repairs per 100 Aero cases by month of making, store returns and repair cost, and review option B after six months",
+      "Hold back the extra £2 million of advertising: the share loss it targets is not real, and the money is better spent once the product is fixed",
+      "Ask the agency for suitcase and cabin bag figures counted the old way each year, and report like-for-like share to the board",
+      "Keep the 10-year warranty, and use it again in marketing once Aero's repairs are down",
+      "Set aside money for the repairs still to come on the 1.1 million Aero cases already sold, so the board is not surprised by them",
+      "As a separate, later question: whether Kelstow should make wheeled holdalls or backpacks, which now make up about a quarter of the market the agency reports"
     ]
   },
   "synthesis_rubric": {
     "must_mention": [
-      "Tramlo is winning mainly with 18 to 34s, the fastest-growing group (up 28% to £160m), where Kelstow's share fell from 16% to 5% while Tramlo holds about a quarter",
-      "Why: 18 to 34s value price, light weight and design, buy mostly online and rarely know Kelstow; Tramlo leads on all three and sells only online, while Kelstow's strengths (durability, warranty) are what over-55s value",
-      "No to the 25% price cut across the range: through stores Kelstow would lose about £4.50 a case, and it would give away margin with over-55s, who rank price lowest",
-      "A recommendation that builds on what Kelstow is already good at (for example a lighter range sold online that keeps the warranty), with next steps"
+      "The share loss is mostly a change in how the market is measured: the agency now counts wheeled holdalls and backpacks, which Kelstow does not make; counted the old way, Kelstow still sells 15% of suitcases and cabin bags (1.14m of 7.6m)",
+      "Fewer cases explain only about £1.8m of the £5.0m profit fall; the main cause is warranty repairs, up £5.6m, mostly on the Aero range made at the new factory",
+      "Aero's expected repairs (about £18 a case, two-thirds of them cracked wheel housings) far outweigh the £4 a case saved at the new factory, so an Aero case costs about £44 to make and repair against £32 for Classic",
+      "A clear choice between the three options with the reason, for example option B now (about £6.6m less for each year's Aero cases, in place within 3 months) rather than A (it saves only £4.80 a case because most faults come early, and it weakens the warranty), with C kept as a fallback if B's lab results do not hold up"
     ],
     "good_signs": [
       "Says which exhibit or fact supports each point, as a hypothesis tested with evidence",
-      "Goes from a good answer ('go online' or 'cut prices') to a better one: a targeted product and channel response for 18 to 34s that protects older buyers and store partners",
-      "Uses the direct-sale economics: at £90 on its own website Kelstow would make about £14 a case, more than the £12 it makes through stores at £120",
-      "Checks whether extra sales could pay for the cut: after making and shipping Kelstow would keep £11.50 a case instead of £28, so store sales would need to rise about 2.4 times",
-      "Checks the store economics of the new range before offering it to store partners: at £90 in stores Kelstow would receive £49.50 against about £50 of costs, so a store version needs a higher shelf price (around £110 gives about £10.50 a case)",
-      "Puts a size on the prize: each 5 points of share among 18 to 34s is worth about £8m a year at shelf prices, a third of the £24m lost, in a group that grew 28% in four years",
-      "Notices that Kelstow also lost £10m with 35 to 54s, the largest group, where Tramlo (about 14%) has already overtaken it (about 12%), and aims the lighter range at them too, partly through stores",
-      "Names the risks: store partners' reaction, the new range taking sales from the core range, whether Kelstow can reach young buyers at Tramlo's marketing cost, that the lighter case is untested with customers, that warranty and repair costs could rise if the lighter case breaks more often than the heavy metal-framed cases, and that with no outside investors and profit down about 40% the push must be paid for from Kelstow's own profits",
-      "Gives next steps and what to measure, such as a pilot, share and awareness among 18 to 34s, and return rates"
+      "Uses timing: waiting 9 months for C would cost about £4.95m on the Aero cases sold in between, which C's 60p-a-case advantage would take about 14 years to recover",
+      "Notices that the options only change new cases: the 1.1 million Aero cases already sold should need about 180,000 more repairs (about £10.8m) over their warranties, so profit will recover gradually rather than at once",
+      "Links the quality problem to store returns (about 4% for Aero against 1% for Classic) and the two chains' warning, which makes speed matter",
+      "Says the case for the extra £2m of advertising rests on a share loss that is not there, so it should wait until the product problem is fixed",
+      "Names the risks: B's repair figure comes from lab tests only, the new factory may not hold its price or quality, the store chains may cut orders anyway, and repairs on cases already sold will continue",
+      "Gives next steps and what to measure: repairs per 100 by month of making, store returns, repair cost per case and a date to review B"
     ]
   },
   "model_answer_outline": [
-    "Clarify: the board wants Kelstow to stop losing share and grow sales again within three years while staying profitable and family-owned. All figures are at shelf prices excluding VAT, so shares compare directly. Kelstow's sales fell from £90m to £66m while the market grew from £500m to £550m; Tramlo grew from £20m to £77m.",
-    "Structure: where the share was lost (by age group and by channel), why (what each group values against how Kelstow and Tramlo compare, plus awareness), the economics per case by channel, then options weighed against Kelstow's strengths, including a yes or no on the 25% price cut.",
-    "Size the young group: 10m travellers x 20% x £80 = £160m, the fastest-growing group (up 28% from £125m). Kelstow's £8m is a 5% share, down from 16% and well below its 12% overall; Tramlo has about 25%. Half of Kelstow's £24m fall came from 18 to 34s (£12m), £10m from 35 to 54s and only £2m from over-55s, where it still holds about 18%. The prize: each 5 points of share among 18 to 34s is worth about £8m a year at shelf prices, a third of the £24m lost, so winning back to 10% would add about £8m in a group still growing. Among 35 to 54s, the largest group (£210m), Kelstow's share fell from 17.5% to about 12% and Tramlo (£29m, about 14%) has already overtaken it.",
-    "Why Tramlo wins, with the evidence: product (18 to 34s rank price, light weight and design highest, and Tramlo rates 8 to 9 against Kelstow's 5: purchase criteria exhibit); channel (75% of young spending is on brands' own websites and online marketplaces, where Tramlo makes all its sales and Kelstow only 25% of its own: survey and channel exhibits); awareness (80% against 30% among 18 to 34s: facts); economics (no retailer margin lets Tramlo price 25% lower and still make £20 a case against Kelstow's £12: price breakdown).",
-    "The price cut: no. In stores at £90 Kelstow would receive £49.50 against £54 of costs, a loss of £4.50 a case on three-quarters of its sales. Even if marketing and overheads stay fixed however many cases it sells, it would keep £11.50 a case after making and shipping instead of £28, so store sales would need to rise about 2.4 times just to earn the same, with no evidence they would. It would give away margin with over-55s, who rank price lowest and value what Kelstow does best, and price is only one of the three things young buyers want.",
-    "Recommendation: a targeted response. Launch the lighter (about 3 kg) hard-shell range in more colours, keeping the 10-year warranty and repairs ('light and built to last'), sold mainly on Kelstow's own website at around £90, where today's case would make about £14 and the £26 lighter build about £18; add marketplaces later, once their fees per sale are known. Invest in social media awareness among 18 to 34s. Keep the core range and its prices for over-55s and store partners. Offer stores the lighter range in store-only colours at a shelf price that covers their margin: at about £110 Kelstow would receive £60.50 against about £50 of costs (£26 + £8 + £6 + £10), about £10.50 a case, whereas at £90 in stores it would only about break even. The store version also matters for 35 to 54s, who rank light weight as high as durability and still spend about 60% of their money away from brands' websites and marketplaces.",
-    "Risks and next steps: store partners' reaction, the new range taking sales from the core range, whether Kelstow can reach young buyers at Tramlo's marketing cost per case, that the lighter case is untested with customers, and that warranty and repair costs could rise if it breaks more often than today's heavy metal-framed cases. Funding: the family will not bring in investors and operating profit is down about 40%, so the online team and marketing must be paid for from Kelstow's own profits, which supports a staged approach. Pilot the range online first; track share and awareness among 18 to 34s, return rates and margin per case."
+    "Clarify: operating profit fell from £9.6m to £4.6m in three years. The sales director blames lost share (15% to about 11%) and wants an extra £2m a year of advertising. The board wants to know whether that explanation holds, what Aero's repairs cost, and which of three options to choose for Aero, with the aim of getting profit back to about £9.6m.",
+    "Structure: test the share claim (how is the market measured?), break the £5.0m fall into its parts, find the cause of the biggest part, then compare the three options on the full cost of a case over its life, one-off cost, timing, how sure the figures are and the risks, and choose one.",
+    "Test the claim: the reported share fell because the agency added 2.4m wheeled holdalls and backpacks two years ago, which Kelstow does not make. Counted the same way, suitcases and cabin bags fell 5% (8.0m to 7.6m) and so did Kelstow (1.2m to 1.14m): it still sells 15% of them. The 60,000 fewer cases cost about £1.8m of profit (60,000 x £30), only about 36% of the fall. The bridge: fewer cases -£1.8m, cheaper Aero making +£2.4m (600,000 x £4), repairs -£5.6m (£2.4m to £8.0m); marketing and overheads flat. The explanation does not hold, and neither does the case for the advertising.",
+    "What Aero's repairs cost: about 100,000 Aero repairs this year against 50,000 on the much larger stock of Classic cases. Aero needs 10 repairs per 100 in its first year against 1 for Classic, and about 30 per 100 over the warranty against 5. Two-thirds are cracked wheel housings at £70 each, traced to the cheaper plastic the new factory chose. Expected repairs are about £18 per Aero case against £2 for Classic, so the £4 saving has become a £12 extra cost: about £44 to make and repair an Aero case against £32 for Classic. Store returns (4% against 1%) and the two chains' warning add to the cost.",
+    "The options, per new Aero case against about £44 today: A £39.20, saving only £4.80, because 22 of the 30 repairs come in the first three years; it also weakens the 10-year warranty that store buyers value and does nothing about returns. B £33, saving £11 a case, about £6.6m for each year's 600,000 Aero cases; the £0.5m one-off cost is repaid in about a month, and it is in place in 3 months, but its repair figure is from lab tests only. C £32.40, 60p cheaper than B and backed by a real record, but 12 months away: waiting would cost about £4.95m on the 450,000 cases sold in between, which its 60p advantage would take about 14 years to make up.",
+    "Recommendation: choose B now, and book capacity at the original factory so Kelstow can switch to C if B's first months of repairs are well above the lab figure. Fit the stronger housing to Aero cases already sold when they come in for repair, ask the new factory to share the cost, add batch testing and a quality clause, and tell the two store chains about the fix. Keep the 10-year warranty. Hold the extra £2m of advertising until the product is fixed, and ask the agency for like-for-like figures so the board tracks the right share.",
+    "Risks and next steps: B is untested in use; the new factory may not hold its £3 price or its quality; the store chains may cut orders anyway; and the 1.1 million Aero cases already sold should still need about 180,000 repairs (about £10.8m at £60 each) over their warranties, so profit will recover over several years, not at once. Track repairs per 100 Aero cases by month of making, store returns and repair cost per case, and review B after six months."
   ],
   "free_starter": false,
   "free_preview": false,
