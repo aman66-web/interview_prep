@@ -59,6 +59,16 @@ export class FakeRecognition implements RecognitionLike {
     this.emit(index);
   }
 
+  /**
+   * The browser reports a whole result list at once, as Chrome on Android does: each new piece
+   * repeats the words of the one before it. `index` is the piece that changed.
+   */
+  hearList(list: Seg[], index = list.length - 1): void {
+    if (!this.running) throw new Error("not listening");
+    this.segs = list.map((x) => ({ ...x }));
+    this.emit(index);
+  }
+
   /** The browser ends listening on its own (as Safari and Chrome do after a while). */
   endByItself(): void {
     if (!this.running) return;
@@ -97,6 +107,8 @@ export class FakeSynth implements SynthLike {
   voices: VoiceLike[] = [];
   /** Set to make utterances never report their end (a browser bug the controller guards against). */
   neverEnds = false;
+  // A sentence that is stuck (Chrome sometimes never finishes one) is a sentence the test
+  // never calls finish() on: speaking stays true and nothing behind it plays until cancel().
   private queue: FakeUtterance[] = [];
   current: FakeUtterance | null = null;
 

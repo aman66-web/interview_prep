@@ -1,8 +1,24 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { VoiceController, type SubmitResult, type VoiceOptions, type VoicePhase, type VoiceProblem } from "@/lib/voice/controller";
 import { bargeInDecision, isMostlyEcho, stripEchoPrefix } from "@/lib/voice/echo";
-import { isIOS, onDeviceAvailable, pickVoice, recognitionConstructor, recognitionLanguage, voiceSupport } from "@/lib/voice/support";
-import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, endsMidThought, isFillerOnly, joinText, SentenceSplitter, silenceDelay, splitLong, words } from "@/lib/voice/text";
+import { isIOS, isTouchFirst, onDeviceAvailable, pickVoice, recognitionConstructor, recognitionLanguage, voiceSupport } from "@/lib/voice/support";
+import {
+  cleanForSpeech,
+  clipToLimit,
+  DEFAULT_TIMING,
+  endsMidThought,
+  endsOnOperand,
+  endsWithHold,
+  isAcknowledgementOnly,
+  isBareOkay,
+  isFillerOnly,
+  isStallOnly,
+  joinText,
+  SentenceSplitter,
+  silenceDelay,
+  splitLong,
+  words,
+} from "@/lib/voice/text";
 import { dedupeCumulative, readResults } from "@/lib/voice/transcript";
 import { FakeRecognition, FakeSynth, FakeUtterance } from "./helpers/fake-speech";
 
@@ -105,7 +121,7 @@ describe("telling the student from the interviewer's echo", () => {
     expect(stripEchoPrefix("structure your approach, I think revenue", spoken)).toBe("I think revenue");
     // A short overlap is kept: the student may simply start with the same word.
     expect(stripEchoPrefix("the UK market is small", spoken)).toBe("the UK market is small");
-    expect(stripEchoPrefix("the UK market is small", spoken, 2)).toBe("market is small");
+    expect(stripEchoPrefix("the UK market is small", spoken, 4)).toBe("the UK market is small");
     expect(stripEchoPrefix("across the UK", spoken)).toBe("");
   });
 });
@@ -221,6 +237,7 @@ type Setup = {
   problems: VoiceProblem[];
   lastTranscript: () => string;
   submitResults: SubmitResult[];
+  held: boolean[];
 };
 
 function setup(options: Partial<VoiceOptions> = {}): Setup {
@@ -231,6 +248,7 @@ function setup(options: Partial<VoiceOptions> = {}): Setup {
   const submits: string[] = [];
   const problems: VoiceProblem[] = [];
   const submitResults: SubmitResult[] = [];
+  const held: boolean[] = [];
   const ctrl: VoiceController = new VoiceController(
     {
       createRecognition: () => {
@@ -253,6 +271,7 @@ function setup(options: Partial<VoiceOptions> = {}): Setup {
         return result;
       },
       onProblem: (p) => problems.push(p),
+      onHeld: (h) => held.push(h),
     },
   );
   return {
@@ -268,6 +287,7 @@ function setup(options: Partial<VoiceOptions> = {}): Setup {
     problems,
     lastTranscript: () => transcripts.at(-1)?.text ?? "",
     submitResults,
+    held,
   };
 }
 
@@ -454,17 +474,54 @@ describe("voice mode turn-taking", () => {
     expect(s.submits).toEqual(["so first the revenue"]);
   });
 
-  it("ignores what is heard while the interviewer is thinking", () => {
+  it("keeps what the student says while the interviewer is thinking as the start of the next answer", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("fifteen percent of eight million", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["fifteen percent of eight million"]);
+    expect(s.ctrl.state).toBe("thinking");
+    // The reply takes a few seconds to start: the student finishes the sum meanwhile.
+    s.rec().hear("one point two million", true);
+    expect(s.lastTranscript()).not.toBe("one point two million"); // not shown while still waiting
+    s.ctrl.replyDelta("Go on. What does that tell you? ");
+    expect(s.ctrl.state).toBe("speaking");
+    expect(s.lastTranscript()).toBe("one point two million");
+    s.ctrl.replyEnded();
+    s.synth.finish();
+    s.synth.finish();
+    expect(s.ctrl.state).toBe("listening");
+    expect(s.lastTranscript()).toBe("one point two million");
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["fifteen percent of eight million", "one point two million"]);
+  });
+
+  it("keeps what was said while thinking even when the reply has nothing to read", () => {
     const s = setup();
     s.ctrl.start();
     s.rec().hear("my answer", true);
     vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
-    expect(s.ctrl.state).toBe("thinking");
-    s.rec().hear("talking to myself", true);
+    s.rec().hear("and one more thing", true);
     s.ctrl.replyEnded();
     expect(s.ctrl.state).toBe("listening");
-    vi.advanceTimersByTime(10_000);
-    expect(s.submits).toEqual(["my answer"]);
+    expect(s.lastTranscript()).toBe("and one more thing");
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["my answer", "and one more thing"]);
+  });
+
+  it("lets a student who keeps talking through the thinking pause interrupt the reply", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("revenue is two hundred", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    s.rec().hear("and costs are", false); // still being said when the reply starts
+    s.ctrl.replyDelta("Thanks. Harbourline has 120 cafés. ");
+    expect(s.ctrl.state).toBe("speaking");
+    const cancels = s.synth.cancels;
+    s.rec().hear("and costs are around one hundred and fifty thousand pounds a month", false);
+    expect(s.synth.cancels).toBe(cancels + 1);
+    expect(s.ctrl.state).toBe("listening");
+    expect(s.lastTranscript()).toBe("and costs are around one hundred and fifty thousand pounds a month");
   });
 
   it("reads the interviewer's latest message aloud when switched on, if asked", () => {
@@ -723,5 +780,401 @@ describe("voice mode and the room", () => {
     expect(s.rec().running).toBe(false);
     expect(s.synth.spoken).toEqual(["Something to say."]);
     expect(s.phases.at(-1)).toBe("off");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Review round 2
+// ---------------------------------------------------------------------------
+
+describe("nods, openers and requests for time (helpers)", () => {
+  it("does not take a nod for an interruption, but still takes real words and stop words", () => {
+    const spoken = "Harbourline has 120 cafés across the UK. How would you like to structure your approach?";
+    for (const nod of ["i see", "I see.", "that makes sense", "yeah thats fair", "good point", "fair enough", "mm hmm, I see", "understood"]) {
+      expect(bargeInDecision(nod, spoken)).toBe("ignore");
+    }
+    expect(bargeInDecision("i see sorry", spoken)).toBe("barge-in");
+    expect(bargeInDecision("I disagree", spoken)).toBe("barge-in");
+    expect(bargeInDecision("could we look at costs first", spoken)).toBe("barge-in");
+  });
+
+  it("knows an opener or a request for time from an answer", () => {
+    for (const stall of [
+      "okay so", "Okay so... um", "So", "well", "let me think about that", "Let me think", "So, let me think", "Right, one moment",
+      "give me a moment to work this out", "give me a second", "hold on", "hang on a sec", "just a moment please", "bear with me",
+      "let's see", "let me work that out", "let me do the maths", "wait", "sorry",
+    ]) {
+      expect(isStallOnly(stall), stall).toBe(true);
+    }
+    for (const answer of [
+      "okay", "right", "yes", "no", "Profitability", "Sure, go ahead", "okay so revenue is 200 times 5", "Let me think, it is 10 percent",
+      "let me think the margin is 12", "I would wait for the second quarter", "one moment of silence is fine", "",
+    ]) {
+      expect(isStallOnly(answer), answer).toBe(false);
+    }
+  });
+
+  it("knows a nod from an answer that starts with a nod", () => {
+    for (const nod of ["I see", "that makes sense", "yeah that's fair", "okay great", "Thanks, understood", "mm hmm I see"]) {
+      expect(isAcknowledgementOnly(nod), nod).toBe(true);
+    }
+    for (const answer of ["yes", "I see three drivers", "that makes sense because costs are fixed", "yeah only in the UK", "", "okay"]) {
+      expect(isAcknowledgementOnly(answer), answer).toBe(false);
+    }
+  });
+
+  it("spots a request for time at the end of an answer, a sum left half-done, and a bare okay", () => {
+    expect(endsWithHold("fixed costs are 1.2 million, give me a moment")).toBe(true);
+    expect(endsWithHold("So... let me think about that")).toBe(true);
+    expect(endsWithHold("give me a moment to work this out")).toBe(true);
+    expect(endsWithHold("hold on")).toBe(true);
+    expect(endsWithHold("the customers wait")).toBe(false);
+    expect(endsWithHold("I need a moment of silence in the shops")).toBe(false);
+    expect(endsOnOperand("so the revenue is 120 times 4")).toBe(true);
+    expect(endsOnOperand("that is 12 million divided by 15 percent")).toBe(true);
+    expect(endsOnOperand("one hundred and twenty plus forty")).toBe(true);
+    expect(endsOnOperand("so the revenue is 480")).toBe(false);
+    expect(endsOnOperand("the margin is over 15")).toBe(false);
+    expect(endsOnOperand("120 times")).toBe(false); // already counted as mid-thought
+    expect(endsOnOperand("")).toBe(false);
+    expect(isBareOkay("Okay")).toBe(true);
+    expect(isBareOkay("okay so")).toBe(false);
+  });
+
+  it("waits longer for a request for time, a half-done sum or a bare okay", () => {
+    const t = DEFAULT_TIMING;
+    expect(silenceDelay("the revenue is 480", true)).toBe(t.finalSilenceMs);
+    expect(silenceDelay("so the revenue is 120 times 4", true)).toBe(Math.round(t.finalSilenceMs * t.midThoughtFactor));
+    expect(silenceDelay("costs are 1.2 million, give me a moment", true)).toBe(t.holdSilenceMs);
+    expect(silenceDelay("costs are 1.2 million, give me a moment", false)).toBe(t.holdSilenceMs);
+    expect(silenceDelay("okay", true)).toBe(t.stallSilenceMs);
+    // The defaults are patient: several seconds, not one.
+    expect(t.finalSilenceMs).toBeGreaterThanOrEqual(2500);
+    expect(t.holdSilenceMs).toBeGreaterThanOrEqual(12_000);
+  });
+});
+
+describe("telling echo from the student's own words (helpers)", () => {
+  it("treats a yes or no the interviewer did not say, with other words, as an answer", () => {
+    const q = "Does Harbourline sell only in the UK?";
+    expect(isMostlyEcho("yes only in the UK", q)).toBe(false);
+    expect(isMostlyEcho("no it sells in Ireland too", q)).toBe(false);
+    expect(isMostlyEcho("only in the UK", q)).toBe(true);
+  });
+});
+
+describe("what the browser supports on phones", () => {
+  class Ctor {}
+  const base = { webkitSpeechRecognition: Ctor, speechSynthesis: { speak() {}, cancel() {} }, SpeechSynthesisUtterance: Ctor, isSecureContext: true };
+
+  it("turns the microphone off while speaking on any phone or touch-first device, not only iPhone", () => {
+    const android = { ...base, navigator: { userAgent: "Mozilla/5.0 (Linux; Android 14; Pixel 8) Chrome/141 Mobile Safari/537.36" } };
+    expect(voiceSupport(android)).toEqual({ supported: true, halfDuplex: true });
+    expect(voiceSupport({ ...base, navigator: { userAgent: "Mozilla/5.0 (X11; Linux x86_64) Chrome/141", userAgentData: { mobile: true } } }).halfDuplex).toBe(true);
+    const coarse = { ...base, navigator: { userAgent: "Mozilla/5.0 (X11; Linux x86_64) Chrome/141" }, matchMedia: (q: string) => ({ matches: q === "(pointer: coarse)" }) };
+    expect(isTouchFirst(coarse)).toBe(true);
+    // A laptop or desktop keeps the microphone on, so the student can talk over the interviewer.
+    const desktop = { ...base, navigator: { userAgent: "Mozilla/5.0 (Windows NT 10.0) Chrome/141", userAgentData: { mobile: false } }, matchMedia: () => ({ matches: false }) };
+    expect(voiceSupport(desktop)).toEqual({ supported: true, halfDuplex: false });
+    expect(isTouchFirst({ ...desktop, matchMedia: () => { throw new Error("no"); } })).toBe(false);
+    expect(voiceSupport({ ...android, webkitSpeechRecognition: undefined }).halfDuplex).toBe(false);
+  });
+});
+
+// A four-sentence reply, as read aloud one sentence at a time.
+const REPLY = "Harbourline has 120 cafes across the UK. Profit fell by a fifth last year. Rent rose faster than sales. What would you look at first? ";
+const SENTENCES = ["Harbourline has 120 cafes across the UK.", "Profit fell by a fifth last year.", "Rent rose faster than sales.", "What would you look at first?"];
+
+function startReply(s: Setup): void {
+  s.ctrl.start();
+  s.ctrl.turnStarted();
+  s.ctrl.replyDelta(REPLY);
+  s.ctrl.replyEnded();
+  expect(s.synth.spoken).toEqual([SENTENCES[0]]);
+}
+
+describe("the interviewer's own voice over several sentences", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it("is not mistaken for the student when the browser hears it as one growing piece", () => {
+    const s = setup();
+    startReply(s);
+    const cancels = s.synth.cancels;
+    let heard = "";
+    for (let i = 0; i < SENTENCES.length; i++) {
+      // The echo of each sentence arrives while the next one is already playing (the microphone lags).
+      heard = joinText(heard, SENTENCES[i].replace(/[.?]/g, "").toLowerCase());
+      s.rec().hear(heard);
+      expect(s.ctrl.state).toBe("speaking");
+      if (i < SENTENCES.length - 1) s.synth.finish();
+    }
+    expect(s.synth.cancels).toBe(cancels); // the interviewer was never cut off
+    expect(s.synth.spoken).toEqual(SENTENCES);
+    s.synth.finish();
+    expect(s.ctrl.state).toBe("listening");
+    s.rec().hear(heard, true);
+    vi.advanceTimersByTime(30_000);
+    expect(s.submits).toEqual([]);
+    expect(s.lastTranscript()).toBe("");
+  });
+
+  it("is not mistaken for the student when each piece repeats the earlier words (Android)", () => {
+    const s = setup();
+    startReply(s);
+    const cancels = s.synth.cancels;
+    const pieces: { text: string; isFinal: boolean }[] = [];
+    let heard = "";
+    for (let i = 0; i < SENTENCES.length; i++) {
+      heard = joinText(heard, SENTENCES[i].replace(/[.?]/g, "").toLowerCase());
+      if (pieces.length) pieces[pieces.length - 1].isFinal = true;
+      pieces.push({ text: heard, isFinal: false });
+      s.rec().hearList(pieces, pieces.length - 1);
+      expect(s.ctrl.state).toBe("speaking");
+      if (i < SENTENCES.length - 1) s.synth.finish();
+    }
+    expect(s.synth.cancels).toBe(cancels);
+    s.synth.finish();
+    expect(s.ctrl.state).toBe("listening");
+    pieces[pieces.length - 1].isFinal = true;
+    s.rec().hearList(pieces);
+    vi.advanceTimersByTime(30_000);
+    expect(s.submits).toEqual([]);
+    expect(s.lastTranscript()).toBe("");
+  });
+
+  it("is not sent even when the echo of the whole reply only finishes after the voice stops", () => {
+    const s = setup();
+    startReply(s);
+    for (let i = 0; i < SENTENCES.length - 1; i++) s.synth.finish();
+    s.synth.finish();
+    expect(s.ctrl.state).toBe("listening");
+    s.rec().hear(joinText(...SENTENCES).replace(/[.?]/g, "").toLowerCase(), true);
+    vi.advanceTimersByTime(30_000);
+    expect(s.submits).toEqual([]);
+  });
+
+  it("still lets the student interrupt in the middle of the reply", () => {
+    const s = setup();
+    startReply(s);
+    const echo = joinText(SENTENCES[0], SENTENCES[1]).replace(/[.?]/g, "").toLowerCase();
+    s.synth.finish();
+    s.synth.finish();
+    s.rec().hear(echo);
+    expect(s.ctrl.state).toBe("speaking");
+    const cancels = s.synth.cancels;
+    s.rec().hear(`${echo} sorry can I ask about rent`);
+    expect(s.synth.cancels).toBe(cancels + 1);
+    expect(s.ctrl.state).toBe("listening");
+    expect(s.lastTranscript()).toBe("sorry can I ask about rent");
+    s.rec().hear(`${echo} sorry can I ask about rent costs`, true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["sorry can I ask about rent costs"]);
+  });
+});
+
+describe("nods while the interviewer is talking", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it.each(["I see", "that makes sense", "yeah that's fair"])("'%s' does not stop the interviewer or get sent", (nod) => {
+    const s = setup();
+    startReply(s);
+    const cancels = s.synth.cancels;
+    s.rec().hear(nod, true);
+    expect(s.ctrl.state).toBe("speaking");
+    expect(s.synth.cancels).toBe(cancels);
+    for (let i = 0; i < SENTENCES.length; i++) s.synth.finish();
+    expect(s.synth.spoken).toEqual(SENTENCES); // the whole question was heard
+    vi.advanceTimersByTime(30_000);
+    expect(s.submits).toEqual([]);
+  });
+
+  it("a nod said after the interviewer has finished is kept in the box but never sent", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("I see", true);
+    vi.advanceTimersByTime(60_000);
+    expect(s.submits).toEqual([]);
+    expect(s.lastTranscript()).toBe("I see");
+    expect(s.held.at(-1)).toBe(true);
+    // Real words after the nod go as one answer, and the note goes away.
+    s.rec().hear("so costs first", true);
+    expect(s.held.at(-1)).toBe(false);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["I see so costs first"]);
+  });
+});
+
+describe("thinking aloud is not an answer", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it.each(["okay so", "let me think about that", "give me a moment to work this out", "So, let me think", "Right, one moment", "Okay so... um", "hold on"])(
+    "'%s' is not sent, and is shown as held",
+    (said) => {
+      const s = setup();
+      s.ctrl.start();
+      s.rec().hear(said, true);
+      vi.advanceTimersByTime(120_000);
+      expect(s.submits).toEqual([]);
+      expect(s.ctrl.state).toBe("listening");
+      expect(s.lastTranscript()).toBe(said);
+      expect(s.held.at(-1)).toBe(true);
+    },
+  );
+
+  it("sends an opener followed by real words, and a request for time followed by the answer, as one answer", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("okay so revenue is 200 times 5", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs - 1);
+    expect(s.submits).toEqual([]); // a half-done sum: waits longer
+    vi.advanceTimersByTime(Math.round(DEFAULT_TIMING.finalSilenceMs * DEFAULT_TIMING.midThoughtFactor));
+    expect(s.submits).toEqual(["okay so revenue is 200 times 5"]);
+
+    const t = setup();
+    t.ctrl.start();
+    t.rec().hear("let me think about that", true);
+    vi.advanceTimersByTime(30_000);
+    t.rec().hear("the margin is twelve percent", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(t.submits).toEqual(["let me think about that the margin is twelve percent"]);
+  });
+
+  it("waits a long time after an answer that ends by asking for time", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("fixed costs are 1.2 million, give me a moment", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.holdSilenceMs - 1);
+    expect(s.submits).toEqual([]);
+    s.rec().hear("so that gives 480", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["fixed costs are 1.2 million, give me a moment so that gives 480"]);
+  });
+
+  it("does not cut off a student who works a sum out in silence", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("so fixed costs are 1.2 million", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs - 100); // four seconds of working, nearly
+    s.rec().hear("divided by a margin of 15 percent", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["so fixed costs are 1.2 million divided by a margin of 15 percent"]);
+  });
+
+  it("sends a bare okay (the answer to 'ready to start?') only after a long wait, and a yes at the normal time", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("okay", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.stallSilenceMs - 1);
+    expect(s.submits).toEqual([]);
+    vi.advanceTimersByTime(1);
+    expect(s.submits).toEqual(["okay"]);
+
+    const t = setup();
+    t.ctrl.start();
+    t.rec().hear("Yes", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(t.submits).toEqual(["Yes"]);
+  });
+
+  it("sends a single digit such as '3'", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("3", true);
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(s.submits).toEqual(["3"]);
+  });
+
+  it("says why when a lone letter is held back", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().hear("a", true);
+    vi.advanceTimersByTime(10_000);
+    expect(s.submits).toEqual([]);
+    expect(s.held.at(-1)).toBe(true);
+  });
+});
+
+describe("the student's words are not taken for the interviewer's echo", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  /** The interviewer asks `question`, finishes, and the student starts `afterMs` later. */
+  function askAndAnswer(question: string, said: string, afterMs: number, options: Partial<VoiceOptions> = {}) {
+    const s = setup(options);
+    s.ctrl.start();
+    s.ctrl.turnStarted();
+    s.ctrl.replyDelta(question);
+    s.ctrl.replyEnded();
+    s.synth.finish();
+    expect(s.ctrl.state).toBe("listening");
+    vi.advanceTimersByTime(afterMs);
+    s.rec().hear(said, true);
+    return s;
+  }
+
+  it("keeps an answer that repeats the question's words, and sends it whole", () => {
+    const a = askAndAnswer("Does Harbourline sell only in the UK?", "yes only in the UK", 500);
+    expect(a.lastTranscript()).toBe("yes only in the UK");
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(a.submits).toEqual(["yes only in the UK"]);
+
+    const b = askAndAnswer("What is the profit margin?", "profit margin is around twelve percent", 500);
+    expect(b.lastTranscript()).toBe("profit margin is around twelve percent");
+    vi.advanceTimersByTime(DEFAULT_TIMING.finalSilenceMs);
+    expect(b.submits).toEqual(["profit margin is around twelve percent"]);
+
+    const c = askAndAnswer("Which costs would you look at first?", "costs first", 600);
+    expect(c.lastTranscript()).toBe("costs first");
+
+    const d = askAndAnswer("How would you estimate the market size for coffee in London?", "the market size for coffee in London", 600);
+    expect(d.lastTranscript()).toBe("the market size for coffee in London");
+    const e = askAndAnswer("What would you look at first?", "look at the costs first", 600);
+    expect(e.lastTranscript()).toBe("look at the costs first");
+  });
+
+  it("still drops a late scrap of the interviewer's own voice right after it stops", () => {
+    const s = askAndAnswer("Harbourline has 120 cafés across the UK.", "across the UK", 100);
+    vi.advanceTimersByTime(30_000);
+    expect(s.submits).toEqual([]);
+    expect(s.lastTranscript()).toBe("");
+  });
+
+  it("does not filter at all when the microphone is off while the interviewer speaks", () => {
+    const s = askAndAnswer("Harbourline has 120 cafés across the UK.", "across the UK", 100, { halfDuplex: true });
+    expect(s.lastTranscript()).toBe("across the UK");
+  });
+});
+
+describe("voice mode problems and the speech queue", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it("blames the microphone only when the microphone is refused", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.rec().fail("service-not-allowed");
+    expect(s.problems).toEqual(["speech-off"]);
+    expect(s.ctrl.state).toBe("off");
+  });
+
+  it("moves on from a sentence that never ends, and clears the browser's speech queue", () => {
+    const s = setup();
+    s.ctrl.start();
+    s.ctrl.turnStarted();
+    s.ctrl.replyDelta("First sentence. Second sentence. Third sentence. ");
+    s.ctrl.replyEnded();
+    expect(s.synth.spoken).toEqual(["First sentence."]);
+    const cancels = s.synth.cancels;
+    // The first sentence is stuck: the test never calls finish(), so speaking stays true.
+    vi.advanceTimersByTime(15_000);
+    expect(s.synth.cancels).toBeGreaterThan(cancels);
+    expect(s.synth.spoken).toEqual(["First sentence.", "Second sentence."]);
+    vi.advanceTimersByTime(15_000);
+    expect(s.synth.spoken).toEqual(["First sentence.", "Second sentence.", "Third sentence."]);
+    vi.advanceTimersByTime(15_000);
+    expect(s.ctrl.state).toBe("listening");
   });
 });

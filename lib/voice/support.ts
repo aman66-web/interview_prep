@@ -14,9 +14,16 @@ export type SpeechWindowLike = {
   SpeechSynthesisUtterance?: unknown;
   isSecureContext?: boolean;
   navigator?: NavigatorLike;
+  matchMedia?: (query: string) => { matches: boolean };
 };
 
-export type NavigatorLike = { userAgent?: string; maxTouchPoints?: number; language?: string; platform?: string };
+export type NavigatorLike = {
+  userAgent?: string;
+  maxTouchPoints?: number;
+  language?: string;
+  platform?: string;
+  userAgentData?: { mobile?: boolean };
+};
 
 export function recognitionConstructor(w: SpeechWindowLike): RecognitionCtor | null {
   const ctor = w.SpeechRecognition ?? w.webkitSpeechRecognition;
@@ -35,12 +42,30 @@ export function isIOS(nav: NavigatorLike | undefined): boolean {
   return /Macintosh/i.test(ua) && (nav?.maxTouchPoints ?? 0) > 1;
 }
 
+/**
+ * A phone or tablet: the loudspeaker sits next to the microphone and, unlike in a call, the
+ * browser's speech recognition does not remove the loudspeaker's sound, so the interviewer's
+ * voice would be heard as the student's. iPhone and iPad, Android, anything the browser calls
+ * mobile, and anything whose main pointer is a finger.
+ */
+export function isTouchFirst(w: SpeechWindowLike): boolean {
+  const nav = w.navigator;
+  if (isIOS(nav) || /Android/i.test(nav?.userAgent ?? "") || nav?.userAgentData?.mobile === true) return true;
+  try {
+    return w.matchMedia?.("(pointer: coarse)").matches === true;
+  } catch {
+    return false;
+  }
+}
+
 export type VoiceSupport = {
   supported: boolean;
   /**
-   * Stop listening while the interviewer speaks. Used on iPhone and iPad, where reading
-   * aloud while the microphone is on is unreliable; the student taps "Stop speaking" to
-   * interrupt there. Elsewhere the microphone stays on so the student can talk over it.
+   * Stop listening while the interviewer speaks. Used on phones and tablets, where the
+   * interviewer's voice would be picked up by the microphone as the student's (and on
+   * iPhone and iPad, reading aloud while the microphone is on is unreliable); the student
+   * taps "Stop speaking" to interrupt there. On a computer the microphone stays on so the
+   * student can talk over the interviewer.
    */
   halfDuplex: boolean;
 };
@@ -48,7 +73,7 @@ export type VoiceSupport = {
 export function voiceSupport(w: SpeechWindowLike): VoiceSupport {
   // Browsers only give a page the microphone over HTTPS (or on localhost).
   const supported = w.isSecureContext !== false && recognitionConstructor(w) !== null && hasSpeechSynthesis(w);
-  return { supported, halfDuplex: supported && isIOS(w.navigator) };
+  return { supported, halfDuplex: supported && isTouchFirst(w) };
 }
 
 /**

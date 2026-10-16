@@ -38,7 +38,9 @@ function readSupport(): VoiceSupport {
 const PROBLEMS: Record<VoiceProblem, string> = {
   blocked: "Voice mode needs the microphone. Allow it for this site in your browser's settings, then switch voice mode on again.",
   "no-microphone": "No microphone was found. Check that one is connected and allowed, then switch voice mode on again.",
-  network: "Your browser's speech service isn't answering, so voice mode is off. Voice works in Chrome, Edge and Safari.",
+  "speech-off":
+    "Your device's speech recognition is switched off or not allowed, so voice mode is off. On Apple devices, check that Dictation (and Siri) is turned on in your device settings, then switch voice mode on again.",
+  network: "Your browser's speech service isn't answering, so voice mode is off. You could try again in a minute, or try Chrome, Edge or Safari.",
   language: "Your browser can't listen in English here, so voice mode is off.",
   stopped: "Your browser keeps stopping the microphone, so voice mode is off. You can switch it on again.",
 };
@@ -60,6 +62,7 @@ export function useVoiceMode(options: VoiceModeOptions) {
   const [agreed, setAgreed] = useState(false);
   const [problem, setProblem] = useState<VoiceProblem | null>(null);
   const [clipped, setClipped] = useState(false);
+  const [held, setHeld] = useState(false);
   const ctrl = useRef<VoiceController | null>(null);
   const onDevice = useRef(false);
   const latest = useRef(options);
@@ -123,6 +126,7 @@ export function useVoiceMode(options: VoiceModeOptions) {
         },
         onSubmit: (text) => latest.current.onSubmit(text),
         onProblem: setProblem,
+        onHeld: setHeld,
       },
     );
     return ctrl.current;
@@ -134,6 +138,7 @@ export function useVoiceMode(options: VoiceModeOptions) {
     setAgreed(true);
     setProblem(null);
     setClipped(false);
+    setHeld(false);
     controller()?.start(latest.current.startContext());
   }
 
@@ -143,6 +148,7 @@ export function useVoiceMode(options: VoiceModeOptions) {
     asking,
     problem,
     clipped,
+    held,
     halfDuplex: supported?.halfDuplex ?? false,
     on: phase !== "off",
     toggle() {
@@ -191,7 +197,7 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
     return (
       <p className="mb-3 flex items-start gap-2 px-1 text-xs leading-relaxed text-muted">
         <Mic size={14} className="mt-0.5 shrink-0" />
-        <span>Voice mode works in Chrome, Edge and Safari. Typing always works.</span>
+        <span>Voice mode isn&apos;t available in this browser. Try Chrome or Edge on a computer, or Safari. Typing always works.</span>
       </p>
     );
   }
@@ -314,10 +320,15 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
         {phase === "paused"
           ? "Listening is paused. Edit your answer and press Send, or resume listening."
           : voice.halfDuplex
-            ? "Speak your answer: it sends when you pause. Tap Stop speaking to interrupt. Typing in the box pauses listening."
-            : "Speak your answer: it sends when you pause. Talk over the interviewer to interrupt. Typing in the box pauses listening."}
-        {voice.clipped && phase === "listening" ? <span className="text-warning"> That is the longest answer the box takes; it sends when you pause.</span> : null}
+            ? "Speak your answer: it sends after a few seconds of quiet. Need time to work something out? Say \u201Cgive me a moment\u201D or tap Pause to edit. Tap Stop speaking to interrupt. Typing in the box pauses listening."
+            : "Speak your answer: it sends after a few seconds of quiet. Need time to work something out? Say \u201Cgive me a moment\u201D or tap Pause to edit. Talk over the interviewer to interrupt. Headphones work best: without them the interviewer\u2019s voice can be picked up as yours. Typing in the box pauses listening."}
+        {voice.clipped && phase === "listening" ? <span className="text-warning"> That is the longest answer the box takes; it sends after a few seconds of quiet.</span> : null}
       </p>
+      {voice.held && phase === "listening" ? (
+        <p role="status" className="px-1 text-xs font-medium leading-relaxed text-ink">
+          Not sent yet. Keep talking, or press Send when you are ready.
+        </p>
+      ) : null}
     </div>
   );
 }

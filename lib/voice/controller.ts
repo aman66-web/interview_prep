@@ -1,6 +1,18 @@
 import { bargeInDecision, isMostlyEcho, stripEchoPrefix } from "./echo";
 import { pickVoice, type VoiceLike } from "./support";
-import { cleanForSpeech, clipToLimit, DEFAULT_TIMING, isFillerOnly, joinText, SentenceSplitter, silenceDelay, type TurnTiming } from "./text";
+import {
+  cleanForSpeech,
+  clipToLimit,
+  DEFAULT_TIMING,
+  isAcknowledgementOnly,
+  isFillerOnly,
+  isStallOnly,
+  joinText,
+  SentenceSplitter,
+  silenceDelay,
+  type TurnTiming,
+  words,
+} from "./text";
 import { dedupeCumulative, readResults, type ResultListLike, type Segment } from "./transcript";
 
 // Hands-free voice mode for the interview room, using only the browser's Web Speech API.
@@ -20,7 +32,7 @@ import { dedupeCumulative, readResults, type ResultListLike, type Segment } from
 export type VoicePhase = "off" | "listening" | "thinking" | "speaking" | "paused";
 
 /** Why voice mode had to switch itself off. */
-export type VoiceProblem = "blocked" | "no-microphone" | "network" | "language" | "stopped";
+export type VoiceProblem = "blocked" | "speech-off" | "no-microphone" | "network" | "language" | "stopped";
 
 export type RecognitionEventLike = { readonly resultIndex: number; readonly results: ResultListLike };
 
@@ -79,7 +91,11 @@ export type VoiceOptions = {
   speakLang: string;
   rate: number;
   timing: TurnTiming;
-  /** For this long after the interviewer stops, what is heard is checked for its own echo. */
+  /**
+   * Speech that started while the interviewer was talking, or within this long after it
+   * stopped, is checked for the interviewer's own echo. Speech that starts later is the
+   * student's, even if it repeats the question's words.
+   */
   echoTailMs: number;
   /** The browser has said it can recognise this language on the device (SpeechRecognition.available). */
   onDevice: boolean;
@@ -96,6 +112,11 @@ export type VoiceCallbacks = {
    */
   onSubmit: (text: string) => SubmitResult;
   onProblem: (problem: VoiceProblem) => void;
+  /**
+   * What was heard has been kept in the box but not sent (a lone "okay so", "give me a
+   * moment", a nod), so the room can say why nothing is happening. `false` when that ends.
+   */
+  onHeld?: (held: boolean) => void;
 };
 
 export type SubmitResult = "sent" | "busy" | "refused";
@@ -104,7 +125,7 @@ export const DEFAULT_VOICE_OPTIONS: Omit<VoiceOptions, "maxChars" | "halfDuplex"
   speakLang: "en-GB",
   rate: 1,
   timing: DEFAULT_TIMING,
-  echoTailMs: 1500,
+  echoTailMs: 400,
   onDevice: false,
 };
 
@@ -112,6 +133,11 @@ const RESTART_DELAY_MS = 250;
 const BUSY_RETRY_MS = 400;
 const MAX_STARTS_WITHOUT_RESULT = 6; // within 10 seconds
 const MAX_SERVICE_ERRORS = 3; // within 30 seconds
+// Interruptions are judged on the last few words heard, against the last few sentences read.
+const BARGE_WINDOW_WORDS = 10;
+const BARGE_REFERENCE_WORDS = 36;
+// Only a run this long, in the interviewer's order, is cut from the start of an answer.
+const ECHO_PREFIX_MIN_RUN = 4;
 
 type RecState = "idle" | "starting" | "running" | "stopping";
 
@@ -134,8 +160,14 @@ export class VoiceController {
   /** What the browser has heard in the current listening session. */
   private segs: Segment[] = [];
   private firstSeen: number[] = [];
-  /** Segments before this index were heard before the current turn began. */
+  /** Segments before this index were heard before the current turn began (or were kept from it). */
   private speakFrom = 0;
+  /** Words said while the interviewer was thinking have been moved into `carried`. */
+  private thinkKept = false;
+  /** Something was kept from the thinking phase, so it is sent after the usual quiet even if nothing new is said. */
+  private keptPending = false;
+  /** The box holds words that were deliberately not sent. */
+  private held = false;
   /** The current answer starts at this segment. */
   private listenFrom = 0;
   /** Answer text from before this listening session, or already in the box. */
@@ -148,7 +180,8 @@ export class VoiceController {
   private splitter = new SentenceSplitter();
   private queue: string[] = [];
   private current: UtteranceLike | null = null;
-  private lastSpoken = "";
+  /** Every sentence of the current reply that has started playing, in order. */
+  private replySentences: string[] = [];
   private speechGen = 0;
   private replyOpen = false;
   private muted = false;
@@ -213,6 +246,8 @@ export class VoiceController {
     this.halt();
     this.replyOpen = false;
     this.muted = false;
+    this.keptPending = false;
+    this.setHeld(false);
     this.setPhase("off");
   }
 
@@ -228,6 +263,8 @@ export class VoiceController {
     }
     this.clearSilence();
     this.carried = this.answer;
+    this.keptPending = false;
+    this.setHeld(false);
     this.halt();
     this.setPhase("paused");
   }
@@ -252,7 +289,7 @@ export class VoiceController {
   /** The "Stop speaking" button: skip the rest of the reply and listen. */
   stopSpeaking(): void {
     if (this.phase !== "speaking") return;
-    this.tailText = this.spokenWindow();
+    this.tailText = this.replySpoken();
     this.muted = true;
     this.cancelSpeech();
     this.speechEndedAt = this.now();
@@ -266,6 +303,8 @@ export class VoiceController {
     this.cancelSpeech();
     this.carried = "";
     this.answer = "";
+    this.keptPending = false;
+    this.setHeld(false);
     this.speakFrom = this.segs.length;
     this.beginReply();
     this.setPhase("thinking");
@@ -303,6 +342,7 @@ export class VoiceController {
 
   private toListening(from?: number): void {
     this.clearSilence();
+    this.keepThinkingWords(); // a reply that never spoke still ends the thinking phase
     this.listenFrom = from ?? this.trailingStart();
     this.muted = false;
     this.setPhase("listening");
@@ -315,6 +355,31 @@ export class VoiceController {
     let i = this.segs.length;
     while (i > this.speakFrom && !this.segs[i - 1].isFinal) i--;
     return i;
+  }
+
+  /**
+   * What the student said while the interviewer was thinking (after their answer was sent,
+   * before the reply began) is the start of their next answer, not noise: they may have
+   * finished a sum out loud just after the pause that sent the first half. The finished
+   * pieces move into `carried` and show in the box; a piece still being spoken stays where
+   * it is, so it can interrupt the reply or join the answer as it grows. Pieces heard while
+   * the interviewer speaks are left to the echo and interruption checks.
+   */
+  private keepThinkingWords(): void {
+    if (this.thinkKept) return;
+    this.thinkKept = true;
+    let end = this.segs.length;
+    while (end > this.speakFrom && !this.segs[end - 1].isFinal) end--;
+    const kept = dedupeCumulative(this.segs.slice(this.speakFrom, end).map((s) => s.text).filter((t) => t.trim()));
+    this.speakFrom = end;
+    if (kept.length === 0) return;
+    const { text } = clipToLimit(joinText(this.carried, ...kept), this.opts.maxChars);
+    this.carried = text;
+    this.keptPending = true;
+    if (text !== this.answer) {
+      this.answer = text;
+      this.cb.onTranscript(text, false);
+    }
   }
 
   private ensureRec(): void {
@@ -399,13 +464,16 @@ export class VoiceController {
     this.segs = list;
     if (this.phase === "speaking") this.checkBargeIn(event.resultIndex ?? 0);
     else if (this.phase === "listening") this.update();
-    // Thinking or paused: nothing heard now is part of an answer.
+    // Thinking: kept for the next answer when the reply begins (keepThinkingWords). Paused: not part of an answer.
   }
 
   private onRecError(code: string): void {
     if (this.phase === "off") return;
     if (code === "no-speech" || code === "aborted") return; // normal: listening restarts by itself
-    if (code === "not-allowed" || code === "service-not-allowed") return this.giveUp("blocked");
+    if (code === "not-allowed") return this.giveUp("blocked");
+    // The microphone may be fine: the device's own speech recognition (for example Dictation
+    // or Siri on Apple devices) is switched off or not allowed.
+    if (code === "service-not-allowed") return this.giveUp("speech-off");
     if (code === "audio-capture") return this.giveUp("no-microphone");
     if (code === "language-not-supported") {
       // On-device listening turned out not to be ready: use the browser's usual service instead.
@@ -444,10 +512,15 @@ export class VoiceController {
     for (let i = this.listenFrom; i < this.segs.length; i++) {
       const seg = this.segs[i];
       let text = seg.text;
-      // Just after the interviewer stopped, the microphone may still be catching its voice.
-      if (this.firstSeen[i] <= this.speechEndedAt + this.opts.echoTailMs) {
+      // The microphone may still be catching the interviewer's voice: for a piece that began
+      // while it was talking, or a moment after. A piece that began later is the student's,
+      // even if it repeats the question ("yes, only in the UK"). On iPhone, iPad and other
+      // phones the microphone is off while the interviewer speaks, so there is no echo.
+      const began = this.firstSeen[i] <= this.speechEndedAt;
+      const echoable = !this.opts.halfDuplex && this.firstSeen[i] <= this.speechEndedAt + this.opts.echoTailMs;
+      if (echoable) {
         if (isMostlyEcho(text, this.tailText)) continue;
-        if (parts.length === 0) text = stripEchoPrefix(text, this.tailText, 2);
+        if (began && parts.length === 0) text = stripEchoPrefix(text, this.tailText, ECHO_PREFIX_MIN_RUN);
       }
       if (!text.trim()) continue;
       parts.push(text);
@@ -461,9 +534,11 @@ export class VoiceController {
     const { text: shown, clipped } = clipToLimit(text, this.opts.maxChars);
     if (shown !== this.answer) {
       this.answer = shown;
+      this.setHeld(false); // new words: the note about the last ones no longer applies
       this.cb.onTranscript(shown, clipped);
     }
-    if (heard) this.armSilence(lastFinal);
+    if (heard) this.keptPending = false;
+    if (heard || this.keptPending) this.armSilence(heard ? lastFinal : true);
   }
 
   private armSilence(lastFinal: boolean): void {
@@ -480,9 +555,13 @@ export class VoiceController {
     this.silenceTimer = null;
     if (this.phase !== "listening") return;
     const text = this.answer.trim();
-    // A lone "a", or only "um" / "hmm" while the student thinks, is never sent as an answer:
-    // it would use up one of the interview's turns. The words stay in the box.
-    if (text.length < this.opts.timing.minAnswerChars || isFillerOnly(text)) return;
+    // Some things are never sent on their own, because they would use up one of the
+    // interview's turns and make the interviewer talk while the student is still working:
+    // a lone letter (a lone digit is fine), "um" and "hmm", an opener or a request for time
+    // ("okay so", "let me think about that", "give me a moment"), and a nod ("I see").
+    // The words stay in the box and the next words join them.
+    const tooShort = text.length < this.opts.timing.minAnswerChars && !/\d/.test(text);
+    if (tooShort || isFillerOnly(text) || isStallOnly(text) || isAcknowledgementOnly(text)) return this.setHeld(true);
     const result = this.cb.onSubmit(text);
     if (this.phase !== "listening") return; // the room started the turn
     if (result === "sent") this.turnStarted();
@@ -490,14 +569,24 @@ export class VoiceController {
     else this.pause(); // keep the words in the box
   }
 
+  private setHeld(held: boolean): void {
+    if (held === this.held) return;
+    this.held = held;
+    this.cb.onHeld?.(held);
+  }
+
   private checkBargeIn(changedFrom: number): void {
     if (this.opts.halfDuplex) return;
     const from = Math.max(changedFrom, this.speakFrom);
     if (from >= this.segs.length) return;
-    const heard = joinText(...this.segs.slice(from).map((s) => s.text));
-    const spoken = this.spokenWindow();
-    if (bargeInDecision(heard, spoken) !== "barge-in") return;
-    this.tailText = spoken;
+    // The last few words heard, whatever shape the browser reports them in: one piece that
+    // keeps growing (Chrome on a computer) or pieces that each repeat the earlier words
+    // (Chrome on Android). Only these are compared with what was said just now, so the
+    // interviewer's own earlier sentences never look like new words from the student.
+    const pieces = dedupeCumulative(this.segs.slice(this.speakFrom).map((s) => s.text).filter((t) => t.trim()));
+    const recent = (pieces.at(-1) ?? "").trim().split(/\s+/).slice(-BARGE_WINDOW_WORDS).join(" ");
+    if (bargeInDecision(recent, this.recentlySpoken()) !== "barge-in") return;
+    this.tailText = this.replySpoken();
     this.muted = true;
     this.cancelSpeech();
     this.speechEndedAt = this.now();
@@ -512,7 +601,8 @@ export class VoiceController {
     this.splitter = new SentenceSplitter();
     this.replyOpen = true;
     this.muted = false;
-    this.lastSpoken = "";
+    this.replySentences = [];
+    this.thinkKept = false;
   }
 
   private enqueue(sentence: string): void {
@@ -531,9 +621,11 @@ export class VoiceController {
       return;
     }
     if (this.phase !== "speaking") {
+      this.keepThinkingWords();
       this.setPhase("speaking");
       if (this.opts.halfDuplex) this.halt();
     }
+    this.replySentences.push(text);
     const gen = this.speechGen;
     const u = this.deps.createUtterance(text);
     u.lang = this.opts.speakLang;
@@ -542,7 +634,6 @@ export class VoiceController {
     if (voice) u.voice = voice;
     const done = () => {
       if (gen !== this.speechGen || this.current !== u) return;
-      this.lastSpoken = u.text;
       this.current = null;
       this.speakNext();
     };
@@ -562,8 +653,13 @@ export class VoiceController {
     this.watchdog = this.setTimer(() => {
       this.watchdog = null;
       if (gen !== this.speechGen || this.current !== u) return;
-      if (this.deps.synth.speaking && rearms < 3) this.armWatchdog(u, gen, done, rearms + 1);
-      else done();
+      if (this.deps.synth.speaking && rearms < 1) {
+        this.armWatchdog(u, gen, done, rearms + 1);
+        return;
+      }
+      // Stuck: clear the browser's speech queue too, or the next sentence would wait behind it.
+      this.safe(() => this.deps.synth.cancel());
+      done();
     }, expected);
   }
 
@@ -581,14 +677,30 @@ export class VoiceController {
     return this.voice;
   }
 
-  /** What the interviewer is saying now: the sentence being read and the one before. */
-  private spokenWindow(): string {
-    return joinText(this.lastSpoken, this.current?.text ?? "");
+  /** Everything of the current reply that has started playing (the voice's echo can be any of it). */
+  private replySpoken(): string {
+    return joinText(...this.replySentences);
+  }
+
+  /**
+   * What the interviewer has said very recently: the sentence being read and enough of the
+   * ones before it to cover the last few words heard (the microphone lags a little). Not the
+   * whole reply: a long reply holds so many everyday words that a student's interruption
+   * would look like echo.
+   */
+  private recentlySpoken(): string {
+    let count = 0;
+    let i = this.replySentences.length;
+    while (i > 0 && (this.replySentences.length - i < 2 || count < BARGE_REFERENCE_WORDS)) {
+      i--;
+      count += words(this.replySentences[i]).length;
+    }
+    return joinText(...this.replySentences.slice(i));
   }
 
   private speechDone(): void {
     this.speechEndedAt = this.now();
-    this.tailText = this.spokenWindow();
+    this.tailText = this.replySpoken();
     this.toListening();
   }
 
