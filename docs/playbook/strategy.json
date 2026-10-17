@@ -160,7 +160,7 @@
   },
   {
    "label": "Domain",
-   "value": "casespar.app about $11.25 a year on Vercel (free on 15 Oct 2026)",
+   "value": "casespar.app, bought by the founder on Vercel on 17 Oct 2026: $9.99 the first year, then $15 a year",
    "basis": "repo: docs/PROGRESS.md"
   },
   {
@@ -1154,7 +1154,7 @@
   {
    "when": "Days 1-10 (setup, Fri 16 Oct to Sun 25 Oct)",
    "cap": "Ads £0",
-   "note": "One-offs you approve one by one: domain about $11.25 a year; ICO fee £52 (£47 by direct debit) if not already paid; reviewer (you set the fee after quotes; Claude's guess $500 to $1,000 for 20 cases); lawyer's fixed-fee check (you decide after a quote); Anthropic monthly limit $20; email service and CAPTCHA (Claude checks the cost first). Nothing on marketing before the site works end to end."
+   "note": "One-offs you approve one by one: domain about $15 a year after the first year; ICO fee £52 (£47 by direct debit) if not already paid; reviewer (you set the fee after quotes; Claude's guess $500 to $1,000 for 20 cases); lawyer's fixed-fee check (you decide after a quote); Anthropic monthly limit $20; email service and CAPTCHA (Claude checks the cost first). Nothing on marketing before the site works end to end."
   },
   {
    "when": "Days 11-17 (soft launch)",

@@ -26,7 +26,7 @@ About 145 minutes in total. 4 tasks, in order.
 Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/docs/CHROME_SETUP.md in my Chrome (it is my own private repository and I am signed in to GitHub). Please finish any parts of docs/CHROME_SETUP.md (A to H) that are not done yet, following its rules exactly, then do extra job I (the UK trade mark search). Report in a few short lines.
 ````
 
-## d1-2: If the trade mark search is clear, buy casespar.app in Vercel (about $11.25 a year; your decision).
+## d1-2: If the trade mark search is clear, buy casespar.app in Vercel (done: you bought it on 17 Oct 2026, $9.99 the first year, then $15 a year).
 
 - **Who:** You (Chrome prepares what it can, then hands over)
 - **Time:** about 15 minutes
@@ -34,7 +34,7 @@ Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42
 **Steps**
 
 1. Clear means: no live (registered or pending) CASESPAR, CASESPAR or CASE SPAR mark in classes 9, 41 or 42. The search is not legal advice; a trade mark attorney's view stays on the later launch list.
-2. Go to vercel.com, open Domains, search for casespar.app and buy it for one year (it was about $11.25 a year on 15 Oct). You type the card details.
+2. Go to vercel.com, open Domains, search for casespar.app and buy it for one year (on 17 Oct it was $9.99 for the first year, then $15 a year). You type the card details.
 3. Don't attach it to the project or change any settings. Claude does that tomorrow.
 4. If the search found a live mark in those classes, don't buy. Send Claude the message below and wait for its answer.
 
