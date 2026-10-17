@@ -7,11 +7,16 @@ import { cn } from "@/lib/ui/cn";
 // one step carries aria-current="step". On a phone the other stages shrink to numbered
 // dots (their names stay available to screen readers), so the bar fits on one line.
 
-export function StageBar({ stage, className }: { stage: Stage; className?: string }) {
+export function StageBar({ stage, warmup = false, className }: { stage: Stage; /** The warm-up chat before the case: no stage is current yet. */ warmup?: boolean; className?: string }) {
   const at = stage === "intro" ? "clarifying" : stage;
-  const index = stage === "debrief" ? PROGRESS_STAGES.length : PROGRESS_STAGES.indexOf(at);
+  const index = warmup ? -1 : stage === "debrief" ? PROGRESS_STAGES.length : PROGRESS_STAGES.indexOf(at);
   return (
     <nav aria-label="Interview progress" className={className}>
+      {warmup ? (
+        <p role="status" className="mb-2 text-[13px] font-medium text-muted">
+          Warm-up chat: the case comes next
+        </p>
+      ) : null}
       <ol className="flex flex-wrap items-center gap-y-2">
         {PROGRESS_STAGES.map((s, i) => {
           const current = i === index;

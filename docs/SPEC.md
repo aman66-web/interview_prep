@@ -145,7 +145,7 @@ Everything brand- or business-specific lives here, so it can change without touc
 
 Each session moves through these stages. The current stage is stored in `case_sessions.stage`.
 
-1. **intro:** the interviewer presents the case prompt.
+1. **intro:** the warm-up (founder's request, 17 Oct 2026). The candidate chooses on the start page: **Full interview** (the default) or **Straight to the case**. In the full interview the interviewer greets them, makes light small talk (never personal questions), explains in plain words how the session works and what the tools do, then hands over the case; it lasts one to three exchanges, after which code hands over the case anyway (`WARMUP_MAX_TURNS`), and the "Skip to the case" button skips it. **The system, not the model, shows the case text** (word for word) when the warm-up ends. "Straight to the case" saves a first message that already contains the case, so the first answer moves on to clarifying. No database change: the stage stays `intro` until the case has been shown. The interviewer also explains each later stage in plain words as it begins. The debrief ignores the warm-up; finishing before the case is shown is refused.
 2. **clarifying:** the interviewer answers questions **only from the case's `facts`**. If something isn't covered, it says so ("Assume X" or "That's not important here").
 3. **structure:** the candidate lays out how they'd approach it. The interviewer probes, and the answer is compared with `structure_rubric`.
 4. **analysis:** exhibits are revealed **only when the candidate asks for relevant data**, or when the interviewer moves things on. Maths questions come from `math[]`.

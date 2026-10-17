@@ -10,11 +10,14 @@ import {
   buildSummaryRequest,
   buildSystemPrompt,
   buildTurnContent,
+  casePresentation,
   debriefRequest,
   debriefSystem,
   openingMessage,
+  showsCase,
   SUMMARY_SYSTEM,
   type TurnNotes,
+  warmupOpening,
 } from "./prompt";
 import { ReplyExtractor } from "./reply-stream";
 import { checkReply, debriefModelSchema, interviewerReplySchema, type DebriefModelOutput, type InterviewerReply } from "./schema";
@@ -129,9 +132,15 @@ export type StartOutcome =
   | { status: "needs_upgrade" }
   | { status: "blocked"; blocked: Blocked };
 
+/** How an interview begins: the full interview (a short hello first), or straight to the case. */
+export type StartMode = "full" | "case";
+
+/** Candidate turns of warm-up after which the interviewer hands over the case whatever the chat is doing. */
+export const WARMUP_MAX_TURNS = 3;
+
 export async function startInterview(
   deps: Pick<Deps, "store">,
-  args: { userId: string; c: Case; paid: boolean },
+  args: { userId: string; c: Case; paid: boolean; mode?: StartMode },
 ): Promise<StartOutcome> {
   if (!canStartCase(args.c, args.paid)) return { status: "needs_upgrade" };
 
@@ -142,7 +151,7 @@ export async function startInterview(
   const result = await deps.store.startSession({
     userId: args.userId,
     caseId: args.c.id,
-    firstMessage: openingMessage(args.c),
+    firstMessage: args.mode === "case" ? openingMessage(args.c) : warmupOpening(),
     maxTotal: limits.maxTotal,
     maxPerDay: limits.maxPerDay,
     maxPerMonth: limits.maxPerMonth,
@@ -198,20 +207,35 @@ export async function runTurn(deps: Deps, input: TurnInput, emit: (event: TurnEv
     return;
   }
 
+  // The intro stage is the warm-up, and it lasts only until the case has been shown. A session
+  // that began with "straight to the case" (or an older one) already shows the case in its first
+  // message, so its first turn simply moves on to clarifying.
+  const caseShownBefore = stored.some((m) => m.role === "assistant" && showsCase(m.content, c));
+  const warmingUp = session.stage === "intro" && !caseShownBefore;
   let stage: Stage = session.stage;
   let stageJustChanged = false;
-  if (stage === "intro") {
+  let presentNow = false;
+  if (stage === "intro" && caseShownBefore) {
     stage = "clarifying";
     stageJustChanged = true;
   }
   const advance = input.action === "advance";
-  if (advance) {
+  if (warmingUp) {
+    // Skipping the warm-up, or a chat that has run long, hands over the case this turn.
+    if (advance || session.turns >= WARMUP_MAX_TURNS) {
+      stage = "clarifying";
+      stageJustChanged = true;
+      presentNow = true;
+    }
+  } else if (advance) {
     const following = nextStage(stage);
     if (stage === "synthesis" || !following || following === "debrief") return finish(deps, session, c, stored, emit);
     stage = following;
     stageJustChanged = true;
   }
-  const candidateText = typed || "(I'd like to move on to the next stage.)";
+  const candidateText = typed || (warmingUp && advance ? "(I'd like to skip the chat and see the case.)" : "(I'd like to move on to the next stage.)");
+  const lastAssistant = stored.filter((m) => m.role === "assistant").at(-1);
+  const caseJustPresented = !!lastAssistant && showsCase(lastAssistant.content, c); // its text already explained clarifying
 
   // Keep the conversation within the token cap: fold older turns into a summary.
   const chat: ChatMessage[] = stored.map((m) => ({ role: m.role, content: m.content }));
@@ -252,6 +276,10 @@ export async function runTurn(deps: Deps, input: TurnInput, emit: (event: TurnEv
     advanceRequested: advance,
     stageJustChanged,
     summary,
+    caseShown: !warmingUp,
+    presentNow,
+    stageExplained: caseJustPresented,
+    warmupTurns: warmingUp ? session.turns : undefined,
   };
 
   const messages: LlmMessage[] = [];
@@ -316,7 +344,17 @@ export async function runTurn(deps: Deps, input: TurnInput, emit: (event: TurnEv
   }
 
   // Apply what the model asked for, but only what the rules allow.
-  const newStage = applyProposedStage(stage, applied.next_stage);
+  let newStage = applyProposedStage(stage, applied.next_stage);
+  if (warmingUp && newStage !== "intro") {
+    // Leaving the warm-up always lands on clarifying, with the case shown word for word. The
+    // system adds the case itself (the interviewer is told not to), so it can never be misquoted.
+    newStage = "clarifying";
+    if (!showsCase(replyText, c)) {
+      const addition = `\n\n${casePresentation(c)}`;
+      replyText += addition;
+      emit({ t: "delta", text: addition });
+    }
+  }
   const revealed = [...session.revealed_exhibits];
   const wanted = applied.reveal_exhibit_id;
   if (wanted && c.exhibits.some((e) => e.id === wanted) && !revealed.includes(wanted) && (stage === "analysis" || newStage === "analysis")) {
@@ -361,6 +399,10 @@ async function finish(
   emit: (event: TurnEvent) => void,
 ): Promise<void> {
   const candidateMessages = messages.filter((m) => m.role === "user").map((m) => m.content);
+  if (session.stage === "intro" && !messages.some((m) => m.role === "assistant" && showsCase(m.content, c))) {
+    emit(error("too_few_turns", "Let's see the case first. Press Skip to the case, work on it for a while, then finish."));
+    return;
+  }
   if (candidateMessages.length === 0) {
     emit(error("too_few_turns", "Have at least one exchange with the interviewer before finishing."));
     return;

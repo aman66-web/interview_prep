@@ -25,6 +25,7 @@ type TurnEvent =
   | { t: "error"; code: string; message: string };
 
 const MOVE_ON_TEXT = "(I'd like to move on to the next stage.)";
+const SKIP_TEXT = "(I'd like to skip the chat and see the case.)";
 const ASK_DATA_TEXT = "Could I see any data or exhibits that would help with this?";
 
 const tabs = ["Exhibits", "Notes", "Calculator", "Timer"] as const;
@@ -62,6 +63,7 @@ export function InterviewRoom({
   startedAt,
   initialMessages,
   initialStage,
+  initialWarmup,
   initialTurns,
   turnsMax,
   maxChars,
@@ -74,6 +76,8 @@ export function InterviewRoom({
   startedAt: string;
   initialMessages: Message[];
   initialStage: Stage;
+  /** The interview opened with a warm-up chat and the case has not been shown yet. */
+  initialWarmup: boolean;
   initialTurns: number;
   turnsMax: number;
   maxChars: number;
@@ -245,6 +249,8 @@ export function InterviewRoom({
   }
 
   const finished = stage === "debrief";
+  // The warm-up lasts until the interviewer hands over the case, which moves the stage on.
+  const inWarmup = stage === "intro" && initialWarmup;
   const canSend = !busy && !finished && input.trim().length > 0;
 
   function onTabKey(e: KeyboardEvent<HTMLDivElement>) {
@@ -296,7 +302,7 @@ export function InterviewRoom({
             </Link>
           </div>
         </div>
-        <StageBar stage={stage} className="mt-4 lg:mt-3" />
+        <StageBar stage={stage} warmup={inWarmup} className="mt-4 lg:mt-3" />
       </header>
 
       <div className="mt-3 grid gap-3 lg:min-h-0 lg:flex-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:grid-rows-[minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,27rem)]">
@@ -436,16 +442,16 @@ export function InterviewRoom({
                 className="block max-h-60 min-h-[3.5rem] w-full resize-none bg-transparent px-4 pb-2 pt-1.5 text-[15px] leading-relaxed text-ink placeholder:text-subtle disabled:opacity-60"
               />
               <div className="flex flex-wrap items-center gap-1.5 px-2 pb-2">
-                <button type="button" disabled={busy || finished} onClick={() => void send("message", ASK_DATA_TEXT, ASK_DATA_TEXT)} className={chip}>
+                <button type="button" disabled={busy || finished || inWarmup} onClick={() => void send("message", ASK_DATA_TEXT, ASK_DATA_TEXT)} className={chip}>
                   <ChartBars size={15} />
                   Ask for data
                 </button>
-                <button type="button" disabled={busy || finished} onClick={() => void send("advance", null, MOVE_ON_TEXT)} className={chip}>
+                <button type="button" disabled={busy || finished} onClick={() => void send("advance", null, inWarmup ? SKIP_TEXT : MOVE_ON_TEXT)} className={chip}>
                   <ArrowRight size={15} />
-                  Move to next stage
+                  {inWarmup ? "Skip to the case" : "Move to next stage"}
                 </button>
                 {confirmFinish ? null : (
-                  <button type="button" disabled={busy || finished} onClick={() => setConfirmFinish(true)} className={chip}>
+                  <button type="button" disabled={busy || finished || inWarmup} onClick={() => setConfirmFinish(true)} className={chip}>
                     <Flag size={15} />
                     Finish now
                   </button>

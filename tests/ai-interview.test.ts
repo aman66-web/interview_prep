@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { startInterview, runTurn, type Deps, type TurnEvent, type TurnInput } from "@/lib/ai/interview";
+import { startInterview, runTurn, WARMUP_MAX_TURNS, type Deps, type StartMode, type TurnEvent, type TurnInput } from "@/lib/ai/interview";
+import { buildSystemPrompt, casePresentation, showsCase, warmupOpening } from "@/lib/ai/prompt";
 import { isAiConfigured, type LlmCall } from "@/lib/ai/llm";
 import { estimateCostUsd } from "@/lib/ai/pricing";
 import { storedDebriefSchema } from "@/lib/ai/schema";
@@ -36,8 +37,9 @@ function setup(script: (call: LlmCall, index: number) => Scripted) {
   return { store, llm, deps };
 }
 
-async function begin(deps: Deps, userId = "u1", paid = false, c = bakery) {
-  const out = await startInterview(deps, { userId, c, paid });
+// The stage machinery below is tested from a "straight to the case" start; the warm-up has its own tests.
+async function begin(deps: Deps, userId = "u1", paid = false, c = bakery, mode: StartMode = "case") {
+  const out = await startInterview(deps, { userId, c, paid, mode });
   if (out.status !== "started") throw new Error(`could not start: ${out.status}`);
   return out.sessionId;
 }
@@ -524,5 +526,184 @@ describe("configuration", () => {
 
   it("is only ever reached through lib/ai (stageOf helper sanity)", () => {
     expect(stageOf({ messages: [{ role: "user", content: "x\nCurrent stage: analysis (Analysis)" }] } as LlmCall)).toBe("analysis");
+  });
+});
+
+
+describe("the full interview: a warm-up before the case", () => {
+  const notesOf = (call: LlmCall) => call.messages[call.messages.length - 1].content;
+
+  it("opens with a friendly hello and does not show the case yet", async () => {
+    const { store, deps } = setup(() => reply());
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    const [opening] = await store.listMessages(sessionId);
+    expect(opening.role).toBe("assistant");
+    expect(opening.content).toBe(warmupOpening());
+    expect(showsCase(opening.content, bakery)).toBe(false);
+    expect((await store.getSession(sessionId))!.stage).toBe("intro");
+  });
+
+  it("is the default when no mode is given", async () => {
+    const { store, deps } = setup(() => reply());
+    const out = await startInterview(deps, { userId: "u1", c: bakery, paid: false });
+    if (out.status !== "started") throw new Error("not started");
+    expect((await store.listMessages(out.sessionId))[0].content).toBe(warmupOpening());
+  });
+
+  it("stays in the warm-up while the model chats, and tells it the case has not been shown", async () => {
+    const { store, deps, llm } = setup(() => reply({ reply: "Good to hear. Let me explain how this works." }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    const events = await turn(deps, sessionId, "I'm well thanks, a bit nervous!");
+    expect(states(events).at(-1)!.stage).toBe("intro");
+    expect(streamedText(events)).not.toContain(bakery.prompt);
+    expect(notesOf(llm.calls[0])).toContain("The case has not been shown yet");
+    expect(notesOf(llm.calls[0])).not.toContain("The stage has just changed");
+    expect((await store.getSession(sessionId))!.stage).toBe("intro");
+  });
+
+  it("shows the case word for word when the model hands it over, and moves to clarifying", async () => {
+    let n = 0;
+    const { store, deps } = setup(() => (n++ === 0 ? reply({ reply: "Lovely." }) : reply({ reply: "Great, here is the case.", next_stage: "clarifying" })));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    await turn(deps, sessionId, "Hi, I'm fine thanks.");
+    const events = await turn(deps, sessionId, "Yes, I'm ready.");
+    const text = streamedText(events);
+    expect(text.startsWith("Great, here is the case.")).toBe(true);
+    expect(text).toContain(bakery.prompt);
+    expect(text).toBe(`Great, here is the case.\n\n${casePresentation(bakery)}`);
+    expect(states(events).at(-1)!.stage).toBe("clarifying");
+    const saved = await store.listMessages(sessionId);
+    expect(saved.at(-1)!.content).toBe(text); // what was shown is what was saved
+    expect((await store.getSession(sessionId))!.stage).toBe("clarifying");
+  });
+
+  it("does not show the case twice if the model already read it out", async () => {
+    const { store, deps } = setup(() => reply({ reply: `Here it is. ${bakery.prompt}`, next_stage: "clarifying" }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    const events = await turn(deps, sessionId, "Ready.");
+    const text = streamedText(events);
+    expect(text.split(bakery.prompt).length - 1).toBe(1);
+    expect((await store.listMessages(sessionId)).at(-1)!.content).toBe(text);
+  });
+
+  it("never lets the model skip past clarifying, whether it asks during the chat or when the case is handed over", async () => {
+    const { deps } = setup(() => reply({ reply: "Right.", next_stage: "structure" }));
+    const chatting = await begin(deps, "u1", false, bakery, "full");
+    expect(states(await turn(deps, chatting, "Ready.")).at(-1)!.stage).toBe("intro"); // not the next stage, so ignored
+    const skipping = await begin(deps, "u2", false, bakery, "full");
+    const events = await turn(deps, skipping, undefined, { action: "advance", userId: "u2" });
+    expect(states(events).at(-1)!.stage).toBe("clarifying");
+  });
+
+  it("the Skip to the case button shows the case this turn, with a note telling the model to hand it over", async () => {
+    const { store, deps, llm } = setup(() => reply({ reply: "Sure." }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    const events = await turn(deps, sessionId, undefined, { action: "advance" });
+    expect(notesOf(llm.calls[0])).toContain("The warm-up is over");
+    expect(notesOf(llm.calls[0])).not.toContain("Move to next stage"); // the button the candidate pressed was Skip to the case
+    expect(notesOf(llm.calls[0])).toContain("If the candidate asked a question");
+    expect((await store.listMessages(sessionId)).at(-2)!.content).toBe("(I'd like to skip the chat and see the case.)");
+    expect(streamedText(events)).toContain(bakery.prompt);
+    expect(states(events).at(-1)!.stage).toBe("clarifying"); // one step, not two
+  });
+
+  it("hands over the case itself when the chat has gone on too long", async () => {
+    const { deps, llm } = setup(() => reply({ reply: "Mm-hm." }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    for (let i = 0; i < WARMUP_MAX_TURNS; i++) {
+      const events = await turn(deps, sessionId, `chat ${i}`);
+      expect(states(events).at(-1)!.stage).toBe("intro");
+    }
+    const events = await turn(deps, sessionId, "still chatting");
+    expect(states(events).at(-1)!.stage).toBe("clarifying");
+    expect(streamedText(events)).toContain(bakery.prompt);
+    expect(notesOf(llm.calls.at(-1)!)).toContain("The warm-up is over");
+  });
+
+  it("then carries on through the normal stages, one at a time", async () => {
+    const proposals = ["clarifying", "structure", "analysis"];
+    let n = 0;
+    const { deps } = setup(() => reply({ next_stage: proposals[n++] ?? null }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    const seen: string[] = [];
+    for (const m of ["ready", "ok", "my structure", "next"]) seen.push(states(await turn(deps, sessionId, m)).at(-1)!.stage);
+    expect(seen).toEqual(["clarifying", "structure", "analysis", "analysis"]);
+  });
+
+  it("the model is told this is the first reply, and how many warm-up exchanges there have been", async () => {
+    const { deps, llm } = setup(() => reply({ reply: "Okay." }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    await turn(deps, sessionId, "Hi");
+    await turn(deps, sessionId, "Ready");
+    expect(notesOf(llm.calls[0])).toContain("candidate exchanges so far: 0");
+    expect(notesOf(llm.calls[0])).toContain("greet, explain how the session works");
+    expect(notesOf(llm.calls[1])).toContain("candidate exchanges so far: 1");
+    expect(notesOf(llm.calls[1])).not.toContain("This is your first reply");
+  });
+
+  it("after the case is handed over, the next turn is told the clarifying stage was already explained", async () => {
+    let n = 0;
+    const { deps, llm } = setup(() => reply({ reply: n++ === 0 ? "Great, here is the case." : "Sure.", next_stage: n === 1 ? "clarifying" : null }));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    await turn(deps, sessionId, "Ready");
+    await turn(deps, sessionId, "What does the client sell?");
+    expect(notesOf(llm.calls[1])).toContain("already explained the clarifying stage");
+  });
+
+  it("will not score a greeting: finishing before the case is shown asks the candidate to see the case first", async () => {
+    const { store, deps, llm } = setup(() => reply());
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    await turn(deps, sessionId, "hi");
+    const events = await turn(deps, sessionId, undefined, { action: "finish" });
+    expect(errors(events)[0]?.code).toBe("too_few_turns");
+    expect(errors(events)[0]?.message).toContain("case first");
+    expect(llm.calls.some((c) => c.purpose === "debrief")).toBe(false);
+    expect((await store.getSession(sessionId))!.completed_at).toBeNull();
+  });
+
+  it("can still be finished with a debrief that ignores the small talk", async () => {
+    const { deps, llm } = setup((call) => (call.purpose === "debrief" ? debrief : reply({ reply: "Great, here is the case.", next_stage: "clarifying" })));
+    const sessionId = await begin(deps, "u1", false, bakery, "full");
+    await turn(deps, sessionId, "Hello, ready when you are.");
+    await turn(deps, sessionId, undefined, { action: "finish" });
+    const debriefCall = llm.calls.find((c) => c.purpose === "debrief")!;
+    expect(debriefCall.system).toContain("Do not score it and do not quote it");
+  });
+});
+
+describe("starting straight at the case", () => {
+  it("presents the case in the first message and explains the first stage", async () => {
+    const { store, deps } = setup(() => reply());
+    const sessionId = await begin(deps, "u1", false, bakery, "case");
+    const [opening] = await store.listMessages(sessionId);
+    expect(opening.content).toContain(bakery.prompt);
+    expect(opening.content).toContain("clarifying questions");
+    expect((await store.getSession(sessionId))!.stage).toBe("intro"); // the first turn moves it on
+  });
+
+  it("moves to clarifying on the first answer, as before", async () => {
+    const { deps, llm } = setup(() => reply());
+    const sessionId = await begin(deps, "u1", false, bakery, "case");
+    const events = await turn(deps, sessionId, "What does the client sell?");
+    expect(states(events).at(-1)!.stage).toBe("clarifying");
+    // The opening message already explained the clarifying stage, so the model is told not to repeat it.
+    expect(llm.calls[0].messages.at(-1)!.content).toContain("already explained the clarifying stage");
+    expect(llm.calls[0].messages.at(-1)!.content).not.toContain("beginning with a short plain-words explanation");
+    expect(streamedText(events)).not.toContain(bakery.prompt);
+  });
+});
+
+describe("the interviewer's instructions", () => {
+  const system = buildSystemPrompt(bakery);
+
+  it("explain the intro warm-up, never to read out the case, and to explain every stage plainly", () => {
+    expect(system).toContain("- intro:");
+    expect(system).toContain("Do not write out, read out or summarise the case");
+    expect(system).toContain("EXPLAINING CLEARLY");
+    expect(system).toContain("At the start of every stage");
+  });
+
+  it("keep small talk free of personal questions", () => {
+    expect(system).toContain("never ask where they study, work or live");
   });
 });

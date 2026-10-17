@@ -21,7 +21,9 @@ export async function startInterviewAction(formData: FormData) {
   if (!isAiConfigured()) redirect(`/app/start/${slug}?notice=unavailable`);
 
   const paid = hasAccess(await getEntitlement(await createClient()), "all_cases");
-  const outcome = await startInterview({ store: createInterviewStore(createAdminClient()) }, { userId: user.id, c, paid });
+  // "full" (the default): a short hello and an explanation first. "case": straight to the case.
+  const mode = formData.get("mode") === "case" ? "case" : "full";
+  const outcome = await startInterview({ store: createInterviewStore(createAdminClient()) }, { userId: user.id, c, paid, mode });
   await recordStartOutcome(createAdminClient, outcome, { userId: user.id, slug }); // funnel: case_started or paywall_viewed
 
   switch (outcome.status) {

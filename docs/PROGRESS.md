@@ -58,6 +58,7 @@ Read this first in a new session.
 - [ ] Vercel preview link and plain-English report
 
 ### P3 AI interviewer
+- [x] Start choice and warm-up (17 Oct 2026, founder's request): **Full interview** (hello, small talk, how it works, then the case; default) or **Straight to the case**, chosen on the start page; the interviewer explains every stage as it begins. `lib/ai/interview.ts`, `lib/ai/prompt.ts`, SPEC section 6. Not yet tried with a real model: read a real transcript and tune the wording in `lib/ai/prompt.ts` if the interviewer rambles or over-explains
 - [x] Session stages, exhibit reveals, maths checks, debrief scoring, limits and usage logging (`lib/ai/`; every model call goes through it, and only `lib/ai/llm-anthropic.ts` imports the SDK)
 - [x] The free starter case works from start to finish: `/app/start/[slug]`, `/app/interview/[id]` (chat, stage bar, exhibits, notes, calculator, timer), `/app/debrief/[id]`. Proven in a browser against a fake model; **not yet run with a real model**
 - [x] The debrief stores its maths results inside `case_sessions.scores` when the interview finishes, so the debrief page reads only that and `math_checks` (which holds answer keys) is never readable by browsers

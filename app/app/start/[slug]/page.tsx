@@ -41,6 +41,19 @@ const STAGES = [
   { name: "Recommend", text: "Answer first, then your reasons, risks and next steps." },
 ];
 
+const START_MODES = [
+  {
+    value: "full",
+    title: "Full interview",
+    text: "The interviewer says hello, makes a little small talk and explains how the session works, then gives you the case. About 3 extra minutes, like walking into a real room.",
+  },
+  {
+    value: "case",
+    title: "Straight to the case",
+    text: "Skip the hello and go directly to the case and the questions. The interviewer still explains each stage as you reach it.",
+  },
+] as const;
+
 const TOOLS = [
   { icon: <ChartBars size={16} />, name: "Exhibits", text: "Shared in the analysis, when you ask for data or as the case moves on" },
   { icon: <Notes size={16} />, name: "Notes", text: "A scratchpad kept in this browser tab only" },
@@ -173,16 +186,33 @@ export default async function StartPage({
               ) : (
                 <>
                   <p className="text-[15px] leading-relaxed text-ink">
-                    The interviewer opens with the case. Take a moment, then answer as you would out loud.
+                    Choose how to begin. Either way, the interviewer explains each stage as you reach it. Answer as you would out loud.
                   </p>
                   {!paid && c.free_starter ? (
                     <p className="mt-3 rounded-2xl bg-lime/60 px-4 py-3 text-sm text-lime-ink">
                       This uses your free AI interview, with a full scored debrief.
                     </p>
                   ) : null}
-                  <form action={startInterviewAction} className="mt-auto pt-6">
+                  <form action={startInterviewAction} className="mt-auto pt-5">
                     <input type="hidden" name="slug" value={c.slug} />
-                    <Button type="submit" size="lg" full arrow>
+                    <fieldset>
+                      <legend className="text-sm font-semibold text-ink">How would you like to start?</legend>
+                      <div className="mt-2 grid gap-2">
+                        {START_MODES.map((m) => (
+                          <label
+                            key={m.value}
+                            className="flex cursor-pointer items-start gap-3 rounded-2xl p-3 ring-1 ring-inset ring-line transition-colors hover:bg-surface-2 has-[:checked]:bg-brand-soft has-[:checked]:ring-2 has-[:checked]:ring-brand has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand"
+                          >
+                            <input type="radio" name="mode" value={m.value} defaultChecked={m.value === "full"} className="mt-1 size-4 shrink-0 accent-brand" />
+                            <span>
+                              <span className="block text-[15px] font-medium text-ink">{m.title}</span>
+                              <span className="mt-0.5 block text-sm leading-relaxed text-muted">{m.text}</span>
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <Button type="submit" size="lg" full arrow className="mt-4">
                       Start the interview
                     </Button>
                   </form>
@@ -217,6 +247,9 @@ export default async function StartPage({
             ))}
           </ol>
           <p className="mt-5 text-sm text-on-night-muted">
+            If you choose the full interview, there is a short warm-up chat before stage 1. The interviewer explains each stage as you reach it.
+          </p>
+          <p className="mt-2 text-sm text-on-night-muted">
             At the end you get a debrief that scores five skills out of 5. Your maths is checked by code against the case numbers.
           </p>
         </section>
