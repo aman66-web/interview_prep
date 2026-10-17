@@ -98,10 +98,12 @@ export function InterviewRoom({
   const keepGoingRef = useRef<HTMLButtonElement>(null);
   const elapsed = useElapsedSeconds(startedAt);
 
-  // Voice mode (off until the candidate switches it on). What they say fills the reply box and
-  // is sent through send() below, exactly like a typed answer, so every limit still applies.
+  // Voice mode: the page opens with its start note showing (one click starts it, "Not now" or the
+  // switch turns it off). What they say fills the reply box and is sent through send() below,
+  // exactly like a typed answer, so every limit still applies.
   const voice = useVoiceMode({
     maxChars,
+    askOnOpen: stage !== "debrief",
     onTranscript: setInput,
     onSubmit: (text) => {
       if (stage === "debrief") return "refused";

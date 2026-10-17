@@ -26,7 +26,8 @@ import { cn } from "@/lib/ui/cn";
 // and the glue between the room and lib/voice/controller.ts. Only the browser's own Web
 // Speech API is used. We never record or keep audio: the room receives the text of the
 // answer and sends it exactly as if it had been typed. Nothing is stored in the browser;
-// voice mode is off whenever the page opens.
+// the page opens with the start note showing (voice mode is still off until the candidate
+// presses Start: browsers only ask for the microphone, and only let a page speak, after a click).
 
 let support: VoiceSupport | null = null;
 const subscribeNever = () => () => {};
@@ -53,12 +54,14 @@ export type VoiceModeOptions = {
   onSubmit: (text: string) => SubmitResult;
   /** When switching on: the text already in the box, and the interviewer's latest message to read out. */
   startContext: () => { prefix: string; readAloud: string };
+  /** Show the start note as soon as the page opens, so voice is one click away (not for a finished interview). */
+  askOnOpen?: boolean;
 };
 
 export function useVoiceMode(options: VoiceModeOptions) {
   const supported = useSyncExternalStore(subscribeNever, readSupport, () => null);
   const [phase, setPhase] = useState<VoicePhase>("off");
-  const [asking, setAsking] = useState(false);
+  const [asking, setAsking] = useState(options.askOnOpen ?? false);
   const [agreed, setAgreed] = useState(false);
   const [problem, setProblem] = useState<VoiceProblem | null>(null);
   const [clipped, setClipped] = useState(false);
