@@ -45,7 +45,7 @@ People sign in by typing a one-time code from the email, not by clicking a link.
 2. Open **Magic Link**. Replace the whole message with:
 
    ```html
-   <h2>Your Mock Partner sign-in code</h2>
+   <h2>Your CaseSpar sign-in code</h2>
    <p>Type this code on the sign-in page:</p>
    <p style="font-size:32px;font-weight:700;letter-spacing:6px;font-family:monospace">{{ .Token }}</p>
    <p>It works once and expires soon. You can read this email on your phone and type the code on your computer.</p>
@@ -108,7 +108,7 @@ Money rules in the code: card details never touch this site (Stripe's page takes
 | Clean-up password: any long random text you make up (a password manager can generate one) | `CRON_SECRET` | **Yes** |
 | Your own email, so you can open `/admin` (several emails: separate them with commas) | `ADMIN_EMAILS` | No, but keep it to yourself |
 | Support inbox shown on the site | `NEXT_PUBLIC_SUPPORT_EMAIL` | No |
-| The real web address, once you have a domain (e.g. `https://mockpartner.com`) | `NEXT_PUBLIC_SITE_URL` | No |
+| The real web address, once you have a domain (e.g. `https://casespar.app`) | `NEXT_PUBLIC_SITE_URL` | No |
 | Optional: a separate key for share links (any long random text) | `SHARE_SIGNING_SECRET` | **Yes** |
 | Temporary, **Preview only**: `1` lets an `ADMIN_EMAILS` address sign in on the preview with no email. Delete it before sharing a preview link. Never for Production (it is ignored there) | `PREVIEW_QUICK_LOGIN` | No |
 

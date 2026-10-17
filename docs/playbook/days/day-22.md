@@ -36,7 +36,7 @@ Claude, it's Friday: please re-check every date on the consulting application de
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, check the campaign matches Claude's plan: budget £10 a day, the bid cap, phrase and exact keywords only, the negatives, the final URL suffix with UTM tags, no firm names in the ad text or the keywords, and no Google tag or conversion tracking set up. Tell me any difference. Then stop and ask me before you switch it on; I'll say yes in this chat.
+In my CaseSpar Google Ads account, check the campaign matches Claude's plan: budget £10 a day, the bid cap, phrase and exact keywords only, the negatives, the final URL suffix with UTM tags, no firm names in the ad text or the keywords, and no Google tag or conversion tracking set up. Tell me any difference. Then stop and ask me before you switch it on; I'll say yes in this chat.
 ````
 
 ## d22-3: Approve the email course for the live site, and the database change for refer-a-friend.
@@ -54,7 +54,7 @@ In my Mock Partner Google Ads account, check the campaign matches Claude's plan:
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, I've checked the 7 course emails and the opt-in box on the preview, and I approve merging the email list and the 7-day course into main so they go live today. For refer-a-friend: I've read your explanation of its database change; yes, please apply it to the real Supabase project and run the security checks, but don't merge refer-a-friend yet. Run all the tests first and tell me when the email course is live on mockpartner.com.
+Claude, I've checked the 7 course emails and the opt-in box on the preview, and I approve merging the email list and the 7-day course into main so they go live today. For refer-a-friend: I've read your explanation of its database change; yes, please apply it to the real Supabase project and run the security checks, but don't merge refer-a-friend yet. Run all the tests first and tell me when the email course is live on casespar.app.
 ````
 
 ## d22-4: Fact-check this week's search page 2: reading charts in case interviews.
@@ -100,9 +100,9 @@ So:
 And on AI: McKinsey encourages using it to practise interview questions while you prepare, but not to produce answers during an interview. Practice tools are for before.
 
 Free mental maths trainer:
-https://mockpartner.com/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-10
+https://casespar.app/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-10
 
-Mock Partner is not affiliated with or endorsed by McKinsey & Company, Bain & Company or any other firm named here.
+CaseSpar is not affiliated with or endorsed by McKinsey & Company, Bain & Company or any other firm named here.
 ````
 
 ## Write down today

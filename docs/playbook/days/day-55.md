@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £155; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ After merging, they expect to cut a quarter of the combined cost.
 
 Then ask the questions that matter: how long will it take, what will it cost to get there, and how sure are we?
 
-The free M&A guide: https://mockpartner.com/guides/mergers-and-acquisitions-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d55
-(I built Mock Partner.)
+The free M&A guide: https://casespar.app/guides/mergers-and-acquisitions-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d55
+(I built CaseSpar.)
 ````
 
 ## d55-2: Read the LinkedIn boosted-post test (only if it ran)
@@ -76,21 +76,21 @@ Subject: Free case-interview practice codes for [club name] members
 
 Hi [first name, or 'there'],
 
-This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run Mock Partner (mockpartner.com), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
+This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run CaseSpar (casespar.app), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 With first-year internship interviews starting in early January at several schools, I'd like to offer [club name] members, free to the club:
 - a club code: two extra free AI interviews per member (on top of the one everyone gets) and 20% off a first purchase;
 - a printable case-workshop pack (one case with facilitator notes) for a club session;
 - a club page on our site with the code on it.
 
-No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. Mock Partner isn't linked to any school or consulting firm.
+No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. CaseSpar isn't linked to any school or consulting firm.
 
 If you'd rather not get emails from me, reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d55-5: Fact-check the UK Christmas-break page (publish on Friday)

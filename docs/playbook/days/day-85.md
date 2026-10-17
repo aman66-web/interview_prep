@@ -13,14 +13,14 @@ About 115 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week (Fri 8 to Wed 13 Jan) under £185; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Friday check: send Chrome the message below. If any date changed, ask Claude to update the page and show you before you approve.
 5. In today's note: one user comment, and your minutes per channel.
 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Open mockpartner.com and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.
+Open casespar.app and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.
 ````
 
 ## d85-2: Record the last sign-offs, then publish the UK internship batch and this week's page
@@ -47,15 +47,15 @@ Claude, the UK internship batch is ready: [number] cases signed off by the revie
 
 **Steps**
 
-1. Wait for Claude's reply. Replace [number] with the real number of reviewed cases showing on mockpartner.com/cases (not the plan's 30 unless that's the real count).
+1. Wait for Claude's reply. Replace [number] with the real number of reviewed cases showing on casespar.app/cases (not the plan's 30 unless that's the real count).
 2. Keep 'a reviewer with consulting experience' only if your reviewer really has consulting interview experience; otherwise write 'a human reviewer'.
-3. In the second paragraph, keep only the case types that really show on mockpartner.com/cases, and keep 'The newest are written for UK summer internship interviews' only if the UK internship batch went live today.
+3. In the second paragraph, keep only the case types that really show on casespar.app/cases, and keep 'The newest are written for UK summer internship interviews' only if the UK internship batch went live today.
 4. Post the text below late morning (UK). Reply to comments.
 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Mock Partner now has [number] practice cases live, each one signed off by a reviewer with consulting experience before it went live.
+CaseSpar now has [number] practice cases live, each one signed off by a reviewer with consulting experience before it went live.
 
 They cover profitability, market entry, market sizing, M&A, pricing, growth and operations, with UK and US clients. Every case is original, with invented companies and numbers. The newest are written for UK summer internship interviews.
 
@@ -63,8 +63,8 @@ You run a case by text with an AI interviewer: ask clarifying questions, ask for
 
 The first full interview is free, with no card needed. It's practice for before an interview, never help during one, and it isn't linked to any consulting firm.
 
-https://mockpartner.com/cases?utm_source=linkedin&utm_medium=social&utm_campaign=post-d85
-(I built Mock Partner.)
+https://casespar.app/cases?utm_source=linkedin&utm_medium=social&utm_campaign=post-d85
+(I built CaseSpar.)
 ````
 
 ## d85-4: Ask Claude to write the spring batch for the spring
@@ -105,7 +105,7 @@ Just checking everything is ready for your session on [date]. The workshop pack 
 If anything has changed, or you'd like a second copy of the pack for another session, just reply.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

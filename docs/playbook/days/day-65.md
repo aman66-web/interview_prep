@@ -28,7 +28,7 @@ About 115 minutes in total. 6 tasks, in order.
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account (read only; change nothing), export for the last 28 days: the search terms report (search term, clicks, cost), the keywords report (keyword, match type, clicks, cost, average cost per click) and the total spend since the ads started. Save them as ads-search-terms.csv and ads-keywords.csv, and give me the total spend in one line.
+In my CaseSpar Google Ads account (read only; change nothing), export for the last 28 days: the search terms report (search term, clicks, cost), the keywords report (keyword, match type, clicks, cost, average cost per click) and the total spend since the ads started. Save them as ads-search-terms.csv and ads-keywords.csv, and give me the total spend in one line.
 ````
 
 ## d65-3: Ask Claude for the January ads plan (only if January ads are allowed)
@@ -45,7 +45,7 @@ In my Mock Partner Google Ads account (read only; change nothing), export for th
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, the Day 60 gate allows Google Ads in January at up to £[your January daily total] a day in total from Saturday 2 January to Wednesday 13 January, and I'll confirm the caps on 31 December. Below are Chrome's export of the last 28 days and, from the admin page, free sign-ups and paying customers by utm_term and utm_campaign. Please write a January plan for my Mock Partner Google Ads account:
+Claude, the Day 60 gate allows Google Ads in January at up to £[your January daily total] a day in total from Saturday 2 January to Wednesday 13 January, and I'll confirm the caps on 31 December. Below are Chrome's export of the last 28 days and, from the admin page, free sign-ups and paying customers by utm_term and utm_campaign. Please write a January plan for my CaseSpar Google Ads account:
 1. For each current keyword: keep, cut or change, using cost per free sign-up and per paying customer.
 2. A US Search campaign for MBA first-years practising for internship case interviews (US only, ads shown during US daytime), and the UK campaign refocused on internship case interview practice.
 3. How to split the daily total between them from Saturday 2 January.
@@ -74,7 +74,7 @@ Then write the Claude in Chrome steps to build it all paused, with nothing switc
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````
@@ -101,7 +101,7 @@ There's no magic number, and quality beats count. What I'd suggest for the last 
 - Do some cases live with classmates or second-years. The back-and-forth matters.
 - Stop the day before. One short warm-up on the day is plenty.
 
-Disclosure: I built Mock Partner, a text-based AI case interviewer (maths checked by code, scored debrief). It isn't affiliated with or endorsed by McKinsey, Bain or any other firm. The first full interview is free if it helps fill gaps between live cases: https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d65
+Disclosure: I built CaseSpar, a text-based AI case interviewer (maths checked by code, scored debrief). It isn't affiliated with or endorsed by McKinsey, Bain or any other firm. The first full interview is free if it helps fill gaps between live cases: https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d65
 ````
 
 ## d65-6: Only if the consent banner went live yesterday: Chrome creates the Google Ads conversions and gets the tag id
@@ -119,7 +119,7 @@ Disclosure: I built Mock Partner, a text-based AI case interviewer (maths checke
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Only for the Google Ads tag I approved: in my Mock Partner Google Ads account, create two website conversion actions, set up by hand with the Google tag (no automatic setup): 'Purchase' (Primary, use the value the site sends, count every one) and 'Free sign-up' (Secondary, count one). Don't turn on enhanced conversions or 'user-provided data', don't turn on automatic event detection, and don't create any remarketing audience. Don't change billing, budgets or any campaign. Then give me the tag id (it starts with AW-) and each conversion's label.
+Only for the Google Ads tag I approved: in my CaseSpar Google Ads account, create two website conversion actions, set up by hand with the Google tag (no automatic setup): 'Purchase' (Primary, use the value the site sends, count every one) and 'Free sign-up' (Secondary, count one). Don't turn on enhanced conversions or 'user-provided data', don't turn on automatic event detection, and don't create any remarketing audience. Don't change billing, budgets or any campaign. Then give me the tag id (it starts with AW-) and each conversion's label.
 ````
 
 ## Write down today

@@ -13,7 +13,7 @@ About 120 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105 (or your lower cap); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com, every admin enquiry and any newsletter replies.
+3. Reply to every email in hello@casespar.app, every admin enquiry and any newsletter replies.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ The specific version names the data, names the time period and says why you want
 
 Practise it: for each branch of your structure, write the one piece of data that would settle it, and how you'd ask for it in one sentence.
 
-In Mock Partner the exhibits only appear when you ask for them, so you practise exactly this: https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d69
-(I built Mock Partner.)
+In CaseSpar the exhibits only appear when you ask for them, so you practise exactly this: https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d69
+(I built CaseSpar.)
 ````
 
 ## d69-2: Add any quotes people agreed to
@@ -58,7 +58,7 @@ Claude, [number] people have given me written permission to show their words on 
 **Steps**
 
 1. Skip this if no society, club or careers service said yes since Friday.
-2. On mockpartner.com/admin, create a club code with their name and copy the club page link.
+2. On casespar.app/admin, create a club code with their name and copy the club page link.
 3. Attach the partner pack and the case-workshop pack, fill in the reply below and send it. Mark them 'partner' on your list.
 
 **Text to use (post, email or message)** (copy exactly):
@@ -79,7 +79,7 @@ If someone needs to approve it first (for example your students' union), tell me
 
 Have a good break,
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d69-4: Fact-check this week's first new page (the 4-week schedule, unless Claude's plan named another)

@@ -11,9 +11,9 @@ About 135 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. Open mockpartner.com/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the Numbers tab.
+1. Open casespar.app/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic spend under $80; Google Ads this week under £70; no errors in Vercel. It's Monday: sign in once with your second email address and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every enquiry on the admin page.
+3. Reply to every email in hello@casespar.app and every enquiry on the admin page.
 4. Key post: post the text below on LinkedIn this morning, as yourself.
 5. In today's note: one thing a user said or did, and your minutes per channel.
 
@@ -34,7 +34,7 @@ What is 23% of 400?
 
 Say each step out loud, as you would in an interview.
 
-I built Mock Partner to practise this kind of maths inside a full case. The mental maths drills are free: https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d32
+I built CaseSpar to practise this kind of maths inside a full case. The mental maths drills are free: https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d32
 ````
 
 ## d32-2: Ask Claude for the Product Hunt launch kit (B16)
@@ -50,7 +50,7 @@ I built Mock Partner to practise this kind of maths inside a full case. The ment
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, please write my Product Hunt launch for tomorrow, Tuesday 17 November (it goes live at 12:01 am Pacific, 8:01 am UK). I need: the name (Mock Partner), a tagline under 60 characters, a short description, a first comment from me saying I built it, what's free (with a free account and no card: one full AI interview with the debrief and 20 drills a day; with no account at all: the guides and the four free tools) and what it costs ($39 a month or $99 for 90 days), a list of 4 screenshots to take and which pages to take them on, and short honest replies to likely questions (Is it voice? Who checks the cases? How is the maths scored? Is it allowed by firms?). Rules: no asking for upvotes, no firm names in the tagline, no claims about users or results, only say the cases are signed off by a reviewer with consulting experience if I confirm that, and say it's practice before an interview, never help during one. Use this website link: https://mockpartner.com/?utm_source=producthunt&utm_medium=launch&utm_campaign=ph-launch
+Claude, please write my Product Hunt launch for tomorrow, Tuesday 17 November (it goes live at 12:01 am Pacific, 8:01 am UK). I need: the name (CaseSpar), a tagline under 60 characters, a short description, a first comment from me saying I built it, what's free (with a free account and no card: one full AI interview with the debrief and 20 drills a day; with no account at all: the guides and the four free tools) and what it costs ($39 a month or $99 for 90 days), a list of 4 screenshots to take and which pages to take them on, and short honest replies to likely questions (Is it voice? Who checks the cases? How is the maths scored? Is it allowed by firms?). Rules: no asking for upvotes, no firm names in the tagline, no claims about users or results, only say the cases are signed off by a reviewer with consulting experience if I confirm that, and say it's practice before an interview, never help during one. Use this website link: https://casespar.app/?utm_source=producthunt&utm_medium=launch&utm_campaign=ph-launch
 ````
 
 ## d32-3: Take the 4 Product Hunt screenshots
@@ -61,7 +61,7 @@ Claude, please write my Product Hunt launch for tomorrow, Tuesday 17 November (i
 **Steps**
 
 1. Use Claude's screenshot list from the last task.
-2. Take them on a laptop, full browser width, in light mode, on the live site (mockpartner.com).
+2. Take them on a laptop, full browser width, in light mode, on the live site (casespar.app).
 3. Make sure no email address or personal detail is visible (use your second account if needed).
 4. Save them as ph-1.png to ph-4.png on your desktop.
 
@@ -79,7 +79,7 @@ Claude, please write my Product Hunt launch for tomorrow, Tuesday 17 November (i
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Help me set up Product Hunt for tomorrow's launch with Claude's text (pasted below). I'll log in with my own personal account, because Product Hunt doesn't allow company accounts. Create the product page for Mock Partner with the name, tagline, description, the website link https://mockpartner.com/?utm_source=producthunt&utm_medium=launch&utm_campaign=ph-launch and the 4 screenshots ph-1.png to ph-4.png from my desktop, and schedule it for Tuesday 17 November at 12:01 am Pacific time. Stop before anything that costs money, and don't post anything that asks people to upvote. Show me the page before you schedule it.
+Help me set up Product Hunt for tomorrow's launch with Claude's text (pasted below). I'll log in with my own personal account, because Product Hunt doesn't allow company accounts. Create the product page for CaseSpar with the name, tagline, description, the website link https://casespar.app/?utm_source=producthunt&utm_medium=launch&utm_campaign=ph-launch and the 4 screenshots ph-1.png to ph-4.png from my desktop, and schedule it for Tuesday 17 November at 12:01 am Pacific time. Stop before anything that costs money, and don't post anything that asks people to upvote. Show me the page before you schedule it.
 
 [paste Claude's Product Hunt text here]
 ````
@@ -107,7 +107,7 @@ Subject: Free case interview practice for [society name] members
 
 Hi [first name, or 'there'],
 
-I'm Aman, and I run Mock Partner (mockpartner.com), a website where students practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code and gives a scored debrief. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, and I run CaseSpar (casespar.app), a website where students practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code and gives a scored debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 I'd like to offer [society name] members, free of charge to the society:
 - a club code that gives each member two extra free AI interviews (on top of the one everyone gets) and 20% off their first purchase if they ever buy;
@@ -121,9 +121,9 @@ Would it be useful? I can set up the code this week.
 If you'd rather not hear from me, just reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
-Mock Partner is run by MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+Founder, CaseSpar
+CaseSpar is run by MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
+hello@casespar.app
 ````
 
 ## Write down today

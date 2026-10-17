@@ -74,7 +74,7 @@ So a 25% markup is a 20% margin. When an interviewer says 'margin', put the pric
 A quick check when you're unsure: for a profitable product, the margin is always the smaller of the two.
 
 Free profit margin and percentage drills:
-https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-8
+https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-8
 ````
 
 ## d20-5: Book the reviewer's batch 3.

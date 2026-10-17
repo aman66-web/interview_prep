@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £225; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -31,8 +31,8 @@ It does three things:
 
 Try it in your next practice case: summarise every time you switch branches. It feels slow at first. It isn't.
 
-Free guide to structuring a case: https://mockpartner.com/guides/how-to-structure-a-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d84
-(I built Mock Partner.)
+Free guide to structuring a case: https://casespar.app/guides/how-to-structure-a-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d84
+(I built CaseSpar.)
 ````
 
 ## d84-2: Weekly review: week 12
@@ -65,7 +65,7 @@ Claude, here are week 12's numbers (Days 78 to 84, Friday 1 January to Thursday 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-In my [Google Ads / Reddit Ads] account for Mock Partner, [pause every campaign / set the daily budgets so they add up to £(amount) a day]. Change nothing else, then show me the budgets and status of every campaign.
+In my [Google Ads / Reddit Ads] account for CaseSpar, [pause every campaign / set the daily budgets so they add up to £(amount) a day]. Change nothing else, then show me the budgets and status of every campaign.
 ````
 
 ## d84-4: Record the reviewer's UK internship batch sign-offs
@@ -92,7 +92,7 @@ The reviewer [reviewer's name] signed off [case] on [date]. Their changes: [past
 **Steps**
 
 1. Answer every reply from societies, careers services and clubs you emailed on Days 64, 67 and 82.
-2. For anyone who said yes: create a club code on mockpartner.com/admin, copy the club page link, and send the set-up reply from task d69-3 with the partner pack and case-workshop pack attached. Mark them 'partner'.
+2. For anyone who said yes: create a club code on casespar.app/admin, copy the club page link, and send the set-up reply from task d69-3 with the partner pack and case-workshop pack attached. Mark them 'partner'.
 3. Skip this if nobody has replied.
 
 ## Write down today

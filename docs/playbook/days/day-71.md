@@ -22,7 +22,7 @@ About 15 minutes in total. 2 tasks, in order.
 
 **Steps**
 
-1. Answer anything in hello@mockpartner.com, especially questions from people deciding whether to buy, or anyone who can't sign in.
+1. Answer anything in hello@casespar.app, especially questions from people deciding whether to buy, or anyone who can't sign in.
 2. Everything else waits until tomorrow. Happy Christmas.
 
 ## Write down today

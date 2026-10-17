@@ -13,7 +13,7 @@ About 110 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £155 (the LinkedIn test ends today); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com, every admin enquiry and any replies to newsletter 2.
+3. Reply to every email in hello@casespar.app, every admin enquiry and any replies to newsletter 2.
 4. Key post: post the text below at 2 pm UK (9 am New York).
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -33,9 +33,9 @@ Then sanity-check: 0.3 umbrellas per person per year. Plausible?
 
 Show every step clearly; the steps are what you're practising.
 
-Free market-sizing drills: https://mockpartner.com/drills/market-sizing?utm_source=linkedin&utm_medium=social&utm_campaign=mba-5
+Free market-sizing drills: https://casespar.app/drills/market-sizing?utm_source=linkedin&utm_medium=social&utm_campaign=mba-5
 
-That's the series. Good luck in January. (I built Mock Partner.)
+That's the series. Good luck in January. (I built CaseSpar.)
 ````
 
 ## d54-2: Ask Claude for this week's 2 search pages (B12), including the UK internship plan
@@ -72,7 +72,7 @@ Subject: Case interview practice for your students applying to consulting
 
 Dear [careers service team, or the named contact],
 
-I'm Aman, founder of Mock Partner (mockpartner.com), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, founder of CaseSpar (casespar.app), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
 
 With some consulting internship deadlines falling in January (each firm's own page has its dates), I'd like to offer your students, at no cost to the university:
 - a code for your students: two extra free AI interviews each (on top of the one everyone gets) and 20% off a first purchase;
@@ -85,9 +85,9 @@ If you'd prefer not to hear from me, reply 'no thanks' and I won't contact you a
 
 Kind regards,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d54-4: Do a full free interview as a new user, from a 25-case library
@@ -97,7 +97,7 @@ hello@mockpartner.com
 
 **Steps**
 
-1. Make another brand-new email address you've never used on Mock Partner (the Day 39 one has used its free interview). Sign up with it and add it to your test addresses on the admin page.
+1. Make another brand-new email address you've never used on CaseSpar (the Day 39 one has used its free interview). Sign up with it and add it to your test addresses on the admin page.
 2. Browse /cases: check the new US MBA cases show and are easy to find.
 3. Do the free interview to the debrief, then click through to pricing and checkout (stop before paying).
 4. If anything was slow, confusing or broken, send Claude the message below.
@@ -116,7 +116,7 @@ Claude, I did a full free interview as a new user today and clicked through to c
 **Steps**
 
 1. Skip this if nobody new said yes.
-2. On mockpartner.com/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
+2. On casespar.app/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
 3. Attach the partner pack and the case-workshop pack, fill in the reply below and send it. Mark them 'partner' on your list.
 
 **Text to use (post, email or message)** (copy exactly):
@@ -136,7 +136,7 @@ Members who sign up with the code get two extra free AI interviews and 20% off t
 If someone needs to approve it first (for example your students' union), tell me what they need and I'll send it. I'm also happy to join a session online in January.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

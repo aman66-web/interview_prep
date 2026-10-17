@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week (Fri 25 to Thu 31 Dec) under £70, or £0 if paused; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. In today's note: one user comment, and your minutes per channel.
 
 ## d74-2: Chrome re-checks every January date on the official pages

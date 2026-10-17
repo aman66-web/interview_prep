@@ -145,7 +145,7 @@
     },
     {
       "type": "p",
-      "text": "An AI interviewer sits in between. Mock Partner's runs a full case in text, shares facts when you ask, and exhibits during the analysis when you ask for relevant data or when it moves the case on, and ends with a debrief that scores structure, analysis and maths, business judgement, communication and synthesis; your maths answers are checked by code rather than judged by the model. It is useful for running more realistic cases on your own schedule, but it is text-based, so it doesn't replace speaking to a person, and its feedback is a guide to what to work on, not a verdict."
+      "text": "An AI interviewer sits in between. CaseSpar's runs a full case in text, shares facts when you ask, and exhibits during the analysis when you ask for relevant data or when it moves the case on, and ends with a debrief that scores structure, analysis and maths, business judgement, communication and synthesis; your maths answers are checked by code rather than judged by the model. It is useful for running more realistic cases on your own schedule, but it is text-based, so it doesn't replace speaking to a person, and its feedback is a guide to what to work on, not a verdict."
     },
     {
       "type": "callout",

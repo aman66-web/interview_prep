@@ -160,7 +160,7 @@
   },
   {
    "label": "Domain",
-   "value": "mockpartner.com about $11.25 a year on Vercel (free on 15 Oct 2026)",
+   "value": "casespar.app about $11.25 a year on Vercel (free on 15 Oct 2026)",
    "basis": "repo: docs/PROGRESS.md"
   },
   {
@@ -255,7 +255,7 @@
   "Target date for the first $10,000 month: November 2027. By then the search pages are about a year old, there are 50+ reviewed cases, and the society and careers-service deals are renewed for the new academic year. Check this date at Day 90 and again at the end of March 2027.",
   "What could make it faster: one or two paid university or careers-service deals (one deal can equal dozens of single sales; Yale's careers office already gives its students free CaseCoach access); conversion better than the benchmarks (if 8% of sign-ups pay instead of 4%, you need half the visitors); an ad channel that pays back and can grow; closing the gap with rivals (more cases, perhaps a voice mode).",
   "What could make it slower: going public later than early November (most UK graduate case interviews fall between mid-November and early December); a slow reviewer (no cases live); weak AI interviews (people don't finish the free one); fewer than 2% of sign-ups paying; Google taking months to rank a new domain; ad clicks costing more than a customer is worth; buyers put off by the no-refunds rule; a quiet season from about April to August (assumption); rivals priced almost the same (CaseTutor $99 for 3 months) or free (McKinsey gives its own AI practice tool to candidates after they are offered an interview, according to a Business Insider report).",
-  "So the 90-day goal is not $10,000. It is to build the engine and prove the numbers: live by Day 10; 20 reviewed cases by Day 35 and 30 by Day 85; about 1,700 free sign-ups and 70 paying customers in total; at least 4% of sign-ups paying and 40% finishing the free interview; a run rate of about $3,000 a month in the first two weeks of January; at least 3 university societies or careers services using Mock Partner; and a clear yes or no on paid ads.",
+  "So the 90-day goal is not $10,000. It is to build the engine and prove the numbers: live by Day 10; 20 reviewed cases by Day 35 and 30 by Day 85; about 1,700 free sign-ups and 70 paying customers in total; at least 4% of sign-ups paying and 40% finishing the free interview; a run rate of about $3,000 a month in the first two weeks of January; at least 3 university societies or careers services using CaseSpar; and a clear yes or no on paid ads.",
   "The floor (still worth carrying on): a $1,000 a month run rate and 3% of sign-ups paying by Day 90. Below that, stop all spending and rethink the offer at the Day 90 review.",
   "If you meant £10,000: add about a third to every number, and expect it a few months after the $10,000 month (assumption)."
  ],
@@ -297,16 +297,16 @@
    "from": 1,
    "to": 10,
    "dates": "Fri 16 Oct to Sun 25 Oct",
-   "goal": "A stranger can sign up with any email, do the reviewed free case, get a debrief and pay, on mockpartner.com, legally. Nothing is public until then.",
-   "exit": "Day 10 gate passes: sign-in works for other people's emails; Harbourline Bakeries plus at least 4 more cases signed off; one live purchase and one refund done; ICO fee paid or confirmed; legal placeholders filled and the lawyer's view in (or your recorded decision); hello@mockpartner.com works; a real AI interview read and the prompts tuned; you approve the merge to main.",
+   "goal": "A stranger can sign up with any email, do the reviewed free case, get a debrief and pay, on casespar.app, legally. Nothing is public until then.",
+   "exit": "Day 10 gate passes: sign-in works for other people's emails; Harbourline Bakeries plus at least 4 more cases signed off; one live purchase and one refund done; ICO fee paid or confirmed; legal placeholders filled and the lawyer's view in (or your recorded decision); hello@casespar.app works; a real AI interview read and the prompts tuned; you approve the merge to main.",
    "order": [
-    "Day 1 (Fri 16 Oct): finish the Chrome setup job (docs/CHROME_SETUP.md parts A-H, started 15 Oct), run the UK trade mark search (extra job I), buy mockpartner.com if the search is clear, post the reviewer job.",
+    "Day 1 (Fri 16 Oct): finish the Chrome setup job (docs/CHROME_SETUP.md parts A-H, started 15 Oct), run the UK trade mark search (extra job I), buy casespar.app if the search is clear, post the reviewer job.",
     "Day 2 (Sat 17 Oct): domain, sign-in email sending (Resend), support inbox (ImprovMX) and CAPTCHA; ICO fee; book a lawyer; your first real AI interview.",
     "Day 3 (Sun 18 Oct): Claude tunes the interviewer from your transcript; legal placeholders; shortlist reviewers.",
     "Day 4 (Mon 19 Oct): hire the reviewer and send the brief, the answer keys and a shareable preview link; free starter case first.",
     "Day 5 (Tue 20 Oct): test sign-in with an email address that isn't yours.",
     "Day 6 (Wed 21 Oct): Keyword Planner check for ads (no spend).",
-    "Day 8 (Fri 23 Oct): first sign-offs applied; Stripe live mode in a separate Mock Partner Stripe account.",
+    "Day 8 (Fri 23 Oct): first sign-offs applied; Stripe live mode in a separate CaseSpar Stripe account.",
     "Day 9 (Sat 24 Oct): live purchase with a 100% code, then a refund test.",
     "Day 10 (Sun 25 Oct): the gate; merge to main; production public."
    ]
@@ -350,11 +350,11 @@
    "milestones": [
     {
      "day": 1,
-     "text": "Chrome setup job finished (CHROME_SETUP parts A-H) and the UK trade mark search done; mockpartner.com bought if the search is clear; reviewer job posted."
+     "text": "Chrome setup job finished (CHROME_SETUP parts A-H) and the UK trade mark search done; casespar.app bought if the search is clear; reviewer job posted."
     },
     {
      "day": 2,
-     "text": "Domain, Resend sign-in emails, hello@mockpartner.com and CAPTCHA set up; ICO fee paid or confirmed; lawyer booked; your first real AI interview on Harbourline Bakeries."
+     "text": "Domain, Resend sign-in emails, hello@casespar.app and CAPTCHA set up; ICO fee paid or confirmed; lawyer booked; your first real AI interview on Harbourline Bakeries."
     },
     {
      "day": 3,
@@ -394,7 +394,7 @@
    "milestones": [
     {
      "day": 8,
-     "text": "Harbourline Bakeries and at least 4 more cases signed off and marked reviewed; Stripe live mode in a separate Mock Partner Stripe account."
+     "text": "Harbourline Bakeries and at least 4 more cases signed off and marked reviewed; Stripe live mode in a separate CaseSpar Stripe account."
     },
     {
      "day": 9,
@@ -402,7 +402,7 @@
     },
     {
      "day": 10,
-     "text": "Launch-readiness gate; if it passes you approve the merge to main and mockpartner.com goes public."
+     "text": "Launch-readiness gate; if it passes you approve the merge to main and casespar.app goes public."
     },
     {
      "day": 11,
@@ -917,7 +917,7 @@
   {
    "rank": 2,
    "name": "Search: free guides, tools and drills (SEO)",
-   "why": "Organic search is the biggest source of desktop visits for four of the five rivals checked (42% to 69%, Similarweb estimates). Mock Partner already has 10 guides, 3 firm guides, a 60-term glossary, 4 free tools and drills that visitors can try without an account (5 per browser tab). It is slow but it compounds.",
+   "why": "Organic search is the biggest source of desktop visits for four of the five rivals checked (42% to 69%, Similarweb estimates). CaseSpar already has 10 guides, 3 firm guides, a 60-term glossary, 4 free tools and drills that visitors can try without an account (5 per browser tab). It is slow but it compounds.",
    "cost": "£0. Claude writes; you check every fact (30 to 45 minutes a page).",
    "start": "Day 3 (Sun 18 Oct): first drafts. Day 11 (Mon 26 Oct): Search Console, Bing and the sitemap. Then 2 to 3 new pages a week.",
    "start_day": 3,
@@ -940,7 +940,7 @@
   {
    "rank": 3,
    "name": "Your own LinkedIn (organic posts)",
-   "why": "Free, its rules are clear, and students and MBA candidates use it for careers. Honest posts as yourself ('I built Mock Partner'), each with one useful tip: a maths shortcut, a chart drill, a market-sizing step.",
+   "why": "Free, its rules are clear, and students and MBA candidates use it for careers. Honest posts as yourself ('I built CaseSpar'), each with one useful tip: a maths shortcut, a chart drill, a market-sizing step.",
    "cost": "£0. About 10 minutes a day; Claude drafts the week's posts on Thursdays.",
    "start": "Day 11 (Mon 26 Oct): launch post. Then 5 posts a week.",
    "start_day": 11,
@@ -958,7 +958,7 @@
   {
    "rank": 4,
    "name": "Reddit and forums (honest participation)",
-   "why": "Candidates ask 'how do I practise alone?' in public threads. Being useful there, and saying 'I built Mock Partner' when it is relevant, can bring motivated visitors quickly.",
+   "why": "Candidates ask 'how do I practise alone?' in public threads. Being useful there, and saying 'I built CaseSpar' when it is relevant, can bring motivated visitors quickly.",
    "cost": "£0. About 10 minutes a day.",
    "start": "Day 13 (Wed 28 Oct): Chrome saves each subreddit's rules. Day 18 (Mon 2 Nov): first post, only where the rules allow.",
    "start_day": 13,
@@ -997,7 +997,7 @@
    "name": "Google Search Ads (small, measured test)",
    "why": "People searching 'case interview practice' often have an interview coming. But at benchmark costs ads are unlikely to pay back: at our base rates one click is worth only about $0.28 (about $0.57 if ad visitors pay twice as often). The test finds the real numbers; Keyword Planner decides whether it is worth running at all.",
    "cost": "Up to £10 a day for the November test (at most £300). More only at a gate.",
-   "start": "Day 6 (Wed 21 Oct): Keyword Planner check. Day 21 (Thu 5 Nov): new Mock Partner ads account and campaign, paused. Day 22 (Fri 6 Nov): on, only if 10+ reviewed cases are live and at least 5 relevant terms show a low top-of-page bid of £0.60 or less.",
+   "start": "Day 6 (Wed 21 Oct): Keyword Planner check. Day 21 (Thu 5 Nov): new CaseSpar ads account and campaign, paused. Day 22 (Fri 6 Nov): on, only if 10+ reviewed cases are live and at least 5 relevant terms show a low top-of-page bid of £0.60 or less.",
    "start_day": 22,
    "stop": "Don't start if the bids are higher. After £150: stop if a free sign-up costs over £6; carry on to £300 if £3 or less (one more week if in between). After £300: stop if a paying customer costs over $88; keep at £10 a day if $60 to $88; raise only at a gate if $60 or less.",
    "how": "No firm names in ad text. Ads only promise what is live (Google suspends for 'unavailable offers' without warning). No promises of offers or results. Track with a tagged final URL (UTM), no Google tag, so no consent banner is needed. Google may spend up to 2x the daily budget on one day.",
@@ -1069,7 +1069,7 @@
   {
    "rank": 10,
    "name": "Not in the first 90 days",
-   "why": "TikTok Ads (over $50 a day per campaign); paid student ambassadors or commission affiliates (minimum wage, worker status and Student visa rules; ask the accountant first); paid YouTube or influencer sponsorships (must be labelled 'Ad'; revisit once the cost per customer is known); cold emails or DMs to students; Meta or other ads that need a pixel; Show HN (low fit; it needs something to try without signing up, which the free tools do offer, so it stays an option later); 'Mock Partner vs X' comparison pages (check the advertising code first).",
+   "why": "TikTok Ads (over $50 a day per campaign); paid student ambassadors or commission affiliates (minimum wage, worker status and Student visa rules; ask the accountant first); paid YouTube or influencer sponsorships (must be labelled 'Ad'; revisit once the cost per customer is known); cold emails or DMs to students; Meta or other ads that need a pixel; Show HN (low fit; it needs something to try without signing up, which the free tools do offer, so it stays an option later); 'CaseSpar vs X' comparison pages (check the advertising code first).",
    "cost": "£0 (that's the point).",
    "start": "Revisit at the Day 90 review.",
    "stop": "n/a",
@@ -1089,10 +1089,10 @@
    "measure": [
     "Sign-in email and 6-digit code arrive at an address that isn't yours (try a Gmail and, if you can, a university address); CAPTCHA on.",
     "Harbourline Bakeries and at least 4 more cases signed off by the reviewer and showing on production.",
-    "One real live-mode purchase with a 100% FOUNDERTEST code worked, and one refund worked; the live webhook is on mockpartner.com.",
+    "One real live-mode purchase with a 100% FOUNDERTEST code worked, and one refund worked; the live webhook is on casespar.app.",
     "ICO fee paid for MARTZEY LTD, or confirmed that the existing entry covers this site.",
     "Legal placeholders filled; the lawyer's view on no-refunds and the tick box is in, or you have recorded your decision to open without it.",
-    "hello@mockpartner.com receives mail; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are set; /admin opens.",
+    "hello@casespar.app receives mail; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are set; /admin opens.",
     "A real AI interview was read and the prompts tuned; Anthropic monthly limit set."
    ],
    "if_yes": "Approve the merge to main and make production public today. Soft launch tomorrow (Day 11).",
@@ -1188,7 +1188,7 @@
    "day": 2,
    "who": "claude",
    "name": "Domain, sign-in emails, support inbox and CAPTCHA",
-   "message": "Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from mockpartner.com and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@mockpartner.com to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.",
+   "message": "Claude, I've bought casespar.app in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from casespar.app and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@casespar.app to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.",
    "needs": "Domain bought (Day 1)."
   },
   {
@@ -1233,7 +1233,7 @@
    "day": 8,
    "who": "claude",
    "name": "Go-live pack",
-   "message": "Claude, the reviewer has signed off the starter case and <n> more. Please get the site ready to go public on mockpartner.com: write the Claude in Chrome steps to create a separate 'Mock Partner' Stripe account for MARTZEY LTD (statement descriptor MOCK PARTNER, like Preflight Pass), activate live mode, add the live webhook for mockpartner.com, make a one-use 100% FOUNDERTEST promotion code and put the live keys into Vercel (I paste the secret keys myself); turn on Vercel Web Analytics; add the IndexNow key and script; write the Search Console and Bing steps; and give me the checklist for merging the PR into main. Don't merge or push to main: I'll approve that."
+   "message": "Claude, the reviewer has signed off the starter case and <n> more. Please get the site ready to go public on casespar.app: write the Claude in Chrome steps to create a separate 'CaseSpar' Stripe account for MARTZEY LTD (statement descriptor CASESPAR, like Preflight Pass), activate live mode, add the live webhook for casespar.app, make a one-use 100% FOUNDERTEST promotion code and put the live keys into Vercel (I paste the secret keys myself); turn on Vercel Web Analytics; add the IndexNow key and script; write the Search Console and Bing steps; and give me the checklist for merging the PR into main. Don't merge or push to main: I'll approve that."
   },
   {
    "id": "B7",
@@ -1282,14 +1282,14 @@
    "day": 21,
    "who": "claude",
    "name": "Google Ads landing page and campaign plan",
-   "message": "Claude, the Keyword Planner results are in <file>. Please write a Google Ads plan for a separate Mock Partner account: one UK Search campaign, £10 a day, Maximise clicks with a cap you suggest, phrase and exact keywords only, negatives, ad text with no firm names and no promises of offers, and a final URL suffix with UTM tags. Build a landing page for it if our home page isn't the best match. Then write the Claude in Chrome steps to build it paused."
+   "message": "Claude, the Keyword Planner results are in <file>. Please write a Google Ads plan for a separate CaseSpar account: one UK Search campaign, £10 a day, Maximise clicks with a cap you suggest, phrase and exact keywords only, negatives, ad text with no firm names and no promises of offers, and a final URL suffix with UTM tags. Build a landing page for it if our home page isn't the best match. Then write the Claude in Chrome steps to build it paused."
   },
   {
    "id": "B15",
    "day": 25,
    "who": "claude",
    "name": "Short-video kit",
-   "message": "Claude, please make 10 vertical 'Can you do this case maths without a calculator?' cards from our drills (question, a 5-second pause, then the worked answer), with a 20-second script and caption for each and mockpartner.com on screen. Faceless. Give me them as images or a page I can screen-record."
+   "message": "Claude, please make 10 vertical 'Can you do this case maths without a calculator?' cards from our drills (question, a 5-second pause, then the worked answer), with a 20-second script and caption for each and casespar.app on screen. Faceless. Give me them as images or a page I can screen-record."
   },
   {
    "id": "B21",
@@ -1334,7 +1334,7 @@
    "day": 61,
    "who": "claude",
    "name": "Optional: consent banner and Google Ads tag",
-   "message": "Claude, I've decided to allow the Google Ads tag on Mock Partner. Please propose the CLAUDE.md rule 2.7 change for me to approve, then build the consent banner (UK, EEA and Switzerland: nothing loads until Accept), load the tag only after consent, report sign-up and purchase conversions with no personal data, and update the privacy page. Same approach as Preflight Pass.",
+   "message": "Claude, I've decided to allow the Google Ads tag on CaseSpar. Please propose the CLAUDE.md rule 2.7 change for me to approve, then build the consent banner (UK, EEA and Switzerland: nothing loads until Accept), load the tag only after consent, report sign-up and purchase conversions with no personal data, and update the privacy page. Same approach as Preflight Pass.",
    "note": "Only if the Day 60 gate keeps ads at £15 a day or more and you want Google to optimise for sales."
   },
   {
@@ -1369,7 +1369,7 @@
   },
   {
    "day": 11,
-   "message": "Verify mockpartner.com in Google Search Console as a Domain property (TXT record on Vercel DNS), submit sitemap.xml, request indexing for the home, pricing, free case and guides pages, and import it into Bing Webmaster Tools."
+   "message": "Verify casespar.app in Google Search Console as a Domain property (TXT record on Vercel DNS), submit sitemap.xml, request indexing for the home, pricing, free case and guides pages, and import it into Bing Webmaster Tools."
   },
   {
    "day": 12,
@@ -1381,7 +1381,7 @@
   },
   {
    "day": 21,
-   "message": "Create a separate Google Ads account for Mock Partner (GBP, UK time zone, paid by MARTZEY LTD) and build the campaign in Claude's plan (B14), paused. Stop before billing details and before switching anything on."
+   "message": "Create a separate Google Ads account for CaseSpar (GBP, UK time zone, paid by MARTZEY LTD) and build the campaign in Claude's plan (B14), paused. Stop before billing details and before switching anything on."
   },
   {
    "day": 32,
@@ -1601,16 +1601,16 @@
  ],
  "calendar_rules": [
   "Re-check any firm date on the firm's own page the day before posting it; firms change dates.",
-  "Always describe Mock Partner as practice before an interview. McKinsey encourages AI for practising, but McKinsey and Bain ban AI during assessments and interviews.",
+  "Always describe CaseSpar as practice before an interview. McKinsey encourages AI for practising, but McKinsey and Bain ban AI during assessments and interviews.",
   "Busy or quiet labels for weeks are our estimates; no page gives practice volumes.",
   "Oxford and UCL dates come from search summaries only; check them in a browser before stating them."
  ],
  "daily_routine": [
   "Starts Day 11 (Mon 26 Oct). 15 to 30 minutes, every day, before the day's main tasks.",
-  "5 min: open mockpartner.com/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the playbook's Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.",
+  "5 min: open casespar.app/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the playbook's Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.",
   "3 min: check the alarms. Anthropic spend under 80% of the monthly limit; ad spend inside this week's cap; Vercel shows no failed deployment or errors. On Mondays, sign in once with a second email address to check sign-in emails still arrive.",
-  "5-10 min: reply to every email in hello@mockpartner.com and every enquiry on the admin page, within 24 hours. Be honest; never promise offers or results.",
-  "5-10 min: one public post or reply: the day's LinkedIn post (Claude drafts the week on Thursdays), or one helpful Reddit answer where the rules allow (say 'I built Mock Partner' if you mention it), or one short video.",
+  "5-10 min: reply to every email in hello@casespar.app and every enquiry on the admin page, within 24 hours. Be honest; never promise offers or results.",
+  "5-10 min: one public post or reply: the day's LinkedIn post (Claude drafts the week on Thursdays), or one helpful Reddit answer where the rules allow (say 'I built CaseSpar' if you mention it), or one short video.",
   "2 min: note one thing a user said or did (a bug, a question, praise) and the minutes you spent on each channel. Send the week's notes to Claude at the weekly review.",
   "Weekly review, the last day of each week (Thursdays: Days 14, 21 ... 84, and Day 90), 30-45 minutes: compare the week with its targets, then send Claude: 'Here are week <n>'s numbers: <paste the admin table>. Compare them with week <n> in the playbook and tell me in 5 lines what to change next week.' Approve next week's spending caps.",
   "Every Friday: re-check the dates on the deadlines page against the firms' own pages (from Day 22)."
@@ -1638,13 +1638,13 @@
   "Never send marketing emails or social DMs to people who haven't opted in, buy email lists, or ask users for friends' email addresses. No bulk emails to societies until the lawyer answers.",
   "No advertising pixels or Google tag until you decide and the consent banner is built (B19). Vercel Web Analytics (no cookies) and UTM tags only.",
   "No ads before reviewed cases are live, no promises of offers or results, no 'limited time' unless it really ends then, nothing called 'free' unless it is.",
-  "Never describe Mock Partner as help during an interview or online test: firms ban AI there.",
+  "Never describe CaseSpar as help during an interview or online test: firms ban AI there.",
   "Never spend without saying yes that day; never raise a cap between gates; no agencies, 'growth hackers', link packages, paid upvotes, follower buying, annual ad contracts or TikTok Ads in the first 90 days.",
   "Don't pay students or ambassadors until the accountant has checked minimum wage, worker status and Student visa rules; anyone who gets anything for promoting us must label posts 'Ad'.",
   "Don't mass-produce AI pages for search; every page needs real value and your fact check.",
   "Don't cut prices as a first fix: they are already in line with the market. Fix the funnel first.",
   "Don't switch on Stripe Tax or change how VAT is handled without the accountant.",
-  "Don't write 'Mock Partner vs X' pages until the UK advertising code's comparison rules have been checked.",
+  "Don't write 'CaseSpar vs X' pages until the UK advertising code's comparison rules have been checked.",
   "Don't let the Anthropic spend limit run out: interviews stop for everyone.",
   "Never paste a secret key into any chat. Add keys yourself in Vercel.",
   "Don't run big pushes in exam weeks or holidays (LSE exams 4-10 Jan, US Thanksgiving 26 Nov, 24 Dec to 1 Jan)."

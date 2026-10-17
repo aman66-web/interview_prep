@@ -30,7 +30,7 @@ About 70 minutes in total. 3 tasks, in order.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````

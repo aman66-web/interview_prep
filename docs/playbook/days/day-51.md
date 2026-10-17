@@ -13,7 +13,7 @@ About 75 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers. Alarms: Anthropic under 80% of the limit; ads this week under £155; no Vercel errors. Answer the support inbox.
 2. Find one recent question like 'how many practice cases do I need?' or 'how do I know I'm ready?', in a subreddit whose saved rules (reddit-rules.txt) allow it. Adapt the answer below.
-3. If the question asks something different, don't post this as it is. Send Claude: 'Claude, here is a Reddit question and that subreddit's rules from reddit-rules.txt: [paste both]. Adapt this answer so it is genuinely useful for that question, keep the disclosure if Mock Partner is mentioned, and don't copy anything from casebooks, firms or other prep sites: [paste the answer below]'. Never post the same answer twice: copy-paste answers look like spam and can get an account flagged (our caution, not a checked Reddit rule).
+3. If the question asks something different, don't post this as it is. Send Claude: 'Claude, here is a Reddit question and that subreddit's rules from reddit-rules.txt: [paste both]. Adapt this answer so it is genuinely useful for that question, keep the disclosure if CaseSpar is mentioned, and don't copy anything from casebooks, firms or other prep sites: [paste the answer below]'. Never post the same answer twice: copy-paste answers look like spam and can get an account flagged (our caution, not a checked Reddit rule).
 4. Keep the last paragraph only if the subreddit allows self-promotion and it's relevant. Never post as a student.
 5. In today's note: the link, and your minutes per channel.
 
@@ -30,7 +30,7 @@ What I'd check instead of a count:
 
 If one of those is shaky, drill that part on its own instead of doing another full case. And keep some practice with real people, because the back-and-forth is the hardest part to copy alone.
 
-Disclosure: I built Mock Partner, a text-based AI case interviewer that checks your maths with code and scores five skills in a debrief. The first full interview is free with a free account (no card): https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d51
+Disclosure: I built CaseSpar, a text-based AI case interviewer that checks your maths with code and scores five skills in a debrief. The first full interview is free with a free account (no card): https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d51
 ````
 
 ## d51-2: Google Ads £300 check (only if ads are on)
@@ -43,7 +43,7 @@ Disclosure: I built Mock Partner, a text-based AI case interviewer that checks y
 1. Skip this if ads are off, or total spend since Fri 6 Nov is still under £300 (then do it the day it passes £300).
 2. Google Ads: total cost since Fri 6 Nov. Admin page: paying customers whose first source is google.
 3. Cost per paying customer in dollars = total cost ÷ paying customers × 1.3247. No paying customers yet counts as over $88.
-4. Apply today's decision box. To change the budget, tell Chrome: 'In my Mock Partner Google Ads account, change the daily budget to £10. Change nothing else.' To stop: 'Pause the Mock Partner campaign. Change nothing else.'
+4. Apply today's decision box. To change the budget, tell Chrome: 'In my CaseSpar Google Ads account, change the daily budget to £10. Change nothing else.' To stop: 'Pause the CaseSpar campaign. Change nothing else.'
 
 ## d51-3: Post a short video
 
@@ -61,7 +61,7 @@ Disclosure: I built Mock Partner, a text-based AI case interviewer that checks y
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

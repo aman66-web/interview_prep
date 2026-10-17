@@ -57,7 +57,7 @@ Claude, it's the Day 30 check. Here are my numbers for Days 11 to 30 (Monday 26 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention Mock Partner if it really helps the person, and if you do, start that sentence with 'Disclosure: I built Mock Partner' and use the link https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
+Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention CaseSpar if it really helps the person, and if you do, start that sentence with 'Disclosure: I built CaseSpar' and use the link https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
 ````
 
 ## Write down today

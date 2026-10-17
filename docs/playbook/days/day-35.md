@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic spend under $80; Google Ads this week under £70; no errors in Vercel.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn this morning. Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -32,8 +32,8 @@ Each unit adds £3 towards fixed costs.
 
 Then ask yourself the useful question: is 40,000 a year realistic? That's about 770 a week. Can this business sell that many?
 
-Free break-even calculator, no account needed: https://mockpartner.com/tools/break-even-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d35
-(I built it as part of Mock Partner.)
+Free break-even calculator, no account needed: https://casespar.app/tools/break-even-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d35
+(I built it as part of CaseSpar.)
 ````
 
 ## d35-2: Record this week's case sign-offs and make them live (B5)

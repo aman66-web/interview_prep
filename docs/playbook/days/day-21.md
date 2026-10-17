@@ -30,12 +30,12 @@ About 130 minutes in total. 5 tasks, in order.
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, the Keyword Planner results are in the table below (from Chrome's Day 6 check). Please write a Google Ads plan for a separate Mock Partner account: one UK Search campaign, £10 a day, Maximise clicks with a cap you suggest, phrase and exact keywords only, negatives, ad text with no firm names and no promises of offers, and a final URL suffix with UTM tags. Leave firm names (McKinsey, BCG, Bain or any other firm) out of the keywords too for this first test. No Google tag or conversion tag on the site (we have no consent banner): UTM tags only. Use the same safety settings as Preflight Pass: Search only, and broad match, AI Max, URL expansion, automatically created assets and auto-apply recommendations all off. Build a landing page for it if our home page isn't the best match. Then write the Claude in Chrome steps to build it paused.
+Claude, the Keyword Planner results are in the table below (from Chrome's Day 6 check). Please write a Google Ads plan for a separate CaseSpar account: one UK Search campaign, £10 a day, Maximise clicks with a cap you suggest, phrase and exact keywords only, negatives, ad text with no firm names and no promises of offers, and a final URL suffix with UTM tags. Leave firm names (McKinsey, BCG, Bain or any other firm) out of the keywords too for this first test. No Google tag or conversion tag on the site (we have no consent banner): UTM tags only. Use the same safety settings as Preflight Pass: Search only, and broad match, AI Max, URL expansion, automatically created assets and auto-apply recommendations all off. Build a landing page for it if our home page isn't the best match. Then write the Claude in Chrome steps to build it paused.
 
 [paste the Keyword Planner table]
 ````
 
-## d21-3: Let Chrome create the Mock Partner Google Ads account and build the campaign, paused. Skip if the Day 6 check failed.
+## d21-3: Let Chrome create the CaseSpar Google Ads account and build the campaign, paused. Skip if the Day 6 check failed.
 
 - **Who:** Claude in Chrome
 - **Time:** about 45 minutes
@@ -49,7 +49,7 @@ Claude, the Keyword Planner results are in the table below (from Chrome's Day 6 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Create a separate Google Ads account for Mock Partner (GBP, UK time zone, paid by MARTZEY LTD) and build the campaign in Claude's plan (B14), paused. Don't add a Google tag or set up conversion tracking on the site. Stop before billing details and before switching anything on. Here are Claude's steps:
+Create a separate Google Ads account for CaseSpar (GBP, UK time zone, paid by MARTZEY LTD) and build the campaign in Claude's plan (B14), paused. Don't add a Google tag or set up conversion tracking on the site. Stop before billing details and before switching anything on. Here are Claude's steps:
 
 [paste Claude's steps]
 ````
@@ -97,7 +97,7 @@ Then sanity-check from the other side: if 200 shops each sell about 10 a day, th
 Show the steps and the sanity check out loud; the exact number matters less than how you got there.
 
 Free market sizing calculator, no account needed:
-https://mockpartner.com/tools/market-sizing-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-9
+https://casespar.app/tools/market-sizing-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-9
 ````
 
 ## Write down today
@@ -106,7 +106,7 @@ Week 3 totals against the aims: 2,000 visits, 80 free sign-ups, 3 paying custome
 
 ## Decision point
 
-**Check:** The Day 6 Keyword Planner check passed (at least 5 relevant terms, not counting firm-name terms, with a low top-of-page bid of £0.60 or less) AND 10 or more reviewed cases are live on mockpartner.com.
+**Check:** The Day 6 Keyword Planner check passed (at least 5 relevant terms, not counting firm-name terms, with a low top-of-page bid of £0.60 or less) AND 10 or more reviewed cases are live on casespar.app.
 
 - **If yes:** If you agree, approve the ad test: up to £10 a day from tomorrow, at most £70 next week and £300 in total in November. Google may spend up to twice the daily budget (£20) on a single day (https://support.google.com/google-ads/answer/6385083). Your decision; you can say no.
 - **If no:** Leave the campaign paused. No ad spend in November; give that time to societies, search pages and Reddit.

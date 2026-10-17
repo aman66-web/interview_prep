@@ -48,7 +48,7 @@ Claude, please add a free page 'Consulting application deadlines 2026-27 (UK)' t
 Claude, I've read the 7 course emails and the opt-in wording. My changes: [your notes, or 'none']. Yes, please apply the database change for the email list to the real Supabase project and run the security checks. Don't send any email yet and don't merge yet; I'll approve that on Friday 6 November.
 ````
 
-## d16-4: Ask Claude the cheapest honest way to send outreach emails from hello@mockpartner.com.
+## d16-4: Ask Claude the cheapest honest way to send outreach emails from hello@casespar.app.
 
 - **Who:** Claude Code cloud session (paste the message there)
 - **Time:** about 10 minutes
@@ -56,12 +56,12 @@ Claude, I've read the 7 course emails and the opt-in wording. My changes: [your 
 **Steps**
 
 1. Paste the message below. Any cost is your decision.
-2. If you'd rather not pay, send Monday's emails from your usual address with hello@mockpartner.com in your signature.
+2. If you'd rather not pay, send Monday's emails from your usual address with hello@casespar.app in your signature.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, from Monday I'll email student societies and careers services one at a time. What's the cheapest way to send those emails from hello@mockpartner.com (my ImprovMX forwarding only receives mail)? Check the price on the provider's own page and tell me before anything costs money. Until then I'll send from my own address.
+Claude, from Monday I'll email student societies and careers services one at a time. What's the cheapest way to send those emails from hello@casespar.app (my ImprovMX forwarding only receives mail)? Check the price on the provider's own page and tell me before anything costs money. Until then I'll send from my own address.
 ````
 
 ## d16-5: Check the deadlines page and put it live today.

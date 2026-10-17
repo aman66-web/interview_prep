@@ -13,7 +13,7 @@ About 110 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under $80; ads this week under £90; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ And 3.2 × 45? 3 × 45 = 135, plus 0.2 × 45 = 9, so 144.
 
 Say the unit every time you say a number. It stops the 'was that 14 million or 1.4 billion?' moment.
 
-Free mental maths trainer, no account needed: https://mockpartner.com/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-d46
-(I built Mock Partner.)
+Free mental maths trainer, no account needed: https://casespar.app/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-d46
+(I built CaseSpar.)
 ````
 
 ## d46-2: Approve December's caps (you decide each one)
@@ -43,7 +43,7 @@ Free mental maths trainer, no account needed: https://mockpartner.com/tools/ment
 
 1. Go: set Google Ads from Tue 1 Dec by what a paying customer from Google Ads has cost so far (yesterday's note): $60 (about £45) or less, approve up to £15 a day; $60 to $88 (about £45 to £66), stay at £10 a day; more than $88, or no ad customer yet, ads pause tomorrow. At most £465 to Thu 31 Dec. (The same rule the £300 check uses on Day 51, so you won't raise the budget now and cut it again on Saturday.) Approve the LinkedIn boosted-post test: £10 a day, Fri 4 to Tue 8 Dec, £50 in total.
 2. Adjust: no increase. Google Ads pauses tomorrow (December ads need a Go). No LinkedIn test.
-3. Stop or pivot: pause Google Ads today (tell Chrome: 'Pause the Mock Partner campaign. Change nothing else.'). No LinkedIn test.
+3. Stop or pivot: pause Google Ads today (tell Chrome: 'Pause the CaseSpar campaign. Change nothing else.'). No LinkedIn test.
 4. Every result: decide whether to raise the Anthropic monthly limit to $150 from tomorrow, and the reviewer fee for 5 more cases on Day 59 (5 × your per-case fee; Claude's planning guess $125 to $250).
 5. Write each yes or no in today's note. Nothing is spent unless you said yes.
 
@@ -79,7 +79,7 @@ Claude, please build group passes: I sell a club or careers service 10 or more s
 ````text
 Claude, the Day 45 check came out as [Adjust / Stop or pivot]. Numbers for Days 11-45: [sign-ups] sign-ups, [paying] paying customers, [share]% of sign-ups paying.
 If it's Adjust: find the single biggest leak in the funnel (visit, sign-up, start, finish, paywall, checkout, paid) from the admin numbers, explain it in 3 lines, and propose one fix I can approve this week. I'll re-check the numbers on Sun 13 Dec.
-If it's Stop or pivot: add one optional question after the debrief, 'What would make Mock Partner worth paying for?', with a free-text answer saved without names or emails, and show the answers on the admin page. Then, by Sun 6 Dec, give me a one-page rethink: who it's for, the price, and whether a voice mode is worth building.
+If it's Stop or pivot: add one optional question after the debrief, 'What would make CaseSpar worth paying for?', with a free-text answer saved without names or emails, and show the answers on the admin page. Then, by Sun 6 Dec, give me a one-page rethink: who it's for, the price, and whether a voice mode is worth building.
 Show me everything on the preview before it goes live. Push to the PR branch only.
 ````
 
@@ -102,21 +102,21 @@ Subject: Free case-interview practice codes for [club name] members
 
 Hi [first name, or 'there'],
 
-This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run Mock Partner (mockpartner.com), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
+This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run CaseSpar (casespar.app), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 With first-year internship interviews starting in early January at several schools, I'd like to offer [club name] members, free to the club:
 - a club code: two extra free AI interviews per member (on top of the one everyone gets) and 20% off a first purchase;
 - a printable case-workshop pack (one case with facilitator notes) for a club session;
 - a club page on our site with the code on it.
 
-No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. Mock Partner isn't linked to any school or consulting firm.
+No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. CaseSpar isn't linked to any school or consulting firm.
 
 If you'd rather not get emails from me, reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

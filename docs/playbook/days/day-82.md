@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £225; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -28,8 +28,8 @@ For small changes, adding the percentages gets you close. For big ones it doesn'
 
 In a case, write the multiplication down, then decide whether 'about 5%' is close enough to say out loud.
 
-The free profitability guide: https://mockpartner.com/guides/profitability-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d82
-(I built Mock Partner.)
+The free profitability guide: https://casespar.app/guides/profitability-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d82
+(I built CaseSpar.)
 ````
 
 ## d82-2: Ask Claude for this week's search page (B12, week 12)
@@ -66,7 +66,7 @@ Subject: Case interview practice for your students this term
 
 Dear [careers service team, or the named contact],
 
-I'm Aman, founder of Mock Partner (mockpartner.com), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, founder of CaseSpar (casespar.app), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
 
 [Your personal line.] With consulting internship applications open this month, I'd like to offer your students, at no cost to the university:
 - a code for your students: two extra free AI interviews each (on top of the one everyone gets) and 20% off a first purchase;
@@ -79,9 +79,9 @@ If you'd prefer not to hear from me, reply 'no thanks' and I won't contact you a
 
 Kind regards,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d82-4: Set up anyone who said yes
@@ -92,7 +92,7 @@ hello@mockpartner.com
 **Steps**
 
 1. Skip this if nobody new said yes since 23 December.
-2. Create a club code on mockpartner.com/admin, copy the club page link, and send the set-up reply from task d69-3 with the partner pack and case-workshop pack attached. Mark them 'partner'.
+2. Create a club code on casespar.app/admin, copy the club page link, and send the set-up reply from task d69-3 with the partner pack and case-workshop pack attached. Mark them 'partner'.
 
 ## d82-5: Post a short video
 
@@ -109,7 +109,7 @@ hello@mockpartner.com
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````

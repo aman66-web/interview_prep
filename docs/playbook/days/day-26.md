@@ -73,9 +73,9 @@ The end of a case is where it's easiest to undersell good work. A simple shape f
 
 Keep it under a minute. Lead with the answer even if you're not certain, and say how confident you are.
 
-Mock Partner's debrief scores your recommendation as its own skill, so you can see whether your close is the weak spot. Your first full interview is free (a free account, no card).
+CaseSpar's debrief scores your recommendation as its own skill, so you can see whether your close is the weak spot. Your first full interview is free (a free account, no card).
 
-https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=post-12
+https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=post-12
 ````
 
 ## d26-5: Look at where people drop out, and ask Claude for the first fix.

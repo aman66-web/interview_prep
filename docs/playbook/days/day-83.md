@@ -13,7 +13,7 @@ About 120 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £225; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ A table lands in front of you with 6 rows and 4 columns. Where do you start?
 
 You won't have time to calculate everything, and you don't need to. Find the outlier first.
 
-Free chart and table drills: https://mockpartner.com/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-d83
-(I built Mock Partner.)
+Free chart and table drills: https://casespar.app/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-d83
+(I built CaseSpar.)
 ````
 
 ## d83-2: Reddit and Google ads check
@@ -40,7 +40,7 @@ Free chart and table drills: https://mockpartner.com/drills/chart-reading?utm_so
 
 **Steps**
 
-1. Reddit Ads (if on): spend so far (about £32 to £40 by now). On the admin page, count free sign-ups with utm_source=reddit and utm_medium=paid since 2 January. Cost per free sign-up = spend ÷ sign-ups. Over £6, or no sign-ups at all, means pause it now: tell Chrome 'In my Reddit Ads account for Mock Partner, pause the campaign. Change nothing else and confirm it shows as paused.'
+1. Reddit Ads (if on): spend so far (about £32 to £40 by now). On the admin page, count free sign-ups with utm_source=reddit and utm_medium=paid since 2 January. Cost per free sign-up = spend ÷ sign-ups. Over £6, or no sign-ups at all, means pause it now: tell Chrome 'In my Reddit Ads account for CaseSpar, pause the campaign. Change nothing else and confirm it shows as paused.'
 2. Google Ads: cost per free sign-up from Google since 2 January. Over £6 is a warning sign; write it down for tomorrow's decision.
 3. Write both numbers in today's note.
 
@@ -83,7 +83,7 @@ Structuring gets faster with reps on the first minute only, not whole cases (my 
 
 You'll start to see the same building blocks (revenue and costs, market and competition, capabilities, risks) and adapt them instead of starting from nothing.
 
-Disclosure: I built Mock Partner, which has free framework drills for exactly this: https://mockpartner.com/drills/frameworks?utm_source=reddit&utm_medium=social&utm_campaign=answer-d83
+Disclosure: I built CaseSpar, which has free framework drills for exactly this: https://casespar.app/drills/frameworks?utm_source=reddit&utm_medium=social&utm_campaign=answer-d83
 ````
 
 ## Write down today

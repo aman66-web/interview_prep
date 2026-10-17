@@ -37,7 +37,7 @@ Claude, here are my fact-check notes on the page 'Market sizing questions with w
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, this is my week 1 check (Days 1 to 7). Done: [list what's done]. Not done: [list what isn't]. The reviewer has signed off [number] cases so far. Compare this with week 1 in my playbook: setup finished, domain bought, sign-in emails, hello@mockpartner.com and CAPTCHA working, ICO fee paid or confirmed, lawyer booked, first real AI interview done and the interviewer tuned, reviewer hired, sign-in working for an address that isn't mine, and the Keyword Planner check done. Tell me in 5 lines what to change in week 2 so we can still open on Day 10 (Sunday 25 October).
+Claude, this is my week 1 check (Days 1 to 7). Done: [list what's done]. Not done: [list what isn't]. The reviewer has signed off [number] cases so far. Compare this with week 1 in my playbook: setup finished, domain bought, sign-in emails, hello@casespar.app and CAPTCHA working, ICO fee paid or confirmed, lawyer booked, first real AI interview done and the interviewer tuned, reviewer hired, sign-in working for an address that isn't mine, and the Keyword Planner check done. Tell me in 5 lines what to change in week 2 so we can still open on Day 10 (Sunday 25 October).
 ````
 
 ## d7-3: Record any cases the reviewer has already signed off (build B5).
@@ -85,7 +85,7 @@ Claude, I've read the home page and the pricing page on my phone as a student wo
 
 ## Write down today
 
-Week 1 aims: 0 visits, 0 sign-ups, 0 paying, $0, £0 ad spend. Write down which milestones are done: setup A to H, trade mark check, domain, sign-in emails, hello@mockpartner.com, CAPTCHA, ICO, lawyer, first real interview, tuning, reviewer hired, Day 5 sign-in test, Keyword Planner.
+Week 1 aims: 0 visits, 0 sign-ups, 0 paying, $0, £0 ad spend. Write down which milestones are done: setup A to H, trade mark check, domain, sign-in emails, hello@casespar.app, CAPTCHA, ICO, lawyer, first real interview, tuning, reviewer hired, Day 5 sign-in test, Keyword Planner.
 
 ---
 [← Day 6](day-06.md) · [Day 8 →](day-08.md)

@@ -85,7 +85,7 @@ NEXT_PUBLIC_SUPPORT_EMAIL=
 
 Everything brand- or business-specific lives here, so it can change without touching the app:
 
-- `brandName` ("Mock Partner", chosen by the founder on 15 Oct 2026, replacing CaseSpar; mockpartner.com and mockpartner.ai were free that day), `tagline`, `supportEmail`.
+- `brandName` ("CaseSpar": the founder chose Mock Partner on 15 Oct 2026, then went back to CaseSpar on 17 Oct 2026; the founder bought casespar.app on Vercel on 17 Oct 2026; casespar.com was also available at $11.25 a year and could be added later), `tagline`, `supportEmail`.
 - `prices` (display only; real prices come from Stripe): monthly $39, 90-day pass $99.
 - `limits`:
   - free: 1 AI case in total, 20 drills a day

@@ -32,7 +32,7 @@ About 100 minutes in total. 5 tasks, in order.
 ````text
 The reviewer [reviewer's name] signed off [case name] on [date]. Their changes: [paste the reviewer's notes]. Please make the changes, mark it reviewed, run npm run content:check and push to the PR branch.
 
-When the tests pass, I approve merging these cases into main so they go live on mockpartner.com. Tell me when they're live and how many reviewed cases the live site now shows.
+When the tests pass, I approve merging these cases into main so they go live on casespar.app. Tell me when they're live and how many reviewed cases the live site now shows.
 ````
 
 ## d17-3: Ask Claude to check tomorrow's Reddit post against the saved rules.
@@ -55,7 +55,7 @@ Title: I built a text-based AI case interviewer that checks your maths with code
 
 Body: Disclosure first: I built this. It's my own small UK company, and I'm posting because I'd like honest feedback from people who actually do case interviews.
 
-Mock Partner (https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=launch-post) runs a full practice case by text. You ask clarifying questions, ask for exhibits, do the maths and give a recommendation. Then a debrief scores five skills from 1 to 5. The maths answers are checked by code against the right answer, not by the AI's opinion, because I've seen people complain that AI practice tools are weak at maths and too kind with feedback.
+CaseSpar (https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=launch-post) runs a full practice case by text. You ask clarifying questions, ask for exhibits, do the maths and give a recommendation. Then a debrief scores five skills from 1 to 5. The maths answers are checked by code against the right answer, not by the AI's opinion, because I've seen people complain that AI practice tools are weak at maths and too kind with feedback.
 
 What's free: one full interview with the debrief (you create a free account; no card), 20 drills a day, plus guides and calculators you can use without an account. Paid plans exist ($39 a month or $99 for 90 days), but I'm not asking anyone to buy.
 

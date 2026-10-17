@@ -1,4 +1,4 @@
-# Growth channels for Mock Partner: research notes
+# Growth channels for CaseSpar: research notes
 
 Written 15 Oct 2026 for the playbook writers. Research only.
 
@@ -14,7 +14,7 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 
 ## Quick summary table
 
-| Channel | Cost to start | Main rule risk | Fit for Mock Partner (my view) |
+| Channel | Cost to start | Main rule risk | Fit for CaseSpar (my view) |
 |---|---|---|---|
 | SEO (free guides, drills, tools) | Free (Claude writes) | Mass AI pages break Google's spam policy | Strongest long-term channel. Competitors get most visits from search |
 | Google Ads (Search) | No minimum. Founder sets the budget | Firm names in ad text can be blocked after a complaint. No "unavailable offers" | Good once cases are live. Check keyword costs first |
@@ -58,7 +58,7 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 **Keyword costs for "case interview practice", "consulting case interview", "mckinsey case interview"**
 - Not verified. Every public keyword-tool page I tried refused access. See "Could not verify".
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Do not run ads until the live site shows reviewed cases. Today production has no cases, so an ad saying "practise full cases" would promise something unavailable.
 - Keep firm names out of the ad text at first. Write "consulting case interview practice", not "McKinsey case practice". Bidding on a firm name as a keyword is allowed by Google's policy, but the ad must never suggest the firm backs us.
 - The founder already runs Google Ads for Preflight Pass, so he is probably not a "new advertiser" for the promo credit. Don't plan on free credit.
@@ -77,9 +77,9 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 - UK law on posing as a user: it is a banned practice to falsely represent "oneself as a consumer" (CMA guidance CMA207, banned practice 25). https://assets.publishing.service.gov.uk/media/691b9bd821ef5aaa6543ee6f/Unfair_commercial_practices_CMA207_18_Nov_2025__2_.pdf `[read 15 Oct 2026]`
 - The CAP Code says marketing "must not falsely claim or imply that the marketer is acting as a consumer" (rule 2.3). https://www.asa.org.uk/type/non_broadcast/code_section/02.html `[read 15 Oct 2026]`
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Before any Reddit post, the founder's Claude in Chrome opens each subreddit's rules page and wiki (it can, because it uses his own browser), copies the rules into a file, and checks the post against them.
-- Every post or comment that mentions Mock Partner must say plainly "I built this". Never post as a "student who found this site". That breaks UK law (above) as well as Reddit norms.
+- Every post or comment that mentions CaseSpar must say plainly "I built this". Never post as a "student who found this site". That breaks UK law (above) as well as Reddit norms.
 - No vote swapping, no friends upvoting, no second accounts.
 - Reddit Ads can be tested cheaply. The only cost figures I found are agency estimates.
 
@@ -105,9 +105,9 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 **Messages count as marketing email in the UK**
 - The UK email marketing rules also cover "direct messages via social media". https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/ `[read 15 Oct 2026]` (see section 9)
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Best use: the founder posts as himself. Useful, honest posts about case practice (one maths trick, one chart drill), with Claude drafting.
-- Do not send cold connection requests or DMs that sell Mock Partner to UK students. That is a LinkedIn rule and also needs consent under UK law.
+- Do not send cold connection requests or DMs that sell CaseSpar to UK students. That is a LinkedIn rule and also needs consent under UK law.
 - LinkedIn Ads can target "students at these universities studying economics", but clicks cost dollars, not pence. If tested, boosting the founder's own post (a "Thought Leader Ad") was the cheapest format in the data I found.
 
 ---
@@ -129,8 +129,8 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 **Does career content work on short video?**
 - Not verified. I found only vendor surveys and marketing blogs. I did not use their numbers.
 
-### So what for Mock Partner
-- Short videos are free to post. A simple format (my estimate): "Can you do this case maths in 30 seconds?" with the answer at the end. Claude can write scripts from the drills Mock Partner already has.
+### So what for CaseSpar
+- Short videos are free to post. A simple format (my estimate): "Can you do this case maths in 30 seconds?" with the answer at the end. Claude can write scripts from the drills CaseSpar already has.
 - The founder posting about his own product does not need TikTok's branded content toggle (that is for third-party brands). But any creator he pays or gifts must switch it on and label the post as an ad.
 - Shorts links are weak, so put the site name on screen and in the channel profile.
 - TikTok Ads cost at least $50 a day per campaign. Too much for an early test.
@@ -157,10 +157,10 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 - Yale SOM: clubs cannot run their own sponsorship ("no alternative sponsorship process will be allowed for clubs"). Central packages: Silver $500 a year, Gold $1,500 a year. https://groups.som.yale.edu/handbook/external-sponsors/ `[read 15 Oct 2026]`
 - TASK Consulting (Texas A&M): tiers of $500, $600 and $700 (no date on page, all "out of stock"). https://sofctamu.estore.flywire.com/products/task-consulting-sponsorship-packet-363281 `[read 15 Oct 2026]`
 
-### So what for Mock Partner
-- The best first offer is not cash. It is free access for the society's members (for example, a society code for a month free) and practice cases for their events. That costs Mock Partner only AI usage. PrepLounge already does this.
+### So what for CaseSpar
+- The best first offer is not cash. It is free access for the society's members (for example, a society code for a month free) and practice cases for their events. That costs CaseSpar only AI usage. PrepLounge already does this.
 - Contact route: the society's published sponsorship address or form, and the students' union's partnerships team. Expect the union to approve any deal.
-- If a society sends an email about Mock Partner to its members, it must be clearly marked as an advert (union rules and the CAP Code).
+- If a society sends an email about CaseSpar to its members, it must be clearly marked as an advert (union rules and the CAP Code).
 - Cash prices in the US examples are $500 to $1,500 a year. UK prices were not published anywhere I looked.
 - One deal lasts one academic year. Plan renewals for each new committee.
 
@@ -191,10 +191,10 @@ Written 15 Oct 2026 for the playbook writers. Research only.
 - The minimum wage applies to eligible workers however they are paid, including per task ("output work"). They need an equivalent hourly rate at or above the minimum. https://www.gov.uk/minimum-wage-different-types-work/output-work `[read 15 Oct 2026]`
 - Student visa holders "cannot ... be self-employed". https://www.gov.uk/student-visa/what-you-can-and-cannot-do `[read 15 Oct 2026]`
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Start with the simplest version: a "refer a friend" link that gives both people a free extra interview or a discount. Claude can build it. The user shares the link themselves.
 - Do not ask users for their friends' email addresses (see the ICO point in section 9).
-- If anyone gets anything for promoting Mock Partner (cash, commission, free access), their posts must start with "Ad". Mock Partner must check they do.
+- If anyone gets anything for promoting CaseSpar (cash, commission, free access), their posts must start with "Ad". CaseSpar must check they do.
 - Never pay for reviews, and never ask only happy users for reviews in return for something.
 - Paying student ambassadors brings employment questions (minimum wage, worker status). Commission-only deals with international students on Student visas are risky because they cannot be self-employed. Ask an accountant before hiring any ambassador.
 
@@ -236,17 +236,17 @@ Sources: https://www.similarweb.com/website/preplounge.com/ , https://www.simila
 - Google says AI content should be fact-checked and reviewed by hand before publishing, including titles and descriptions. It suggests telling readers how the content was made. Updated 1 Oct 2026. https://developers.google.com/search/docs/fundamentals/using-gen-ai-content `[read 15 Oct 2026]`
 
 ### What kinds of free pages win (my reading of the results above)
-1. One deep guide per case type (profitability, market sizing, market entry). Mock Partner already has 10.
-2. Per-firm "what the interview is like" guides. Mock Partner has Bain, BCG and McKinsey, built from careers pages only.
+1. One deep guide per case type (profitability, market sizing, market entry). CaseSpar already has 10.
+2. Per-firm "what the interview is like" guides. CaseSpar has Bain, BCG and McKinsey, built from careers pages only.
 3. "X questions with answers" pages, with original worked examples.
 4. Free interactive tools and drills that work without signing up. This is where Road to Offer competes.
 5. University careers pages rank for broad terms. Being listed on them (as a resource) is worth trying.
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Search is the main channel for most competitors. It should be a daily habit in the playbook (one strong page or tool improvement a day, checked by a person).
 - Fewer, better pages beat many thin ones. Google's spam policy targets mass AI pages.
 - Let visitors try one drill or one maths question with no login. That copies what works for Road to Offer, and helps Show HN (section 8).
-- Pricing note for the playbook: Road to Offer charges $120 for 90 days. Mock Partner's 90-Day Pass is $99.
+- Pricing note for the playbook: Road to Offer charges $120 for 90 days. CaseSpar's 90-Day Pass is $99.
 
 ---
 
@@ -257,7 +257,7 @@ Sources: https://www.similarweb.com/website/preplounge.com/ , https://www.simila
 - Show HN (Hacker News): "Show HN is for something you've made that other people can play with." Off topic: "blog posts, sign-up pages, newsletters, lists". "Please make it easy for users to try your thing out, ideally without barriers such as signups or emails." "Please don't ask friends to upvote or comment." https://news.ycombinator.com/showhn.html `[read 15 Oct 2026]`
 - BetaList and There's An AI For That: their submit or pricing pages needed a login or refused access. Not verified.
 
-### So what for Mock Partner
+### So what for CaseSpar
 - Product Hunt: one launch day, chosen by the founder, after the site is public and cases are live. Invite people to "come and comment", never to upvote.
 - Show HN only works if there is something to try without signing up (for example a free drill or the maths trainer).
 - Expect a short spike, not steady sales (my estimate).
@@ -325,7 +325,7 @@ Source: https://ico.org.uk/for-organisations/data-protection-fee/data-protection
 
 ---
 
-## What this means for Mock Partner (overall)
+## What this means for CaseSpar (overall)
 
 1. **Nothing paid should start before launch.** The live site has no cases yet and nobody but the founder can log in. Ads now would break Google's "unavailable offers" rule and waste money.
 2. **Search is the backbone.** For four of the five competitors I checked, organic search is the biggest source of desktop visits, and for three of them it is more than half (Similarweb estimates). The playbook should have a daily SEO slot: one useful page, tool or drill, fact-checked, not mass-produced.
@@ -334,7 +334,7 @@ Source: https://ico.org.uk/for-organisations/data-protection-fee/data-protection
 5. **Email only people who opted in.** No cold emails or DMs selling to UK individuals. Work emails at companies and universities are allowed with a clear opt-out, but UK GDPR still applies. Societies are a grey area. Use their published sponsorship address or form, one at a time.
 6. **Societies want free access, not just cash.** Offer member codes and practice cases for their events first. US price examples run $500 to $1,500 a year. Deals go through the students' union and last one academic year.
 7. **Referral before ambassadors.** A share-your-link referral reward is low risk. Paid ambassadors bring minimum wage, worker status and Student visa issues.
-8. **Expect a free competitor.** McKinsey gives candidates a free AI practice tool for its quantitative case, but only after they are offered an interview. Mock Partner's angle: available to everyone, before they apply, across all case types and firm styles.
+8. **Expect a free competitor.** McKinsey gives candidates a free AI practice tool for its quantitative case, but only after they are offered an interview. CaseSpar's angle: available to everyone, before they apply, across all case types and firm styles.
 9. **Revenue arithmetic** (simple maths, not research): $10,000 a month means about 257 active monthly subscribers at $39, or about 102 passes a month at $99, or a mix. Stripe fees and any VAT come off that. If the founder meant £10,000, the targets rise by the exchange rate on the day.
 10. **Keyword costs are the biggest unknown.** The founder's Claude in Chrome should run Google Keyword Planner (UK and US) before any ad budget is set.
 

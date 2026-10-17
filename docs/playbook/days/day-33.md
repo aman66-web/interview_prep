@@ -13,7 +13,7 @@ About 120 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab (admin page, Stripe, Vercel Analytics).
 2. Alarms: Anthropic spend under $80; Google Ads this week under £70; no errors in Vercel.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: after 8:01 am, once the Product Hunt page is live, paste your Product Hunt link into the text below and post it on LinkedIn.
 5. Don't message friends asking for votes or comments. The post invites honest feedback from anyone; that's all.
 6. In today's note: one user comment, and your minutes per channel.
@@ -21,7 +21,7 @@ About 120 minutes in total. 4 tasks, in order.
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Today I launched Mock Partner on Product Hunt.
+Today I launched CaseSpar on Product Hunt.
 
 It's a text-based AI interviewer for consulting case interviews. You work through a full case, ask for exhibits when you need them, do the maths, and get a debrief that scores five skills. Your maths is checked by code, not by the AI's opinion.
 
@@ -29,10 +29,10 @@ What's free: one full interview with the debrief and 20 drills a day with a free
 
 What it isn't: it's text only for now, and it's for practice before an interview, never help during one.
 
-If you try it, I'd value honest feedback, good or bad, in the Product Hunt comments or at hello@mockpartner.com.
+If you try it, I'd value honest feedback, good or bad, in the Product Hunt comments or at hello@casespar.app.
 
 Product Hunt: [paste your Product Hunt page link]
-The site: https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d33
+The site: https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d33
 ````
 
 ## d33-2: At 8:01 am UK: check the page is live and post your first comment
@@ -50,14 +50,14 @@ The site: https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_cam
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Hi everyone, I'm Aman and I built Mock Partner.
+Hi everyone, I'm Aman and I built CaseSpar.
 
-I wanted a way to practise consulting case interviews alone that feels closer to the real thing than reading a casebook. So Mock Partner is a text-based AI interviewer: it gives you a case, answers your clarifying questions, shows exhibits when you ask for them, sets maths questions, and then scores you on five skills in a debrief.
+I wanted a way to practise consulting case interviews alone that feels closer to the real thing than reading a casebook. So CaseSpar is a text-based AI interviewer: it gives you a case, answers your clarifying questions, shows exhibits when you ask for them, sets maths questions, and then scores you on five skills in a debrief.
 
 A few things I cared about:
 - The maths is checked by code, not by the AI's opinion, so a wrong number is marked wrong.
 - Every case is original, with invented companies and numbers, and signed off by a reviewer with consulting experience before it goes live.
-- It's for practice before an interview. Some firms say AI isn't allowed during their interviews or tests, and Mock Partner isn't built for that.
+- It's for practice before an interview. Some firms say AI isn't allowed during their interviews or tests, and CaseSpar isn't built for that.
 
 What's free: with a free account (no card), one full interview with the debrief and 20 drills a day; with no account at all, the guides and four tools. Paid is $39 a month or $99 for 90 days.
 

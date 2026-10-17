@@ -6,7 +6,7 @@ Every practice case stays a hidden draft until a person with real consulting int
 
 > **Title:** Former strategy consultant to review 20 practice case interviews
 >
-> I run Mock Partner, a website where students practise consulting case interviews with an AI interviewer. I have 20 original practice cases (profitability, market entry, market sizing, M&A, pricing, growth and operations) and need someone who has given or passed real case interviews at a strategy consulting firm to review them before they go live.
+> I run CaseSpar, a website where students practise consulting case interviews with an AI interviewer. I have 20 original practice cases (profitability, market entry, market sizing, M&A, pricing, growth and operations) and need someone who has given or passed real case interviews at a strategy consulting firm to review them before they go live.
 >
 > For each case you will read the prompt, the facts and exhibits, the maths and the model answer on a private preview site, and tell me:
 > - whether it is realistic and fair for a first- or second-round interview,

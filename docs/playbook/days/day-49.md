@@ -13,7 +13,7 @@ About 125 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £90; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -31,8 +31,8 @@ One sentence, one number, one question. Then move on.
 
 (Made-up numbers.)
 
-Free chart and table drills: https://mockpartner.com/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=mba-3
-(I built Mock Partner.)
+Free chart and table drills: https://casespar.app/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=mba-3
+(I built CaseSpar.)
 ````
 
 ## d49-2: Weekly review: week 7
@@ -80,13 +80,13 @@ Claude, I've checked 'Pricing case example: three ways to set a price'. Please f
 
 1. Skip this if Day 45 wasn't Go or you said no to the LinkedIn test.
 2. Send Chrome the message below. Type the card details yourself if asked.
-3. If Chrome says LinkedIn needs a company Page before an ad account, you may let it create a free one (name Mock Partner, website mockpartner.com, our own logo only, never a firm's). It costs nothing; stop if it asks for money.
+3. If Chrome says LinkedIn needs a company Page before an ad account, you may let it create a free one (name CaseSpar, website casespar.app, our own logo only, never a firm's). It costs nothing; stop if it asks for money.
 4. Nothing is spent today.
 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Only for my approved LinkedIn test: open LinkedIn Campaign Manager and create an ad account for Mock Partner in British pounds (GBP), because the currency can't be changed later. If LinkedIn needs a company Page or anything else first, tell me and stop. I'll type the card details myself. Don't create any campaign and don't spend anything today.
+Only for my approved LinkedIn test: open LinkedIn Campaign Manager and create an ad account for CaseSpar in British pounds (GBP), because the currency can't be changed later. If LinkedIn needs a company Page or anything else first, tell me and stop. I'll type the card details myself. Don't create any campaign and don't spend anything today.
 ````
 
 ## Write down today

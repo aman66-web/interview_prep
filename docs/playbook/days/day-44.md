@@ -21,7 +21,7 @@ About 75 minutes in total. 4 tasks, in order.
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-I built Mock Partner, a case interview practice site, so I'm biased. But these five don't need the site at all. Try each before reading the answer.
+I built CaseSpar, a case interview practice site, so I'm biased. But these five don't need the site at all. Try each before reading the answer.
 
 1. What is 15% of 640?
 10% is 64 and 5% is 32, so 96.
@@ -38,7 +38,7 @@ Divide 36 by 4 and multiply by 100: 900.
 5. Growth from 100 to 150 over 3 years. Yearly rate?
 Not 16.7%. Try 15%: 100, 115, 132, 152. So just under 15% (about 14.5%).
 
-If you want more, the mental maths trainer is free and needs no account: https://mockpartner.com/tools/mental-maths-trainer?utm_source=reddit&utm_medium=social&utm_campaign=post-d44
+If you want more, the mental maths trainer is free and needs no account: https://casespar.app/tools/mental-maths-trainer?utm_source=reddit&utm_medium=social&utm_campaign=post-d44
 
 What maths trips you up most in cases? I'm deciding what to add next.
 ````
@@ -75,7 +75,7 @@ Claude, please read (read only) from Supabase the daily counts for Mon 26 Oct to
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

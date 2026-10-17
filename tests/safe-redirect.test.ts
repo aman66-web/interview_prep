@@ -100,7 +100,7 @@ describe("safeNextPath", () => {
       expect(out.startsWith("/")).toBe(true);
       expect(out.charAt(1)).not.toBe("/");
       expect(out.charAt(1)).not.toBe("\\");
-      expect(new URL(out, "https://mockpartner.test").origin).toBe("https://mockpartner.test");
+      expect(new URL(out, "https://casespar.test").origin).toBe("https://casespar.test");
     }
   });
 });

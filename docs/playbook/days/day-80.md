@@ -40,7 +40,7 @@ About 90 minutes in total. 4 tasks, in order.
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Claude, I did a full free interview on mockpartner.com as a new user today, before the January peak. These things were slow, confusing or broken: [your list, with the time]. Please find out why (read-only first), fix what you can on the PR branch, explain each fix in one line and show me before it goes live.
+Claude, I did a full free interview on casespar.app as a new user today, before the January peak. These things were slow, confusing or broken: [your list, with the time]. Please find out why (read-only first), fix what you can on the PR branch, explain each fix in one line and show me before it goes live.
 ````
 
 ## d80-4: Post a short video
@@ -58,7 +58,7 @@ Claude, I did a full free interview on mockpartner.com as a new user today, befo
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````

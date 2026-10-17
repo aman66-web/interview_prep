@@ -14,7 +14,7 @@ About 120 minutes in total. 5 tasks, in order.
 1. Write yesterday's six numbers in your Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
 2. Alarms: Anthropic spend under 80% of the limit; ad spend £0; no failed deployment or errors in Vercel.
 3. Send the second message from yesterday (task d11-5) to anyone who said yes overnight.
-4. Reply to every email in hello@mockpartner.com and every admin enquiry within 24 hours.
+4. Reply to every email in hello@casespar.app and every admin enquiry within 24 hours.
 5. Note one thing a user said or did, and your minutes per channel.
 
 ## d12-2: Let Chrome list 40 UK consulting societies and careers services.
@@ -88,9 +88,9 @@ x% of y is the same as y% of x.
 
 It works because both are just x times y divided by 100. Pick whichever way round is easier in your head.
 
-Tricks only help if they're automatic under pressure, so practise them until they are. I built free mental maths drills into Mock Partner for exactly this: 5 without an account, 20 a day with a free one, and every answer is checked by code.
+Tricks only help if they're automatic under pressure, so practise them until they are. I built free mental maths drills into CaseSpar for exactly this: 5 without an account, 20 a day with a free one, and every answer is checked by code.
 
-https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-2
+https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-2
 ````
 
 ## Write down today

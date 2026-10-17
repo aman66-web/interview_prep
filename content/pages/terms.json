@@ -1,26 +1,26 @@
 {
   "slug": "terms",
   "title": "Terms of service",
-  "seo_title": "Terms of service | Mock Partner",
-  "description": "The terms for using Mock Partner: your account, free and paid plans, fair-use limits, fair use of the AI, our content, and your legal rights.",
+  "seo_title": "Terms of service | CaseSpar",
+  "description": "The terms for using CaseSpar: your account, free and paid plans, fair-use limits, fair use of the AI, our content, and your legal rights.",
   "updated": "2026-10-15",
   "status": "draft",
-  "intro": "These terms are the agreement between you and us when you use Mock Partner. Please read them before you buy a plan. Effective date: [effective date].",
+  "intro": "These terms are the agreement between you and us when you use CaseSpar. Please read them before you buy a plan. Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "who-we-are", "text": "1. Who we are" },
     {
       "type": "p",
-      "text": "Mock Partner is run by [legal entity name], a company registered in [England and Wales, founder to confirm] with company number [company number]. Our registered address is [registered address]. In these terms, \"we\", \"us\" and \"our\" mean [legal entity name]. You can contact us at [support email]."
+      "text": "CaseSpar is run by [legal entity name], a company registered in [England and Wales, founder to confirm] with company number [company number]. Our registered address is [registered address]. In these terms, \"we\", \"us\" and \"our\" mean [legal entity name]. You can contact us at [support email]."
     },
 
-    { "type": "h2", "id": "the-service", "text": "2. What Mock Partner is" },
+    { "type": "h2", "id": "the-service", "text": "2. What CaseSpar is" },
     {
       "type": "p",
-      "text": "Mock Partner is a website for practising consulting case interviews. It includes practice cases, an AI interviewer, a scored debrief after each interview, and practice drills."
+      "text": "CaseSpar is a website for practising consulting case interviews. It includes practice cases, an AI interviewer, a scored debrief after each interview, and practice drills."
     },
     {
       "type": "p",
-      "text": "Mock Partner is for practice only. It is not a recruitment service, it doesn't put you forward for jobs, and no firm sees your results."
+      "text": "CaseSpar is for practice only. It is not a recruitment service, it doesn't put you forward for jobs, and no firm sees your results."
     },
 
     { "type": "h2", "id": "your-account", "text": "3. Your account" },
@@ -89,10 +89,10 @@
     },
     {
       "type": "p",
-      "text": "We may change these limits to keep Mock Partner fair and affordable. We will tell you at least 30 days before we reduce the limits of a plan you have paid for."
+      "text": "We may change these limits to keep CaseSpar fair and affordable. We will tell you at least 30 days before we reduce the limits of a plan you have paid for."
     },
 
-    { "type": "h2", "id": "fair-play", "text": "7. Using Mock Partner fairly" },
+    { "type": "h2", "id": "fair-play", "text": "7. Using CaseSpar fairly" },
     { "type": "p", "text": "Please don't:" },
     {
       "type": "ul",
@@ -103,7 +103,7 @@
         "try to get around the usage limits, for example by opening several accounts",
         "try to break or overload the site, or get into other people's accounts or data",
         "type in other people's personal details, or confidential material from a real employer or a real interview",
-        "use Mock Partner for anything unlawful"
+        "use CaseSpar for anything unlawful"
       ]
     },
     {
@@ -114,17 +114,17 @@
     { "type": "h2", "id": "our-content", "text": "8. Our content" },
     {
       "type": "p",
-      "text": "We own the cases, drills, guides and other content on Mock Partner, or have permission to use them. You may use them for your own interview practice. You may not copy, publish or sell them."
+      "text": "We own the cases, drills, guides and other content on CaseSpar, or have permission to use them. You may use them for your own interview practice. You may not copy, publish or sell them."
     },
     {
       "type": "p",
-      "text": "Our cases are written for Mock Partner, with invented companies and numbers. Any likeness to a real business is a coincidence."
+      "text": "Our cases are written for CaseSpar, with invented companies and numbers. Any likeness to a real business is a coincidence."
     },
 
     { "type": "h2", "id": "what-you-write", "text": "9. What you write" },
     {
       "type": "p",
-      "text": "What you type in an interview stays yours. You allow us to store and process it to run Mock Partner: to run the AI interviewer, write your debrief and show you your history. To do this, we send the text of your interview to our AI provider, Anthropic."
+      "text": "What you type in an interview stays yours. You allow us to store and process it to run CaseSpar: to run the AI interviewer, write your debrief and show you your history. To do this, we send the text of your interview to our AI provider, Anthropic."
     },
     {
       "type": "p",
@@ -149,11 +149,11 @@
     { "type": "h2", "id": "availability", "text": "11. Changes and availability" },
     {
       "type": "p",
-      "text": "We keep improving Mock Partner, so features, cases and drills may change. We try to keep the site running, but we can't promise it will always be available or free of errors. Sometimes we may need to pause it for maintenance."
+      "text": "We keep improving CaseSpar, so features, cases and drills may change. We try to keep the site running, but we can't promise it will always be available or free of errors. Sometimes we may need to pause it for maintenance."
     },
     {
       "type": "p",
-      "text": "If we ever stop offering Mock Partner, we will give you notice and refund the unused part of any paid plan. [Founder to confirm.]"
+      "text": "If we ever stop offering CaseSpar, we will give you notice and refund the unused part of any paid plan. [Founder to confirm.]"
     },
 
     { "type": "h2", "id": "ending", "text": "12. Ending your account" },
@@ -170,7 +170,7 @@
     {
       "type": "ul",
       "items": [
-        "We provide Mock Partner with reasonable care and skill.",
+        "We provide CaseSpar with reasonable care and skill.",
         "We are not responsible for losses we could not have foreseen, for business losses, or for the outcome of any real interview or job application.",
         "Our total responsibility to you is limited to the amount you paid us in the 12 months before your claim. [Founder and lawyer to confirm.]",
         "Nothing in these terms limits our responsibility for death or personal injury caused by our negligence, for fraud, or for anything else the law doesn't allow us to limit."

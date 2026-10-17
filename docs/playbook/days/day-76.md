@@ -12,7 +12,7 @@ About 125 minutes in total. 5 tasks, in order.
 **Steps**
 
 1. Write yesterday's six numbers. Alarms: Anthropic under 80% of the limit; ads this week under £70 (or £0); no Vercel errors.
-2. Reply to every email in hello@mockpartner.com and every admin enquiry.
+2. Reply to every email in hello@casespar.app and every admin enquiry.
 3. In today's note: one user comment, and your minutes per channel.
 
 ## d76-2: Check the leak fix (and the pass notice, if you asked for it) on the preview
@@ -41,7 +41,7 @@ Claude, I've checked on the preview: the leak fix [and the 'your pass ends on' n
 
 1. In Reddit Ads: about £8 a day, starts Saturday 2 January, ends Monday 11 January, no more than £80 in total, status paused.
 2. Each ad: no firm names, no promises of offers or results, 'free' only about the free first interview. The link ends with utm_source=reddit&utm_medium=paid&utm_campaign=jan-test. No Reddit pixel is installed.
-3. If anything is wrong, tell Chrome: 'In my Reddit Ads account for Mock Partner, please change [what] in the paused campaign. Change nothing else.'
+3. If anything is wrong, tell Chrome: 'In my Reddit Ads account for CaseSpar, please change [what] in the paused campaign. Change nothing else.'
 
 ## d76-4: Fact-check this week's search page (exhibit maths, unless Claude's plan named another)
 

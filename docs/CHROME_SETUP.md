@@ -46,7 +46,7 @@ The preview site is `https://interview-prep-git-claude-gifted-shannon-r42f73-ama
 2. Go to **Authentication**, then **Email Templates**, then **Magic Link**. Replace the whole message body with the text below, and Save. Then open **Confirm sign up**, replace its body with the same text, and Save. (Supabase only allows this once a custom email sender is connected; if the templates are locked, skip this step and say so. It is done on Day 2 with the domain and Resend.)
 
 ```html
-<h2>Your Mock Partner sign-in code</h2>
+<h2>Your CaseSpar sign-in code</h2>
 <p>Type this code on the sign-in page:</p>
 <p style="font-size:32px;font-weight:700;letter-spacing:6px;font-family:monospace">{{ .Token }}</p>
 <p>It works once and expires soon. You can read this email on your phone and type the code on your computer.</p>
@@ -115,5 +115,5 @@ Tell the founder in a few short lines: which parts worked, which did not and wha
 ### I. UK trade mark search for the name
 
 1. Open https://trademarks.ipo.gov.uk/ipo-tmtext (the UK IPO's trade mark search). If it shows a "verify you are human" check, stop and ask the founder to click it.
-2. Search the words `MOCK PARTNER`, then `MOCKPARTNER`, then `MOCK PARTNERS`. For each search, note any results that are live (registered or pending) and in classes 9, 41 or 42.
+2. Search the words `CASESPAR`, then `CASESPAR`, then `CASE SPAR`. For each search, note any results that are live (registered or pending) and in classes 9, 41 or 42.
 3. Report what you found in a few lines: the mark, its owner, its status and classes, or "no results". This is not legal advice.

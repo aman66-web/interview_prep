@@ -58,7 +58,7 @@ export function imageCardView(card: ShareCard): CardView {
   return cardView({ scores: card.scores, caseSlug: card.caseSlug, date: card.date });
 }
 
-/** "mockpartner.com" style host for the card's footer: the configured site address, else the one this request came in on. */
+/** "casespar.app" style host for the card's footer: the configured site address, else the one this request came in on. */
 export function siteHost(requestUrl?: string): string {
   for (const candidate of [process.env.NEXT_PUBLIC_SITE_URL, requestUrl]) {
     if (!candidate) continue;

@@ -13,7 +13,7 @@ About 115 minutes in total. 3 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under $80; ads this week under £70; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: post the text below on LinkedIn at 2 pm UK time (9 am in New York), using any date changes from yesterday's check.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -32,11 +32,11 @@ Check your own school's calendar too.
 
 If you're recruiting for consulting, those will be case interviews, and December (winter break included) is the time for reps.
 
-I built Mock Partner for this: a text-based AI interviewer that runs a full case, checks your maths with code and scores five skills. Your first full interview is free with a free account, no card. If you want the whole season covered, the 90-Day Pass is $99, one payment, and lasts into February.
+I built CaseSpar for this: a text-based AI interviewer that runs a full case, checks your maths with code and scores five skills. Your first full interview is free with a free account, no card. If you want the whole season covered, the 90-Day Pass is $99, one payment, and lasts into February.
 
-https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=us-mba-d39
+https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=us-mba-d39
 
-Mock Partner isn't linked to any school or consulting firm.
+CaseSpar isn't linked to any school or consulting firm.
 ````
 
 ## d39-2: Contact the first 10 US MBA consulting clubs
@@ -59,21 +59,21 @@ Subject: Free case-interview practice codes for [club name] members
 
 Hi [first name, or 'there'],
 
-This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run Mock Partner (mockpartner.com), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
+This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run CaseSpar (casespar.app), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 With first-year internship interviews starting in early January at several schools, I'd like to offer [club name] members, free to the club:
 - a club code: two extra free AI interviews per member (on top of the one everyone gets) and 20% off a first purchase;
 - a printable case-workshop pack (one case with facilitator notes) for a club session;
 - a club page on our site with the code on it.
 
-No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. Mock Partner isn't linked to any school or consulting firm.
+No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. CaseSpar isn't linked to any school or consulting firm.
 
 If you'd rather not get emails from me, reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d39-3: Do a full free interview as a new user, with the calculator off
@@ -83,8 +83,8 @@ hello@mockpartner.com
 
 **Steps**
 
-1. Make a brand-new email address you've never used on Mock Partner (a new Gmail takes two minutes). Your second email address can't do this test: it already holds the 90-Day Pass from Day 9.
-2. Sign up on mockpartner.com with it. On the admin page, add it to your test addresses, so it is left out of the numbers.
+1. Make a brand-new email address you've never used on CaseSpar (a new Gmail takes two minutes). Your second email address can't do this test: it already holds the 90-Day Pass from Day 9.
+2. Sign up on casespar.app with it. On the admin page, add it to your test addresses, so it is left out of the numbers.
 3. Start the free interview. Check the calculator is off by default and easy to switch on.
 4. Do the whole case to the debrief. Note anything slow, confusing or broken.
 5. If you found problems, send Claude the message below. If not, write 'free interview OK' in today's note.

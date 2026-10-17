@@ -12,7 +12,7 @@ About 130 minutes in total. 6 tasks, in order.
 **Steps**
 
 1. Write yesterday's six numbers. Alarms: Anthropic under 80% of the limit; ads this week under £70 (or £0); no Vercel errors.
-2. Reply to every email in hello@mockpartner.com and every admin enquiry.
+2. Reply to every email in hello@casespar.app and every admin enquiry.
 3. In today's note: one user comment, and your minutes per channel.
 
 ## d77-2: December review and week 11 review
@@ -23,7 +23,7 @@ About 130 minutes in total. 6 tasks, in order.
 **Steps**
 
 1. On the admin page, copy the table for December (Tue 1 to Thu 31 Dec) and the 'this week's numbers' table (Fri 25 to Thu 31 Dec). Visitors from Vercel Analytics; ad spend from Google Ads (and LinkedIn for the early-December test).
-2. Count partner societies or careers services with a club code, and reviewed cases live on mockpartner.com/cases.
+2. Count partner societies or careers services with a club code, and reviewed cases live on casespar.app/cases.
 3. Fill in the message below and send it. Then use the gate below.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
@@ -107,17 +107,17 @@ If your interview is in the next two weeks:
 
 If you're writing applications first: finish them, then keep 2 or 3 practice cases a week going, so you're ready if an invite comes quickly.
 
-Free on Mock Partner:
-- Mental maths drills: https://mockpartner.com/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
-- Chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
+Free on CaseSpar:
+- Mental maths drills: https://casespar.app/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
+- Chart-reading drills: https://casespar.app/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
 - Our deadlines page, with links to each firm's own page: [the deadlines page link]?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
-- A full practice interview with a scored debrief (free account, no card): https://mockpartner.com/?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
+- A full practice interview with a scored debrief (free account, no card): https://casespar.app/?utm_source=newsletter&utm_medium=email&utm_campaign=nl4
 
 If you want more practice than the free interview: Monthly is $39 a month (cancel any time), or the 90-Day Pass is $99 (one payment; bought today, it lasts until about 1 April).
 
-Good luck. Mock Partner is for practice before interviews, never during one.
+Good luck. CaseSpar is for practice before interviews, never during one.
 
-Aman, Mock Partner
+Aman, CaseSpar
 
 Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named in this email.
 ````

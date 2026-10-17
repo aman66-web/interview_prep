@@ -1,6 +1,6 @@
 # Day 68 of 90 · Tue 22 Dec 2026 · Newsletter 3: your Christmas-break case plan
 
-**Why today matters:** Students are home for the break and the people on your list asked for tips; one skill a day keeps Mock Partner in their routine without repeating newsletter 2's calendar.
+**Why today matters:** Students are home for the break and the people on your list asked for tips; one skill a day keeps CaseSpar in their routine without repeating newsletter 2's calendar.
 
 About 100 minutes in total. 5 tasks, in order.
 
@@ -13,7 +13,7 @@ About 100 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105 (or your lower cap); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com, every admin enquiry and any replies to your quote requests.
+3. Reply to every email in hello@casespar.app, every admin enquiry and any replies to your quote requests.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ Then add judgement:
 - If the machines last 5 years, the client ends up only $125,000 ahead in total ($625,000 saved, $500,000 spent), before any running costs.
 - So ask how long the machines last, and how sure the savings are, before saying yes.
 
-Free case maths drills: https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d68
-(I built Mock Partner.)
+Free case maths drills: https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d68
+(I built CaseSpar.)
 ````
 
 ## d68-2: Send newsletter 3 to people who opted in, from the admin page, after reading a test copy
@@ -54,7 +54,7 @@ Subject: Your Christmas-break case plan: one skill a day
 
 Hi,
 
-Newsletter 2 gave you a calendar for the break. This one gives you something to do in each session. A case debrief on Mock Partner scores five skills, so here's one short exercise for each. Do one a day, 20 to 30 minutes, and repeat the cycle.
+Newsletter 2 gave you a calendar for the break. This one gives you something to do in each session. A case debrief on CaseSpar scores five skills, so here's one short exercise for each. Do one a day, 20 to 30 minutes, and repeat the cycle.
 
 Day 1, structure: pick three business questions from the news. For each, give yourself 60 seconds to write a structure with 3 or 4 branches, then say it out loud.
 
@@ -72,15 +72,15 @@ Dates worth knowing (from the firms' own pages; check again before you apply):
 - BCG London's summer internship applications open on 1 January 2027 and close on 24 January 2027: https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs
 - Oliver Wyman UK's internship deadline is 15 January 2027, and it may close earlier: https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html
 
-Free on Mock Partner:
-- Framework drills: https://mockpartner.com/drills/frameworks?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
-- Mental maths drills: https://mockpartner.com/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
-- Chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
-- A full practice interview with a scored debrief (free account, no card): https://mockpartner.com/?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
+Free on CaseSpar:
+- Framework drills: https://casespar.app/drills/frameworks?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
+- Mental maths drills: https://casespar.app/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
+- Chart-reading drills: https://casespar.app/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
+- A full practice interview with a scored debrief (free account, no card): https://casespar.app/?utm_source=newsletter&utm_medium=email&utm_campaign=nl3
 
-Take some proper days off too. Mock Partner is for practice before interviews, never during one.
+Take some proper days off too. CaseSpar is for practice before interviews, never during one.
 
-Aman, Mock Partner
+Aman, CaseSpar
 
 Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named in this email.
 ````
@@ -115,7 +115,7 @@ Claude, please write this week's 2 new guide pages: the next two in the 4-week s
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````

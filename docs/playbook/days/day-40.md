@@ -13,7 +13,7 @@ About 115 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under $80; ads this week under £70; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn at 2 pm UK time (9 am in New York). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ Without a calculator, guess and multiply:
 At 15% a year: 100, then 115, then 132, then 152.
 152 is just over 150, so the answer is a little under 15%.
 
-Free growth rate calculator: https://mockpartner.com/tools/growth-rate-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d40
-(I built Mock Partner.)
+Free growth rate calculator: https://casespar.app/tools/growth-rate-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d40
+(I built CaseSpar.)
 ````
 
 ## d40-2: Ask Claude for this week's 2 search pages (B12), including the MBA page
@@ -70,7 +70,7 @@ Subject: Free case interview practice for [society name] members
 
 Hi [first name, or 'there'],
 
-I'm Aman, and I run Mock Partner (mockpartner.com), a website where students practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code and gives a scored debrief. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, and I run CaseSpar (casespar.app), a website where students practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code and gives a scored debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 I'd like to offer [society name] members, free of charge to the society:
 - a club code that gives each member two extra free AI interviews (on top of the one everyone gets) and 20% off their first purchase if they ever buy;
@@ -84,9 +84,9 @@ Would it be useful? I can set up the code this week.
 If you'd rather not hear from me, just reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
-Mock Partner is run by MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+Founder, CaseSpar
+CaseSpar is run by MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
+hello@casespar.app
 ````
 
 ## d40-4: Chrome pulls your top Search Console queries
@@ -102,7 +102,7 @@ hello@mockpartner.com
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Open Google Search Console for mockpartner.com, Performance, last 28 days. Give me the top 20 search queries and the top 10 pages by impressions, with clicks and average position for each. Read only; don't change anything.
+Open Google Search Console for casespar.app, Performance, last 28 days. Give me the top 20 search queries and the top 10 pages by impressions, with clicks and average position for each. Read only; don't change anything.
 ````
 
 ## d40-5: Set up any US club that said yes
@@ -113,7 +113,7 @@ Open Google Search Console for mockpartner.com, Performance, last 28 days. Give 
 **Steps**
 
 1. Skip this if no US club has said yes.
-2. On mockpartner.com/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
+2. On casespar.app/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
 3. Attach the partner pack and the case-workshop pack, fill in the reply below and send it.
 
 **Text to use (post, email or message)** (copy exactly):
@@ -133,7 +133,7 @@ Members who sign up with the code get two extra free AI interviews and 20% off t
 If it helps, I can join a session online in December or January.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

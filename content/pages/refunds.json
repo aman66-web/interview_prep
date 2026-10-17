@@ -1,8 +1,8 @@
 {
   "slug": "refunds",
   "title": "Refund policy",
-  "seo_title": "Refund policy | Mock Partner",
-  "description": "Mock Partner plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
+  "seo_title": "Refund policy | CaseSpar",
+  "description": "CaseSpar plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
   "updated": "2026-10-15",
   "status": "draft",
   "intro": "This page explains our refund policy and how cancelling works. Effective date: [effective date].",
@@ -23,7 +23,7 @@
     { "type": "h2", "id": "no-refunds", "text": "No refunds" },
     {
       "type": "p",
-      "text": "Your first full AI interview and scored debrief are free, so you can try Mock Partner properly before you pay. Because of that, payments for the Monthly plan and the 90-Day Pass are final and we don't refund them, in full or in part."
+      "text": "Your first full AI interview and scored debrief are free, so you can try CaseSpar properly before you pay. Because of that, payments for the Monthly plan and the 90-Day Pass are final and we don't refund them, in full or in part."
     },
     {
       "type": "p",

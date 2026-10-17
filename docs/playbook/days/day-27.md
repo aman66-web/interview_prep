@@ -30,7 +30,7 @@ About 130 minutes in total. 5 tasks, in order.
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, for the campaign since it started: tell me the total spend, clicks, average cost per click and the search terms report. List any search terms that have nothing to do with case interview practice, show me the list, and add them as negative keywords only after I say yes. Don't change the budget or the bids.
+In my CaseSpar Google Ads account, for the campaign since it started: tell me the total spend, clicks, average cost per click and the search terms report. List any search terms that have nothing to do with case interview practice, show me the list, and add them as negative keywords only after I say yes. Don't change the budget or the bids.
 ````
 
 ## d27-3: Fact-check this week's search page 1: break-even questions.
@@ -69,7 +69,7 @@ The rule of 72: something growing at r% a year doubles in about 72 ÷ r years. A
 And the other way round: if revenue went from £100m to £150m in 5 years, the yearly growth isn't 10% (that's just 50 ÷ 5). It's about 8.4% a year, because growth compounds.
 
 When you want the exact figure, the free growth rate calculator works it out, no account needed:
-https://mockpartner.com/tools/growth-rate-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-13
+https://casespar.app/tools/growth-rate-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-13
 ````
 
 ## d27-5: Answer one Reddit question helpfully, where the rules allow.
@@ -85,7 +85,7 @@ https://mockpartner.com/tools/growth-rate-calculator?utm_source=linkedin&utm_med
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention Mock Partner if it really helps the person, and if you do, start that sentence with 'Disclosure: I built Mock Partner' and use the link https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
+Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention CaseSpar if it really helps the person, and if you do, start that sentence with 'Disclosure: I built CaseSpar' and use the link https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
 ````
 
 ## Write down today

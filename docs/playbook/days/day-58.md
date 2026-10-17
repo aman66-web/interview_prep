@@ -13,7 +13,7 @@ About 80 minutes in total. 3 tasks, in order.
 
 1. Write yesterday's six numbers. Alarms: Anthropic under 80% of the limit; ads this week under £105; no Vercel errors. Answer the support inbox.
 2. Find one recent question about preparing for case interviews over the holidays (for example in a UK student subreddit whose saved rules allow it). Adapt the answer below.
-3. If the question asks something different, don't post this as it is. Send Claude: 'Claude, here is a Reddit question and that subreddit's rules from reddit-rules.txt: [paste both]. Adapt this answer so it is genuinely useful for that question, keep the disclosure if Mock Partner is mentioned, and don't copy anything from casebooks, firms or other prep sites: [paste the answer below]'. Never post the same answer twice: copy-paste answers look like spam and can get an account flagged (our caution, not a checked Reddit rule).
+3. If the question asks something different, don't post this as it is. Send Claude: 'Claude, here is a Reddit question and that subreddit's rules from reddit-rules.txt: [paste both]. Adapt this answer so it is genuinely useful for that question, keep the disclosure if CaseSpar is mentioned, and don't copy anything from casebooks, firms or other prep sites: [paste the answer below]'. Never post the same answer twice: copy-paste answers look like spam and can get an account flagged (our caution, not a checked Reddit rule).
 4. Keep the last paragraph only if the subreddit allows self-promotion and it's relevant. Never post as a student.
 5. In today's note: the link, and your minutes per channel.
 
@@ -28,7 +28,7 @@ A plan that fits around a holiday:
 4. Have a few days off over Christmas. You'll practise better after a rest.
 5. In January, get some live practice with people (a society case club, friends, alumni), because the back-and-forth is the hardest part to copy alone.
 
-Disclosure: I built Mock Partner, a text-based AI case interviewer (maths checked by code, scored debrief). There's a free full interview (free account, no card) and free drills if they'd help: https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d58
+Disclosure: I built CaseSpar, a text-based AI case interviewer (maths checked by code, scored debrief). There's a free full interview (free account, no card) and free drills if they'd help: https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d58
 ````
 
 ## d58-2: Post a short video
@@ -47,7 +47,7 @@ Disclosure: I built Mock Partner, a text-based AI case interviewer (maths checke
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

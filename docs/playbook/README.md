@@ -1,6 +1,6 @@
 # Growth playbook (written 15 Oct 2026)
 
-The founder's day-by-day plan to launch Mock Partner and grow it toward $10,000 a month. He follows it from the private page https://claude.ai/artifact/1kgsULhHkJX4bh7mdQmNzq (tick boxes, ready-to-paste messages, a daily numbers log). These files are the same plan, kept here so any Claude session can look up a day, a build or a rule the founder mentions.
+The founder's day-by-day plan to launch CaseSpar and grow it toward $10,000 a month. He follows it from the private page https://claude.ai/artifact/1kgsULhHkJX4bh7mdQmNzq (tick boxes, ready-to-paste messages, a daily numbers log). These files are the same plan, kept here so any Claude session can look up a day, a build or a rule the founder mentions.
 
 | File | What is in it |
 |---|---|

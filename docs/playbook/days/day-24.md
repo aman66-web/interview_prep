@@ -60,7 +60,7 @@ Claude, I've tried refer-a-friend on the preview with a new email address, and b
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, tell me the spend, clicks and average cost per click for each day since the campaign started, and list the search terms so far. Don't change anything.
+In my CaseSpar Google Ads account, tell me the spend, clicks and average cost per click for each day since the campaign started, and list the search terms so far. Don't change anything.
 ````
 
 ## Write down today

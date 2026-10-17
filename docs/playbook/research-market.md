@@ -1,4 +1,4 @@
-# Market research for Mock Partner (read on Thursday 15 Oct 2026)
+# Market research for CaseSpar (read on Thursday 15 Oct 2026)
 
 **How to read this file**
 
@@ -16,7 +16,7 @@
 
 | Product | What it is | Free tier | Monthly | About 3 months | 1 year | Other | Source |
 |---|---|---|---|---|---|---|---|
-| **Mock Partner (us)** | Text AI interviewer, scored debrief, drills | 1 full AI interview + 20 drills a day | **$39** | **$99 for 90 days** (one-time) | none | — | context.md |
+| **CaseSpar (us)** | Text AI interviewer, scored debrief, drills | 1 full AI interview + 20 drills a day | **$39** | **$99 for 90 days** (one-time) | none | — | context.md |
 | CaseCoach | Video courses, 100+ cases, drills, peer Practice Room | 10-day trial | $49 / £38 / 44 € (auto-renews) | — | $199 / £151 / 178 € (one payment, does not auto-renew) | Coaching extra | [casecoach.com/consulting-interview-prep-toolkit](https://casecoach.com/consulting-interview-prep-toolkit) |
 | PrepLounge | Peer practice community, 200 cases, 200 drills, coach marketplace | Basic: 10 peer meetings, limited cases | — | — | Premium "USD 79" crossed out, now **USD 69**, one-time, 1 year | Premium + Coaching "from USD 229" | [preplounge.com/en/pricing](https://www.preplounge.com/en/pricing) |
 | RocketBlocks | Drills (structuring, maths, charts), concept reviews | 7-day free trial | $35 | — | $155 (one-time) | Coaching $200 an hour | [rocketblocks.me/consulting.php](https://www.rocketblocks.me/consulting.php) |
@@ -48,8 +48,8 @@
 ### 1c. AI case-interview tools: how crowded is it?
 
 - On one day of searching I found **at least 12 products that sell AI case interviews**: MConsultingPrep CaseGPT, MyConsultingCoach, CaseTutor, Road to Offer, CaseWithAI, CasePrepared, Soreno, MockInterview247, CaseStudyPrep.AI, CaseBuddy, MBBPrep and Case Room ([caseroomprep.com/ai-case-interview-practice](https://www.caseroomprep.com/ai-case-interview-practice), no price shown). CaseCoach also lists AI voice drills (via Yale's page).
-- **Most of them are voice-first** (you speak, the AI listens). Text-based or text-allowed ones: MockInterview247 (text), CaseBuddy (chat, voice is paid), MConsultingPrep (voice or text). Mock Partner is text-only for now.
-- **Several are priced almost exactly like Mock Partner.** CaseTutor is $49 a month or $99 for 3 months. Road to Offer is $120 for 90 days and also gives one free full AI-graded case.
+- **Most of them are voice-first** (you speak, the AI listens). Text-based or text-allowed ones: MockInterview247 (text), CaseBuddy (chat, voice is paid), MConsultingPrep (voice or text). CaseSpar is text-only for now.
+- **Several are priced almost exactly like CaseSpar.** CaseTutor is $49 a month or $99 for 3 months. Road to Offer is $120 for 90 days and also gives one free full AI-graded case.
 
 ---
 
@@ -109,18 +109,18 @@ Note: these voices are mostly coaches, who have a reason to downplay AI. Treat t
 
 ## 4. Price sanity check
 
-- **Monthly plans seen today** (lowest to highest): CaseBuddy $4.99, CasePrepared $26.99, RocketBlocks $35, CasePrepared Pro $39.99, CaseCoach $49, CaseTutor $49, MyConsultingCoach $50, CaseWithAI $50, MConsultingPrep $99, Soreno $199. The middle value is **$49**. **Mock Partner's $39 sits a little below the middle.** (Sources in table 1a.)
-- **About 3 months:** CaseTutor $99, Road to Offer $120 (90 days), MConsultingPrep $199. **Mock Partner's $99 for 90 days matches the cheapest of these.** It works out at about $33 a month.
-- **A whole year is often much cheaper per month elsewhere:** PrepLounge $69 a year (no AI interviewer), RocketBlocks $155, CaseCoach $199 (£151), Road to Offer and CaseTutor $249. Mock Partner has no yearly plan.
-- **Human coaching** costs about **$200 an hour** (RocketBlocks, MyConsultingCoach). Mock Partner's 90-Day Pass costs about half of one coaching hour.
-- **Currency:** CaseCoach shows prices in pounds for UK visitors (£38 a month). Mock Partner charges in dollars only. At the European Central Bank's reference rates for 15 Oct 2026 (1 euro = 1.1208 US dollars = 0.84610 pounds, [ecb.europa.eu daily rates](https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml)), $39 is about **£29.44** and $99 is about **£74.74**.
+- **Monthly plans seen today** (lowest to highest): CaseBuddy $4.99, CasePrepared $26.99, RocketBlocks $35, CasePrepared Pro $39.99, CaseCoach $49, CaseTutor $49, MyConsultingCoach $50, CaseWithAI $50, MConsultingPrep $99, Soreno $199. The middle value is **$49**. **CaseSpar's $39 sits a little below the middle.** (Sources in table 1a.)
+- **About 3 months:** CaseTutor $99, Road to Offer $120 (90 days), MConsultingPrep $199. **CaseSpar's $99 for 90 days matches the cheapest of these.** It works out at about $33 a month.
+- **A whole year is often much cheaper per month elsewhere:** PrepLounge $69 a year (no AI interviewer), RocketBlocks $155, CaseCoach $199 (£151), Road to Offer and CaseTutor $249. CaseSpar has no yearly plan.
+- **Human coaching** costs about **$200 an hour** (RocketBlocks, MyConsultingCoach). CaseSpar's 90-Day Pass costs about half of one coaching hour.
+- **Currency:** CaseCoach shows prices in pounds for UK visitors (£38 a month). CaseSpar charges in dollars only. At the European Central Bank's reference rates for 15 Oct 2026 (1 euro = 1.1208 US dollars = 0.84610 pounds, [ecb.europa.eu daily rates](https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml)), $39 is about **£29.44** and $99 is about **£74.74**.
 - **Verdict:** the prices are **in line with the market**, not too high. There is no evidence that cutting prices is needed. The weaker points are elsewhere: fewer cases than rivals (20, and none reviewed yet, against 71 to 200+ at Road to Offer, CaseCoach and PrepLounge), and no voice mode.
 
 ---
 
 ## 5. Conversion and churn benchmarks (benchmarks, not predictions)
 
-These are published averages from other businesses. They do **not** predict what Mock Partner will get.
+These are published averages from other businesses. They do **not** predict what CaseSpar will get.
 
 | Benchmark | Figure | Who it covers | Source |
 |---|---|---|---|
@@ -156,15 +156,15 @@ These are published averages from other businesses. They do **not** predict what
 
 ---
 
-## 6. What this means for Mock Partner
+## 6. What this means for CaseSpar
 
 1. **The prices are fine.** $39 a month is a little below the $49 middle of the market. $99 for 90 days equals the cheapest similar offer (CaseTutor) and beats Road to Offer's $120. Do not start by cutting prices.
 2. **Timing is urgent.** UK full-time case interviews run from mid-November to early December 2026 (Bain London, official). BCG London internship applications run 1 to 24 January 2027. Every week the launch blockers stay open eats into the busiest selling window inside the 90 days. Christmas is likely quiet (ASSUMPTION).
-3. **The AI space is crowded,** with at least 12 AI case tools, several at almost the same price. Mock Partner needs a clear, honest reason to choose it. The candidate complaints suggest one: rivals' AI is called generic, too kind and weak at maths. Mock Partner checks the maths with code and scores five skills. Say this plainly, and only claim what is true and tested.
+3. **The AI space is crowded,** with at least 12 AI case tools, several at almost the same price. CaseSpar needs a clear, honest reason to choose it. The candidate complaints suggest one: rivals' AI is called generic, too kind and weak at maths. CaseSpar checks the maths with code and scores five skills. Say this plainly, and only claim what is true and tested.
 4. **Text-only is a gap and a possible angle.** Most rivals are voice-first. Text practice can be done quietly (for example in a library), but it is less like a real interview (my reading). Be upfront that it is text.
-5. **Content volume is a trust gap.** Rivals show 71 to 200+ cases. Mock Partner has 20 drafts, and the live site shows none until a reviewer signs them off. Getting the free starter case and a first batch reviewed is a sales blocker, not just a quality step.
+5. **Content volume is a trust gap.** Rivals show 71 to 200+ cases. CaseSpar has 20 drafts, and the live site shows none until a reviewer signs them off. Getting the free starter case and a first batch reviewed is a sales blocker, not just a quality step.
 6. **Copy the channel mix, not the content.** Rivals win through YouTube, free email courses, search articles, university careers services and student societies. A solo founder cannot match 100k-subscriber channels in 90 days. But societies, careers services and one free lead magnet (for example a free drill pack or free case, with opt-in for emails) are within reach.
-7. **University and society deals are a real route.** Yale pays for students' CaseCoach access. Crafting Cases and CaseStudyPrep.AI sell bulk licences. Mock Partner already has a "for universities and clubs" enquiry form; pricing and fulfilment would need building.
+7. **University and society deals are a real route.** Yale pays for students' CaseCoach access. Crafting Cases and CaseStudyPrep.AI sell bulk licences. CaseSpar already has a "for universities and clubs" enquiry form; pricing and fulfilment would need building.
 8. **$10,000 a month inside 90 days is a stretch.** The benchmarks point to roughly 2,000 to 5,000 free sign-ups a month and tens of thousands of visits for a brand-new site. The playbook should set the 90 days as building the engine (launch, first reviewed cases, first 100 to 300 paying customers, ASSUMPTION), with $10,000 as the run-rate target, and report honestly each week against the funnel numbers.
 9. **Think about a longer plan later.** Education apps lean towards annual plans (RevenueCat), and most rivals offer a cheap year. A "season" or yearly option could lift sales. This is a suggestion, and Claude can build it if the founder agrees.
 10. **Show pounds to UK visitors** (ASSUMPTION that it helps). CaseCoach already does. Today $39 is about £29.
@@ -188,5 +188,5 @@ These are published averages from other businesses. They do **not** predict what
 - **Consulting-only figures** from High Fliers and ISE (applications or vacancies for consulting alone).
 - **A conversion benchmark for web-based education subscriptions.** None found from a reputable publisher. The figures above are for business software (Lenny), mobile apps (RevenueCat) and landing pages in general (Unbounce).
 - **Recurly churn:** whether the 4.99% Education figure is per month or per year (the page and the docs disagree).
-- **UK rules on comparison advertising** (if Mock Partner ever writes "Mock Partner vs X" pages). Not read today. Check the UK advertising code before writing any page that names a rival.
+- **UK rules on comparison advertising** (if CaseSpar ever writes "CaseSpar vs X" pages). Not read today. Check the UK advertising code before writing any page that names a rival.
 - **Competitor claims** (PrepLounge's 582,000 peers, CaseCoach's 50+ universities, MConsultingPrep's "100K members") are their own words, not checked.

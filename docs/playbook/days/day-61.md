@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
 2. Alarms: Anthropic under 80% of this month's limit ($150); ads this week (Fri 11 to Thu 17 Dec) under £105, or the lower cap you set; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry within 24 hours. Be honest; never promise offers or results.
+3. Reply to every email in hello@casespar.app and every admin enquiry within 24 hours. Be honest; never promise offers or results.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week, or if LinkedIn isn't one of the channels you kept yesterday.
 5. Then leave a genuinely helpful comment on 2 or 3 posts by other people about case interviews. No links and no selling in those comments.
 6. In today's note: one user comment, and your minutes per channel.
@@ -33,8 +33,8 @@ Profit hasn't moved. Costs grew faster in percentage terms, but from a smaller b
 
 In a case, turn percentages into amounts before you judge them. Pick an easy base like 100, say the numbers out loud, and the answer often surprises you.
 
-Free mental maths drills: https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d61
-(I built Mock Partner.)
+Free mental maths drills: https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d61
+(I built CaseSpar.)
 ````
 
 ## d61-2: Catch-up: write down the Day 60 decisions and anything that slipped
@@ -69,7 +69,7 @@ Message 1:
 Claude, please write this week's 2 new guide pages. (1) 'The last week before an MBA first-round case interview: a day-by-day plan' (I need this one whatever your Day 60 search plan says; I'd like it live on Friday 18 December). School dates only from the schools' own pages, with links: NYU Stern, Duke Fuqua, UNC Kenan-Flagler, Wharton and Kellogg. (2) The next page in the 4-week search plan you gave me on Monday 14 December (here it is, in case you can't see it: [paste Claude's Day 60 search plan]); if it doesn't name one, 'Operations case example: capacity and bottlenecks' (original). Please also save that 4-week plan as docs/SEARCH_PLAN.md on the PR branch, so later weeks can use it. Original worked examples only, every number recomputed by tests, plain English, a link to the matching free drill or tool, no firm logos, our 'not affiliated' line wherever a firm is named, and facts about firms only from their own pages. Show me the drafts on the preview link before publishing.
 
 Message 2 (only if I said yes to the ads tag):
-Claude, I've decided to allow the Google Ads tag on Mock Partner. Please propose the CLAUDE.md rule 2.7 change for me to approve, then build the consent banner (UK, EEA and Switzerland: nothing loads until Accept), load the tag only after consent, report sign-up and purchase conversions with no personal data, and update the privacy page. Same approach as Preflight Pass. Leave the tag switched off (empty id) until I send you the Google Ads tag id and conversion labels. Show me the rule change, the banner and the privacy wording on the preview; don't merge until I approve.
+Claude, I've decided to allow the Google Ads tag on CaseSpar. Please propose the CLAUDE.md rule 2.7 change for me to approve, then build the consent banner (UK, EEA and Switzerland: nothing loads until Accept), load the tag only after consent, report sign-up and purchase conversions with no personal data, and update the privacy page. Same approach as Preflight Pass. Leave the tag switched off (empty id) until I send you the Google Ads tag id and conversion labels. Show me the rule change, the banner and the privacy wording on the preview; don't merge until I approve.
 
 Message 3 (only if I said yes to a 12-month plan):
 Claude, please add a 12-month plan at $[your price] as a third option on the pricing page: one payment, the same access as Monthly, using the same pass logic. Update the pricing page, FAQ and terms. Keep the same 'start straight away' tick box and no-refunds wording at checkout as the other plans. If the pass logic needs a database change, show me the migration and ask before applying it. Run the tests and show me on the preview; don't merge until I approve.
@@ -99,7 +99,7 @@ Brilliant, thank you. [Date] works for me. I'll send the case-workshop pack, you
 If the date moves, just let me know.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 
 
 Second message (partner who hasn't answered, once only):
@@ -109,7 +109,7 @@ Hi [first name],
 A quick one before the break: would a case practice session early in the spring term be useful for [society name]? I can send a ready-to-run case-workshop pack (one reviewed case with facilitator notes), and your members' code [CODE] keeps working (two extra free AI interviews and 20% off a first purchase). Just reply with a date that suits, or 'not this term', and I'll plan around it. If you'd rather I didn't email about this, just say and I won't.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d61-5: One helpful Reddit answer, where the rules allow
@@ -138,7 +138,7 @@ A rough checklist I'd use (my view, not a firm's rule):
 
 If one of these feels shaky, practise that skill on its own for a few days rather than doing more full cases.
 
-Disclosure: I built Mock Partner, a text-based AI case interviewer that scores skills like these (the maths is checked by code). The first full interview and the drills are free: https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d61
+Disclosure: I built CaseSpar, a text-based AI case interviewer that scores skills like these (the maths is checked by code). The first full interview and the drills are free: https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d61
 ````
 
 ## Write down today

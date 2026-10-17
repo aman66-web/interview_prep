@@ -13,7 +13,7 @@ About 100 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic spend under $80; Google Ads this week under £70; no errors in Vercel.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn this morning. Skip it if you dropped to 2 posts a week on Day 30.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -31,7 +31,7 @@ Does that sound right for that city? If not, go back to the assumption that feel
 
 (All numbers here are made up for practice.)
 
-I built Mock Partner. Its market-sizing calculator is free and needs no account: https://mockpartner.com/tools/market-sizing-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d34
+I built CaseSpar. Its market-sizing calculator is free and needs no account: https://casespar.app/tools/market-sizing-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-d34
 ````
 
 ## d34-2: Wrap up Product Hunt and send the feedback to Claude
@@ -76,7 +76,7 @@ Make a list of 20 UK university careers services that support students applying 
 **Steps**
 
 1. Skip this if nobody has said yes yet.
-2. On mockpartner.com/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
+2. On casespar.app/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
 3. Attach the partner pack and the case-workshop pack Claude made on Day 12.
 4. Send the reply below, then mark the society 'partner' in societies.csv.
 
@@ -97,7 +97,7 @@ Members sign up with the code and get two extra free AI interviews and 20% off t
 If your students' union needs to approve it, tell me what they need from me and I'll send it. I'm also happy to join a session online in January if that helps.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d34-5: Post a short video
@@ -117,7 +117,7 @@ hello@mockpartner.com
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic spend under $80; Google Ads this week (Fri 20 to Thu 26 Nov) under £70; no errors in Vercel.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn this morning. Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -28,8 +28,8 @@ And if the axis starts at 35 instead of 0, the second bar is three times as tall
 
 Before you say any number, say three things: what is measured, in what unit, and over what time.
 
-Free chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-d36
-(I built Mock Partner.)
+Free chart-reading drills: https://casespar.app/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-d36
+(I built CaseSpar.)
 ````
 
 ## d36-2: Google Ads 14-day read: keep, fix or stop (only if ads are on)
@@ -48,7 +48,7 @@ Free chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_sour
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, read only unless I say yes: tell me (1) the total cost since the campaign started on Fri 6 Nov, the clicks and the average cost per click; (2) the search terms report for the same dates; (3) a list of search terms that have nothing to do with practising case interviews (for example job adverts, salaries, free PDF casebooks or a firm's own careers page), suggested as negative keywords. Don't change anything. After you show me, I'll say 'yes' if I want the negatives added. Never type card or bank details.
+In my CaseSpar Google Ads account, read only unless I say yes: tell me (1) the total cost since the campaign started on Fri 6 Nov, the clicks and the average cost per click; (2) the search terms report for the same dates; (3) a list of search terms that have nothing to do with practising case interviews (for example job adverts, salaries, free PDF casebooks or a firm's own careers page), suggested as negative keywords. Don't change anything. After you show me, I'll say 'yes' if I want the negatives added. Never type card or bank details.
 ````
 
 ## d36-3: Chrome lists 20 US MBA consulting clubs
@@ -75,7 +75,7 @@ Make a list of 20 US MBA consulting clubs (Wharton, Stern, Kellogg, Fuqua, UNC a
 **Steps**
 
 1. It's Friday: send Claude the message below (the same check as on Days 22 and 29).
-2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open mockpartner.com and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
+2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open casespar.app and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
@@ -110,7 +110,7 @@ Yesterday's six numbers (Thu 19 Nov). Also: Google Ads total cost, sign-ups from
 **Check:** Only if Google Ads is on: cost per free sign-up = Google Ads cost so far (about £150) ÷ sign-ups whose first source is google.
 
 - **If yes:** £3 or less per sign-up: carry on at £10 a day until £300 in total.
-- **If no:** Over £6: pause the campaign today (tell Chrome: 'Pause the Mock Partner campaign. Change nothing else.'). Between £3 and £6: run one more week and check again on Fri 27 Nov (Day 43).
+- **If no:** Over £6: pause the campaign today (tell Chrome: 'Pause the CaseSpar campaign. Change nothing else.'). Between £3 and £6: run one more week and check again on Fri 27 Nov (Day 43).
 
 ---
 [← Day 35](day-35.md) · [Day 37 →](day-37.md)

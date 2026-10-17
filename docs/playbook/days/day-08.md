@@ -34,10 +34,10 @@ The reviewer [reviewer's name] signed off [case name] on [date]. Their changes: 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, the reviewer has signed off the starter case and 4 more. Please get the site ready to go public on mockpartner.com: write the Claude in Chrome steps to create a separate 'Mock Partner' Stripe account for MARTZEY LTD (statement descriptor MOCK PARTNER, like Preflight Pass), activate live mode, add the live webhook for mockpartner.com, make a one-use 100% FOUNDERTEST promotion code and put the live keys into Vercel for Production only, so Preview keeps test-mode keys and previews never take real money (I paste the secret keys myself); turn on Vercel Web Analytics; add the IndexNow key and script; write the Search Console and Bing steps; and give me the checklist for merging the PR into main. Tell me before anything costs money. Don't merge or push to main: I'll approve that.
+Claude, the reviewer has signed off the starter case and 4 more. Please get the site ready to go public on casespar.app: write the Claude in Chrome steps to create a separate 'CaseSpar' Stripe account for MARTZEY LTD (statement descriptor CASESPAR, like Preflight Pass), activate live mode, add the live webhook for casespar.app, make a one-use 100% FOUNDERTEST promotion code and put the live keys into Vercel for Production only, so Preview keeps test-mode keys and previews never take real money (I paste the secret keys myself); turn on Vercel Web Analytics; add the IndexNow key and script; write the Search Console and Bing steps; and give me the checklist for merging the PR into main. Tell me before anything costs money. Don't merge or push to main: I'll approve that.
 ````
 
-## d8-3: Let Chrome set up the live Mock Partner Stripe account with Claude's steps.
+## d8-3: Let Chrome set up the live CaseSpar Stripe account with Claude's steps.
 
 - **Who:** Claude in Chrome
 - **Time:** about 75 minutes
@@ -53,7 +53,7 @@ Claude, the reviewer has signed off the starter case and 4 more. Please get the 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Do the Stripe live-mode steps Claude wrote (B6). I'll type all bank, identity and card details. Never read or type a secret key. Also activate the live Customer portal with the same settings as in test mode (cancel at the end of the billing period; customers can update payment methods). Put the live keys in Vercel for Production only; Preview must keep a test-mode key. If the test-mode key now in Vercel's Preview came from a different Stripe account, replace it with this Mock Partner account's test-mode key (Preview only) and activate this account's test-mode Customer portal too, so previews and the live site use the same Stripe account. Here are Claude's steps:
+Do the Stripe live-mode steps Claude wrote (B6). I'll type all bank, identity and card details. Never read or type a secret key. Also activate the live Customer portal with the same settings as in test mode (cancel at the end of the billing period; customers can update payment methods). Put the live keys in Vercel for Production only; Preview must keep a test-mode key. If the test-mode key now in Vercel's Preview came from a different Stripe account, replace it with this CaseSpar account's test-mode key (Preview only) and activate this account's test-mode Customer portal too, so previews and the live site use the same Stripe account. Here are Claude's steps:
 
 [paste Claude's steps]
 ````

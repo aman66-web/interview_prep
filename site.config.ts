@@ -3,7 +3,7 @@
 // Prices here are for display only; the real prices come from Stripe.
 
 export const siteConfig = {
-  brandName: "Mock Partner",
+  brandName: "CaseSpar",
   tagline:
     "Practise consulting case interviews with an AI interviewer that scores you.",
   // Set NEXT_PUBLIC_SUPPORT_EMAIL; an empty value hides the email address.

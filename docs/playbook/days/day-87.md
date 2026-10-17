@@ -46,12 +46,12 @@ Claude, please give me a short table from the admin page for each club code: the
 ````text
 Hi [first name],
 
-Thank you for sharing Mock Partner with [society name]: [number] members have signed up with your code so far. With internship interviews ahead this term, would a group pass help? You'd get [number of seats] 90-Day Passes for members at $[your price] each (one invoice, one invite link, and each member who joins with it gets the full 90 days). It's an option, not a commitment, and the free code keeps working either way. If your students' union needs to approve it, I'm happy to send them the details.
+Thank you for sharing CaseSpar with [society name]: [number] members have signed up with your code so far. With internship interviews ahead this term, would a group pass help? You'd get [number of seats] 90-Day Passes for members at $[your price] each (one invoice, one invite link, and each member who joins with it gets the full 90 days). It's an option, not a commitment, and the free code keeps working either way. If your students' union needs to approve it, I'm happy to send them the details.
 
 Happy to talk it through or send the one-page offer.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

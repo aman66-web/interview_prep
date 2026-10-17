@@ -17,7 +17,7 @@ import { siteConfig } from "@/site.config";
 import { EnquiryForm } from "./enquiry-form";
 import { pageImage, universityImage } from "@/lib/images";
 
-// Search results show about 60 characters of a title (with " | Mock Partner") and 155-160 of a
+// Search results show about 60 characters of a title (with " | CaseSpar") and 155-160 of a
 // description; tests/tools-pages.test.ts checks both.
 const DESCRIPTION =
   "Group access for university consulting clubs and careers services: every case and drill, and the AI interviewer for each member. Pricing agreed by email.";

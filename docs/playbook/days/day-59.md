@@ -21,7 +21,7 @@ About 90 minutes in total. 5 tasks, in order.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````
@@ -83,10 +83,10 @@ Aman
 
 ````text
 Please collect these numbers for my Day 60 review, read only, in one table. Never read or type a secret key, and don't change anything.
-1. Google Ads (Mock Partner account): total cost and clicks from Sun 15 Nov 2026 to today, and since the campaign started.
+1. Google Ads (CaseSpar account): total cost and clicks from Sun 15 Nov 2026 to today, and since the campaign started.
 2. LinkedIn Campaign Manager (if there is a campaign): total spent and clicks on the boosted-post test.
-3. Stripe (Mock Partner account): total payments from Sun 15 Nov 2026 to today; how many Monthly subscriptions started on or before Fri 13 Nov 2026, and how many of those were cancelled at or before their first renewal.
-4. Google Search Console (mockpartner.com): total clicks and impressions for the last 28 days. Then compare with our sitemap and list the pages published before Mon 2 Nov 2026 that had no impressions in that time.
+3. Stripe (CaseSpar account): total payments from Sun 15 Nov 2026 to today; how many Monthly subscriptions started on or before Fri 13 Nov 2026, and how many of those were cancelled at or before their first renewal.
+4. Google Search Console (casespar.app): total clicks and impressions for the last 28 days. Then compare with our sitemap and list the pages published before Mon 2 Nov 2026 that had no impressions in that time.
 5. Vercel Web Analytics: visitors from Sun 15 Nov to today, and the top 10 referrers.
 ````
 

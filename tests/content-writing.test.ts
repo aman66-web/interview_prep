@@ -383,7 +383,7 @@ describe("share pictures for pages with their own Open Graph", () => {
       pageOpenGraph({ type: "article", title: "T", description: "D", path: "/guides/x", modifiedTime: "2026-10-15" }),
     ]) {
       expect(og.images).toEqual([DEFAULT_SHARE_IMAGE]);
-      expect(og.siteName).toBe("Mock Partner");
+      expect(og.siteName).toBe("CaseSpar");
     }
     expect(DEFAULT_SHARE_IMAGE.url).toBe("/opengraph-image");
     expect(existsSync("app/opengraph-image.tsx"), "the picture DEFAULT_SHARE_IMAGE points at").toBe(true);

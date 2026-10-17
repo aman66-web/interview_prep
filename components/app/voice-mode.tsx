@@ -280,7 +280,7 @@ export function VoiceControls({ voice, disabled, draft }: { voice: VoiceMode; di
           </p>
           <p className="mt-1">
             Your browser does the listening and the speaking. Some browsers, such as Chrome, use their maker&apos;s online speech service to turn
-            what you say into text and to read replies aloud. Mock Partner never records or keeps audio: we only get the text of your answer, as
+            what you say into text and to read replies aloud. CaseSpar never records or keeps audio: we only get the text of your answer, as
             when you type.{" "}
             <Link href="/legal/privacy#voice-mode" className="font-medium underline underline-offset-4">
               Privacy policy

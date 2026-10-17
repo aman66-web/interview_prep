@@ -12,7 +12,7 @@ About 120 minutes in total. 5 tasks, in order.
 **Steps**
 
 1. Write yesterday's six numbers. Alarms: Anthropic under 80% of the limit; ads this week under £70 (or £0); no Vercel errors.
-2. Reply to every email in hello@mockpartner.com and every admin enquiry.
+2. Reply to every email in hello@casespar.app and every admin enquiry.
 3. In today's note: one user comment, and your minutes per channel.
 
 ## d75-2: Ask Claude to find and fix the biggest leak (second round after Day 50)
@@ -22,7 +22,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. On mockpartner.com/admin (30-day view), write down each stage: visits, sign-ups, started the free case, finished it, saw the paywall, started checkout, paid.
+1. On casespar.app/admin (30-day view), write down each stage: visits, sign-ups, started the free case, finished it, saw the paywall, started checkout, paid.
 2. Add the three questions you wrote down on Saturday.
 3. Find, in your Day 50 note, the change you approved after the first funnel check (or 'nothing').
 4. Send the message below. You check the fix tomorrow.
@@ -62,7 +62,7 @@ Claude, please write this week's new guide page: the next one in the 4-week sear
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Create a Reddit Ads account for Mock Partner (business: MARTZEY LTD; choose pounds if Reddit offers a currency choice) and build the campaign in Claude's plan, paused: [paste Claude's steps]. If Reddit doesn't offer the communities or interests in Claude's plan, pick the closest ones and list what you chose. Don't add the Reddit pixel or any conversion tag. Stop when you need my login or card details (I'll type them myself), and stop before switching anything on. Tell me the campaign's daily budget, start and end dates and status when it's built.
+Create a Reddit Ads account for CaseSpar (business: MARTZEY LTD; choose pounds if Reddit offers a currency choice) and build the campaign in Claude's plan, paused: [paste Claude's steps]. If Reddit doesn't offer the communities or interests in Claude's plan, pick the closest ones and list what you chose. Don't add the Reddit pixel or any conversion tag. Stop when you need my login or card details (I'll type them myself), and stop before switching anything on. Tell me the campaign's daily budget, start and end dates and status when it's built.
 ````
 
 ## d75-5: Check the latest search improvement item

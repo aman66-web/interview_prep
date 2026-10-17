@@ -23,7 +23,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. If you don't have a Reddit account, create one today in your own name (or a username you'd be happy to sign 'I built Mock Partner' with). Until Day 18 use it only to read and, where the rules allow, to answer a question helpfully with no link. Some subreddits hold back posts from brand-new accounts (an assumption: check what the saved rules say).
+1. If you don't have a Reddit account, create one today in your own name (or a username you'd be happy to sign 'I built CaseSpar' with). Until Day 18 use it only to read and, where the rules allow, to answer a question helpfully with no link. Some subreddits hold back posts from brand-new accounts (an assumption: check what the saved rules say).
 2. Paste the message below. Log in to Reddit if asked. Chrome reads only; it posts nothing.
 3. Keep the file: Claude checks your first post against it on Day 17.
 
@@ -89,9 +89,9 @@ Then play the question back in one sentence: 'So we want to find out why profit 
 
 It sounds simple, but under pressure it's easy to skip one of these.
 
-In Mock Partner the AI interviewer answers clarifying questions from the case facts, so you can practise this part as often as you like. Your first full interview is free (a free account, no card).
+In CaseSpar the AI interviewer answers clarifying questions from the case facts, so you can practise this part as often as you like. Your first full interview is free (a free account, no card).
 
-https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=post-3
+https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=post-3
 ````
 
 ## Write down today

@@ -27,7 +27,7 @@ About 85 minutes in total. 4 tasks, in order.
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, check the January campaigns match Claude's plan: daily budgets adding up to no more than £[your approved daily total] across all campaigns, phrase and exact keywords only, the negatives, the final URL suffix with UTM tags, and no firm names in the ad text. Pause the old campaign if Claude's plan replaced it. Tell me any difference. Then stop and ask me before you switch anything on or raise any budget; I'll say yes in this chat.
+In my CaseSpar Google Ads account, check the January campaigns match Claude's plan: daily budgets adding up to no more than £[your approved daily total] across all campaigns, phrase and exact keywords only, the negatives, the final URL suffix with UTM tags, and no firm names in the ad text. Pause the old campaign if Claude's plan replaced it. Tell me any difference. Then stop and ask me before you switch anything on or raise any budget; I'll say yes in this chat.
 ````
 
 ## d79-3: Chrome switches on the Reddit Ads test, after your yes (only if allowed)
@@ -42,7 +42,7 @@ In my Mock Partner Google Ads account, check the January campaigns match Claude'
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Reddit Ads account for Mock Partner, check the campaign matches Claude's plan: about £8 a day, ending Monday 11 January, no more than £80 in total, the tagged link, no firm names in the ad text and no pixel. Tell me any difference, then stop and ask me before switching it on; I'll say yes in this chat.
+In my Reddit Ads account for CaseSpar, check the campaign matches Claude's plan: about £8 a day, ending Monday 11 January, no more than £80 in total, the tagged link, no firm names in the ad text and no pixel. Tell me any difference, then stop and ask me before switching it on; I'll say yes in this chat.
 ````
 
 ## d79-4: Send session packs to partners with a session in the week of 11 January
@@ -68,13 +68,13 @@ Here's everything for your session on [date]:
 - Your members' page: [club page link]
 - Your code: [CODE]. It gives members two extra free AI interviews (three in total) and 20% off a first purchase if they want more.
 
-If you tell members about Mock Partner, please mark that message as an advert, for example by starting it with 'Ad:'. UK advertising rules ask for this.
+If you tell members about CaseSpar, please mark that message as an advert, for example by starting it with 'Ad:'. UK advertising rules ask for this.
 
 Good luck with the session, and tell me how it goes.
 
 Aman
-Founder, Mock Partner
-hello@mockpartner.com
+Founder, CaseSpar
+hello@casespar.app
 ````
 
 ## Write down today

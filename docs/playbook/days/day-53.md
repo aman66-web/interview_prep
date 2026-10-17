@@ -13,7 +13,7 @@ About 105 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £155; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ Both are true. Say which one you mean.
 
 Made-up example: 'Margin is up 2 points, from 10% to 12%. On £50m of revenue, that's £1m more profit.'
 
-Free maths drills: https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d53
-(I built Mock Partner.)
+Free maths drills: https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-d53
+(I built CaseSpar.)
 ````
 
 ## d53-2: Send newsletter 2 to people who opted in, from the admin page, after reading a test copy
@@ -66,16 +66,16 @@ If you're applying for UK summer internships:
 - Then start case practice: two or three cases a week over the break, plus daily maths.
 
 Three free things to use over the break:
-- Mental maths drills: https://mockpartner.com/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
-- Chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
-- The case-type guides: https://mockpartner.com/guides?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
+- Mental maths drills: https://casespar.app/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
+- Chart-reading drills: https://casespar.app/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
+- The case-type guides: https://casespar.app/guides?utm_source=newsletter&utm_medium=email&utm_campaign=nl2
 
-Your free full interview (free account, no card) is still there if you haven't used it: https://mockpartner.com/?utm_source=newsletter&utm_medium=email&utm_campaign=nl2. If you want the whole season covered, the 90-Day Pass ($99, one payment) lasts into March.
+Your free full interview (free account, no card) is still there if you haven't used it: https://casespar.app/?utm_source=newsletter&utm_medium=email&utm_campaign=nl2. If you want the whole season covered, the 90-Day Pass ($99, one payment) lasts into March.
 
-Mock Partner is for practice before interviews, never during one.
+CaseSpar is for practice before interviews, never during one.
 
 Have a good break,
-Aman, Mock Partner
+Aman, CaseSpar
 
 Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named in this email.
 ````
@@ -99,7 +99,7 @@ Subject: Case interview practice for your students applying to consulting
 
 Dear [careers service team, or the named contact],
 
-I'm Aman, founder of Mock Partner (mockpartner.com), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, founder of CaseSpar (casespar.app), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
 
 With some consulting internship deadlines falling in January (each firm's own page has its dates), I'd like to offer your students, at no cost to the university:
 - a code for your students: two extra free AI interviews each (on top of the one everyone gets) and 20% off a first purchase;
@@ -112,9 +112,9 @@ If you'd prefer not to hear from me, reply 'no thanks' and I won't contact you a
 
 Kind regards,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d53-4: Post a short video
@@ -133,7 +133,7 @@ hello@mockpartner.com
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

@@ -29,7 +29,7 @@ About 110 minutes in total. 4 tasks, in order.
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, make the January changes in Claude's plan, all paused: [paste Claude's Chrome steps]. Keep the current campaign running exactly as it is today. Don't switch anything new on, don't raise any budget and don't change billing. Stop and tell me when it's built, with a list of every campaign, its status and its daily budget.
+In my CaseSpar Google Ads account, make the January changes in Claude's plan, all paused: [paste Claude's Chrome steps]. Keep the current campaign running exactly as it is today. Don't switch anything new on, don't raise any budget and don't change billing. Stop and tell me when it's built, with a list of every campaign, its status and its daily budget.
 ````
 
 ## d66-3: Check the paused campaigns yourself
@@ -39,7 +39,7 @@ In my Mock Partner Google Ads account, make the January changes in Claude's plan
 
 **Steps**
 
-1. Open each new ad. No firm names; no promises of offers or results; 'free' only about the free first interview; every feature mentioned is live on mockpartner.com today.
+1. Open each new ad. No firm names; no promises of offers or results; 'free' only about the free first interview; every feature mentioned is live on casespar.app today.
 2. The daily budgets add up to no more than your January total, and every new campaign shows 'Paused'.
 3. The final URL suffix has the UTM tags (utm_source=google, utm_campaign=jan-uk or jan-us).
 4. If anything is wrong, tell Chrome: 'Please change [what] in the paused January campaign. Change nothing else.'

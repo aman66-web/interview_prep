@@ -13,7 +13,7 @@ About 150 minutes in total. 5 tasks, in order.
 
 1. On the preview, open Account and sign out.
 2. Click Start free and enter a second address you own (for example your Hotmail, or a new Gmail).
-3. Check the email arrives within a couple of minutes (look in spam too), that it comes from mockpartner.com, and that the Sign in link works.
+3. Check the email arrives within a couple of minutes (look in spam too), that it comes from casespar.app, and that the Sign in link works.
 4. Sign out, start again with the same address, and this time type the 6-digit code instead of clicking the link.
 5. Check the CAPTCHA check appears on the sign-in page and lets you through.
 6. If a friend or relative with a university email is happy to help, send them yesterday's share link and ask them to try signing in. (They will see draft cases on the preview; that's fine.)

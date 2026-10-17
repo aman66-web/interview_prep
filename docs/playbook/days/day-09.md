@@ -11,14 +11,14 @@ About 70 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. This is your yes to the merge: production on mockpartner.com needs the finished site and the live keys before you can test a real purchase there.
+1. This is your yes to the merge: production on casespar.app needs the finished site and the live keys before you can test a real purchase there.
 2. Strangers still can't see it: Vercel Authentication stays on until tomorrow's check.
 3. Wait for Claude to say the production build is Ready.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, I approve merging the PR branch claude/gifted-shannon-r42f73 into main today, following the checklist you gave me yesterday, so that production on mockpartner.com runs the finished site with the live Stripe keys for my private test purchase. Keep Vercel Authentication on for production: the site must stay private until I say so tomorrow (Day 10). Run all the tests first, then merge, then tell me when the production build is Ready and which address to test on.
+Claude, I approve merging the PR branch claude/gifted-shannon-r42f73 into main today, following the checklist you gave me yesterday, so that production on casespar.app runs the finished site with the live Stripe keys for my private test purchase. Keep Vercel Authentication on for production: the site must stay private until I say so tomorrow (Day 10). Run all the tests first, then merge, then tell me when the production build is Ready and which address to test on.
 ````
 
 ## d9-2: Let Chrome make a one-use $1 test code for the refund test.
@@ -34,7 +34,7 @@ Claude, I approve merging the PR branch claude/gifted-shannon-r42f73 into main t
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my live Mock Partner Stripe account (not test mode, and not the Preflight Pass accounts), first tell me Stripe's minimum charge for US dollars and stop if $1 is below it. Then create a coupon of $98 off, used once, and a promotion code FOUNDERREFUND for it, limited to 1 redemption, so the $99 90-Day Pass costs me $1. Don't change anything else.
+In my live CaseSpar Stripe account (not test mode, and not the Preflight Pass accounts), first tell me Stripe's minimum charge for US dollars and stop if $1 is below it. Then create a coupon of $98 off, used once, and a promotion code FOUNDERREFUND for it, limited to 1 redemption, so the $99 90-Day Pass costs me $1. Don't change anything else.
 ````
 
 ## d9-3: Do one live purchase with FOUNDERTEST, one with FOUNDERREFUND, then refund the $1.
@@ -44,7 +44,7 @@ In my live Mock Partner Stripe account (not test mode, and not the Preflight Pas
 
 **Steps**
 
-1. Open https://mockpartner.com in Chrome. You're logged in to Vercel, so you can see it; strangers can't.
+1. Open https://casespar.app in Chrome. You're logged in to Vercel, so you can see it; strangers can't.
 2. Sign in with your second email address from Day 5, not aman662002@gmail.com. Your main account still holds the test-mode purchase from the preview (Day 1), and live Stripe can't use that test record. The preview and the live site share one database.
 3. Open Pricing, choose the 90-Day Pass, tick the box, and on Stripe's page enter the code FOUNDERTEST. The total should be $0. Complete it.
 4. Check Account shows the 90-Day Pass ending about 90 days from today.
@@ -81,7 +81,7 @@ Claude, please add to the admin page: paying customers and revenue by first-touc
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, signed in with my second email address, I bought the 90-Day Pass on mockpartner.com with FOUNDERTEST, then again for $1 with FOUNDERREFUND, then refunded the $1 in Stripe. While production is behind the Vercel login, Stripe's webhook can't reach the site. Tell me in plain steps how to re-send that refund event from Stripe once the site is public tomorrow, and exactly what my Account page should show before and after.
+Claude, signed in with my second email address, I bought the 90-Day Pass on casespar.app with FOUNDERTEST, then again for $1 with FOUNDERREFUND, then refunded the $1 in Stripe. While production is behind the Vercel login, Stripe's webhook can't reach the site. Tell me in plain steps how to re-send that refund event from Stripe once the site is public tomorrow, and exactly what my Account page should show before and after.
 ````
 
 ## Write down today

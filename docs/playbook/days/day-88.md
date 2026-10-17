@@ -13,7 +13,7 @@ About 115 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £185; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: post the text below this morning (UK). Then add the 'First comment' text as the first comment on your own post.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,9 +29,9 @@ If you're on a consulting society committee planning case practice this term, he
 
 I've made a free printable case-workshop pack (one reviewed case with facilitator notes) for exactly this. Send me a message and I'll send it over.
 
-https://mockpartner.com/for-universities?utm_source=linkedin&utm_medium=social&utm_campaign=post-d88
+https://casespar.app/for-universities?utm_source=linkedin&utm_medium=social&utm_campaign=post-d88
 
-I built Mock Partner. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
+I built CaseSpar. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
 
 First comment:
 Sources: LSE https://info.lse.ac.uk/current-students/term-dates · Warwick https://warwick.ac.uk/study/termdates · BCG https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs · Oliver Wyman https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html
@@ -57,7 +57,7 @@ Subject: Free case-interview practice for [society name] members this term
 
 Hi [first name, or 'the [society name] committee'],
 
-I'm Aman, and I run Mock Partner (mockpartner.com), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills, and the case maths is checked by code rather than by the AI's opinion.
+I'm Aman, and I run CaseSpar (casespar.app), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills, and the case maths is checked by code rather than by the AI's opinion.
 
 [Your personal line.] With internship applications open this month, I'd like to offer [society name] members, free of charge:
 - a code just for your society that gives members two extra free interviews (three in total) and 20% off a first purchase if they want more;
@@ -66,15 +66,15 @@ I'm Aman, and I run Mock Partner (mockpartner.com), a small UK website where stu
 
 There's no cost to the society and nothing to sign. If it sounds useful, reply and I'll send your code and a page you can share within a day. If you share it with members, please mark the message as an advert.
 
-Mock Partner is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
+CaseSpar is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
 
 If you'd rather not hear from me again, just reply 'no thanks' and I won't contact you again.
 
 Best wishes,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d88-3: Partner sessions: be on hand
@@ -100,7 +100,7 @@ hello@mockpartner.com
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Reddit Ads account for Mock Partner, if the campaign hasn't ended on its own by the end of today (Monday 11 January), pause it. Then export its results (spend, impressions, clicks) and save them as reddit-ads-results.csv. Change nothing else, and tell me the total spend in one line.
+In my Reddit Ads account for CaseSpar, if the campaign hasn't ended on its own by the end of today (Monday 11 January), pause it. Then export its results (spend, impressions, clicks) and save them as reddit-ads-results.csv. Change nothing else, and tell me the total spend in one line.
 ````
 
 ## Write down today

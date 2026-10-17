@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week (Fri 4 to Thu 10 Dec) under £155; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: post the text below at 2 pm UK (9 am New York). This is the post the LinkedIn test boosts.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,7 +30,7 @@ Then a full case two or three times a week.
 
 Short and daily is easier to keep up than long and rare (my view, not a study).
 
-I built Mock Partner. The drills for all three are free (20 a day with a free account): https://mockpartner.com/drills?utm_source=linkedin&utm_medium=social&utm_campaign=boost-d50
+I built CaseSpar. The drills for all three are free (20 a day with a free account): https://casespar.app/drills?utm_source=linkedin&utm_medium=social&utm_campaign=boost-d50
 ````
 
 ## d50-2: Only if you approved it: Chrome boosts today's post (£10 a day to Tue 8 Dec)
@@ -58,7 +58,7 @@ Only for my approved £50 LinkedIn test: in Campaign Manager, sponsor my LinkedI
 **Steps**
 
 1. It's Friday: send Claude the message below (the same check as on Days 22 and 29).
-2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open mockpartner.com and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
+2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open casespar.app and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
@@ -82,7 +82,7 @@ Claude, it's Friday: please re-check every date on the consulting application de
 ````text
 Hi [first name],
 
-Thanks again for sharing Mock Partner with [society name]. As term ends, I wanted to plan January with you: some firms' internship application windows close in January (each firm's own page has the dates), so a case session early in the spring term could be well timed.
+Thanks again for sharing CaseSpar with [society name]. As term ends, I wanted to plan January with you: some firms' internship application windows close in January (each firm's own page has the dates), so a case session early in the spring term could be well timed.
 
 I can offer:
 - the case-workshop pack (one reviewed case with facilitator notes) for a society evening;
@@ -92,7 +92,7 @@ I can offer:
 Do you have a date in mind for a January session? If you'd rather talk next term, that's fine too.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d50-5: Funnel check: find the biggest drop and ask Claude for one honest fix
@@ -102,7 +102,7 @@ hello@mockpartner.com
 
 **Steps**
 
-1. On mockpartner.com/admin (30-day view), write down each stage: visits, sign-ups, started the free case, finished it, saw the paywall, started checkout, paid.
+1. On casespar.app/admin (30-day view), write down each stage: visits, sign-ups, started the free case, finished it, saw the paywall, started checkout, paid.
 2. Work out each step's rate (for example finished ÷ started). Find the step with the biggest drop compared with the plan's rates (4% of visitors sign up, 40% of sign-ups finish, 10% of finishers pay).
 3. Send the message below. Approve at most one change, and only after seeing it on the preview.
 

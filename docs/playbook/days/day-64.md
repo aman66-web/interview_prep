@@ -31,7 +31,7 @@ Claude, I've fact-checked 'The last week before an MBA first-round case intervie
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week (Fri 18 to Thu 24 Dec) under £105 (or your lower cap); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: paste Claude's live link into the text below and post it at 2 pm UK (9 am New York). Then add the 'First comment' text as the first comment on your own post.
 5. Reply to comments at about 4 pm and 7 pm UK.
 6. In today's note: one user comment, and your minutes per channel.
@@ -48,7 +48,7 @@ If yours is in that first week, how you use the last few days matters. What I'd 
 - The day before: one short warm-up case, then stop and sleep.
 
 I wrote it up as a day-by-day plan: [the live link Claude gives you today]
-(I built Mock Partner.)
+(I built CaseSpar.)
 
 First comment:
 Sources: NYU Stern https://www.stern.nyu.edu/business-partnerships/recruit-talent/recruitment-calendar · Duke Fuqua https://www.fuqua.duke.edu/employers/recruiting-calendar-guidelines · UNC Kenan-Flagler https://www.kenan-flagler.unc.edu/wp-content/uploads/2023/05/FTMBA26-062_2026-27_Facilitated_Recruiting_Key_Dates_Update_FNL.pdf · Wharton https://employers.mbacareers.wharton.upenn.edu/recruiting-policies/
@@ -67,7 +67,7 @@ Sources: NYU Stern https://www.stern.nyu.edu/business-partnerships/recruit-talen
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Open mockpartner.com and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Then tell me whether the page lists these 2027 internship windows: BCG London 1 to 24 January 2027 (https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs), Oliver Wyman UK 15 January 2027, may close earlier (https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html), and whatever Bain London's page now says about its 2027 internship applications (https://www.bain.com/careers/recruiting/london-recruiting/). Read only: don't change anything.
+Open casespar.app and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Then tell me whether the page lists these 2027 internship windows: BCG London 1 to 24 January 2027 (https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs), Oliver Wyman UK 15 January 2027, may close earlier (https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html), and whatever Bain London's page now says about its 2027 internship applications (https://www.bain.com/careers/recruiting/london-recruiting/). Read only: don't change anything.
 ````
 
 ## d64-4: Email 5 new US MBA clubs before their winter break
@@ -89,21 +89,21 @@ Subject: Free case-interview practice codes for [club name] members
 
 Hi [first name, or 'there'],
 
-This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run Mock Partner (mockpartner.com), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
+This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run CaseSpar (casespar.app), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 With first-year internship interviews starting in early January at several schools, I'd like to offer [club name] members, free to the club:
 - a club code: two extra free AI interviews per member (on top of the one everyone gets) and 20% off a first purchase;
 - a printable case-workshop pack (one case with facilitator notes) for a club session;
 - a club page on our site with the code on it.
 
-No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. Mock Partner isn't linked to any school or consulting firm.
+No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. CaseSpar isn't linked to any school or consulting firm.
 
 If you'd rather not get emails from me, reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d64-5: Check the optional builds on the preview (only if you sent them on Tuesday)

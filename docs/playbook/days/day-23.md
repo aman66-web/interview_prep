@@ -16,22 +16,22 @@ About 90 minutes in total. 4 tasks, in order.
 3. Reply to every email, admin enquiry and comment within 24 hours.
 4. Note one thing a user said or did, and your minutes per channel.
 
-## d23-2: Create Mock Partner accounts on YouTube, TikTok and Instagram.
+## d23-2: Create CaseSpar accounts on YouTube, TikTok and Instagram.
 
 - **Who:** You (Chrome prepares what it can, then hands over)
 - **Time:** about 40 minutes
 
 **Steps**
 
-1. YouTube: from your Google account, create a channel called Mock Partner.
-2. TikTok and Instagram: create accounts called Mock Partner (or the closest free name). If TikTok offers a free business account, choose it: a clickable bio link needs one, or 1,000 followers (secondary source: https://www.shopify.com/blog/how-to-add-link-to-tiktok-bio).
-3. Paste the profile text below on all three. Add mockpartner.com as the website link wherever the app lets you.
+1. YouTube: from your Google account, create a channel called CaseSpar.
+2. TikTok and Instagram: create accounts called CaseSpar (or the closest free name). If TikTok offers a free business account, choose it: a clickable bio link needs one, or 1,000 followers (secondary source: https://www.shopify.com/blog/how-to-add-link-to-tiktok-bio).
+3. Paste the profile text below on all three. Add casespar.app as the website link wherever the app lets you.
 4. No logos of any firm, and no paid followers, ever.
 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Case interview maths and practice, 30 seconds at a time. Practice for before interviews, never during. Not affiliated with any consulting firm. mockpartner.com
+Case interview maths and practice, 30 seconds at a time. Practice for before interviews, never during. Not affiliated with any consulting firm. casespar.app
 ````
 
 ## d23-3: Approve this week's two search pages for the live site.
@@ -58,12 +58,12 @@ Claude, I've fact-checked the profitability case example and the reading charts 
 
 1. Find one recent question about practising case interviews in a subreddit whose rules allow answers that mention your own product (reddit-rules.txt).
 2. Paste the message below, then post Claude's draft from your own account after reading it.
-3. If the best answer doesn't need Mock Partner, leave it out. Being useful is the point.
+3. If the best answer doesn't need CaseSpar, leave it out. Being useful is the point.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention Mock Partner if it really helps the person, and if you do, start that sentence with 'Disclosure: I built Mock Partner' and use the link https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
+Claude, here is a Reddit question I'd like to answer helpfully, and that subreddit's rules: [paste the question and the rules]. Draft a short, genuinely useful answer in plain English. Only mention CaseSpar if it really helps the person, and if you do, start that sentence with 'Disclosure: I built CaseSpar' and use the link https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer. Don't copy anything from casebooks, firms or other prep sites.
 ````
 
 ## Write down today

@@ -1,6 +1,6 @@
 # Consulting recruiting calendar, Oct 2026 to Mar 2027 (UK and US)
 
-Research for the Mock Partner growth playbook. Written 15 Oct 2026. Day 1 of the playbook is Fri 16 Oct 2026 and Day 90 is Wed 13 Jan 2027.
+Research for the CaseSpar growth playbook. Written 15 Oct 2026. Day 1 of the playbook is Fri 16 Oct 2026 and Day 90 is Wed 13 Jan 2027.
 
 ## How to read this file
 
@@ -191,7 +191,7 @@ These come from `/home/user/interview_prep/content/firms/*.json`, checked on the
 
 ---
 
-## 12. What this means for Mock Partner
+## 12. What this means for CaseSpar
 
 1. **The UK graduate wave is happening now, and we are not live yet.** Most UK graduate deadlines fall between 15 Oct and 8 Nov. Interviews follow from mid-November to mid-December. Anyone who applies this week will want case practice in Days 10 to 55. Until real sign-in emails work and the free starter case is reviewed, we can't serve them. **Every week the launch slips costs part of this wave.** My recommendation: aim to be open to the public by early November (about Day 20).
 2. **US MBA first-years are the best paying wave inside the 90 days.** They prepare in November and December and interview from 4 Jan to 2 Feb 2027. A 90-Day Pass bought in mid-November lasts until mid-February, which covers their whole season. Plan the US MBA push for Days 30 to 85, posting at US times.
@@ -199,7 +199,7 @@ These come from `/home/user/interview_prep/content/firms/*.json`, checked on the
 4. **Avoid exam weeks and holidays for big pushes.** LSE has exams on 4 to 10 Jan and Manchester on 14 to 29 Jan. US Thanksgiving is 26 Nov. My estimate is that 24 Dec to 1 Jan is the quietest week for everyone.
 5. **There is a second wave after Day 90.** UK internship interviews (my estimate: February to March), February student case competitions, INSEAD in early March and US undergraduates for summer 2028 (my estimate: from about February). Build the content and the university and society contacts for this wave in December and January.
 6. **Campus events for this autumn are mostly over.** The big UK fairs and firm events ran from late September to 21 Oct. Approaching consulting societies is better aimed at the January to March terms (internship season and case competitions).
-7. **Keep marketing inside the firms' own rules.** Firms allow, and McKinsey encourages, AI for practising before interviews. McKinsey and Bain ban AI during assessments and interviews. So Mock Partner must always be described as practice *before* the interview, never as help *during* one. Bain and McKinsey say no calculators in interviews, which makes our mental maths drills a strong, honest selling point. My product suggestion: encourage people to practise without the calculator.
+7. **Keep marketing inside the firms' own rules.** Firms allow, and McKinsey encourages, AI for practising before interviews. McKinsey and Bain ban AI during assessments and interviews. So CaseSpar must always be described as practice *before* the interview, never as help *during* one. Bain and McKinsey say no calculators in interviews, which makes our mental maths drills a strong, honest selling point. My product suggestion: encourage people to practise without the calculator.
 8. **Deadline reminders are allowed but need care.** We may say "BCG London's graduate deadline is 18 Oct 2026 (source: BCG's careers page)" as plain fact, with the "Not affiliated..." disclaimer. Never suggest we are linked to any firm, and re-check every date on the firm's page the day before posting it, because firms change them.
 
 ---

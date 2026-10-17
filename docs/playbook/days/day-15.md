@@ -61,7 +61,7 @@ Claude, I've tried the scored question on the home page and at the end of a guid
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Thanks again for trying Mock Partner. Two quick questions, and one-line answers are perfect: 1) Where did the interview feel unrealistic, confusing or broken? 2) If you were preparing for a real interview, what would stop you paying $39 a month or $99 for 90 days for it? Honest answers help me most.
+Thanks again for trying CaseSpar. Two quick questions, and one-line answers are perfect: 1) Where did the interview feel unrealistic, confusing or broken? 2) If you were preparing for a real interview, what would stop you paying $39 a month or $99 for 90 days for it? Honest answers help me most.
 ````
 
 ## d15-5: Post today's LinkedIn tip.
@@ -86,7 +86,7 @@ An example with invented numbers: a new coffee kiosk has £120,000 of fixed cost
 The number is the easy part. A strong answer then asks: is 137 a day realistic for that spot, and what would have to be true?
 
 Free break-even calculator, no account needed:
-https://mockpartner.com/tools/break-even-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-5
+https://casespar.app/tools/break-even-calculator?utm_source=linkedin&utm_medium=social&utm_campaign=post-5
 ````
 
 ## Write down today

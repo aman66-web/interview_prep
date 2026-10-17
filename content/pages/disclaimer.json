@@ -1,11 +1,11 @@
 {
   "slug": "disclaimer",
   "title": "Disclaimer",
-  "seo_title": "Disclaimer | Mock Partner",
-  "description": "Mock Partner is independent practice: not affiliated with any consulting firm, built on original invented cases, with AI feedback that can be wrong.",
+  "seo_title": "Disclaimer | CaseSpar",
+  "description": "CaseSpar is independent practice: not affiliated with any consulting firm, built on original invented cases, with AI feedback that can be wrong.",
   "updated": "2026-10-15",
   "status": "draft",
-  "intro": "Please read this before you rely on anything on Mock Partner. Effective date: [effective date].",
+  "intro": "Please read this before you rely on anything on CaseSpar. Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },
     {
@@ -21,13 +21,13 @@
     { "type": "h2", "id": "practice-only", "text": "For practice only" },
     {
       "type": "p",
-      "text": "Mock Partner helps you practise for case interviews. It is not a recruitment service. It doesn't put you forward for jobs, and no firm sees your scores or transcripts."
+      "text": "CaseSpar helps you practise for case interviews. It is not a recruitment service. It doesn't put you forward for jobs, and no firm sees your scores or transcripts."
     },
 
     { "type": "h2", "id": "no-promise", "text": "No promise of results" },
     {
       "type": "p",
-      "text": "We can't promise that using Mock Partner will help you pass any interview or get any job. Every firm runs its own process, and a real interview is different from practice."
+      "text": "We can't promise that using CaseSpar will help you pass any interview or get any job. Every firm runs its own process, and a real interview is different from practice."
     },
     {
       "type": "p",
@@ -47,7 +47,7 @@
     { "type": "h2", "id": "original-cases", "text": "Original, invented cases" },
     {
       "type": "p",
-      "text": "Every case on Mock Partner is written for this site. The companies and numbers are invented, and any likeness to a real business is a coincidence. The numbers are chosen for practice and may not match any real market."
+      "text": "Every case on CaseSpar is written for this site. The companies and numbers are invented, and any likeness to a real business is a coincidence. The numbers are chosen for practice and may not match any real market."
     },
     {
       "type": "p",
@@ -63,7 +63,7 @@
     { "type": "h2", "id": "not-advice", "text": "Not professional advice" },
     {
       "type": "p",
-      "text": "Nothing on Mock Partner is careers, legal, financial or other professional advice."
+      "text": "Nothing on CaseSpar is careers, legal, financial or other professional advice."
     },
 
     { "type": "h2", "id": "contact", "text": "Contact" },
@@ -73,7 +73,7 @@
       "type": "links",
       "title": "Related pages",
       "items": [
-        { "label": "About Mock Partner", "href": "/about" },
+        { "label": "About CaseSpar", "href": "/about" },
         { "label": "Terms of service", "href": "/legal/terms" },
         { "label": "Privacy policy", "href": "/legal/privacy" }
       ]

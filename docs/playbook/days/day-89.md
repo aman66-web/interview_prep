@@ -13,7 +13,7 @@ About 125 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £185; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ Made-up example: a UK coffee chain thinking about Ireland. A big, growing market
 
 Say the three questions up front, then work through them. It's a structure the interviewer can follow at a glance.
 
-The free market entry guide: https://mockpartner.com/guides/market-entry-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d89
-(I built Mock Partner.)
+The free market entry guide: https://casespar.app/guides/market-entry-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d89
+(I built CaseSpar.)
 ````
 
 ## d89-2: Gather the 90-day numbers
@@ -60,7 +60,7 @@ The free market entry guide: https://mockpartner.com/guides/market-entry-case-in
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, please prepare my 90-day report for Mock Partner from the numbers below. Day 1 was Friday 16 October 2026 and Day 90 is tomorrow, Wednesday 13 January 2027.
+Claude, please prepare my 90-day report for CaseSpar from the numbers below. Day 1 was Friday 16 October 2026 and Day 90 is tomorrow, Wednesday 13 January 2027.
 
 [paste: totals for Days 1 to 89 (visits, free sign-ups, finished free interviews, paying customers split into passes and Monthly, revenue, AI cost); the same by first-touch source; revenue for Days 78 to 89; ad spend and paying customers for Google Ads, LinkedIn Ads and Reddit Ads; reviewed cases live; partners using a club code; people on the opt-in list; the share of Monthly buyers who cancelled after one month; my hours per channel]
 
@@ -105,7 +105,7 @@ Claude, please write this week's 2 new guide pages: (1) 'A February plan for UK 
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````

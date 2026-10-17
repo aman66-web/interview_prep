@@ -13,7 +13,7 @@ About 115 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: post the text below this morning (UK).
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ Packing: 150 loaves an hour
 The line can only make 90 an hour, because baking is the bottleneck.
 Speeding up packing adds nothing. More output has to come from baking: a second oven, or a longer baking shift.
 
-The free operations guide: https://mockpartner.com/guides/operations-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d60
-(I built Mock Partner.)
+The free operations guide: https://casespar.app/guides/operations-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d60
+(I built CaseSpar.)
 ````
 
 ## d60-2: Ask Claude for the channel table and its advice
@@ -81,12 +81,12 @@ Claude, here are my numbers for Days 31-60 (Sun 15 Nov to Mon 14 Dec): [paste Ch
 ````text
 Hi [first name],
 
-Thank you for sharing Mock Partner with [society name]: [number] members have signed up with your code so far. Ahead of January, would a group pass help? You'd get [number of seats] 90-Day Passes for members at $[your price] each (one invoice, one invite link, and each member who joins with it gets the full 90 days). It's an option, not a commitment, and the free code keeps working either way.
+Thank you for sharing CaseSpar with [society name]: [number] members have signed up with your code so far. Ahead of January, would a group pass help? You'd get [number of seats] 90-Day Passes for members at $[your price] each (one invoice, one invite link, and each member who joins with it gets the full 90 days). It's an option, not a commitment, and the free code keeps working either way.
 
 Happy to talk it through or send the one-page offer.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d60-5: Apply the Day 60 search rule

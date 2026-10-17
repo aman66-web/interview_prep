@@ -94,7 +94,7 @@ Dividing works the other way round: 60 million ÷ 2 thousand is (60 ÷ 2) with (
 Say the units out loud at every step and you'll catch most slips before the interviewer does.
 
 Free mental maths drills:
-https://mockpartner.com/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-7
+https://casespar.app/drills/mental-maths?utm_source=linkedin&utm_medium=social&utm_campaign=post-7
 ````
 
 ## Write down today

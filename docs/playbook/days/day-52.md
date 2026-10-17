@@ -21,7 +21,7 @@ About 85 minutes in total. 4 tasks, in order.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````
@@ -69,7 +69,7 @@ The reviewer [reviewer's name] signed off [case name] on [date]. Their changes: 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, the Day 45 check said Stop or pivot. Please give me the one-page rethink now: who Mock Partner is for, the price, whether a voice mode is worth building, and what users have answered to the in-app question so far (no names or emails). Then suggest the 3 changes you'd make first, in order. Don't build anything yet.
+Claude, the Day 45 check said Stop or pivot. Please give me the one-page rethink now: who CaseSpar is for, the price, whether a voice mode is worth building, and what users have answered to the in-app question so far (no names or emails). Then suggest the 3 changes you'd make first, in order. Don't build anything yet.
 ````
 
 ## Write down today

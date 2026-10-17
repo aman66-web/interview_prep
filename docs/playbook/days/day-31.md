@@ -11,9 +11,9 @@ About 85 minutes in total. 4 tasks, in order.
 
 **Steps**
 
-1. Open mockpartner.com/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
+1. Open casespar.app/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
 2. Check the alarms: Anthropic spend this month under $80 (80% of the $100 limit; if it's over, raise the limit today, your call); Google Ads spend this week (Fri 13 to Thu 19 Nov) under £70; no failed deployment or errors in Vercel.
-3. Reply to every email in hello@mockpartner.com and every enquiry on the admin page. Be honest; never promise offers or results.
+3. Reply to every email in hello@casespar.app and every enquiry on the admin page. Be honest; never promise offers or results.
 4. Post a short video: open Claude's short-video kit (from Day 25), take the next unused card, screen-record it in portrait, and upload it to YouTube Shorts, TikTok and Instagram Reels with its caption. Write the card number in today's note.
 5. Use Claude's caption for that card if it has one; otherwise the text below. No firm names in the video or caption, and no music you don't have the rights to use (as on Day 25).
 6. In today's note: one thing a user said or did, and your minutes on each channel today.
@@ -23,7 +23,7 @@ About 85 minutes in total. 4 tasks, in order.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````
@@ -59,7 +59,7 @@ Show me every change on the preview link first. Push to the PR branch only; I'll
 
 **Steps**
 
-1. Reviewed cases: count the cases on mockpartner.com/cases. The plan was 15 by Thu 12 Nov and all 20 by Thu 19 Nov. If there are fewer than 15, do the next task too.
+1. Reviewed cases: count the cases on casespar.app/cases. The plan was 15 by Thu 12 Nov and all 20 by Thu 19 Nov. If there are fewer than 15, do the next task too.
 2. Google Ads: is the campaign on? (It started on Day 22 only if the Day 6 check passed and 10+ reviewed cases were live.) Write 'ads on' or 'ads off' in today's note. Every ads task this month applies only if ads are on.
 3. Email course and refer-a-friend: sign in with your second email address and check that the email course box and the personal referral link both show.
 4. LinkedIn: use yesterday's decision (Day 30, task d30-3). If you dropped to 2 posts a week, from Monday post only on the days marked 'Key post' and give the spare time to societies and search pages. If not, post every day this playbook has a LinkedIn post (5 a week).

@@ -1,6 +1,6 @@
 # Image brief for Midjourney (16 Oct 2026)
 
-66 images for the Mock Partner website, made in Midjourney by Claude in Chrome with the founder. Claude Code (the cloud session) then converts them to small web files, writes the descriptions for screen readers, and places them on the pages.
+66 images for the CaseSpar website, made in Midjourney by Claude in Chrome with the founder. Claude Code (the cloud session) then converts them to small web files, writes the descriptions for screen readers, and places them on the pages.
 
 ## Rules (all of them, every image)
 

@@ -13,7 +13,7 @@ About 125 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105 (or your lower cap); no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ To earn the same total, volume has to rise by 40 ÷ 30, so about 33% more units.
 
 A 10% price cut that needs a third more volume is a big ask in most markets. Saying that out loud, with the numbers, is a strong start to the pricing part of a case.
 
-The free pricing guide: https://mockpartner.com/guides/pricing-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d67
-(I built Mock Partner.)
+The free pricing guide: https://casespar.app/guides/pricing-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d67
+(I built CaseSpar.)
 ````
 
 ## d67-2: Ask up to 3 users whether you may quote what they wrote
@@ -41,7 +41,7 @@ The free pricing guide: https://mockpartner.com/guides/pricing-case-interview?ut
 
 **Steps**
 
-1. Search hello@mockpartner.com, admin enquiries and replies to your newsletters for messages where someone praised Mock Partner without being asked and without getting anything for it.
+1. Search hello@casespar.app, admin enquiries and replies to your newsletters for messages where someone praised CaseSpar without being asked and without getting anything for it.
 2. Not friends, family or anyone you know personally (that relationship would have to be disclosed), and not anyone you gave something to.
 3. For now, don't use praise that claims an offer or a result ('I got the job') or names a consulting firm, even with permission: a result claim needs proof, and a firm's name next to praise can look like the firm backs us (the plan's rules on proof and firm names).
 4. Ask up to 3 of them, one at a time, with the message below. Quote their words exactly. If you want to shorten them, put the shortened version in the message so they agree to exactly that.
@@ -54,7 +54,7 @@ The free pricing guide: https://mockpartner.com/guides/pricing-case-interview?ut
 ````text
 Hi [first name],
 
-Thank you for your message about Mock Partner on [date]. Would you be happy for me to show what you wrote on the website, with your first name only (or no name, if you prefer)? This is exactly what I'd show:
+Thank you for your message about CaseSpar on [date]. Would you be happy for me to show what you wrote on the website, with your first name only (or no name, if you prefer)? This is exactly what I'd show:
 
 '[their words]'
 
@@ -62,7 +62,7 @@ You'd get nothing in return, and saying no is completely fine. You can also ask 
 
 Thanks again,
 Aman
-Mock Partner
+CaseSpar
 ````
 
 ## d67-3: Email 5 new UK careers services about next term
@@ -84,7 +84,7 @@ Subject: Case interview practice for your students applying to consulting
 
 Dear [careers service team, or the named contact],
 
-I'm Aman, founder of Mock Partner (mockpartner.com), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, founder of CaseSpar (casespar.app), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
 
 With some consulting internship applications opening or closing in January (each firm's own page has its dates), I'd like to offer your students, at no cost to the university:
 - a code for your students: two extra free AI interviews each (on top of the one everyone gets) and 20% off a first purchase;
@@ -97,9 +97,9 @@ If you'd prefer not to hear from me, reply 'no thanks' and I won't contact you a
 
 Kind regards,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d67-4: Decide whether newsletter 3 goes out tomorrow, and re-check its dates

@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £155; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -29,8 +29,8 @@ Made-up product: a refillable water filter bottle.
 
 A good answer uses all three: cost sets the floor, value sets the ceiling, and competitors show where in between you can land.
 
-The free pricing guide: https://mockpartner.com/guides/pricing-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d56
-(I built Mock Partner.)
+The free pricing guide: https://casespar.app/guides/pricing-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=post-d56
+(I built CaseSpar.)
 ````
 
 ## d56-2: Ask Claude to write 5 UK internship-style cases (B17, the UK internship batch)

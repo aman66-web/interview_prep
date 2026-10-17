@@ -28,7 +28,7 @@ Claude, please merge the page 'A Christmas-break case practice plan for UK inter
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week (Fri 11 to Thu 17 Dec) under £105; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: paste Claude's LinkedIn link into the text below (with any changes from yesterday's date check) and post it this morning (UK).
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -44,7 +44,7 @@ Always check the firm's own page before you apply; dates change.
 
 The break is a good time to start case practice. I wrote a Christmas-break plan for internship applicants: [the page link Claude gives you today]
 
-I built Mock Partner. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
+I built CaseSpar. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
 ````
 
 ## d57-3: Friday check of the deadlines page
@@ -55,7 +55,7 @@ I built Mock Partner. Not affiliated with or endorsed by McKinsey & Company, Bos
 **Steps**
 
 1. It's Friday: send Claude the message below (the same check as on Days 22 and 29).
-2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open mockpartner.com and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
+2. If Claude says it couldn't open a firm's page, send Claude in Chrome this instead: 'Open casespar.app and find our page "Consulting application deadlines 2026-27 (UK)". For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.' Then send Claude any rows that changed.
 
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
@@ -85,7 +85,7 @@ Your club code still works over the holidays ([CODE]: two extra free AI intervie
 Have a good break, and let me know if a January session would help.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d57-5: Prepare the partner numbers for Monday

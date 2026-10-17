@@ -13,7 +13,7 @@ About 115 minutes in total. 4 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under $80; ads this week under £70; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below on LinkedIn this morning, UK time. No US-time post today. Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -32,8 +32,8 @@ Practise saying it in under 60 seconds. Write the four lines on your notes page 
 
 (The example is made up.)
 
-If you have a final round coming up, good luck. The free case guides: https://mockpartner.com/guides?utm_source=linkedin&utm_medium=social&utm_campaign=post-d42
-(I built Mock Partner.)
+If you have a final round coming up, good luck. The free case guides: https://casespar.app/guides?utm_source=linkedin&utm_medium=social&utm_campaign=post-d42
+(I built CaseSpar.)
 ````
 
 ## d42-2: Weekly review: week 6
@@ -82,7 +82,7 @@ Claude, I've checked 'Market entry case example'. Please fix these: [your list, 
 1. Open https://www.bain.com/careers/hiring-process/digital-assessment/ and find the line saying calculators are not allowed in the interviews that follow the assessment.
 2. Open https://www.mckinsey.com/careers/interviewing and find the line saying only pen and paper are allowed for calculations in interviews.
 3. If either has changed, or you can't find it, take that firm out of tomorrow's post.
-4. Check the calculator setting is live on mockpartner.com and off by default for new accounts. If it isn't live yet, post tomorrow's text on the day it goes live instead.
+4. Check the calculator setting is live on casespar.app and off by default for new accounts. If it isn't live yet, post tomorrow's text on the day it goes live instead.
 
 ## Write down today
 

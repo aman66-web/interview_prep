@@ -11,7 +11,7 @@ About 155 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. Only if you bought mockpartner.com yesterday.
+1. Only if you bought casespar.app yesterday.
 2. Open a Claude Code cloud session on the interview_prep repository and paste the message below.
 3. Claude pushes its code changes to the PR branch and gives you click-by-click steps for Chrome. Copy those steps for the next task.
 4. If something costs money (for example an email service plan), Claude tells you the price first. Your decision.
@@ -19,7 +19,7 @@ About 155 minutes in total. 5 tasks, in order.
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from mockpartner.com and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@mockpartner.com to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.
+Claude, I've bought casespar.app in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from casespar.app and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@casespar.app to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.
 ````
 
 ## d2-2: Let Chrome do Claude's domain, email, inbox and CAPTCHA steps.
@@ -32,14 +32,14 @@ Claude, I've bought mockpartner.com in Vercel. Please (1) make every code and se
 1. In your terminal (claude --chrome), paste the message below with Claude's steps pasted where shown.
 2. Wait until Claude says its code changes are on the preview before Chrome switches CAPTCHA on in Supabase. If CAPTCHA goes on first, sign-in stops working until the new code is there.
 3. Type logins, 2FA codes and any payment details yourself. Paste any secret key into Vercel yourself with Ctrl+V.
-4. When ImprovMX says Active, send an email to hello@mockpartner.com from another address and check it reaches your inbox.
+4. When ImprovMX says Active, send an email to hello@casespar.app from another address and check it reaches your inbox.
 5. When Resend is connected, check the sign-in email with a second address you own, not aman662002@gmail.com (while the preview quick log-in is on, your own address signs straight in and no email is sent). Request a code on the preview: the email should show a big code and no link. Type the code on the sign-in page. If the email still has only a link, ask Chrome to do Part A step 2 of docs/CHROME_SETUP.md (the email templates) now that a custom sender is connected.
 6. Once that code email works, tell Claude: 'Real sign-in emails work now. Please switch off the preview quick log-in.' From then on you sign in with the emailed code, like everyone else.
 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Do the domain, Resend, ImprovMX, Supabase and CAPTCHA steps Claude wrote (B1). Stop for logins, codes and anything that costs money. When hello@mockpartner.com forwarding works, also add NEXT_PUBLIC_SUPPORT_EMAIL with the value hello@mockpartner.com in Vercel, project interview-prep (Production and Preview, not sensitive). Here are Claude's steps:
+Do the domain, Resend, ImprovMX, Supabase and CAPTCHA steps Claude wrote (B1). Stop for logins, codes and anything that costs money. When hello@casespar.app forwarding works, also add NEXT_PUBLIC_SUPPORT_EMAIL with the value hello@casespar.app in Vercel, project interview-prep (Production and Preview, not sensitive). Here are Claude's steps:
 
 [paste Claude's steps]
 ````
@@ -80,7 +80,7 @@ Subject: Fixed-fee review: consumer terms for a UK online subscription site
 
 Hello,
 
-I run MARTZEY LTD (company number 14466643), which is about to launch Mock Partner, a UK website that sells online case-interview practice to students and graduates: $39 a month (a subscription) or $99 for a 90-day pass.
+I run MARTZEY LTD (company number 14466643), which is about to launch CaseSpar, a UK website that sells online case-interview practice to students and graduates: $39 a month (a subscription) or $99 for a 90-day pass.
 
 I'd like a short fixed-fee review of three points:
 1. Our no-refunds policy: all sales are final, except where the law requires a refund.

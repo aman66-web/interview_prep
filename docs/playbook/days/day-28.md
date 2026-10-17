@@ -31,7 +31,7 @@ About 130 minutes in total. 5 tasks, in order.
 ````text
 The reviewer [reviewer's name] signed off [case name] on [date]. Their changes: [paste the reviewer's notes]. Please make the changes, mark it reviewed, run npm run content:check and push to the PR branch.
 
-When the tests pass, I approve merging these cases into main so they go live on mockpartner.com. Tell me when they're live and how many reviewed cases the live site now shows.
+When the tests pass, I approve merging these cases into main so they go live on casespar.app. Tell me when they're live and how many reviewed cases the live site now shows.
 ````
 
 ## d28-3: Weekly review: compare week 4 with the plan and ask Claude what to change.
@@ -89,7 +89,7 @@ Practising case interviews alone is hard, but it can work. Here's a simple week 
 The review is what makes it work. Write down one thing to fix, and practise only that next time.
 
 Free guide to practising cases alone:
-https://mockpartner.com/guides/how-to-practise-case-interviews-alone?utm_source=linkedin&utm_medium=social&utm_campaign=post-14
+https://casespar.app/guides/how-to-practise-case-interviews-alone?utm_source=linkedin&utm_medium=social&utm_campaign=post-14
 ````
 
 ## Write down today

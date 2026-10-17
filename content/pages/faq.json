@@ -1,11 +1,11 @@
 {
   "slug": "faq",
   "title": "Frequently asked questions",
-  "seo_title": "Mock Partner FAQ: plans, AI interviews and your data",
-  "description": "Straight answers about Mock Partner: how the AI interviewer and debrief work, what is free, what the plans cost, refunds, limits and your data.",
+  "seo_title": "CaseSpar FAQ: plans, AI interviews and your data",
+  "description": "Straight answers about CaseSpar: how the AI interviewer and debrief work, what is free, what the plans cost, refunds, limits and your data.",
   "updated": "2026-10-15",
   "status": "draft",
-  "intro": "Straight answers about how Mock Partner works, what it costs and what happens to your data. Can't find what you need? Email [support email].",
+  "intro": "Straight answers about how CaseSpar works, what it costs and what happens to your data. Can't find what you need? Email [support email].",
   "blocks": [
     {
       "type": "links",
@@ -28,7 +28,7 @@
           "href": "/legal/terms"
         },
         {
-          "label": "About Mock Partner",
+          "label": "About CaseSpar",
           "href": "/about"
         }
       ]
@@ -39,7 +39,7 @@
       "heading": "The product",
       "items": [
         {
-          "q": "What is Mock Partner?",
+          "q": "What is CaseSpar?",
           "a": "A website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window, then get a scored debrief that shows what went well and what to fix. Short drills help you practise the skills cases test: mental maths, market sizing, frameworks and chart reading."
         },
         {
@@ -56,10 +56,10 @@
         },
         {
           "q": "Are these real interview cases?",
-          "a": "No. Every case is written for Mock Partner, with invented companies and numbers. We don't copy or rework cases from casebooks, books, other websites or firms' practice materials. A person checks each case before it goes live."
+          "a": "No. Every case is written for CaseSpar, with invented companies and numbers. We don't copy or rework cases from casebooks, books, other websites or firms' practice materials. A person checks each case before it goes live."
         },
         {
-          "q": "Is Mock Partner linked to McKinsey, BCG or Bain?",
+          "q": "Is CaseSpar linked to McKinsey, BCG or Bain?",
           "a": "No. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named on this site. We use firm names only to describe a style of case."
         },
         {
@@ -93,7 +93,7 @@
         },
         {
           "q": "Can I get a refund?",
-          "a": "No. Your first full interview and debrief are free, so you can try Mock Partner properly before paying. After that all sales are final, except where the law requires a refund. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. The refund policy has the details."
+          "a": "No. Your first full interview and debrief are free, so you can try CaseSpar properly before paying. After that all sales are final, except where the law requires a refund. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. The refund policy has the details."
         }
       ]
     },
@@ -126,7 +126,7 @@
       "heading": "Practising well",
       "items": [
         {
-          "q": "How should I practise with Mock Partner?",
+          "q": "How should I practise with CaseSpar?",
           "a": "Warm up with a few drills, then run a case. Type your thinking in full sentences, as you would say it out loud, and state the numbers you work out. After the debrief, do the drills linked to your fixes before your next case. On a paid plan, try the same case again to see whether the fixes stuck."
         },
         {

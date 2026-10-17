@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £225; no Vercel errors. It's Monday: sign in once with your second email and check the sign-in email arrives.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: post the text below at 2 pm UK (9 am New York). Then add the 'First comment' text as the first comment on your own post. Reply to comments at about 4 pm and 7 pm UK.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ One thing worth practising tonight: what to do when you make a maths slip.
 
 Slips happen under pressure. Catching and fixing one calmly shows the habits interviewers look for (my view, not a firm's rule).
 
-A cheap way to practise: cases where the maths is checked by code, so you see every slip. The first full interview is free: https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d81
-(I built Mock Partner.)
+A cheap way to practise: cases where the maths is checked by code, so you see every slip. The first full interview is free: https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=post-d81
+(I built CaseSpar.)
 
 First comment:
 Sources: NYU Stern https://www.stern.nyu.edu/business-partnerships/recruit-talent/recruitment-calendar · Duke Fuqua https://www.fuqua.duke.edu/employers/recruiting-calendar-guidelines · UNC Kenan-Flagler https://www.kenan-flagler.unc.edu/wp-content/uploads/2023/05/FTMBA26-062_2026-27_Facilitated_Recruiting_Key_Dates_Update_FNL.pdf
@@ -56,12 +56,12 @@ Hi [first name],
 
 Interviews start this week for many first-years, so just a quick note: your members' code [CODE] still gives two extra free AI interviews and 20% off a first purchase, and the case-workshop pack is there if you run a practice session.
 
-If anything would make Mock Partner more useful for your members in the next few weeks, just reply; I read every message.
+If anything would make CaseSpar more useful for your members in the next few weeks, just reply; I read every message.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 If you'd rather not hear from me again, reply 'no thanks' and I won't email again.
 ````
 
@@ -72,7 +72,7 @@ If you'd rather not hear from me again, reply 'no thanks' and I won't email agai
 
 **Steps**
 
-1. Google Ads: spend so far this week against the £225 week cap (including Reddit). If the week is heading over the cap, tell Chrome: 'In my Mock Partner Google Ads account, lower the daily budgets so they add up to £[amount] a day. Change nothing else.'
+1. Google Ads: spend so far this week against the £225 week cap (including Reddit). If the week is heading over the cap, tell Chrome: 'In my CaseSpar Google Ads account, lower the daily budgets so they add up to £[amount] a day. Change nothing else.'
 2. Look at the search terms report for silly searches (for example jobs or salaries) and add them as negatives through Chrome: 'Add these as negative keywords to the January campaigns: [list]. Change nothing else.'
 3. Admin page: sign-ups and any paying customers with utm_source=google and utm_source=reddit since Saturday. Write them in today's note.
 
@@ -98,7 +98,7 @@ If it's this week, I'd stop adding new material and sharpen what you have (my vi
 - Re-read the firm's own careers page for the interview format.
 - The night before: no new cases. Sleep will help you more than one more practice case.
 
-Disclosure: I built Mock Partner, a text-based AI case interviewer. If you want a quick timed case with a scored debrief, the first one is free: https://mockpartner.com/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d81
+Disclosure: I built CaseSpar, a text-based AI case interviewer. If you want a quick timed case with a scored debrief, the first one is free: https://casespar.app/?utm_source=reddit&utm_medium=social&utm_campaign=answer-d81
 ````
 
 ## d81-5: Check the search improvement item from Tuesday 29 December, approve it and send the next one

@@ -14,7 +14,7 @@ About 90 minutes in total. 5 tasks, in order.
 1. Write yesterday's six numbers in the Numbers tab. Alarms: Anthropic under $80; ads this week under £70; no Vercel errors. Answer the support inbox.
 2. Post a short video: next unused card, portrait, YouTube Shorts, TikTok and Instagram Reels, with its caption.
 3. Use Claude's caption for that card if it has one; otherwise the text below. No firm names in the video or caption, and no music you don't have the rights to use (as on Day 25).
-4. Reddit check: if you've now made 3 allowed link posts on Reddit and Reddit-sourced sign-ups on the admin page total under 20, stop link posts; from now on only answer questions (with the disclosure when you mention Mock Partner).
+4. Reddit check: if you've now made 3 allowed link posts on Reddit and Reddit-sourced sign-ups on the admin page total under 20, stop link posts; from now on only answer questions (with the disclosure when you mention CaseSpar).
 5. In today's note: the Reddit decision, and your minutes per channel.
 
 **Text to use (post, email or message)** (copy exactly):
@@ -22,7 +22,7 @@ About 90 minutes in total. 5 tasks, in order.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

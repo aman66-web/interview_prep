@@ -13,7 +13,7 @@ About 130 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £90; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below at 2 pm UK (9 am New York). Skip it if you're on 2 posts a week.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -32,8 +32,8 @@ Take 60 seconds, then say:
 
 Then say where you'd start and why. That last line turns a list into a plan.
 
-The free market entry guide has a full worked example: https://mockpartner.com/guides/market-entry-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=mba-2
-(I built Mock Partner.)
+The free market entry guide has a full worked example: https://casespar.app/guides/market-entry-case-interview?utm_source=linkedin&utm_medium=social&utm_campaign=mba-2
+(I built CaseSpar.)
 ````
 
 ## d48-2: Contact US MBA clubs 21 to 25
@@ -56,21 +56,21 @@ Subject: Free case-interview practice codes for [club name] members
 
 Hi [first name, or 'there'],
 
-This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run Mock Partner (mockpartner.com), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
+This is a short commercial offer, so I'll keep it brief. I'm Aman, and I run CaseSpar (casespar.app), where candidates practise consulting case interviews with a text-based AI interviewer. It runs a full case, checks the maths with code (not the AI's opinion) and scores five skills in a debrief. Every case is original and signed off by a reviewer with consulting experience.
 
 With first-year internship interviews starting in early January at several schools, I'd like to offer [club name] members, free to the club:
 - a club code: two extra free AI interviews per member (on top of the one everyone gets) and 20% off a first purchase;
 - a printable case-workshop pack (one case with facilitator notes) for a club session;
 - a club page on our site with the code on it.
 
-No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. Mock Partner isn't linked to any school or consulting firm.
+No contract and nothing to pay. If your school has its own process for outside offers, I'm happy to follow it. CaseSpar isn't linked to any school or consulting firm.
 
 If you'd rather not get emails from me, reply 'no thanks' and I won't email again.
 
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE, United Kingdom
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d48-3: Set up any club or society that said yes
@@ -81,7 +81,7 @@ hello@mockpartner.com
 **Steps**
 
 1. Skip this if nobody new said yes.
-2. On mockpartner.com/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link. Attach the partner pack and workshop pack.
+2. On casespar.app/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link. Attach the partner pack and workshop pack.
 3. For a US club, send the reply below. For a UK society or careers service, use the Day 43 reply.
 
 **Text to use (post, email or message)** (copy exactly):
@@ -101,7 +101,7 @@ Members who sign up with the code get two extra free AI interviews and 20% off t
 If it helps, I can join a session online in December or January.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d48-4: Fact-check the CAGR page
@@ -112,7 +112,7 @@ hello@mockpartner.com
 **Steps**
 
 1. Open the preview link for 'Growth rate and CAGR maths for case interviews'.
-2. Redo every number with the free growth rate calculator (mockpartner.com/tools/growth-rate-calculator) or by hand.
+2. Redo every number with the free growth rate calculator (casespar.app/tools/growth-rate-calculator) or by hand.
 3. Read every sentence; click every firm source link; check no logos and the 'not affiliated' line where a firm is named.
 4. Send the message below with your fixes. You'll publish it with the pricing page tomorrow.
 
@@ -138,7 +138,7 @@ Claude, I've checked 'Growth rate and CAGR maths for case interviews'. Please fi
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it). Practice for before interviews; not affiliated with any consulting firm.
+More free drills at casespar.app (I built it). Practice for before interviews; not affiliated with any consulting firm.
 
 #caseinterview #consulting #mentalmaths
 ````

@@ -32,7 +32,7 @@ About 145 minutes in total. 5 tasks, in order.
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Mock Partner is now open to everyone.
+CaseSpar is now open to everyone.
 
 It's for people preparing for consulting case interviews who don't always have someone to practise with. You run a full case by text with an AI interviewer: clarifying questions, exhibits when you ask for them, the maths, and a final recommendation. Then you get a debrief that scores five skills from 1 to 5: structure, analysis and maths, business judgement, communication, and your final recommendation.
 
@@ -46,7 +46,7 @@ If you want more: $39 a month, or $99 for 90 days.
 
 If you have a case interview coming up, I'd love you to try it and tell me what's missing.
 
-https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
+https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
 ````
 
 ## d18-3: Post the honest 'I built this' Reddit post, only where yesterday's check said it's allowed.
@@ -81,7 +81,7 @@ Subject: Free case-interview practice for [society name] members
 
 Hi [first name, or 'the [society name] committee'],
 
-I'm [your name], and I run Mock Partner (mockpartner.com), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills, and the case maths is checked by code rather than by the AI's opinion.
+I'm [your name], and I run CaseSpar (casespar.app), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills, and the case maths is checked by code rather than by the AI's opinion.
 
 I'd like to offer [society name] members, free of charge:
 - a code just for your society that gives members two extra free interviews (three in total) and 20% off a first purchase if they want more;
@@ -90,15 +90,15 @@ I'd like to offer [society name] members, free of charge:
 
 There's no cost to the society and nothing to sign. If it sounds useful, reply and I'll send your code and a page you can share within a day. If you share it with members, please mark the message as an advert.
 
-Mock Partner is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
+CaseSpar is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
 
 If you'd rather not hear from me again, just reply 'no thanks' and I won't contact you again.
 
 Best wishes,
 [your name]
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d18-5: Email 5 university careers services, one at a time.
@@ -118,7 +118,7 @@ Subject: A free case-interview practice tool for your students
 
 Hello [first name, or 'the careers team'],
 
-I'm [your name], founder of Mock Partner (mockpartner.com), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills from 1 to 5, and the case maths is checked by code rather than by the AI's opinion.
+I'm [your name], founder of CaseSpar (casespar.app), a small UK website where students practise consulting case interviews by text with an AI interviewer. After each case they get a debrief that scores five skills from 1 to 5, and the case maths is checked by code rather than by the AI's opinion.
 
 With graduate case interviews coming up this term, I'd like to offer your students, free of charge:
 - a code that gives them two extra free interviews on top of the one everyone gets, and 20% off a first purchase if they want more;
@@ -127,15 +127,15 @@ Advisers are welcome to use the same code to try it first.
 
 There's nothing to sign and no cost to the university. If it sounds useful, reply and I'll set up your code within a day.
 
-Mock Partner is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
+CaseSpar is for practice before interviews, never help during one, and it isn't affiliated with or endorsed by any consulting firm.
 
 If you'd rather not hear from me again, just reply 'no thanks' and I won't contact you again.
 
 Kind regards,
 [your name]
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

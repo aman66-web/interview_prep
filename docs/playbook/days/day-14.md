@@ -90,7 +90,7 @@ Then say the so-what in one sentence, for example: 'Revenue grew in every region
 That last sentence is the part interviewers listen for.
 
 Free chart-reading drills (5 without an account):
-https://mockpartner.com/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-4
+https://casespar.app/drills/chart-reading?utm_source=linkedin&utm_medium=social&utm_campaign=post-4
 ````
 
 ## Write down today

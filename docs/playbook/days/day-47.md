@@ -31,7 +31,7 @@ Claude, two things today.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic spend under 80% of the limit ($120 if you raised it to $150 today, $80 if not); ads this week under £90; no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Key post: paste the link Claude gave you into the text below and post it at 2 pm UK (9 am New York).
 5. Reply to comments on the post at about 4 pm and 7 pm UK.
 6. In today's note: one user comment, and your minutes per channel.
@@ -49,7 +49,7 @@ If your first-year internship interviews start in early January, December is you
 
 This is my suggestion, not a rule. Fit it around your exams and travel.
 
-I built Mock Partner to make the solo part easier: a text-based AI interviewer that runs full cases and scores you. The first full interview is free (a free account, no card).
+I built CaseSpar to make the solo part easier: a text-based AI interviewer that runs full cases and scores you. The first full interview is free (a free account, no card).
 
 The full plan: [the page link Claude gives you today]
 ````
@@ -63,13 +63,13 @@ The full plan: [the page link Claude gives you today]
 
 1. Anthropic (you, only if you approved it yesterday): sign in to the Anthropic Console (console.anthropic.com, Settings, Limits) and set the monthly spend limit to $150, on the same page where you set the $100 limit on Day 18. Type it yourself.
 2. Google Ads (Chrome): only if you approved £15 a day yesterday, send the message below. If you approved £10 a day, change nothing in Google Ads.
-3. If December ads are not allowed, send Chrome this instead: 'In my Mock Partner Google Ads account, pause the campaign. Change nothing else.'
+3. If December ads are not allowed, send Chrome this instead: 'In my CaseSpar Google Ads account, pause the campaign. Change nothing else.'
 4. If ads were already paused, do nothing in Google Ads.
 
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In my Mock Partner Google Ads account, change the campaign's daily budget from £10 to £15. Change nothing else. Show me before you save, and I'll type yes. Never type card or bank details.
+In my CaseSpar Google Ads account, change the campaign's daily budget from £10 to £15. Change nothing else. Show me before you save, and I'll type yes. Never type card or bank details.
 ````
 
 ## d47-4: Contact careers services 6 to 10
@@ -92,7 +92,7 @@ Subject: Case interview practice for your students applying to consulting
 
 Dear [careers service team, or the named contact],
 
-I'm Aman, founder of Mock Partner (mockpartner.com), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
+I'm Aman, founder of CaseSpar (casespar.app), a UK company that helps students practise consulting case interviews. Students work through a full case with a text-based AI interviewer, the maths is checked by code, and they get a scored debrief on five skills. Every case is original and signed off by a reviewer with consulting experience.
 
 With some consulting internship deadlines falling in January (each firm's own page has its dates), I'd like to offer your students, at no cost to the university:
 - a code for your students: two extra free AI interviews each (on top of the one everyone gets) and 20% off a first purchase;
@@ -105,9 +105,9 @@ If you'd prefer not to hear from me, reply 'no thanks' and I won't contact you a
 
 Kind regards,
 Aman
-Founder, Mock Partner
+Founder, CaseSpar
 MARTZEY LTD, 86-90 Paul Street, London, EC2A 4NE
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## d47-5: Set up any society, club or careers service that said yes
@@ -118,7 +118,7 @@ hello@mockpartner.com
 **Steps**
 
 1. Skip this if nobody new said yes since Friday.
-2. On mockpartner.com/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
+2. On casespar.app/admin, find their club code (you may have made it before you contacted them, as on Days 17 and 24) or create one with their name. Copy the club page link.
 3. Attach the partner pack and the case-workshop pack, fill in the reply below and send it. Mark them 'partner' on your list.
 4. For a US club, use the Day 40 reply instead.
 
@@ -139,7 +139,7 @@ Members who sign up with the code get two extra free AI interviews and 20% off t
 If someone needs to approve it first (for example your students' union), tell me what they need and I'll send it. I'm also happy to join a session online in January.
 
 Aman
-hello@mockpartner.com
+hello@casespar.app
 ````
 
 ## Write down today

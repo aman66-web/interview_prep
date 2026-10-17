@@ -13,7 +13,7 @@ About 120 minutes in total. 5 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105 (or your lower cap); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. No LinkedIn post today. From tomorrow to Thursday 31 December, there are no big pushes: the routine, search and the email list only.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -60,10 +60,10 @@ Claude, here are week 10's numbers (Days 64 to 70, Friday 18 December to Thursda
 
 ````text
 Version A (keep ads at £10 a day):
-In my Mock Partner Google Ads account, set the daily budgets of the campaigns that are running now so they add up to £10 a day. Leave the paused January campaigns paused. Change nothing else, and show me the budgets before you save; I'll type yes.
+In my CaseSpar Google Ads account, set the daily budgets of the campaigns that are running now so they add up to £10 a day. Leave the paused January campaigns paused. Change nothing else, and show me the budgets before you save; I'll type yes.
 
 Version B (pause):
-In my Mock Partner Google Ads account, pause every campaign that is running now. Leave the January campaigns paused too. Change nothing else, and confirm everything shows 'Paused'.
+In my CaseSpar Google Ads account, pause every campaign that is running now. Leave the January campaigns paused too. Change nothing else, and confirm everything shows 'Paused'.
 ````
 
 ## d70-5: Fact-check this week's second new page (market sizing shortcuts, unless Claude's plan named another)

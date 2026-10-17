@@ -21,14 +21,14 @@ About 40 minutes in total. 3 tasks, in order.
 
 **Steps**
 
-1. Open mockpartner.com in a private window and sign in with your second email.
+1. Open casespar.app in a private window and sign in with your second email.
 2. Go to the pricing page. Click each plan (Monthly $39, the 90-Day Pass $99, and the 12-month plan if it's live) and check the 'start straight away' tick box shows before checkout, and that each reaches Stripe's checkout page with the right price. Close the page; don't pay.
 3. If anything is wrong, send Claude the message below.
 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Claude, the checkout on mockpartner.com isn't working properly: [what you saw, and the time]. Please find out why (read-only first), fix it on the PR branch and tell me exactly what to approve.
+Claude, the checkout on casespar.app isn't working properly: [what you saw, and the time]. Please find out why (read-only first), fix it on the PR branch and tell me exactly what to approve.
 ````
 
 ## d72-3: Write down three questions users asked this month

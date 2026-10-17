@@ -388,8 +388,8 @@ describe("what the card shows", () => {
   });
 
   it("shows the site's host in the footer", () => {
-    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://www.mockpartner.com");
-    expect(siteHost("http://localhost:3077")).toBe("mockpartner.com");
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://www.casespar.app");
+    expect(siteHost("http://localhost:3077")).toBe("casespar.app");
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", "");
     expect(siteHost("http://localhost:3077")).toBe("localhost:3077");
     vi.unstubAllEnvs();

@@ -13,7 +13,7 @@ About 120 minutes in total. 6 tasks, in order.
 
 1. Write yesterday's six numbers in the Numbers tab.
 2. Alarms: Anthropic under 80% of the limit; ads this week under £105 (or your lower cap); no Vercel errors.
-3. Reply to every email in hello@mockpartner.com and every admin enquiry.
+3. Reply to every email in hello@casespar.app and every admin enquiry.
 4. Post the text below this morning (UK). Skip it if you're on 2 posts a week or LinkedIn isn't kept.
 5. In today's note: one user comment, and your minutes per channel.
 
@@ -30,8 +30,8 @@ They work because 25 is a quarter of 100 and 5 is half of 10.
 
 Say the shortcut out loud as you use it ('times 100, then a quarter'), so the interviewer can follow your maths.
 
-Free mental maths trainer, no account needed: https://mockpartner.com/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-d62
-(I built Mock Partner.)
+Free mental maths trainer, no account needed: https://casespar.app/tools/mental-maths-trainer?utm_source=linkedin&utm_medium=social&utm_campaign=post-d62
+(I built CaseSpar.)
 ````
 
 ## d62-2: Chrome exports this month's Search Console data
@@ -47,7 +47,7 @@ Free mental maths trainer, no account needed: https://mockpartner.com/tools/ment
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Open Google Search Console for mockpartner.com (read only; change no settings). For the last 28 days, export the Performance report by query and by page (clicks, impressions, click rate, average position), and the page indexing report (indexed and not indexed). Save them as searchconsole-queries.csv, searchconsole-pages.csv and searchconsole-indexing.csv, and tell me the total clicks and impressions in one line.
+Open Google Search Console for casespar.app (read only; change no settings). For the last 28 days, export the Performance report by query and by page (clicks, impressions, click rate, average position), and the page indexing report (indexed and not indexed). Save them as searchconsole-queries.csv, searchconsole-pages.csv and searchconsole-indexing.csv, and tell me the total clicks and impressions in one line.
 ````
 
 ## d62-3: Ask Claude for the search improvement list
@@ -108,7 +108,7 @@ Save them as societies-new.csv and mba-clubs-new.csv.
 ````text
 Case interview maths, no calculator. Pause the video and try it before the answer appears.
 
-More free drills at mockpartner.com (I built it).
+More free drills at casespar.app (I built it).
 
 #caseinterview #consulting #mentalmaths
 ````
@@ -125,7 +125,7 @@ More free drills at mockpartner.com (I built it).
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, please make 10 more vertical 'Can you do this case maths without a calculator?' cards like the first two kits, using drills not used in either kit: 3 percentages, 2 growth rates, 2 break-even, 2 market-sizing steps and 1 chart reading. Same format: the question, a 5-second pause, then the worked answer, with a 20-second script and a caption for each, and mockpartner.com on screen. Faceless, no firm names, no music I don't have the rights to. Every number recomputed by tests.
+Claude, please make 10 more vertical 'Can you do this case maths without a calculator?' cards like the first two kits, using drills not used in either kit: 3 percentages, 2 growth rates, 2 break-even, 2 market-sizing steps and 1 chart reading. Same format: the question, a 5-second pause, then the worked answer, with a 20-second script and a caption for each, and casespar.app on screen. Faceless, no firm names, no music I don't have the rights to. Every number recomputed by tests.
 ````
 
 ## Write down today

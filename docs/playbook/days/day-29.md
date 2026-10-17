@@ -53,14 +53,14 @@ First-round case interviews for some UK graduate roles start about now. Bain Lon
 6. Read the firm's own careers pages for the interview format, and prepare your 'why consulting' and 'why this firm' answers from them.
 7. Check the practical things in your invite: online or in person, the time zone, and your camera and microphone if it's online.
 
-Free help on Mock Partner:
-- Mental maths drills: https://mockpartner.com/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
-- Chart-reading drills: https://mockpartner.com/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
-- A full practice interview with a scored debrief (free account, no card): https://mockpartner.com/?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
+Free help on CaseSpar:
+- Mental maths drills: https://casespar.app/drills/mental-maths?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
+- Chart-reading drills: https://casespar.app/drills/chart-reading?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
+- A full practice interview with a scored debrief (free account, no card): https://casespar.app/?utm_source=newsletter&utm_medium=email&utm_campaign=first-round-checklist
 
-Good luck. Mock Partner is for practice before interviews, never during one.
+Good luck. CaseSpar is for practice before interviews, never during one.
 
-[your name], Mock Partner
+[your name], CaseSpar
 
 Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named in this email.
 ````
@@ -73,12 +73,12 @@ Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, 
 **Steps**
 
 1. Screen-record card 4 from Claude's kit and post it to YouTube Shorts, TikTok and Instagram Reels with Claude's caption for that card (or the caption below if it has none).
-2. Keep mockpartner.com on screen and no firm names.
+2. Keep casespar.app on screen and no firm names.
 
 **Text to use (post, email or message)** (copy exactly):
 
 ````text
-Can you do this case maths without a calculator? Pause, try it, then check the answer. More free drills at mockpartner.com. Practice for before interviews; not affiliated with any consulting firm. #caseinterview #consulting #mentalmaths
+Can you do this case maths without a calculator? Pause, try it, then check the answer. More free drills at casespar.app. Practice for before interviews; not affiliated with any consulting firm. #caseinterview #consulting #mentalmaths
 ````
 
 ## d29-4: Post today's LinkedIn tip (your 15th post).
@@ -105,7 +105,7 @@ Groups that work for most questions:
 Say the groups first, then two or three ideas in each, then pick the one you'd try first and say why.
 
 If you'd like a short free email course on case practice, there's a sign-up box on our guides (you can unsubscribe at any time):
-https://mockpartner.com/guides?utm_source=linkedin&utm_medium=social&utm_campaign=post-15
+https://casespar.app/guides?utm_source=linkedin&utm_medium=social&utm_campaign=post-15
 ````
 
 ## d29-5: Confirm the reviewer's last batch.

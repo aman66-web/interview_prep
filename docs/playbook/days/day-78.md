@@ -14,7 +14,7 @@ About 95 minutes in total. 5 tasks, in order.
 1. Write yesterday's six numbers in the Numbers tab.
 2. Raise the Anthropic monthly limit to $200 (or the amount you chose on Wednesday) in the Anthropic Console, on the same page as before. Type it yourself. Your decision; it's a ceiling, not a charge.
 3. Alarms: Anthropic under 80% of the new limit; ads this week (Fri 1 to Thu 7 Jan) under £225; no Vercel errors.
-4. Reply to every email in hello@mockpartner.com and every admin enquiry.
+4. Reply to every email in hello@casespar.app and every admin enquiry.
 5. Key post: replace [deadlines page link] with the page's address, and post the text below late morning (UK). Then add the 'First comment' text as the first comment on your own post.
 6. In today's note: one user comment, and your minutes per channel.
 
@@ -31,7 +31,7 @@ Two things while you write applications:
 
 Our free deadlines page links to each firm's own page: [deadlines page link]?utm_source=linkedin&utm_medium=social&utm_campaign=post-d78
 
-I built Mock Partner. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
+I built CaseSpar. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named here.
 
 First comment:
 Sources: BCG https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs · Oliver Wyman https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html · McKinsey https://www.mckinsey.com/careers/interviewing · Bain https://www.bain.com/careers/hiring-process/digital-assessment/
@@ -61,7 +61,7 @@ Sources: BCG https://careers.bcg.com/global/en/locations/united-kingdom/associat
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Open mockpartner.com and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.
+Open casespar.app and find our page 'Consulting application deadlines 2026-27 (UK)'. For every date on it, open the firm's own page linked next to it and check the date is still the same. Give me a table: firm, our date, what the firm's page says today, same yes or no. Read only: don't change anything.
 ````
 
 ## d78-4: Chrome asks Google to look at the new pages
@@ -76,7 +76,7 @@ Open mockpartner.com and find our page 'Consulting application deadlines 2026-27
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-In Google Search Console for mockpartner.com, use URL Inspection to request indexing for these pages, one at a time: our deadlines page, and [paste the live links of the pages published since 28 December]. Change nothing else. Tell me which ones were accepted.
+In Google Search Console for casespar.app, use URL Inspection to request indexing for these pages, one at a time: our deadlines page, and [paste the live links of the pages published since 28 December]. Change nothing else. Tell me which ones were accepted.
 ````
 
 ## d78-5: One helpful Reddit answer for UK internship applicants, where the rules allow
@@ -102,7 +102,7 @@ A simple routine for case maths, 10 to 15 minutes a day:
 
 Do it by hand. McKinsey and Bain both say calculators aren't allowed in their interviews (check their careers pages).
 
-Disclosure: I built Mock Partner, which has free maths and chart drills checked by code. It isn't affiliated with or endorsed by McKinsey, Bain or any other firm: https://mockpartner.com/drills/mental-maths?utm_source=reddit&utm_medium=social&utm_campaign=answer-d78
+Disclosure: I built CaseSpar, which has free maths and chart drills checked by code. It isn't affiliated with or endorsed by McKinsey, Bain or any other firm: https://casespar.app/drills/mental-maths?utm_source=reddit&utm_medium=social&utm_campaign=answer-d78
 ````
 
 ## Write down today

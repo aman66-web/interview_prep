@@ -11,11 +11,11 @@ About 125 minutes in total. 5 tasks, in order.
 
 **Steps**
 
-1. Open mockpartner.com/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in your Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
+1. Open casespar.app/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in your Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.
 2. Alarms: Anthropic spend under 80% of this month's limit; ad spend inside this week's cap (£0 this week); no failed deployment or errors in Vercel.
 3. Today only: raise the Anthropic monthly limit from $20 to $50 (console.anthropic.com, Settings, Limits). Your decision; it is a ceiling, not a charge.
 4. Monday check: sign in once with your second email address to check sign-in emails still arrive.
-5. Reply to every email in hello@mockpartner.com and every enquiry on the admin page within 24 hours. Be honest; never promise offers or results.
+5. Reply to every email in hello@casespar.app and every enquiry on the admin page within 24 hours. Be honest; never promise offers or results.
 6. Note one thing a user said or did, and the minutes you spent on each channel today. You send these notes to Claude on Thursday.
 
 ## d11-2: Let Chrome set up Google Search Console and Bing Webmaster Tools.
@@ -30,7 +30,7 @@ About 125 minutes in total. 5 tasks, in order.
 **Message for Claude in Chrome (it is doing this task itself)** (copy exactly):
 
 ````text
-Verify mockpartner.com in Google Search Console as a Domain property (TXT record on Vercel DNS), submit sitemap.xml, request indexing for the home, pricing, free case and guides pages, and import it into Bing Webmaster Tools.
+Verify casespar.app in Google Search Console as a Domain property (TXT record on Vercel DNS), submit sitemap.xml, request indexing for the home, pricing, free case and guides pages, and import it into Bing Webmaster Tools.
 ````
 
 ## d11-3: Ask Claude to tell search engines about every page (IndexNow).
@@ -45,7 +45,7 @@ Verify mockpartner.com in Google Search Console as a Domain property (TXT record
 **Message to paste into the Claude Code cloud session** (copy exactly):
 
 ````text
-Claude, mockpartner.com is now public. Please run the IndexNow script you added for every page in the sitemap, and tell me in one line whether it was accepted.
+Claude, casespar.app is now public. Please run the IndexNow script you added for every page in the sitemap, and tell me in one line whether it was accepted.
 ````
 
 ## d11-4: Post your soft-launch post on LinkedIn.
@@ -64,7 +64,7 @@ Claude, mockpartner.com is now public. Please run the IndexNow script you added 
 ````text
 I've built a website for practising consulting case interviews, and this week I'm opening it quietly to find out what breaks.
 
-It's called Mock Partner. You run a full practice case by text with an AI interviewer: you ask clarifying questions, ask for the exhibits, do the maths and give a recommendation. Then you get a debrief that scores five skills from 1 to 5.
+It's called CaseSpar. You run a full practice case by text with an AI interviewer: you ask clarifying questions, ask for the exhibits, do the maths and give a recommendation. Then you get a debrief that scores five skills from 1 to 5.
 
 Two things I cared about most:
 - The maths is checked by code against the right answer, not by the AI's opinion.
@@ -74,7 +74,7 @@ Your first full interview is free: you just create a free account, no card neede
 
 If you're preparing for case interviews this season, I'd really value blunt feedback, especially on anything that feels unrealistic.
 
-https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=soft-launch
+https://casespar.app/?utm_source=linkedin&utm_medium=social&utm_campaign=soft-launch
 ````
 
 ## d11-5: Ask the people on your Day 7 list, one at a time, whether they'd like to try it.
@@ -93,12 +93,12 @@ https://mockpartner.com/?utm_source=linkedin&utm_medium=social&utm_campaign=soft
 ````text
 First message:
 
-Hi [first name], hope you're well. Could I ask a small favour? I've been building a website called Mock Partner, where you practise consulting case interviews by text with an AI interviewer that then scores you, and I'm looking for a few people I know to test it and tell me honestly what's broken. Would you be up for trying it? The first full interview is free for everyone (a free account, no card). No worries at all if not.
+Hi [first name], hope you're well. Could I ask a small favour? I've been building a website called CaseSpar, where you practise consulting case interviews by text with an AI interviewer that then scores you, and I'm looking for a few people I know to test it and tell me honestly what's broken. Would you be up for trying it? The first full interview is free for everyone (a free account, no card). No worries at all if not.
 
 Second message, only if they say yes:
 
-Thanks! Here it is: https://mockpartner.com/?utm_source=friends&utm_medium=message&utm_campaign=soft-launch
-I'd really value blunt feedback, especially anything that felt unrealistic, confusing or broken. Just reply here, or email hello@mockpartner.com.
+Thanks! Here it is: https://casespar.app/?utm_source=friends&utm_medium=message&utm_campaign=soft-launch
+I'd really value blunt feedback, especially anything that felt unrealistic, confusing or broken. Just reply here, or email hello@casespar.app.
 ````
 
 ## Write down today
