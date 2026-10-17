@@ -1,0 +1,221 @@
+{
+  "slug": "terms",
+  "title": "Terms of service",
+  "seo_title": "Terms of service | CaseSpar",
+  "description": "The terms for using CaseSpar: your account, free and paid plans, fair-use limits, fair use of the AI, our content, and your legal rights.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "These terms are the agreement between you and us when you use CaseSpar. Please read them before you buy a plan. Effective date: [effective date].",
+  "blocks": [
+    { "type": "h2", "id": "who-we-are", "text": "1. Who we are" },
+    {
+      "type": "p",
+      "text": "CaseSpar is run by [legal entity name], a company registered in [England and Wales, founder to confirm] with company number [company number]. Our registered address is [registered address]. In these terms, \"we\", \"us\" and \"our\" mean [legal entity name]. You can contact us at [support email]."
+    },
+
+    { "type": "h2", "id": "the-service", "text": "2. What CaseSpar is" },
+    {
+      "type": "p",
+      "text": "CaseSpar is a website for practising consulting case interviews. It includes practice cases, an AI interviewer, a scored debrief after each interview, and practice drills."
+    },
+    {
+      "type": "p",
+      "text": "CaseSpar is for practice only. It is not a recruitment service, it doesn't put you forward for jobs, and no firm sees your results."
+    },
+
+    { "type": "h2", "id": "your-account", "text": "3. Your account" },
+    {
+      "type": "ul",
+      "items": [
+        "You log in with your email address. We email you a one-time sign-in link or code. There is no password.",
+        "Keep your email account secure. Anyone who can read your email can log in as you.",
+        "An account is for one person. Please don't share it.",
+        "You must be at least [minimum age, founder to confirm, for example 18] to create an account or buy a plan.",
+        "If you think someone else has used your account, tell us straight away at [support email]."
+      ]
+    },
+
+    { "type": "h2", "id": "plans", "text": "4. Free and paid plans" },
+    {
+      "type": "p",
+      "text": "The free plan includes one AI interview in total (the free starter case), 20 drills a day and every case prompt."
+    },
+    {
+      "type": "p",
+      "text": "Paid plans include every case, unlimited drills, up to 3 AI interviews a day and 60 a month, and an outline of a strong answer in each debrief. There are two paid plans:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Monthly: $39 a month. It renews automatically each month until you cancel.",
+        "90-Day Pass: $99, paid once. It gives 90 days of access and never renews. If you buy another pass while one is running, the new 90 days are added to the end of your current pass."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Prices are in US dollars. [Founder to confirm with an accountant whether prices include VAT or other taxes, and say so here.] Stripe takes payments for us on its own secure page. We never see or store your card details."
+    },
+    {
+      "type": "p",
+      "text": "If a Monthly payment fails, paid features pause until the payment goes through."
+    },
+    {
+      "type": "p",
+      "text": "We may change our prices. A new price never applies to time you have already paid for. If the Monthly price changes, we will tell you at least 30 days before your first renewal at the new price, so you can cancel first if you want to."
+    },
+
+    { "type": "h2", "id": "cancelling", "text": "5. Cancelling and refunds" },
+    {
+      "type": "ul",
+      "items": [
+        "You can cancel Monthly at any time. Open your account page, choose Manage billing and cancel in Stripe's billing portal. You won't be charged again, and you keep access until the end of the month you have already paid for.",
+        "The 90-Day Pass doesn't need cancelling, because it never renews.",
+        "All sales are final: we don't offer refunds, except where the law requires them (see our refund policy). Before you pay, you confirm that you want access to start straight away and understand that you lose the 14-day right to cancel once you start using your plan. Nothing here affects your other legal rights as a consumer.",
+        "Deleting your account cancels any subscription straight away and ends any paid time left. It doesn't give you a refund."
+      ]
+    },
+    { "type": "p", "text": "Nothing in these terms takes away your legal rights as a consumer." },
+
+    { "type": "h2", "id": "fair-use", "text": "6. Fair-use limits" },
+    { "type": "p", "text": "AI interviews cost us money to run, so every plan has limits:" },
+    {
+      "type": "ul",
+      "items": [
+        "Free plan: 1 AI interview in total. Paid plans: up to 3 a day and 60 a month. An interview counts once you start it.",
+        "Daily limits reset at midnight UTC. Monthly limits reset at the start of each calendar month (UTC).",
+        "Each interview allows up to 40 of your messages, of up to 2,000 characters each. A very long interview may be wrapped up early. You still get your debrief.",
+        "A free account can answer 20 drills a day. Without an account, you can try 5 drills in a browser tab."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "We may change these limits to keep CaseSpar fair and affordable. We will tell you at least 30 days before we reduce the limits of a plan you have paid for."
+    },
+
+    { "type": "h2", "id": "fair-play", "text": "7. Using CaseSpar fairly" },
+    { "type": "p", "text": "Please don't:" },
+    {
+      "type": "ul",
+      "items": [
+        "try to make the AI reveal answer keys, rubrics or model answers, or make it do anything other than run the case",
+        "copy, publish or sell our cases, drills, model answers or other content",
+        "use bots, scrapers or other automated tools on the site",
+        "try to get around the usage limits, for example by opening several accounts",
+        "try to break or overload the site, or get into other people's accounts or data",
+        "type in other people's personal details, or confidential material from a real employer or a real interview",
+        "use CaseSpar for anything unlawful"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you break these rules, we may limit, suspend or close your account. We will tell you why, unless the law stops us. [Founder and lawyer to confirm what happens to any paid time left if an account is closed for this reason.]"
+    },
+
+    { "type": "h2", "id": "our-content", "text": "8. Our content" },
+    {
+      "type": "p",
+      "text": "We own the cases, drills, guides and other content on CaseSpar, or have permission to use them. You may use them for your own interview practice. You may not copy, publish or sell them."
+    },
+    {
+      "type": "p",
+      "text": "Our cases are written for CaseSpar, with invented companies and numbers. Any likeness to a real business is a coincidence."
+    },
+
+    { "type": "h2", "id": "what-you-write", "text": "9. What you write" },
+    {
+      "type": "p",
+      "text": "What you type in an interview stays yours. You allow us to store and process it to run CaseSpar: to run the AI interviewer, write your debrief and show you your history. To do this, we send the text of your interview to our AI provider, Anthropic."
+    },
+    {
+      "type": "p",
+      "text": "We don't read your interview transcripts. The only exception is when you ask us for help with a problem in a particular interview: then we may read that interview's transcript, only to fix the problem."
+    },
+    {
+      "type": "p",
+      "text": "Please don't include personal details in your answers. The interviewer doesn't need your name, school or employer."
+    },
+
+    { "type": "h2", "id": "ai-feedback", "text": "10. AI feedback" },
+    {
+      "type": "ul",
+      "items": [
+        "The interviewer and the debrief are produced by an AI model. They can be wrong, unclear or inconsistent.",
+        "Maths answers are checked by code against each case's expected answer. The rest of the feedback is the AI's judgement.",
+        "Scores and feedback are for practice only. They are not a prediction of any firm's decision, and they are not careers advice.",
+        "We can't promise any result in a real interview or job application."
+      ]
+    },
+
+    { "type": "h2", "id": "availability", "text": "11. Changes and availability" },
+    {
+      "type": "p",
+      "text": "We keep improving CaseSpar, so features, cases and drills may change. We try to keep the site running, but we can't promise it will always be available or free of errors. Sometimes we may need to pause it for maintenance."
+    },
+    {
+      "type": "p",
+      "text": "If we ever stop offering CaseSpar, we will give you notice and refund the unused part of any paid plan. [Founder to confirm.]"
+    },
+
+    { "type": "h2", "id": "ending", "text": "12. Ending your account" },
+    {
+      "type": "p",
+      "text": "You can delete your account at any time from your account page. This deletes your data, as the privacy policy explains."
+    },
+    {
+      "type": "p",
+      "text": "We may suspend or close your account if you seriously or repeatedly break these terms."
+    },
+
+    { "type": "h2", "id": "responsibility", "text": "13. Our responsibility to you" },
+    {
+      "type": "ul",
+      "items": [
+        "We provide CaseSpar with reasonable care and skill.",
+        "We are not responsible for losses we could not have foreseen, for business losses, or for the outcome of any real interview or job application.",
+        "Our total responsibility to you is limited to the amount you paid us in the 12 months before your claim. [Founder and lawyer to confirm.]",
+        "Nothing in these terms limits our responsibility for death or personal injury caused by our negligence, for fraud, or for anything else the law doesn't allow us to limit."
+      ]
+    },
+
+    { "type": "h2", "id": "not-affiliated", "text": "14. Not affiliated with any firm" },
+    {
+      "type": "callout",
+      "tone": "key",
+      "text": "Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named on this site."
+    },
+    {
+      "type": "p",
+      "text": "We use firm names only to describe something, such as a McKinsey-style case."
+    },
+
+    { "type": "h2", "id": "law", "text": "15. Law and disputes" },
+    {
+      "type": "p",
+      "text": "These terms are governed by the law of England and Wales. [Founder to confirm.] If you live in Scotland or Northern Ireland, you can also bring a claim in your local courts. [Lawyer to confirm.]"
+    },
+    {
+      "type": "p",
+      "text": "If something goes wrong, please contact us first at [support email] so we can try to put it right."
+    },
+
+    { "type": "h2", "id": "changes", "text": "16. Changes to these terms" },
+    {
+      "type": "p",
+      "text": "We may update these terms. The date of the latest version is shown on this page. If a change matters, we will email account holders before it applies."
+    },
+
+    { "type": "h2", "id": "contact", "text": "17. Contact" },
+    { "type": "p", "text": "[legal entity name], [registered address]. Email: [support email]." },
+
+    {
+      "type": "links",
+      "title": "Related pages",
+      "items": [
+        { "label": "Privacy policy", "href": "/legal/privacy" },
+        { "label": "Refund policy", "href": "/legal/refunds" },
+        { "label": "Disclaimer", "href": "/legal/disclaimer" },
+        { "label": "Pricing", "href": "/pricing" }
+      ]
+    }
+  ]
+}

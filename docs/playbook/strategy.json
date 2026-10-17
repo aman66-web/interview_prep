@@ -1,0 +1,1663 @@
+{
+ "meta": {
+  "written": "Thu 15 Oct 2026",
+  "day_1": "Fri 16 Oct 2026",
+  "day_90": "Wed 13 Jan 2027",
+  "weeks_run": "Friday to Thursday. Week 1 = Days 1-7 (Fri 16 Oct to Thu 22 Oct). Week 13 = Days 85-90 (Fri 8 Jan to Wed 13 Jan).",
+  "weekly_review_days": [
+   7,
+   14,
+   21,
+   28,
+   35,
+   42,
+   49,
+   56,
+   63,
+   70,
+   77,
+   84,
+   90
+  ],
+  "founder_time": "About 2 to 3 hours a day, 7 days a week (assumption agreed in context.md). Days 1-10 may need the full 3 hours. Christmas Day (Day 71) is the 15-minute routine only; Days 72-73 are light (30-45 minutes).",
+  "who_values": "Use the template's 'who' keys: 'you' (the founder), 'claude' (Claude Code in the cloud: edits the site, writes content, pushes to the PR branch), 'chrome' (Claude in Chrome in the founder's own terminal: clicks around websites; the founder types passwords, codes, card and bank details himself).",
+  "money_rule": "Nothing that costs money happens without the founder saying yes that day. Every spend in this plan is a cap he approves, not a promise to spend.",
+  "branch_rule": "Claude may push to the PR branch claude/gifted-shannon-r42f73 without asking. Merging or pushing to main (which is what makes a change live after launch) always needs the founder's yes.",
+  "status_of_numbers": "Every weekly number is a 'good case' aim built from our own assumptions. They are not forecasts or promises. Facts about the outside world come only from the research files, with their links."
+ },
+ "target": {
+  "lines": [
+   "$10,000 a month means about 113 new paying customers a month, if half buy the 90-Day Pass ($99) and half pay Monthly ($39) and stay about 2 months (our assumptions). That is about 57 passes ($5,600) plus about 113 Monthly payments ($4,400, new and continuing) in the month.",
+   "The two extremes: about 102 passes a month and no Monthly at all, or about 257 people paying Monthly at the same time and no passes.",
+   "Per day that is about 4 new paying customers, every day of the month.",
+   "If you meant £10,000: that is about $13,247 at the European Central Bank's rate on 15 Oct 2026 (£1 = about $1.325), so about 150 new paying customers a month (about 75 passes and 150 Monthly payments). Everything in this plan goes up by about a third.",
+   "This is money customers pay, before costs. Stripe takes 1.5% + 20p on standard UK cards and 3.15% + 20p on international cards, plus 2% if it converts currency and 0.7% on subscriptions. UK VAT is 20%; if prices include VAT, about a sixth of each UK sale is VAT (the accountant decides how it applies). Our guess: you keep roughly $8,500 to $9,000 of each $10,000 before AI costs (assumption).",
+   "AI cost at the goal: roughly $400 to $1,000 a month (assumption, from about $0.12 for a typical interview and $0.37 for a long one). Small next to revenue, but the Anthropic spend limit must keep pace or interviews stop."
+  ],
+  "usd": {
+   "monthly_revenue": 10000,
+   "average_revenue_per_new_paying_customer": 88.5,
+   "how": "0.5 x $99 (pass) + 0.5 x ($39 x 2 months) = $88.50",
+   "new_paying_customers_per_month": 113,
+   "passes_per_month": 57,
+   "monthly_payments_per_month": 113,
+   "extremes": {
+    "all_passes": 102,
+    "all_monthly_active_subscribers": 257
+   },
+   "new_paying_per_day": 3.8
+  },
+  "gbp": {
+   "monthly_revenue_gbp": 10000,
+   "usd_equivalent": 13247,
+   "rate": "ECB reference rates 15 Oct 2026: 1 euro = 1.1208 US dollars = 0.84610 pounds, so £1 = about $1.3247",
+   "new_paying_customers_per_month": 150,
+   "passes_per_month": 75,
+   "monthly_payments_per_month": 150
+  },
+  "net_note": "Gross, not take-home. Stripe fees and VAT come off (see lines). To keep $10,000 after fees and VAT you would need about $11,500 of sales (assumption)."
+ },
+ "assumptions": [
+  {
+   "label": "Plan mix of new buyers",
+   "value": "50% 90-Day Pass, 50% Monthly",
+   "basis": "assumption (education apps lean towards longer plans, which hints passes may sell well: https://www.revenuecat.com/state-of-subscription-apps-2026-education)"
+  },
+  {
+   "label": "How long Monthly buyers stay",
+   "value": "About 2 months on average (case prep is seasonal)",
+   "basis": "assumption"
+  },
+  {
+   "label": "Average revenue per new paying customer",
+   "value": "$88.50",
+   "basis": "assumption (from the two lines above and the prices in site.config.ts)"
+  },
+  {
+   "label": "Visitors who create a free account",
+   "value": "4%",
+   "basis": "https://unbounce.com/conversion-benchmark-report/saas-conversion-rate/ (landing pages: median 6.6% all industries, 3.8% software). Whole-site traffic converts less than a landing page, so 4% is our assumption"
+  },
+  {
+   "label": "Free sign-ups who finish the free interview",
+   "value": "40%",
+   "basis": "assumption (check it on the admin page from Day 11)"
+  },
+  {
+   "label": "Finishers who pay",
+   "value": "10% (so 4% of all sign-ups pay)",
+   "basis": "https://www.lennysnewsletter.com/p/what-is-a-good-free-to-paid-conversion ('3%-5% is a GOOD conversion rate', 6%-8% great, over 6 months); https://www.revenuecat.com/state-of-subscription-apps (freemium apps median 2.1%)"
+  },
+  {
+   "label": "How fast buyers pay",
+   "value": "Most within 2 weeks of signing up, because interviews have dates",
+   "basis": "assumption (Lenny's rates count 6 months)"
+  },
+  {
+   "label": "AI cost per interview",
+   "value": "About $0.12 typical, $0.37 for a long one (claude-sonnet-5-5)",
+   "basis": "repo: docs/PROGRESS.md cost estimate (lib/ai/pricing.ts); Anthropic's invoice is the source of truth"
+  },
+  {
+   "label": "Stripe fees",
+   "value": "1.5% + 20p UK cards; 2.5% + 20p EEA; 3.15% + 20p international; +2% currency conversion; +0.7% Billing on subscriptions",
+   "basis": "https://stripe.com/gb/pricing"
+  },
+  {
+   "label": "UK VAT",
+   "value": "20% standard rate; how it applies is the accountant's call",
+   "basis": "https://www.gov.uk/vat-rates"
+  },
+  {
+   "label": "Pound to dollar",
+   "value": "£1 = about $1.3247",
+   "basis": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+  },
+  {
+   "label": "Google search click cost",
+   "value": "Unknown for case-interview terms. Averages: $5.42 all industries; $4.81 education (secondary source). Keyword Planner gives the real range on Day 6",
+   "basis": "https://www.searchenginejournal.com/what-are-good-google-ads-benchmarks/546995/ ; https://hawky.ai/blog/what-is-a-good-cpc"
+  },
+  {
+   "label": "Ad clicks that sign up",
+   "value": "8%",
+   "basis": "https://www.searchenginejournal.com/what-are-good-google-ads-benchmarks/546995/ (all-industry search ads conversion rate 8.18%, any goal); our use of it for sign-ups is an assumption"
+  },
+  {
+   "label": "What one ad click is worth to us",
+   "value": "About $0.28 at base rates ($88.50 x 8% x 4%); about $0.57 if ad visitors pay twice as often",
+   "basis": "assumption (simple maths on the rows above)"
+  },
+  {
+   "label": "Google daily budget overspend",
+   "value": "Up to 2x the daily budget on one day; at most 30.4x the daily budget in a month",
+   "basis": "https://support.google.com/google-ads/answer/6385083"
+  },
+  {
+   "label": "Google new-advertiser credit",
+   "value": "Not planned: you already advertise (Preflight Pass), and the offer needs a new advertiser",
+   "basis": "https://www.google.com/intl/en_uk/ads/coupons/terms/"
+  },
+  {
+   "label": "LinkedIn Ads",
+   "value": "Minimum $10 a day; boosted personal posts had a $2.29 median cost per click in one B2B study (secondary)",
+   "basis": "https://business.linkedin.com/advertise/ads/best-practices/maximize-your-budget ; https://zenabm.com/blog/linkedin-ads-benchmarks-2026.md"
+  },
+  {
+   "label": "Reddit Ads",
+   "value": "About $5 a day minimum; $0.50 to $4.00 a click (agency estimates)",
+   "basis": "https://directiveconsulting.com/blog/reddit-ads-cost-b2b-2026/"
+  },
+  {
+   "label": "TikTok Ads",
+   "value": "Campaign daily budget must be over $50 (too much for a test)",
+   "basis": "https://ads.tiktok.com/help/article/budget"
+  },
+  {
+   "label": "ICO data protection fee",
+   "value": "£52 a year for a micro company (£47 by direct debit)",
+   "basis": "https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/"
+  },
+  {
+   "label": "Domain",
+   "value": "casespar.app, bought by the founder on Vercel on 17 Oct 2026: $9.99 the first year, then $15 a year",
+   "basis": "repo: docs/PROGRESS.md"
+  },
+  {
+   "label": "Size of a rival, for scale",
+   "value": "Road to Offer (71 cases, AI-graded cases) about 43,500 visits a month; Hacking the Case Interview about 81,000; PrepLounge about 145,000 (Similarweb estimates, 3 months to Sep 2026, divided by 3)",
+   "basis": "https://www.similarweb.com/website/roadtooffer.com/ ; https://www.similarweb.com/website/hackingthecaseinterview.com/ ; https://www.similarweb.com/website/preplounge.com/"
+  },
+  {
+   "label": "Founder time",
+   "value": "2 to 3 hours a day, 7 days a week",
+   "basis": "assumption (context.md)"
+  },
+  {
+   "label": "Reviewer fee",
+   "value": "Claude's planning guess $25 to $50 a case, so $500 to $1,000 for all 20. Not researched: the real quotes decide",
+   "basis": "assumption"
+  }
+ ],
+ "funnel": [
+  {
+   "stage": "Visitors",
+   "per_month": "70,600",
+   "rate": "4% create a free account (assumption)"
+  },
+  {
+   "stage": "Free sign-ups",
+   "per_month": "2,820",
+   "rate": "40% finish the free interview (assumption)"
+  },
+  {
+   "stage": "Finished the first free interview",
+   "per_month": "1,130",
+   "rate": "10% of finishers pay, so 4% of sign-ups (Lenny: 3% to 5% is good)"
+  },
+  {
+   "stage": "New paying customers",
+   "per_month": "113",
+   "rate": "$88.50 each in the month on average (assumption)"
+  },
+  {
+   "stage": "Revenue",
+   "per_month": "$10,000",
+   "rate": "About 57 passes + 113 Monthly payments"
+  }
+ ],
+ "funnel_detail": {
+  "base_rates": {
+   "visit_to_signup": "4%",
+   "signup_to_finished": "40%",
+   "finished_to_paid": "10%",
+   "signup_to_paid": "4%"
+  },
+  "usd_target_per_month": {
+   "visits": 70600.0,
+   "signups": 2820.0,
+   "finished_free_interview": 1130.0,
+   "paid": 113
+  },
+  "usd_target_per_day": {
+   "visits": 2353,
+   "signups": 94,
+   "finished_free_interview": 38,
+   "paid": 3.8
+  },
+  "gbp_target_per_month": {
+   "visits": 93500.0,
+   "signups": 3740.0,
+   "finished_free_interview": 1500.0,
+   "paid": 150
+  },
+  "if_rates_are_great": {
+   "rates": "6% sign up, 50% finish, 15% of finishers pay (7.5% of sign-ups)",
+   "visits": 25100.0,
+   "signups": 1510.0,
+   "finished_free_interview": 750.0,
+   "paid": 113,
+   "lesson": "Better conversion cuts the visitors needed from about 70,600 to about 25,100 a month. Improving the funnel is worth as much as finding traffic."
+  },
+  "day_90_goal_per_month": {
+   "run_rate_usd": 3000,
+   "visits": 21200.0,
+   "signups": 850.0,
+   "finished_free_interview": 340.0,
+   "paid": 34
+  },
+  "scale_check": "At base rates the goal needs about 70,600 visits a month: more than Road to Offer gets today (about 43,500) and close to Hacking the Case Interview (about 81,000), both established sites (Similarweb estimates).",
+  "what_to_watch": "Admin page funnel: visit -> sign-up -> started free case -> finished free case -> saw paywall -> started checkout -> paid (SPEC section 12). Visitors come from Vercel Web Analytics."
+ },
+ "honest_timeline": [
+  "Straight answer: $10,000 in a single month is very unlikely inside these 90 days. At our planning rates it needs about 70,600 visits a month. Road to Offer, an established rival with 71 cases, gets about 43,500 a month (Similarweb estimate). A brand-new site starts near zero, and none of our 20 cases is reviewed yet.",
+  "If things go well, this is a realistic path (our estimates, not promises): about $3,000 a month by early January 2027 (the 90-day goal; the weekly aims add up to about $5,700 over the 90 days and a run rate of about $3,400 a month in early January); $4,000 to $6,000 in the best spring months (Feb and Mar 2027: UK internship interviews, US undergraduates starting to prepare); a summer dip; then the first $10,000 month in the autumn 2027 peak.",
+  "Target date for the first $10,000 month: November 2027. By then the search pages are about a year old, there are 50+ reviewed cases, and the society and careers-service deals are renewed for the new academic year. Check this date at Day 90 and again at the end of March 2027.",
+  "What could make it faster: one or two paid university or careers-service deals (one deal can equal dozens of single sales; Yale's careers office already gives its students free CaseCoach access); conversion better than the benchmarks (if 8% of sign-ups pay instead of 4%, you need half the visitors); an ad channel that pays back and can grow; closing the gap with rivals (more cases, perhaps a voice mode).",
+  "What could make it slower: going public later than early November (most UK graduate case interviews fall between mid-November and early December); a slow reviewer (no cases live); weak AI interviews (people don't finish the free one); fewer than 2% of sign-ups paying; Google taking months to rank a new domain; ad clicks costing more than a customer is worth; buyers put off by the no-refunds rule; a quiet season from about April to August (assumption); rivals priced almost the same (CaseTutor $99 for 3 months) or free (McKinsey gives its own AI practice tool to candidates after they are offered an interview, according to a Business Insider report).",
+  "So the 90-day goal is not $10,000. It is to build the engine and prove the numbers: live by Day 10; 20 reviewed cases by Day 35 and 30 by Day 85; about 1,700 free sign-ups and 70 paying customers in total; at least 4% of sign-ups paying and 40% finishing the free interview; a run rate of about $3,000 a month in the first two weeks of January; at least 3 university societies or careers services using CaseSpar; and a clear yes or no on paid ads.",
+  "The floor (still worth carrying on): a $1,000 a month run rate and 3% of sign-ups paying by Day 90. Below that, stop all spending and rethink the offer at the Day 90 review.",
+  "If you meant £10,000: add about a third to every number, and expect it a few months after the $10,000 month (assumption)."
+ ],
+ "ninety_day_goal": {
+  "live_by": "Day 10 (Sun 25 Oct) (public), soft launch Day 11 (Mon 26 Oct)",
+  "reviewed_cases": {
+   "by_day_8": 5,
+   "by_day_17": 10,
+   "by_day_28": 15,
+   "by_day_35": 20,
+   "by_day_52": 25,
+   "by_day_85": 30
+  },
+  "cumulative_by_day_90": {
+   "visits": 42000,
+   "signups": 1680,
+   "paying_customers": 71,
+   "revenue_usd": 5700
+  },
+  "january_run_rate_usd": {
+   "goal": 3000,
+   "floor": 1000,
+   "stretch": 5000,
+   "how_measured": "Revenue in Days 78-90 (13 days) x 30 / 13. Goal = $1,300 or more in those 13 days; floor = $430."
+  },
+  "rates": {
+   "visit_to_signup": ">= 4%",
+   "signup_to_finished": ">= 40%",
+   "signup_to_paid": ">= 4% (floor 3%)"
+  },
+  "partners": "At least 3 UK societies or careers services using club codes for the January term; at least 1 group-pass conversation.",
+  "list": "300+ people on the opt-in email list (assumption-based aim).",
+  "ads": "A clear yes (cost per paying customer $60 or less) or a clear stop.",
+  "content": "About 25 new search pages (2 to 3 a week), every fact checked by you."
+ },
+ "phases": [
+  {
+   "name": "Launch readiness",
+   "from": 1,
+   "to": 10,
+   "dates": "Fri 16 Oct to Sun 25 Oct",
+   "goal": "A stranger can sign up with any email, do the reviewed free case, get a debrief and pay, on casespar.app, legally. Nothing is public until then.",
+   "exit": "Day 10 gate passes: sign-in works for other people's emails; Harbourline Bakeries plus at least 4 more cases signed off; one live purchase and one refund done; ICO fee paid or confirmed; legal placeholders filled and the lawyer's view in (or your recorded decision); hello@casespar.app works; a real AI interview read and the prompts tuned; you approve the merge to main.",
+   "order": [
+    "Day 1 (Fri 16 Oct): finish the Chrome setup job (docs/CHROME_SETUP.md parts A-H, started 15 Oct), run the UK trade mark search (extra job I), buy casespar.app if the search is clear, post the reviewer job.",
+    "Day 2 (Sat 17 Oct): domain, sign-in email sending (Resend), support inbox (ImprovMX) and CAPTCHA; ICO fee; book a lawyer; your first real AI interview.",
+    "Day 3 (Sun 18 Oct): Claude tunes the interviewer from your transcript; legal placeholders; shortlist reviewers.",
+    "Day 4 (Mon 19 Oct): hire the reviewer and send the brief, the answer keys and a shareable preview link; free starter case first.",
+    "Day 5 (Tue 20 Oct): test sign-in with an email address that isn't yours.",
+    "Day 6 (Wed 21 Oct): Keyword Planner check for ads (no spend).",
+    "Day 8 (Fri 23 Oct): first sign-offs applied; Stripe live mode in a separate CaseSpar Stripe account.",
+    "Day 9 (Sat 24 Oct): live purchase with a 100% code, then a refund test.",
+    "Day 10 (Sun 25 Oct): the gate; merge to main; production public."
+   ]
+  },
+  {
+   "name": "Soft launch",
+   "from": 11,
+   "to": 17,
+   "dates": "Mon 26 Oct to Sun 1 Nov",
+   "goal": "First real users from your own network and Search Console; find and fix problems before the big push; reach 10 reviewed cases.",
+   "exit": "By Day 17: 40+ free sign-ups, 15+ finished free interviews, no bug that blocks sign-in, interview or checkout, no support email older than 24 hours, average AI cost per interview under $0.40, 10 reviewed cases live. If not, keep soft-launching for up to 4 more days, but go public by Day 22 at the latest (UK interviews start mid-November)."
+  },
+  {
+   "name": "Public launch",
+   "from": 18,
+   "to": 46,
+   "dates": "Mon 2 Nov to Mon 30 Nov",
+   "goal": "Catch the UK graduate interview wave (Bain London first rounds mid-November, finals late November to early December). Steady sign-ups from several free channels, the first ad test, all 20 cases reviewed, then the 30-day decision.",
+   "exit": "Day 45 gate (the founder's bar in SPEC section 12): Go = 300+ sign-ups and 15+ paying, or 3%+ of sign-ups paying."
+  },
+  {
+   "name": "Scale what works",
+   "from": 47,
+   "to": 90,
+   "dates": "Tue 1 Dec to Wed 13 Jan",
+   "goal": "Put time and money only into the 2-3 channels that work. In December: win US MBA first-years preparing for January interviews and UK students applying for internships over the break, and book partner societies' January sessions. In January: catch the peak (BCG London's internship window 1 to 24 Jan, US MBA internship interviews from 4 Jan, UK spring terms from 11 Jan), hit the 90-day milestones and plan the next 90 days.",
+   "checkpoints": [
+    "Day 60 (Mon 14 Dec): the Day 60 gate (which channels stay, January budget).",
+    "Day 77 (Thu 31 Dec): December review: December revenue $2,000 or more (aim about $2,500), 4%+ of sign-ups paying, 25 reviewed cases, 3+ partner societies or careers services, January caps approved."
+   ],
+   "exit": "Day 90 gate: a run rate of $3,000 a month or more in Days 78-90, 1,500+ sign-ups and 60+ paying customers in total, 4%+ of sign-ups paying, 30 reviewed cases."
+  }
+ ],
+ "weeks": [
+  {
+   "week": 1,
+   "days": "1-7",
+   "dates": "Fri 16 Oct to Thu 22 Oct",
+   "theme": "Make it work end to end",
+   "summary": "Finish the setup, buy the domain, hire the reviewer and run the first real AI interview. Nothing is public yet.",
+   "milestones": [
+    {
+     "day": 1,
+     "text": "Chrome setup job finished (CHROME_SETUP parts A-H) and the UK trade mark search done; casespar.app bought if the search is clear; reviewer job posted."
+    },
+    {
+     "day": 2,
+     "text": "Domain, Resend sign-in emails, hello@casespar.app and CAPTCHA set up; ICO fee paid or confirmed; lawyer booked; your first real AI interview on Harbourline Bakeries."
+    },
+    {
+     "day": 3,
+     "text": "Claude tunes the interviewer from your transcript; legal placeholders filled; first 3 search articles drafted."
+    },
+    {
+     "day": 4,
+     "text": "Reviewer hired and briefed; starts with Harbourline Bakeries and 4 more cases."
+    },
+    {
+     "day": 5,
+     "text": "Sign-in works for an email address that isn't yours."
+    },
+    {
+     "day": 6,
+     "text": "Keyword Planner check (UK and US) decides whether a November ad test is worth it."
+    }
+   ],
+   "targets": {
+    "visits": 0,
+    "signups": 0,
+    "paid": 0,
+    "revenue": 0,
+    "spend_cap": 0
+   },
+   "channels": [
+    "None yet (setup)",
+    "Search articles drafted, not published"
+   ]
+  },
+  {
+   "week": 2,
+   "days": "8-14",
+   "dates": "Fri 23 Oct to Thu 29 Oct",
+   "theme": "Go live quietly",
+   "summary": "First sign-offs go in, payments go live, the site opens on Day 10 and you tell people you know on Day 11.",
+   "milestones": [
+    {
+     "day": 8,
+     "text": "Harbourline Bakeries and at least 4 more cases signed off and marked reviewed; Stripe live mode in a separate CaseSpar Stripe account."
+    },
+    {
+     "day": 9,
+     "text": "Live purchase with a 100% FOUNDERTEST code, then a refund test; admin shows paid customers by source."
+    },
+    {
+     "day": 10,
+     "text": "Launch-readiness gate; if it passes you approve the merge to main and casespar.app goes public."
+    },
+    {
+     "day": 11,
+     "text": "Soft launch: Search Console, Bing and the sitemap; launch post on your own LinkedIn; the daily routine starts."
+    },
+    {
+     "day": 12,
+     "text": "Chrome lists 40 UK consulting societies and careers services; Claude builds club codes."
+    },
+    {
+     "day": 13,
+     "text": "Chrome saves the rules of each subreddit before anything is posted."
+    }
+   ],
+   "targets": {
+    "visits": 750,
+    "signups": 30,
+    "paid": 1,
+    "revenue": 70,
+    "spend_cap": 0
+   },
+   "channels": [
+    "Your own LinkedIn and personal accounts",
+    "People who agreed to try it",
+    "Search (Search Console from Day 11)"
+   ]
+  },
+  {
+   "week": 3,
+   "days": "15-21",
+   "dates": "Fri 30 Oct to Thu 5 Nov",
+   "theme": "Public launch",
+   "summary": "Open the doors properly on Day 18, start the society outreach and build the email list and referrals.",
+   "milestones": [
+    {
+     "day": 15,
+     "text": "Claude builds the opt-in email list and a 7-day case practice email course."
+    },
+    {
+     "day": 16,
+     "text": "Free UK application deadlines page live (dates only from firms' own pages, re-checked that day)."
+    },
+    {
+     "day": 17,
+     "text": "10 reviewed cases live; soft-launch exit check."
+    },
+    {
+     "day": 18,
+     "text": "Public launch: LinkedIn launch post, first honest 'I built this' Reddit post where the rules allow, first 10 society and careers-service contacts."
+    },
+    {
+     "day": 20,
+     "text": "Claude builds refer-a-friend."
+    },
+    {
+     "day": 21,
+     "text": "Google Ads account and campaign built and paused; you approve £10 a day only if the Day 6 check passed and 10+ reviewed cases are live."
+    }
+   ],
+   "targets": {
+    "visits": 2000,
+    "signups": 80,
+    "paid": 3,
+    "revenue": 200,
+    "spend_cap": 0
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn",
+    "Reddit (rules-checked)",
+    "Societies and careers services"
+   ]
+  },
+  {
+   "week": 4,
+   "days": "22-28",
+   "dates": "Fri 6 Nov to Thu 12 Nov",
+   "theme": "Catch the UK interview wave",
+   "summary": "UK graduate case interviews are about to start. Turn on the in-product loops, test ads if the numbers allow, and keep contacting societies.",
+   "milestones": [
+    {
+     "day": 22,
+     "text": "Google Ads test on at £10 a day (only if allowed); 7-day email course live."
+    },
+    {
+     "day": 24,
+     "text": "Refer-a-friend live."
+    },
+    {
+     "day": 25,
+     "text": "First 3 short videos posted; 10 more society contacts."
+    },
+    {
+     "day": 28,
+     "text": "15 reviewed cases live; weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 3000,
+    "signups": 120,
+    "paid": 5,
+    "revenue": 350,
+    "spend_cap": 70
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn",
+    "Reddit",
+    "Societies",
+    "Referral and share card",
+    "Email course (opt-in)",
+    "Google Ads test (if allowed)",
+    "Short video"
+   ]
+  },
+  {
+   "week": 5,
+   "days": "29-35",
+   "dates": "Fri 13 Nov to Thu 19 Nov",
+   "theme": "Mid-November first rounds",
+   "summary": "Bain London's first rounds are mid-November. Check the funnel on Day 30, launch on Product Hunt, and finish reviewing the first 20 cases.",
+   "milestones": [
+    {
+     "day": 29,
+     "text": "First newsletter to opted-in people (a first-round checklist)."
+    },
+    {
+     "day": 30,
+     "text": "Day 30 gate: is the funnel working at all?"
+    },
+    {
+     "day": 32,
+     "text": "Product Hunt page and first comment ready."
+    },
+    {
+     "day": 33,
+     "text": "Product Hunt launch (goes live 12:01 am Pacific, 8:01 am UK)."
+    },
+    {
+     "day": 35,
+     "text": "All 20 cases reviewed; Claude writes 5 new US MBA-style cases."
+    }
+   ],
+   "targets": {
+    "visits": 3500,
+    "signups": 140,
+    "paid": 6,
+    "revenue": 400,
+    "spend_cap": 70
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn",
+    "Reddit",
+    "Societies",
+    "Referral",
+    "Email list",
+    "Google Ads test (if on)",
+    "Short video",
+    "Product Hunt (one day)"
+   ]
+  },
+  {
+   "week": 6,
+   "days": "36-42",
+   "dates": "Fri 20 Nov to Thu 26 Nov",
+   "theme": "Turn towards US MBA candidates",
+   "summary": "US MBA first-years interview from 4 January and prepare now. Read the ad test, list US MBA clubs and start posting at US times. Thanksgiving is quiet in the US.",
+   "milestones": [
+    {
+     "day": 36,
+     "text": "Google Ads 14-day test read (keep, fix or stop); Chrome lists 20 US MBA consulting clubs' public contacts."
+    },
+    {
+     "day": 37,
+     "text": "Claude adds a 'practise without a calculator' setting (Bain and McKinsey say calculators are not allowed in their interviews)."
+    },
+    {
+     "day": 38,
+     "text": "5 new US MBA-style cases sent to the reviewer."
+    },
+    {
+     "day": 39,
+     "text": "US MBA push starts: posts at US times and first US club contacts."
+    },
+    {
+     "day": 42,
+     "text": "US Thanksgiving: no US push today, UK posts only; weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 3750,
+    "signups": 150,
+    "paid": 6,
+    "revenue": 430,
+    "spend_cap": 70
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn",
+    "Reddit",
+    "Societies (UK) and US MBA clubs",
+    "Referral",
+    "Email list",
+    "Google Ads (if kept)",
+    "Short video"
+   ]
+  },
+  {
+   "week": 7,
+   "days": "43-49",
+   "dates": "Fri 27 Nov to Thu 3 Dec",
+   "theme": "The 30-day decision",
+   "summary": "About a month after launch, use the founder's own bar to decide: Go, Adjust or Stop. Then set December.",
+   "milestones": [
+    {
+     "day": 45,
+     "text": "Day 45 gate: Go, Adjust or Stop (SPEC section 12 bar)."
+    },
+    {
+     "day": 46,
+     "text": "December plan and spending caps approved; group passes built if a partner asked or the gate said Go."
+    },
+    {
+     "day": 47,
+     "text": "December starts: MBA winter-break prep article and a LinkedIn series for MBA candidates."
+    },
+    {
+     "day": 49,
+     "text": "Weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 3750,
+    "signups": 150,
+    "paid": 6,
+    "revenue": 470,
+    "spend_cap": 90
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn",
+    "Reddit",
+    "Societies and US MBA clubs",
+    "Referral",
+    "Email list",
+    "Google Ads (if kept)",
+    "Short video"
+   ]
+  },
+  {
+   "week": 8,
+   "days": "50-56",
+   "dates": "Fri 4 Dec to Thu 10 Dec",
+   "theme": "US MBA preparation peak",
+   "summary": "Kellogg's Round A internship resumes are due on Day 50, and UK terms end next week. Test a boosted LinkedIn post if the gate allowed it.",
+   "milestones": [
+    {
+     "day": 50,
+     "text": "LinkedIn boosted-post test, £10 a day to Day 54 (only if Day 45 = Go); MBA content push (Kellogg Round A resumes due today)."
+    },
+    {
+     "day": 52,
+     "text": "25 reviewed cases live (the US MBA batch)."
+    },
+    {
+     "day": 53,
+     "text": "Newsletter 2: a Christmas-break practice plan."
+    },
+    {
+     "day": 56,
+     "text": "Claude writes 5 UK internship-style cases (the UK internship batch); weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 4250,
+    "signups": 170,
+    "paid": 7,
+    "revenue": 580,
+    "spend_cap": 155
+   },
+   "channels": [
+    "Search",
+    "Founder LinkedIn (+ boosted-post test)",
+    "Reddit",
+    "US MBA clubs",
+    "Societies",
+    "Referral",
+    "Email list",
+    "Google Ads (if kept)",
+    "Short video"
+   ]
+  },
+  {
+   "week": 9,
+   "days": "57-63",
+   "dates": "Fri 11 Dec to Thu 17 Dec",
+   "theme": "Keep what works",
+   "summary": "UK terms end and students go home to apply for internships. On Day 60, keep the best 2-3 channels and set January's budget.",
+   "milestones": [
+    {
+     "day": 57,
+     "text": "LSE and Imperial terms end: UK internship content goes out (BCG London window 1-24 Jan, Oliver Wyman UK deadline 15 Jan)."
+    },
+    {
+     "day": 59,
+     "text": "Batch 3 cases sent to the reviewer; if Day 45 said Adjust, re-check the numbers today."
+    },
+    {
+     "day": 60,
+     "text": "Day 60 gate: keep the top 2-3 channels, set the January budget."
+    },
+    {
+     "day": 61,
+     "text": "Optional builds decided at the gate start (12-month plan; consent banner and ads tag)."
+    },
+    {
+     "day": 63,
+     "text": "January sessions booked with partner societies; weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 4500,
+    "signups": 180,
+    "paid": 8,
+    "revenue": 670,
+    "spend_cap": 105
+   },
+   "channels": [
+    "The 2-3 channels the Day 60 gate keeps",
+    "Search (always)",
+    "Email list (always)"
+   ]
+  },
+  {
+   "week": 10,
+   "days": "64-70",
+   "dates": "Fri 18 Dec to Thu 24 Dec",
+   "theme": "Get January ready",
+   "summary": "Prepare everything January needs before Christmas, so the peak runs itself.",
+   "milestones": [
+    {
+     "day": 64,
+     "text": "January content ready: deadlines page updated for UK internships; 'last week before MBA first rounds' article."
+    },
+    {
+     "day": 66,
+     "text": "January ad campaign (US MBA and UK internship terms) built and paused, if the Day 60 gate allows."
+    },
+    {
+     "day": 68,
+     "text": "Newsletter 3: your Christmas-break case plan."
+    },
+    {
+     "day": 70,
+     "text": "Light days start after today's weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 4000,
+    "signups": 160,
+    "paid": 7,
+    "revenue": 600,
+    "spend_cap": 105
+   },
+   "channels": [
+    "The kept channels",
+    "Search",
+    "Email list"
+   ]
+  },
+  {
+   "week": 11,
+   "days": "71-77",
+   "dates": "Fri 25 Dec to Thu 31 Dec",
+   "theme": "Quiet week: rest and a light routine",
+   "summary": "Christmas to New Year is the quietest week for everyone (our estimate). Do the routine, rest, and approve January.",
+   "milestones": [
+    {
+     "day": 71,
+     "text": "Christmas Day: 15-minute routine only (support emails)."
+    },
+    {
+     "day": 74,
+     "text": "Back to normal hours; check the January plan."
+    },
+    {
+     "day": 77,
+     "text": "December review against the $2,500 aim; January caps approved."
+    }
+   ],
+   "targets": {
+    "visits": 3000,
+    "signups": 120,
+    "paid": 5,
+    "revenue": 460,
+    "spend_cap": 70
+   },
+   "channels": [
+    "Search",
+    "Email list",
+    "Google Ads at £10 a day or paused"
+   ]
+  },
+  {
+   "week": 12,
+   "days": "78-84",
+   "dates": "Fri 1 Jan to Thu 7 Jan",
+   "theme": "January peak",
+   "summary": "BCG London's internship window opens on Day 78 and US MBA interviews start on Day 81. Everything that works runs at full strength.",
+   "milestones": [
+    {
+     "day": 78,
+     "text": "BCG London internship window opens (to 24 Jan): deadlines page re-checked; LinkedIn post; newsletter 4."
+    },
+    {
+     "day": 79,
+     "text": "Ads raised to the January cap and the Reddit Ads test started (only if the Day 60 gate allowed)."
+    },
+    {
+     "day": 81,
+     "text": "US MBA internship interviews begin (Stern, Fuqua, UNC; Wharton 4-8 Jan): US push at US times. LSE exams 4-10 Jan, so no LSE push."
+    },
+    {
+     "day": 84,
+     "text": "Weekly review."
+    }
+   ],
+   "targets": {
+    "visits": 5000,
+    "signups": 200,
+    "paid": 9,
+    "revenue": 760,
+    "spend_cap": 225
+   },
+   "channels": [
+    "All kept channels at full strength",
+    "Google Ads (January cap, if allowed)",
+    "Reddit Ads test (if allowed)",
+    "Partner societies"
+   ]
+  },
+  {
+   "week": 13,
+   "days": "85-90",
+   "dates": "Fri 8 Jan to Wed 13 Jan",
+   "theme": "Review and plan the next 90 days",
+   "summary": "UK terms restart and partner societies run January sessions. Check the 90-day goal and plan the spring.",
+   "milestones": [
+    {
+     "day": 85,
+     "text": "30 reviewed cases live (batch 3)."
+    },
+    {
+     "day": 88,
+     "text": "UK spring terms start (LSE, UCL, Warwick): partner societies' January sessions; Kellogg Round A interviews 11-15 Jan."
+    },
+    {
+     "day": 89,
+     "text": "Claude prepares the 90-day report from your numbers."
+    },
+    {
+     "day": 90,
+     "text": "Day 90 gate and the next-90-days plan (Oliver Wyman UK intern deadline 15 Jan, BCG London 24 Jan, MBA offers due from 29 Jan)."
+    }
+   ],
+   "targets": {
+    "visits": 4500,
+    "signups": 180,
+    "paid": 8,
+    "revenue": 710,
+    "spend_cap": 185
+   },
+   "channels": [
+    "All kept channels",
+    "Partner societies' January sessions"
+   ]
+  }
+ ],
+ "weekly_totals": {
+  "visits": 42000,
+  "signups": 1680,
+  "paid": 71,
+  "revenue": 5700,
+  "spend_cap": 1145,
+  "january_run_rate_usd": 3392
+ },
+ "channels": [
+  {
+   "rank": 1,
+   "name": "University consulting societies and careers services",
+   "why": "Rivals win here: Yale gives its students free CaseCoach access, CaseCoach says it serves 50+ universities, and PrepLounge sells academic licences and gives clubs voucher codes. One yes reaches a whole group of motivated students. UK terms restart in January, just as internship windows open.",
+   "cost": "No cash at first. Offer members two extra free interviews and 20% off their first purchase (a proposal you approve; costs only AI time, cents per member), a free case-workshop pack for a society evening, and free 90-Day Passes as case-competition prizes. Paid group passes later (you set the price). US society sponsorships cost $500 to $1,500 a year (Yale SOM); UK prices are not published, so pay no cash in the first 90 days.",
+   "start": "Day 12 (Tue 27 Oct): Chrome builds the UK list. Day 18 (Mon 2 Nov): first 10 contacts, then 10 a week. US MBA clubs from Day 39 (Mon 23 Nov).",
+   "start_day": 12,
+   "stop": "By Day 45: if 30+ contacted and no replies, Claude rewrites the offer and you switch to careers services. By Day 60: a partner whose code brought under 10 sign-ups in 3 weeks gets no more of your time. A partner with 20+ sign-ups gets offered a group pass.",
+   "how": "Use the society's published sponsorship form or address, or the careers service's published email. One at a time, written personally, with a line saying how to opt out. No bulk emails to societies until the lawyer answers (a society may count as individuals under the email rules). Any email a society sends about us must be marked as an advert. Students' unions approve deals, and deals last one academic year.",
+   "claude_builds": [
+    "B8 club codes and club pages, partner one-pager, case-workshop pack",
+    "B18 group passes"
+   ],
+   "sources": [
+    "https://ocs.yale.edu/resources/casecoach/",
+    "https://casecoach.com/about-us",
+    "https://www.preplounge.com/en/for-universities",
+    "https://groups.som.yale.edu/handbook/external-sponsors/",
+    "https://www.hallamstudentsunion.com/pageassets/opportunities/societies/portal/finance/sponsorship/Society-sponsorship-guidelines(1).pdf",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/business-to-business-marketing/"
+   ]
+  },
+  {
+   "rank": 2,
+   "name": "Search: free guides, tools and drills (SEO)",
+   "why": "Organic search is the biggest source of desktop visits for four of the five rivals checked (42% to 69%, Similarweb estimates). CaseSpar already has 10 guides, 3 firm guides, a 60-term glossary, 4 free tools and drills that visitors can try without an account (5 per browser tab). It is slow but it compounds.",
+   "cost": "£0. Claude writes; you check every fact (30 to 45 minutes a page).",
+   "start": "Day 3 (Sun 18 Oct): first drafts. Day 11 (Mon 26 Oct): Search Console, Bing and the sitemap. Then 2 to 3 new pages a week.",
+   "start_day": 3,
+   "stop": "Never stop. Judge it at Day 60, not before. At Day 60: pages with no impressions after 6 weeks get improved or merged; if the site had under 200 search clicks in the 28 days to Day 60, move effort to tools and drills pages and to topics that already get impressions. Never mass-produce pages (Google's spam policy targets that).",
+   "claude_builds": [
+    "B12 weekly search pages",
+    "B11 UK deadlines page",
+    "B9 a scored question that works without an account",
+    "IndexNow ping after each publish (in B6)"
+   ],
+   "sources": [
+    "https://www.similarweb.com/website/preplounge.com/",
+    "https://www.similarweb.com/website/roadtooffer.com/",
+    "https://www.similarweb.com/website/hackingthecaseinterview.com/",
+    "https://developers.google.com/search/docs/essentials/spam-policies",
+    "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+    "https://www.roadtooffer.com/blog/free-case-interview-drills"
+   ]
+  },
+  {
+   "rank": 3,
+   "name": "Your own LinkedIn (organic posts)",
+   "why": "Free, its rules are clear, and students and MBA candidates use it for careers. Honest posts as yourself ('I built CaseSpar'), each with one useful tip: a maths shortcut, a chart drill, a market-sizing step.",
+   "cost": "£0. About 10 minutes a day; Claude drafts the week's posts on Thursdays.",
+   "start": "Day 11 (Mon 26 Oct): launch post. Then 5 posts a week.",
+   "start_day": 11,
+   "stop": "After 15 posts (about Day 30): if LinkedIn-tagged sign-ups total under 15, drop to 2 posts a week and give the time to societies and search.",
+   "how": "No engagement pods (agreeing to like each other's posts), no promotional connection requests to strangers, no cold sales messages to UK people (direct messages count as marketing under UK email rules). Always use a tagged link (utm_source=linkedin).",
+   "claude_builds": [
+    "Weekly post drafts from real product facts",
+    "Simple images made from drills"
+   ],
+   "sources": [
+    "https://www.linkedin.com/legal/professional-community-policies",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/"
+   ]
+  },
+  {
+   "rank": 4,
+   "name": "Reddit and forums (honest participation)",
+   "why": "Candidates ask 'how do I practise alone?' in public threads. Being useful there, and saying 'I built CaseSpar' when it is relevant, can bring motivated visitors quickly.",
+   "cost": "£0. About 10 minutes a day.",
+   "start": "Day 13 (Wed 28 Oct): Chrome saves each subreddit's rules. Day 18 (Mon 2 Nov): first post, only where the rules allow.",
+   "start_day": 13,
+   "stop": "Never post where the rules forbid self-promotion. If 2 posts are removed in one subreddit, stop there. After 3 allowed posts, if Reddit-tagged sign-ups total under 20, stop link posts and only answer questions.",
+   "how": "The rules of r/consulting, r/MBA, r/UniUK and others could not be checked (Reddit blocks automated reading); an old third-party snapshot says r/consulting bans service advertising. Never pose as a student (that breaks UK law), never use second accounts or ask friends to upvote. Don't promote on rivals' forums.",
+   "claude_builds": [
+    "Post and answer drafts checked against the saved rules"
+   ],
+   "sources": [
+    "https://assets.publishing.service.gov.uk/media/691b9bd821ef5aaa6543ee6f/Unfair_commercial_practices_CMA207_18_Nov_2025__2_.pdf",
+    "https://www.asa.org.uk/type/non_broadcast/code_section/02.html"
+   ]
+  },
+  {
+   "rank": 5,
+   "name": "In-product loops: share card, refer-a-friend, opt-in email course",
+   "why": "Every user can bring the next one at almost no cost. The share card already exists. Rivals build their lists with free email courses (Crafting Cases: 7 days; MBBPrep: 14 days).",
+   "cost": "About $0.12 of AI per extra free interview (up to $0.37 for a long one). The email service: Claude checks the plan first.",
+   "start": "Email course live Day 22 (Fri 6 Nov); first newsletter Day 29 (Fri 13 Nov); refer-a-friend live Day 24 (Sun 8 Nov).",
+   "start_day": 22,
+   "stop": "If one email's unsubscribe rate is over 2%, send half as often. If referrals bring under 3% of sign-ups after 4 weeks, keep the feature but stop promoting it. Measure emails by tagged link clicks only (no open-tracking pixels).",
+   "how": "Opt-in only: an unticked box, the exact wording saved, an unsubscribe link and our postal address in every marketing email. Never ask users for friends' email addresses.",
+   "claude_builds": [
+    "B10 opt-in list and 7-day email course",
+    "B13 refer-a-friend"
+   ],
+   "sources": [
+    "https://www.craftingcases.com/",
+    "https://mbbprep.com/",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+   ]
+  },
+  {
+   "rank": 6,
+   "name": "Google Search Ads (small, measured test)",
+   "why": "People searching 'case interview practice' often have an interview coming. But at benchmark costs ads are unlikely to pay back: at our base rates one click is worth only about $0.28 (about $0.57 if ad visitors pay twice as often). The test finds the real numbers; Keyword Planner decides whether it is worth running at all.",
+   "cost": "Up to £10 a day for the November test (at most £300). More only at a gate.",
+   "start": "Day 6 (Wed 21 Oct): Keyword Planner check. Day 21 (Thu 5 Nov): new CaseSpar ads account and campaign, paused. Day 22 (Fri 6 Nov): on, only if 10+ reviewed cases are live and at least 5 relevant terms show a low top-of-page bid of £0.60 or less.",
+   "start_day": 22,
+   "stop": "Don't start if the bids are higher. After £150: stop if a free sign-up costs over £6; carry on to £300 if £3 or less (one more week if in between). After £300: stop if a paying customer costs over $88; keep at £10 a day if $60 to $88; raise only at a gate if $60 or less.",
+   "how": "No firm names in ad text. Ads only promise what is live (Google suspends for 'unavailable offers' without warning). No promises of offers or results. Track with a tagged final URL (UTM), no Google tag, so no consent banner is needed. Google may spend up to 2x the daily budget on one day.",
+   "claude_builds": [
+    "B14 landing page, ad text, keywords and negatives",
+    "B19 consent banner and ads tag, only if you decide at Day 60"
+   ],
+   "sources": [
+    "https://support.google.com/google-ads/answer/7337243",
+    "https://support.google.com/adspolicy/answer/6118",
+    "https://support.google.com/adspolicy/answer/6020955",
+    "https://support.google.com/google-ads/answer/6385083",
+    "https://www.searchenginejournal.com/what-are-good-google-ads-benchmarks/546995/",
+    "https://hawky.ai/blog/what-is-a-good-cpc"
+   ]
+  },
+  {
+   "rank": 7,
+   "name": "Short videos (YouTube Shorts, TikTok, Instagram Reels)",
+   "why": "Free to post, and 328 drills make easy 30-second puzzles ('Can you do this case maths without a calculator?'). Bain and McKinsey say calculators are not allowed in their interviews, so it is a real skill. Faceless: screen recordings and text on screen.",
+   "cost": "£0. About 20 minutes a video. No TikTok Ads (minimum over $50 a day per campaign).",
+   "start": "Day 25 (Mon 9 Nov): first 3 videos, then 3 a week.",
+   "start_day": 25,
+   "stop": "After 20 videos (about Day 70): if total views are under 5,000 or video-tagged sign-ups under 15, stop.",
+   "how": "Put the site name on screen; Shorts links are weak and a TikTok bio link needs 1,000 followers or a business account (secondary source). Anyone you ever pay or gift must label posts 'Ad'.",
+   "claude_builds": [
+    "B15 drill cards and scripts"
+   ],
+   "sources": [
+    "https://ads.tiktok.com/help/article/budget",
+    "https://www.mckinsey.com/careers/interviewing",
+    "https://www.bain.com/careers/hiring-process/digital-assessment/",
+    "https://www.asa.org.uk/advice-online/influencers-guide.html"
+   ]
+  },
+  {
+   "rank": 8,
+   "name": "Product Hunt (one launch day)",
+   "why": "Free, a burst of visitors and a link to the site. Few case candidates are there, so it is one day only.",
+   "cost": "£0.",
+   "start": "Day 33 (Tue 17 Nov), live at 12:01 am Pacific (8:01 am UK).",
+   "start_day": 33,
+   "stop": "One-off. Never ask anyone to upvote (the only real rule). Invite people to comment.",
+   "claude_builds": [
+    "B16 launch text and replies"
+   ],
+   "sources": [
+    "https://www.producthunt.com/launch"
+   ]
+  },
+  {
+   "rank": 9,
+   "name": "Small paid social tests (LinkedIn boosted post, Reddit Ads)",
+   "why": "LinkedIn can target by school and field of study (audience of 300+ needed), and boosting your own post was its cheapest format in one study ($2.29 median a click). Reddit Ads start at about $5 a day (agency source).",
+   "cost": "LinkedIn £50 (Fri 4 Dec to Tue 8 Dec); Reddit up to £80 (Sat 2 Jan to Mon 11 Jan). Only if the Day 45 and Day 60 gates allow.",
+   "start": "Day 50 (Fri 4 Dec) (LinkedIn) and Day 79 (Sat 2 Jan) (Reddit).",
+   "start_day": 50,
+   "stop": "A free sign-up over £6 or a paying customer over $88: stop. Create the LinkedIn ad account in pounds (its currency can't be changed later).",
+   "claude_builds": [
+    "Ad text and targeting notes"
+   ],
+   "sources": [
+    "https://business.linkedin.com/advertise/ads/best-practices/maximize-your-budget",
+    "https://www.linkedin.com/help/lms/answer/a424655",
+    "https://zenabm.com/blog/linkedin-ads-benchmarks-2026.md",
+    "https://directiveconsulting.com/blog/reddit-ads-cost-b2b-2026/"
+   ]
+  },
+  {
+   "rank": 10,
+   "name": "Not in the first 90 days",
+   "why": "TikTok Ads (over $50 a day per campaign); paid student ambassadors or commission affiliates (minimum wage, worker status and Student visa rules; ask the accountant first); paid YouTube or influencer sponsorships (must be labelled 'Ad'; revisit once the cost per customer is known); cold emails or DMs to students; Meta or other ads that need a pixel; Show HN (low fit; it needs something to try without signing up, which the free tools do offer, so it stays an option later); 'CaseSpar vs X' comparison pages (check the advertising code first).",
+   "cost": "£0 (that's the point).",
+   "start": "Revisit at the Day 90 review.",
+   "stop": "n/a",
+   "sources": [
+    "https://ads.tiktok.com/help/article/budget",
+    "https://www.asa.org.uk/advice-online/influencers-guide.html",
+    "https://news.ycombinator.com/showhn.html",
+    "https://www.asa.org.uk/type/non_broadcast/code_section/03.html"
+   ]
+  }
+ ],
+ "gates": [
+  {
+   "day": 10,
+   "date": "Sun 25 Oct",
+   "check": "Is the site ready for strangers?",
+   "measure": [
+    "Sign-in email and 6-digit code arrive at an address that isn't yours (try a Gmail and, if you can, a university address); CAPTCHA on.",
+    "Harbourline Bakeries and at least 4 more cases signed off by the reviewer and showing on production.",
+    "One real live-mode purchase with a 100% FOUNDERTEST code worked, and one refund worked; the live webhook is on casespar.app.",
+    "ICO fee paid for MARTZEY LTD, or confirmed that the existing entry covers this site.",
+    "Legal placeholders filled; the lawyer's view on no-refunds and the tick box is in, or you have recorded your decision to open without it.",
+    "hello@casespar.app receives mail; NEXT_PUBLIC_SUPPORT_EMAIL, CRON_SECRET and ADMIN_EMAILS are set; /admin opens.",
+    "A real AI interview was read and the prompts tuned; Anthropic monthly limit set."
+   ],
+   "if_yes": "Approve the merge to main and make production public today. Soft launch tomorrow (Day 11).",
+   "if_no": "Don't open yet. Fix what failed. If the reviewer is the hold-up, hire a second reviewer today and split the cases. Re-check every day and open by Day 15 at the latest with whatever is reviewed, as long as the free starter case is signed off. If even that isn't signed off by Day 15, don't open: all effort goes into a second reviewer."
+  },
+  {
+   "day": 30,
+   "date": "Sat 14 Nov",
+   "check": "Is the funnel working at all? (Days 11-30)",
+   "measure": [
+    "200+ free sign-ups (aim about 270)",
+    "3%+ of visitors sign up",
+    "30%+ of sign-ups finish the free interview",
+    "5+ paying customers (aim about 11)"
+   ],
+   "if_yes": "Keep the plan. Google Ads keeps following its own rule (first judged after £150 spent; see the Google Ads channel).",
+   "if_no": "Fix the weakest number first. Under 3% of visitors signing up: Claude rewrites the home, pricing and guide calls to action and puts a scored question on the home page. Under 30% finishing: Claude checks where people stop (admin stages) and makes the free interview easier to start and finish. Under 5 paying with 30%+ finishing: Claude improves the debrief-to-paywall step (B21); you may approve an honest launch code with a real end date. Under 100 sign-ups: it's traffic, so give more time to societies, Reddit and LinkedIn, and check Search Console shows pages indexed."
+  },
+  {
+   "day": 45,
+   "date": "Sun 29 Nov",
+   "check": "The 30-day decision (your own bar from SPEC section 12, Days 11-45)",
+   "measure": [
+    "Go: 300+ sign-ups and 15+ paying, or 3%+ of sign-ups paying (aim about 585 sign-ups and 24 paying)",
+    "Adjust: 100-299 sign-ups or 5-14 paying",
+    "Stop or pivot: under 100 sign-ups and under 5 paying"
+   ],
+   "if_yes": "Go: December scale plan. Google Ads up to £15 a day only if a paying customer from ads costs $60 or less (£10 a day if $60 to $88; pause above $88); LinkedIn £50 boosted-post test on Day 50; group passes (B18); the next 5 cases.",
+   "if_no": "Adjust: no spending increase. Claude finds the biggest leak, you fix it, and you re-check on Day 59. Stop or pivot: pause all paid spend; ask users with an in-app question what is missing; with Claude, rethink the offer (who it's for, price, voice) by Day 52; keep search and societies going."
+  },
+  {
+   "day": 60,
+   "date": "Mon 14 Dec",
+   "check": "Which channels earn their place, and what does January get?",
+   "measure": [
+    "Revenue in Days 31-60: $1,500+ (aim about $2,100)",
+    "Sign-ups per hour of your time, per channel (from your weekly notes)",
+    "Cost per paying customer for each paid channel",
+    "Share of Monthly buyers who cancelled after one month"
+   ],
+   "if_yes": "January: Google Ads up to £25 a day if a paying customer costs $60 or less (£10-15 a day if $60-88); Reddit Ads test up to £80; keep the top 3 free channels; decide on the 12-month plan (B20) and the consent banner and ads tag (B19).",
+   "if_no": "Under $1,500: no January ad increase, and stop ads if a paying customer costs over $88. Put all your time into the 2 channels with the most sign-ups per hour. Claude reviews the debrief and pricing pages. Re-check on Day 77."
+  },
+  {
+   "day": 90,
+   "date": "Wed 13 Jan",
+   "check": "Did the 90 days build the engine?",
+   "measure": [
+    "Run rate in Days 78-90: $3,000+ a month ($1,300+ in those 13 days); floor $1,000",
+    "1,500+ sign-ups and 60+ paying customers in total",
+    "4%+ of sign-ups paying; 40%+ finishing the free interview",
+    "30 reviewed cases; 3+ partner societies or careers services"
+   ],
+   "if_yes": "On track. Next 90 days: aim for $5,000 a month by the end of March 2027 (UK internship interviews, case competitions, US undergraduates), sell group passes, and keep November 2027 (or earlier) for the first $10,000 month.",
+   "if_no": "$1,000 to $3,000: adjust, conversion first (debrief, pricing, plan options, more cases); keep November 2027 as a stretch. Under $1,000: stop all paid spend and rethink with Claude: who it's for, voice mode, price, or selling mainly to societies and careers services."
+  }
+ ],
+ "budget": [
+  {
+   "when": "Days 1-10 (setup, Fri 16 Oct to Sun 25 Oct)",
+   "cap": "Ads £0",
+   "note": "One-offs you approve one by one: domain about $15 a year after the first year; ICO fee £52 (£47 by direct debit) if not already paid; reviewer (you set the fee after quotes; Claude's guess $500 to $1,000 for 20 cases); lawyer's fixed-fee check (you decide after a quote); Anthropic monthly limit $20; email service and CAPTCHA (Claude checks the cost first). Nothing on marketing before the site works end to end."
+  },
+  {
+   "when": "Days 11-17 (soft launch)",
+   "cap": "Ads £0",
+   "note": "Raise the Anthropic limit to $50."
+  },
+  {
+   "when": "Days 18-46 (November)",
+   "cap": "Google Ads up to £10 a day (max £300)",
+   "note": "Only if the Day 6 Keyword Planner check passed and 10+ reviewed cases are live on Day 22. Anthropic limit $100 from Day 18. Reviewer fee for 5 new cases."
+  },
+  {
+   "when": "Days 47-77 (December)",
+   "cap": "Google Ads up to £15 a day (max £465); LinkedIn test £50",
+   "note": "Only if Day 45 = Go and a paying customer from ads costs $60 or less (£10 a day if $60 to $88; pause above $88); otherwise ads £0. Anthropic limit $150 from Day 47. Reviewer fee for 5 more cases."
+  },
+  {
+   "when": "Days 78-90 (January)",
+   "cap": "Google Ads up to £25 a day (max £325); Reddit Ads test up to £80",
+   "note": "Only if Day 60 shows a paying customer costs $60 or less (£10-15 a day if $60-88). Anthropic limit $200 from Day 78."
+  },
+  {
+   "when": "All 90 days",
+   "cap": "Ads at most about £1,145 if every gate passes; £0 if none does",
+   "note": "Check spend against the cap every day in the routine. Raise the Anthropic limit early if spend passes 80% of it, or interviews stop for everyone. Never pay for followers, reviews, upvotes, link packages or agencies."
+  }
+ ],
+ "builds": [
+  {
+   "id": "B1",
+   "day": 2,
+   "who": "claude",
+   "name": "Domain, sign-in emails, support inbox and CAPTCHA",
+   "message": "Claude, I've bought casespar.app in Vercel. Please (1) make every code and settings change the site needs for the new address, (2) write click-by-click steps for Claude in Chrome to attach the domain to the interview-prep project, set up Resend so sign-in emails come from casespar.app and connect it to Supabase as the email sender, add ImprovMX forwarding for hello@casespar.app to my inbox, update Supabase's Site URL and Redirect URLs, switch on CAPTCHA for sign-in, and change Supabase's two sign-in email templates to the code-only email in docs/SETUP.md (people sign in by typing the code), and (3) tell me before anything that costs money. Push to the PR branch, not main.",
+   "needs": "Domain bought (Day 1)."
+  },
+  {
+   "id": "B2",
+   "day": 3,
+   "who": "claude",
+   "name": "Tune the AI interviewer after the first real run",
+   "message": "Claude, I finished the free starter case (Harbourline Bakeries) with the real AI on the preview. Please read that session's transcript and debrief from Supabase (read-only), tell me in plain English what went well and what felt off, and tune lib/ai/prompt.ts. Run the tests and push to the PR branch."
+  },
+  {
+   "id": "B3",
+   "day": 3,
+   "who": "claude",
+   "name": "Legal placeholders and a brief for the lawyer",
+   "message": "Claude, please list every square-bracket note left in the legal, About and FAQ pages, fill in what you can from site.config.ts, and give me a short list of questions only I can answer. Then write a one-page brief for a UK lawyer covering: the no-refunds policy, the 'start straight away' tick box before checkout, and whether I may email student consulting societies' published sponsorship addresses one at a time."
+  },
+  {
+   "id": "B12",
+   "day": 3,
+   "who": "claude",
+   "name": "Search pages (every week)",
+   "message": "Claude, please write <2 or 3> new guide pages this week on: <topics from the plan>. Original worked examples only, every number recomputed by tests, plain English, a link to the matching free drill or tool, no firm logos, our 'not affiliated' line wherever a firm is named, and facts about firms only from their own pages. Show me the drafts before publishing.",
+   "repeat": "Send on Day 3, then every Tuesday (Days 12, 19, 26 ... 89)."
+  },
+  {
+   "id": "B4",
+   "day": 4,
+   "who": "claude",
+   "name": "Reviewer pack",
+   "message": "Claude, I've hired <name> to review the cases. Please export the answer key for Harbourline Bakeries and the next 4 cases you think are strongest (facts, exhibits, maths with working, model answer), one file per case, plus a short cover note pointing to docs/REVIEWER_GUIDE.md and docs/CASE_REVIEW_NOTES.md. Then do the same for the other 15."
+  },
+  {
+   "id": "B5",
+   "day": 7,
+   "who": "claude",
+   "name": "Record each sign-off (repeat every time)",
+   "message": "The reviewer <name> signed off <case> on <date>. Their changes: <paste>. Please make the changes, mark it reviewed, run npm run content:check and push to the PR branch.",
+   "note": "From Day 10 on, each batch goes live only when you approve the merge to main."
+  },
+  {
+   "id": "B6",
+   "day": 8,
+   "who": "claude",
+   "name": "Go-live pack",
+   "message": "Claude, the reviewer has signed off the starter case and <n> more. Please get the site ready to go public on casespar.app: write the Claude in Chrome steps to create a separate 'CaseSpar' Stripe account for MARTZEY LTD (statement descriptor CASESPAR, like Preflight Pass), activate live mode, add the live webhook for casespar.app, make a one-use 100% FOUNDERTEST promotion code and put the live keys into Vercel (I paste the secret keys myself); turn on Vercel Web Analytics; add the IndexNow key and script; write the Search Console and Bing steps; and give me the checklist for merging the PR into main. Don't merge or push to main: I'll approve that."
+  },
+  {
+   "id": "B7",
+   "day": 9,
+   "who": "claude",
+   "name": "Numbers on the admin page",
+   "message": "Claude, please add to the admin page: paying customers and revenue by first-touch source, campaign and keyword (utm_source, utm_campaign, utm_term), the share of sign-ups who finish the free interview, where unfinished interviews stop, and a 'this week's numbers' table I can copy into my playbook (sign-ups, finished free interviews, paid, revenue, AI cost). No new trackers or cookies."
+  },
+  {
+   "id": "B8",
+   "day": 12,
+   "who": "claude",
+   "name": "Club codes, club pages and a partner pack",
+   "message": "Claude, please build club codes. I create a code on the admin page for each university society or careers service. Members who sign up with it get two extra free interviews and 20% off their first purchase (I approve this offer), and their sign-ups and purchases show under the club's name on the admin page. Add a page /for-universities/<club> I can send each club, a one-page partner pack, and a printable case-workshop pack (one reviewed case with facilitator notes) a society can use for an evening. This needs a database change, so show me the migration and ask before applying it."
+  },
+  {
+   "id": "B9",
+   "day": 14,
+   "who": "claude",
+   "name": "Try it without an account",
+   "message": "Claude, please put one scored case-maths question on the home page and at the end of each guide that works without signing up (like the free drills), with a 'Try a full free interview' button after it. Make the free drills easier to find from the home page. Tag the button clicks in our own funnel only."
+  },
+  {
+   "id": "B10",
+   "day": 15,
+   "who": "claude",
+   "name": "Opt-in email list and a 7-day email course",
+   "message": "Claude, please add an unticked 'Send me case tips and deadline reminders' box at sign-up and on the account page, and a sign-up box for a free 7-day case practice email course on the guides. Save each consent with the exact wording and time. Every marketing email needs an unsubscribe link and MARTZEY LTD's postal address. Write the 7 course emails from our own guides and drills. Show me every email before it goes out. No open-tracking pixels; tag links instead. This needs a database change, so ask before applying it."
+  },
+  {
+   "id": "B11",
+   "day": 16,
+   "who": "claude",
+   "name": "Free UK application deadlines page",
+   "message": "Claude, please add a free page 'Consulting application deadlines 2026-27 (UK)' that lists only dates from the firms' own careers pages, each with its link and the date we checked it, plus our 'not affiliated' line. Re-check every date today. Tell readers to check the firm's page before applying. Show me before publishing, and remind me to re-check it every Friday."
+  },
+  {
+   "id": "B13",
+   "day": 20,
+   "who": "claude",
+   "name": "Refer-a-friend",
+   "message": "Claude, please build refer-a-friend: each user gets a personal link; when a friend signs up through it and finishes their free interview, both get one extra free interview. Never ask for friends' email addresses. Show referrals on the admin page. Ask before any database change."
+  },
+  {
+   "id": "B14",
+   "day": 21,
+   "who": "claude",
+   "name": "Google Ads landing page and campaign plan",
+   "message": "Claude, the Keyword Planner results are in <file>. Please write a Google Ads plan for a separate CaseSpar account: one UK Search campaign, £10 a day, Maximise clicks with a cap you suggest, phrase and exact keywords only, negatives, ad text with no firm names and no promises of offers, and a final URL suffix with UTM tags. Build a landing page for it if our home page isn't the best match. Then write the Claude in Chrome steps to build it paused."
+  },
+  {
+   "id": "B15",
+   "day": 25,
+   "who": "claude",
+   "name": "Short-video kit",
+   "message": "Claude, please make 10 vertical 'Can you do this case maths without a calculator?' cards from our drills (question, a 5-second pause, then the worked answer), with a 20-second script and caption for each and casespar.app on screen. Faceless. Give me them as images or a page I can screen-record."
+  },
+  {
+   "id": "B21",
+   "day": 31,
+   "who": "claude",
+   "name": "Conditional: debrief-to-paywall fixes",
+   "message": "Claude, only <x>% of people who finish the free interview buy. Please review the debrief, paywall and pricing pages and suggest 3 honest changes (no fake urgency, no fake proof). Build the one I pick.",
+   "note": "Only if the Day 30 gate shows fewer than 5 paying with 30%+ finishing."
+  },
+  {
+   "id": "B16",
+   "day": 32,
+   "who": "claude",
+   "name": "Product Hunt kit",
+   "message": "Claude, please write my Product Hunt launch for tomorrow: name, tagline, description, a first comment saying I built it and what's free, a list of 4 screenshots to take, and short honest replies to likely questions. No asking for upvotes."
+  },
+  {
+   "id": "B17",
+   "day": 35,
+   "who": "claude",
+   "name": "New cases (batches 2 and 3)",
+   "message": "Claude, please write 5 new original practice cases aimed at US MBA first-round interviews (US clients, invented companies and numbers), every number recomputed by content:check, as drafts for the reviewer, and update the review notes.",
+   "repeat": "Day 56: the same for 5 UK internship-style cases."
+  },
+  {
+   "id": "B22",
+   "day": 37,
+   "who": "claude",
+   "name": "Practise without a calculator",
+   "message": "Claude, Bain and McKinsey say calculators aren't allowed in their interviews. Please add a 'practise without the calculator' setting to the interview screen (on by default for new users, easy to switch off), mention it on the drills and pricing pages with links to the firms' pages, and keep our 'not affiliated' line."
+  },
+  {
+   "id": "B18",
+   "day": 46,
+   "who": "claude",
+   "name": "Group passes for clubs and careers services",
+   "message": "Claude, please build group passes: I sell a club or careers service <N> seats of the 90-Day Pass at $<price> each through one Stripe invoice or payment link; they get one invite link; each member who joins with it gets the pass; the admin page shows seats used. Write a one-page offer I can send them.",
+   "note": "Only if a partner asked or Day 45 = Go. Price is yours to set (Claude's suggestion: about $59 a seat for 10 or more; an assumption)."
+  },
+  {
+   "id": "B19",
+   "day": 61,
+   "who": "claude",
+   "name": "Optional: consent banner and Google Ads tag",
+   "message": "Claude, I've decided to allow the Google Ads tag on CaseSpar. Please propose the CLAUDE.md rule 2.7 change for me to approve, then build the consent banner (UK, EEA and Switzerland: nothing loads until Accept), load the tag only after consent, report sign-up and purchase conversions with no personal data, and update the privacy page. Same approach as Preflight Pass.",
+   "note": "Only if the Day 60 gate keeps ads at £15 a day or more and you want Google to optimise for sales."
+  },
+  {
+   "id": "B20",
+   "day": 61,
+   "who": "claude",
+   "name": "Optional: a 12-month plan",
+   "message": "Claude, please add a 12-month plan at $<price> as a third option on the pricing page: one payment, the same access as Monthly, using the same pass logic. Update the pricing page, FAQ and terms.",
+   "note": "Only if the Day 60 data supports it. Rivals' yearly prices: CaseCoach $199, RocketBlocks $155, Road to Offer and CaseTutor $249."
+  }
+ ],
+ "chrome_jobs": [
+  {
+   "day": 1,
+   "message": "Please finish any parts of docs/CHROME_SETUP.md (A to H) that are not done yet, following its rules exactly, then do extra job I (the UK trade mark search). Report in a few short lines."
+  },
+  {
+   "day": 1,
+   "message": "Open docs/REVIEWER_GUIDE.md on GitHub and post its job post on Upwork as a fixed-price job with my budget of <amount>. Stop whenever I need to log in, and before anything that costs money."
+  },
+  {
+   "day": 2,
+   "message": "Do the domain, Resend, ImprovMX, Supabase and CAPTCHA steps Claude wrote (B1). Stop for logins, codes and anything that costs money."
+  },
+  {
+   "day": 6,
+   "message": "In my Google Ads account, open Keyword Planner (research only, no campaign, no spend). For the UK and the US separately, get monthly searches and the low and high top-of-page bids for these terms: <list from Claude>. Save them in a table and tell me how many relevant terms have a low bid of £0.60 or less."
+  },
+  {
+   "day": 8,
+   "message": "Do the Stripe live-mode steps Claude wrote (B6). I'll type all bank, identity and card details. Never read or type a secret key."
+  },
+  {
+   "day": 11,
+   "message": "Verify casespar.app in Google Search Console as a Domain property (TXT record on Vercel DNS), submit sitemap.xml, request indexing for the home, pricing, free case and guides pages, and import it into Bing Webmaster Tools."
+  },
+  {
+   "day": 12,
+   "message": "Make a list of 40 UK university consulting societies and careers services: name, university, the published sponsorship form or email, and the page you found it on. Only public pages. Don't contact anyone."
+  },
+  {
+   "day": 13,
+   "message": "Open the rules and wiki of r/consulting, r/MBA, r/UniUK, r/FinancialCareers and r/caseinterviews (say if one doesn't exist). Copy each subreddit's rules into a file, and say plainly whether self-promotion or 'I built this' posts are allowed."
+  },
+  {
+   "day": 21,
+   "message": "Create a separate Google Ads account for CaseSpar (GBP, UK time zone, paid by MARTZEY LTD) and build the campaign in Claude's plan (B14), paused. Stop before billing details and before switching anything on."
+  },
+  {
+   "day": 32,
+   "message": "Help me set up Product Hunt for tomorrow's launch with Claude's text (B16). I'll log in. Schedule it for 12:01 am Pacific."
+  },
+  {
+   "day": 36,
+   "message": "Make a list of 20 US MBA consulting clubs (Wharton, Stern, Kellogg, Fuqua, UNC and others): the club's published contact or sponsorship page and email. Public pages only. Don't contact anyone."
+  }
+ ],
+ "offers": {
+  "free_tier": "1 full AI interview with debrief and 20 drills a day (already built). Call it free only because it is: no card needed.",
+  "club_perk": "Proposal for you to approve: two extra free interviews and 20% off the first purchase for members who use a club code.",
+  "competition_prizes": "Proposal: free 90-Day Passes for case-competition winners (AI cost only).",
+  "referral_reward": "Proposal: both people get one extra free interview when the friend finishes their free interview.",
+  "group_pass": "Price is yours to set. Claude's suggestion (assumption): about $59 a seat for 10 or more 90-Day Pass seats.",
+  "launch_code": "None by default (prices are already in line with the market). Only if Day 30 shows weak paid conversion, and only with a real end date.",
+  "prices": "Keep $39 and $99 for now. CaseTutor charges $99 for 3 months and Road to Offer $120 for 90 days; the monthly middle of the market is $49."
+ },
+ "seo_plan": [
+  {
+   "week": 1,
+   "topics": [
+    "Case interview maths without a calculator: a practice plan (with links to Bain's and McKinsey's own pages)",
+    "Using AI to practise case interviews: what McKinsey, BCG and Bain say (practice before, never during)",
+    "Market sizing questions with worked answers (original)"
+   ]
+  },
+  {
+   "week": 2,
+   "topics": [
+    "How to ask clarifying questions in a case interview",
+    "A two-week case interview plan when your first round is soon"
+   ]
+  },
+  {
+   "week": 3,
+   "topics": [
+    "Consulting application deadlines 2026-27 (UK) (B11)",
+    "Profitability case example, worked from start to finish (original)",
+    "Reading charts in case interviews: practice exhibits"
+   ]
+  },
+  {
+   "week": 4,
+   "topics": [
+    "Break-even questions in case interviews (with the free calculator)",
+    "Mental maths shortcuts for consulting: percentages and big numbers"
+   ]
+  },
+  {
+   "week": 5,
+   "topics": [
+    "Brainstorming in case interviews: structured ideas",
+    "How to give a recommendation at the end of a case"
+   ]
+  },
+  {
+   "week": 6,
+   "topics": [
+    "MBA consulting internship interviews in January: a winter-break prep plan",
+    "Market entry case example (original)"
+   ]
+  },
+  {
+   "week": 7,
+   "topics": [
+    "Growth rate and CAGR maths for case interviews (with the free calculator)",
+    "Pricing case example: three ways to set a price"
+   ]
+  },
+  {
+   "week": 8,
+   "topics": [
+    "A Christmas-break case practice plan for UK internship applicants",
+    "M&A case example: synergy maths (original)"
+   ]
+  },
+  {
+   "week": 9,
+   "topics": [
+    "UK consulting internships 2027: application windows from firms' own pages (update B11)",
+    "Operations case example: capacity and bottlenecks"
+   ]
+  },
+  {
+   "week": 10,
+   "topics": [
+    "A 4-week case practice schedule",
+    "Market sizing shortcuts: round numbers and sanity checks"
+   ]
+  },
+  {
+   "week": 11,
+   "topics": [
+    "Exhibit maths: reading tables fast"
+   ]
+  },
+  {
+   "week": 12,
+   "topics": [
+    "The last week before an MBA first-round case interview",
+    "Follow-up maths questions: a practice set"
+   ]
+  },
+  {
+   "week": 13,
+   "topics": [
+    "A February plan for UK internship case interviews",
+    "Growth strategy case example (original)"
+   ]
+  }
+ ],
+ "calendar_facts": [
+  {
+   "day": 3,
+   "date": "Sun 18 Oct",
+   "fact": "BCG London and Roland Berger London graduate applications close (18 Oct 2026).",
+   "source": "https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs ; https://www.rolandberger.com/en/Locations/United-Kingdom/Career/"
+  },
+  {
+   "day": 5,
+   "date": "Tue 20 Oct",
+   "fact": "Bain London online assessment due by midday (20 Oct).",
+   "source": "https://www.bain.com/careers/recruiting/london-recruiting/"
+  },
+  {
+   "day": 4,
+   "date": "Mon 19 Oct",
+   "fact": "UNC MBA internship applications open (19 Oct).",
+   "source": "https://www.kenan-flagler.unc.edu/wp-content/uploads/2023/05/FTMBA26-062_2026-27_Facilitated_Recruiting_Key_Dates_Update_FNL.pdf"
+  },
+  {
+   "day": 16,
+   "date": "Sat 31 Oct",
+   "fact": "'Apply by' date on Accenture London's listing (31 Oct; it closes when full). Oliver Wyman UK graduate deadline 'late October' (exact date not set).",
+   "source": "https://targetjobs.co.uk/jobs/london-consulting-graduate-programme-2027-2028-249507 ; https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html"
+  },
+  {
+   "day": 17,
+   "date": "Sun 1 Nov",
+   "fact": "OC&C London Strategy deadline (1 Nov); Analytics deadline 8 Nov (Day 24).",
+   "source": "https://careers.occstrategy.com/vacancies/388/associate-consultant-2027-28--strategy-london-office.html ; https://careers.occstrategy.com/vacancies/389/associate-consultant-2027-28--analytics-london-office.html"
+  },
+  {
+   "day": 18,
+   "date": "Mon 2 Nov",
+   "fact": "LSE reading week 2-6 Nov.",
+   "source": "https://info.lse.ac.uk/current-students/term-dates"
+  },
+  {
+   "day": 25,
+   "date": "Mon 9 Nov",
+   "fact": "BCG 'Demystifying the Case' session at LBS for MBA 2028 (9 Nov). UCL reading week from 9 Nov (search summary only).",
+   "source": "https://careers.bcg.com/global/en/on-campus/london-business-school ; https://www.ucl.ac.uk/students/life-ucl/term-dates-and-closures"
+  },
+  {
+   "day": 30,
+   "date": "mid-November",
+   "fact": "Bain London first-round interviews 'mid-November'; final rounds late November to early December. Bain London's 2027 internship applications expected to open in November.",
+   "source": "https://www.bain.com/careers/recruiting/london-recruiting/"
+  },
+  {
+   "day": 42,
+   "date": "Thu 26 Nov",
+   "fact": "US Thanksgiving (26 Nov).",
+   "source": "https://almanac.upenn.edu/penn-academic-calendar"
+  },
+  {
+   "day": 50,
+   "date": "Fri 4 Dec",
+   "fact": "Kellogg Round A internship resumes due (4 Dec). Cambridge term ends 4 Dec; Oxford 5 Dec (search summary only).",
+   "source": "https://kellogg.northwestern.edu/companies-recruiters/hire-kellogg-mbas/recruiting-calendars ; https://www.cam.ac.uk/about-the-university/term-dates-and-calendars ; https://www.ox.ac.uk/about/the-university/facts-and-figures/dates-of-term"
+  },
+  {
+   "day": 57,
+   "date": "Fri 11 Dec",
+   "fact": "LSE and Imperial terms end (11 Dec); Warwick 12 Dec; UCL 18 Dec (search summary only); Manchester winter break from 21 Dec.",
+   "source": "https://info.lse.ac.uk/current-students/term-dates ; https://www.imperial.ac.uk/admin-services/registry/term-dates/ ; https://warwick.ac.uk/study/termdates ; https://www.manchester.ac.uk/about/key-dates/"
+  },
+  {
+   "day": 59,
+   "date": "Sun 13 Dec",
+   "fact": "UNC application close for the 11-15 Jan interview week (13 Dec).",
+   "source": "https://www.kenan-flagler.unc.edu/wp-content/uploads/2023/05/FTMBA26-062_2026-27_Facilitated_Recruiting_Key_Dates_Update_FNL.pdf"
+  },
+  {
+   "day": 78,
+   "date": "Fri 1 Jan",
+   "fact": "BCG London summer internship applications open 1 Jan and close 24 Jan 2027.",
+   "source": "https://careers.bcg.com/global/en/locations/united-kingdom/associate-jobs"
+  },
+  {
+   "day": 81,
+   "date": "Mon 4 Jan",
+   "fact": "MBA internship interviews begin: Stern (non-banking first rounds virtual), Fuqua ('all other industries'), UNC (non-banking) on 4 Jan; Wharton's Focused Recruiting Period 4-8 Jan. LSE January exams 4-10 Jan.",
+   "source": "https://www.stern.nyu.edu/business-partnerships/recruit-talent/recruitment-calendar ; https://www.fuqua.duke.edu/employers/recruiting-calendar-guidelines ; https://www.kenan-flagler.unc.edu/wp-content/uploads/2023/05/FTMBA26-062_2026-27_Facilitated_Recruiting_Key_Dates_Update_FNL.pdf ; https://employers.mbacareers.wharton.upenn.edu/recruiting-policies/ ; https://info.lse.ac.uk/current-students/term-dates"
+  },
+  {
+   "day": 88,
+   "date": "Mon 11 Jan",
+   "fact": "Kellogg Round A interviews 11-15 Jan; LSE, UCL and Warwick spring terms start 11 Jan.",
+   "source": "https://kellogg.northwestern.edu/companies-recruiters/hire-kellogg-mbas/recruiting-calendars ; https://info.lse.ac.uk/current-students/term-dates ; https://warwick.ac.uk/study/termdates"
+  },
+  {
+   "day": 92,
+   "date": "Fri 15 Jan 2027 (after Day 90)",
+   "fact": "Oliver Wyman UK internship deadline (may close earlier).",
+   "source": "https://www.oliverwyman.com/uk-ireland/careers/recruiting-events-uk-and-ireland/ucl-meet-oliver-wyman.html"
+  },
+  {
+   "day": 106,
+   "date": "Fri 29 Jan 2027 (after Day 90)",
+   "fact": "First MBA internship offer decision dates (Wharton, Stern; Fuqua offers open until 29 Jan).",
+   "source": "https://employers.mbacareers.wharton.upenn.edu/recruiting-policies/ ; https://www.stern.nyu.edu/business-partnerships/recruit-talent/recruitment-calendar ; https://www.fuqua.duke.edu/employers/recruiting-calendar-guidelines"
+  }
+ ],
+ "calendar_rules": [
+  "Re-check any firm date on the firm's own page the day before posting it; firms change dates.",
+  "Always describe CaseSpar as practice before an interview. McKinsey encourages AI for practising, but McKinsey and Bain ban AI during assessments and interviews.",
+  "Busy or quiet labels for weeks are our estimates; no page gives practice volumes.",
+  "Oxford and UCL dates come from search summaries only; check them in a browser before stating them."
+ ],
+ "daily_routine": [
+  "Starts Day 11 (Mon 26 Oct). 15 to 30 minutes, every day, before the day's main tasks.",
+  "5 min: open casespar.app/admin (7-day view), Stripe and Vercel Analytics. Write yesterday's six numbers in the playbook's Numbers tab: visitors, free sign-ups, free interviews finished, new paying customers, revenue, ad spend.",
+  "3 min: check the alarms. Anthropic spend under 80% of the monthly limit; ad spend inside this week's cap; Vercel shows no failed deployment or errors. On Mondays, sign in once with a second email address to check sign-in emails still arrive.",
+  "5-10 min: reply to every email in hello@casespar.app and every enquiry on the admin page, within 24 hours. Be honest; never promise offers or results.",
+  "5-10 min: one public post or reply: the day's LinkedIn post (Claude drafts the week on Thursdays), or one helpful Reddit answer where the rules allow (say 'I built CaseSpar' if you mention it), or one short video.",
+  "2 min: note one thing a user said or did (a bug, a question, praise) and the minutes you spent on each channel. Send the week's notes to Claude at the weekly review.",
+  "Weekly review, the last day of each week (Thursdays: Days 14, 21 ... 84, and Day 90), 30-45 minutes: compare the week with its targets, then send Claude: 'Here are week <n>'s numbers: <paste the admin table>. Compare them with week <n> in the playbook and tell me in 5 lines what to change next week.' Approve next week's spending caps.",
+  "Every Friday: re-check the dates on the deadlines page against the firms' own pages (from Day 22)."
+ ],
+ "after_day_90": [
+  "Keep the daily routine and the Thursday review exactly as now.",
+  "Monday: numbers. Claude turns the admin table into a short report and names the single biggest leak in the funnel; you pick one fix for the week.",
+  "Tuesday: 2 new search pages (Claude writes, you check every fact).",
+  "Wednesday: 10 society, careers-service or MBA-club contacts in term time (or follow-ups); renew partners each new academic year (deals last one year).",
+  "Thursday: one new case or drill pack to the reviewer; about 4 new reviewed cases a month (aim 50+ by September 2027).",
+  "Friday: posts and a short video; re-check firm dates on the deadlines page.",
+  "Every second Saturday: one email to the opted-in list.",
+  "Sunday: rest.",
+  "Monthly: a channel gate. Keep paid channels only while a paying customer costs $60 or less; approve next month's caps; check AI cost per user and the Anthropic limit.",
+  "Seasons (estimates where marked): Feb-Mar 2027 UK internship interviews (estimate) and student case competitions (estimate: February); Mar-Jun US undergraduates for summer 2028 internships (Bain says intern applications 'typically open in the spring'); Jul-Aug quiet (estimate): build cases and search pages, and sell group passes to careers services for 2027-28; Sep-Dec 2027 the peak: aim for the first $10,000 month in October or November 2027.",
+  "Check-points: end of March 2027 (run rate $5,000+ means pull the target forward; under $2,000 means rethink before the autumn) and end of June 2027 (group deals signed for September?).",
+  "Every 3 months: re-check the firm guides and legal pages, confirm the daily transcript clean-up ran, and review prices against rivals."
+ ],
+ "do_not": [
+  "Never invent testimonials, ratings, user counts, offer rates or 'our users got offers at...' claims. Use a real quote only with the person's permission, and say if anything was given in return.",
+  "Never pose as a student or a happy customer, use second accounts, or ask friends to upvote or comment (UK law, Reddit, Product Hunt and Hacker News all ban it).",
+  "Never show firm logos or suggest a firm backs us. Use firm names only to describe ('McKinsey-style case'), always with the 'not affiliated' line. No firm names in ad text.",
+  "Never copy or paraphrase casebooks, rivals' cases, firm materials or forum answers.",
+  "Never mark a case reviewed, or tell Claude to, unless the human reviewer has signed it off.",
+  "Never send marketing emails or social DMs to people who haven't opted in, buy email lists, or ask users for friends' email addresses. No bulk emails to societies until the lawyer answers.",
+  "No advertising pixels or Google tag until you decide and the consent banner is built (B19). Vercel Web Analytics (no cookies) and UTM tags only.",
+  "No ads before reviewed cases are live, no promises of offers or results, no 'limited time' unless it really ends then, nothing called 'free' unless it is.",
+  "Never describe CaseSpar as help during an interview or online test: firms ban AI there.",
+  "Never spend without saying yes that day; never raise a cap between gates; no agencies, 'growth hackers', link packages, paid upvotes, follower buying, annual ad contracts or TikTok Ads in the first 90 days.",
+  "Don't pay students or ambassadors until the accountant has checked minimum wage, worker status and Student visa rules; anyone who gets anything for promoting us must label posts 'Ad'.",
+  "Don't mass-produce AI pages for search; every page needs real value and your fact check.",
+  "Don't cut prices as a first fix: they are already in line with the market. Fix the funnel first.",
+  "Don't switch on Stripe Tax or change how VAT is handled without the accountant.",
+  "Don't write 'CaseSpar vs X' pages until the UK advertising code's comparison rules have been checked.",
+  "Don't let the Anthropic spend limit run out: interviews stop for everyone.",
+  "Never paste a secret key into any chat. Add keys yourself in Vercel.",
+  "Don't run big pushes in exam weeks or holidays (LSE exams 4-10 Jan, US Thanksgiving 26 Nov, 24 Dec to 1 Jan)."
+ ],
+ "writer_notes": [
+  "Three writers: Days 1-30, Days 31-60, Days 61-90. Use the milestone days exactly as in 'weeks'; don't move them.",
+  "Each day needs 2 to 3 hours of tasks in total (less on Days 71-73), the daily routine from Day 11, and the weekly review on Thursdays (and Day 90).",
+  "When a task needs Claude Code or Claude in Chrome, paste the exact message from 'builds' or 'chrome_jobs' (fill the <...> parts if you can).",
+  "Gate days (10, 30, 45, 60, 90) carry the gate's check, if_yes and if_no.",
+  "Only the facts in the research files may be stated, with their links. Mark every estimate as an estimate.",
+  "Christmas: Day 71 is the routine only; Days 72-73 are light; normal from Day 74.",
+  "Ads only run if the gates allow; write the day's task as 'if allowed by the Day N gate: ...'.",
+  "Soft launch (Days 11-17): post on the founder's own accounts; message only people he knows personally, asking first whether they'd like to try it. No bulk or cold messages (UK rules treat social DMs like marketing email)."
+ ],
+ "target_monthly_usd": 10000
+}

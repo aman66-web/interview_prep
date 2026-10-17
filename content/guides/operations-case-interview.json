@@ -1,0 +1,223 @@
+{
+  "slug": "operations-case-interview",
+  "kind": "case_type",
+  "case_type": "operations",
+  "title": "Operations case interviews: bottlenecks, capacity and cost",
+  "seo_title": "Operations Case Interview: Bottlenecks, Capacity, Example",
+  "description": "How to solve an operations case interview: map the process, find the bottleneck, work out capacity and utilisation, and choose a fix with a clear payback.",
+  "updated": "2026-10-15",
+  "reading_minutes": 11,
+  "summary": "An operations case asks why a process is too slow, too costly or too unreliable, and what to do about it. Map the process step by step, work out how much each step can handle to find the bottleneck (the slowest step, which sets the output of the whole process), compare capacity with demand and cost per unit, and recommend the fix with the best payback, which is usually at the bottleneck.",
+  "blocks": [
+    { "type": "h2", "id": "what-an-operations-case-looks-like", "text": "What an operations case looks like" },
+    {
+      "type": "p",
+      "text": "Operations cases are about how work gets done: in factories, warehouses, hospitals, call centres, restaurants, airlines and delivery networks. Usually output is too low, costs are too high, customers wait too long or quality is slipping. They are often the most concrete cases you will meet, which is good news: careful step-by-step thinking beats clever frameworks. Typical prompts look like these (all invented):"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A furniture factory can't keep up with orders. How can it raise output?",
+        "A hospital's emergency department waiting times have doubled in two years. What should it do?",
+        "A parcel company's cost per delivery is 20% above its rivals'. Where is the gap?",
+        "A fast-food chain's drive-through queues are losing it customers at lunchtime.",
+        "An airline wants to turn its planes around faster between flights."
+      ]
+    },
+    { "type": "h3", "text": "Clarifying questions worth asking" },
+    {
+      "type": "ul",
+      "items": [
+        "What exactly is the problem: output, cost, waiting time, quality or reliability? How is it measured?",
+        "Compared with what: last year, a target, other sites or competitors?",
+        "When did it start, and did anything change then (demand, staff, equipment, suppliers)?",
+        "What are the steps in the process, in order, and who or what does each one?",
+        "Is demand steady, or does it come in peaks?",
+        "What constraints apply: budget, space, staff, safety rules, contracts?"
+      ]
+    },
+    { "type": "h2", "id": "a-structure-to-start-from", "text": "A structure to start from" },
+    {
+      "type": "p",
+      "text": "Operations cases reward a structure that follows the work itself. Define the problem precisely, map the process, find where it is limited, then look at cost, demand and quality before choosing fixes. Rename the steps to match the business in front of you."
+    },
+    {
+      "type": "framework",
+      "title": "Operations: a starting structure",
+      "branches": [
+        { "name": "Define the problem", "items": ["Which measure: output, cost, time or quality", "How big the gap is, since when, against what benchmark"] },
+        { "name": "Map the process", "items": ["Steps in order, with the time each takes per unit", "People and machines at each step", "Queues, hand-offs and waiting"] },
+        { "name": "Capacity and bottleneck", "items": ["Capacity of each step", "Utilisation of each step", "Downtime, changeovers and absences"] },
+        { "name": "Cost and quality", "items": ["Cost per unit: labour, materials, overheads", "Waste, rework and scrap", "Fixed costs spread over the volume"] },
+        { "name": "Demand", "items": ["Total demand against capacity", "Peaks and seasons", "Whether demand can be smoothed or shifted"] },
+        { "name": "Fixes and trade-offs", "items": ["Add or speed up capacity at the bottleneck", "Cut downtime, rework and waste", "Rebalance work, outsource or shift demand", "Cost, time to impact and risk of each"] }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Tailor it to the case",
+      "text": "In a factory, look at machines, changeovers and scrap. In a service such as a clinic or a call centre, look at staffing against demand hour by hour, and at how unevenly customers arrive. In delivery and logistics, look at stops per route, distance and how full the vehicles are. Saying which of these matters in this case makes your structure specific."
+    },
+    { "type": "h2", "id": "key-ideas", "text": "Five ideas behind most operations cases" },
+    {
+      "type": "table",
+      "caption": "Operations terms and how to use them",
+      "columns": ["Idea", "What it means", "How to work it out"],
+      "rows": [
+        ["Capacity", "The most a step can produce in a period", "Time available ÷ time per unit × number of stations doing the same job"],
+        ["Bottleneck", "The step with the lowest capacity; it sets the output of the whole process", "Work out every step's capacity for the same period and take the smallest"],
+        ["Utilisation", "How much of a step's capacity is actually used", "Actual output ÷ capacity"],
+        ["Throughput", "What the process actually produces in a period", "The lower of demand and the bottleneck's capacity"],
+        ["Cost per unit", "What each unit costs to produce", "Total cost in a period ÷ units produced in it"]
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "The slowest step sets the pace",
+      "text": "A process can only go as fast as its bottleneck. Adding capacity anywhere else raises costs without raising output. And once you fix the bottleneck, another step becomes the new one, so always check where the next limit is."
+    },
+    { "type": "h2", "id": "worked-example", "text": "A full worked example: finding the bottleneck" },
+    {
+      "type": "example",
+      "title": "Worked example: Ferrow Bikes (an invented case)",
+      "question": "Ferrow, an invented company, assembles electric bikes. It has orders for 400 bikes a week but ships only 300, and the CEO wants to know why and how to fix it. The plant works one 8-hour shift, 5 days a week. There are four steps: frame preparation (1 station, 6 minutes per bike), motor and wiring (2 stations, each taking 16 minutes per bike), final assembly (3 stations, 15 minutes per bike) and testing (1 station, 5 minutes per bike). Each bike brings in $250 of contribution. Assume 50 working weeks a year.",
+      "answer": [
+        "Time available per station: 8 hours × 60 minutes × 5 days = 2,400 minutes a week.",
+        "Capacity of each step: frame preparation 2,400 ÷ 6 = 400 bikes a week; motor and wiring 2 × 2,400 ÷ 16 = 300; final assembly 3 × 2,400 ÷ 15 = 480; testing 2,400 ÷ 5 = 480.",
+        "Motor and wiring is the bottleneck. It caps output at 300 bikes a week, exactly what Ferrow ships. The other steps sit partly idle: frame preparation, for example, runs at 300 ÷ 400 = 75% utilisation.",
+        "The prize for fixing it: 100 more bikes a week × 50 weeks = 5,000 bikes a year, worth 5,000 × $250 = $1.25m of contribution.",
+        "Option A, add a third motor station ($60,000 of equipment plus a technician at $50,000 a year): motor capacity rises to 3 × 2,400 ÷ 16 = 450, so frame preparation (400) becomes the new bottleneck and output reaches 400. Net gain in the first year: $1.25m − $60,000 − $50,000 = $1.14m.",
+        "Option B, buy ready-made wiring harnesses that cut motor time to 12 minutes but cost $8 more per bike: motor capacity becomes 2 × 2,400 ÷ 12 = 400. Extra cost: 400 bikes × $8 × 50 weeks = $160,000 a year, so the net gain is $1.25m − $160,000 = $1.09m a year.",
+        "Payback on option A's equipment: each week brings 100 × $250 = $25,000 of extra contribution, less $50,000 ÷ 50 = $1,000 for the technician, or $24,000. The $60,000 pays back in 60,000 ÷ 24,000 = 2.5 weeks.",
+        "Recommendation: add the third motor station, which earns more each year than buying harnesses. If the station takes weeks to install, use harnesses as a stop-gap. Then plan for frame preparation, which would be running at 100% and leave no slack for breakdowns or growth."
+      ],
+      "checks": [
+        { "label": "Minutes per station per week", "inputs": { "hours": 8, "minutes_per_hour": 60, "days": 5 }, "expression": "hours * minutes_per_hour * days", "expected": 2400 },
+        { "label": "Frame preparation capacity", "inputs": { "stations": 1, "minutes": 2400, "per_bike": 6 }, "expression": "stations * minutes / per_bike", "expected": 400 },
+        { "label": "Motor and wiring capacity", "inputs": { "stations": 2, "minutes": 2400, "per_bike": 16 }, "expression": "stations * minutes / per_bike", "expected": 300 },
+        { "label": "Final assembly capacity", "inputs": { "stations": 3, "minutes": 2400, "per_bike": 15 }, "expression": "stations * minutes / per_bike", "expected": 480 },
+        { "label": "Testing capacity", "inputs": { "stations": 1, "minutes": 2400, "per_bike": 5 }, "expression": "stations * minutes / per_bike", "expected": 480 },
+        { "label": "Frame preparation utilisation (%)", "inputs": { "output": 300, "capacity": 400 }, "expression": "output / capacity * 100", "expected": 75 },
+        { "label": "Extra bikes a year", "inputs": { "demand": 400, "output": 300, "weeks": 50 }, "expression": "(demand - output) * weeks", "expected": 5000 },
+        { "label": "Extra contribution a year", "inputs": { "bikes": 5000, "contribution": 250 }, "expression": "bikes * contribution", "expected": 1250000 },
+        { "label": "Motor capacity with a third station", "inputs": { "stations": 3, "minutes": 2400, "per_bike": 16 }, "expression": "stations * minutes / per_bike", "expected": 450 },
+        { "label": "Option A net gain in the first year", "inputs": { "gain": 1250000, "equipment": 60000, "technician": 50000 }, "expression": "gain - equipment - technician", "expected": 1140000 },
+        { "label": "Motor capacity with harnesses", "inputs": { "stations": 2, "minutes": 2400, "per_bike": 12 }, "expression": "stations * minutes / per_bike", "expected": 400 },
+        { "label": "Option B extra cost a year", "inputs": { "bikes_per_week": 400, "extra_cost": 8, "weeks": 50 }, "expression": "bikes_per_week * extra_cost * weeks", "expected": 160000 },
+        { "label": "Option B net gain a year", "inputs": { "gain": 1250000, "extra_cost": 160000 }, "expression": "gain - extra_cost", "expected": 1090000 },
+        { "label": "Extra contribution a week", "inputs": { "extra_bikes": 100, "contribution": 250 }, "expression": "extra_bikes * contribution", "expected": 25000 },
+        { "label": "Technician cost a week", "inputs": { "salary": 50000, "weeks": 50 }, "expression": "salary / weeks", "expected": 1000 },
+        { "label": "Option A payback in weeks", "inputs": { "equipment": 60000, "weekly_gain": 25000, "weekly_cost": 1000 }, "expression": "equipment / (weekly_gain - weekly_cost)", "expected": 2.5 }
+      ]
+    },
+    { "type": "h2", "id": "service-operations", "text": "Service operations: why 100% busy means long queues" },
+    {
+      "type": "p",
+      "text": "In services, work arrives unevenly: ten customers in one minute, none in the next. A team that is busy all the time has no spare capacity to absorb a rush, so queues build up and take a long time to clear. That is why a service operation rarely aims for 100% utilisation. In a case, it is reasonable to plan staffing for a lower level, and to ask the interviewer what level the client aims for."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: staffing a call centre (invented numbers)",
+      "question": "An invented insurer's call centre receives 120 calls an hour at its busiest time. Each call takes 6 minutes on average. It has 13 agents on that shift, and customers complain about waiting. How many agents does it need if it plans for 85% utilisation?",
+      "answer": [
+        "Work arriving each hour: 120 calls × 6 minutes = 720 minutes of calls.",
+        "One agent can handle 60 minutes of calls an hour, so the bare minimum is 720 ÷ 60 = 12 agents, every one of them busy every minute.",
+        "With 13 agents, utilisation is 12 ÷ 13 = about 92%. That leaves very little room for calls that bunch together, which explains the queues.",
+        "At 85% utilisation: 12 ÷ 0.85 = 14.1 agents, so round up to 15, which means 2 more than today at peak times.",
+        "So what: add agents at the peak, cut the work per call (for example, by moving simple requests online), or move some calls out of the peak by offering call-backs."
+      ],
+      "checks": [
+        { "label": "Minutes of calls an hour", "inputs": { "calls": 120, "minutes_each": 6 }, "expression": "calls * minutes_each", "expected": 720 },
+        { "label": "Minimum agents", "inputs": { "work": 720, "minutes_per_agent": 60 }, "expression": "work / minutes_per_agent", "expected": 12 },
+        { "label": "Utilisation with 13 agents (%)", "inputs": { "needed": 12, "agents": 13 }, "expression": "needed / agents * 100", "expected": 92.3077 },
+        { "label": "Agents needed at 85% utilisation", "inputs": { "needed": 12, "target": 0.85 }, "expression": "needed / target", "expected": 14.1176 },
+        { "label": "Extra agents at the peak", "inputs": { "rounded_up": 15, "agents": 13 }, "expression": "rounded_up - agents", "expected": 2 }
+      ]
+    },
+    { "type": "h2", "id": "cutting-cost-per-unit", "text": "Cutting cost per unit" },
+    {
+      "type": "p",
+      "text": "When the problem is cost rather than output, break cost per unit into its parts and compare each with a benchmark, such as another site, last year or a competitor. Then ask what drives the biggest gaps."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Labour: time per unit, overtime, idle time between jobs, and rotas that don't follow demand.",
+        "Materials: prices paid, waste and scrap, and product designs that use more than they need.",
+        "Quality: rework and returns, which mean paying for the same unit twice.",
+        "Fixed costs: rent, equipment and management spread over too few units; more volume through the same site lowers the cost per unit.",
+        "Network and logistics: distances, how full each vehicle or delivery round is, and the number of sites."
+      ]
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Mistakes that sink operations answers",
+      "text": "The classic error is suggesting more staff or machines everywhere: extra capacity anywhere except the bottleneck only adds cost. The second is stopping once the bottleneck is fixed, without checking which step becomes the next limit."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Treating 100% utilisation as the goal. Busy everywhere often means queues and no slack for breakdowns.",
+        "Ignoring demand. Sometimes the fix is to smooth the peaks, not to add capacity.",
+        "Forgetting quality. A fast step that makes faulty units only moves the problem to rework.",
+        "Recommending spending with no payback. Compare the cost of each fix with the profit it unlocks.",
+        "Overlooking people and safety. Faster lines, longer shifts and fewer staff all have limits.",
+        "Using jargon instead of logic. Naming an improvement method adds little unless you explain the actual change and its effect."
+      ]
+    },
+    { "type": "h2", "id": "finish-with-a-recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "State the cause and the fix", "text": "For example: 'Output is capped by motor and wiring, so add a third station there.'" },
+        { "title": "Put a number on the impact", "text": "Extra output, extra profit or lower cost, and the payback on any spending." },
+        { "title": "Say what happens next in the process", "text": "Name the new bottleneck and how much slack is left." },
+        { "title": "Cover risks and quick wins", "text": "Offer a stop-gap while the main fix is put in place, and say what could stop it working." }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For Ferrow, a strong close might be: 'Ferrow ships 300 bikes a week because motor and wiring can only handle 300. Adding a third station lifts output to the 400 that customers are ordering, worth about $1.25m a year in contribution, and the equipment pays back in under a month. While it is installed, bought-in harnesses can bridge the gap. After that, frame preparation will be running flat out, so the plant should plan more frame capacity before orders grow again.'"
+    },
+    { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
+    {
+      "type": "links",
+      "title": "Practise operations cases and the skills behind them",
+      "items": [
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Chart-reading drills", "href": "/drills/chart-reading" },
+        { "label": "Profitability case interview guide", "href": "/guides/profitability-case-interview" },
+        { "label": "How to structure a case interview", "href": "/guides/how-to-structure-a-case-interview" },
+        { "label": "Glossary of case interview terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a bottleneck in a case interview?",
+      "a": "The bottleneck is the step in a process with the lowest capacity. It decides how much the whole process can produce, so it is where a fix actually raises output. To find it, work out how many units each step can handle in the same period and take the smallest."
+    },
+    {
+      "q": "How is an operations case different from a profitability case?",
+      "a": "A profitability case starts from the profit figure and looks at every revenue and cost driver. An operations case looks inside the business at how the work is done: the steps, their capacity, their cost and their quality. Many profitability cases turn into operations questions once you find that costs are the problem."
+    },
+    {
+      "q": "Do I need to know lean or Six Sigma for an operations case?",
+      "a": "No. They are well-known improvement methods, but you don't need their vocabulary to solve a case. Clear reasoning about the steps, capacity, bottlenecks, waste and cost per unit is what matters, explained in plain words."
+    },
+    {
+      "q": "Is 100% utilisation a good thing?",
+      "a": "Not usually. In a factory it leaves no slack for breakdowns; in a service it means queues whenever customers arrive in a rush. A high but not full level is generally healthier, and the right level depends on how uneven the work is and what waiting costs the business."
+    },
+    {
+      "q": "What maths comes up in operations cases?",
+      "a": "Mostly capacity (time available divided by time per unit), utilisation, cost per unit and the payback on an investment. The numbers are simple, but there are many of them, so lay them out in a small table with one row per step."
+    }
+  ],
+  "related_drills": ["mental-maths", "chart-reading", "frameworks"]
+}

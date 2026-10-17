@@ -1,0 +1,268 @@
+{
+  "id": "case-005",
+  "slug": "lumen-tutoring-growth",
+  "title": "Lumenwick Tutors: how to double new regular students",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Education technology",
+  "difficulty": 3,
+  "style": "interviewer_led",
+  "est_minutes": 35,
+  "prompt": "Lumenwick is a US online marketplace where students book one-to-one lessons with independent tutors. Growth has slowed while marketing costs keep rising. The CEO wants to double the number of new regular students Lumenwick gains each quarter within 12 months. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "Business model",
+      "answer": "Students, or their parents, book one-to-one online lessons with independent tutors. The average lesson costs $40 and Lumenwick keeps 25% as commission, so $10 a lesson. Lessons are booked and paid for one at a time: there are no trial lessons, discounts or packages today."
+    },
+    {
+      "question_topic": "Regular student",
+      "answer": "A regular student is one who has booked at least three lessons. Regular students bring in about nine-tenths of Lumenwick's commission."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "Double the number of new regular students gained per quarter, from 800 last quarter (Q4) to 1,600, within 12 months."
+    },
+    {
+      "question_topic": "Customer value",
+      "answer": "A regular student books about 4 lessons a month and stays for about 10 months on average."
+    },
+    {
+      "question_topic": "Students who never become regular",
+      "answer": "Students who book only one or two lessons bring in $10 to $20 of commission each, which is small. Treat all marketing spend as the cost of gaining regular students."
+    },
+    {
+      "question_topic": "Marketing",
+      "answer": "Lumenwick spent $240,000 on marketing last quarter, almost all on search and social ads. Competitors are bidding up the price of search ads. There is no referral scheme."
+    },
+    {
+      "question_topic": "Budget and decision rule",
+      "answer": "There is no fixed marketing budget. The CEO is happy to spend more wherever it pays back: a new regular student should bring in more commission over their lifetime than it cost to gain them."
+    },
+    {
+      "question_topic": "Customer funnel",
+      "answer": "Visitors to the site can sign up for free, then book a first lesson, then become regular students. The funnel data for last quarter is available."
+    },
+    {
+      "question_topic": "Why students drop off",
+      "answer": "In surveys, most people who signed up but never booked say it was hard to choose a tutor from a long list. Most who stopped after one or two lessons say their first tutor was not the right fit for them."
+    },
+    {
+      "question_topic": "Tutor supply",
+      "answer": "Tutor supply is not a constraint: about 20% of tutors' available hours are unbooked, and new tutors apply every week, so Lumenwick can add tutors as demand grows."
+    },
+    {
+      "question_topic": "Recent trend",
+      "answer": "Marketing spend and new regular students have both risen over the last four quarters. The data by quarter is available."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Several competitors spend heavily on search ads. Lumenwick's tutors are well rated and its prices are in line with the market."
+    },
+    {
+      "question_topic": "Constraints",
+      "answer": "Lumenwick will not change its 25% commission or enter new countries this year. The CEO is open to product changes, offers and partnerships."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Where the funnel loses people: visit, sign-up, first lesson, regular",
+      "Acquisition: the average cost per new regular student, and what the extra students cost",
+      "Retention and value: lessons per month, months retained and commission per student",
+      "Levers by effort and impact: conversion at each stage, retention, cheaper channels",
+      "Targets, tests and timeline"
+    ],
+    "good_signs": [
+      "Maps the funnel and quantifies each stage",
+      "Recognises that rising spend is buying fewer students per dollar",
+      "Works out what the extra students cost (the extra spend divided by the extra students), not just the average",
+      "Compares a regular student's lifetime commission with what it costs to gain one",
+      "Asks why people drop off at each stage before proposing fixes",
+      "Prioritises levers by impact and effort and proposes tests"
+    ],
+    "red_flags": [
+      "Recommends only 'spend twice as much on ads'",
+      "Treats the average cost per student as the cost of the next student",
+      "Looks only at the biggest percentage drop-off without considering what is easiest to improve",
+      "Lists ideas with no numbers or prioritisation"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "funnel",
+      "title": "Customer funnel, last quarter (Q4)",
+      "kind": "table",
+      "data": {
+        "columns": ["Stage", "Number in Q4", "Conversion from previous stage (%)"],
+        "rows": [
+          ["Website visits", 100000, "n/a"],
+          ["Sign-ups", 8000, 8],
+          ["Book a first lesson", 3200, 40],
+          ["Become regular (3+ lessons)", 800, 25]
+        ]
+      },
+      "reveal_hint": "Ask for the funnel from website visits to regular students, or for conversion at each stage.",
+      "insight": "Only 0.8% of visitors become regular students. The biggest percentage loss is at sign-up (92% of visitors leave without signing up), but the stages multiply: a 25% relative lift at any one stage lifts regular students by 25%. Doubling through traffic alone would need 200,000 visits a quarter, at a time when each extra student bought with ads already costs more than it earns."
+    },
+    {
+      "id": "spend-and-students",
+      "title": "Marketing spend and new regular students, last four quarters",
+      "kind": "table",
+      "data": {
+        "columns": ["Quarter", "Marketing spend ($ thousand)", "New regular students"],
+        "rows": [
+          ["Q1", 160, 640],
+          ["Q2", 190, 700],
+          ["Q3", 215, 750],
+          ["Q4", 240, 800]
+        ]
+      },
+      "reveal_hint": "Ask how marketing spend and new regular students have changed over time, or what it costs to gain a regular student.",
+      "insight": "Spend rose 50% (from $160k to $240k) but new regular students rose only 25% (from 640 to 800). The average cost per new regular student rose from $250 to $300, and each extra student gained since Q1 cost $500 ($80k for 160 more students). Every quarter-on-quarter step gives the same $500."
+    }
+  ],
+  "math": [
+    {
+      "id": "cac-q4",
+      "question": "What was the marketing cost per new regular student in Q4, in dollars?",
+      "inputs": {
+        "spend_k": 240,
+        "regulars": 800
+      },
+      "expression": "spend_k * 1000 / regulars",
+      "expected": 300,
+      "tolerance_pct": 2,
+      "working": "$240,000 / 800 students = $300 per new regular student, up from $250 in Q1 ($160,000 / 640).",
+      "input_sources": [
+        { "input": "spend_k", "exhibit_id": "spend-and-students", "row": 3, "column": "Marketing spend ($ thousand)" },
+        { "input": "regulars", "exhibit_id": "spend-and-students", "row": 3, "column": "New regular students" }
+      ]
+    },
+    {
+      "id": "extra-cost-per-extra-student",
+      "question": "Between Q1 and Q4, how much extra marketing spend did Lumenwick pay for each extra new regular student it gained, in dollars?",
+      "inputs": {
+        "spend_q1_k": 160,
+        "spend_q4_k": 240,
+        "regulars_q1": 640,
+        "regulars_q4": 800
+      },
+      "expression": "(spend_q4_k - spend_q1_k) * 1000 / (regulars_q4 - regulars_q1)",
+      "expected": 500,
+      "tolerance_pct": 2,
+      "working": "Spend rose by $80,000 (240 - 160) and new regular students by 160 (800 - 640). $80,000 / 160 = $500 per extra student. Each quarter-on-quarter step gives the same answer (for example, Q3 to Q4: $25,000 / 50 = $500). The average hides this: the extra students cost far more than the $300 average.",
+      "input_sources": [
+        { "input": "spend_q1_k", "exhibit_id": "spend-and-students", "row": 0, "column": "Marketing spend ($ thousand)" },
+        { "input": "spend_q4_k", "exhibit_id": "spend-and-students", "row": 3, "column": "Marketing spend ($ thousand)" },
+        { "input": "regulars_q1", "exhibit_id": "spend-and-students", "row": 0, "column": "New regular students" },
+        { "input": "regulars_q4", "exhibit_id": "spend-and-students", "row": 3, "column": "New regular students" }
+      ]
+    },
+    {
+      "id": "lifetime-profit",
+      "question": "How much commission does Lumenwick earn from one regular student over their lifetime, in dollars?",
+      "inputs": {
+        "lessons_per_month": 4,
+        "lesson_price": 40,
+        "commission_pct": 25,
+        "months": 10
+      },
+      "expression": "lessons_per_month * lesson_price * commission_pct / 100 * months",
+      "expected": 400,
+      "tolerance_pct": 2,
+      "working": "4 lessons x $40 x 25% = $40 a month. Over 10 months that is $400."
+    },
+    {
+      "id": "value-to-cost-ratio",
+      "question": "What is the ratio of a regular student's lifetime commission to the average cost of gaining one in Q4?",
+      "inputs": {
+        "ltv": 400,
+        "cac": 300
+      },
+      "expression": "ltv / cac",
+      "expected": 1.3333,
+      "tolerance_pct": 3,
+      "working": "$400 / $300 is about 1.3. On average each dollar of marketing returns about $1.30 of commission, before Lumenwick's other costs, which is thin. For the extra students it is worse: $400 / $500 = 0.8, so the last dollars of advertising lose money and buying more ads cannot pay for the doubling."
+    },
+    {
+      "id": "regulars-if-first-lesson-50",
+      "question": "If the first-lesson booking rate rose from 40% to 50% and nothing else changed, how many new regular students would Lumenwick gain per quarter?",
+      "inputs": {
+        "visits": 100000,
+        "signup_pct": 8,
+        "first_lesson_pct": 50,
+        "regular_pct": 25
+      },
+      "expression": "visits * signup_pct / 100 * first_lesson_pct / 100 * regular_pct / 100",
+      "expected": 1000,
+      "tolerance_pct": 2,
+      "working": "100,000 visits x 8% = 8,000 sign-ups; x 50% = 4,000 first lessons; x 25% = 1,000 regular students. That is a 25% gain on 800, so one lever on its own is not enough to double.",
+      "input_sources": [
+        { "input": "visits", "exhibit_id": "funnel", "row": 0, "column": "Number in Q4" },
+        { "input": "signup_pct", "exhibit_id": "funnel", "row": 1, "column": "Conversion from previous stage (%)" },
+        { "input": "regular_pct", "exhibit_id": "funnel", "row": 3, "column": "Conversion from previous stage (%)" }
+      ]
+    },
+    {
+      "id": "regular-rate-to-double",
+      "question": "Suppose visits stay at 100,000 a quarter, the sign-up rate rises from 8% to 10% and the first-lesson rate from 40% to 50%. What percentage of first-lesson students would then need to become regular for Lumenwick to reach 1,600 new regular students a quarter?",
+      "inputs": {
+        "target": 1600,
+        "visits": 100000,
+        "signup_pct": 10,
+        "first_lesson_pct": 50
+      },
+      "expression": "target / (visits * signup_pct / 100 * first_lesson_pct / 100) * 100",
+      "expected": 32,
+      "tolerance_pct": 2,
+      "working": "100,000 visits x 10% = 10,000 sign-ups; x 50% = 5,000 first lessons. 1,600 / 5,000 = 32%, up from 25%. So doubling needs every stage to improve by about a quarter: sign-up +25% (8% to 10%), first lesson +25% (40% to 50%) and becoming regular +28% (25% to 32%). 1.25 x 1.25 x 1.28 = 2.",
+      "input_sources": [
+        { "input": "visits", "exhibit_id": "funnel", "row": 0, "column": "Number in Q4" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Lumenwick do to turn more visitors into regular students without relying only on more advertising?",
+    "idea_bank": [
+      "Improve landing pages and the sign-up flow to lift the visitor-to-sign-up rate",
+      "Make choosing a tutor easier: a short questionnaire and a shortlist of three recommended tutors instead of a long list",
+      "Better tutor profiles: reviews, video introductions and clear subjects and prices",
+      "Offer a discounted or free trial first lesson to raise first-lesson bookings",
+      "Offer a free switch to another tutor if the first one is not the right fit",
+      "Sell lesson packages so students commit to several lessons upfront",
+      "Send reminders and follow-up emails to students who signed up but have not booked",
+      "Win back students who stopped after one or two lessons with a tutor suggestion or an offer",
+      "Launch a referral scheme that rewards students and tutors",
+      "Partner with schools, parent groups or universities for lower-cost acquisition",
+      "Ask tutors to bring their own students onto the platform",
+      "Create content such as study guides to earn free search traffic",
+      "Cut the least efficient ads and keywords and move that money to the ones that work best, rather than adding more"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Paid ads are getting less efficient: the average cost per new regular student rose from $250 to $300, and each extra student gained since Q1 cost $500, more than the $400 of lifetime commission it brings in",
+      "Funnel stages multiply, so doubling needs improvements at several stages (for example, sign-up 8% to 10%, first lesson 40% to 50% and becoming regular 25% to 32% gives 1,600)",
+      "A clear recommendation: stop scaling paid ads and grow mainly through conversion, with tests, targets for each stage and next steps"
+    ],
+    "good_signs": [
+      "Notes that lifetime commission is only about 1.3 times the average acquisition cost",
+      "Links the fixes to why students drop off: choosing a tutor is hard and many first tutors are the wrong fit",
+      "Prioritises levers by impact and effort, starting with the cheapest to test",
+      "Names the risks: discounts may attract students who never stay, and doubling in 12 months is ambitious",
+      "Names the metrics to track each quarter, such as conversion at each stage and cost per new regular student"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goal: new regular students (3+ lessons) per quarter from 800 to 1,600 within 12 months. Spending more is fine only where it pays back; tutor supply is not a constraint; commission and countries are fixed.",
+    "Structure: where the funnel loses people, what acquisition costs (on average and for the extra students), what a regular student is worth, the levers by impact and effort, then targets and tests.",
+    "Economics: spend rose 50% ($160k to $240k) but new regular students only 25% (640 to 800), so the average cost rose from $250 to $300. Each extra student since Q1 cost $500 ($80k for 160 more). A regular student brings in $400 of commission (4 lessons x $40 x 25% x 10 months): only 1.3 times the average cost, and less than the extra students cost. More ads cannot pay for the doubling.",
+    "Funnel: 100,000 visits, 8% sign up, 40% book a first lesson and 25% become regular, giving 800. Doubling through traffic alone would need 200,000 visits. The stages multiply, so lifting the first-lesson rate to 50% on its own gives 1,000 (+25%).",
+    "Targets: with sign-up at 10% and first lesson at 50%, 32% of first-lesson students must become regular (up from 25%) to reach 1,600. The surveys point to the fixes: choosing a tutor is hard, and many first tutors are the wrong fit.",
+    "Recommendation: stop adding ad spend and trim the least efficient ads. Then test, in order: an easier way to choose a tutor (sign-up and first lesson), a discounted first lesson with a free switch of tutor (first lesson and becoming regular), and lesson packages (becoming regular), plus a referral scheme for cheaper traffic. Risks: discounts may attract students who never stay, and 12 months is tight, so run the tests in parallel. Track conversion at each stage and cost per new regular student every quarter, and add ad spend again only where an extra student costs less than the $400 it brings in."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

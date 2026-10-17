@@ -1,0 +1,232 @@
+{
+  "slug": "growth-case-interview",
+  "kind": "case_type",
+  "case_type": "growth",
+  "title": "Growth case interviews: how to find and size growth levers",
+  "seo_title": "Growth Case Interview: Framework, Levers and Example",
+  "description": "How to solve a growth case interview: size the gap to the target, sort organic and inorganic levers, do the CAGR and churn maths, then recommend a mix.",
+  "updated": "2026-10-15",
+  "reading_minutes": 11,
+  "summary": "A growth case asks how a company can grow its revenue or profit, usually to reach a target by a set date. Start by sizing the gap between where the company is heading and the target, then work through the levers: winning new customers, keeping more of the ones it has, raising spend per customer, new products, new markets or channels, and acquisitions or partnerships. Size each lever, compare their cost, speed and risk, and recommend the mix that closes the gap.",
+  "blocks": [
+    { "type": "h2", "id": "what-a-growth-case-looks-like", "text": "What a growth case looks like" },
+    {
+      "type": "p",
+      "text": "Growth cases are open questions about the future: the client wants to be bigger, and you have to find where the extra revenue or profit will come from. Most come with a target and a deadline, which makes them a sizing exercise as much as a brainstorm. Typical prompts look like these (all invented):"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A regional chain of gyms wants to double its revenue in five years. How should it do it?",
+        "A snack maker's sales have been flat for three years. Where could growth come from?",
+        "A software company wants to add $50m of revenue by next year. Which options should it pursue?",
+        "A family-owned hotel group wants to grow profit by 30% without building new hotels."
+      ]
+    },
+    { "type": "h2", "id": "size-the-gap-first", "text": "Size the gap before you brainstorm" },
+    {
+      "type": "p",
+      "text": "The best opening move is to turn the ambition into a number. Ask where revenue is today, where it will be if nothing changes, and where it needs to be. The difference is the gap your levers must fill. Then turn the target into a yearly growth rate (the compound annual growth rate, or CAGR) and compare it with how fast the market is growing. If the market grows at 3% a year and the target needs 12%, riding the market is nowhere near enough: the rest has to come from taking share, new products, new markets or acquisitions."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Two numbers to get early",
+      "text": "The size of the gap in money (for example, $30m of extra revenue by year 3) and the yearly growth rate it implies. Together they tell you whether a few small improvements will do, or whether the client needs a big move such as an acquisition."
+    },
+    { "type": "h3", "text": "Clarifying questions worth asking" },
+    {
+      "type": "ul",
+      "items": [
+        "Is the target revenue or profit? By when? Is there a budget for investment?",
+        "How has the company grown over the past few years, and why?",
+        "How fast is the market growing, and what is the company's share of it?",
+        "Which customers, products, regions and channels bring in the revenue today?",
+        "Is the company losing customers, and how quickly?",
+        "Are acquisitions possible, or does the client want to grow on its own?",
+        "Are there limits: capacity, regulation, brand, or what the owners will accept?"
+      ]
+    },
+    { "type": "h2", "id": "a-structure-to-start-from", "text": "A structure to start from" },
+    {
+      "type": "framework",
+      "title": "Growth: a starting structure",
+      "branches": [
+        { "name": "Where growth comes from today", "items": ["Market growth versus share gains", "Which customers, products and regions are growing or shrinking"] },
+        { "name": "Core business: existing products, existing customers", "items": ["Win more customers (reach and conversion)", "Keep more customers (lower churn)", "Raise spend per customer (price, how often they buy, upselling)"] },
+        { "name": "Adjacent moves", "items": ["New products for existing customers", "Existing products for new customer groups or regions", "New sales channels"] },
+        { "name": "Inorganic moves", "items": ["Acquisitions", "Partnerships and joint ventures", "Licensing or franchising"] },
+        { "name": "Is it worth it?", "items": ["Size of the prize by the deadline", "Investment needed and payback", "Capabilities, risk and time to impact"] }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Tailor it to the case",
+      "text": "The structure above sorts growth options by how far they take the company from what it already does: it starts close to home, moves outwards, then checks whether each option is worth it. Rename the branches to fit the case in front of you. For a subscription business, retention is often the biggest and cheapest lever, so look at churn early. For a retailer, split growth into sales from existing stores and sales from new ones. For a business-to-business supplier, ask how much of each customer's total spend it already wins. Naming the lever that matters most in this particular business is what makes a structure sound tailored rather than recited."
+    },
+    { "type": "h2", "id": "break-revenue-into-drivers", "text": "Break revenue into drivers" },
+    {
+      "type": "p",
+      "text": "Revenue is the number of customers multiplied by the revenue per customer. Each side can be broken down further, and each piece points at a lever and at a number to ask the interviewer for."
+    },
+    {
+      "type": "table",
+      "caption": "Growth levers and the numbers to ask for",
+      "columns": ["Driver", "Lever", "Number to ask for"],
+      "rows": [
+        ["New customers", "More marketing, new channels, better conversion", "New customers a year, and the cost of winning each one"],
+        ["Lost customers", "Better service, contracts, loyalty schemes", "Churn rate: the share of customers lost each year or month"],
+        ["Spend per customer", "Price, how often they buy, upselling and cross-selling", "Average revenue per customer, and the share buying a second product"],
+        ["New products", "Range extensions and add-ons", "Expected take-up and price"],
+        ["New markets", "New regions or customer groups", "Market size, likely share, time to break even"],
+        ["Acquisitions", "Buying a competitor or a company in a nearby market", "The target's revenue, the price, expected synergies and likely customer losses"]
+      ]
+    },
+    { "type": "h2", "id": "growth-maths", "text": "The maths you will need" },
+    {
+      "type": "p",
+      "text": "Growth cases lean on a small set of calculations: percentage change, compound growth, CAGR and the effect of churn. CAGR is (end value ÷ start value) to the power of (1 ÷ number of years), minus 1. You won't need to take fourth roots in your head to two decimal places: a sensible estimate, checked by multiplying back, is enough."
+    },
+    {
+      "type": "example",
+      "title": "Quick maths: what growth rate does a target need?",
+      "question": "An invented company has revenue of $80m. Its target is $120m in four years. What yearly growth does that need, and how far would 7% a year get it?",
+      "answer": [
+        "Total growth needed: $120m ÷ $80m = 1.5, so revenue must rise by 50%.",
+        "A first guess of 50% ÷ 4 = 12.5% a year is too high, because growth compounds: each year's growth applies to a bigger base.",
+        "CAGR: 1.5 to the power of ¼, minus 1, is about 10.7% a year. Check by multiplying back: 1.107 × 1.107 × 1.107 × 1.107 is about 1.50.",
+        "At 7% a year, four years gives $80m × 1.07 × 1.07 × 1.07 × 1.07 = about $104.9m, leaving a gap of about $15.1m.",
+        "So what: the company needs growth well above 7% a year, or one larger move on top of its current trend."
+      ],
+      "checks": [
+        { "label": "Total growth multiple", "inputs": { "target": 120, "today": 80 }, "expression": "target / today", "expected": 1.5 },
+        { "label": "Simple average (too high)", "inputs": { "total_growth": 50, "years": 4 }, "expression": "total_growth / years", "expected": 12.5 },
+        { "label": "CAGR needed (%)", "inputs": { "target": 120, "today": 80, "years": 4 }, "expression": "((target / today) ^ (1 / years) - 1) * 100", "expected": 10.6682 },
+        { "label": "Multiplying back", "inputs": { "rate": 1.107 }, "expression": "rate ^ 4", "expected": 1.50173 },
+        { "label": "Revenue after four years at 7%", "inputs": { "today": 80, "growth": 1.07 }, "expression": "today * growth ^ 4", "expected": 104.864 },
+        { "label": "Gap left at 7%", "inputs": { "target": 120, "today": 80, "growth": 1.07 }, "expression": "target - today * growth ^ 4", "expected": 15.1363 }
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "A full worked example: closing a growth gap" },
+    {
+      "type": "example",
+      "title": "Worked example: Fernway pet food (an invented case)",
+      "question": "Fernway, an invented company, delivers pet food on subscription. It has 200,000 subscribers paying an average of $300 a year. The board wants revenue of $90m in three years. Each year Fernway loses 30% of its subscribers and wins 60,000 new ones, so its base is flat. The team has four ideas: cut churn to 24% with better service; launch a $120-a-year treats add-on, which research suggests a quarter of subscribers would buy; sell through vet clinics, which the team estimates would bring 20,000 extra subscribers by year 3; and buy a smaller rival with $10m of revenue, of which Fernway expects to keep 85%. Will these close the gap?",
+      "answer": [
+        "Revenue today: 200,000 × $300 = $60m. The gap to the target is $90m − $60m = $30m, which needs about 14.5% growth a year.",
+        "Why the base is flat: Fernway loses 30% of 200,000 = 60,000 subscribers a year and wins 60,000 new ones.",
+        "Lever 1, lower churn. If Fernway keeps 76% of its subscribers each year and still adds 60,000 new ones, after one year it has 200,000 × 0.76 + 60,000 = 212,000. Repeating this for three years gives about 228,000 subscribers, about 28,000 more than today, or about $8.4m of extra revenue.",
+        "Lever 2, the add-on: 200,000 × 25% × $120 = $6.0m a year.",
+        "Lever 3, vet clinics: 20,000 subscribers × $300 = $6.0m a year.",
+        "Lever 4, the acquisition: $10m × 85% = $8.5m a year.",
+        "Total: $8.4m + $6.0m + $6.0m + $8.5m = about $28.9m, about $1.1m short of the $30m gap. The two low-risk levers, churn and the add-on, give about $14.4m of it on their own.",
+        "One way to close the rest: a 2% price rise on today's $60m would add $1.2m, but it could push churn back up, so test it on a small group first.",
+        "Caveat: the levers overlap a little. Subscribers kept by lower churn could also buy the add-on, for example, so a fuller model would size them together. As a first pass, sizing each lever on today's base is fine as long as you say so."
+      ],
+      "checks": [
+        { "label": "Revenue today", "inputs": { "subscribers": 200000, "spend": 300 }, "expression": "subscribers * spend", "expected": 60000000 },
+        { "label": "Gap to the target", "inputs": { "target": 90000000, "today": 60000000 }, "expression": "target - today", "expected": 30000000 },
+        { "label": "Growth needed each year (%)", "inputs": { "target": 90, "today": 60, "years": 3 }, "expression": "((target / today) ^ (1 / years) - 1) * 100", "expected": 14.4714 },
+        { "label": "Subscribers lost a year today", "inputs": { "subscribers": 200000, "churn": 0.3 }, "expression": "subscribers * churn", "expected": 60000 },
+        { "label": "Subscribers after one year at 24% churn", "inputs": { "subscribers": 200000, "kept": 0.76, "new": 60000 }, "expression": "subscribers * kept + new", "expected": 212000 },
+        { "label": "Subscribers after three years at 24% churn", "inputs": { "subscribers": 200000, "kept": 0.76, "new": 60000 }, "expression": "((subscribers * kept + new) * kept + new) * kept + new", "expected": 228051.2 },
+        { "label": "Extra subscribers from lower churn", "inputs": { "after": 228051.2, "today": 200000 }, "expression": "after - today", "expected": 28051.2 },
+        { "label": "Revenue from lower churn", "inputs": { "extra": 28051.2, "spend": 300 }, "expression": "extra * spend", "expected": 8415360 },
+        { "label": "Revenue from the add-on", "inputs": { "subscribers": 200000, "take_up": 0.25, "price": 120 }, "expression": "subscribers * take_up * price", "expected": 6000000 },
+        { "label": "Revenue from vet clinics", "inputs": { "subscribers": 20000, "spend": 300 }, "expression": "subscribers * spend", "expected": 6000000 },
+        { "label": "Acquired revenue kept", "inputs": { "revenue": 10000000, "kept": 0.85 }, "expression": "revenue * kept", "expected": 8500000 },
+        { "label": "Total from the four levers", "inputs": { "churn": 8415360, "add_on": 6000000, "vets": 6000000, "deal": 8500000 }, "expression": "churn + add_on + vets + deal", "expected": 28915360 },
+        { "label": "Shortfall against the gap", "inputs": { "gap": 30000000, "levers": 28915360 }, "expression": "gap - levers", "expected": 1084640 },
+        { "label": "Churn and add-on together", "inputs": { "churn": 8415360, "add_on": 6000000 }, "expression": "churn + add_on", "expected": 14415360 },
+        { "label": "A 2% price rise", "inputs": { "revenue": 60000000, "rise": 0.02 }, "expression": "revenue * rise", "expected": 1200000 }
+      ]
+    },
+    { "type": "h2", "id": "compare-the-options", "text": "Compare the options, not just their size" },
+    {
+      "type": "p",
+      "text": "A growth recommendation is a choice, so judge each lever on more than its size. A simple table like the one below, filled in with the case's numbers and your own judgement, makes the trade-offs easy to see and easy to talk through. The ratings here are illustrative judgements for the Fernway example, not data."
+    },
+    {
+      "type": "table",
+      "caption": "Fernway's levers compared (illustrative)",
+      "columns": ["Lever", "Revenue by year 3", "Cost and effort", "Risk", "Speed"],
+      "rows": [
+        ["Lower churn", "About $8.4m", "Low to medium: service and product fixes", "Low: within Fernway's control", "Builds over three years"],
+        ["Treats add-on", "About $6.0m", "Low: new products in the same deliveries", "Medium: take-up may be below 25%", "Fast"],
+        ["Vet clinics", "About $6.0m", "Medium: partner fees and a sales team", "Medium: a new channel to learn", "Medium"],
+        ["Acquisition", "About $8.5m", "High: purchase price and integration", "High: overpaying, or losing its customers", "Fast once the deal closes"]
+      ]
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Mistakes that weaken growth answers",
+      "text": "The weakest growth answers are long lists of ideas with no numbers. What makes an answer useful is showing which levers matter, how big each one is, and whether together they reach the target."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Brainstorming before sizing the gap, so there is no way to tell whether the ideas are enough.",
+        "Forgetting churn. Winning new customers while losing old ones at the same rate is running to stand still.",
+        "Adding growth rates instead of compounding them, for example treating 10% a year for three years as 30% (it is 33.1%).",
+        "Counting overlapping levers twice without saying so.",
+        "Suggesting an acquisition without asking about the price, integration and how many customers might leave.",
+        "Mixing up revenue growth and profit growth. Some revenue costs more to win than it brings in.",
+        "Ignoring whether the company can deliver: staff, capacity, cash and know-how."
+      ]
+    },
+    { "type": "h2", "id": "finish-with-a-recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Answer the question", "text": "Say whether the target is reachable, and with which levers, in one or two sentences." },
+        { "title": "Back it with the sizing", "text": "Give the size of each chosen lever and the total against the gap." },
+        { "title": "Prioritise and sequence", "text": "Say what to do first (usually the quick, cheap, low-risk levers) and what to prepare for later." },
+        { "title": "Flag risks and next steps", "text": "Name the assumptions that matter most and how you would test them." }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For Fernway, a strong close might be: 'Fernway can get close to $90m. I would start with retention and the treats add-on, which together add about $14m at low cost and low risk, pilot the vet channel for another $6m, and look seriously at the acquisition, worth about $8.5m, as long as the price is right. That is about $29m against a $30m gap; a small, tested price rise could cover the rest.'"
+    },
+    { "type": "h2", "id": "keep-practising", "text": "Keep practising" },
+    {
+      "type": "links",
+      "title": "Practise growth cases and the skills behind them",
+      "items": [
+        { "label": "Practice cases, including growth cases", "href": "/cases" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Market sizing drills", "href": "/drills/market-sizing" },
+        { "label": "Market entry case interview guide", "href": "/guides/market-entry-case-interview" },
+        { "label": "Mergers and acquisitions case interview guide", "href": "/guides/mergers-and-acquisitions-case-interview" },
+        { "label": "Case interview maths guide", "href": "/guides/case-interview-maths" },
+        { "label": "Glossary of case interview terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between organic and inorganic growth?",
+      "a": "Organic growth comes from the company's own business: more customers, higher spend per customer, new products or new markets. Inorganic growth comes from buying or combining with other businesses, through acquisitions, mergers or joint ventures. Organic growth is usually slower but cheaper and less risky; inorganic growth is faster but brings a purchase price and integration risk."
+    },
+    {
+      "q": "How do I work out CAGR without a calculator?",
+      "a": "Start from the total growth multiple, then find the yearly rate that compounds to it. Dividing the total growth by the number of years gives a first guess that is a little too high, so adjust down and check by multiplying back. For example, 50% over three years is not 16.7% a year but about 14.5%, because 1.145 × 1.145 × 1.145 is about 1.50."
+    },
+    {
+      "q": "Should I always suggest an acquisition in a growth case?",
+      "a": "No. An acquisition can be the biggest single lever, but it is also the most expensive and the riskiest. Raise it when the gap is too big to close organically or the client is open to it, and ask about the price, synergies and integration before you count on it."
+    },
+    {
+      "q": "How is a growth case different from a market entry case?",
+      "a": "A market entry case asks whether to enter one specific market. A growth case is wider: entering a new market is only one option, next to selling more in the current business, new products and acquisitions. A growth case often contains a small market entry question inside it."
+    },
+    {
+      "q": "What if the target looks impossible?",
+      "a": "Say so, with numbers. Show how far the realistic levers get, what it would take to close the rest (for example, an acquisition of a certain size), and suggest a revised target or timeline. An honest, well-supported answer is more useful to a client than a forced one."
+    }
+  ],
+  "related_drills": ["mental-maths", "market-sizing", "frameworks", "chart-reading"]
+}

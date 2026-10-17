@@ -1,0 +1,337 @@
+{
+  "id": "case-030",
+  "slug": "kelstow-luggage-lost-share",
+  "title": "Kelstow Luggage: is lost share really to blame for falling profit?",
+  "track": "consulting",
+  "type": "profitability",
+  "industry": "Luggage (consumer goods)",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 35,
+  "prompt": "Kelstow Luggage is a UK brand of mid-priced suitcases and cabin bags. Its operating profit has fallen from £9.6 million to £4.6 million in three years. A paper from the sales director blames lost market share (the research agency's figures show Kelstow's share of UK luggage sold falling from 15% to about 11%) and asks for an extra £2 million a year of advertising to win it back. Over the same period, warranty repairs have risen sharply on Aero, the lighter range Kelstow launched two years ago and has made at a new, cheaper factory. The board has asked your team three things: whether the sales director's explanation holds up, what the Aero repairs are really costing, and which of the product team's three options for Aero to choose (cut its warranty from 10 years to 3, fit a stronger wheel housing at the new factory, or move Aero back to the original factory). Your team has Kelstow's results, the agency's market figures, repairs on Aero and Classic cases by the age of the case and by fault, and the product team's estimates for the three options. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Kelstow was founded about 25 years ago and is owned by its two founders and a small group of private investors. It designs suitcases and cabin bags in the UK and has them made by contract factories in Asia. About half its cases are sold through department stores and specialist luggage shops and half on its own website, and that mix has not changed in three years."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board wants to understand why operating profit has fallen from £9.6 million to £4.6 million, to choose one of the three options for Aero, and to get profit back to about where it was three years ago."
+    },
+    {
+      "question_topic": "Prices and revenue per case",
+      "answer": "Kelstow has not changed its prices in three years. Across its channels it receives about £60 a case on average, after the stores keep their margin. Aero is priced the same as Classic."
+    },
+    {
+      "question_topic": "The sales director's paper",
+      "answer": "The paper says Kelstow's share of UK luggage sold, counted in number of items, has fallen from 15% to about 11% in three years, and that this explains the profit fall. It asks for an extra £2 million a year of advertising to win back 4 points of share."
+    },
+    {
+      "question_topic": "How the market is measured",
+      "answer": "The research agency counts the number of luggage items sold in the UK each year. Two years ago it widened its definition of luggage to include wheeled holdalls and wheeled backpacks, and it did not restate the earlier years. Kelstow makes neither. Its count of suitcases and cabin bags is done the same way as before."
+    },
+    {
+      "question_topic": "The two ranges",
+      "answer": "Classic (hard and soft cases) has always been made by the original factory, which has worked with Kelstow for 20 years; a Classic case costs about £30 to make and ship to the UK. Aero, a lighter hard-shell range, was launched two years ago and is made by a new factory chosen because it charges £4 a case less (about £26). Kelstow sold 500,000 Aero cases last year and 600,000 this year, about 50,000 a month."
+    },
+    {
+      "question_topic": "Warranty and repairs",
+      "answer": "Every Kelstow case has a 10-year warranty. The owner books a repair online, a courier collects the case and one of about 40 independent repair workshops fixes it. Kelstow pays a fixed fee per repair, including the courier both ways: £40 for most repairs and £70 for a cracked wheel housing, because the whole base of the case is replaced. Repair costs are charged to the year in which the repair happens."
+    },
+    {
+      "question_topic": "Repairs this year",
+      "answer": "Kelstow paid for about 150,000 repairs this year: about 100,000 on Aero cases and 50,000 on Classic cases. Three years ago it paid for about 60,000, all on Classic cases."
+    },
+    {
+      "question_topic": "Why the wheel housings crack",
+      "answer": "Kelstow's engineers traced the cracks to the plastic used for Aero's wheel housings, which the new factory chose in order to keep its price down. The original factory uses a stronger plastic on Classic, whose wheel housings have not cracked in normal use."
+    },
+    {
+      "question_topic": "Store returns",
+      "answer": "About 4% of Aero cases bought in stores are brought back within 30 days, against about 1% for Classic. Two department-store chains, which together take about a fifth of Kelstow's sales, have said they will cut their Aero orders next season unless returns fall."
+    },
+    {
+      "question_topic": "The warranty and the brand",
+      "answer": "Store buyers say the 10-year warranty is one of the main reasons they stock Kelstow, and Kelstow's packaging and website feature it prominently. Kelstow has no estimate of how sales would change if Aero's warranty were cut to 3 years."
+    },
+    {
+      "question_topic": "Option B in more detail",
+      "answer": "The new factory would switch Aero's wheel housings to a stronger plastic with a metal insert, for £3 more a case, and Kelstow would pay about £0.5 million for new moulds. In Kelstow's lab drop and wheel tests the new housing did not crack. No customer has used it yet."
+    },
+    {
+      "question_topic": "Option C in more detail",
+      "answer": "The original factory could make Aero for about £30 a case (£4 more than now), using its stronger plastic. It is fully booked until next year, so its first Aero cases would go on sale in about 12 months. Moving the moulds would cost about £0.3 million. Until then the new factory would keep making today's Aero."
+    },
+    {
+      "question_topic": "Option A in more detail",
+      "answer": "Aero cases sold from next month would carry a 3-year warranty instead of 10 years; nothing else about the case would change. New packaging and website pages would cost about £0.1 million."
+    },
+    {
+      "question_topic": "Aero cases already sold",
+      "answer": "About 1.1 million Aero cases have been sold so far (500,000 last year and 600,000 this year). Whichever option is chosen, they keep their 10-year warranty; the options change only cases made from then on."
+    },
+    {
+      "question_topic": "Anything unusual",
+      "answer": "Nothing else: no price changes, no change in the channel mix, no change in marketing or overheads, and no store has stopped stocking Kelstow so far."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Test the claim: is Kelstow really losing share? How the agency measures the market, and Kelstow's sales against comparable products",
+      "Where the £5.0 million profit fall comes from: fewer cases, the cost of making cases, warranty repairs, marketing and overheads",
+      "The Aero range: repairs by age and by fault, what each repair costs, and the full cost per case (making plus repairs) against Classic",
+      "Wider effects of the quality problem: store returns and the two chains' warning, the warranty's role in the brand, and the Aero cases already sold",
+      "The three options compared on cost per case, one-off cost, timing, how sure the repair figures are and the risks, leading to one choice"
+    ],
+    "good_signs": [
+      "Asks how the market share is measured before accepting that share has fallen",
+      "Breaks the profit fall into its parts (volume, making cost, repairs, other costs) before looking for causes",
+      "States a hypothesis early (for example, that the fall is a cost problem linked to the new factory rather than lost customers) and says which data would test it",
+      "Compares the full cost of a case over its life (making plus expected repairs), not just what it costs to make",
+      "Asks when in a case's life the Aero faults happen and what they are, before judging the options"
+    ],
+    "red_flags": [
+      "Takes the reported share fall from 15% to about 11% at face value without asking how the market is measured",
+      "Backs the extra £2 million of advertising without checking that the share loss is real",
+      "Judges the new factory only on its £4-a-case saving and ignores the repairs",
+      "Picks option A because it is quick and cheap, without seeing that most Aero repairs happen in the first three years or how much store buyers value the 10-year warranty",
+      "Recites a named framework without tying it to Kelstow's numbers"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "kelstow-results",
+      "title": "Kelstow's results (£ million, except cases sold)",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Three years ago", "This year"],
+        "rows": [
+          ["Classic cases sold (thousand)", 1200, 540],
+          ["Aero cases sold (thousand)", 0, 600],
+          ["Revenue", 72, 68.4],
+          ["Making and shipping the cases", 36, 31.8],
+          ["Warranty repairs", 2.4, 8],
+          ["Marketing", 6, 6],
+          ["Other overheads", 18, 18],
+          ["Operating profit", 9.6, 4.6]
+        ]
+      },
+      "reveal_hint": "Ask for Kelstow's results, or how its revenue and costs have changed over the three years.",
+      "insight": "Operating profit fell £5.0m, from £9.6m to £4.6m (down about 52%). Cases sold fell only 5% (1.2m to 1.14m), so revenue fell £3.6m. Making and shipping fell £4.2m: £1.8m because of fewer cases and £2.4m because Aero is £4 a case cheaper to make (600,000 x £4). Warranty repairs more than tripled, up £5.6m from £2.4m to £8.0m, which is more than the whole fall. Marketing and overheads did not change. The bridge: fewer cases -£1.8m, cheaper making +£2.4m, repairs -£5.6m."
+    },
+    {
+      "id": "agency-market-figures",
+      "title": "The research agency's UK luggage figures (million items sold a year)",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Three years ago", "This year"],
+        "rows": [
+          ["Suitcases and cabin bags (counted the same way in both years)", 8, 7.6],
+          ["Wheeled holdalls and wheeled backpacks (counted only since the method changed two years ago)", "Not counted", 2.4],
+          ["UK luggage market as reported", 8, 10],
+          ["Kelstow (suitcases and cabin bags only)", 1.2, 1.14],
+          ["Kelstow's share as reported (%)", 15, 11.4]
+        ]
+      },
+      "reveal_hint": "Ask how the market share figures are measured, or for the agency's market figures.",
+      "insight": "The reported share fell from 15% to 11.4% because the market grew on paper: the agency added 2.4m wheeled holdalls and backpacks, which Kelstow does not make, taking the reported market from 8.0m to 10.0m. Counted the same way in both years, suitcases and cabin bags fell 5% (8.0m to 7.6m) and Kelstow's cases fell by the same 5% (1.2m to 1.14m), so it still sells 15% of them (1.14m of 7.6m). Kelstow has not lost share of what it makes, so the extra £2m of advertising is aimed at a problem that is not there."
+    },
+    {
+      "id": "repairs-by-age",
+      "title": "Repairs per 100 cases sold, by year after sale (Classic: Kelstow's long record; Aero: measured for its first two years, then the product team's projection)",
+      "kind": "table",
+      "data": {
+        "columns": ["Year after sale", "Classic (original factory)", "Aero (new factory)"],
+        "rows": [
+          ["First year", 1, 10],
+          ["Second year", 1, 8],
+          ["Third year", 1, 4],
+          ["Fourth to tenth years (all seven together)", 2, 8],
+          ["Total over the 10-year warranty", 5, 30]
+        ]
+      },
+      "reveal_hint": "Ask how often cases need repairing, or when in a case's life the repairs happen.",
+      "insight": "Classic cases need about 5 repairs per 100 over 10 years, spread thinly. Aero needs 10 per 100 in its first year and 8 in its second, and the product team projects 30 per 100 over the warranty, six times Classic's rate. 22 of Aero's 30 repairs come in the first three years, so cutting its warranty to 3 years (option A) would remove only 8 of them. The figures also explain this year's bill: 600,000 first-year Aero cases x 10% plus 500,000 second-year cases x 8% = about 100,000 Aero repairs."
+    },
+    {
+      "id": "repair-faults",
+      "title": "What the repairs are for: repairs per 100 cases over the 10-year warranty, by fault, and Kelstow's fee per repair",
+      "kind": "table",
+      "data": {
+        "columns": ["Fault", "Classic", "Aero", "Fee per repair, including courier (£)"],
+        "rows": [
+          ["Cracked wheel housing (the whole base is replaced)", 0, 20, 70],
+          ["Worn or broken wheels", 2, 4, 40],
+          ["Broken handles", 1, 3, 40],
+          ["Zips and locks", 2, 3, 40]
+        ]
+      },
+      "reveal_hint": "Ask what the repairs are for, or what each repair costs Kelstow.",
+      "insight": "Two-thirds of Aero's repairs (20 of 30 per 100) are cracked wheel housings, which Classic never has and which cost £70 each instead of £40. Expected repairs cost about £18 per Aero case ((20 x £70 + 10 x £40) / 100) against £2 per Classic case (5 x £40 / 100). The new factory's £4 saving has become a £12-a-case extra cost: an Aero case costs about £44 to make and repair (£26 + £18) against £32 for Classic (£30 + £2). Aero's other faults (10 per 100) are also above Classic's 5, so fixing the housings alone would not bring Aero all the way down to Classic's level."
+    },
+    {
+      "id": "aero-options",
+      "title": "The product team's three options for new Aero cases (estimates)",
+      "kind": "table",
+      "data": {
+        "columns": [
+          "Measure",
+          "A: cut Aero's warranty to 3 years",
+          "B: stronger wheel housing at the new factory",
+          "C: make Aero at the original factory again"
+        ],
+        "rows": [
+          ["Change in the cost to make and ship a case (£)", 0, 3, 4],
+          ["Expected repairs per 100 cases under the warranty", 22, 10, 6],
+          ["Average fee per repair (£)", 60, 40, 40],
+          ["One-off cost (£ million)", 0.1, 0.5, 0.3],
+          ["Months until the first changed cases go on sale", 1, 3, 12],
+          ["Warranty on the changed cases", "3 years", "10 years", "10 years"],
+          ["Where the repair figure comes from", "Aero's first three years in the repairs-by-age figures", "Lab tests of the new housing only", "The original factory's record on Classic, plus lab tests"]
+        ]
+      },
+      "reveal_hint": "Ask about the product team's options for Aero, or their costs, timing and evidence.",
+      "insight": "Cost to make and repair a new Aero case, against about £44 today: A £39.20 (£26 + 22 x £60 / 100), B £33 (£26 + £3 + 10 x £40 / 100), C £32.40 (£26 + £4 + 6 x £40 / 100). A saves only £4.80 a case because most faults come early, and it weakens the warranty that store buyers value. C is 60p a case cheaper than B once running and rests on a real record, but its first cases are 12 months away against 3 for B. B saves £11 a case, about £6.6m on each year's 600,000 Aero cases, and its £0.5m one-off cost is repaid by about a month of sales; its repair figure comes from lab tests only."
+    }
+  ],
+  "math": [
+    {
+      "id": "volume-profit-effect",
+      "question": "Kelstow sold fewer cases this year than three years ago. Valuing each case it no longer sells at what Kelstow receives for it (about £60) less what a Classic case costs to make and ship (about £30), how much operating profit did the lower volume cost, in £ million?",
+      "inputs": {
+        "classic_before": 1200,
+        "classic_now": 540,
+        "aero_now": 600,
+        "revenue_per_case": 60,
+        "making_per_case": 30
+      },
+      "expression": "(classic_before - classic_now - aero_now) * (revenue_per_case - making_per_case) / 1000",
+      "expected": 1.8,
+      "tolerance_pct": 3,
+      "working": "1,200,000 cases three years ago against 540,000 + 600,000 = 1,140,000 now: 60,000 fewer. Each lost case brought in £60 and cost £30 to make and ship, so 60,000 x £30 = £1.8m. Operating profit fell £5.0m (£9.6m to £4.6m), so fewer cases explain only about 36% of the fall. The rest of the bridge: repairs up £5.6m (£2.4m to £8.0m), partly offset by £2.4m saved by making Aero at the new factory (600,000 x £4); marketing and overheads did not change. And the lower volume is not lost share: Kelstow's 5% fall matches the 5% fall in suitcases and cabin bags (8.0m to 7.6m), so it still sells 15% of them.",
+      "input_sources": [
+        { "input": "classic_before", "exhibit_id": "kelstow-results", "row": 0, "column": "Three years ago" },
+        { "input": "classic_now", "exhibit_id": "kelstow-results", "row": 0, "column": "This year" },
+        { "input": "aero_now", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" }
+      ]
+    },
+    {
+      "id": "aero-repair-cost-per-case",
+      "question": "Using the repair figures by fault, what is the expected cost to Kelstow of warranty repairs on one Aero case over its 10-year warranty, in £?",
+      "inputs": {
+        "housing_repairs": 20,
+        "housing_fee": 70,
+        "wheel_repairs": 4,
+        "handle_repairs": 3,
+        "zip_repairs": 3,
+        "standard_fee": 40
+      },
+      "expression": "(housing_repairs * housing_fee + (wheel_repairs + handle_repairs + zip_repairs) * standard_fee) / 100",
+      "expected": 18,
+      "tolerance_pct": 3,
+      "working": "Cracked wheel housings: 20 per 100 cases x £70 = £1,400 per 100 cases. Other faults: 4 + 3 + 3 = 10 per 100 x £40 = £400. Total £1,800 per 100 cases, or £18 a case. A Classic case costs about £2 (5 per 100 x £40). So the new factory saves £4 a case to make but adds about £16 in repairs: an Aero case costs about £44 to make and repair (£26 + £18) against £32 for Classic (£30 + £2), £12 more. On 600,000 Aero cases a year that is about £7.2m more over their warranties than if they cost what Classic does.",
+      "input_sources": [
+        { "input": "housing_repairs", "exhibit_id": "repair-faults", "row": 0, "column": "Aero" },
+        { "input": "housing_fee", "exhibit_id": "repair-faults", "row": 0, "column": "Fee per repair, including courier (£)" },
+        { "input": "wheel_repairs", "exhibit_id": "repair-faults", "row": 1, "column": "Aero" },
+        { "input": "handle_repairs", "exhibit_id": "repair-faults", "row": 2, "column": "Aero" },
+        { "input": "zip_repairs", "exhibit_id": "repair-faults", "row": 3, "column": "Aero" },
+        { "input": "standard_fee", "exhibit_id": "repair-faults", "row": 1, "column": "Fee per repair, including courier (£)" }
+      ]
+    },
+    {
+      "id": "option-b-saving",
+      "question": "Under option B, how much less would each year's 600,000 Aero cases cost Kelstow to make and repair over their warranties than today's Aero cases, in £ million?",
+      "inputs": {
+        "aero_cases": 600,
+        "today_repair_cost": 18,
+        "b_extra_cost": 3,
+        "b_repairs": 10,
+        "b_fee": 40
+      },
+      "expression": "aero_cases * (today_repair_cost - b_extra_cost - b_repairs / 100 * b_fee) / 1000",
+      "expected": 6.6,
+      "tolerance_pct": 3,
+      "working": "Today an Aero case carries about £18 of expected repairs. Under B it would cost £3 more to make and carry about 10 repairs per 100 at £40, or £4: £7 in all, so £11 less per case. 600,000 x £11 = £6.6m for each year's Aero cases, more than the £5.0m profit fall. The £0.5m one-off cost is repaid by about a month of sales (50,000 cases x £11 = £550,000). For comparison, A saves £4.80 a case (£18 - 22 x £60 / 100 = £18 - £13.20), about £2.9m a year, and C saves £11.60 (£18 - £4 - £2.40), about £7.0m a year once running. The saving reaches the accounts gradually, as repairs that would have come over the following years do not happen.",
+      "input_sources": [
+        { "input": "aero_cases", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" },
+        { "input": "b_extra_cost", "exhibit_id": "aero-options", "row": 0, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_repairs", "exhibit_id": "aero-options", "row": 1, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_fee", "exhibit_id": "aero-options", "row": 2, "column": "B: stronger wheel housing at the new factory" }
+      ]
+    },
+    {
+      "id": "cost-of-waiting-for-c",
+      "question": "Option C's first cases would go on sale 12 months from now, against 3 months for option B. If Kelstow waited for C instead of doing B, how much more would it pay to make and repair the Aero cases sold in between, in £ million?",
+      "inputs": {
+        "months_c": 12,
+        "months_b": 3,
+        "aero_cases": 600,
+        "today_repair_cost": 18,
+        "b_extra_cost": 3,
+        "b_repairs": 10,
+        "b_fee": 40
+      },
+      "expression": "(months_c - months_b) * aero_cases / 12 * (today_repair_cost - b_extra_cost - b_repairs / 100 * b_fee) / 1000",
+      "expected": 4.95,
+      "tolerance_pct": 3,
+      "working": "The gap is 9 months, about 450,000 Aero cases (50,000 a month). Waiting for C, they would be today's Aero at about £44 each to make and repair (£26 + £18); under B they would cost about £33 (£26 + £3 + £4). £11 x 450,000 = £4.95m. Once running, C is only 60p a case cheaper than B (£32.40 against £33), about £0.36m a year on 600,000 cases, so it would take about 14 years to make up the £4.95m, and its one-off cost is only £0.2m lower. Speed also matters for the two store chains threatening to cut Aero orders. So B now, with C kept as a fallback if B's repairs in use turn out higher than the lab tests suggest.",
+      "input_sources": [
+        { "input": "months_c", "exhibit_id": "aero-options", "row": 4, "column": "C: make Aero at the original factory again" },
+        { "input": "months_b", "exhibit_id": "aero-options", "row": 4, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "aero_cases", "exhibit_id": "kelstow-results", "row": 1, "column": "This year" },
+        { "input": "b_extra_cost", "exhibit_id": "aero-options", "row": 0, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_repairs", "exhibit_id": "aero-options", "row": 1, "column": "B: stronger wheel housing at the new factory" },
+        { "input": "b_fee", "exhibit_id": "aero-options", "row": 2, "column": "B: stronger wheel housing at the new factory" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Whichever option Kelstow chooses, what else should it do about the Aero problem and the fall in profit?",
+    "idea_bank": [
+      "Start option B now and book capacity at the original factory as a fallback, in case the stronger housing does not cut repairs in real use",
+      "Fit the stronger housing whenever an Aero case already sold comes in for a wheel-housing repair, so the same case does not come back a second time",
+      "Ask the new factory to share the cost: it chose the cheaper plastic, so negotiate a contribution to repairs or a lower price for the stronger housing",
+      "Test samples from every batch the new factory makes (drop and wheel tests) before shipping, and add a quality clause with penalties to the contract",
+      "Tell the two department-store chains about the fix and agree a returns target with them, so they keep ordering Aero",
+      "Agree a lower fee with the repair workshops for wheel-housing jobs, given how many there are",
+      "Track repairs per 100 Aero cases by month of making, store returns and repair cost, and review option B after six months",
+      "Hold back the extra £2 million of advertising: the share loss it targets is not real, and the money is better spent once the product is fixed",
+      "Ask the agency for suitcase and cabin bag figures counted the old way each year, and report like-for-like share to the board",
+      "Keep the 10-year warranty, and use it again in marketing once Aero's repairs are down",
+      "Set aside money for the repairs still to come on the 1.1 million Aero cases already sold, so the board is not surprised by them",
+      "As a separate, later question: whether Kelstow should make wheeled holdalls or backpacks, which now make up about a quarter of the market the agency reports"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "The share loss is mostly a change in how the market is measured: the agency now counts wheeled holdalls and backpacks, which Kelstow does not make; counted the old way, Kelstow still sells 15% of suitcases and cabin bags (1.14m of 7.6m)",
+      "Fewer cases explain only about £1.8m of the £5.0m profit fall; the main cause is warranty repairs, up £5.6m, mostly on the Aero range made at the new factory",
+      "Aero's expected repairs (about £18 a case, two-thirds of them cracked wheel housings) far outweigh the £4 a case saved at the new factory, so an Aero case costs about £44 to make and repair against £32 for Classic",
+      "A clear choice between the three options with the reason, for example option B now (about £6.6m less for each year's Aero cases, in place within 3 months) rather than A (it saves only £4.80 a case because most faults come early, and it weakens the warranty), with C kept as a fallback if B's lab results do not hold up"
+    ],
+    "good_signs": [
+      "Says which exhibit or fact supports each point, as a hypothesis tested with evidence",
+      "Uses timing: waiting 9 months for C would cost about £4.95m on the Aero cases sold in between, which C's 60p-a-case advantage would take about 14 years to recover",
+      "Notices that the options only change new cases: the 1.1 million Aero cases already sold should need about 180,000 more repairs (about £10.8m) over their warranties, so profit will recover gradually rather than at once",
+      "Links the quality problem to store returns (about 4% for Aero against 1% for Classic) and the two chains' warning, which makes speed matter",
+      "Says the case for the extra £2m of advertising rests on a share loss that is not there, so it should wait until the product problem is fixed",
+      "Names the risks: B's repair figure comes from lab tests only, the new factory may not hold its price or quality, the store chains may cut orders anyway, and repairs on cases already sold will continue",
+      "Gives next steps and what to measure: repairs per 100 by month of making, store returns, repair cost per case and a date to review B"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: operating profit fell from £9.6m to £4.6m in three years. The sales director blames lost share (15% to about 11%) and wants an extra £2m a year of advertising. The board wants to know whether that explanation holds, what Aero's repairs cost, and which of three options to choose for Aero, with the aim of getting profit back to about £9.6m.",
+    "Structure: test the share claim (how is the market measured?), break the £5.0m fall into its parts, find the cause of the biggest part, then compare the three options on the full cost of a case over its life, one-off cost, timing, how sure the figures are and the risks, and choose one.",
+    "Test the claim: the reported share fell because the agency added 2.4m wheeled holdalls and backpacks two years ago, which Kelstow does not make. Counted the same way, suitcases and cabin bags fell 5% (8.0m to 7.6m) and so did Kelstow (1.2m to 1.14m): it still sells 15% of them. The 60,000 fewer cases cost about £1.8m of profit (60,000 x £30), only about 36% of the fall. The bridge: fewer cases -£1.8m, cheaper Aero making +£2.4m (600,000 x £4), repairs -£5.6m (£2.4m to £8.0m); marketing and overheads flat. The explanation does not hold, and neither does the case for the advertising.",
+    "What Aero's repairs cost: about 100,000 Aero repairs this year against 50,000 on the much larger stock of Classic cases. Aero needs 10 repairs per 100 in its first year against 1 for Classic, and about 30 per 100 over the warranty against 5. Two-thirds are cracked wheel housings at £70 each, traced to the cheaper plastic the new factory chose. Expected repairs are about £18 per Aero case against £2 for Classic, so the £4 saving has become a £12 extra cost: about £44 to make and repair an Aero case against £32 for Classic. Store returns (4% against 1%) and the two chains' warning add to the cost.",
+    "The options, per new Aero case against about £44 today: A £39.20, saving only £4.80, because 22 of the 30 repairs come in the first three years; it also weakens the 10-year warranty that store buyers value and does nothing about returns. B £33, saving £11 a case, about £6.6m for each year's 600,000 Aero cases; the £0.5m one-off cost is repaid in about a month, and it is in place in 3 months, but its repair figure is from lab tests only. C £32.40, 60p cheaper than B and backed by a real record, but 12 months away: waiting would cost about £4.95m on the 450,000 cases sold in between, which its 60p advantage would take about 14 years to make up.",
+    "Recommendation: choose B now, and book capacity at the original factory so Kelstow can switch to C if B's first months of repairs are well above the lab figure. Fit the stronger housing to Aero cases already sold when they come in for repair, ask the new factory to share the cost, add batch testing and a quality clause, and tell the two store chains about the fix. Keep the 10-year warranty. Hold the extra £2m of advertising until the product is fixed, and ask the agency for like-for-like figures so the board tracks the right share.",
+    "Risks and next steps: B is untested in use; the new factory may not hold its £3 price or its quality; the store chains may cut orders anyway; and the 1.1 million Aero cases already sold should still need about 180,000 repairs (about £10.8m at £60 each) over their warranties, so profit will recover over several years, not at once. Track repairs per 100 Aero cases by month of making, store returns and repair cost per case, and review B after six months."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

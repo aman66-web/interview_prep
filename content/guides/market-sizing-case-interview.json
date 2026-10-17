@@ -1,0 +1,283 @@
+{
+  "slug": "market-sizing-case-interview",
+  "kind": "case_type",
+  "case_type": "market_sizing",
+  "title": "Market sizing case interviews: how to estimate any number",
+  "seo_title": "Market Sizing Case Interview: Method and Worked Example",
+  "description": "How to answer a market sizing question: agree what to count, break it down, state round assumptions, do the maths aloud and sense-check it. Worked example.",
+  "updated": "2026-10-15",
+  "reading_minutes": 10,
+  "summary": "A market sizing case asks you to estimate a number nobody expects you to know, such as how many e-bikes a city buys each year. You solve it by agreeing exactly what is being counted, breaking the number into a short chain of pieces you can estimate, giving each a round and reasoned assumption, multiplying through out loud, and sense-checking the result from a second direction before saying what it means for the client.",
+  "blocks": [
+    { "type": "h2", "id": "what-it-is", "text": "What a market sizing case is" },
+    {
+      "type": "p",
+      "text": "A market sizing question asks for a number you can't look up in the room: how many coffees a station sells in a morning, how much a country spends on pet insurance, how many delivery vans a supermarket needs. It can be a short question on its own, or one step inside a bigger case, for example when a market entry case needs to know whether the market is big enough to be worth entering."
+    },
+    {
+      "type": "p",
+      "text": "Nobody expects you to know the real answer. The question is a way to see four things at once: whether you can break a vague question into logical pieces, whether your assumptions are sensible and said out loud, whether your maths stays accurate under pressure, and whether you notice when a result looks wrong. A clear method that lands in a sensible range shows all four. A lucky guess with no method shows none of them."
+    },
+    { "type": "h2", "id": "choose-an-approach", "text": "Choose an approach" },
+    {
+      "type": "p",
+      "text": "There are two main ways in. Strong answers often use one to build the estimate and the other to check it."
+    },
+    {
+      "type": "table",
+      "caption": "The two main ways to size a market",
+      "columns": ["Approach", "How it works", "Works best for", "Example chain"],
+      "rows": [
+        [
+          "Demand side (who buys)",
+          "Start from people, households or businesses, narrow down to those who buy, then multiply by how often and how much",
+          "Consumer products and services, and anything bought by a group you can define",
+          "Households × share with a dog × vet visits a year × price per visit"
+        ],
+        [
+          "Supply side (who sells, or what capacity exists)",
+          "Start from the places, machines or people that provide the product, then multiply by how much each one handles",
+          "Things limited by capacity, such as clinics, cinemas, taxis or factories",
+          "Cinemas × screens each × shows a day × seats filled per show"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pick the side where you can make the most confident assumptions. If you know little about the buyers but can easily picture the shops, start from the shops."
+    },
+    { "type": "h2", "id": "sample-structure", "text": "A starting structure" },
+    {
+      "type": "framework",
+      "title": "Sizing a consumer market from the demand side (a starting point)",
+      "branches": [
+        {
+          "name": "Who could buy",
+          "items": [
+            "The population or number of households in the area",
+            "Pick the unit that actually buys: households for washing machines, people for trainers, companies for office printers",
+            "Remove groups who can't or won't buy, such as young children",
+            "Split into segments that behave differently, for example by age, income, or city versus countryside"
+          ]
+        },
+        {
+          "name": "How many of them buy",
+          "items": [
+            "The share of each segment that uses or owns the product",
+            "For things people own, separate the number in use today (the stock) from the number bought each year (the flow)"
+          ]
+        },
+        {
+          "name": "How often and how much",
+          "items": [
+            "Purchases per user per year, or how many years the product lasts before it is replaced",
+            "Units per purchase"
+          ]
+        },
+        {
+          "name": "At what price",
+          "items": [
+            "Average price per unit, allowing for a mix of cheap and premium",
+            "Only needed if the question asks for value rather than units"
+          ]
+        },
+        {
+          "name": "Sense check",
+          "items": [
+            "A supply-side estimate from shops, outlets or capacity",
+            "A comparison with something you know, such as spending per person"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Treat this as a starting point, not a script. Change the branches to fit the product: a business product starts from the number of companies rather than people, and something used every day is easier to estimate per day and then scale up to a year."
+    },
+    { "type": "h2", "id": "questions-to-ask", "text": "Questions to ask before you start" },
+    {
+      "type": "ul",
+      "items": [
+        "What exactly counts? For e-bikes: are electric scooters included? What about bikes bought by rental and sharing fleets?",
+        "Units or value? The number of items sold, or the money spent on them?",
+        "Where and when? Which city or country, and is it per year, per day, or a count at one point in time?",
+        "Stock or flow? The number of bikes in use today is a different question from the number sold each year.",
+        "Who are the customers? Consumers, businesses, or both?",
+        "Why does the client want it? A rough size to judge whether a market is worth entering needs less precision than a number used to plan a factory."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ask only the questions that would change your answer. Two or three good ones beat a long list, and if the interviewer says “use your judgement”, state your choice and move on."
+    },
+    { "type": "h2", "id": "step-by-step", "text": "Step by step" },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Restate and clarify",
+          "text": "Repeat the question in your own words with the definition you agreed: “So we want the number of new e-bikes bought by people in the city in one year.”"
+        },
+        {
+          "title": "Lay out the chain before any numbers",
+          "text": "Say the equation first, for example: adults × share who own an e-bike ÷ years before replacement, plus first-time buyers. The interviewer can correct the logic before you spend time on the maths."
+        },
+        {
+          "title": "Segment where behaviour differs",
+          "text": "Split a group only if the parts behave very differently. Two or three segments are usually enough; more adds maths without adding insight."
+        },
+        {
+          "title": "Make round, reasoned assumptions",
+          "text": "Give each number a one-line reason (“older riders want help on hills, so ownership is a little higher”). Round numbers keep the maths quick and the logic easy to follow."
+        },
+        {
+          "title": "Calculate out loud, with units",
+          "text": "Say each step and its result, and write the unit next to every number so a monthly figure never gets multiplied as if it were yearly."
+        },
+        {
+          "title": "Sense-check",
+          "text": "Test the answer from another direction, such as sales per shop. If the two views are far apart, find the assumption that is causing it."
+        },
+        {
+          "title": "Say what it means",
+          "text": "Round the result, give a range, name the assumption that matters most, and link the number back to the client's decision."
+        }
+      ]
+    },
+    { "type": "h2", "id": "the-maths", "text": "The maths you'll need" },
+    {
+      "type": "ul",
+      "items": [
+        "Big multiplications: split each number into a short part and its zeros. 2 million × 30% is 2 × 0.3 = 0.6 million, or 600,000.",
+        "Percentages of percentages: 40% of adults, and 25% of those, is 10% of adults.",
+        "Stock to flow: if 70,000 bikes are in use and each lasts about 5 years, roughly 70,000 ÷ 5 = 14,000 are replaced each year.",
+        "Time conversions: 50 weeks or 360 days make quick stand-ins for a year. Say that you are rounding.",
+        "Rounding as you go: keep one or two significant figures at each step, and notice whether you rounded up or down so the errors don't all pile up in one direction."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Write the units",
+      "text": "Many market sizing slips are unit slips: a daily figure treated as yearly, households used as if they were people, or thousands confused with millions. Writing the unit next to every number on your page is the simplest way to catch them."
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "The most expensive mistake",
+      "text": "Multiplying before agreeing what is being counted. If you size the number of e-bikes in use when the client wanted yearly sales, every later step is wasted, however good the maths."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Too many segments, which turns a short estimate into a long spreadsheet read aloud.",
+        "Assumptions with no reason, or numbers picked only because they make the maths easy when they are clearly unrealistic.",
+        "Mixing people and households, or stock and flow, in the same chain.",
+        "No sense check, so a result ten times too big goes unnoticed.",
+        "Asking the interviewer for every number instead of estimating. You can ask whether data exists, but be ready to assume.",
+        "Ending on a bare number without saying what it means for the client."
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "Worked example: e-bike sales in a city" },
+    {
+      "type": "example",
+      "title": "How many e-bikes are bought each year in Riverton?",
+      "question": "An e-bike maker is deciding whether to open its own shop in Riverton, an invented US city of 2 million people. Estimate how many new e-bikes residents buy each year, and how much they spend on them. (The city, the company and every number here are invented for practice.)",
+      "answer": [
+        "Clarify: we agree to count new e-bikes bought by residents for their own use in one year, in units and in dollars. Bikes bought by rental and sharing fleets are left out, because the client sells to consumers.",
+        "Approach: estimate how many e-bikes are in use (the stock), then how many are bought each year (the flow): replacements for worn-out bikes, plus bikes bought by first-time owners.",
+        "Who could buy: of 2 million residents, assume 400,000 are under 16 and don't buy for themselves, leaving 1.6 million adults. Split them by age, because the reasons for owning an e-bike differ: 700,000 aged 16 to 39, 600,000 aged 40 to 64, and 300,000 aged 65 and over.",
+        "Ownership: assume 4% of 16 to 39 year-olds own one (mostly commuters), 5% of 40 to 64 year-olds (commuting and leisure, with more to spend) and 4% of those 65 and over (help on hills). That is 28,000 + 30,000 + 12,000 = 70,000 e-bikes in use.",
+        "Replacements: assume an e-bike lasts about 5 years, so 70,000 ÷ 5 = 14,000 are replaced each year.",
+        "First-time buyers: assume the number of owners grows by 10% a year, so 70,000 × 10% = 7,000 new owners a year.",
+        "Units and value: 14,000 + 7,000 = 21,000 e-bikes a year. At an average price of $2,000 (a mix of cheaper commuter bikes and pricier cargo bikes), that is 21,000 × $2,000 = $42 million a year.",
+        "Sense check from the supply side: assume 40 shops in the city sell e-bikes. 21,000 ÷ 40 = 525 bikes per shop a year, or about 10 a week over 50 trading weeks. That is busy but believable, and some bikes are bought online, so the estimate sits in a sensible range.",
+        "The assumption that matters most is how long a bike lasts. At 4 years instead of 5, replacements rise to 70,000 ÷ 4 = 17,500 and total sales to 17,500 + 7,000 = 24,500 a year, about 17% more.",
+        "So what: the market is roughly 20,000 to 25,000 bikes, or about $40 to $50 million a year. A shop that won 10% of it would sell about 2,100 bikes, around $4.2 million a year, which gives the client a figure to set against the cost of running a shop."
+      ],
+      "checks": [
+        { "label": "Adults", "inputs": { "residents": 2000000, "under_16": 400000 }, "expression": "residents - under_16", "expected": 1600000 },
+        { "label": "Adults across the three age groups", "inputs": { "young": 700000, "middle": 600000, "older": 300000 }, "expression": "young + middle + older", "expected": 1600000 },
+        { "label": "Owners aged 16 to 39", "inputs": { "young": 700000, "own_young": 0.04 }, "expression": "young * own_young", "expected": 28000 },
+        { "label": "Owners aged 40 to 64", "inputs": { "middle": 600000, "own_middle": 0.05 }, "expression": "middle * own_middle", "expected": 30000 },
+        { "label": "Owners aged 65 and over", "inputs": { "older": 300000, "own_older": 0.04 }, "expression": "older * own_older", "expected": 12000 },
+        {
+          "label": "E-bikes in use",
+          "inputs": { "young": 700000, "own_young": 0.04, "middle": 600000, "own_middle": 0.05, "older": 300000, "own_older": 0.04 },
+          "expression": "young * own_young + middle * own_middle + older * own_older",
+          "expected": 70000
+        },
+        { "label": "Replacements a year", "inputs": { "in_use": 70000, "life_years": 5 }, "expression": "in_use / life_years", "expected": 14000 },
+        { "label": "First-time buyers a year", "inputs": { "in_use": 70000, "owner_growth": 0.1 }, "expression": "in_use * owner_growth", "expected": 7000 },
+        { "label": "E-bikes bought a year", "inputs": { "replacements": 14000, "first_time": 7000 }, "expression": "replacements + first_time", "expected": 21000 },
+        { "label": "Spending a year ($)", "inputs": { "units": 21000, "avg_price": 2000 }, "expression": "units * avg_price", "expected": 42000000 },
+        { "label": "Bikes per shop a year", "inputs": { "units": 21000, "shops": 40 }, "expression": "units / shops", "expected": 525 },
+        { "label": "Bikes per shop a week", "inputs": { "per_shop": 525, "weeks": 50 }, "expression": "per_shop / weeks", "expected": 10.5 },
+        { "label": "Replacements if bikes last 4 years", "inputs": { "in_use": 70000, "life_years": 4 }, "expression": "in_use / life_years", "expected": 17500 },
+        { "label": "Total if bikes last 4 years", "inputs": { "replacements": 17500, "first_time": 7000 }, "expression": "replacements + first_time", "expected": 24500 },
+        { "label": "Increase if bikes last 4 years", "inputs": { "new_total": 24500, "base_total": 21000 }, "expression": "new_total / base_total - 1", "expected": 0.1666667 },
+        { "label": "Spending if bikes last 4 years ($)", "inputs": { "units": 24500, "avg_price": 2000 }, "expression": "units * avg_price", "expected": 49000000 },
+        { "label": "Bikes for a 10% share", "inputs": { "units": 21000, "share": 0.1 }, "expression": "units * share", "expected": 2100 },
+        { "label": "Sales for a 10% share ($)", "inputs": { "bikes": 2100, "avg_price": 2000 }, "expression": "bikes * avg_price", "expected": 4200000 }
+      ]
+    },
+    { "type": "h2", "id": "how-to-finish", "text": "How to finish" },
+    {
+      "type": "p",
+      "text": "End with a short answer the interviewer could repeat to a client: the number, rounded, with a range; the one or two assumptions it depends on most; and what it means for the decision. For example: “About 21,000 e-bikes a year, worth around $42 million. The biggest uncertainty is how long bikes last; at four years the market is nearer $49 million. Either way a 10% share would be over $4 million of sales a year, so the next step is to compare that with the cost of running a shop.”"
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Own your number",
+      "text": "Don't apologise for the estimate or bury it in caveats. Say it clearly, show which assumption would move it most, and suggest how you would firm it up, for example with a short customer survey or with sales data from the client's shops in similar cities."
+    },
+    { "type": "h2", "id": "how-to-practise", "text": "How to practise" },
+    {
+      "type": "ul",
+      "items": [
+        "Do one estimate a day on things you see around you: parking spaces on your street, coffees sold at a station, phone screens repaired in your town.",
+        "Size the same thing from the demand side and the supply side, then compare the two answers.",
+        "Time yourself. Aim to clarify, structure, calculate and sense-check a stand-alone estimate in under ten minutes.",
+        "Learn a few anchor numbers for the country you're interviewing in, such as population, number of households and average household size, from the national statistics office rather than from memory or forums.",
+        "Practise the mental maths separately, so the arithmetic never slows down the logic."
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Keep practising",
+      "items": [
+        { "label": "Market sizing drills", "href": "/drills/market-sizing" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Case interview maths", "href": "/guides/case-interview-maths" },
+        { "label": "How to structure a case interview", "href": "/guides/how-to-structure-a-case-interview" },
+        { "label": "Market entry case interviews", "href": "/guides/market-entry-case-interview" },
+        { "label": "Practice cases", "href": "/cases" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How accurate does my market sizing answer need to be?",
+      "a": "There is no single right number, because everything rests on assumptions. Aim for an answer in a sensible range, reached by clear steps, with a sense check that would catch a result ten times too big or too small. If the interviewer has a different figure in mind, ask which assumption differs; that conversation is part of the exercise."
+    },
+    {
+      "q": "Should I use a top-down or a bottom-up approach?",
+      "a": "Both names are used loosely. Starting from the population and narrowing down (often called top-down) suits consumer products. Building up from shops, capacity or a single outlet (often called bottom-up) suits markets where supply limits sales. Use whichever lets you make the most confident assumptions, and the other as a check."
+    },
+    {
+      "q": "Can I ask the interviewer for data?",
+      "a": "Yes. It is reasonable to ask whether they have a figure, such as the city's population. Often they will ask you to assume one, so have a reasoned number ready, say it out loud and invite them to correct it."
+    },
+    {
+      "q": "Do I need to memorise statistics?",
+      "a": "A handful of anchor numbers for your country, such as population, households and average household size, saves time. Take them from the national statistics office. Beyond those, clear reasoning matters far more than recall."
+    },
+    {
+      "q": "What should I do if my answer looks wrong?",
+      "a": "Say so: noticing it is a good sign. Go back through the chain, find the assumption that looks too high or too low, change it with a reason and recalculate. Don't quietly change the final number without explaining why."
+    }
+  ],
+  "related_drills": ["market-sizing", "mental-maths"]
+}

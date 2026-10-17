@@ -1,0 +1,227 @@
+{
+  "slug": "market-entry-case-interview",
+  "kind": "case_type",
+  "case_type": "market_entry",
+  "title": "Market entry case interviews: should the client go in?",
+  "seo_title": "Market Entry Case Interview: Structure and Worked Example",
+  "description": "How to solve a market entry case: judge the market, the competition, the client's ability to win and the economics, then give a clear yes or no.",
+  "updated": "2026-10-15",
+  "reading_minutes": 9,
+  "summary": "A market entry case asks whether a company should start selling in a new country, customer group or product area, and if so how. You solve it by checking four things in turn: whether the market is attractive, whether the competition leaves room, whether this client can win, and whether the economics meet the client's goal at an acceptable risk. Then you give a clear yes or no, with the conditions and the way to enter.",
+  "blocks": [
+    { "type": "h2", "id": "what-it-is", "text": "What a market entry case is" },
+    {
+      "type": "p",
+      "text": "A market entry case asks whether a client should move into somewhere new: a new country, a new type of customer, or a new product area. The question might be “should we launch in Spain?”, “should a supermarket open small convenience shops?” or “should a car-parts maker start making electric-vehicle batteries?”. Sometimes the decision to enter is already made and the question is how: build from scratch, buy a company, or find a partner."
+    },
+    {
+      "type": "p",
+      "text": "The trap is that an attractive market is not the same as a good decision. A large, growing market can still be a bad place for a company with no real edge there. The case tests whether you can connect the market, the competition, the client's strengths and the numbers into one answer."
+    },
+    { "type": "h2", "id": "sample-structure", "text": "A starting structure" },
+    {
+      "type": "framework",
+      "title": "Market entry (a starting point)",
+      "branches": [
+        {
+          "name": "Is the market attractive?",
+          "items": [
+            "Size today and growth",
+            "How profitable the companies already in it are",
+            "What customers need and how they buy",
+            "Rules, licences or taxes that affect it"
+          ]
+        },
+        {
+          "name": "Does the competition leave room?",
+          "items": [
+            "Who is there and how big they are",
+            "Whether a few big players hold most of the market or it is spread across many small ones",
+            "How they would react to a newcomer",
+            "Barriers to entry: brand loyalty, scale, long contracts, regulation"
+          ]
+        },
+        {
+          "name": "Can the client win?",
+          "items": [
+            "What it does better than local players: product, price, service, technology or brand",
+            "What it lacks: local knowledge, a sales network, a supply chain",
+            "Whether its edge carries over to the new market"
+          ]
+        },
+        {
+          "name": "Do the economics work?",
+          "items": [
+            "Investment needed, and when",
+            "Revenue and profit the client could realistically reach",
+            "Payback and return compared with the client's target",
+            "What happens if things go worse than planned"
+          ]
+        },
+        {
+          "name": "How should it enter?",
+          "items": [
+            "Build from scratch, buy a company, partner, or license",
+            "Start with a small pilot or go in at scale",
+            "Timing, and the first city, segment or channel"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Use this as a skeleton and make it specific to the client. For a hospital group entering a new country, “can the client win?” becomes questions about recruiting doctors, getting licences and agreeing terms with insurers. For a phone app, it becomes questions about how users will find it and whether the product needs changing for local users. The more your branches sound like the client's business, the stronger the structure."
+    },
+    { "type": "h2", "id": "questions-to-ask", "text": "Questions to ask first" },
+    {
+      "type": "ul",
+      "items": [
+        "What is the client's goal, and how is success measured: revenue, profit, market share, or payback within a set time?",
+        "Why now? Is there a trigger, such as slowing growth at home or a competitor moving first?",
+        "Exactly which market: which country or region, which customers, which products?",
+        "What does the client do today, and what makes it good at it?",
+        "Is there a budget, a deadline or a limit on how much risk it will take?",
+        "Has it already decided how to enter, or is that part of the question?"
+      ]
+    },
+    { "type": "h2", "id": "ways-to-enter", "text": "Ways to enter" },
+    {
+      "type": "table",
+      "caption": "Entry options compared",
+      "columns": ["Option", "Good for", "Watch out for"],
+      "rows": [
+        ["Build from scratch", "Full control, and keeping the client's own way of working", "Slow and costly; the client starts with no customers and little local knowledge"],
+        ["Buy a local company", "Speed: customers, staff and sites from day one", "The price paid, hidden problems, and merging two ways of working"],
+        ["Partner or joint venture", "Sharing cost and risk, and gaining local knowledge", "Sharing profit and control; partners can disagree"],
+        ["License or franchise", "Fast growth with little money tied up", "Less control over quality, and a smaller share of the profit"],
+        ["Export or sell online first", "Testing demand cheaply", "A weaker presence; may not work for services that need local staff"]
+      ]
+    },
+    { "type": "h2", "id": "the-maths", "text": "The analysis and maths to expect" },
+    {
+      "type": "p",
+      "text": "Most market entry cases need some numbers, usually in roughly this order."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Market size, often a quick market sizing: customers × spend per customer, plus growth over the plan period.",
+        "A realistic share or volume: how many customers, sites or sales the client could win, checked against what competitors have.",
+        "Unit economics: revenue and profit per shop, site, customer or contract.",
+        "Investment and payback: payback in years = upfront investment ÷ yearly profit, compared with the client's target.",
+        "A downside case: the maths rerun with the riskiest assumption made worse, to see whether the answer still holds."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Turn the goal into a test",
+      "text": "If the client wants its money back within five years, work out what has to be true to get there, such as the minimum profit each site must make. A clear threshold turns a vague debate into a question the data can answer."
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Saying yes because the market is big",
+      "text": "A large, growing market only matters if the client can win a profitable share of it. Always connect the market's attractiveness to the client's own edge and to the numbers."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Forgetting the client's goal, so there is nothing to judge the answer against.",
+        "Assuming competitors will stand still when a newcomer arrives.",
+        "Leaving out how to enter, which can change the cost, speed and risk more than anything else.",
+        "No numbers at all, or numbers with no link to the decision.",
+        "Ending with “it depends” instead of a recommendation with conditions."
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "Worked example: a climbing centre chain" },
+    {
+      "type": "example",
+      "title": "Should Cragline open climbing centres in a new country?",
+      "question": "Cragline is an invented company that runs 25 indoor climbing centres in its home country. It is considering opening 10 centres in a new country over three years. The board wants at least $4m of operating profit a year from them once they are established, and the money invested paid back within five years. Should it go ahead? (The company, the country and every number here are invented for practice.)",
+      "answer": [
+        "Clarify: the goal is at least $4m a year of operating profit from the new centres once established, and payback of the investment within five years. The interviewer confirms there are no rules stopping a foreign company running climbing centres there.",
+        "Market: about 800,000 people climb indoors regularly, spending an average of $600 a year on entry, memberships, classes and gear hire, so the market is 800,000 × $600 = $480m. It is growing about 8% a year, reaching $480m × 1.08³ ≈ $605m in three years.",
+        "Competition: most centres are small, single-site independents, and the only chain has 15 centres. The market is spread out, which leaves room for a new chain, but the chain could cut its prices in response.",
+        "Ability to win: Cragline's centres are larger than most, with training areas and a café, and it has a membership app and its own route-setting team. It lacks local brand awareness and needs large buildings in cities, so finding sites is the main practical risk.",
+        "Economics: fitting out a leased building costs $2m per centre, so 10 centres need 10 × $2m = $20m. An established centre is expected to take $2.5m of revenue and make $0.5m of operating profit, a 20% margin in line with Cragline's centres at home. Ten established centres would make 10 × $0.5m = $5m a year.",
+        "Share check: 10 × $2.5m = $25m of revenue is $25m ÷ $480m ≈ 5.2% of today's market. That is a modest share of a spread-out market, so the plan is believable.",
+        "Against the goal: $5m a year beats the $4m target, and payback is $20m ÷ $5m = 4 years, inside the five-year limit. This simple payback ignores the year or so a new centre takes to build up its members, which would stretch it, so say that out loud.",
+        "Downside: if price cuts by the rival chain held each centre to $0.25m of profit, the 10 centres would make 10 × $0.25m = $2.5m a year, missing the target, and payback would stretch to $20m ÷ $2.5m = 8 years.",
+        "Threshold: to meet the profit goal each centre must make at least $4m ÷ 10 = $0.4m a year. At exactly that level, payback is $20m ÷ $4m = 5 years, right on the limit. So the decision rests on one number: profit per centre.",
+        "Recommendation: go ahead, but in stages. Open 3 centres in one city first, with the membership app from day one, and commit the rest of the $20m only if those centres are on track for at least $0.4m of profit each. Secure sites early, and consider buying one or two independent centres to get trained staff and members faster."
+      ],
+      "checks": [
+        { "label": "Market size today ($m)", "inputs": { "climbers_m": 0.8, "spend": 600 }, "expression": "climbers_m * spend", "expected": 480 },
+        { "label": "Market size in three years ($m)", "inputs": { "market": 480, "growth": 0.08, "years": 3 }, "expression": "market * (1 + growth) ^ years", "expected": 604.66176 },
+        { "label": "Investment ($m)", "inputs": { "centres": 10, "cost_per_centre": 2 }, "expression": "centres * cost_per_centre", "expected": 20 },
+        { "label": "Margin per established centre", "inputs": { "profit": 0.5, "revenue": 2.5 }, "expression": "profit / revenue", "expected": 0.2 },
+        { "label": "Yearly profit from 10 centres ($m)", "inputs": { "centres": 10, "profit_per_centre": 0.5 }, "expression": "centres * profit_per_centre", "expected": 5 },
+        { "label": "Revenue from 10 centres ($m)", "inputs": { "centres": 10, "revenue_per_centre": 2.5 }, "expression": "centres * revenue_per_centre", "expected": 25 },
+        { "label": "Share of today's market", "inputs": { "revenue": 25, "market": 480 }, "expression": "revenue / market", "expected": 0.0520833 },
+        { "label": "Payback (years)", "inputs": { "investment": 20, "yearly_profit": 5 }, "expression": "investment / yearly_profit", "expected": 4 },
+        { "label": "Downside yearly profit ($m)", "inputs": { "centres": 10, "profit_per_centre": 0.25 }, "expression": "centres * profit_per_centre", "expected": 2.5 },
+        { "label": "Downside payback (years)", "inputs": { "investment": 20, "yearly_profit": 2.5 }, "expression": "investment / yearly_profit", "expected": 8 },
+        { "label": "Minimum profit per centre ($m)", "inputs": { "target": 4, "centres": 10 }, "expression": "target / centres", "expected": 0.4 },
+        { "label": "Payback at the minimum (years)", "inputs": { "investment": 20, "centres": 10, "min_profit": 0.4 }, "expression": "investment / (centres * min_profit)", "expected": 5 }
+      ]
+    },
+    { "type": "h2", "id": "recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "p",
+      "text": "Give a clear answer first: yes, no, or yes in a specific way. Then the reasons that matter most, the main risk and how to manage it, and what the client should do next. “Yes, in stages” is a real recommendation as long as you say what the stages are and what result would make the client stop."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Answer: go, don't go, or go in a particular way.",
+        "Reasons: the market, the client's edge and the numbers, in a sentence each.",
+        "Risk: the assumption that would change your answer, and the threshold that matters.",
+        "Next steps: what to test first, such as a pilot, and what result would trigger the next stage."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Example close",
+      "text": "“I'd recommend entering, in stages. The market is about $480m and growing, it is spread across small independents, and Cragline's bigger centres and app give it a real edge. Ten centres at $0.5m profit each would beat the $4m goal with a four-year payback. The risk is price cuts from the rival chain: below $0.4m of profit per centre the plan misses the target. So I'd open three centres in one city, check they are on track, and only then commit the rest.”"
+    },
+    {
+      "type": "links",
+      "title": "Keep practising",
+      "items": [
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Market sizing case interviews", "href": "/guides/market-sizing-case-interview" },
+        { "label": "M&A case interviews", "href": "/guides/mergers-and-acquisitions-case-interview" },
+        { "label": "Growth case interviews", "href": "/guides/growth-case-interview" },
+        { "label": "Market sizing drills", "href": "/drills/market-sizing" },
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Case interview maths", "href": "/guides/case-interview-maths" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What's the difference between a market entry case and a growth case?",
+      "a": "A growth case asks how to grow in general, and entering a new market is one possible answer among several. A market entry case starts from one specific move and asks whether it is worth making, so it needs a firm yes or no and the economics to back it up."
+    },
+    {
+      "q": "Do I always need to size the market?",
+      "a": "You usually need at least a rough size, because it tells you whether the opportunity is big enough to matter to the client. If the interviewer gives you the figure, use it and move on to share and economics."
+    },
+    {
+      "q": "How do I judge whether the client can win?",
+      "a": "Compare what the client does well with what customers in the new market care about, and with what competitors already offer. An edge only counts if it matters to those customers and survives the move: a strong brand at home may mean little somewhere new."
+    },
+    {
+      "q": "Should I recommend buying a company rather than building?",
+      "a": "Only if it fits the goal. Buying is faster, but you pay for it and take on the target's problems; building is cheaper but slower. Say which matters more for this client, speed or cost, and recommend the option that fits."
+    },
+    {
+      "q": "What if the numbers say no?",
+      "a": "Then say no, or say what would have to change for the answer to become yes. “Don't enter: the payback is nine years against a five-year target” is a strong answer."
+    }
+  ],
+  "related_drills": ["market-sizing", "frameworks", "mental-maths"]
+}

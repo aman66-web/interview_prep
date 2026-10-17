@@ -1,0 +1,241 @@
+{
+  "id": "case-002",
+  "slug": "aurora-kitchen-uk-entry",
+  "title": "Aurora Kitchen: should it enter the UK?",
+  "track": "consulting",
+  "type": "market_entry",
+  "industry": "Consumer food",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 35,
+  "prompt": "Aurora Kitchen is a US maker of premium frozen meals, sold through supermarkets in North America only. Its board is considering launching in the UK and has asked for your recommendation on whether to go ahead. The UK plan has been prepared in pounds, so all figures in this case are in pounds. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Aurora sells premium and organic frozen meals through US and Canadian supermarkets. It has strong recipes and a well-known brand in North America, but it is almost unknown in the UK and has never operated outside North America."
+    },
+    {
+      "question_topic": "Funding and why the UK",
+      "answer": "Aurora is profitable and can pay for the UK launch from its own cash, but the board does not want to risk losing it. It chose the UK for the shared language and a growing premium frozen segment; no other country is being considered at the moment."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board has two tests: an annual operating profit of at least £5m in year 3 (the third year of sales), and the entry investment paid back from operating profit within six years of launch."
+    },
+    {
+      "question_topic": "Entry approach",
+      "answer": "Aurora would launch only its premium range, through UK supermarkets, run by a small UK-based team. A UK contract manufacturer would make the products, so no factory is needed."
+    },
+    {
+      "question_topic": "Investment",
+      "answer": "The one-off entry investment is £15m: about £8m of launch marketing, £5m of launch promotions agreed with the four largest supermarkets (introductory price offers and in-store displays), and £2m of set-up. In the current plan it is all spent before sales start."
+    },
+    {
+      "question_topic": "Running costs",
+      "answer": "Once launched, the UK business has fixed costs of £6m a year (team, ongoing marketing and distribution overhead). These do not change with sales volume."
+    },
+    {
+      "question_topic": "Years 1 and 2",
+      "answer": "Sales build up over the first two years. The plan has a loss of about £2m in year 1 and a profit of about £2m in year 2, so the two years roughly cancel out and payback comes from year 3 onwards."
+    },
+    {
+      "question_topic": "Market data",
+      "answer": "UK frozen ready-meal sales are split into three segments: family meals, single-serve meals, and premium and organic. Aurora would compete only in premium and organic. Market figures are at manufacturers' selling prices (what supermarkets pay suppliers, not shelf prices), so a share of the market converts directly into Aurora's revenue."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Three established UK premium brands hold about 60% of the premium segment: the largest about 30% and the other two about 15% each. Supermarket own-label ranges hold about 25%. The remaining 15% is held by the stronger recent entrant (about 5%) and many small brands, none above 3%."
+    },
+    {
+      "question_topic": "Recent entrants",
+      "answer": "Two new brands entered the premium segment in the last five years. The stronger one reached about 5% share in its third year; the other withdrew from the UK after two years."
+    },
+    {
+      "question_topic": "Market share target",
+      "answer": "Aurora's plan assumes it wins 6% of the premium segment by year 3 if the launch goes well."
+    },
+    {
+      "question_topic": "Customer preferences and pricing",
+      "answer": "UK shoppers are used to premium own-label ranges priced below branded products. Aurora would price in line with the leading premium brands."
+    },
+    {
+      "question_topic": "Regulation",
+      "answer": "UK food labelling rules differ from US rules, so every pack would need a UK label. The contract manufacturer would handle compliance."
+    },
+    {
+      "question_topic": "Capabilities",
+      "answer": "Aurora has no UK retailer relationships and no UK supply chain. Frozen meals need cold-chain storage and delivery, which Aurora would buy from a UK logistics firm."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Market attractiveness: size, growth and segments",
+      "Competition: who holds share and how Aurora would differentiate",
+      "Ability to win: brand, product fit, retailer access, supply chain",
+      "Economics: revenue, margins, fixed costs, investment and payback against the board's two tests",
+      "Entry mode and risks"
+    ],
+    "good_signs": [
+      "Frames the decision around the board's profit and payback tests",
+      "Segments the market and focuses on the segment Aurora would actually enter",
+      "Asks whether the market figures are at shelf prices or what Aurora would actually receive",
+      "Builds the profit estimate step by step from market size to payback",
+      "Tests what would have to be true (for example, the share needed to hit £5m or to break even)"
+    ],
+    "red_flags": [
+      "Treats the whole £2bn frozen-meal market as Aurora's market",
+      "Discusses only the market and ignores Aurora's own economics",
+      "Accepts the 6% share target without testing it against the competition or recent entrants",
+      "Gives a recommendation without using the numbers"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "uk-market-segments",
+      "title": "UK frozen ready-meal market by segment, at manufacturers' selling prices (£ million)",
+      "kind": "table",
+      "data": {
+        "columns": ["Segment", "Today", "Year 3 forecast"],
+        "rows": [
+          ["Family meals", 900, 950],
+          ["Single-serve meals", 700, 760],
+          ["Premium and organic", 400, 500],
+          ["Total", 2000, 2210]
+        ]
+      },
+      "reveal_hint": "Ask for the size and growth of the UK market and its segments.",
+      "insight": "Premium and organic is the smallest segment today (£400m) but the fastest growing: up 25% over three years to £500m, against about 6% for family meals, about 9% for single-serve and about 10% for the market as a whole."
+    },
+    {
+      "id": "cost-to-serve",
+      "title": "Aurora UK variable cost per £1 of revenue (pence)",
+      "kind": "table",
+      "data": {
+        "columns": ["Cost line", "Pence per £1"],
+        "rows": [
+          ["Ingredients", 30],
+          ["Contract manufacturing", 14],
+          ["Packaging", 6],
+          ["Frozen storage and delivery", 10],
+          ["Total variable cost", 60]
+        ]
+      },
+      "reveal_hint": "Ask about Aurora's costs and margins in the UK.",
+      "insight": "Variable costs are 60p per £1 of revenue, so gross margin is 40%. Ingredients are half of variable cost, then contract manufacturing. Frozen storage and delivery (10p) is the line a logistics partner or more volume could most easily reduce."
+    }
+  ],
+  "math": [
+    {
+      "id": "year3-revenue",
+      "question": "At 6% of the premium and organic segment in year 3, what is Aurora's UK revenue, in £ million?",
+      "inputs": {
+        "segment_year3": 500,
+        "share_pct": 6
+      },
+      "expression": "segment_year3 * share_pct / 100",
+      "expected": 30,
+      "tolerance_pct": 2,
+      "working": "6% of £500m is £30m. The market is measured at manufacturers' selling prices, so this is Aurora's own revenue.",
+      "input_sources": [
+        { "input": "segment_year3", "exhibit_id": "uk-market-segments", "row": 2, "column": "Year 3 forecast" }
+      ]
+    },
+    {
+      "id": "year3-gross-profit",
+      "question": "What is the gross profit on that revenue, in £ million?",
+      "inputs": {
+        "revenue": 30,
+        "variable_cost_pence": 60
+      },
+      "expression": "revenue * (100 - variable_cost_pence) / 100",
+      "expected": 12,
+      "tolerance_pct": 2,
+      "working": "Variable cost is 60p per £1, so gross margin is 40%. 40% of £30m is £12m.",
+      "input_sources": [
+        { "input": "variable_cost_pence", "exhibit_id": "cost-to-serve", "row": 4, "column": "Pence per £1" }
+      ]
+    },
+    {
+      "id": "year3-operating-profit",
+      "question": "After the £6m of fixed costs, what is the annual operating profit in year 3, in £ million?",
+      "inputs": {
+        "gross_profit": 12,
+        "fixed_costs": 6
+      },
+      "expression": "gross_profit - fixed_costs",
+      "expected": 6,
+      "tolerance_pct": 2,
+      "working": "£12m gross profit minus £6m fixed costs is £6m, which passes the board's £5m test."
+    },
+    {
+      "id": "payback-years",
+      "question": "If profit stays at the year-3 level, how many years of that profit does it take to pay back the £15m entry investment?",
+      "inputs": {
+        "investment": 15,
+        "annual_profit": 6
+      },
+      "expression": "investment / annual_profit",
+      "expected": 2.5,
+      "tolerance_pct": 4,
+      "working": "£15m / £6m a year = 2.5 years. Years 1 and 2 roughly cancel out, so the investment is paid back about halfway through year 5, inside the board's six years."
+    },
+    {
+      "id": "share-for-profit-target",
+      "question": "What share of the premium and organic segment does Aurora need in year 3 to make the board's £5m operating profit, in percent?",
+      "inputs": {
+        "target_profit": 5,
+        "fixed_costs": 6,
+        "variable_cost_pence": 60,
+        "segment_year3": 500
+      },
+      "expression": "(target_profit + fixed_costs) / ((100 - variable_cost_pence) / 100) / segment_year3 * 100",
+      "expected": 5.5,
+      "tolerance_pct": 2,
+      "working": "Gross profit must cover £6m fixed costs plus £5m profit: £11m. At a 40% margin that needs £11m / 0.4 = £27.5m of revenue. £27.5m / £500m = 5.5% share, only just below the 6% plan and above the 5% the best recent entrant reached.",
+      "input_sources": [
+        { "input": "variable_cost_pence", "exhibit_id": "cost-to-serve", "row": 4, "column": "Pence per £1" },
+        { "input": "segment_year3", "exhibit_id": "uk-market-segments", "row": 2, "column": "Year 3 forecast" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Aurora do to improve its chances in the UK or reduce the risk of entering?",
+    "idea_bank": [
+      "Launch with one or two supermarkets first, then roll out to the others if share milestones are met",
+      "Stage the £15m so that marketing and launch promotions for each new supermarket are released only as milestones are hit",
+      "Partner with a UK logistics firm that already runs frozen storage and delivery, to cut the 10p per £1",
+      "Run UK taste tests and adapt flavours, portion sizes and recipes to UK tastes before launch",
+      "Test demand online, through an online supermarket or in a small store trial before the full investment",
+      "Price slightly below the leading premium brands at launch to win trial, while checking the hit to margin",
+      "Acquire or partner with a small UK premium brand to gain shelf space and buyer relationships",
+      "Hire a UK leader with supermarket buying or category experience",
+      "Make own-label for a supermarket alongside the brand, to fill the contract manufacturer and build relationships",
+      "Lead with what is different (organic recipes, a US brand story) rather than competing head-on with the 30% leader"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "The premium segment is attractive: the fastest-growing segment, up 25% to £500m by year 3",
+      "At 6% share the plan passes both board tests: about £6m profit in year 3 and payback in 2.5 years of profit",
+      "The plan depends on winning share: it needs at least 5.5% to make £5m, which is above the best recent entrant's 5% and against established brands and own-label"
+    ],
+    "good_signs": [
+      "Tests sensitivity: at 3% share, revenue is £15m, gross profit £6m and profit is zero",
+      "Recommends a staged entry with share milestones, so that less of the £15m is at risk before Aurora proves it can win share",
+      "Names concrete next steps such as talks with supermarket buyers, UK taste tests and choosing a cold-chain partner"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the objective: two board tests, at least £5m operating profit in year 3 and the £15m paid back within six years of launch. Confirm the plan: premium range only, through supermarkets, with a contract manufacturer, and market figures at manufacturers' selling prices.",
+    "Structure: market attractiveness, competition, Aurora's ability to win, economics against the two tests, entry mode and risks.",
+    "Market: premium and organic is the smallest segment (£400m today) but the fastest growing, to £500m by year 3 (+25%, against about 6% and 9% for the other segments).",
+    "Economics: 6% share is £30m revenue; a 40% gross margin gives £12m; after £6m fixed costs, £6m profit, which passes the £5m test. Payback is 15 / 6 = 2.5 years of profit; with years 1 and 2 cancelling out, that is about halfway through year 5, inside six years.",
+    "What has to be true: £5m needs 5.5% share and break-even is 3%. Aurora is unknown in the UK, three brands hold 60% and own-label 25%, and the best recent entrant reached only 5%. The plan works, but with little headroom on share.",
+    "Recommendation: go ahead, but in stages. Launch with one or two supermarkets, spending only their share of the marketing and launch promotions; roll out to the rest only if share is on track for at least 5.5%; use a logistics partner for frozen delivery. Next steps: talks with supermarket buyers, UK taste tests, and choosing the contract manufacturer and logistics partner."
+  ],
+  "free_starter": false,
+  "free_preview": true,
+  "status": "draft",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

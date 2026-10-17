@@ -1,0 +1,232 @@
+{
+  "slug": "mergers-and-acquisitions-case-interview",
+  "kind": "case_type",
+  "case_type": "m_and_a",
+  "title": "M&A case interviews: should the client buy this company?",
+  "seo_title": "M&A Case Interview: Synergies, Valuation and an Example",
+  "description": "How to solve an M&A case: test the reason for the deal, the target, the synergies and the price, then set a walk-away price. Full worked example.",
+  "updated": "2026-10-15",
+  "reading_minutes": 9,
+  "summary": "An M&A (mergers and acquisitions) case asks whether a company or investor should buy another business, and often how much it should pay. You solve it by testing the reason for the deal, how healthy the target is on its own, which synergies are realistic and what they cost to achieve, and whether the price still leaves value once all of that is counted, ending with a clear decision and a walk-away price.",
+  "blocks": [
+    { "type": "h2", "id": "what-it-is", "text": "What an M&A case is" },
+    {
+      "type": "p",
+      "text": "In an M&A case the client is thinking about buying another company, merging with one, or sometimes selling part of itself. The buyer might be a company in the same or a nearby industry, buying for strategic reasons, or an investment fund buying a business to improve it and sell it later. The question is usually “should we buy it?”, “what is it worth to us?” or “what is the most we should pay?”."
+    },
+    {
+      "type": "p",
+      "text": "At the heart of every M&A case is one comparison: is the value the buyer will get from the target, including any synergies, greater than the price it pays plus the cost of combining the two businesses? A great company bought at too high a price is still a bad deal."
+    },
+    { "type": "h2", "id": "sample-structure", "text": "A starting structure" },
+    {
+      "type": "framework",
+      "title": "Acquisition decision (a starting point)",
+      "branches": [
+        {
+          "name": "Why buy?",
+          "items": [
+            "The goal: growth, new customers, a new product or technology, lower costs, or a new region",
+            "Alternatives: could the client build this itself, or partner, for less?"
+          ]
+        },
+        {
+          "name": "The target on its own",
+          "items": [
+            "Its market: size, growth and competition",
+            "Its position: share, customers, products and brand",
+            "Its finances: revenue, profit, growth and cash",
+            "Its people, and any hidden problems such as legal claims or ageing technology"
+          ]
+        },
+        {
+          "name": "Synergies",
+          "items": [
+            "Cost: buying together, sharing sites, removing duplicated head-office work",
+            "Revenue: selling each company's products to the other's customers, or through new channels",
+            "The one-off costs of achieving them, and how long they take"
+          ]
+        },
+        {
+          "name": "Price and value",
+          "items": [
+            "The value of the target as it stands",
+            "Plus the value of realistic synergies",
+            "Minus the costs of combining the businesses",
+            "Compared with the asking price, and how the deal would be paid for"
+          ]
+        },
+        {
+          "name": "Risks and integration",
+          "items": [
+            "Key staff or customers leaving",
+            "Clashing cultures and systems",
+            "Competition authorities blocking or delaying the deal",
+            "How competitors respond"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "As with any framework, tailor it to the case. If the buyer is an investment fund with no related business, there may be no synergies at all, so the focus moves to how much the fund can improve the target and what it could sell it for later. If the deal joins two direct rivals, the competition-authority risk moves up the list."
+    },
+    { "type": "h2", "id": "questions-to-ask", "text": "Questions to ask first" },
+    {
+      "type": "ul",
+      "items": [
+        "Why does the client want this deal, and what would success look like?",
+        "Who is buying: a company in the industry, or an investor?",
+        "What is the asking price, and is it fixed or open to negotiation?",
+        "What do we know about the target's finances and market?",
+        "Has the client looked at alternatives, such as building the capability itself?",
+        "Is there a deadline, a budget limit or a rival bidder?"
+      ]
+    },
+    { "type": "h2", "id": "the-maths", "text": "The maths to expect" },
+    {
+      "type": "p",
+      "text": "Interview M&A cases use simple valuation shortcuts rather than full financial models. These are the ones worth being fluent in."
+    },
+    {
+      "type": "table",
+      "caption": "Valuation shortcuts",
+      "columns": ["Method", "Formula", "Quick example"],
+      "rows": [
+        ["Profit multiple", "Value = yearly profit × a multiple taken from similar deals", "£5m profit × 10 = £50m"],
+        ["Implied multiple", "Asking price ÷ yearly profit", "A £60m price for £5m profit is 12 times profit"],
+        ["Steady profit for ever", "Value = yearly profit ÷ required return", "£5m a year at a 10% return = £50m"],
+        ["Growing profit for ever", "Value = next year's profit ÷ (required return − growth rate)", "£5m next year, then growing 2% a year, at a 10% return = £5m ÷ 8% = £62.5m"],
+        ["Premium", "Price − value of the target on its own", "Paying £60m for a business worth £50m is a £10m premium"],
+        ["Payback", "Price ÷ yearly profit gained", "A £60m deal adding £6m a year pays back in 10 years"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The key test: the synergies, after their one-off costs, must be worth more than the premium. Otherwise the buyer is paying the seller for value that the buyer itself will have to create."
+    },
+    { "type": "h2", "id": "synergies", "text": "Judging synergies" },
+    {
+      "type": "ul",
+      "items": [
+        "Cost synergies, such as better buying terms or closing a duplicate warehouse, are mostly within the buyer's control, so they are more likely to happen.",
+        "Revenue synergies, such as cross-selling, depend on customers changing what they do. Treat them with caution: count only part of them, or show the answer with and without them.",
+        "Every synergy has a one-off cost to achieve it, such as redundancy pay, new systems or rebranding. Subtract it.",
+        "Synergies take time. A saving that arrives in year three is worth less than one that arrives in year one."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Value the deal with and without the risky parts",
+      "text": "Work out what the target is worth to the client with only the safest synergies, then with all of them. The first number is a sensible walk-away price; the gap between the two shows how much of the deal rests on hope."
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Falling for the target",
+      "text": "Spending the whole case on how attractive the target is and never comparing its value with the price. A strong business can still be a poor deal if the price already includes every benefit the buyer hopes to get."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Counting revenue synergies in full, as if they were certain.",
+        "Forgetting the one-off costs of combining the businesses.",
+        "Ignoring people and culture: if key staff leave, much of what was bought can walk out with them.",
+        "Leaving out competition authorities when two large rivals combine.",
+        "Not asking whether the client could get the same benefit more cheaply by building or partnering.",
+        "Ending with “it's a good company” instead of a decision and a price."
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "Worked example: an optician buying an online retailer" },
+    {
+      "type": "example",
+      "title": "Should Meridian buy Clearview for £150m?",
+      "question": "Meridian is an invented UK chain of 150 opticians. It is thinking about buying Clearview, an invented online contact-lens retailer whose owners are asking £150m. Clearview makes £10m of operating profit a year on £100m of revenue. Should Meridian buy it, and what is the most it should pay? (Both companies and every number here are invented for practice.)",
+      "answer": [
+        "Clarify: Meridian wants an online channel, because more of its customers are buying lenses online. It can afford the deal, there is no rival bidder, and the price is open to negotiation.",
+        "The target on its own: Clearview has a 10% margin (£10m ÷ £100m), is growing, and has 500,000 regular customers. The asking price is £150m ÷ £10m = 15 times profit. The interviewer says similar online retailers have recently sold for about 12 times profit, which puts Clearview's value on its own at £10m × 12 = £120m. So the asking price carries a premium of £150m − £120m = £30m, and the synergies must be worth more than that.",
+        "Cost synergy: Clearview spends £50m a year buying lenses. Meridian's bigger supply contracts would cut that by 5%, saving £50m × 5% = £2.5m a year. This is fairly certain, because it only needs a new supply contract.",
+        "Revenue synergy: Meridian could invite Clearview's customers into its shops for eye tests. If 5% of 500,000 customers booked one, that is 25,000 tests a year; at £100 of profit each (the test plus any glasses bought), that is £2.5m a year. This depends on customers changing what they do, so count only half of it.",
+        "One-off costs: combining websites, systems and supply contracts would cost about £6m.",
+        "Value of the synergies, using the same 12-times shortcut: the cost synergy is £2.5m × 12 = £30m; the revenue synergy at half weight is £2.5m × 50% × 12 = £15m; minus £6m of one-off costs, that is £39m.",
+        "Value to Meridian: £120m + £39m = £159m with both synergies, only £159m − £150m = £9m above the asking price. With the cost synergy alone it is £120m + £30m − £6m = £144m, below the asking price.",
+        "Risks: Clearview's founders run its buying and marketing, so keeping them through the integration matters. Meridian's shop staff may see the website as a rival, so their targets should reward online sales too.",
+        "Recommendation: buy Clearview, but negotiate. Open at around £135m and walk away above £144m, the value with the safer cost synergy alone. Paying the full £150m only makes sense if Meridian is confident the eye-test referrals will happen, so test that idea during due diligence (the checks a buyer makes before a deal is final), for example by surveying a sample of Clearview's customers."
+      ],
+      "checks": [
+        { "label": "Clearview's margin", "inputs": { "profit": 10, "revenue": 100 }, "expression": "profit / revenue", "expected": 0.1 },
+        { "label": "Implied multiple of the asking price", "inputs": { "price": 150, "profit": 10 }, "expression": "price / profit", "expected": 15 },
+        { "label": "Value on its own (£m)", "inputs": { "profit": 10, "multiple": 12 }, "expression": "profit * multiple", "expected": 120 },
+        { "label": "Premium in the asking price (£m)", "inputs": { "price": 150, "standalone": 120 }, "expression": "price - standalone", "expected": 30 },
+        { "label": "Cost synergy a year (£m)", "inputs": { "lens_spend": 50, "saving": 0.05 }, "expression": "lens_spend * saving", "expected": 2.5 },
+        { "label": "Eye tests a year from referrals", "inputs": { "customers": 500000, "booking_rate": 0.05 }, "expression": "customers * booking_rate", "expected": 25000 },
+        { "label": "Revenue synergy a year (£m)", "inputs": { "tests": 25000, "profit_per_test": 100 }, "expression": "tests * profit_per_test / 1000000", "expected": 2.5 },
+        { "label": "Value of the cost synergy (£m)", "inputs": { "cost_synergy": 2.5, "multiple": 12 }, "expression": "cost_synergy * multiple", "expected": 30 },
+        { "label": "Value of the revenue synergy at half weight (£m)", "inputs": { "revenue_synergy": 2.5, "weight": 0.5, "multiple": 12 }, "expression": "revenue_synergy * weight * multiple", "expected": 15 },
+        {
+          "label": "Net value of the synergies (£m)",
+          "inputs": { "cost_synergy": 2.5, "revenue_synergy": 2.5, "weight": 0.5, "multiple": 12, "one_off": 6 },
+          "expression": "cost_synergy * multiple + revenue_synergy * weight * multiple - one_off",
+          "expected": 39
+        },
+        { "label": "Value to Meridian with both synergies (£m)", "inputs": { "standalone": 120, "synergy_value": 39 }, "expression": "standalone + synergy_value", "expected": 159 },
+        { "label": "Headroom over the asking price (£m)", "inputs": { "value": 159, "price": 150 }, "expression": "value - price", "expected": 9 },
+        {
+          "label": "Value with the cost synergy only (£m)",
+          "inputs": { "standalone": 120, "cost_synergy": 2.5, "multiple": 12, "one_off": 6 },
+          "expression": "standalone + cost_synergy * multiple - one_off",
+          "expected": 144
+        }
+      ]
+    },
+    { "type": "h2", "id": "recommendation", "text": "How to finish with a recommendation" },
+    {
+      "type": "p",
+      "text": "An M&A recommendation has three parts: the decision, the price and the conditions. Say whether to buy, the most the client should pay and why, and what must be true, or be checked, before the deal is signed."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Example close",
+      "text": "“Meridian should buy Clearview, but not at £150m. On its own Clearview is worth about £120m; the lens-buying saving lifts that to about £144m after integration costs, and eye-test referrals could take it to £159m if they work. I'd open at around £135m, walk away above £144m, test the referral idea with Clearview's customers before signing, and agree terms that keep its founders through the integration.”"
+    },
+    {
+      "type": "links",
+      "title": "Keep practising",
+      "items": [
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Market entry case interviews", "href": "/guides/market-entry-case-interview" },
+        { "label": "Profitability case interviews", "href": "/guides/profitability-case-interview" },
+        { "label": "Case interview maths", "href": "/guides/case-interview-maths" },
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Glossary of case terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to know finance to do an M&A case?",
+      "a": "You need a few simple ideas: profit multiples, the value of a steady stream of profit, premiums and payback. The table on this page is the level worth being fluent in. If a multiple or a required return matters to your answer, ask the interviewer for one or state a reasonable assumption."
+    },
+    {
+      "q": "What is a synergy?",
+      "a": "A synergy is value two companies can create together that neither could alone, such as lower costs from buying together or extra sales from selling to each other's customers. It is the main reason a buyer can justify paying more than a business is worth on its own."
+    },
+    {
+      "q": "What's the difference between a company buyer and an investment fund buyer?",
+      "a": "A company buying a business in its own or a nearby industry can often combine the two operations, so synergies are central. An investment fund usually runs the business on its own, aiming to improve it and sell it later, so the case focuses on how much it can grow profit and what the business could sell for in a few years."
+    },
+    {
+      "q": "How do I work out the most the client should pay?",
+      "a": "Add the target's value on its own to the value of the synergies you are confident about, and subtract the one-off costs of combining the businesses. That total is a sensible walk-away price. Paying more means relying on the riskier synergies."
+    },
+    {
+      "q": "Should I mention competition law?",
+      "a": "Yes, when the buyer and the target compete with each other and together would hold a large share of a market. Competition authorities can block or delay such deals, or demand changes. A one-line mention as a risk is enough unless the interviewer wants more."
+    }
+  ],
+  "related_drills": ["mental-maths", "frameworks"]
+}

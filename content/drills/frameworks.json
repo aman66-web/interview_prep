@@ -1,0 +1,210 @@
+[
+  {
+    "id": "fw-01",
+    "title": "Where to start on a profit problem",
+    "prompt": "A client's profit has fallen. What is the clearest first way to break the problem down?",
+    "options": [
+      "Revenue and costs, because profit = revenue minus costs",
+      "Strengths, weaknesses, opportunities and threats",
+      "The five stages of the product life cycle",
+      "Short-term versus long-term plans"
+    ],
+    "answer_index": 0,
+    "explanation": "Profit is revenue minus costs, so splitting the problem that way is complete, has no overlap and points straight at the cause. The other options may be useful later but do not locate where profit went."
+  },
+  {
+    "id": "fw-02",
+    "title": "Structuring a market-entry question",
+    "prompt": "A company asks whether to enter a new country. Which set of top-level buckets is most useful?",
+    "options": [
+      "Market attractiveness, competition, ability to win, and economics and risks",
+      "Marketing, finance, operations and HR",
+      "Past, present and future",
+      "Price, product, place and promotion only"
+    ],
+    "answer_index": 0,
+    "explanation": "An entry decision depends on whether the market is worth entering, who is already there, whether this company can win, and whether the numbers work. The other sets are either too general or leave out the economics."
+  },
+  {
+    "id": "fw-03",
+    "title": "Three views on pricing",
+    "prompt": "A client wants to set a price for a new product. Which three perspectives usually give the best starting structure?",
+    "options": [
+      "Costs, customer value and competitor prices",
+      "Brand colours, packaging and slogan",
+      "Revenue last year, revenue this year and revenue next year",
+      "Suppliers, employees and shareholders"
+    ],
+    "answer_index": 0,
+    "explanation": "A price needs a floor (costs), a ceiling (what customers will pay) and a reference point (what alternatives cost). Together they bracket a sensible range."
+  },
+  {
+    "id": "fw-04",
+    "title": "Structuring an acquisition question",
+    "prompt": "A company is considering buying a competitor. Which structure covers the decision best?",
+    "options": [
+      "Strategic fit, valuation and synergies, and risks and integration",
+      "Who the founder is, where the head office is, and how old the firm is",
+      "Revenue only",
+      "A list of every employee's skills"
+    ],
+    "answer_index": 0,
+    "explanation": "An acquisition has to make strategic sense, be worth the price paid after realistic synergies, and be doable without destroying value in the integration."
+  },
+  {
+    "id": "fw-05",
+    "title": "Ways to grow revenue",
+    "prompt": "A client wants to grow revenue. Which split of options is most complete?",
+    "options": [
+      "Sell more to existing customers, win new customers, sell new products and enter new markets",
+      "Cut costs, cut staff, cut prices and cut stock",
+      "Hire a consultant, hire an agency, hire a designer and hire a lawyer",
+      "Spend more, spend less, spend now and spend later"
+    ],
+    "answer_index": 0,
+    "explanation": "Growth comes from the customers and products you already have, or from new ones. Splitting this way covers every route without overlap."
+  },
+  {
+    "id": "fw-06",
+    "title": "Revenue as a formula",
+    "prompt": "Which breakdown of a shop's revenue is mathematically correct and useful?",
+    "options": [
+      "Number of customers x visits per customer x average spend per visit",
+      "Number of staff + number of shelves + opening hours",
+      "Rent x customers",
+      "Profit / customers"
+    ],
+    "answer_index": 0,
+    "explanation": "Revenue = customers x frequency x spend per visit. Each factor can be measured and improved separately, which makes it a good driver tree."
+  },
+  {
+    "id": "fw-07",
+    "title": "The profit equation",
+    "prompt": "Which equation correctly separates fixed and variable costs?",
+    "options": [
+      "Profit = (price - variable cost per unit) x units - fixed costs",
+      "Profit = price x units + fixed costs",
+      "Profit = (price + variable cost) x fixed costs",
+      "Profit = units / price - fixed costs"
+    ],
+    "answer_index": 0,
+    "explanation": "Each unit earns price minus its variable cost; multiply by the number sold, then subtract the costs that do not change with volume."
+  },
+  {
+    "id": "fw-08",
+    "title": "Break-even point",
+    "prompt": "How do you calculate the number of units needed to break even?",
+    "options": [
+      "Fixed costs divided by (price minus variable cost per unit)",
+      "Fixed costs multiplied by price",
+      "Price divided by fixed costs",
+      "Variable costs divided by units"
+    ],
+    "answer_index": 0,
+    "explanation": "Break-even is the volume where total contribution (price minus variable cost, per unit) equals fixed costs."
+  },
+  {
+    "id": "fw-09",
+    "title": "Spotting a MECE split",
+    "prompt": "Which split of a company's costs has no overlaps and misses nothing (is MECE)?",
+    "options": [
+      "Fixed costs and variable costs",
+      "Big costs and expensive costs",
+      "Costs we like and costs we dislike",
+      "Labour, wages and salaries"
+    ],
+    "answer_index": 0,
+    "explanation": "Every cost is either fixed or variable, and none is both. 'Labour, wages and salaries' overlap, and the other splits are vague."
+  },
+  {
+    "id": "fw-10",
+    "title": "Bottom-up or top-down?",
+    "prompt": "Which approach to estimating annual sales of a product is a bottom-up estimate?",
+    "options": [
+      "Number of shops x average sales per shop per day x trading days",
+      "Total national spending on the category x our hoped-for share",
+      "Population x percentage who might buy it",
+      "Last year's industry revenue x growth rate"
+    ],
+    "answer_index": 0,
+    "explanation": "Bottom-up starts from small units you can reason about (a shop, a customer) and builds up. The others start from a large total and cut it down, which is top-down."
+  },
+  {
+    "id": "fw-11",
+    "title": "The best first question",
+    "prompt": "You are asked, 'Should we launch product X?' What is the most useful first clarifying question?",
+    "options": [
+      "What is the company trying to achieve, and how will success be measured?",
+      "What colour is the logo?",
+      "How many people work in the finance team?",
+      "When was the company founded?"
+    ],
+    "answer_index": 0,
+    "explanation": "Without a clear objective you cannot judge whether launching is a good idea. Good clarifying questions pin down the goal, then the scope and constraints."
+  },
+  {
+    "id": "fw-12",
+    "title": "Reading a chart",
+    "prompt": "You are shown a chart in an interview. What should you do first?",
+    "options": [
+      "Read the title, axes and units, then say what the chart shows before drawing conclusions",
+      "Start calculating percentages immediately",
+      "Ask for a different chart",
+      "Say the chart is interesting and wait"
+    ],
+    "answer_index": 0,
+    "explanation": "Misreading units or axes is the commonest mistake. Describe what you see, then pick out the most important pattern and say what it means for the question."
+  },
+  {
+    "id": "fw-13",
+    "title": "Giving a recommendation",
+    "prompt": "At the end of a case you are asked for your recommendation. Which structure works best?",
+    "options": [
+      "Answer first, then two or three supporting reasons, then risks and next steps",
+      "Repeat everything you did in order, then give your answer",
+      "List every idea you thought of",
+      "Say it depends and ask what the interviewer thinks"
+    ],
+    "answer_index": 0,
+    "explanation": "Lead with the answer so a busy listener gets it immediately, back it with the strongest reasons, and show you understand the risks and what to do next."
+  },
+  {
+    "id": "fw-14",
+    "title": "What makes a good hypothesis",
+    "prompt": "Which statement is a good starting hypothesis for a profit decline case?",
+    "options": [
+      "Profit fell because costs rose faster than revenue, so I will check the cost lines first",
+      "Profit fell because of many different things",
+      "I think the company is doing badly",
+      "Profit is a number that went down"
+    ],
+    "answer_index": 0,
+    "explanation": "A hypothesis is a specific, testable idea about the cause that tells you what to check next. The other options say nothing you can test."
+  },
+  {
+    "id": "fw-15",
+    "title": "Organising ideas in a brainstorm",
+    "prompt": "You are asked to brainstorm ways to increase profit. What is the best way to present your ideas?",
+    "options": [
+      "Group them into a few clear categories, such as raise revenue and cut cost, then give examples in each",
+      "Say every idea as it comes to mind with no order",
+      "Give one idea and stop",
+      "Ask the interviewer to pick the categories"
+    ],
+    "answer_index": 0,
+    "explanation": "Categories show structure, help you cover the whole space and make it easy for the interviewer to follow. Offer the groups first, then ideas in each."
+  },
+  {
+    "id": "fw-16",
+    "title": "Volume, price and mix",
+    "prompt": "A company's revenue fell 10% although its prices were unchanged. What are the most direct drivers to investigate?",
+    "options": [
+      "Volume (how many units) and mix (which products sold)",
+      "Office location and staff happiness",
+      "Brand colours and slogan",
+      "Executive pay"
+    ],
+    "answer_index": 0,
+    "explanation": "Revenue = price x volume, summed across products. If prices did not change, revenue can only change through volume or through a shift in the mix of products sold."
+  }
+]
