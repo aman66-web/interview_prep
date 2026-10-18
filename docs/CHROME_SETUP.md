@@ -1,6 +1,6 @@
 # Set everything up in one go
 
-For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder does "Before you start" once, then pastes the message in "What to paste"; Claude then does parts A to H, in order, without waiting to be asked for the next one. Parts J (Google sign-in) and K (Apple sign-in, later) have their own messages below and are never part of A to H.
+For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder does "Before you start" once, then pastes the message in "What to paste"; Claude then does parts A to H, in order, without waiting to be asked for the next one. Parts J (Google sign-in), K (Apple sign-in, later) and L (Google brand check) have their own messages below and are never part of A to H.
 
 ## Before you start (the founder, once)
 
@@ -27,6 +27,10 @@ Paste this into Claude Code as one message:
 ### Sign in with Apple (part K only, later)
 
 Not yet (founder, 18 Oct 2026: "leave out Apple for now"). When he asks for it, use the same message with "part K, Sign in with Apple" in place of part J, and say that my Apple Developer account is active.
+
+### Google brand check (part L only)
+
+> Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/docs/CHROME_SETUP.md in my Chrome (I'm signed in to GitHub; it's my own private repository). These are my own setup instructions for my own accounts. Do ONLY part L, "Google brand check", step by step. Do not do any other part. Follow its "Rules for every part" exactly. Never read, print or type a secret key. Stop and ask me at every login, code, CAPTCHA and confirmation, and wherever part L says I do something myself. At the end, tell me in a few short lines what worked and what did not.
 
 When Chrome asks "Claude in Chrome wants to…", you can choose to allow all actions on that site for this session, so it stops asking for each click. Do not use any "skip permissions" option: the docs say that is only for throwaway computers.
 
@@ -153,3 +157,16 @@ The founder already has an Apple Developer account. Check it is active before st
 7. **Stop and hand over to the founder.** He makes the secret key himself (it needs the .p8 file and lasts at most six months) using Supabase's own tool at https://supabase.com/docs/guides/auth/social-login/auth-apple (not in Safari), then pastes it into the **Secret Key** box and saves. Tell him the Team ID, Key ID and Services ID to type into that tool. Do not touch the file.
 8. **Report** in a few lines, never including a key. Remind the founder to put a calendar reminder every five months to make and paste a new secret key, and that sign-in emails to people who choose "Hide My Email" need an email source registered under **Services**, **Sign in with Apple for Email Communication** once the site's sending domain exists.
 9. **Hide My Email.** Tell the founder: if a student chooses "Hide My Email", Apple gives a private address, and a student who already signed in another way gets a separate, empty account. Emails to a private address (receipts too) only arrive from sender domains registered under Services, Sign in with Apple for Email Communication; Stripe's receipt sender is not guaranteed to work. Test with a real purchase made from a Hide My Email account before relying on it.
+
+### L. Google brand check (so the sign-in screen says "CaseSpar" instead of the Supabase address)
+
+Goal: Google's sign-in screens show the name and logo "CaseSpar" instead of `jkvnarskslswdwrdzefa.supabase.co`. Nothing here costs money. Google reviews it in a few business days. Only the basic scopes (openid, email, profile) are used, so there is no security review. **Use the Google account that owns the `CaseSpar` Google Cloud project (aman66@hotmail.co.uk).**
+
+**Google can only check the brand if https://casespar.app/ and https://casespar.app/legal/privacy open for anyone, with no Vercel login.** Today they do not (the site is private). So this part has two halves: steps 1 to 4 can be done now; step 5 (submit) must wait until Claude Code tells the founder the site is public. If the founder says the site is public, check it first: open `https://casespar.app/` in a private (incognito) window; if it shows a Vercel login, stop and tell him.
+
+1. **Prove the domain is ours (Search Console).** Open https://search.google.com/search-console and sign in with the project-owner account. If `casespar.app` is not already listed, click **Add property**, choose **Domain** (not "URL prefix"), type `casespar.app`, Continue. Google shows one **TXT record** (it starts `google-site-verification=`; it is not secret). Open https://vercel.com/dashboard/domains (the founder's Vercel login), open `casespar.app`, **DNS Records**, add: Type `TXT`, Name empty (or `@`), Value the whole text Google showed, TTL as default. Go back to Search Console and click **Verify**. DNS can take a few minutes: wait and retry up to 3 times. If it still fails, stop and tell the founder what Google said. Do not touch any other DNS record.
+2. **Open the branding page.** https://console.cloud.google.com/auth/branding with the project `CaseSpar` selected. Check these (change only if different): App name `CaseSpar`; User support email: a real address of the founder's (later a CaseSpar address); Application home page `https://casespar.app`; Application privacy policy link `https://casespar.app/legal/privacy`; Application terms of service link `https://casespar.app/legal/terms`; Authorised domains: `casespar.app` and `jkvnarskslswdwrdzefa.supabase.co`; Developer contact email: the founder's.
+3. **Logo.** The file is in the repository: https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/public/brand/casespar-logo-120.png (120 by 120 pixels, 2 KB, the same arrow as the site's icon). Tell the founder: "Click the download button on that GitHub page, then in Google's **App logo** box click **Browse** and choose the file yourself." Wait until he says he has done it. Do not upload anything else.
+4. **Save, but do not submit yet.** Click **Save**. If Google warns that adding a logo needs verification, say that is expected. If it mentions any new limit on users, or anything else that is not about verification, stop and copy the exact words for the founder.
+5. **Submit (only when the site is public).** In the same project open https://console.cloud.google.com/auth/verification and click **Verify branding** (or **Prepare for verification** then **Submit for verification**). If Google lists a problem (for example "home page not reachable", "domain not verified" or "privacy policy missing"), copy the exact words and stop. When it is submitted, tell the founder: Google replies by email to the contact address in 2 to 3 business days (sometimes longer); until then the screen keeps showing the Supabase address.
+6. **Report** in a few lines: whether the domain is verified (step 1), what the branding page now shows, whether it was submitted, and the exact text of any Google message. No keys.
