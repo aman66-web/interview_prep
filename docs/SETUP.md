@@ -65,6 +65,15 @@ This is a new third-party service, so it needs your decision (and may cost money
 
 Also worth doing before launch (P7): turn on **CAPTCHA** (Authentication, Attack Protection) so bots cannot use your sign-in form to flood strangers with emails.
 
+### Sign in with Google and Apple (founder's request, 18 Oct 2026)
+
+The login page can show "Continue with Google" and "Continue with Apple" above the email box. Supabase does the sign-in; a button appears only once its provider is switched on. The click-by-click for Claude in Chrome is `docs/CHROME_SETUP.md`, parts J (Google) and K (Apple).
+
+1. **Google** is free. Run part J. Then set `NEXT_PUBLIC_SIGNIN_PROVIDERS=google` in Vercel (Preview first) and redeploy.
+2. **Apple** is built but switched off (founder, 18 Oct 2026: "leave out Apple for now"). The founder already has an Apple Developer account. When he wants it: run part K, add Apple to the privacy paragraph about Google, then set `NEXT_PUBLIC_SIGNIN_PROVIDERS=google,apple`.
+3. **Apple's secret key lasts at most six months.** Make a new one every five months (Supabase's tool, or `node scripts/apple-client-secret.mjs <AuthKey file> <Team ID> <Key ID> app.casespar.signin`, which prints only the secret so it can be piped to the clipboard) and paste it into Supabase, Authentication, Sign In / Providers, Apple. Put the reminder in your calendar when you first set it up. If the secret runs out, the Apple button stops working; email sign-in keeps working.
+4. People who choose Apple's "Hide My Email" get a private address. Emails to it (receipts, if we send any) only arrive after the sending domain is registered under Apple Developer, Services, Sign in with Apple for Email Communication.
+
 ## 2. Vercel (needed for the preview link)
 
 1. Go to vercel.com, **Add New, Project**, and import the GitHub repo.

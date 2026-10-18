@@ -16,6 +16,15 @@ export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
   const next = safeNextPath(searchParams.get("next"));
   const code = searchParams.get("code");
+
+  // Google or Apple sent the person back with an error (they pressed Cancel, or the provider
+  // is not set up). An expired email link is reported the same way.
+  if (searchParams.get("error") || searchParams.get("error_description")) {
+    const expired = searchParams.get("error_code") === "otp_expired";
+    const cancelled = searchParams.get("error") === "access_denied" && !expired;
+    const reason = expired ? "link_invalid" : cancelled ? "provider_cancelled" : "provider_failed";
+    return NextResponse.redirect(new URL(`/login?error=${reason}`, origin));
+  }
   const tokenHash = searchParams.get("token_hash");
   const type = parseSignInOtpType(searchParams.get("type"));
 

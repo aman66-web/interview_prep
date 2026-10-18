@@ -11,6 +11,10 @@ export interface ExportUser {
   id: string;
   email?: string | null;
   created_at?: string | null;
+  /** How the person signs in, for example "email" or "google". */
+  sign_in_methods?: string[];
+  /** The name and picture Google or Apple sent with the sign-in, if any. */
+  provider_profile?: { name?: string | null; picture?: string | null };
 }
 
 export async function buildAccountExport(
@@ -50,6 +54,8 @@ export async function buildAccountExport(
       id: user.id,
       email: user.email ?? null,
       created_at: user.created_at ?? null,
+      ...(user.sign_in_methods?.length ? { sign_in_methods: user.sign_in_methods } : {}),
+      ...(user.provider_profile?.name || user.provider_profile?.picture ? { name_and_picture_from_provider: user.provider_profile } : {}),
     },
     profile: profiles[0] ?? null,
     entitlement: entitlements[0] ?? null,

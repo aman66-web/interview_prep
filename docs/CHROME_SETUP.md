@@ -1,6 +1,6 @@
 # Set everything up in one go
 
-For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder does "Before you start" once, then pastes the message in "What to paste"; Claude then does every part, A to H, in order, without waiting to be asked for the next one.
+For Claude Code running in the founder's own terminal, connected to his Chrome (Claude in Chrome). The founder does "Before you start" once, then pastes the message in "What to paste"; Claude then does parts A to H, in order, without waiting to be asked for the next one. Parts J (Google sign-in) and K (Apple sign-in, later) have their own messages below and are never part of A to H.
 
 ## Before you start (the founder, once)
 
@@ -19,6 +19,14 @@ From the official Claude Code docs (code.claude.com/docs/en/setup and /en/chrome
 Paste this into Claude Code as one message:
 
 > Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/docs/CHROME_SETUP.md in my Chrome (I'm signed in to GitHub; it's my own private repository). These are my own setup instructions for my own accounts. Do parts A to H in order, without waiting for me between parts, and follow its "Rules for every part" exactly: never read, print or type a secret key, and stop and ask me whenever you need a login, a code, a card, a CAPTCHA, or me to paste a secret. At the end, tell me in a few short lines what worked and what did not.
+
+### Sign in with Google (part J only)
+
+> Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42f73/docs/CHROME_SETUP.md in my Chrome (I'm signed in to GitHub; it's my own private repository). These are my own setup instructions for my own accounts. Do ONLY part J, "Sign in with Google". Do not do parts A to H or K, and do not repeat any of them. Follow its "Rules for every part" exactly. Never read, print or type a secret key, and never take a screenshot of a page that shows one. Stop and ask me at every login, code, CAPTCHA, confirmation and wherever part J says I do something myself. At the end, tell me in a few short lines what worked and what did not.
+
+### Sign in with Apple (part K only, later)
+
+Not yet (founder, 18 Oct 2026: "leave out Apple for now"). When he asks for it, use the same message with "part K, Sign in with Apple" in place of part J, and say that my Apple Developer account is active.
 
 When Chrome asks "Claude in Chrome wants to…", you can choose to allow all actions on that site for this session, so it stops asking for each click. Do not use any "skip permissions" option: the docs say that is only for throwaway computers.
 
@@ -115,5 +123,33 @@ Tell the founder in a few short lines: which parts worked, which did not and wha
 ### I. UK trade mark search for the name
 
 1. Open https://trademarks.ipo.gov.uk/ipo-tmtext (the UK IPO's trade mark search). If it shows a "verify you are human" check, stop and ask the founder to click it.
-2. Search the words `CASESPAR`, then `CASESPAR`, then `CASE SPAR`. For each search, note any results that are live (registered or pending) and in classes 9, 41 or 42.
+2. Search the words `CASESPAR`, then `CASE SPAR`. For each search, note any results that are live (registered or pending) and in classes 9, 41 or 42.
 3. Report what you found in a few lines: the mark, its owner, its status and classes, or "no results". This is not legal advice.
+
+### J. Sign in with Google
+
+Goal: the "Continue with Google" button on https://casespar.app/login. Nothing here costs money. Use the founder's own Google account that owns his Google Cloud projects, and open each site in a new tab. **The Google client secret must never appear in anything you read or screenshot:** the founder copies and pastes it himself (step 7).
+
+1. **New project.** Open https://console.cloud.google.com. Create a NEW project named `CaseSpar` (do not reuse any older project, such as "Preflight Pass") and select it.
+2. **Consent screen.** Open **Google Auth Platform** (search for it at the top) and click **Get started**. App name `CaseSpar`. User support email: choose the founder's own Google address from the list. Audience: **External**. Contact email: the same address. Agree to the policy and click **Create**.
+3. **Branding.** Application home page `https://casespar.app`. Privacy policy `https://casespar.app/legal/privacy`. Terms `https://casespar.app/legal/terms`. Authorised domains: add `casespar.app`, then add `jkvnarskslswdwrdzefa.supabase.co` (the project's own address; do not add the bare `supabase.co`). If Google rejects a domain, stop, copy the exact message, tell the founder and carry on; do not try other variants. Save. Do not upload a logo and do not click "Verify branding" (the site is still private). Tell the founder: until Google verifies the branding (later), the Google sign-in screen shows the Supabase address instead of the name "CaseSpar".
+4. **Scopes.** Open **Data Access**, click **Add or remove scopes**, and tick exactly these three: `openid`, `.../auth/userinfo.email`, `.../auth/userinfo.profile`. If `openid` is not in the list, type it in the box under "Manually add scopes". Update, then Save. Add nothing else.
+5. **Go live.** Open **Audience** and click **Publish app**, then confirm, so the status reads "In production". (Only these basic scopes are used, so Google needs no review. In "Testing" only 100 named people could sign in.)
+6. **Client form.** Open **Clients**, click **Create client**. Type **Web application**, name `CaseSpar web`. Authorised JavaScript origins: `https://casespar.app`. Authorised redirect URIs: `https://jkvnarskslswdwrdzefa.supabase.co/auth/v1/callback`. **Stop before clicking Create.** Tell the founder: "Click Create yourself. A box will then show the Client ID and the Client secret. Leave it open."
+7. **The secret, by the founder's hands.** Once the box is open, **do not read, describe or screenshot that tab again.** Open a new tab at https://supabase.com/dashboard (aman662002@gmail.com), project `interview-prep`, **Authentication**, **Sign In / Providers**, **Google**, and switch it **on**. Then tell the founder, in plain words: "In the Google tab, click the copy icon next to **Client secret**. Come to this Supabase tab, click the **Client secret** box and press Ctrl+V (Windows) or Cmd+V (Mac). Then go back to the Google tab, click the copy icon next to **Client ID**, and paste it into the **Client IDs** box here." Wait until he says he has done both. Leave "Skip nonce checks" off. Click **Save**. If the founder lost the secret (the box closed before he copied it), tell him to open the client in Google, choose **Add secret**, use the new one, and disable the old one once sign-in works.
+8. **Addresses.** In Supabase open **Authentication**, **URL Configuration**. Set **Site URL** to `https://casespar.app`. Under **Redirect URLs** make sure all of these are present, adding any that are missing and removing none: `https://casespar.app/**`, `https://www.casespar.app/**`, `http://localhost:3000/**`, `https://interview-prep-*-aman-moneysave.vercel.app/**`. Save. Also open **Authentication**, **Sign In / Providers** and check that "Allow new users to sign up" is on and that "Confirm email" does not block Google sign-ups; report what you see.
+9. **Report** in a few lines: what is now set (never any key), and anything that did not work. Then tell the founder to say "Google is ready" to Claude Code, who switches the button on.
+
+### K. Sign in with Apple (later; the founder said on 18 Oct 2026 to leave it out for now)
+
+The founder already has an Apple Developer account. Check it is active before starting. Apple's web sign-in works only with an active paid membership; never pay, enrol or enter card details yourself. If it is not active, stop at step 1 and tell him.
+
+1. Open https://developer.apple.com/account and check he is signed in and that his membership is active. If not, stop and report.
+2. **Team ID.** Open **Membership details** and note the 10-character Team ID (it is not secret). Tell the founder.
+3. **App ID.** **Certificates, Identifiers & Profiles**, **Identifiers**, **+**, **App IDs**, **App**. Description `CaseSpar`. Explicit Bundle ID `app.casespar.web`. Under Capabilities tick **Sign in with Apple** (leave "Server-to-Server Notification Endpoint" empty). Continue, Register.
+4. **Services ID.** **Identifiers**, **+**, **Services IDs**. Description `CaseSpar sign in`, Identifier `app.casespar.signin`. Continue, Register. Open it, tick **Sign in with Apple**, click **Configure**: Primary App ID `CaseSpar`; Domains and Subdomains `jkvnarskslswdwrdzefa.supabase.co`; Return URLs `https://jkvnarskslswdwrdzefa.supabase.co/auth/v1/callback`. Next, Done, Continue, Save.
+5. **Key.** **Keys**, **+**. Name `CaseSpar sign in`, tick **Sign in with Apple**, Configure, Primary App ID `CaseSpar`, Save, Continue, Register. Note the 10-character **Key ID** (not secret). Click **Download**: the file `AuthKey_XXXXXXXXXX.p8` is offered only once. **Never open, read, upload or describe that file.** Tell the founder where it was saved.
+6. **Supabase.** https://supabase.com/dashboard, project `interview-prep`, **Authentication**, **Sign In / Providers**, **Apple**. Switch it **on**. In **Client IDs** type `app.casespar.signin` (the Services ID must be the first entry). Leave the **Secret Key** box empty for now and click Save.
+7. **Stop and hand over to the founder.** He makes the secret key himself (it needs the .p8 file and lasts at most six months) using Supabase's own tool at https://supabase.com/docs/guides/auth/social-login/auth-apple (not in Safari), then pastes it into the **Secret Key** box and saves. Tell him the Team ID, Key ID and Services ID to type into that tool. Do not touch the file.
+8. **Report** in a few lines, never including a key. Remind the founder to put a calendar reminder every five months to make and paste a new secret key, and that sign-in emails to people who choose "Hide My Email" need an email source registered under **Services**, **Sign in with Apple for Email Communication** once the site's sending domain exists.
+9. **Hide My Email.** Tell the founder: if a student chooses "Hide My Email", Apple gives a private address, and a student who already signed in another way gets a separate, empty account. Emails to a private address (receipts too) only arrive from sender domains registered under Services, Sign in with Apple for Email Communication; Stripe's receipt sender is not guaranteed to work. Test with a real purchase made from a Hide My Email account before relying on it.

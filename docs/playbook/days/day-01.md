@@ -33,7 +33,7 @@ Open https://github.com/aman66-web/interview_prep/blob/claude/gifted-shannon-r42
 
 **Steps**
 
-1. Clear means: no live (registered or pending) CASESPAR, CASESPAR or CASE SPAR mark in classes 9, 41 or 42. The search is not legal advice; a trade mark attorney's view stays on the later launch list.
+1. Clear means: no live (registered or pending) CASESPAR or CASE SPAR mark in classes 9, 41 or 42. The search is not legal advice; a trade mark attorney's view stays on the later launch list.
 2. Go to vercel.com, open Domains, search for casespar.app and buy it for one year (on 17 Oct it was $9.99 for the first year, then $15 a year). You type the card details.
 3. Don't attach it to the project or change any settings. Claude does that tomorrow.
 4. If the search found a live mark in those classes, don't buy. Send Claude the message below and wait for its answer.

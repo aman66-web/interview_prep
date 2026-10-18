@@ -51,7 +51,7 @@
       "caption": "What we use your data for, and the lawful basis for each use",
       "columns": ["What we do", "Data used", "Lawful basis"],
       "rows": [
-        ["Create your account and log you in", "Email address", "Contract: we need it to provide CaseSpar to you"],
+        ["Create your account and log you in", "Email address (from you, or from Google if you choose to sign in with it)", "Contract: we need it to provide CaseSpar to you"],
         ["Run AI interviews and write your debrief", "Interview transcripts, maths answers, scores", "Contract"],
         ["Run drills and the free daily limit", "Drill answers", "Contract"],
         ["Take payments and manage your plan", "Plan, Stripe references", "Contract, and legal obligation for tax and accounting records"],
@@ -90,6 +90,10 @@
     {
       "type": "p",
       "text": "Stripe also uses some payment data for its own purposes, such as preventing fraud and meeting its legal duties. For that use, Stripe is responsible for the data itself, as its Data Processing Agreement explains."
+    },
+    {
+      "type": "p",
+      "text": "If you choose \"Continue with Google\", Google handles that sign-in under its own privacy policy and tells our login provider (Supabase) your email address. Google may also send your name and profile picture, which Supabase stores with your account; we don't use them, and they are deleted when you delete your account. [Founder: add the link to Google's privacy policy, and confirm from Google's own terms which Google company is responsible and where it processes data, before launch. Add the same for Apple if \"Continue with Apple\" is switched on later, including that Apple's \"Hide My Email\" gives us a private address.]"
     },
     {
       "type": "p",

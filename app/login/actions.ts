@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { recordSignupOnce } from "@/lib/analytics/funnel";
 import { appendUtm, utmFromFormData } from "@/lib/analytics/utm";
+import { enabledOAuthProviders, parseProvider } from "@/lib/auth/providers";
 import { emailSchema, otpCodeSchema } from "@/lib/auth/schemas";
 import { previewQuickLoginAllowed, quickSignIn } from "@/lib/auth/preview-login";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
@@ -90,6 +91,39 @@ export async function requestSignInEmail(
   }
 
   return { step: "code", email };
+}
+
+/**
+ * "Continue with Google" / "Continue with Apple". Supabase starts the sign-in and, when the
+ * person comes back, /auth/confirm swaps the one-time code for a session, exactly as it does
+ * for an email link. Only providers listed in NEXT_PUBLIC_SIGNIN_PROVIDERS are accepted.
+ */
+export async function signInWithProvider(formData: FormData) {
+  const provider = parseProvider(formData.get("provider"));
+  const next = safeNextPath(formData.get("next"));
+  if (!provider || !enabledOAuthProviders().includes(provider)) redirect("/login?error=provider_unavailable");
+
+  const origin = await requestOrigin();
+  const redirectTo = new URL(`${origin}/auth/confirm`);
+  redirectTo.searchParams.set("next", next);
+  appendUtm(redirectTo.searchParams, utmFromFormData(formData)); // campaign tags for the signup event
+
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: redirectTo.toString(),
+      // Google: always let the person pick the account, so a student with a university and a
+      // personal account does not get signed in with the wrong one.
+      ...(provider === "google" ? { queryParams: { prompt: "select_account" } } : {}),
+    },
+  });
+  if (error || !data.url) {
+    // The reason is logged, never the person's details.
+    console.error("signInWithOAuth failed", { provider, code: error?.code, status: error?.status });
+    redirect("/login?error=provider_failed");
+  }
+  redirect(data.url);
 }
 
 /** Step 2: sign in with the code from the email. Works on any device, unlike the link. */

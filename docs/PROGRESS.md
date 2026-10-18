@@ -35,6 +35,9 @@ Read this first in a new session.
 - [x] Plain-English report
 
 ### P1 Login and database
+- [x] "Continue with Google" and "Continue with Apple" buttons on the login page (18 Oct 2026, founder's request): built, tested and independently reviewed (`lib/auth/providers.ts`, `app/login/`, `app/auth/confirm/route.ts`, `scripts/apple-client-secret.mjs`); a button shows only when `NEXT_PUBLIC_SIGNIN_PROVIDERS` lists it. **Google first; Apple is built but off** (the founder already has an Apple Developer account and said to leave Apple out for now).
+- [ ] Founder: run `docs/CHROME_SETUP.md` part J (Google Cloud project, consent screen, client; the founder copies the secret into Supabase himself), then tell Claude "Google is ready" so `NEXT_PUBLIC_SIGNIN_PROVIDERS=google` is set in Vercel (Preview first) and a real Google sign-in is tested
+- [ ] Later: Apple (part K), then renew its secret key every 5 months (it lasts at most 6)
 - [x] Supabase migrations (`supabase/migrations/`, all 11 tables from kit section 9)
 - [x] Row Level Security and its tests (`supabase/tests/rls.sql`, run by `npm test`)
 - [x] Magic-link login (link plus 6-digit code; `/login`, `/auth/confirm`, `/auth/continue`)

@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { MockDebrief, MockStageBar } from "@/components/marketing/mocks";
 import { Eyebrow, Kicker } from "@/components/ui/badge";
 import { Check, Lock, Sparkle } from "@/components/ui/icons";
 import { Photo } from "@/components/ui/photo";
 import { ownValue } from "@/lib/app/own-key";
+import { enabledOAuthProviders, PROVIDER_LABELS } from "@/lib/auth/providers";
 import { safeNextPath } from "@/lib/auth/safe-redirect";
 import { getUser } from "@/lib/auth/session";
+import { siteConfig } from "@/site.config";
 import { pageImage } from "@/lib/images";
 import { LoginForm } from "./login-form";
 
@@ -18,6 +21,9 @@ export const metadata: Metadata = {
 const notices: Record<string, string> = {
   link_invalid:
     "That sign-in link has expired, was already used, or was opened in a different browser from the one you started in. Enter your email to get a code instead.",
+  provider_cancelled: "You cancelled that sign-in. Try again, or enter your email to get a code instead.",
+  provider_failed: "We couldn't sign you in with that account. Try again, or enter your email to get a code instead.",
+  provider_unavailable: "That sign-in option isn't switched on yet. Enter your email to get a code instead.",
 };
 
 const POINTS = [
@@ -37,6 +43,8 @@ export default async function LoginPage({
 
   if (await getUser()) redirect(next);
   const photo = pageImage("login");
+  const providers = enabledOAuthProviders();
+  const names = providers.map((p) => PROVIDER_LABELS[p]).join(" or ");
 
   return (
     <section aria-labelledby="login-title" className="px-3 pt-4 sm:px-4">
@@ -50,14 +58,25 @@ export default async function LoginPage({
               Log in or <span className="serif-accent">sign up</span>
             </h1>
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-[17px]">
-              No password and no card. We email you a one-time code to sign in; new accounts are created automatically.
+              No password and no card. {names ? `Sign in with ${names}, or we email you a one-time code` : "We email you a one-time code to sign in"}; new accounts are created automatically.
             </p>
             <div className="mt-8 rounded-[1.75rem] bg-surface p-5 shadow-float ring-1 ring-inset ring-line sm:p-6">
-              <LoginForm next={next} notice={ownValue(notices, params.error)} />
+              <LoginForm next={next} notice={ownValue(notices, params.error)} providers={providers} />
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted">
               <Lock size={15} className="shrink-0" />
               No ad trackers. Cookies only to keep you logged in.
+            </p>
+            <p className="mt-3 text-xs leading-relaxed text-muted">
+              By continuing you agree to the{" "}
+              <Link href="/legal/terms" className="underline underline-offset-4 hover:text-ink">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link href="/legal/privacy" className="underline underline-offset-4 hover:text-ink">
+                Privacy policy
+              </Link>
+              . You must be {siteConfig.minimumAge} or over.
             </p>
           </div>
         </div>

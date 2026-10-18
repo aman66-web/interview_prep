@@ -106,3 +106,22 @@ describe("buildAccountExport", () => {
     expect(messages?.values).toEqual(["s-done", "s-open"]);
   });
 });
+
+describe("what Google or Apple sent with the sign-in", () => {
+  const empty: ExportSource = { rowsFor: async () => [] };
+
+  it("is part of the download when there is any, so the person can see everything we store", async () => {
+    const out = await buildAccountExport(empty, {
+      id: "u1",
+      email: "me@example.test",
+      sign_in_methods: ["email", "google"],
+      provider_profile: { name: "Sam Example", picture: "https://example.test/p.png" },
+    });
+    expect(out.account).toMatchObject({ sign_in_methods: ["email", "google"], name_and_picture_from_provider: { name: "Sam Example", picture: "https://example.test/p.png" } });
+  });
+
+  it("leaves the extra fields out when there is nothing", async () => {
+    const out = await buildAccountExport(empty, { id: "u1", email: "me@example.test", sign_in_methods: [], provider_profile: { name: null, picture: null } });
+    expect(Object.keys(out.account)).toEqual(["id", "email", "created_at"]);
+  });
+});
