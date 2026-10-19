@@ -263,7 +263,7 @@
   ],
   "free_starter": false,
   "free_preview": false,
-  "status": "draft",
-  "reviewed_by": null,
-  "reviewed_on": null
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
 }

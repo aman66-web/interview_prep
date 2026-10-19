@@ -98,7 +98,7 @@ describe("the checks themselves catch mistakes", () => {
 
   it("rejects a reviewed case with no reviewer, and unknown fields", () => {
     const raw = JSON.parse(readFileSync(`content/cases/${files[0]}`, "utf8"));
-    expect(caseSchema.safeParse({ ...raw, status: "reviewed" }).success).toBe(false);
+    expect(caseSchema.safeParse({ ...raw, status: "reviewed", reviewed_by: null, reviewed_on: null }).success).toBe(false);
     expect(caseSchema.safeParse({ ...raw, surprise: true }).success).toBe(false);
   });
 });
