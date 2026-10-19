@@ -52,6 +52,7 @@ for (const file of readdirSync(casesDir).filter((f) => f.endsWith(".json")).sort
   const c = JSON.parse(readFileSync(join(casesDir, file), "utf8"));
   const batch1 = BATCH_1.includes(c.slug);
   writeFileSync(join(root, "docs/reviewer-pack", batch1 ? "" : "later", `${c.slug}.md`), render(c));
-  batch1 ? n1++ : n2++;
+  if (batch1) n1++;
+  else n2++;
 }
 console.log(`Wrote ${n1} batch-1 files and ${n2} later files.`);
