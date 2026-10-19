@@ -137,9 +137,9 @@ export function LoginForm({ next, notice, providers = [], captchaSiteKey = "" }:
               maxLength={10}
               required
               aria-describedby={codeState.error ? "code-error" : undefined}
-              placeholder="123456"
+              placeholder="Your code"
               style={noOutline}
-              className={cn(bareField, "h-14 px-4 font-mono text-2xl tracking-[0.3em] placeholder:tracking-[0.3em] placeholder:text-line-strong")}
+              className={cn(bareField, "h-14 px-4 font-mono text-2xl tracking-[0.3em] placeholder:text-base placeholder:font-sans placeholder:tracking-normal placeholder:text-subtle")}
             />
           </div>
           {codeState.error ? <ErrorText id="code-error">{codeState.error}</ErrorText> : null}
