@@ -1,0 +1,191 @@
+# Quillmere Packaging: can it carry a £25 million loan?
+
+Case type: other · Industry: Packaging manufacturing · Difficulty 2 of 3 · About 30 minutes · Style: interviewer_led
+
+Status: draft (draft until you sign it off). Page on the preview site: /cases/quillmere-packaging-term-loan
+
+## 1. What the candidate is told
+
+You are a graduate analyst in the corporate lending team of a UK bank. Quillmere Packaging, a family-owned company that makes plastic food packaging at one factory in the Midlands, has banked with us for 12 years. It wants to build a new production line costing £30 million and has asked us for a £25 million term loan, repaid over 10 years, to pay for most of it. The relationship director asks you: can Quillmere carry this loan, and should we lend as asked, lend with conditions, or decline? How would you approach this?
+
+## 2. Facts the interviewer gives only when asked
+
+**The client.** Quillmere Packaging is a family-owned company, now run by the founder's daughter as managing director. It makes plastic trays, pots and lids for UK food producers at one factory in the Midlands, which it owns. A new finance director joined last year.
+
+**Relationship with the bank.** Quillmere has banked with us for 12 years and has always kept to the terms of everything we have given it. Today it has no loans from us; we run its current accounts.
+
+**Existing debt.** Quillmere owes £10 million of asset finance to another lender, secured on its current machines. It pays this back in fixed payments of £2.5 million a year, interest included, for the next five years. It has no other borrowing.
+
+**The new line.** The line would make food trays from recycled plastic. It costs £30 million: Quillmere would pay £5 million from its own cash and borrow £25 million from us. A machinery supplier would build and install it under a fixed-price contract over about 12 months, so it earns nothing in year 1. It would run at about half speed in year 2 and at full speed from year 3. Quillmere expects the line to last about 15 years with normal maintenance. Quillmere's last new line, five years ago, was smaller; it finished three months late and about 10% over budget.
+
+**Demand for the new line.** Two existing customers have signed letters of intent for about half of the line's output at full speed. A letter of intent shows interest but is not a binding order. Quillmere expects to win the other half from new customers. Nothing is under contract yet.
+
+**Management's forecast.** Management expects EBITDA of £10 million in year 1 while the line is built, £12 million in year 2 and £14 million a year from year 3. It assumes the existing business stays at about £10 million of EBITDA, so the new line adds about £2 million of EBITDA in year 2 and about £4 million a year from year 3, on about £20 million of extra revenue a year at full speed. After tax and maintenance spending, that leaves cash available for debt service of £7 million in year 1, £8.5 million in year 2 and £10 million a year from year 3. The forecast makes no allowance for the extra stock and customer credit the new revenue would need. The bank has not yet tested these figures.
+
+**Customers.** Quillmere's largest customer, a ready-meal maker, buys about 25% of its output, and its five largest customers together buy about 60%. Supply contracts usually run for one or two years.
+
+**Costs.** Plastic is the main material. Quillmere passes most changes in plastic prices on to its customers, about three months later. It buys energy at market prices with no fixed-price deal, which is why its energy bill rose from £6 million to £8 million last year.
+
+**What the bank means by EBITDA.** EBITDA is earnings before interest, tax, depreciation and amortisation: operating profit with depreciation and amortisation added back. It is a rough measure of the cash the business makes from its operations before it pays lenders and tax. Quillmere has no amortisation.
+
+**The bank's policy: leverage.** Leverage is total debt divided by EBITDA for the latest full year. Total debt means all borrowing from every lender, including asset finance and any loans from the owners, and the bank does not subtract cash. Money the owners put in as new shares (equity) is not debt. For a company like Quillmere the bank's policy allows at most 3.0 times. Going above that needs an exception from the credit committee, which does not normally accept forecast earnings as the reason.
+
+**The bank's policy: debt service cover.** Debt service is the interest plus the scheduled repayments on all of a company's borrowing in a year. Debt service cover is the cash available for debt service divided by debt service. The bank works out cash available as EBITDA minus tax paid and minus the spending needed to keep the existing machines running. The policy requires cover of at least 1.25 times in every year of the loan.
+
+**Tax and maintenance spending.** The income statement shows a tax charge of £1 million in each of the last two years. Use £1 million for the tax Quillmere pays in cash on last year's figures; management's forecast already allows for more tax as profits grow. Quillmere spends about £2 million a year on maintaining its existing machines and replacing worn parts, and expects that to continue.
+
+**The loan requested.** A term loan is a fixed sum lent once and repaid on a set schedule. Quillmere asks for £25 million, paid out at the start of year 1 and repaid in equal amounts of £2.5 million a year over 10 years, starting in year 1. The bank's pricing team has quoted interest of 8% a year for this loan; assume it stays fixed and is charged on the amount still owed at the start of each year. The repayment schedule is available.
+
+**Cash and dividends.** Quillmere has about £8 million of cash today, so after paying £5 million towards the line it would keep about £3 million. The owners took £3 million of dividends last year and would like to keep doing so. They say they could put in up to £5 million of their own money if the bank insisted, but would rather not. They have not said whether the money would go in as new shares or as a loan to the company.
+
+**Security.** Security is what the bank could sell to get its money back if the borrower cannot pay. Quillmere's current machines are already pledged to the asset finance lender. The bank could take a charge over the factory, which a valuer put at about £12 million last year, and over the new line. The bank's asset team thinks a specialised line like this would sell for well under half its cost if it ever had to be sold.
+
+**Covenants.** A covenant is a promise in the loan agreement that the bank checks regularly from the company's accounts, for example to keep leverage below a set level or cover above one. If a covenant is broken, the bank can renegotiate the loan or ask for it to be repaid early.
+
+## 3. What a good structure includes
+
+Key buckets:
+- The borrower: what Quillmere does, its customers, and how steady its earnings (EBITDA) are
+- The purpose: the new line's cost, build time, ramp-up and how firm the demand for it is
+- Debt capacity: total debt, including the existing asset finance, against the 3.0 times EBITDA limit
+- Ability to repay: debt service cover year by year against the 1.25 times minimum, especially while the line is being built
+- Protection: security, the owners' own money, covenants and other conditions
+- The decision: lend as asked, lend with conditions, or decline
+
+Good signs:
+- Works out EBITDA by adding depreciation back to operating profit, or as revenue minus the cash operating costs
+- Includes the existing £10 million of asset finance in total debt
+- Checks repayment year by year and spots that the line earns nothing during the 12-month build
+- Separates proven earnings from management's forecast, and asks how firm the new line's orders are
+- Questions the forecast's margin: the new line adds about £4 million of EBITDA on £20 million of revenue (20%), against about 12.5% for the business today
+- Asks whether the forecast allows for the extra working capital (stock and customer credit) that £20 million of new revenue needs
+- Checks that the 10-year loan is shorter than the line's expected working life of about 15 years
+- Asks what happens if things go wrong: what the security is worth, the largest customer, energy costs, a late build
+
+Red flags:
+- Counts only the new loan in leverage and forgets the existing debt
+- Judges the loan on management's forecast without questioning it
+- Says yes because Quillmere is profitable, without checking it can make the repayments each year
+- Treats revenue or profit after tax as the cash available to repay lenders
+
+## 4. Exhibits (shown when the candidate asks for the right data)
+
+### Quillmere Packaging income statement summary (£ million)
+
+Shown when the candidate: Ask for Quillmere's recent income statement, its profit and loss, or how much it earns.
+
+| Line | Two years ago | Last year |
+| --- | --- | --- |
+| Revenue | 72 | 80 |
+| Materials | 38 | 42 |
+| Staff | 15 | 16 |
+| Energy | 6 | 8 |
+| Other operating costs | 4 | 4 |
+| Depreciation | 4 | 4 |
+| Operating profit | 5 | 6 |
+| Interest | 1 | 1 |
+| Tax | 1 | 1 |
+| Profit after tax | 3 | 4 |
+
+What the data says: EBITDA is operating profit plus depreciation: £10 million last year (6 + 4), up from £9 million two years ago (5 + 4). Revenue grew 11% and the EBITDA margin held at about 12.5%, although energy rose by a third. The business is steady and growing, but £10 million of EBITDA is small next to £35 million of debt. The owners took £3 million of the £4 million profit after tax as dividends.
+
+### Debt service if the bank lends £25 million as requested (£ million)
+
+Shown when the candidate: Ask how the loan would be repaid, for the repayment schedule, or what Quillmere would have to pay its lenders each year.
+
+| Year | New loan owed at start | New loan interest (8%) | New loan repayment | Existing asset finance payments | Total debt service |
+| --- | --- | --- | --- | --- | --- |
+| Year 1 | 25 | 2 | 2.5 | 2.5 | 7 |
+| Year 2 | 22.5 | 1.8 | 2.5 | 2.5 | 6.8 |
+| Year 3 | 20 | 1.6 | 2.5 | 2.5 | 6.6 |
+| Year 4 | 17.5 | 1.4 | 2.5 | 2.5 | 6.4 |
+| Year 5 | 15 | 1.2 | 2.5 | 2.5 | 6.2 |
+| Year 6 | 12.5 | 1 | 2.5 | 0 | 3.5 |
+| Year 7 | 10 | 0.8 | 2.5 | 0 | 3.3 |
+| Year 8 | 7.5 | 0.6 | 2.5 | 0 | 3.1 |
+| Year 9 | 5 | 0.4 | 2.5 | 0 | 2.9 |
+| Year 10 | 2.5 | 0.2 | 2.5 | 0 | 2.7 |
+
+What the data says: Debt service is heaviest at the start: £7.0 million in year 1, when the line is still being built and earns nothing, so it must come from the £7 million of cash available on last year's figures. Cover is only 1.0 times against the 1.25 minimum. On management's forecast, cover is exactly 1.25 times in year 2 (8.5 / 6.8), with no room for a slow ramp-up, and about 1.5 times in year 3 (10 / 6.6). Once the asset finance is paid off after year 5, debt service falls to £3.5 million or less. The pinch is the first two years.
+
+## 5. The maths, with working
+
+**Question 1.** What was Quillmere's EBITDA last year, in £ million?
+
+Inputs: operating_profit = 6, depreciation = 4
+Expected answer: 10 (accepted within 2%)
+Working: EBITDA is operating profit with depreciation added back: £6 million + £4 million = £10 million. The same answer comes from revenue minus the cash operating costs: 80 - 42 - 16 - 8 - 4 = £10 million. Two years ago it was £9 million.
+
+**Question 2.** If the bank lends the full £25 million, what will Quillmere's total debt to EBITDA be, using last year's EBITDA?
+
+Inputs: existing_debt = 10, new_loan = 25, operating_profit = 6, depreciation = 4
+Expected answer: 3.5 (accepted within 3%)
+Working: Total debt is the £10 million of asset finance plus the £25 million new loan = £35 million. EBITDA is £10 million. 35 / 10 = 3.5 times, above the bank's limit of 3.0 times. Counting only the new loan gives 2.5 times, which is the classic mistake.
+
+**Question 3.** Using last year's EBITDA, what is the largest new loan the bank could offer and stay within its 3.0 times limit, in £ million?
+
+Inputs: max_multiple = 3, operating_profit = 6, depreciation = 4, existing_debt = 10
+Expected answer: 20 (accepted within 3%)
+Working: The limit allows total debt of 3.0 x £10 million = £30 million. Quillmere already owes £10 million, so the most the bank could lend is £30 million - £10 million = £20 million, £5 million less than requested. At £20 million leverage would sit exactly at the limit, with no room for EBITDA to fall.
+
+**Question 4.** In year 1, while the new line is being built, what is Quillmere's debt service cover if the bank lends £25 million as requested? Use last year's figures for the cash available.
+
+Inputs: operating_profit = 6, depreciation = 4, tax = 1, maintenance_spending = 2, debt_service_year_1 = 7
+Expected answer: 1 (accepted within 3%)
+Working: Cash available = EBITDA £10 million - tax £1 million - maintenance spending £2 million = £7 million. Year-1 debt service = £2.0 million interest + £2.5 million repayment on the new loan + £2.5 million of asset finance payments = £7.0 million. 7 / 7 = 1.0 times, below the 1.25 minimum: every pound of cash goes to lenders, with nothing left for dividends or for anything going wrong.
+
+## 6. Brainstorm
+
+If the credit committee were willing to consider a loan, what conditions would you set, and what would you want to see before any money is paid out?
+
+Ideas a strong candidate might raise:
+- Lend about £20 million instead of £25 million, so total debt stays within 3.0 times last year's EBITDA
+- Ask the owners to put in the missing £5 million as new shares (equity), not as a loan, rather than Quillmere using more of its cash
+- Interest only during the 12-month build, with repayments starting once the line is running
+- Pay the loan out in stages as the machinery supplier reaches agreed build milestones
+- Binding supply contracts for a set share of the new line's output, not just letters of intent, before the money is paid out
+- Covenants on leverage and debt service cover, tested every six months, set with headroom against the base case: the leverage limit above forecast leverage and the cover minimum below forecast cover
+- No dividends, or a cap on them, until the line runs at full speed and cover is comfortable
+- A first charge over the factory and the new line as security
+- Keep a minimum cash balance, and agree who pays if the build runs over budget (the last line was about 10% over)
+- A debt service reserve or an owners' guarantee to cover a slow ramp-up in year 2
+- Check that the forecast allows for the extra stock and customer credit (working capital) that £20 million of new revenue needs
+- A fixed-date contract with the machinery supplier, with penalties for delay
+- Monthly management accounts and build progress reports to the bank
+- Check the risks: losing the largest customer (25% of output), energy prices with no fixed deal, and whether the recycled trays will sell at the forecast price
+
+## 7. What a good recommendation includes
+
+Must mention:
+- EBITDA is £10 million; with the existing £10 million of asset finance, a £25 million loan takes total debt to £35 million, 3.5 times EBITDA, above the 3.0 times limit
+- Year-1 debt service cover is only 1.0 times (£7 million of cash against £7 million of debt service) because the line earns nothing while it is built, below the 1.25 minimum
+- A clear decision: lend with conditions that fix both problems, which needs both a smaller loan (about £20 million) and interest only during the build, plus owner money as equity, binding contracts and covenants, rather than lending as asked or declining outright
+
+Good signs:
+- Notes that the business itself is sound (steady growth, 12 years with the bank, always kept to its terms), so a flat decline would lose a good client
+- Separates proven earnings from the forecast: today's £35 million of debt against year-3 forecast EBITDA of £14 million would look like 2.5 times, but that depends on a line not yet built and on letters of intent
+- Shows that the fixes work: about £20 million with interest only in year 1 (then repaid over nine years) gives cover of about 1.7 times in the build year and about 1.3 times in year 2 on the forecast, and notes that year 2 has little room if the ramp-up is slow
+- Sizes the loan on cover as well as leverage: without a holiday, cover of 1.25 allows £5.6 million of debt service (7 / 1.25), so after £2.5 million of asset finance a new loan of only about £17 million (£3.1 million / 18% for interest plus repayment); with interest only in the build year cover allows about £22.5 million, so the leverage limit (£20 million) is the one that binds
+- Notes that £20 million puts leverage exactly at the 3.0 times limit with no room, and suggests a little less debt, more owner money or covenant levels with some room
+- Raises that the security is thin: the factory (about £12 million) plus a line that would sell for well under half its cost may barely cover a £20 million loan in a forced sale, so repayment has to come mainly from cash flow
+- Names a dividend limit and says how often the covenants would be tested
+
+## 8. Model answer outline
+
+1. Clarify: Quillmere wants £25 million over 10 years at 8% for a £30 million line, putting in £5 million of its own cash. The bank's policy is total debt of no more than 3.0 times EBITDA and debt service cover of at least 1.25 times in every year.
+2. Structure: the borrower and its earnings, the purpose and the plan, debt capacity (leverage), ability to repay (cover, year by year), protection (security, owner money, covenants), then the decision.
+3. Earnings: EBITDA = £6 million operating profit + £4 million depreciation = £10 million, up from £9 million, with revenue up 11% and a steady 12.5% margin. A 12-year client that has always kept to its terms. Risks: the largest customer buys 25% of output and the top five 60%, and energy is bought at market prices. The forecast assumes the new line earns a 20% margin (£4 million on £20 million of revenue), well above today's 12.5%, and ignores the extra working capital, so it needs testing.
+4. Leverage: £10 million of asset finance + £25 million = £35 million, 3.5 times EBITDA, above the 3.0 limit. The most the bank can lend within policy on today's earnings is £20 million. Today's £35 million of debt against year-3 forecast EBITDA of £14 million would look like 2.5 times, which shows how forecast earnings flatter the ratio; but the line is not built and its orders are only letters of intent.
+5. Cover: cash available = £10 million - £1 million tax - £2 million maintenance = £7 million against £7.0 million of year-1 debt service, so 1.0 times. On the forecast, year 2 is exactly 1.25 times (8.5 / 6.8) and year 3 about 1.5 times. A repayment holiday alone is not enough at £25 million: with interest only in year 1 and the loan repaid over the remaining nine years, year-2 debt service is about £7.28 million (£2.0 million interest + £2.78 million repayment + £2.5 million of asset finance), so cover falls to about 1.17 times (8.5 / 7.28). Cutting the loan to £20 million is not enough on its own either: repaid at £2 million a year from year 1, year-1 debt service is £1.6 million interest + £2 million + £2.5 million of asset finance = £6.1 million, so cover is about 1.15 times (7 / 6.1). Both the smaller loan and the build-year holiday are needed.
+6. Recommendation: lend with conditions. Offer about £20 million (3.0 times), with the owners putting in the other £5 million as new shares (equity), not as a loan, because a loan from the owners would count as debt and take leverage back to 3.5 times; interest only during the 12-month build, then repaid over the remaining nine years (well within the line's expected 15-year life), which lifts year-1 cover to about 1.7 times (7 / 4.1, a cautious figure because paying out in stages means less interest in year 1) and leaves about 1.3 times in year 2 (8.5 / 6.32); year 2 still rests on management's untested forecast, and cover drops below 1.25 times if year-2 cash available is about £0.6 million short of plan (for example if the line is a few months late, as the last one was), and to about 1.1 times if it stays at £7 million, so also require a minimum cash balance (for example the £3 million Quillmere keeps) or an owners' guarantee to cover a slow ramp-up; pay it out in stages against build milestones; require binding contracts for at least half of the new line's output first; covenants on leverage and cover tested every six months, with some room against the base case; no dividends until the line runs at full speed; and a charge over the factory and the line. £20 million leaves no room under the 3.0 times limit: if the owners can put in a little more or the line's cost can be cut, a loan of about £18 million (2.8 times) would leave some headroom. Next steps: test management's forecast and the build contract, and check how much of the new line's output the two customers would actually commit to.
+
+---
+
+## Your review (please fill in)
+
+1. Realistic? 
+2. Clear? 
+3. Fair? 
+4. The answer: 
+5. Difficulty and time: 
+6. Verdict (Sign off as it is / Sign off after these small changes / Needs rework): 

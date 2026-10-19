@@ -1,0 +1,214 @@
+# Fernmoor Dental: should clear aligners go to all 20 practices?
+
+Case type: market_entry · Industry: Dental care · Difficulty 2 of 3 · About 35 minutes · Style: candidate_led
+
+Status: draft (draft until you sign it off). Page on the preview site: /cases/fernmoor-dental-clear-aligners
+
+## 1. What the candidate is told
+
+Fernmoor Dental Group runs 20 private dental practices in north-west England, with about 100,000 active patients, 40 dentists and 30 hygienists; each practice has four dental chairs, and patients visit about 1.6 times a year. When adults ask about straightening their teeth, its dentists refer them to outside orthodontists (about 300 last year), and the group earns nothing from that treatment. From January to June this year, two of its practices offered clear aligners (custom-made, removable plastic trays that move teeth gradually). The managing partner now wants to roll the service out to all 20 practices at once. The partners have asked you how far and how fast they should take it beyond the two pilot practices. How would you approach this?
+
+## 2. Facts the interviewer gives only when asked
+
+**The group.** Fernmoor owns all 20 practices outright; there are no franchises. About 40 dentists and 30 hygienists work across them. All of its work is private: patients pay per treatment or through a monthly membership plan that covers check-ups and hygiene visits.
+
+**Objective and decision rule.** Whatever its size, the partners will approve a roll-out only if the aligner service at least breaks even in its first full year across the practices that offer it. They also do not want it to take appointment time away from routine care. Beyond that, they like the idea of keeping patients inside the group rather than sending them elsewhere.
+
+**How the treatment works.** A dentist takes a 3D scan of the teeth with an intraoral scanner and plans the treatment in the supplier's software, and the supplier makes the aligners. Fernmoor's plan assumes a typical adult treatment of about 12 months with about 6 appointments, ending with retainers to hold the teeth in place. Its dentists would use aligners only for mild to moderate crowding or gaps, and would still refer complex cases to an orthodontist.
+
+**Price.** Fernmoor would charge £2,500 per treatment, including the retainers. Its dentists understand that the local independent orthodontists they refer patients to charge about £3,500 for similar adult treatment.
+
+**The supplier.** Fernmoor has shortlisted one large aligner supplier. Its fee covers the aligners and any extra sets needed during treatment. Every dentist who prescribes its aligners must first complete its two-day training course. The supplier has said it is open to talking about volume discounts.
+
+**Dentists' pay.** Fernmoor's dentists are self-employed associates paid for each item of work, and each can choose whether to take on aligner work. The plan pays the treating dentist a fixed £600 for each aligner treatment.
+
+**Chair time and capacity.** Each treatment needs about 3 hours of a dentist's time in total, spread over the 6 appointments. Each of the 40 dentists works about 1,500 clinical hours a year, and about 10% of those hours are unfilled today (about 150 hours per dentist a year). The supplier's training course takes each dentist two days away from patients.
+
+**Current referrals.** Last year, before the pilot, Fernmoor's dentists referred about 300 adult patients to outside orthodontists for straightening, without any marketing. The dentists think most of them had mild to moderate cases that aligners could have treated. Each practice's records show how many adults it referred.
+
+**How many patients could be suitable.** Fernmoor has never counted how many of its patients have teeth that aligners could treat, and the partners do not want a sizing study. They see last year's referrals and the pilot as the evidence of demand.
+
+**The pilot.** From January to June this year, two practices offered aligners. They put posters in the waiting room and offered a free 3D scan to anyone who asked. There was no paid marketing and no treatment coordinator: reception staff booked the appointments. The supplier lent each practice a scanner free of charge, and one trained dentist at each practice did the treatments. The two practices were chosen because their managers volunteered. Any roll-out would keep the free scan offer; the £200 of materials per treatment already allows for scans given to people who do not go ahead.
+
+**Differences between the other practices.** Of the 18 practices outside the pilot, six have patients who spend about £300 a year on average, between the pilot practices and the rest; last year each of the six referred about 20 adults for straightening. The other twelve average about £225 a year per patient and referred about 11 adults each.
+
+**Launching in fewer practices.** A smaller first wave would follow the pilot's set-up. Each practice in it needs its own scanner (£6,000 a year on a three-year lease) and one lead dentist trained (£1,500). Two treatment coordinators (£35,000 each) can cover up to 10 practices. Marketing aimed only at those practices' existing patients would cost about £55,000 a year for up to 10 practices. Patients at practices without the service could be referred to a nearby practice that has it.
+
+**Scanner leases.** Scanners are leased for three years at a time, at £6,000 a year per practice, so each practice that gets one commits Fernmoor to £18,000. A scanner can also be used for crowns and other routine work, but the plan does not count any saving from that.
+
+**Costs after the first year.** Training is mostly a first-year cost: from year 2 it falls to about £10,000 a year, for new dentists only. The other fixed costs would stay about the same.
+
+**When the money counts.** Patients pay the full £2,500 when treatment starts. For the partners' test, count each treatment's full price and costs in the year it starts.
+
+**Competition.** Two other private practices in the area started offering aligners last year. Some patients mention cheaper aligners sold online with remote check-ins; Fernmoor has no figures on how many of its patients buy them.
+
+**Market beyond Fernmoor's patients.** For now the partners are interested only in Fernmoor's own patients. There are no figures on the wider local market.
+
+**Children and teenagers.** The plan covers adults only. Under-18s with crowding would still be referred to orthodontists.
+
+**Funding.** Fernmoor can pay the first year's costs from its own cash, but the partners do not want to fund a service that keeps losing money.
+
+**Timing.** The partners want to decide within three months. Scanners take about six weeks to arrive, coordinators need recruiting and training takes two days per dentist, so a roll-out could start about two months after a decision.
+
+**Taxes.** Ignore VAT and tax for this case.
+
+## 3. What a good structure includes
+
+Key buckets:
+- Demand evidence: the pilot's results, how it was run, whether the two pilot practices are typical of the other 18, and last year's referrals practice by practice
+- Economics per practice: price, variable cost per treatment, fixed costs, and the number of starts each practice needs in six months to cover its share, set against the pilot
+- Ability to deliver: dentist training, chair time, scanners and the supplier
+- Competition and price: local orthodontists, other practices offering aligners, aligners sold online
+- Roll-out path: all 20 practices at once or a smaller first wave, which practices go first, lease commitments, when to go further, clinical quality
+
+Good signs:
+- Listens to the prompt: picks up that the plan is all 20 practices at once, that the group earns nothing from referrals today and that a pilot ran this year, and sets aside details that do not bear on the decision (hygienists, chairs per practice, visits a year)
+- Follows a clear path: clarifies the goal, lays out an issue tree, states hypotheses, then says which analysis would test each one
+- States a hypothesis early, for example 'the unit economics are simple, so the real question is whether what happened in the two pilot practices would happen in the other 18'
+- Asks for the partners' decision rule (break even in the first full year across the practices that offer it) and uses it to frame the analysis
+- Works from the evidence Fernmoor already has, the pilot and last year's referrals by practice, rather than sizing the aligner market
+- Asks how the pilot was run and whether the two pilot practices are typical of the group before relying on their results
+
+Red flags:
+- Recites a generic framework (for example the marketing mix or five forces) without tying it to this decision
+- Spends the case sizing the aligner market or the group's patient base instead of testing the pilot evidence
+- Takes the pilot result as the forecast for every practice without asking whether the pilot practices are typical
+- Judges the roll-out only on a group total, without checking which practices would cover their share of the costs
+- Gets lost in details that do not affect the decision, such as chairs per practice or visits a year
+
+## 4. Exhibits (shown when the candidate asks for the right data)
+
+### Aligner treatment: price and variable costs per treatment (£)
+
+Shown when the candidate: Ask about the price of a treatment and what each treatment costs to deliver.
+
+| Item | £ per treatment |
+| --- | --- |
+| Price charged to the patient | 2500 |
+| Aligners and any extra sets, from the supplier | 700 |
+| Treating dentist's fee | 600 |
+| Retainers, scans and other materials | 200 |
+
+What the data says: Variable costs are £1,500 per treatment (700 + 600 + 200), so each treatment contributes £1,000, 40% of the £2,500 price. The supplier's fee is the largest cost, so a volume discount from the supplier is the biggest lever on the margin per treatment.
+
+### Aligner service fixed costs in the first full year, all 20 practices (£ thousand)
+
+Shown when the candidate: Ask about the fixed or set-up costs of running the service.
+
+| Cost line | £ thousand a year |
+| --- | --- |
+| Scanner leases (20 practices at £6,000) | 120 |
+| Treatment coordinators (4 at £35,000) | 140 |
+| Marketing to patients and locally | 180 |
+| Dentist training and supplier accreditation (40 dentists at £1,500) | 60 |
+| Total | 500 |
+
+What the data says: Fixed costs are £500k in the first full year, £25k for each of the 20 practices, so at £1,000 a treatment each practice needs about 25 starts a year, 12.5 in six months (the pilot's length), to cover its share. Marketing (£180k) and coordinators (£140k) are the largest lines, and neither was part of the pilot. Scanners and training grow with the number of practices and dentists, so a roll-out in fewer practices, or with fewer trained dentists, costs less: a 10-practice first wave with one lead dentist each costs about £200k (scanners £60k, training £15k, two coordinators £70k, marketing to existing patients £55k), a bar of 20 starts a year per practice, 10 in six months. Training falls to about £10k from year 2, so the full plan's fixed costs then drop to about £450k and its bar to about 11.25 in six months.
+
+### Pilot practices compared with the rest of the group, per practice (last year, before the pilot, except aligner starts, which are from the pilot this January to June)
+
+Shown when the candidate: Ask for the results of the pilot, or whether the pilot practices are typical of the group.
+
+| Measure | Each pilot practice (2) | Other practices, average (18) |
+| --- | --- | --- |
+| Active patients | 5000 | 5000 |
+| Adult patients | 4000 | 4000 |
+| Average spend per patient a year (£) | 350 | 250 |
+| Patients on the membership plan (%) | 60 | 40 |
+| Whitening treatments a year per 1,000 adult patients | 30 | 15 |
+| Adults referred to orthodontists for straightening | 24 | 14 |
+| Dental chairs | 4 | 4 |
+| Aligner treatments started in the six-month pilot (January to June this year) | 15 | Not offered |
+
+What the data says: Each pilot practice started 15 treatments in six months, against the full plan's bar of 12.5 per practice: only 20% above it. If every practice matched the pilot, the group would start about 600 a year and make about £100k. But the pilot practices are not typical: their patients spend 40% more, more of them are on the membership plan (60% against 40%), they buy twice as much whitening and, before the pilot, they referred more adults for straightening (24 against 14 a practice). If the other 18 practices start 15 in six months for every 24 adults they referred, an average one starts about 8.75 (15 x 14 / 24), well below the bar of 12.5; the group would start about 375 a year and lose about £125k. Within the 18, the six higher-spend practices (about 20 referrals each) come to about 12.5, just on the bar, and the twelve others (about 11) to about 6.9, little more than half of it. Other measures give the same answer: scaling by spend gives about 10.7 in six months and by whitening 7.5, both below 12.5. The bias runs both ways: volunteer practices with richer, more engaged patients, and perhaps patients who had been waiting for the option, push the pilot up, so it overstates the other practices; but the pilot had no paid marketing and no coordinators, so the full plan might do better. The £320k of marketing and coordinators is exactly what is unproven, which is why a smaller first wave is the test. Patient numbers and chairs are the same, so they do not explain the difference.
+
+## 5. The maths, with working
+
+**Question 1.** How much does each aligner treatment contribute towards Fernmoor's fixed costs, in £?
+
+Inputs: price = 2500, supplier_fee = 700, dentist_fee = 600, materials = 200
+Expected answer: 1000 (accepted within 1%)
+Working: Variable costs are £700 + £600 + £200 = £1,500 per treatment. £2,500 - £1,500 = £1,000 per treatment, a 40% margin.
+
+**Question 2.** Under the managing partner's plan (all 20 practices), how many treatments would each practice need to start in six months, on average, for the service to break even in its first full year?
+
+Inputs: fixed_costs_k = 500, contribution = 1000, practices = 20, months = 6
+Expected answer: 12.5 (accepted within 4%)
+Working: £500k / £1,000 = 500 starts a year across the group, which is 25 a year for each of the 20 practices, or 12.5 in six months: the same length as the pilot, so the two can be compared directly. Each pilot practice started 15, only 20% above the bar. From year 2, with training down to about £10k, the bar falls to about 11.25.
+
+**Question 3.** If the 18 practices outside the pilot start treatments in proportion to the adults each referred for straightening last year, how many would an average one start in six months?
+
+Inputs: pilot_starts = 15, pilot_referrals = 24, other_referrals = 14
+Expected answer: 8.75 (accepted within 5%)
+Working: 15 x 14 / 24 = 8.75 in six months (17.5 a year), against the bar of 12.5: about 30% short. Scaling by spend gives about 10.7 (15 x 250 / 350) and by whitening 7.5 (15 x 15 / 30), so every measure falls below the bar. Within the 18, the six higher-spend practices (about 20 referrals) come to 12.5, just on the bar, and the twelve others (about 11) to about 6.9.
+
+**Question 4.** On that basis (the two pilot practices keep their rate and the other 18 start in proportion to their referrals), how much would the full 20-practice roll-out lose in its first full year, in £ thousand?
+
+Inputs: fixed_costs_k = 500, pilot_practices = 2, other_practices = 18, pilot_starts = 15, pilot_referrals = 24, other_referrals = 14, months = 6, contribution = 1000
+Expected answer: 125 (accepted within 5%)
+Working: Starts: 2 x 30 + 18 x 17.5 = 60 + 315 = 375 a year. 375 x £1,000 = £375k against £500k of fixed costs: a loss of about £125k. Taking the pilot rate for every practice (600 a year) would have shown a profit of about £100k instead; the whole difference comes from the pilot practices not being typical. The full plan would also sign £360k of three-year scanner leases (20 x £18k), £216k of it in the twelve lower-spend practices that are forecast to reach little more than half the bar.
+
+**Question 5.** If Fernmoor started the 500 aligner treatments a year that the full plan needs to break even, what share of its dentists' unfilled clinical hours would they use, in percent?
+
+Inputs: treatments = 500, hours_per_treatment = 3, dentists = 40, clinical_hours = 1500, unfilled_pct = 10
+Expected answer: 25 (accepted within 2%)
+Working: 500 treatments x 3 hours = 1,500 dentist hours a year. Unfilled time is 10% of 40 x 1,500 = 60,000 hours, so 6,000 hours (about 150 per dentist). 1,500 / 6,000 = 25%, so the service fits in spare time without taking appointments from routine care, as long as it is spread over enough trained dentists: one dentist's 150 spare hours cover about 50 treatments a year, twice a practice's bar of 25.
+
+## 6. Brainstorm
+
+Beyond the current plan, how could Fernmoor get more patients to start aligner treatment, or lower the number of starts each practice needs to break even?
+
+Ideas a strong candidate might raise:
+- Send the mild cases among the 300 adults referred out each year to the group's own aligner dentists instead
+- Raise straightening at routine check-ups, using the 3D scan to show patients a preview of the result
+- Keep the free scan offer that ran in the pilot, aimed at existing patients
+- Let patients spread the £2,500 over monthly payments, or offer a discount to membership-plan patients
+- Offer whitening at a reduced price at the end of treatment to raise the value of each patient
+- Start with hub practices: lease scanners and train dentists only where patients look most like the pilot practices', and let nearby practices' patients travel to them
+- Share scanners between nearby practices on set days, or use them for crowns and other routine work to spread their cost
+- Train one lead dentist per practice instead of all 40, as in the pilot: each has about 150 spare hours a year, enough for about 50 treatments, so at least 10 trained dentists are needed for 500 a year without touching routine care
+- Negotiate a lower supplier fee in return for volume, since it is the largest cost per treatment
+- Charge more: £2,500 is £1,000 below the local orthodontists, and at £3,000 each treatment contributes £1,500, so the full plan's bar falls from 12.5 to about 8.3 starts per practice in six months; but nothing yet shows how patients would respond to a higher price, and cheaper aligners are sold online
+- Spend more of the marketing budget on existing patients, who are cheap to reach, and less on local advertising
+- Use aligners to attract new adult patients to the group, who may then join the membership plan
+- Later, consider offering aligners to teenagers, whom the plan leaves out today
+
+## 7. What a good recommendation includes
+
+Must mention:
+- Each treatment contributes £1,000, so the full plan's £500k of first-year fixed costs sets a bar of about 25 starts a year in every practice (12.5 in six months); the pilot practices cleared it with 15 each, but only by 20%
+- The two pilot practices volunteered and are not typical: their patients spend more and, before the pilot, they referred more adults for straightening (24 against 14 a practice). Re-based on referrals, an average other practice would start about 8.75 in six months, below the bar, and the full roll-out would lose about £125k in its first year
+- A clear answer on how far and how fast: for example a smaller first wave that itself passes the partners' break-even rule, with a rule for going further that is tested in practices unlike the pilot ones
+
+Good signs:
+- Goes beyond the shallow reading. A good answer gets the bar right (about 12.5 starts per practice in six months, or 500 a year across the group) and flags the thin 20% headroom over the pilot's 15 and the small, volunteer pilot as the main risks. A better answer notices that the pilot practices' patients spend 40% more, are more often on the membership plan, buy twice as much whitening and referred more adults before the pilot (24 against 14 a practice), re-bases the forecast (about 8.75 starts in six months for an average other practice if they follow their referral rate; about 375 a year for the group, a loss of about £125k) and designs a first wave to test it. Taking the pilot rate as every practice's forecast and rolling out everywhere is not a good answer here
+- Sees that the pilot is biased both ways: volunteer practices with richer patients, and perhaps patients who had been waiting, push it up; no paid marketing and no coordinators push it down, so the £320k of marketing and coordinators in the full plan is the unproven part
+- Tests each kind of practice against the bar, not just the group total: under the full plan only the two pilot practices clear 12.5 in six months, the six higher-spend practices only just reach it (about 12.5) and the twelve others reach about 6.9, so £216k of the £360k of three-year scanner leases would sit in practices unlikely to cover their share
+- Checks the recommended first wave against the partners' rule with numbers: for example 10 practices cost about £200k (scanners £60k, one lead dentist trained in each £15k, two coordinators £70k, marketing to existing patients £55k), a bar of 10 starts per practice in six months (200 a year), against a forecast of about 240 a year (60 from the pilot practices, 150 from the six higher-spend practices at about 25 each, about 28 from two of the twelve), with £180k of lease commitments instead of £360k
+- Bases the rule for going further on practices that are not like the pilot: puts one or two of the twelve lower-spend practices in the first wave and extends to the rest only if they reach about 10 starts in six months (20 a year), the first wave's own bar; if they fall short, serves those patients through nearby first-wave practices instead of leasing more scanners
+- Lowers the bar: fewer scanners and trained dentists, marketing aimed at existing patients, a supplier discount, or a higher price (at £3,000 the full plan's bar falls to about 8.3 starts per practice in six months, though nothing yet shows how patients would respond); notes that the bar falls to about 11.25 from year 2 as training costs fall away
+- Answers the partners' worry about routine care with numbers: 500 treatments x 3 hours = 1,500 dentist hours a year, a quarter of the roughly 6,000 unfilled hours; one dentist's 150 spare hours cover about 50 treatments, so one lead dentist per practice is enough for a first wave
+- Names risks and next steps: the pilot's first six months may have caught patients who had been waiting, three-year scanner leases, whether self-employed associates want the work at £600 a treatment, two days of training per dentist away from patients, clinical quality and complaints, the supplier's terms, and a date to decide on the next wave
+- Communicates with poise: answer first, then the numbers, then risks; when it turns out the pilot practices are not typical, says so plainly and re-bases the forecast rather than defending the first number
+
+## 8. Model answer outline
+
+1. Clarify: 20 private practices, 100,000 active patients. The plan is all 20 practices at once, the question is how far and how fast to go beyond the two pilot practices, and today the group earns nothing from the 300 adults it refers out each year. The partners' test is that whatever is rolled out breaks even in its first full year without taking time from routine care, counting each treatment in the year it starts. Aligners would cost patients £2,500 and are planned only for adults with mild to moderate cases; complex cases and under-18s still go to orthodontists. Hygienists, chairs and visits a year do not bear on the decision.
+2. Issue tree: (1) What does each practice need to deliver? Contribution per treatment, fixed costs, starts per practice to cover them. (2) What does the evidence say? The pilot, how it was run, whether the pilot practices are typical, last year's referrals by practice. (3) Can Fernmoor deliver? Training, chair time, scanners, the supplier. (4) How far and how fast: the roll-out path and its risks. Hypothesis: the unit economics are simple, so the decision turns on whether the pilot practices' results would hold in the other 18.
+3. Economics: £2,500 less £1,500 of variable costs (supplier £700, dentist £600, materials £200) leaves £1,000 per treatment. First-year fixed costs are £500k, £25k a practice, so each practice needs about 25 starts a year, 12.5 in six months (500 a year for the group); about 11.25 in six months from year 2 when training falls away. Put in six-month terms, the bar can be set straight against the pilot.
+4. Pilot against the bar: the pilot (January to June this year, posters and a free scan, no paid marketing, no coordinators) started 15 per practice in six months, 20% above the bar; if every practice matched it, the group would start about 600 a year and make about £100k. Today's 300 referrals arrive with no marketing at all, which suggests real demand. But the pilot ran in two practices whose managers volunteered, so the key question is whether they are typical.
+5. Filter and test: the pilot practices are not typical. Their patients spend 40% more, more are on the membership plan (60% against 40%), they buy twice as much whitening and, before the pilot, they referred more adults for straightening (24 against 14 a practice). If the other 18 start in proportion to their referrals, an average one starts 8.75 in six months (15 x 14 / 24), below the bar of 12.5; the group starts about 375 a year and loses about £125k. Scaling by spend (about 10.7) or whitening (7.5) also falls short, so the answer does not hang on the method. Practice by practice: the six higher-spend practices come to about 12.5, just on the bar, and the twelve others to about 6.9, so £216k of the full plan's £360k of scanner leases sits where the service is unlikely to pay. The bias runs both ways: volunteer practices with richer patients, and perhaps patients who had been waiting, push the pilot up; no paid marketing and no coordinators push it down. The £320k of marketing and coordinators is the unproven part, and a first wave should test it. Capacity is not the problem: 500 treatments need about 1,500 dentist hours, a quarter of the 6,000 spare hours, and one dentist's spare time covers about 50 treatments. Patient numbers, chairs and visits do not change the answer.
+6. Recommendation: go beyond the pilot, but not to all 20 practices at once. Start a first wave in 10 practices: the two pilot practices, the six whose patients spend about £300, and two of the twelve lower-spend practices as a test, with one lead dentist each (as in the pilot) and marketing aimed at existing patients. It passes the partners' rule: about £200k of costs (10 scanners £60k, 10 lead dentists trained £15k, two coordinators £70k, marketing £55k) sets a bar of 10 starts per practice in six months, 200 a year, and scaling the pilot by each practice's referrals gives 60 + 6 x 25 + 2 x about 14 = about 240 a year, a profit of about £37.5k, with £180k of three-year lease commitments instead of £360k. Base the rule for going further on the two test practices, not on the six that look like the pilot: extend to the rest of the twelve only if they reach about 10 starts in six months, the first wave's own bar. If they fall short, as their referral rate suggests (about 7), serve the other ten practices' patients through the nearest first-wave practice instead of leasing more scanners.
+7. Risks: real uptake below the pilot's first six months, which may have caught patients who had been waiting; three-year scanner leases (£18k per practice); whether self-employed associates want the work at £600 a treatment; two days of training per dentist away from patients; clinical quality and complaints. Next steps: agree volume terms with the supplier, choose the ten practices and their lead dentists, and set a six-month review against the bars above.
+8. There is no single right answer: 'extend the pilot first' or 'roll out only to the practices that look like the pilot' can score as well if it uses the bar per practice and the pilot evidence, checks the plan against the partners' rule and says what would change the decision.
+
+---
+
+## Your review (please fill in)
+
+1. Realistic? 
+2. Clear? 
+3. Fair? 
+4. The answer: 
+5. Difficulty and time: 
+6. Verdict (Sign off as it is / Sign off after these small changes / Needs rework): 
