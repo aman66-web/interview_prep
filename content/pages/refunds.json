@@ -1,0 +1,70 @@
+{
+  "slug": "refunds",
+  "title": "Refund policy",
+  "seo_title": "Refund policy | CaseSpar",
+  "description": "CaseSpar plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "This page explains our refund policy and how cancelling works. Effective date: [effective date].",
+  "blocks": [
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Note for the founder",
+      "text": "[Founder: ask a lawyer to check this no-refunds policy and the tick-box wording against UK consumer law before taking real payments.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "The short version",
+      "text": "All sales are final: we don't offer refunds, except where the law requires them. You can cancel the Monthly plan at any time to stop future payments."
+    },
+
+    { "type": "h2", "id": "no-refunds", "text": "No refunds" },
+    {
+      "type": "p",
+      "text": "Your first full AI interview and scored debrief are free, so you can try CaseSpar properly before you pay. Because of that, payments for the Monthly plan and the 90-Day Pass are final and we don't refund them, in full or in part."
+    },
+    {
+      "type": "p",
+      "text": "Before you pay, we ask you to confirm that you want access to start straight away and that you understand you lose the 14-day right to cancel once you start using your plan."
+    },
+
+    { "type": "h2", "id": "cancelling-monthly", "text": "Cancelling the Monthly plan" },
+    {
+      "type": "p",
+      "text": "You can cancel at any time from your account page: choose Manage billing, then cancel in Stripe's billing portal. You won't be charged again, and you keep access until the end of the month you have already paid for."
+    },
+
+    { "type": "h2", "id": "the-pass", "text": "The 90-Day Pass" },
+    {
+      "type": "p",
+      "text": "The pass is a one-off payment and never renews, so there is nothing to cancel. Buying another pass while one is running adds 90 days to its end date."
+    },
+
+    { "type": "h2", "id": "deleting-your-account", "text": "If you delete your account" },
+    {
+      "type": "p",
+      "text": "Deleting your account cancels any subscription straight away and ends any paid time left. It doesn't refund you."
+    },
+
+    { "type": "h2", "id": "legal-rights", "text": "Your legal rights" },
+    {
+      "type": "p",
+      "text": "This policy does not affect your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a repair, a replacement or a refund whatever this policy says. If you think that applies, email [support email]. [Lawyer to confirm wording.]"
+    },
+
+    { "type": "h2", "id": "contact", "text": "Contact" },
+    { "type": "p", "text": "Email [support email]." },
+
+    {
+      "type": "links",
+      "title": "Related pages",
+      "items": [
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "Terms of service", "href": "/legal/terms" },
+        { "label": "FAQ", "href": "/faq" }
+      ]
+    }
+  ]
+}

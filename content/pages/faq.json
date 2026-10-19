@@ -1,0 +1,139 @@
+{
+  "slug": "faq",
+  "title": "Frequently asked questions",
+  "seo_title": "CaseSpar FAQ: plans, AI interviews and your data",
+  "description": "Straight answers about CaseSpar: how the AI interviewer and debrief work, what is free, what the plans cost, refunds, limits and your data.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "Straight answers about how CaseSpar works, what it costs and what happens to your data. Can't find what you need? Email [support email].",
+  "blocks": [
+    {
+      "type": "links",
+      "title": "More detail",
+      "items": [
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "Refund policy",
+          "href": "/legal/refunds"
+        },
+        {
+          "label": "Privacy policy",
+          "href": "/legal/privacy"
+        },
+        {
+          "label": "Terms of service",
+          "href": "/legal/terms"
+        },
+        {
+          "label": "About CaseSpar",
+          "href": "/about"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "heading": "The product",
+      "items": [
+        {
+          "q": "What is CaseSpar?",
+          "a": "A website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window, then get a scored debrief that shows what went well and what to fix. Short drills help you practise the skills cases test: mental maths, market sizing, frameworks and chart reading."
+        },
+        {
+          "q": "How does an AI interview work?",
+          "a": "The interviewer presents the case, then takes you through five stages: clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers questions only from the case facts, and shares exhibits (tables and charts) during the analysis, when you ask for relevant data or when it moves the case on. Beside the chat you have the exhibits, a notes box, a calculator and a timer. You can move to the next stage whenever you like, or finish early once you have sent at least one message. Either way you get a debrief."
+        },
+        {
+          "q": "What is in the debrief?",
+          "a": "A score from 1 (needs work) to 5 (strong) for structure, analysis and maths, business judgement, communication and your recommendation. You also get up to three strengths and three fixes, with quotes from what you said, and a link to a drill for each fix. A table shows each calculation you answered, the right answer and how it is worked out. Paid plans also show an outline of a strong answer."
+        },
+        {
+          "q": "How is my maths checked?",
+          "a": "By code, not by the AI's opinion. The AI only picks out the numbers you state. Code then compares each one with the case's expected answer, allowing a small margin set for each question. Every expected answer is recomputed by our tests from the case's own numbers."
+        },
+        {
+          "q": "Are these real interview cases?",
+          "a": "No. Every case is written for CaseSpar, with invented companies and numbers. We don't copy or rework cases from casebooks, books, other websites or firms' practice materials. A person checks each case before it goes live."
+        },
+        {
+          "q": "Is CaseSpar linked to McKinsey, BCG or Bain?",
+          "a": "No. Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named on this site. We use firm names only to describe a style of case."
+        },
+        {
+          "q": "Can I try it without an account?",
+          "a": "Yes. Anyone can read every case prompt and try 5 drills in a browser tab. A free account needs only your email address: no password and no card. It gives you 20 drills a day and one full AI interview."
+        }
+      ]
+    },
+    {
+      "heading": "Plans and payment",
+      "items": [
+        {
+          "q": "What do I get for free?",
+          "a": "One full AI interview with the free starter case, including the scored debrief, plus 20 drills a day. You can also read every case prompt. The free interview counts as used as soon as you start it. If you stop part-way, go back to the case and carry on."
+        },
+        {
+          "q": "How much do the paid plans cost?",
+          "a": "Monthly is $39 a month and renews until you cancel. The 90-Day Pass is $99, paid once, for 90 days of access. Both include every case, unlimited drills, AI interviews within the limits below and an outline of a strong answer in each debrief. Prices are in US dollars. Stripe takes the payment on its own page, so we never see your card details."
+        },
+        {
+          "q": "What are the limits on AI interviews?",
+          "a": "Paid plans include up to 3 AI interviews a day and 60 a month. An interview counts once you start it. The daily limit resets at midnight UTC, and the monthly limit at the start of each calendar month (UTC). Each interview allows up to 40 of your messages, of up to 2,000 characters each. A very long interview may be wrapped up early, and you still get your debrief."
+        },
+        {
+          "q": "How do I cancel the Monthly plan?",
+          "a": "Go to your account page and choose Manage billing. This opens Stripe's billing portal, where you can cancel. Once you cancel, you won't be charged again. You keep access until the end of the month you have already paid for."
+        },
+        {
+          "q": "Does the 90-Day Pass renew?",
+          "a": "No. It is a one-off payment and never renews. If you buy another pass while one is running, the new 90 days are added to the end date of the current pass."
+        },
+        {
+          "q": "Can I get a refund?",
+          "a": "No. Your first full interview and debrief are free, so you can try CaseSpar properly before paying. After that all sales are final, except where the law requires a refund. Before you pay, we ask you to confirm that you want access straight away, which ends the usual 14-day right to cancel once you start using your plan. The refund policy has the details."
+        }
+      ]
+    },
+    {
+      "heading": "Privacy and your data",
+      "items": [
+        {
+          "q": "What do you keep about me?",
+          "a": "Your email address (to log you in), your plan, your interview transcripts and debriefs, your drill answers, a record of how much AI each interview used, and your Stripe customer reference if you have paid. We don't ask for your name. The privacy policy lists everything."
+        },
+        {
+          "q": "Who can see my interview transcripts?",
+          "a": "Only you can see them in your account. We don't read your interview transcripts. The only exception is when you ask us for help with a problem in a particular interview: then we may read that interview's transcript, only to fix the problem. To run the interviewer and write your debrief, the text of your interview is sent to Anthropic, our AI provider. We don't send it your email address. We never sell your data."
+        },
+        {
+          "q": "How long do you keep my transcripts?",
+          "a": "Interview transcripts are deleted 365 days after they were written, by a clean-up that runs every day. The quotes and written feedback in those interviews' debriefs are removed at the same point, and their scores stay. Your account, scores and drill history stay until you delete your account."
+        },
+        {
+          "q": "How do I download or delete my data?",
+          "a": "On your account page, choose Download my data to get a file of everything we hold about you. To delete your account, type your email address to confirm. This deletes your account, practice history and transcripts, and cancels any subscription. It can't be undone. Share links you made keep working, because each one holds only what is on its card. To take one down, delete the post where you shared it."
+        },
+        {
+          "q": "Do you use cookies or trackers?",
+          "a": "Only the cookies needed to keep you logged in. We don't use advertising pixels or third-party trackers. Your browser tab also remembers your interview notes and your place in the drills. That stays in your browser, is cleared when you close the tab, and is never sent to us. The one exception: if the link you arrived by had campaign tags (such as utm_source), the tab keeps them and sends them to us when you sign in, so we can count which campaigns bring sign-ups."
+        }
+      ]
+    },
+    {
+      "heading": "Practising well",
+      "items": [
+        {
+          "q": "How should I practise with CaseSpar?",
+          "a": "Warm up with a few drills, then run a case. Type your thinking in full sentences, as you would say it out loud, and state the numbers you work out. After the debrief, do the drills linked to your fixes before your next case. On a paid plan, try the same case again to see whether the fixes stuck."
+        },
+        {
+          "q": "Will a high score mean I'll pass a real interview?",
+          "a": "No. The scores are practice feedback from an AI and from code checks, not a prediction of any firm's decision. No firm sees your scores. Use them to decide what to work on next."
+        }
+      ]
+    }
+  ]
+}

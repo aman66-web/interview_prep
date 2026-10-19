@@ -1,0 +1,284 @@
+{
+  "id": "case-036",
+  "slug": "hartstow-storage-demand",
+  "title": "Hartstow Storage: refit empty space for online sellers?",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Self-storage",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "This is a data-interpretation case. Hartstow Storage runs eight self-storage stores in towns across the English Midlands, and 80% of its space is rented out. Online sellers storing stock have been its fastest-growing customers, and its small units are almost full while many large units stand empty. So the board plans to spend about £1.8 million turning 30,000 sq ft of empty upper-floor large units into 600 small 'seller lockers' with packing benches and a parcel desk. Before it commits, it has asked you whether the plan is a good use of the money, and what else it should do with its empty space. To start: how would you work out whether this seller hub is worth £1.8 million?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Hartstow Storage is privately owned and profitable. It runs 8 stores, one in each of eight towns, with 400,000 sq ft of space it can rent out (about 50,000 sq ft each). It rents indoor units, from lockers to rooms the size of a garage, to households and businesses on monthly contracts, so customers can leave with a month's notice."
+    },
+    {
+      "question_topic": "Occupancy and rents",
+      "answer": "80% of Hartstow's space is rented out today (320,000 sq ft), up from 70% eighteen months ago and up every year for five years. Its average rent is about £20 per sq ft a year, so its stores bring in about £6.4 million a year in rent. Small units earn the most per sq ft. Hartstow has raised rents by about 3% a year for the last three years."
+    },
+    {
+      "question_topic": "Hartstow's empty space",
+      "answer": "About 80,000 sq ft is empty, mostly large and extra-large units. About 30,000 sq ft of it is on the ground floor beside the loading bays, where roller doors and van parking could be added. About 33,000 sq ft is large units on upper floors, mostly in whole corridors. The rest is the usual gap between one customer leaving and the next arriving, spread across all sizes."
+    },
+    {
+      "question_topic": "The seller hub plan",
+      "answer": "The board's plan is to turn 30,000 sq ft of empty upper-floor large units, across all eight stores, into 600 seller lockers of about 50 sq ft each, with shelving, shared packing benches and a staffed parcel desk with daily courier collections. It would cost about £1.8 million and take about six months. The board's case is that online sellers were the fastest-growing customers and small units are 95% let, so the lockers should fill quickly."
+    },
+    {
+      "question_topic": "The board's test and budget",
+      "answer": "A refit must pay back its cost within four years from the extra rent it brings in, after any extra running costs. The board has set aside about £2 million for refits this year and does not want to borrow."
+    },
+    {
+      "question_topic": "Who rents the small units",
+      "answer": "About two-thirds of Hartstow's let small-unit space (about 38,000 of 57,000 sq ft) is rented by online sellers, and most of the rest by households short of space at home. The waiting list for small units has fallen from about 90 names to about 20 in the last three months."
+    },
+    {
+      "question_topic": "Customer groups",
+      "answer": "Hartstow's records split customers into four groups: online sellers holding stock; tradespeople and other local businesses; households (both people moving home and people short of space at home); and businesses storing document archives. Its quarterly figures are seasonally adjusted by its finance team, so the summer peak in house moves does not distort them."
+    },
+    {
+      "question_topic": "Online sellers and the fulfilment centre",
+      "answer": "These are small businesses selling through online marketplaces, renting small and medium units of 25 to 100 sq ft for stock and packing. They rent about 70,000 sq ft at Hartstow, about 30,000 sq ft of it taken in the last eighteen months. Three months ago a large fulfilment centre opened in the area; it stores stock and packs orders for small online sellers for a fee. Since then, new online sellers moving in at Hartstow have roughly halved, and about as many have left as arrived. Most of those who left told Hartstow they had moved their stock to the centre. Hartstow has no forecast of whether this will last."
+    },
+    {
+      "question_topic": "The seller-locker trial",
+      "answer": "Twelve months ago Hartstow fitted out 40 lockers of 50 sq ft at one store, with a packing bench and parcel collection, at the rent the plan assumes (£30 per sq ft a year). It is the only test of the product so far."
+    },
+    {
+      "question_topic": "Tradespeople",
+      "answer": "In Hartstow's customer survey, tradespeople said drive-up access, van parking and opening from 6am matter more to them than price. Today they mostly rent large ground-floor units and carry tools and materials through the building. Last year Hartstow turned away about 120 enquiries for drive-up space; it has never offered drive-up units. Its planning team expects about a quarter of the space in new trade units to be taken by tradespeople who already rent indoor units at Hartstow, mostly large units at about £16 per sq ft."
+    },
+    {
+      "question_topic": "Length of stay",
+      "answer": "Hartstow's records show that households moving home stay about four months, households short of space at home two years or more, tradespeople and online sellers one to two years, and document archives five years or more."
+    },
+    {
+      "question_topic": "Households and housing",
+      "answer": "House moves in the area have been roughly flat for three years; people moving home mostly rent large units for a few months. Several blocks of flats with little storage space are being built in two of the towns, and households short of space at home mostly rent medium units. Hartstow has a waiting list of about 50 households for medium units at its four busiest stores."
+    },
+    {
+      "question_topic": "Document archives",
+      "answer": "Businesses are scanning more of their paper records, so archive customers are slowly leaving. They mostly rent large and extra-large units, which is part of why those units are the emptiest."
+    },
+    {
+      "question_topic": "Changing unit sizes",
+      "answer": "Partition walls can split a large unit into plain medium or small units for about £8 per sq ft, and can be taken down later. The seller hub costs more (about £60 per sq ft) because of the shelving, packing benches, parcel desk and security it adds. The trade units (about £40 per sq ft) need roller doors, wider openings and a marked van area."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "A national chain has 5 stores in the area and a regional rival has 4; the rest are container sites and small independent operators. All charge rents similar to Hartstow's. One rival has announced a single new indoor store, in a town where Hartstow has no store, opening in about two years. It is not important for this decision."
+    },
+    {
+      "question_topic": "Timing",
+      "answer": "The board meets next month. Either refit could start within two months of a decision and would take about six months."
+    },
+    {
+      "question_topic": "The local economy",
+      "answer": "Steady, with no large employers arriving or leaving."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Extra rent from the hub: 30,000 sq ft at £30 per sq ft, times the share that will actually be let, and who would rent the lockers",
+      "Whether that demand will last: who fills today's full small units, and whether online sellers are still arriving now that a fulfilment centre has opened",
+      "Costs against the board's test: the £1.8 million refit plus extra running costs, set against payback within four years, and how much the answer moves with the share let",
+      "Other uses of the same space and money: other customer groups (tradespeople, households), other unit sizes, cheaper changes or doing nothing, within the £2 million refit budget"
+    ],
+    "good_signs": [
+      "Good: sets the question up as a payback sum (space x rent x share let, minus extra running costs, against the £1.8 million and four years) before asking for data",
+      "Good: treats 'small units are 95% let' as a claim to test, and asks who is in them and whether that group is still arriving",
+      "Excellent: says early that the share let is the number the whole answer turns on, and asks what evidence there is for the board's 90% (a trial, recent move-ins and move-outs)",
+      "Excellent: asks what the same empty space would earn in its next-best use, so the hub is judged against an alternative and not only against an empty corridor"
+    ],
+    "red_flags": [
+      "Gives a general list of what drives self-storage demand and never turns it into this refit's payback",
+      "Takes the board's 90% share let as given because small units are full",
+      "Leaves out the running costs, or never asks what else the space or the money could be used for"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "space-by-unit-size",
+      "title": "Hartstow's space by unit size, all eight stores",
+      "kind": "table",
+      "data": {
+        "columns": ["Unit size", "Space (thousand sq ft)", "Let (thousand sq ft)", "Share let (%)", "Average rent (£ per sq ft a year)"],
+        "rows": [
+          ["Small (up to 50 sq ft)", 60, 57, 95, 30],
+          ["Medium (50 to 100 sq ft)", 140, 126, 90, 20],
+          ["Large (100 to 200 sq ft)", 140, 98, 70, 16],
+          ["Extra large (over 200 sq ft)", 60, 39, 65, 15],
+          ["All units", 400, 320, 80, 20]
+        ]
+      },
+      "reveal_hint": "Ask how full Hartstow's stores are by unit size, which units are empty, or what evidence the board has for the seller hub. Usually the first exhibit to share.",
+      "insight": "Small units are 95% let and medium 90%, while large units are 70% and extra-large 65%: 63,000 of the 80,000 sq ft empty (about four-fifths) is in large or extra-large units. Small units also earn the most per sq ft (£30, against £15 to £16 for the big units). This is the board's evidence for the hub, but it only shows that small units are full today, not who fills them or whether that demand is still growing; the facts say about two-thirds of let small-unit space is online sellers. Good: sees that the empty space sits almost all in the big units, so the problem is the mix of unit sizes. Excellent: asks who is in the full small units and whether that group is still arriving before accepting the board's 90%."
+    },
+    {
+      "id": "net-growth-by-customer-group",
+      "title": "Net change in let space at Hartstow's stores each quarter (space moved into minus space moved out of), by customer group, seasonally adjusted (thousand sq ft)",
+      "kind": "table",
+      "data": {
+        "columns": ["Quarter", "Online sellers", "Tradespeople and local businesses", "Households", "Document archives", "All groups"],
+        "rows": [
+          ["6 quarters ago", 5, 2, 1, -1, 7],
+          ["5 quarters ago", 6, 2, 1, -2, 7],
+          ["4 quarters ago", 6, 2, 1, -1, 8],
+          ["3 quarters ago", 7, 2, 1, -2, 8],
+          ["2 quarters ago", 6, 2, 1, -1, 8],
+          ["Last quarter", 0, 2, 1, -1, 2],
+          ["Six quarters in total", 30, 12, 6, -8, 40]
+        ]
+      },
+      "reveal_hint": "Ask where Hartstow's growth came from, which customers are growing, or what has changed since the fulfilment centre opened. Once it is shared, ask how much of the growth online sellers account for (the first maths question).",
+      "insight": "Online sellers added 30,000 of the 40,000 sq ft of growth over six quarters (75%), then nothing last quarter, the first since the fulfilment centre opened, so total growth fell from 7,000 to 8,000 sq ft a quarter to 2,000. Tradespeople added 2,000 sq ft every quarter, last quarter included: the only group growing steadily. Households grew slowly and archives shrank. Without online sellers, growth is about 2,000 sq ft a quarter, about 8,000 a year or 2.5% of today's let space. Good: works out the 75% and sees the stop last quarter. Excellent: links the stop to the full small units (the sellers in them arrived before the centre opened, and the small-unit waiting list has shrunk from about 90 names to about 20) and picks out tradespeople as the group whose demand is still growing."
+    },
+    {
+      "id": "seller-locker-trial",
+      "title": "Hartstow's seller-locker trial: share of the 40 lockers let, by month since they opened at one store 12 months ago (%)",
+      "kind": "line",
+      "data": {
+        "columns": ["Month since the lockers opened", "Lockers let (%)"],
+        "rows": [
+          ["Month 2", 20],
+          ["Month 4", 40],
+          ["Month 6", 60],
+          ["Month 8", 75],
+          ["Month 10", 65],
+          ["Month 12", 50]
+        ]
+      },
+      "reveal_hint": "Ask whether Hartstow has tested the seller lockers, or how quickly new lockers would let. After the candidate has read it, ask which share let they would use for the hub's payback, and why.",
+      "insight": "The trial lockers filled steadily to 75% by month 8, then fell to 65% and 50% in the three months since the fulfilment centre opened (at the start of month 10). The board's 90% rests on today's full small units, but the only direct test of the product is at 50% and still falling. Good: reads the turn and ties it to the fulfilment centre. Excellent: uses the latest 50% rather than the 75% peak for the payback, and notes that on monthly contracts the next months could be lower still."
+    },
+    {
+      "id": "refit-plans",
+      "title": "Two refit plans for Hartstow's empty large units, as costed by its planning team",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "Seller hub (the board's plan)", "Drive-up trade units"],
+        "rows": [
+          ["Empty space used (thousand sq ft)", 30, 30],
+          ["Where", "Upper floors, all eight stores", "Ground floor beside the loading bays, all eight stores"],
+          ["Refit cost (£ million)", 1.8, 1.2],
+          ["Rent once refitted (£ per sq ft a year)", 30, 25],
+          ["Extra running costs (£ million a year)", 0.21, 0.1],
+          ["Share let assumed (%)", 90, 80],
+          ["Basis for the share let", "Small units are 95% let today", "Enquiries turned away last year and the customer survey"]
+        ]
+      },
+      "reveal_hint": "Ask about the cost, rent or running costs of the seller hub, or about other uses for the empty space (for example units for tradespeople). Otherwise share it after the trial chart, and work through the two payback questions with it.",
+      "insight": "Per sq ft the hub looks better (£30 of rent against £25), but its refit costs half as much again per sq ft (£60 against £40) and its running costs are about twice as high. On the board's 90% it pays back in 3 years; at the trial's 50%, in 7.5 years. To pay back in four years it needs about 73% let, while the trade units need only about 53%, and on the planning team's 80% the trade units pay back in 2.4 years (about 3 years if a quarter of their tenants move over from Hartstow's own indoor large units). The deciding number is the share let, and the evidence on it (the trial for the hub; steady trade growth and 120 enquiries turned away for the trade units) points one way. Both plans together would cost £3 million, more than the £2 million budget. Good: works out both paybacks against the four-year rule. Excellent: finds the share let each plan needs to pass, sets it against the evidence for each, and nets off tenants moving from Hartstow's own units."
+    }
+  ],
+  "math": [
+    {
+      "id": "online-share-of-growth",
+      "question": "Over the last six quarters, what share of the growth in Hartstow's let space came from online sellers, in percent?",
+      "inputs": {
+        "online_growth": 30,
+        "all_growth": 40
+      },
+      "expression": "online_growth / all_growth * 100",
+      "expected": 75,
+      "tolerance_pct": 2,
+      "working": "Online sellers added 30,000 sq ft of the 40,000 sq ft total: 30 / 40 = 75%. The other groups together added 10,000 sq ft (12 + 6 - 8) in six quarters. Last quarter, the first since the fulfilment centre opened, online sellers added nothing, so growth fell to about 2,000 sq ft a quarter, about 8,000 a year or 2.5% of today's 320,000 sq ft.",
+      "input_sources": [
+        { "input": "online_growth", "exhibit_id": "net-growth-by-customer-group", "row": 6, "column": "Online sellers" },
+        { "input": "all_growth", "exhibit_id": "net-growth-by-customer-group", "row": 6, "column": "All groups" }
+      ]
+    },
+    {
+      "id": "seller-hub-payback-at-trial",
+      "question": "If the seller hub's lockers were let at the same share as the trial's lockers are today, how many years would the hub take to pay back its refit cost from the extra rent, after extra running costs?",
+      "inputs": {
+        "hub_space": 30,
+        "trial_share_pct": 50,
+        "hub_rent": 30,
+        "hub_running": 0.21,
+        "hub_cost": 1.8
+      },
+      "expression": "hub_cost / (hub_space * trial_share_pct / 100 * hub_rent / 1000 - hub_running)",
+      "expected": 7.5,
+      "tolerance_pct": 3,
+      "working": "At 50% let, 15,000 of the 30,000 sq ft is let, at £30 per sq ft: £0.45 million a year of rent. Less £0.21 million of running costs leaves £0.24 million a year. £1.8 million / £0.24 million = 7.5 years, almost twice the board's four-year limit. On the board's 90%: 27,000 sq ft x £30 = £0.81 million, less £0.21 million = £0.6 million a year, so 3 years. Even at the trial's 75% peak it takes about 3.9 years, only just inside. To pay back in four years the hub needs £0.45 million + £0.21 million = £0.66 million of rent a year, which is about 73% let (0.66 / 0.9).",
+      "input_sources": [
+        { "input": "hub_space", "exhibit_id": "refit-plans", "row": 0, "column": "Seller hub (the board's plan)" },
+        { "input": "hub_cost", "exhibit_id": "refit-plans", "row": 2, "column": "Seller hub (the board's plan)" },
+        { "input": "hub_rent", "exhibit_id": "refit-plans", "row": 3, "column": "Seller hub (the board's plan)" },
+        { "input": "hub_running", "exhibit_id": "refit-plans", "row": 4, "column": "Seller hub (the board's plan)" },
+        { "input": "trial_share_pct", "exhibit_id": "seller-locker-trial", "row": 5, "column": "Lockers let (%)" }
+      ]
+    },
+    {
+      "id": "trade-units-payback",
+      "question": "On the planning team's assumptions, how many years would the drive-up trade units take to pay back their refit cost from the extra rent, after extra running costs?",
+      "inputs": {
+        "trade_space": 30,
+        "trade_share_pct": 80,
+        "trade_rent": 25,
+        "trade_running": 0.1,
+        "trade_cost": 1.2
+      },
+      "expression": "trade_cost / (trade_space * trade_share_pct / 100 * trade_rent / 1000 - trade_running)",
+      "expected": 2.4,
+      "tolerance_pct": 3,
+      "working": "At 80% let, 24,000 of the 30,000 sq ft is let, at £25 per sq ft: £0.6 million a year. Less £0.1 million of running costs leaves £0.5 million a year. £1.2 million / £0.5 million = 2.4 years, well inside the four-year limit. Check for tenants moving over from Hartstow's own units: if a quarter of the 24,000 sq ft (6,000 sq ft) comes from tradespeople leaving indoor large units at £16, Hartstow loses about £0.1 million of existing rent (6,000 x £16 = £96,000), so the net gain is about £0.4 million a year and payback about 3 years, still inside the limit. To pay back in four years the trade units need only £0.3 million + £0.1 million = £0.4 million of rent a year, about 53% let (0.4 / 0.75).",
+      "input_sources": [
+        { "input": "trade_space", "exhibit_id": "refit-plans", "row": 0, "column": "Drive-up trade units" },
+        { "input": "trade_cost", "exhibit_id": "refit-plans", "row": 2, "column": "Drive-up trade units" },
+        { "input": "trade_rent", "exhibit_id": "refit-plans", "row": 3, "column": "Drive-up trade units" },
+        { "input": "trade_running", "exhibit_id": "refit-plans", "row": 4, "column": "Drive-up trade units" },
+        { "input": "trade_share_pct", "exhibit_id": "refit-plans", "row": 5, "column": "Drive-up trade units" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Let me tell you what Hartstow actually did. The board put the seller hub on hold and, as a first step, spent about £0.45 million turning the empty ground floor at three stores into drive-up trade units. Six months later they were 85% let, while the seller-locker trial had slipped to 40%. The board still has to decide on the hub and the other five stores, but first: why do you think the trade units did so well?",
+    "idea_bank": [
+      "Demand mix: the trade units were aimed at the one group that kept growing every quarter (tradespeople, about 2,000 sq ft a quarter, even in the quarter the fulfilment centre opened), not the group whose growth had just stopped",
+      "What the customer values: tradespeople put drive-up access, van parking and 6am opening above price, and an indoor unit cannot give them that, so the units let quickly at £25 per sq ft against £15 for the extra-large units they replaced",
+      "Cash return on space already paid for: the ground floor was empty and earning nothing, and the refit cost about £40 per sq ft against £60 for the hub, so payback is about 2.4 years",
+      "Room for error: the trade units pass the four-year test even at about 53% let, while the hub needs about 73%; at 85% they did better than the plan's 80%",
+      "The problem was unit sizes, not too little demand: the emptiest space was big ground-floor units, and changing what that space is fixed the mismatch, where the hub would have added more small units just as the group filling them stopped arriving",
+      "Low running costs: earlier opening only, against a staffed parcel desk and courier contract for the hub",
+      "A small first step: three stores first kept the cash at risk to about £0.45 million and produced evidence before the rest of the budget was committed",
+      "Caveat: some tenants moved over from Hartstow's own indoor units (about a quarter was expected), so the net gain is smaller than 85% suggests, and the large units they left need new customers",
+      "Caveat: six months is early; tradespeople stay one to two years, so renewals and whether enquiries keep coming are the real test",
+      "The lockers slipping to 40% shows the fall after the fulfilment centre opened was not a blip, which is why the hub was right to wait"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Most of the growth came from one group that has now stopped: online sellers made 75% of the growth in let space over the last six quarters (30,000 of 40,000 sq ft) but none last quarter, after the fulfilment centre opened. The full small units reflect sellers who arrived before the centre, not future demand",
+      "The seller hub fails the board's own four-year payback test on the evidence: 3 years on the board's 90%, but 7.5 years at the trial's 50% (it needs about 73% let to pass), and the trial has since slipped to 40%. The trade units pay back in about 2.4 years, about 3 even if a quarter of their tenants move from Hartstow's own indoor units, and pass the test even at about 53% let",
+      "A clear recommendation: do not approve the seller hub; roll the trade units out to the other five stores (about £0.75 million); and use cheap, staged options for the empty upper-floor large units"
+    ],
+    "good_signs": [
+      "Goes beyond the weak answer ('small units are full and online sellers grew fastest, so build the lockers'). Good: spots that online sellers stopped growing last quarter. Excellent: ties the full small units, the shrinking waiting list and the trial's turn to the same cause, the fulfilment centre",
+      "Uses the trial's latest figure for the hub's payback, not the 75% peak or the board's 90%, and says why",
+      "Compares the two refits on the same basis (payback against the four-year rule, and the share let each needs to pass: about 73% against about 53%), not on rent per sq ft alone, where the hub looks better (£30 against £25)",
+      "When told about the first step, explains why the trade units did well with demand-mix and cash reasons rather than restating the figures: they served the group that kept growing, gave it what it values, used space that was empty and earning nothing, cost less to fit out and to run, and were tried at three stores before the rest of the money was spent; and notes the caveats (some tenants came from Hartstow's own indoor units, and six months is early)",
+      "Offers cheap, reversible uses for the 33,000 sq ft of empty upper-floor large units instead of the £1.8 million refit, for example splitting some into medium units for the households on the waiting list (partition walls at about £8 per sq ft), in stages as they let, or letting a whole corridor to one local business",
+      "Keeps the 40-locker trial running as a cheap signal of whether online sellers come back, and says what would reopen the hub (online sellers growing again for two quarters, or the trial back above about 73%)",
+      "Names risks and next steps: the fulfilment centre's fees and whether sellers return, trade-unit renewals after a year, tracking net move-ins by customer group every quarter, and a review at the board meeting after the rollout"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: 8 stores with 400,000 sq ft, 80% let (320,000 sq ft at about £20, about £6.4 million a year), with 80,000 sq ft empty, mostly large and extra-large (30,000 sq ft on the ground floor beside the loading bays, 33,000 sq ft of upper-floor large units). The seller hub turns 30,000 sq ft of upper-floor large units into 600 lockers of 50 sq ft for about £1.8 million, at £30 per sq ft, with £0.21 million a year of extra running costs. The board's test is payback within four years, and it has about £2 million for refits this year.",
+    "Structure: a payback test. Extra rent = space x rent x share let, less extra running costs, against the £1.8 million and four years. The number that decides it is the share let, so ask who would rent the lockers and whether that demand is still growing, then compare the hub with the best other use of the space and the money.",
+    "Hartstow's estate: small units are 95% let and medium 90%, but large are 70% and extra-large 65%, so 63,000 of the 80,000 sq ft empty is in big units. Small units are full, but about two-thirds of their let space is online sellers.",
+    "Where the growth came from: online sellers added 30,000 of 40,000 sq ft over six quarters (75%), then nothing last quarter, when the fulfilment centre opened; the small-unit waiting list fell from about 90 names to about 20. Tradespeople added 2,000 sq ft every quarter, last quarter included. Without online sellers, growth is about 8,000 sq ft a year (2.5%).",
+    "The trial and the paybacks: the trial lockers peaked at 75% in month 8 and fell to 50% after the centre opened. The hub pays back in 3 years on the board's 90%, but in 7.5 years at 50%, and needs about 73% let to pass. The trade units pay back in 2.4 years on 80% (£0.5 million a year on £1.2 million), about 3 years net of a quarter of tenants moving from indoor units at £16, and pass even at about 53% let. Both together would cost £3 million, over the £2 million budget.",
+    "What Hartstow did first, from the brainstorm question: the board put the hub on hold and refitted the ground floor at three stores as trade units for about £0.45 million; six months on they were 85% let and the locker trial had slipped to 40%. Why it worked: it served the group whose demand kept growing; it gave tradespeople what they value (drive-up, vans, 6am), so the space let at £25 instead of £15; it used space that earned nothing, at £40 a sq ft rather than £60, with low running costs; and a three-store first step kept the cash at risk small. Caveats: some tenants moved from Hartstow's own indoor units, and six months is early.",
+    "Recommendation: do not approve the seller hub. Roll the trade units out to the other five stores (about 19,000 sq ft for about £0.75 million, about 2.4 years to pay back on the same assumptions). For the 33,000 sq ft of upper-floor large units, take cheap, reversible steps in stages: split some into medium units for the households on the waiting list (about £8 per sq ft), offer short summer deals to people moving home, or let a whole corridor to one local business. Keep the 40-locker trial as a cheap signal. What would change it: online sellers growing again for two quarters, or the trial back above about 73%. Next steps: track net move-ins by customer group every quarter, watch trade-unit renewals, and review at the next board meeting.",
+    "There is no single right answer: shelving the hub and trying a much smaller, cheaper locker conversion can score equally well if it uses the 75% and zero-last-quarter split, the paybacks (7.5 against 2.4 years) and the share let each plan needs, and says what would change the decision. Approving the full hub on the board's 90% is the weak answer."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

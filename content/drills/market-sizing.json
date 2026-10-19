@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ms-01",
+    "title": "Coffee in a city",
+    "prompt": "Estimate how many cups of coffee are bought in a city of 1 million people in a year.",
+    "unit": "cups a year",
+    "inputs": { "population": 1000000, "drinkers_pct": 60, "bought_cups_per_day": 0.5 },
+    "expression": "population * drinkers_pct / 100 * bought_cups_per_day * 365",
+    "approach": [
+      "Start with the population: 1,000,000 people.",
+      "Not everyone drinks coffee. Assume 60% do, which is 600,000 drinkers.",
+      "Assume the average drinker buys half a cup a day outside the home (most coffee is made at home): 300,000 cups a day.",
+      "Multiply by 365 days to get about 110 million cups a year."
+    ]
+  },
+  {
+    "id": "ms-02",
+    "title": "Dentists in a city",
+    "prompt": "Estimate how many dentists a city of 500,000 people needs.",
+    "unit": "dentists",
+    "inputs": { "population": 500000, "visits_per_person": 2, "patients_per_day": 8, "working_days": 200 },
+    "expression": "population * visits_per_person / (patients_per_day * working_days)",
+    "approach": [
+      "Demand: 500,000 people each visit a dentist about twice a year, which is 1,000,000 visits.",
+      "Supply per dentist: about 8 patients a day, for about 200 working days, which is 1,600 visits a year.",
+      "Divide demand by supply: 1,000,000 / 1,600 is about 625 dentists."
+    ]
+  },
+  {
+    "id": "ms-03",
+    "title": "A pizza shop's revenue",
+    "prompt": "Estimate the annual revenue of a busy takeaway pizza shop.",
+    "unit": "$ a year",
+    "inputs": { "orders_per_day": 120, "order_value": 25, "days": 350 },
+    "expression": "orders_per_day * order_value * days",
+    "approach": [
+      "Think in orders: a busy shop might take about 120 orders a day.",
+      "Assume an average order of $25 (a couple of pizzas and a side).",
+      "Assume it trades about 350 days a year.",
+      "120 x $25 x 350 is about $1 million a year."
+    ]
+  },
+  {
+    "id": "ms-04",
+    "title": "Piano tuners in a metro area",
+    "prompt": "Estimate how many piano tuners work in a metropolitan area of 2 million people.",
+    "unit": "tuners",
+    "inputs": { "population": 2000000, "household_size": 2.5, "households_per_piano": 50, "tunings_per_year": 1, "tunings_per_day": 4, "working_days": 200 },
+    "expression": "population / household_size / households_per_piano * tunings_per_year / (tunings_per_day * working_days)",
+    "approach": [
+      "Households: 2,000,000 people at 2.5 per household is 800,000 households.",
+      "Pianos: assume 1 household in 50 owns a piano, so 16,000 pianos.",
+      "Demand: each piano is tuned about once a year, so 16,000 tunings.",
+      "Supply per tuner: about 4 tunings a day for 200 days is 800 a year.",
+      "16,000 / 800 is about 20 piano tuners."
+    ]
+  },
+  {
+    "id": "ms-05",
+    "title": "Daily subway trips",
+    "prompt": "Estimate how many commuter trips are made on a city's subway on a weekday. The city has 3 million people.",
+    "unit": "trips a day",
+    "inputs": { "population": 3000000, "workforce_pct": 40, "subway_pct": 25, "trips_per_day": 2 },
+    "expression": "population * workforce_pct / 100 * subway_pct / 100 * trips_per_day",
+    "approach": [
+      "Workers: about 40% of 3 million people are commuting workers, which is 1.2 million.",
+      "Assume 25% of them commute by subway: 300,000 people.",
+      "Each makes two trips a day (there and back): 600,000 commuter trips.",
+      "Non-commuting trips would add to this, so treat 600,000 as a floor."
+    ]
+  },
+  {
+    "id": "ms-06",
+    "title": "Smartphones sold in a year",
+    "prompt": "Estimate how many smartphones are sold each year in a country of 60 million people.",
+    "unit": "phones a year",
+    "inputs": { "population": 60000000, "owners_pct": 80, "replacement_years": 3 },
+    "expression": "population * owners_pct / 100 / replacement_years",
+    "approach": [
+      "Owners: assume 80% of the population has a smartphone, which is 48 million.",
+      "People replace a phone about every 3 years, so one third of owners buy each year.",
+      "48 million / 3 is about 16 million phones a year (ignoring first-time buyers)."
+    ]
+  },
+  {
+    "id": "ms-07",
+    "title": "Taxis in a city",
+    "prompt": "Estimate how many taxis a city of 2 million people needs.",
+    "unit": "taxis",
+    "inputs": { "population": 2000000, "taxi_trips_per_person_per_day": 0.05, "trips_per_taxi_per_day": 25 },
+    "expression": "population * taxi_trips_per_person_per_day / trips_per_taxi_per_day",
+    "approach": [
+      "Demand: assume 1 person in 20 takes a taxi on a given day, which is 100,000 trips.",
+      "Supply: a taxi completes about 25 trips a day.",
+      "100,000 / 25 is about 4,000 taxis (more to cover peaks and downtime)."
+    ]
+  },
+  {
+    "id": "ms-08",
+    "title": "Gym membership revenue",
+    "prompt": "Estimate the yearly revenue from gym memberships in a city of 1 million people.",
+    "unit": "$ a year",
+    "inputs": { "population": 1000000, "adult_pct": 70, "gym_pct": 15, "monthly_fee": 40 },
+    "expression": "population * adult_pct / 100 * gym_pct / 100 * monthly_fee * 12",
+    "approach": [
+      "Adults: about 70% of the population is adult, which is 700,000.",
+      "Members: assume 15% of adults hold a gym membership, which is 105,000.",
+      "Fee: assume $40 a month, which is $480 a year.",
+      "105,000 x $480 is about $50 million a year."
+    ]
+  },
+  {
+    "id": "ms-09",
+    "title": "Weddings in a year",
+    "prompt": "Estimate how many weddings take place each year in a country of 60 million people.",
+    "unit": "weddings a year",
+    "inputs": { "population": 60000000, "life_expectancy": 80, "marry_pct": 70 },
+    "expression": "population / life_expectancy * marry_pct / 100 / 2",
+    "approach": [
+      "People per year of age: 60 million spread over about 80 years of life is about 750,000.",
+      "Assume 70% of people marry at some point: about 525,000 people marry per age cohort.",
+      "Each wedding involves two people, so about 262,500 weddings a year."
+    ]
+  },
+  {
+    "id": "ms-10",
+    "title": "Milk drunk in a city",
+    "prompt": "Estimate how many litres of milk a city of 1 million people drinks in a day.",
+    "unit": "litres a day",
+    "inputs": { "population": 1000000, "litres_per_person": 0.25 },
+    "expression": "population * litres_per_person",
+    "approach": [
+      "Start per person: a glass of milk is about a quarter of a litre.",
+      "Averaged across everyone (many people drink none, some drink more), assume about 0.25 litres a day.",
+      "1,000,000 x 0.25 is about 250,000 litres a day."
+    ]
+  },
+  {
+    "id": "ms-11",
+    "title": "Pharmacies in a city",
+    "prompt": "Estimate how many pharmacies a city of 600,000 people supports.",
+    "unit": "pharmacies",
+    "inputs": { "population": 600000, "people_per_pharmacy": 3000 },
+    "expression": "population / people_per_pharmacy",
+    "approach": [
+      "Use a rule of thumb for how many people it takes to keep one pharmacy busy: about 3,000.",
+      "600,000 / 3,000 is about 200 pharmacies.",
+      "Sense-check: that is about one for every few streets, which feels right for a city."
+    ]
+  },
+  {
+    "id": "ms-12",
+    "title": "Sunscreen sales",
+    "prompt": "Estimate how many bottles of sunscreen are sold each year in a country of 40 million people.",
+    "unit": "bottles a year",
+    "inputs": { "population": 40000000, "users_pct": 50, "bottles_per_user": 1.5 },
+    "expression": "population * users_pct / 100 * bottles_per_user",
+    "approach": [
+      "Users: assume about half the population uses sunscreen in a year, which is 20 million.",
+      "Each user buys about 1.5 bottles a year.",
+      "20 million x 1.5 is about 30 million bottles a year."
+    ]
+  }
+]

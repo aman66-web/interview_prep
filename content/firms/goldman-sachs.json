@@ -1,0 +1,237 @@
+{
+  "slug": "goldman-sachs",
+  "name": "Goldman Sachs",
+  "status": "ready",
+  "sector": "banking",
+  "short_name": "Goldman Sachs",
+  "seo_title": "Goldman Sachs HireVue and Superday: what to expect",
+  "description": "What Goldman Sachs's own careers pages say about applying, online tests and interviews, each line linked to its source.",
+  "updated": "2026-10-16",
+  "intro": "This guide sums up what Goldman Sachs's own careers pages say about applying and interviewing, from how to apply to how Goldman Sachs suggests you prepare. It reflects those pages as we checked them on 16 October 2026. Processes differ by programme, role and country, so check Goldman Sachs's careers site for your role before you apply.",
+  "sections": [
+    {
+      "heading": "How to apply",
+      "items": [
+        {
+          "text": "On its student Prepare page, Goldman Sachs says it evaluates applications throughout the recruiting season, so applicants may hear back about different roles at different times, and can check their status at any time in the application portal.",
+          "source": "goldman-sachs-prepare"
+        },
+        {
+          "text": "On the same page, Goldman Sachs says student applicants hear from it shortly after applying to confirm it has received the application, later in the season with a status update, and at the end of the season, whether or not they are offered an interview.",
+          "source": "goldman-sachs-prepare"
+        },
+        {
+          "text": "For its 2027 Summer Analyst Programme in Europe, the Middle East and Africa, Goldman Sachs says it reviews applications on a rolling basis and encourages candidates to apply as soon as they are ready.",
+          "source": "goldman-sachs-emea-summer-analyst"
+        }
+      ]
+    },
+    {
+      "heading": "Video interview",
+      "items": [
+        {
+          "text": "On its student Prepare page, Goldman Sachs says that if an application is selected, the first interview is a video interview taking about 30 minutes, and that Engineering applicants are asked to take a HackerRank assessment; the next step on the page then refers to 'your HireVue interview'.",
+          "source": "goldman-sachs-prepare"
+        },
+        {
+          "text": "On its recruiting scams page, Goldman Sachs warns that it does not hold interviews in video chat rooms and says it uses only its approved interview platform, HireVue, or a Goldman Sachs account on Zoom.",
+          "source": "goldman-sachs-recruiting-scams"
+        }
+      ]
+    },
+    {
+      "heading": "Superday and final interviews",
+      "items": [
+        {
+          "text": "For student applicants, Goldman Sachs calls the final stage a Superday: those selected after the HireVue interview are invited to a series of final-round interviews.",
+          "source": "goldman-sachs-prepare"
+        },
+        {
+          "text": "Goldman Sachs says it typically holds between two and five interviews for campus hires, depending on the division, and candidates meet a cross-section of people they could work with.",
+          "source": "goldman-sachs-prepare"
+        },
+        {
+          "text": "Goldman Sachs's interview preparation guide says the details may vary, but on an interview day you will probably meet several people from the group you are applying to, in one-to-one or paired interviews of 30 to 60 minutes.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "The same guide says Goldman Sachs usually does not tell candidates in advance who will interview them, and suggests talking to your recruiter to make sure you are prepared.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "For students in India, Goldman Sachs says the interview process includes a written or online test and/or group discussions, after which shortlisted students are invited to final-round interviews.",
+          "source": "goldman-sachs-india-process-students"
+        }
+      ]
+    },
+    {
+      "heading": "What Goldman Sachs looks for",
+      "items": [
+        {
+          "text": "Goldman Sachs's interview preparation guide says its interviews tend to focus on real-world problems and on how you have handled, or would handle, different work situations, with the exact questions depending on the role.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "The same guide says candidates do not need finance experience.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "In a recruiter advice video on its student Prepare page, a Goldman Sachs recruiter describes interview questions as situational or behavioural and says interviewers are trying to follow your thought process.",
+          "source": "goldman-sachs-interviews-transcript"
+        },
+        {
+          "text": "In the same video, one Goldman Sachs recruiter says the firm looks at attitude and aptitude and is less worried about technical expertise because it can help people build it, while another says what you bring technically matters as much as soft skills.",
+          "source": "goldman-sachs-interviews-transcript"
+        },
+        {
+          "text": "For Investment Banking, Goldman Sachs says candidates should be comfortable with numbers and think analytically, with strong communication and interpersonal skills and good multitasking and time management.",
+          "source": "goldman-sachs-investment-banking-careers"
+        },
+        {
+          "text": "For FICC and Equities, Goldman Sachs says it looks for dynamic, quick-thinking self-starters with a real passion for the markets who communicate well and build strong relationships.",
+          "source": "goldman-sachs-ficc-equities-careers"
+        }
+      ]
+    },
+    {
+      "heading": "Engineering and quant assessments",
+      "items": [
+        {
+          "text": "Goldman Sachs says HackerRank is one of the tools it uses to assess candidates for Engineering roles, and that all candidates taking the assessment complete a 30-minute Software Fundamentals challenge on data structures and algorithms, in the programming language of their choice.",
+          "source": "goldman-sachs-hackerrank-guide"
+        },
+        {
+          "text": "Goldman Sachs says candidates for Engineering roles also take a 45-minute Software Diagnostics challenge, finding and fixing issues in an existing application, with a built-in 'limited' AI assistant that will not give the full solution but can help with using the interface, syntax or clarifying the problem statement.",
+          "source": "goldman-sachs-hackerrank-guide"
+        },
+        {
+          "text": "Goldman Sachs says Quantitative Strategist applicants also take a 22-minute multiple-choice maths challenge covering probability, statistics, calculus and linear algebra.",
+          "source": "goldman-sachs-hackerrank-guide"
+        },
+        {
+          "text": "Goldman Sachs suggests doing a practice HackerRank assessment first, and using the built-in AI assistant as you would at work while checking the result with your own judgement.",
+          "source": "goldman-sachs-hackerrank-guide"
+        },
+        {
+          "text": "Goldman Sachs's interview preparation guide says Engineering candidates are expected not to look at CoderPad questions before their interview and not to share them afterwards.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        }
+      ]
+    },
+    {
+      "heading": "How Goldman Sachs suggests you prepare",
+      "items": [
+        {
+          "text": "Goldman Sachs's interview preparation guide calls the interview a two-way conversation and suggests learning about the firm first through its website, Careers Blog, People Profiles, public announcements and Business Principles.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "For virtual interviews, the guide suggests testing your internet connection, keeping your camera on with the webcam at eye level, and choosing a well-lit, ideally quiet place free of distractions.",
+          "source": "goldman-sachs-interview-preparation-pdf"
+        },
+        {
+          "text": "In the recruiter advice video on the Prepare page, Goldman Sachs recruiters suggest doing your research and asking questions, practising in front of a mirror, listening actively, and giving examples of teamwork, problem solving and critical thinking.",
+          "source": "goldman-sachs-interviews-transcript"
+        },
+        {
+          "text": "In a CV advice video on the same Prepare page, Goldman Sachs recruiters recommend a one-page CV that leads with your education, suggest being cautious about adding a photo, and suggest asking friends or others to look it over for typos.",
+          "source": "goldman-sachs-resume-advice-transcript"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "goldman-sachs-prepare",
+      "title": "Prepare",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/students/prepare",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-recruiting-scams",
+      "title": "Recruiting Scams Alert",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/recruiting-scams",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-interview-preparation-pdf",
+      "title": "Interview Preparation",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/discover/virtual-interview-prep.pdf",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-interviews-transcript",
+      "title": "Interviews",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/materials/Interviews-Transcript.pdf",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-resume-advice-transcript",
+      "title": "Resume Advice",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/materials/Resume-Advice-Transcript.pdf",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-hackerrank-guide",
+      "title": "Your Guide to HackerRank Success",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/blog/guide-to-hackerrank",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-emea-summer-analyst",
+      "title": "2027 Summer Analyst Programme",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/students/programs-and-internships/emea/summer-analyst-programme",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-india-process-students",
+      "title": "Process for Students",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/worldwide/india/careers/process-for-students",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-investment-banking-careers",
+      "title": "Careers in Investment Banking",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/our-firm/investment-banking",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "goldman-sachs-ficc-equities-careers",
+      "title": "Careers in FICC and Equities (Sales and Trading)",
+      "publisher": "Goldman Sachs",
+      "url": "https://www.goldmansachs.com/careers/our-firm/FICC-and-equities",
+      "checked": "2026-10-16"
+    }
+  ],
+  "practice_advice": [
+    "Practise explaining a client situation and your recommendation out loud in a few minutes, with the answer first and then your reasons.",
+    "Keep a short list of business stories you have followed, and practise saying what each one means for a company and its bank.",
+    "Do short, timed mental maths drills most days: the numbers in a case study are easier when the arithmetic is automatic."
+  ],
+  "practice": {
+    "seo_title": "Practice for Goldman Sachs interviews and Superdays",
+    "description": "Practise for Goldman Sachs interviews with original bank-style case studies and an AI interviewer. What Goldman Sachs says, sourced, plus cases to run.",
+    "intro": "Practise talking through a client situation and a recommendation out loud, with original bank-style case studies and an AI interviewer who plays a senior banker, then get a scored debrief with every number checked by code. These are our own practice cases, not a description of Goldman Sachs's process. Below: what Goldman Sachs itself publishes about its interviews, and the case studies we suggest.",
+    "show_sections": [
+      "Superday and final interviews",
+      "What Goldman Sachs looks for"
+    ],
+    "cases": [
+      "thornbury-foods-snack-deal",
+      "fennick-software-ipo-or-sale",
+      "calder-instruments-currency-risk",
+      "quillmere-packaging-term-loan",
+      "harlow-building-society-branches",
+      "wyncliffe-young-savers-app"
+    ]
+  }
+}

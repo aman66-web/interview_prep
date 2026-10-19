@@ -1,0 +1,82 @@
+{
+  "slug": "disclaimer",
+  "title": "Disclaimer",
+  "seo_title": "Disclaimer | CaseSpar",
+  "description": "CaseSpar is independent practice: not affiliated with any consulting firm, built on original invented cases, with AI feedback that can be wrong.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "Please read this before you rely on anything on CaseSpar. Effective date: [effective date].",
+  "blocks": [
+    { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },
+    {
+      "type": "callout",
+      "tone": "key",
+      "text": "Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named on this site."
+    },
+    {
+      "type": "p",
+      "text": "We use firm names only to describe something, for example a McKinsey-style case. We never use firm logos. Nothing on this site comes from, or is approved by, any firm."
+    },
+
+    { "type": "h2", "id": "practice-only", "text": "For practice only" },
+    {
+      "type": "p",
+      "text": "CaseSpar helps you practise for case interviews. It is not a recruitment service. It doesn't put you forward for jobs, and no firm sees your scores or transcripts."
+    },
+
+    { "type": "h2", "id": "no-promise", "text": "No promise of results" },
+    {
+      "type": "p",
+      "text": "We can't promise that using CaseSpar will help you pass any interview or get any job. Every firm runs its own process, and a real interview is different from practice."
+    },
+    {
+      "type": "p",
+      "text": "A high score is not a prediction that you will pass, and a low score is not a prediction that you won't."
+    },
+
+    { "type": "h2", "id": "ai-mistakes", "text": "The AI can make mistakes" },
+    {
+      "type": "ul",
+      "items": [
+        "The interviewer and the debrief are written by an AI model. It can misunderstand you, miss something you said, or give feedback that is unclear or wrong.",
+        "Maths answers are checked by code against each case's expected answer, within a small margin. The rest of the feedback is the AI's judgement.",
+        "If feedback seems wrong, trust the case numbers and your own reasoning, and tell us at [support email]."
+      ]
+    },
+
+    { "type": "h2", "id": "original-cases", "text": "Original, invented cases" },
+    {
+      "type": "p",
+      "text": "Every case on CaseSpar is written for this site. The companies and numbers are invented, and any likeness to a real business is a coincidence. The numbers are chosen for practice and may not match any real market."
+    },
+    {
+      "type": "p",
+      "text": "We don't copy or rework cases from casebooks, books, other websites or firms' own practice materials."
+    },
+
+    { "type": "h2", "id": "guides", "text": "Guides and general information" },
+    {
+      "type": "p",
+      "text": "Our guides give general information about case interviews in our own words. Facts about a specific firm come only from the firm's own pages or other reputable sources, and we show where each fact comes from and when we checked it. Processes change, so always check the firm's own careers site before you apply."
+    },
+
+    { "type": "h2", "id": "not-advice", "text": "Not professional advice" },
+    {
+      "type": "p",
+      "text": "Nothing on CaseSpar is careers, legal, financial or other professional advice."
+    },
+
+    { "type": "h2", "id": "contact", "text": "Contact" },
+    { "type": "p", "text": "Questions or corrections: [support email]." },
+
+    {
+      "type": "links",
+      "title": "Related pages",
+      "items": [
+        { "label": "About CaseSpar", "href": "/about" },
+        { "label": "Terms of service", "href": "/legal/terms" },
+        { "label": "Privacy policy", "href": "/legal/privacy" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "id": "case-028",
+  "slug": "fellwick-garden-centres-growth",
+  "title": "Fellwick Garden Centres: how to get sales growing again",
+  "track": "consulting",
+  "type": "growth",
+  "industry": "Garden centres (retail)",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 35,
+  "prompt": "Fellwick Garden Centres is a family-owned chain of six garden centres in market towns across the Midlands, now run by the third generation of the family. Its sales have been stuck at about £36 million a year for three years, and profit is slipping as costs rise. The family wants sales of £45 million within four years and has asked you where that growth could come from. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Fellwick runs six garden centres in market towns across the Midlands. The family has owned it for three generations and owns the land at every site. Each centre has a garden shop (plants and seeds, garden products and furniture, and gifts, home and Christmas) and a café."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The family wants sales of £45 million in year 4 (year 1 is next year), up from £36 million today, and wants profit to rise with sales rather than keep slipping. It is happy to try new kinds of business, as long as Fellwick stays in the family and is still clearly a garden centre business."
+    },
+    {
+      "question_topic": "Budget",
+      "answer": "Fellwick can invest up to £8 million over the four years, paid for partly from its savings and partly by borrowing from its bank. Selling a stake to outsiders, or selling any of its sites, is ruled out."
+    },
+    {
+      "question_topic": "Sales history",
+      "answer": "Sales have been about £36 million in each of the last three years. A breakdown of sales by category, three years ago against this year, is available. If nothing changes, the finance director's plan assumes sales stay at about £36 million, as they have: fewer shoppers, made up for by higher prices and a growing café. The buying team expects suppliers' price rises to slow and doubts shoppers would accept rises beyond them, and the café is already full at weekend lunchtimes, so that cover may not last."
+    },
+    {
+      "question_topic": "Profit",
+      "answer": "Operating profit fell from about £3.6 million three years ago (10% of sales) to about £2.9 million this year (about 8%), mainly because staff and energy costs rose."
+    },
+    {
+      "question_topic": "Prices",
+      "answer": "Fellwick raised its garden-shop prices by about 15% in total over the three years, passing on its suppliers' price rises. Its prices are similar to those of the nearby independent garden centres."
+    },
+    {
+      "question_topic": "Customers and data",
+      "answer": "About 70% of garden-shop sales are made with Fellwick's loyalty card, so the card data gives a good picture of who shops. Data on the number of garden-shop transactions, the average spend per transaction and the number of card members who shopped, by age, is available for three years ago and this year."
+    },
+    {
+      "question_topic": "Why customers stopped coming",
+      "answer": "Last spring Fellwick surveyed 600 card members who used to shop at least once a month but had stopped. Most of the over-65s said gardening had become harder work or that they had moved to a home with a smaller garden, but they still wanted a garden that looked nice. Most of the under-45s said they had little time and did not know what would grow, and bought the odd plant at a supermarket or online."
+    },
+    {
+      "question_topic": "Local households",
+      "answer": "Fellwick's own research estimates that about 40% of the households within a 20-minute drive of its centres are headed by someone under 45."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "No new garden centres have opened near Fellwick's sites in the last five years. The nearest rivals are independent family-run centres of a similar size, and Fellwick has no sign that it is losing customers to them. Supermarkets and online shops sell some plants."
+    },
+    {
+      "question_topic": "Seasons and the café",
+      "answer": "About 40% of garden-shop sales come from March to June; January and February are quiet. The café is steady all year and is full at weekend lunchtimes. Over the three years café visits rose about 9% and café prices about 10%. About half of café customers buy nothing in the garden shop."
+    },
+    {
+      "question_topic": "Growth options",
+      "answer": "The management team has a shortlist of five options, with figures for each: the investment, the extra sales in year 4 and the extra operating profit in year 4. The figures are the team's own estimates."
+    },
+    {
+      "question_topic": "A seventh centre",
+      "answer": "The family has found a site for a seventh centre. Planning permission and building would take about two years, so it would open at the start of year 3 and would reach its full sales of about £5 million a year (about £0.6 million of operating profit) only in year 5. The chair, the founder's grandson, favours it because the family has always grown by opening centres; other family members are less sure."
+    },
+    {
+      "question_topic": "Garden-care pilot",
+      "answer": "Last year one centre tried a garden-care plan: spring planting and a monthly visit from March to October, for about £1,000 a year per household. 120 households signed up in the first two months, mostly over-65s and young families, and about 9 in 10 want to renew. A two-person crew can look after about 100 households. The centre found it hard to hire gardeners, partly because the work stops from November to February."
+    },
+    {
+      "question_topic": "Online shop and trade counter",
+      "answer": "Fellwick has never sold online; its website is used for directions and events. An online shop would mainly sell plants, compost and gifts with local delivery, which is costly for bulky items, so its margin would be thin. Several local landscapers have asked Fellwick for trade prices; today they buy from wholesale nurseries and builders' merchants, and they would expect a discount."
+    },
+    {
+      "question_topic": "Winning back shoppers",
+      "answer": "Fellwick's marketing team has proposed a programme, not on management's shortlist, to win back lapsed card members and attract younger households by making shopping and gardening easier rather than by discounting. It would use about £2 million of the £8 million over the four years (new ranges and displays, two delivery vans, extra staff on the shop floor and the offers themselves). Last autumn one centre wrote to 2,000 lapsed members. Half were sent a 10%-off voucher, and about 1 in 10 of them came back. The other half were invited to try carry-to-car help, delivery of heavy items and a new small-garden range, and about 1 in 3 of them came back and shopped at least twice by Christmas. The team's stretch target is to recover about half of the lost garden-shop transactions by year 4, from returning members and new younger shoppers together, which it expects to add about £0.5 million of operating profit a year."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Why sales have stalled: which categories, number of shoppers versus spend per shopper, and which customers are being lost",
+      "Growing the core: winning back lost shoppers and attracting new kinds of customer",
+      "New sources of sales on today's sites: the café, services such as garden care, online, trade customers",
+      "New sites: the seventh centre, its timing and cost",
+      "Decision tests and constraints: sales by year 4, profit, the £8 million budget, family ownership and whether Fellwick can deliver"
+    ],
+    "good_signs": [
+      "Prioritises: works out why sales stalled before listing growth ideas, because the right growth plan depends on the cause",
+      "States a hypothesis early, for example that the flat total hides a shrinking core business, and says what data would test it",
+      "Splits sales into number of transactions times spend per transaction, as well as by category",
+      "Sizes the gap (£9 million, 25%) and checks each option against the budget, the year 4 deadline and profit",
+      "Asks whether rivals have opened nearby, then moves on quickly when the answer is no"
+    ],
+    "red_flags": [
+      "Lists generic growth options (new markets, new products, acquisitions) without linking them to Fellwick",
+      "Treats flat total sales as a stable business without looking underneath",
+      "Proposes another price rise without noticing that price rises have been hiding the loss of shoppers",
+      "Backs the new centre because it is the biggest number, without checking its timing, cost and share of the budget",
+      "Ignores profit and whether Fellwick can deliver an option (for example, who would do the garden care)"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "sales-by-category",
+      "title": "Sales by category (£ million)",
+      "kind": "table",
+      "data": {
+        "columns": ["Category", "3 years ago", "This year"],
+        "rows": [
+          ["Plants and seeds", 13, 11.7],
+          ["Garden products and furniture", 10.5, 10.1],
+          ["Gifts, home and Christmas", 6.5, 7],
+          ["Café", 6, 7.2],
+          ["Total", 36, 36]
+        ]
+      },
+      "reveal_hint": "Ask for a breakdown of sales by category over time, or what has happened to sales underneath the flat total.",
+      "insight": "Total sales are flat at £36m, but the garden shop fell from £30.0m to £28.8m (down 4%) while the café grew from £6.0m to £7.2m (up 20%), exactly filling the gap. Plants and seeds fell 10% (£13.0m to £11.7m) and garden products about 4%, even after price rises of about 15%; gifts rose about 8%. The core gardening business is shrinking, and the café is hiding it."
+    },
+    {
+      "id": "garden-shop-shoppers",
+      "title": "Garden-shop shoppers and spend (excluding the café)",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "3 years ago", "This year"],
+        "rows": [
+          ["Transactions (thousand)", 1250, 1000],
+          ["Average spend per transaction (£)", 24, 28.8],
+          ["Card members who shopped: under 45 (thousand)", 20, 20],
+          ["Card members who shopped: 45 to 64 (thousand)", 40, 36],
+          ["Card members who shopped: 65 and over (thousand)", 60, 44],
+          ["Card members who shopped: total (thousand)", 120, 100]
+        ]
+      },
+      "reveal_hint": "Ask how many people shop and how much they spend, or which customers Fellwick is gaining or losing.",
+      "insight": "Garden-shop transactions fell 20% (1.25 million to 1.0 million) while spend per transaction rose 20% (£24.00 to £28.80), mostly from price rises of about 15%, so garden-shop sales fell only 4%. Card members who shopped fell from 120,000 to 100,000, and 16,000 of that 20,000 fall is over-65s (down about 27%). Under-45s are flat at 20,000, only 1 in 5 of the card members who shopped, although about 40% of local households are headed by someone under 45. Fellwick is losing its loyal older customers and not replacing them, and price rises cannot keep hiding that."
+    },
+    {
+      "id": "growth-options",
+      "title": "Management's shortlist of growth options (team estimates)",
+      "kind": "table",
+      "data": {
+        "columns": ["Option", "Investment (£m)", "Extra sales in year 4 (£m)", "Extra operating profit in year 4 (£m)"],
+        "rows": [
+          ["Open a seventh garden centre", 6, 3, 0.3],
+          ["Bigger cafés at three centres", 1.5, 1.5, 0.3],
+          ["Online shop with local delivery", 1, 1, 0.05],
+          ["Trade counter for local landscapers", 0.5, 1, 0.1],
+          ["Garden-care plans for local homes", 1, 3, 0.45]
+        ]
+      },
+      "reveal_hint": "Ask what growth options the management team has looked at, or for the costs and returns of new centres, cafés, online, trade sales or services.",
+      "insight": "The four options other than the new centre cost £4m together and add £6.5m of sales (£0.9m of profit), taking sales to £42.5m in year 4: £2.5m short, with £4m of the budget left. The new centre costs £6m, three-quarters of the budget, but adds only £3m of sales and £0.3m of profit in year 4 because it opens only in year 3; even at full sales it makes about £0.6m a year, so it takes more than 10 years to pay back. On the shortlist alone, the chair's best mix (the new centre, garden care and the trade counter, £7.5m) reaches about £43m, slightly more than the four cheaper options, but neither reaches £45m, and the centre leaves no room in the budget for the marketing team's £2m win-back programme. Garden care gives the most sales and profit per pound (£3 of sales and 45p of profit for every £1 invested, paying back in a little over 2 years) and serves exactly the customers Fellwick is losing. The online shop adds sales but almost no profit (5p per £1 of sales). Nothing on the shortlist tackles the shrinking core."
+    }
+  ],
+  "math": [
+    {
+      "id": "shop-transactions-fall",
+      "question": "By what percentage did the number of garden-shop transactions fall over the three years?",
+      "inputs": {
+        "tx_before": 1250,
+        "tx_now": 1000
+      },
+      "expression": "(tx_before - tx_now) / tx_before * 100",
+      "expected": 20,
+      "tolerance_pct": 2,
+      "working": "Transactions fell by 250,000 (1,250,000 - 1,000,000). 250,000 / 1,250,000 = 20%. Spend per transaction rose 20% (£24.00 to £28.80), mostly from price rises, so garden-shop sales fell only 4%.",
+      "input_sources": [
+        { "input": "tx_before", "exhibit_id": "garden-shop-shoppers", "row": 0, "column": "3 years ago" },
+        { "input": "tx_now", "exhibit_id": "garden-shop-shoppers", "row": 0, "column": "This year" }
+      ]
+    },
+    {
+      "id": "win-back-half-lost-transactions",
+      "question": "The marketing team's stretch target is to recover half of the garden-shop transactions Fellwick has lost. At this year's average spend, how much would that add to sales each year, in £ million?",
+      "inputs": {
+        "tx_before": 1250,
+        "tx_now": 1000,
+        "spend_now": 28.8
+      },
+      "expression": "(tx_before - tx_now) / 2 * spend_now / 1000",
+      "expected": 3.6,
+      "tolerance_pct": 2,
+      "working": "Fellwick lost 250,000 transactions (1,250,000 - 1,000,000). Half is 125,000. 125,000 x £28.80 = £3.6 million a year (125 thousand x 28.8 = 3,600 thousand). For comparison, a third of the lost transactions would be about 83,000 x £28.80 = about £2.4 million.",
+      "input_sources": [
+        { "input": "tx_before", "exhibit_id": "garden-shop-shoppers", "row": 0, "column": "3 years ago" },
+        { "input": "tx_now", "exhibit_id": "garden-shop-shoppers", "row": 0, "column": "This year" },
+        { "input": "spend_now", "exhibit_id": "garden-shop-shoppers", "row": 1, "column": "This year" }
+      ]
+    },
+    {
+      "id": "sales-with-four-options",
+      "question": "If Fellwick went ahead with every option on the shortlist except the new centre, what would its total sales be in year 4, in £ million? Assume today's £36 million stays the same, as the finance director does.",
+      "inputs": {
+        "base_sales": 36,
+        "cafes_sales": 1.5,
+        "online_sales": 1,
+        "trade_sales": 1,
+        "care_sales": 3
+      },
+      "expression": "base_sales + cafes_sales + online_sales + trade_sales + care_sales",
+      "expected": 42.5,
+      "tolerance_pct": 1,
+      "working": "The four options add £1.5m + £1.0m + £1.0m + £3.0m = £6.5m, for £4.0m of investment. £36m + £6.5m = £42.5m: £2.5m short of £45m, with £4m of the £8m budget left, enough for the £2m win-back programme.",
+      "input_sources": [
+        { "input": "base_sales", "exhibit_id": "sales-by-category", "row": 4, "column": "This year" },
+        { "input": "cafes_sales", "exhibit_id": "growth-options", "row": 1, "column": "Extra sales in year 4 (£m)" },
+        { "input": "online_sales", "exhibit_id": "growth-options", "row": 2, "column": "Extra sales in year 4 (£m)" },
+        { "input": "trade_sales", "exhibit_id": "growth-options", "row": 3, "column": "Extra sales in year 4 (£m)" },
+        { "input": "care_sales", "exhibit_id": "growth-options", "row": 4, "column": "Extra sales in year 4 (£m)" }
+      ]
+    },
+    {
+      "id": "garden-care-households-per-centre",
+      "question": "At about £1,000 a year per household, how many households would each of the six centres need on garden-care plans to bring in the £3 million of sales on the shortlist?",
+      "inputs": {
+        "care_sales_m": 3,
+        "plan_price": 1000,
+        "centres": 6
+      },
+      "expression": "care_sales_m * 1000000 / plan_price / centres",
+      "expected": 500,
+      "tolerance_pct": 2,
+      "working": "£3,000,000 / £1,000 = 3,000 households across the chain. 3,000 / 6 centres = 500 households per centre, against 120 in the pilot's first two months. At about 100 households per two-person crew, that is about 30 crews, or 60 gardeners.",
+      "input_sources": [
+        { "input": "care_sales_m", "exhibit_id": "growth-options", "row": 4, "column": "Extra sales in year 4 (£m)" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Beyond the options on the shortlist, how could Fellwick win back the shoppers it has lost and attract younger households? Feel free to rethink what a garden centre offers.",
+    "idea_bank": [
+      "Win back lapsed card members with a personal offer, starting with the over-65s who stopped visiting",
+      "Make shopping easier for older customers: carry-to-car help, home delivery of heavy items, seating, and low-maintenance and raised-bed ranges",
+      "Ready-planted pots, hanging baskets and balcony kits labelled by light and space, with a guarantee to replace any plant that dies in its first year",
+      "A planting-day service: buy the plants and Fellwick staff plant them the same week, a lighter step into garden care",
+      "Beginner workshops, a free plant-advice desk, and growing clubs for families and children",
+      "Seasonal bulb and bedding bundles that card members reserve once and collect or have delivered each season",
+      "Seasonal reminders and care tips for card members, linked to what they bought",
+      "A small-space and indoor range (houseplants, herbs, balcony furniture) for people with small gardens or flats",
+      "Turn café visitors into garden shoppers: plant displays and offers in the café, and café vouchers with garden purchases",
+      "Evening and winter events (workshops, Christmas, supper evenings) to fill the quiet months",
+      "Keep garden-care crews busy from November to February with pruning, hedge and leaf clearing, and Christmas work in the centres, so the jobs can be offered all year and are easier to fill",
+      "Partner with local housebuilders to offer turf and planting packages to buyers of new homes",
+      "Offer garden-care plans to landlords, care homes and small businesses as well as households",
+      "Let spare land or buildings to businesses that bring visitors, such as a farm shop, pet shop or play barn",
+      "Tool and equipment hire, and a paid garden-design visit"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "The flat £36 million hides a shrinking garden shop: transactions fell 20% (1.25 million to 1.0 million), mostly older customers leaving, while price rises and café growth filled the gap",
+      "The four capital-light options take sales to about £42.5 million for £4 million, while the new centre uses three-quarters of the budget for only £3 million of year 4 sales and leaves no room for the win-back programme",
+      "Reaching £45 million also needs the core fixed: recovering half the lost transactions is worth about £3.6 million a year for about £2 million of the budget, first to stop the base falling and then to add to it, with a clear recommendation and next steps"
+    ],
+    "good_signs": [
+      "Goes from a good answer to a better one: a good answer ranks the shortlist and picks the best options within budget, which still leaves Fellwick about £2.5 million short; a better answer sees that the flat £36 million base is itself at risk (price rises slowing, the café full at weekend lunchtimes), fixes the shrinking core first, puts the moves in order and says what would change the plan",
+      "Compares like for like: the win-back programme needs about £2 million of the budget, so it fits beside the cheaper options (about £45.1 million for £5 million, or about £46.1 million for £6 million with the online shop) but not beside the new centre, whose best mix within £8 million reaches only about £43 million",
+      "Checks that garden care is workable: about 500 households per centre against 120 in the pilot's first two months, and about 60 gardeners who are hard to hire for seasonal work, so it rolls out centre by centre with milestones (for example about 250 households per centre by the end of year 2) and gives crews winter work",
+      "Defends the call when challenged on the chair's new centre: its best mix reaches only about £43 million, it makes about 5p of year 4 profit per £1 invested against 20p to 45p for garden care, the cafés and the trade counter, it takes more than 10 years to pay back, it carries planning risk, and it adds a site to a business that is losing shoppers; keeps it as a longer-term option to look at again after year 2, and asks whether Fellwick can hold on to the site meanwhile",
+      "Looks at profit as well as sales: the online shop adds £1 million of sales but only about £50,000 of profit, so it goes last, as the fallback; without it the plan still reaches about £45.1 million and adds about £1.35 million of year 4 profit, against about £0.85 million for the chair's mix",
+      "Questions the stretch target: most lapsed over-65s left for lasting reasons, and the test brought back about 1 in 3 of the lapsed members invited; if only about a third of the lost transactions come back (about £2.4 million), the plan reaches about £43.9 million, or £44.9 million with the online shop, so attracting younger households matters as much as winning back older ones",
+      "Names the risks: the plan only just clears £45 million; a slower garden-care roll-out is the biggest risk to the year 4 number; the same customers may be counted twice (garden-care households and won-back shoppers); the decline may continue; the café is full at weekend lunchtimes; and the family may lose the seventh-centre site"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goal and limits: sales from £36m to £45m in year 4 (a £9m or 25% gap), profit rising with sales, up to £8m of investment, family-owned and still a garden centre business. Early hypothesis: the flat total hides a shrinking core, so find out why sales stalled before choosing where to grow.",
+    "Structure: first, why sales stalled (by category, transactions times spend, and which customers); then the growth levers (win back and widen the core, new sources of sales on today's sites, new sites), each judged on year 4 sales, profit, investment and whether Fellwick can deliver it.",
+    "Diagnosis: the garden shop fell 4% (£30.0m to £28.8m) and the café's £1.2m of growth filled the gap. Transactions fell 20% (1.25m to 1.0m), hidden by a 20% rise in spend per transaction that is mostly price. Of the 20,000 fewer card members, 16,000 are over-65s who find gardening harder or have moved; under-45s are flat at 20,000, only 1 in 5 of the card members who shopped, against about 40% of local households. No new rivals, so this is about what customers need, not competition. The flat £36m is itself at risk: it rests on price rises the buyers expect to slow and a café that is full at weekend lunchtimes.",
+    "Options: the four capital-light options cost £4m and take sales to £42.5m. Garden care is the strongest (£3 of sales and 45p of profit per £1, and it serves the very customers Fellwick is losing), but it needs about 500 households per centre against 120 in the pilot, so roll it out in stages. The online shop adds sales but almost no profit. The new centre takes £6m of the £8m for £3m of year 4 sales and £0.3m of profit; its best mix within budget reaches about £43m, leaves no room for the win-back, and takes more than 10 years to pay back.",
+    "Closing the gap: the marketing team's win-back programme uses about £2m of the budget, and recovering half the lost transactions is worth about £3.6m a year. Like for like, the cheaper options plus the win-back reach about £46.1m for £6m, or about £45.1m for £5m without the online shop, against at most about £43m with the new centre. Half is a stretch target: the test brought back about 1 in 3 of the lapsed members invited, and a third of the lost transactions would add only about £2.4m, so younger households have to come too. And because the £36m base may not hold, part of the win-back may be needed just to stop sales falling.",
+    "Recommendation: do not build the seventh centre now. Start the win-back programme and the garden-care roll-out first, centre by centre (milestone: about 250 households per centre by the end of year 2), enlarge the cafés and open the trade counter: about £5m in all, holding about £3m back. Keep the online shop as the fallback, because it adds almost no profit: build it too if garden care or the win-back is behind plan after year 1, since without it the plan clears £45m by only about £0.1m. Look at the seventh centre again after year 2, as growth for after year 4, once garden care and the win-back are on track: it would open too late to count towards year 4 and costs more than the money left, so it would need a bigger loan or the new businesses' profits. Next steps: ask whether Fellwick can hold on to the site meanwhile, and track households signed per centre, transactions per month and card members by age. Risks: hiring gardeners (give crews winter work), counting the same customers twice in garden care and the win-back, and café capacity.",
+    "What separates a good answer from a better one: a good answer ranks the shortlist by return and accepts about £42.5m; a better answer sees that the core is shrinking and the base is at risk, compares the plans like for like, closes the gap by fixing the core with a different kind of offer, and says what would change the plan."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

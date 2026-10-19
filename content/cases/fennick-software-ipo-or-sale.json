@@ -1,0 +1,300 @@
+{
+  "id": "case-026",
+  "slug": "fennick-software-ipo-or-sale",
+  "title": "Fennick Software: list on a stock exchange or sell?",
+  "track": "banking",
+  "type": "m_and_a",
+  "industry": "Business software",
+  "difficulty": 2,
+  "style": "interviewer_led",
+  "est_minutes": 30,
+  "prompt": "You are a graduate analyst in the equity capital markets team of a UK bank. Fennick Software makes job-management software for UK building and trades firms. It was started 12 years ago and has grown fast, and its founder and chief executive still owns half of it. She has two routes in front of her: a private equity firm has offered £600 million for the whole company, and our bank estimates that, once Fennick's shares are listed on a stock exchange and trading freely, investors would value all of them at about £800 million. The managing director asks you: how much cash would the founder actually get now under each route, and which route should she choose? How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The client",
+      "answer": "Fennick Software sells cloud software that small and mid-sized UK building and trades firms use to price jobs, plan their teams' work and send invoices. Customers pay a monthly subscription. About 25,000 firms use it, and no single customer is more than 1% of revenue. The founder started it 12 years ago and is still chief executive."
+    },
+    {
+      "question_topic": "Fennick's figures",
+      "answer": "Revenue is about £100 million this year, about 90% of it from subscriptions, and has grown by about 20% a year for the last three years. Fennick expects about £120 million next year. EBITDA is about £30 million this year. Fennick has no debt and keeps only the cash it needs to run the business, so any price for the company is all for its shares."
+    },
+    {
+      "question_topic": "What EBITDA means",
+      "answer": "EBITDA is earnings before interest, tax, depreciation and amortisation: operating profit with depreciation and amortisation added back. It is a rough measure of the cash a business makes from its operations before paying lenders and tax."
+    },
+    {
+      "question_topic": "Who owns Fennick",
+      "answer": "The founder owns 50% of the shares. A venture capital fund owns 40%. Staff hold share options over the other 10%. All percentages in this case count the staff options as if they were shares; ignore what staff pay to turn their options into shares. The offers and the IPO plan are in the exhibits."
+    },
+    {
+      "question_topic": "The founder's goals",
+      "answer": "In order of importance: first, to keep running Fennick and setting its strategy for at least five more years, including investing heavily in new products; second, to have about £60 million in cash within the next year, because almost all of her wealth is in Fennick shares and she wants her family to be secure whatever happens to the company; third, to keep as much of Fennick's future growth as she can. She would rather not sell to an owner who would sell Fennick on again within a few years."
+    },
+    {
+      "question_topic": "The venture capital fund",
+      "answer": "The fund invested eight years ago. Its fund reaches the end of its fixed life in about two years and must pay its own investors back, so it must sell all of its shares by then. It would prefer the private equity sale, which pays it in cash all at once, but it has agreed to back whichever route the founder chooses as long as it can sell all its shares within two years."
+    },
+    {
+      "question_topic": "What private equity is, and this buyer",
+      "answer": "A private equity firm raises money from investors into funds, buys companies, often using borrowed money as well, and aims to grow them and sell them again at a profit. This buyer's funds usually own a company for four to six years before selling it."
+    },
+    {
+      "question_topic": "The private equity offer",
+      "answer": "The buyer offers £600 million in cash for all of Fennick's shares. The offer is not binding until it is signed, after about six weeks of checks on Fennick's accounts, contracts and software (due diligence), and the buyer could lower its price if the checks find problems. The sellers would be paid about four months from now. The buyer would hold most of the board seats and control big decisions such as budgets, acquisitions and when to sell. It wants the founder to stay as chief executive for at least three years. Asked why it will not pay more, the buyer says it cannot pay more and still reach the return its fund needs with the borrowing its lenders will allow."
+    },
+    {
+      "question_topic": "Reinvesting (rolling over)",
+      "answer": "The buyer requires the founder to reinvest 20% of what her shares sell for in the new company it would set up to own Fennick. This is called rolling over. It keeps her tied to Fennick's success, but that money is not cash in her pocket, and she can only sell it when the buyer sells Fennick. Her £60 million would buy about 14% of the new company. The buyer has not said what it expects to sell Fennick for, so what that stake might be worth later cannot be worked out from the case."
+    },
+    {
+      "question_topic": "How the buyer would pay (leverage)",
+      "answer": "The buyer would pay the £600 million with £180 million of borrowing, £360 million from its fund and the founder's £60 million. Fennick would owe the borrowing after the deal. Leverage here means debt divided by EBITDA: £180 million is 6 times Fennick's £30 million of EBITDA. The interest would be about £15 million a year, paid from Fennick's own cash. The buyer's plan is to grow EBITDA faster partly by slowing hiring in product development."
+    },
+    {
+      "question_topic": "What an IPO is",
+      "answer": "An initial public offering (IPO) is when a company's shares are first sold to the public and listed on a stock exchange, so that anyone can then buy and sell them. The shares sold can be new ones, which raise money for the company, or existing ones sold by shareholders. Fennick does not need new money, so in this IPO only existing shareholders would sell shares and the company itself would raise nothing."
+    },
+    {
+      "question_topic": "The bank's IPO valuation and the discount",
+      "answer": "Our bank's equity capital markets team estimates that, once the shares trade freely, investors would value all of Fennick's shares at about £800 million, based on its own view of similar listed software companies. The bank plans to sell the shares at the IPO about 12.5% below that value, so that investors who buy at the listing expect a gain and the order book fills. This gap is called the IPO discount."
+    },
+    {
+      "question_topic": "Valuation multiples",
+      "answer": "A valuation multiple is a company's value divided by a measure such as its revenue or EBITDA, which lets bankers compare companies of different sizes. Our bank's team looked at similar listed software companies and, in its own view, they are valued at about 6 to 7 times next year's revenue. Its £800 million estimate is about 6.7 times the £120 million of revenue Fennick expects next year. The buyer's £600 million is 5 times next year's revenue, or 20 times this year's £30 million of EBITDA."
+    },
+    {
+      "question_topic": "How many shares are sold at the IPO",
+      "answer": "The bank wants about a quarter of Fennick's shares sold at the listing, so that there are enough shares for investors to trade. Investors would want a founder who stays as chief executive to keep most of her shares, so the bank advises her to sell no more than a fifth of her holding, which is 10% of Fennick. If the price came in lower, the bank could let her sell a little more, up to about 12% of Fennick, though investors would prefer she sold less. The venture capital fund would sell 15% of Fennick at the listing and the rest after its lock-up."
+    },
+    {
+      "question_topic": "Fees and costs",
+      "answer": "In the sale, the advisers' and lawyers' fees come to 2% of what the shares sell for, paid by each seller out of their own proceeds, and Fennick itself pays about £1 million of one-off costs. In the IPO, the banks running it find investors and, once the price is set, agree to buy any shares investors do not take (underwriting). They charge the sellers a commission of 3% of what their shares sell for. Fennick itself pays about £5 million of other IPO costs, such as lawyers and accountants. The fees and timing are in the second exhibit."
+    },
+    {
+      "question_topic": "Lock-up",
+      "answer": "A lock-up is a promise not to sell any more shares for a set time after the IPO, so that a flood of shares does not push the price down. The bank proposes 12 months for the founder and 6 months for the venture capital fund."
+    },
+    {
+      "question_topic": "Life as a listed company",
+      "answer": "After the IPO the founder would own 40%, the largest single holding, and stay chief executive. She would not have a majority: other shareholders could outvote her on matters put to a vote, though the bank's view is that, because not every shareholder votes, she would in practice usually carry most votes. The board would include independent directors. Fennick would report its results to investors regularly and its share price would be public every day. The bank estimates the extra costs of being listed at about £2 million a year."
+    },
+    {
+      "question_topic": "Market risk",
+      "answer": "The £800 million estimate assumes the values of listed software companies stay where they are. The bank's team warns that they can move a lot within a few months, so it tests the plan with a 20% fall, which would cut its estimate to about £640 million. In a very weak market the IPO could be postponed. In the bank's plan the IPO price is fixed only at the end of the bookbuild: the last two weeks or so before listing at about month 7, when the banks collect orders from investors."
+    },
+    {
+      "question_topic": "Doing both at once",
+      "answer": "The buyer knows the founder is thinking about an IPO and says its offer stays open for about three months. It will not promise to keep the offer open after about month 3. The bank could start preparing the IPO now and hold early meetings with investors by about month 3, when it would know whether a value of about £800 million holds up. If asked, the buyer says it would do its checks during those three months so that it could sign soon after; if she chose the sale at about month 3, she would be paid at about month 5 or 6. It would consider keeping its offer open until the IPO is priced, but would not promise to, and would not promise to hold its price if markets fall."
+    },
+    {
+      "question_topic": "Staff",
+      "answer": "In a sale, staff options would be paid out in cash. After an IPO, staff would hold listed shares they could sell over time. The leadership team has told the founder it would rather Fennick stayed independent."
+    },
+    {
+      "question_topic": "Tax",
+      "answer": "Assume the founder pays the same rate of tax on her gains under either route, and leave tax out of the comparison. She will take her own tax advice."
+    },
+    {
+      "question_topic": "Our bank's interest",
+      "answer": "Our bank would earn the largest share of the IPO commission if Fennick lists, and a smaller fee for advice if she sells. The managing director wants advice that is right for the founder, not for our fees."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "The founder's goals: staying in charge, the cash she needs, and keeping future growth",
+      "Cash now under each route: the price, the IPO discount, how much she sells, fees and the money she must reinvest",
+      "What she keeps afterwards: shares, control and the upside under each route",
+      "Certainty, timing and risk: when the price is fixed, the buyer's checks, market moves and lock-ups",
+      "The other shareholders and the company: the venture capital fund's exit, staff, the buyer's debt and the costs of being listed",
+      "The recommendation and how to run the process"
+    ],
+    "good_signs": [
+      "Asks what the founder wants before comparing the numbers",
+      "Separates the headline value from the cash she actually receives: discount, share sold, fees and reinvestment",
+      "Values what she keeps, not only the cash now, and knows the kept shares cannot be sold during the lock-up",
+      "Weighs certainty and timing as well as size",
+      "Remembers that the venture capital fund must sell all its shares within two years",
+      "Asks what the buyer would do with Fennick, including how much it would borrow",
+      "Checks the values as multiples of revenue or EBITDA (for example, £600 million is 20 times this year's EBITDA and £800 million about 6.7 times next year's revenue)"
+    ],
+    "red_flags": [
+      "Takes the £800 million estimate against the £600 million offer at face value, missing the 12.5% discount and that she sells only 10% of Fennick at the IPO, and so says the IPO is worth £200 million more or gives her more cash now",
+      "Treats the 40% she keeps after the IPO as cash she can spend now",
+      "Recommends the sale only because it pays more cash now, without weighing her goals of staying in charge and keeping the upside",
+      "Ignores the venture capital fund's need to sell"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "two-routes",
+      "title": "The private equity offer and the IPO plan",
+      "kind": "table",
+      "data": {
+        "columns": ["Measure", "Private equity sale", "IPO"],
+        "rows": [
+          ["Value of all of Fennick's shares before any discount (£ million)", 600, 800],
+          ["Discount at which the shares are sold (%)", 0, 12.5],
+          ["Share of Fennick the founder sells now (%)", 50, 10],
+          ["Share of Fennick the venture capital fund sells now (%)", 40, 15],
+          ["Share of Fennick staff sell now (%)", 10, 0],
+          ["Share of Fennick the founder still owns afterwards (%)", "None (see reinvestment)", 40],
+          ["Founder's money she must reinvest (% of what her shares sell for)", 20, 0]
+        ]
+      },
+      "reveal_hint": "Ask for the details of the two routes: the offer, the IPO valuation, or how many shares the founder would sell under each.",
+      "insight": "The headlines are not like for like. After the 12.5% discount the IPO sells Fennick's shares at a value of £700 million: £100 million above the private equity offer, not £200 million. In the sale the founder sells all of her 50% (£300 million, of which she must reinvest £60 million); in the IPO she sells only 10% of Fennick (£70 million) and keeps 40%, worth £280 million at the IPO price. The venture capital fund sells all 40% in the sale but only 15% in the IPO, so it must sell its other 25% later."
+    },
+    {
+      "id": "fees-and-timing",
+      "title": "Fees, costs and timing of each route",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "Private equity sale", "IPO"],
+        "rows": [
+          ["Fees paid by the sellers (% of what their shares sell for)", 2, 3],
+          ["One-off costs paid by Fennick itself (£ million)", 1, 5],
+          ["Extra yearly running costs afterwards (£ million)", 0, 2],
+          ["Months until the sellers are paid (if she decides now)", 4, 7],
+          ["When the price becomes final", "When signed, after about 6 weeks of the buyer's checks", "At the end of the bookbuild, just before listing at about month 7"],
+          ["Lock-up for the founder (months)", "None", 12],
+          ["Lock-up for the venture capital fund (months)", "None", 6]
+        ]
+      },
+      "reveal_hint": "Ask about fees, costs, how long each route takes, or when the founder could sell more shares.",
+      "insight": "After fees the sale gives the founder about £234 million of cash in about four months; the IPO gives her about £68 million in about seven, with the price fixed only just before listing. The IPO also adds about £2 million a year of running costs and locks up her remaining shares for 12 months. The sale's price is offered now but is final only when signed, after the buyer's checks."
+    }
+  ],
+  "math": [
+    {
+      "id": "founder-cash-from-sale",
+      "question": "If the founder sells to the private equity buyer, how much cash does she receive now, after her share of the fees and the money she must reinvest, in £ million?",
+      "inputs": {
+        "pe_value": 600,
+        "founder_sold_pct": 50,
+        "fee_pct": 2,
+        "reinvest_pct": 20
+      },
+      "expression": "pe_value * founder_sold_pct / 100 * (1 - fee_pct / 100 - reinvest_pct / 100)",
+      "expected": 234,
+      "tolerance_pct": 2,
+      "working": "Her 50% of £600 million is £300 million. Fees are 2% of that, £6 million, and she must reinvest 20%, £60 million. £300m - £6m - £60m = £234 million of cash, about four months from now. The £60 million reinvested is still hers, but only as about 14% of the buyer's new company.",
+      "input_sources": [
+        { "input": "pe_value", "exhibit_id": "two-routes", "row": 0, "column": "Private equity sale" },
+        { "input": "founder_sold_pct", "exhibit_id": "two-routes", "row": 2, "column": "Private equity sale" },
+        { "input": "reinvest_pct", "exhibit_id": "two-routes", "row": 6, "column": "Private equity sale" },
+        { "input": "fee_pct", "exhibit_id": "fees-and-timing", "row": 0, "column": "Private equity sale" }
+      ]
+    },
+    {
+      "id": "founder-cash-from-ipo",
+      "question": "If Fennick lists as the bank plans, how much cash does the founder receive from the shares she sells at the IPO, after the commission, in £ million?",
+      "inputs": {
+        "ipo_estimate": 800,
+        "discount_pct": 12.5,
+        "founder_sold_pct": 10,
+        "fee_pct": 3
+      },
+      "expression": "ipo_estimate * (1 - discount_pct / 100) * founder_sold_pct / 100 * (1 - fee_pct / 100)",
+      "expected": 67.9,
+      "tolerance_pct": 2,
+      "working": "The 12.5% discount takes the £800 million estimate down to £700 million (800 - 100). She sells 10% of Fennick, a fifth of her shares: 10% of £700 million is £70 million. The 3% commission is £2.1 million, leaving about £67.9 million, about seven months from now. That is about £166 million less cash than the sale, but it covers her £60 million goal.",
+      "input_sources": [
+        { "input": "ipo_estimate", "exhibit_id": "two-routes", "row": 0, "column": "IPO" },
+        { "input": "discount_pct", "exhibit_id": "two-routes", "row": 1, "column": "IPO" },
+        { "input": "founder_sold_pct", "exhibit_id": "two-routes", "row": 2, "column": "IPO" },
+        { "input": "fee_pct", "exhibit_id": "fees-and-timing", "row": 0, "column": "IPO" }
+      ]
+    },
+    {
+      "id": "value-of-shares-kept-after-ipo",
+      "question": "After the IPO, what are the shares the founder still owns worth at the IPO price, in £ million?",
+      "inputs": {
+        "ipo_estimate": 800,
+        "discount_pct": 12.5,
+        "kept_pct": 40
+      },
+      "expression": "ipo_estimate * (1 - discount_pct / 100) * kept_pct / 100",
+      "expected": 280,
+      "tolerance_pct": 2,
+      "working": "She keeps 40% of Fennick. At the IPO value of £700 million that is £280 million, or £320 million if the shares later reach the bank's £800 million estimate. On paper her IPO position is about £348 million (£67.9m cash + £280m of shares) against £294 million for the sale (£234m cash + £60m reinvested). But the £280 million cannot be sold for 12 months, and its value moves with the share price.",
+      "input_sources": [
+        { "input": "ipo_estimate", "exhibit_id": "two-routes", "row": 0, "column": "IPO" },
+        { "input": "discount_pct", "exhibit_id": "two-routes", "row": 1, "column": "IPO" },
+        { "input": "kept_pct", "exhibit_id": "two-routes", "row": 5, "column": "IPO" }
+      ]
+    },
+    {
+      "id": "founder-ipo-cash-if-market-falls",
+      "question": "The bank tests a 20% fall in the value of listed software companies before Fennick lists. Keeping the same discount, share sold and commission, how much cash would the founder then receive from the IPO, in £ million?",
+      "inputs": {
+        "ipo_estimate": 800,
+        "fall_pct": 20,
+        "discount_pct": 12.5,
+        "founder_sold_pct": 10,
+        "fee_pct": 3
+      },
+      "expression": "ipo_estimate * (1 - fall_pct / 100) * (1 - discount_pct / 100) * founder_sold_pct / 100 * (1 - fee_pct / 100)",
+      "expected": 54.32,
+      "tolerance_pct": 2,
+      "working": "A 20% fall takes the estimate from £800 million to £640 million. Less the 12.5% discount, that is £560 million; 10% of it is £56 million; less 3% commission (£1.68 million) leaves about £54.3 million, below her £60 million goal. Selling only 10%, her goal is met only while the estimate stays above about £707 million (60 / 0.084875), so a fall of only about 12% puts it at risk; selling a little more, about 11% of Fennick, would still give her £60 million after a 20% fall. This is her cash after a market fall, not the gap between the two routes on paper (about £348 million against £294 million), which is a different figure.",
+      "input_sources": [
+        { "input": "ipo_estimate", "exhibit_id": "two-routes", "row": 0, "column": "IPO" },
+        { "input": "discount_pct", "exhibit_id": "two-routes", "row": 1, "column": "IPO" },
+        { "input": "founder_sold_pct", "exhibit_id": "two-routes", "row": 2, "column": "IPO" },
+        { "input": "fee_pct", "exhibit_id": "fees-and-timing", "row": 0, "column": "IPO" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Apart from the cash she gets now, what else should the founder weigh up in choosing between the two routes?",
+    "idea_bank": [
+      "Control: in the sale the buyer holds most board seats and decides budgets, acquisitions and when to sell; after the IPO she is the largest shareholder (40%) and stays chief executive, though without a majority",
+      "The buyer's £180 million of borrowing is 6 times EBITDA and costs about £15 million a year in interest, half of this year's EBITDA, which could squeeze the product investment she wants",
+      "A second sale: the buyer usually sells within four to six years, so Fennick would change owner again and her reinvested stake (about 14%) would be sold then",
+      "Upside: after the IPO she keeps 40% (£280 million at the IPO price, £320 million at the bank's estimate); in the sale her stake in future growth is the £60 million reinvested, about 14% of the buyer's company. Each £1 of growth in Fennick's value adds about 40p to her stake after the IPO but only about 14p in the sale, although the borrowing means her £60 million could grow fast in percentage terms if the buyer's plan works",
+      "Certainty and timing: the sale pays in about four months and its price is fixed when signed; the IPO pays in about seven, with the price fixed only at the end of the bookbuild just before listing, and a 20% market fall cuts her cash to about £54 million",
+      "The gap in the fallback: the buyer's offer is promised only until about month 3, four months before the IPO is priced, so a fall in between has no fallback unless the buyer agrees to keep its offer open until pricing",
+      "If early investor meetings point to a lower value, she could sell a little more than 10% at the IPO (about 11% of Fennick still gives £60 million after a 20% fall), though investors would prefer she sold less",
+      "A market fall could hit the sale too: its price is final only when signed, and the buyer could lower it during its checks if values fall",
+      "Spreading her wealth: after the IPO about four-fifths of her wealth would still be in Fennick shares she cannot sell for 12 months",
+      "Life as a listed company: about £2 million a year of extra costs, regular results, a daily share price and investor pressure on short-term results",
+      "The venture capital fund must sell all 40% within two years; in the IPO its further 25% after six months could weigh on the share price",
+      "Staff: a sale pays out their options in cash; listed shares let them keep a stake and give Fennick shares to use in hiring",
+      "Listed shares can be used to buy other companies",
+      "Use the IPO as bargaining power: ask the buyer for a higher price, a smaller reinvestment, more say on the board or a protected product budget",
+      "A middle route: sell the venture capital fund's 40% and some of her shares to an investor as a minority stake, keeping her in charge without listing",
+      "Our bank earns more if Fennick lists, so the advice has to rest on her goals, and she may want independent advice on the choice",
+      "Tax is assumed equal here, but she should take her own advice before choosing"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Cash now: about £234 million from the sale (£300 million for her half, less £6 million of fees and £60 million reinvested) against about £68 million from the IPO (the £800 million estimate less the 12.5% discount is £700 million; 10% of that is £70 million, less 3% commission)",
+      "A clear recommendation tied to her goals, with the IPO the better fit: it covers her £60 million cash need, keeps her in charge as the largest shareholder and keeps 40% of Fennick (about £280 million at the IPO price), while the sale gives far more cash than she needs but hands control to a buyer that would borrow £180 million and sell Fennick again. A recommendation to sell earns this point only if it explains why certainty should outweigh her first goal of staying in charge, and how her role would be protected",
+      "The IPO's main risk and how to handle it: the price is fixed only at the end of the bookbuild, just before listing at about month 7, about four months after the buyer's offer lapses; a 20% market fall cuts her cash to about £54 million (she could sell a little more to reach £60 million) and the value of the shares she keeps by a fifth, and a weak market could postpone the IPO while the venture capital fund's two-year clock runs; so keep the private equity offer alive for as long as possible (its checks done in parallel, ideally open until the IPO is priced) and decide at about month 3, once early investor meetings show whether about £800 million holds"
+    ],
+    "good_signs": [
+      "Spots that the headlines are not like for like: after the discount the IPO values Fennick at £700 million, £100 million above the offer, not £200 million",
+      "Compares her whole position on paper: about £348 million under the IPO (£68 million of cash plus £280 million of shares) against £294 million under the sale (£234 million of cash plus £60 million reinvested), while noting that most of the IPO figure is locked-up shares whose price can fall",
+      "Works out the headroom: her £60 million goal holds only while the bank's estimate stays above about £707 million, a fall of only about 12%, and notes that selling slightly more shares would cover a small shortfall",
+      "Notices that the buyer's offer is promised only until about month 3, four months before the IPO price is fixed, and asks the buyer to keep it open until pricing",
+      "Deals with the venture capital fund: in the IPO it sells 15% now and 25% after its six-month lock-up, within its two years, and those later sales may weigh on the share price",
+      "Uses the IPO as bargaining power to push the buyer for a better price or a smaller reinvestment, or suggests a minority stake sale as a middle route",
+      "If recommending the sale, explains how her first goal (staying in charge) would be protected, for example with board rights, a guaranteed product budget or a longer agreed term as chief executive, or why she should give it up",
+      "Notes that our bank earns more if Fennick lists, keeps the advice on the founder's goals, and suggests she takes independent advice on the choice"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify the goals: the founder owns 50% and wants, in order, to keep running Fennick and setting its strategy for at least five years, about £60 million of cash within a year, and as much future growth as she can keep. The venture capital fund (40%) must sell everything within two years. Tax is assumed equal under both routes.",
+    "Structure: her goals; the cash she gets now under each route; what she keeps; certainty, timing and risk; the other shareholders and the company; then the recommendation and how to run the process.",
+    "The sale: 50% of £600 million is £300 million; less 2% fees (£6 million) and 20% reinvested (£60 million) leaves £234 million of cash in about four months, plus about 14% of the buyer's new company. But the buyer would control the board, borrow £180 million (6 times EBITDA, about £15 million a year of interest, half of this year's EBITDA) and expects to sell Fennick again in four to six years.",
+    "The IPO: the £800 million estimate less the 12.5% discount is £700 million, £100 million above the offer, not £200 million. She sells 10% (a fifth of her shares) for £70 million, less 3% commission, so about £68 million in about seven months. She keeps 40%, worth £280 million at the IPO price but locked up for 12 months. On paper that is about £348 million against £294 million for the sale, but most of it is in shares whose price can move.",
+    "Risks: the IPO price is fixed only at the end of the bookbuild, just before listing at about month 7, but the buyer promises its offer only until about month 3. A 20% fall in software values cuts her cash to about £54 million, below her £60 million, and selling 10% her goal holds only while the estimate stays above about £707 million; selling a little more (about 11% of Fennick) would still cover it. Listing also adds about £2 million a year of costs, and the venture capital fund's further 25% after six months may weigh on the share price.",
+    "Recommendation: prepare the IPO as the preferred route, because in the bank's central case it meets all three of her goals, but keep the private equity offer open as a fallback and as bargaining power (running both is called a dual track). Decide at about month 3, after early investor meetings. If investors' view holds near £800 million, go ahead with the IPO. A fall does not by itself justify selling, because control is her first goal and selling a little more covers the cash: about 11% of Fennick, just over a fifth of her shares, still gives about £60 million even after a 20% fall. The real test is value. If the IPO price would fall below the buyer's £600 million (an estimate below about £686 million, a fall of about 14%), the buyer's offer values Fennick above the IPO and is more certain; if the market looks too weak to list at all, the sale may be the only route within the fund's two years. The bank should then put the choice between value and control to her, and push the buyer for a better price, a smaller reinvestment and protection for the product budget. The fallback lasts only until about month 3; after that a fall before listing could cut her cash below £60 million or postpone the IPO, so ask the buyer to keep its offer open until the IPO is priced, or agree with her now the lowest value at which she would still list. Next steps: hold the early investor meetings, ask the buyer to finish its checks in the first three months and keep its offer open until the IPO is priced, agree the lock-up and later sales with the venture capital fund, and ask the founder to take her own tax advice and, since our bank earns more from the IPO, independent advice on the choice."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

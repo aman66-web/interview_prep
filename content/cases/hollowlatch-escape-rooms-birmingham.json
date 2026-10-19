@@ -1,0 +1,293 @@
+{
+  "id": "case-035",
+  "slug": "hollowlatch-escape-rooms-birmingham",
+  "title": "Hollowlatch: why does its Birmingham venue lose money?",
+  "track": "consulting",
+  "type": "profitability",
+  "industry": "Leisure and entertainment",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 30,
+  "prompt": "Hollowlatch is a UK company that runs seven escape-room venues, where groups pay to solve puzzles against the clock in themed rooms. Six of its venues are comfortably profitable. The seventh, its newest, in Birmingham city centre, lost money again last year. The chief executive wants to know what is holding Birmingham back and what she should do about it before her board meets in three months. How would you approach this?",
+  "facts": [
+    {
+      "question_topic": "The company and how a game works",
+      "answer": "Hollowlatch runs seven venues: York, Leeds, Sheffield, Nottingham, Derby, Leicester and Birmingham. All are leased units run by the company itself. A group books a themed room for a 60-minute game; a host watches on camera, gives hints and resets the room afterwards."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The chief executive wants to understand the gap and decide what to do within three months, when the board will decide on next year's plans. She wants Birmingham's site profit (before head-office costs) at least to break even next year and, ideally, to earn what an average site earns. Selling the company is not being considered."
+    },
+    {
+      "question_topic": "Birmingham's history",
+      "answer": "Birmingham opened three years ago in a large city-centre unit, the first site built to a new, bigger format. Games played grew quickly for about 18 months and have been roughly flat for the past 18 months, so it is no longer ramping up."
+    },
+    {
+      "question_topic": "Expansion plans",
+      "answer": "Before this question came up, the board planned to open two more large city-centre sites on the Birmingham format next year. That plan is on hold until the chief executive has an answer."
+    },
+    {
+      "question_topic": "Rooms and capacity",
+      "answer": "Birmingham has eight rooms; the other six sites have four each. Every site has the same opening hours, longer at weekends than on weekdays. A room can run up to 40 games a week: 20 at peak times (Friday evening to Sunday) and 20 off-peak (Monday to Thursday, and Friday daytime). Sites trade 50 weeks a year, so a room can run up to 2,000 games a year. Leeds and Leicester have unused space that could take a fifth room. Hollowlatch tracks the share of game slots filled by time of week."
+    },
+    {
+      "question_topic": "Prices",
+      "answer": "Prices are the same at every site, including Birmingham: about £25 a player, and groups average about four players, so a game brings in about £100. There are no off-peak prices or weekday offers. All figures exclude VAT."
+    },
+    {
+      "question_topic": "Customers",
+      "answer": "Customers are mostly groups of friends, families and birthday parties, who come in the evenings and at weekends. Hollowlatch has almost no corporate team-building, school or university bookings, and nobody selling to them. A few companies near the Birmingham site, which is surrounded by large offices, have asked about weekday team events. Hollowlatch's team counted about 100 offices with 50 or more staff within a mile of the site; it has no data on how often they would book, so the candidate's own assumptions are welcome."
+    },
+    {
+      "question_topic": "Repeat visits",
+      "answer": "A group usually plays each room once. About a third of Birmingham's groups have played another of its rooms before. The operations team's estimate of games lost if rooms close already allows for this."
+    },
+    {
+      "question_topic": "Demand at peak times",
+      "answer": "The other six sites are almost fully booked on most Friday evenings and weekends, and regularly turn groups away. Birmingham is rarely fully booked, even on Saturdays."
+    },
+    {
+      "question_topic": "Competition",
+      "answer": "Birmingham has three other escape-room venues within a mile. Each of the other Hollowlatch sites has one or two nearby."
+    },
+    {
+      "question_topic": "Customer satisfaction",
+      "answer": "Review ratings (4.6 to 4.8 out of 5) and group sizes (about four players) are much the same at every site, Birmingham included."
+    },
+    {
+      "question_topic": "Cost structure",
+      "answer": "Variable costs are about £20 a game at every site: online booking and card fees, pay for the casual hosts who are booked only when games are booked, and consumables such as printed clues, batteries and cleaning. Everything else is fixed and does not change with the number of games: rent, the core staff rota, and other fixed costs (business rates, energy, maintenance and local marketing). Site profit is before depreciation of the cost of building the rooms. A profit and loss by site is available."
+    },
+    {
+      "question_topic": "Staff rota",
+      "answer": "Each site has a manager, front-desk staff and a core team of hosts on a fixed weekly rota, set by the opening hours and the number of rooms, and paid however many games are booked. Casual hosts on hourly pay are booked on top, only for games that are actually booked; their pay is part of the £20 variable cost."
+    },
+    {
+      "question_topic": "Head-office costs",
+      "answer": "Head-office costs (the central team, the booking website and game design) are about £520,000 a year and are not included in the site figures. Hollowlatch as a whole made a profit of about £40,000 last year."
+    },
+    {
+      "question_topic": "Birmingham's lease",
+      "answer": "The Birmingham lease has seven years left and no break clause; the rent is about £320,000 a year. Closing the whole site would not end the lease: the rent would still be due, because the landlord does not expect anyone to take the whole unit. Business rates on the empty unit (about £60,000 a year, part of Birmingham's other fixed costs) would also still be due. Every other site cost would stop."
+    },
+    {
+      "question_topic": "Subletting part of the unit",
+      "answer": "The gym next door wants to take part of the unit, and the landlord agrees. Subletting the space of three rooms would bring in about £120,000 a year, cutting Hollowlatch's net rent by that much; Hollowlatch would still owe the landlord the full rent if the gym stopped paying. The gym wants an answer within three months, and once the space is let it cannot be taken back during the lease."
+    },
+    {
+      "question_topic": "What closing three rooms would change",
+      "answer": "Running five rooms instead of eight would cut the core rota by about £60,000 a year and other fixed costs by about £40,000. These fall by less than Birmingham's average cost per room, because the manager, the front desk and the running costs of the shared areas stay whatever the number of rooms. The operations team estimates that about 10 games a week (500 a year) would be lost, from peak groups who cannot get a slot, and about 10 more a week would move to off-peak times. Taking the three room sets down costs very little."
+    },
+    {
+      "question_topic": "Building cost",
+      "answer": "Birmingham's eight rooms cost about £1.5 million to build three years ago. That money has been spent whatever Hollowlatch decides now."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Revenue: games played (rooms x slots x share of slots filled) x revenue per game",
+      "Costs: variable costs per game versus fixed costs (rent, core staff rota, other fixed costs)",
+      "Comparison: Birmingham against the other sites, per site, per room and per game",
+      "Capacity and demand: slots filled at peak and off-peak, customer mix, local competition",
+      "Options as chief executive: grow demand, reshape capacity and the lease, and what it means for the planned new sites"
+    ],
+    "good_signs": [
+      "Repeats the question back and confirms both parts: what is holding Birmingham back, and what the chief executive should do about it",
+      "Says what data it needs before asking for it, and states assumptions out loud (for example, the same prices and variable costs at every site) before checking them",
+      "Separates fixed from variable costs, and asks which fixed costs could actually be avoided (the lease)",
+      "Compares Birmingham with the other sites like for like, per room and per game, not just in totals",
+      "States a hypothesis early and changes it when the data shows Birmingham plays the most games",
+      "Asks about the planned new sites, because the answer decides how the chain should expand"
+    ],
+    "red_flags": [
+      "Assumes Birmingham has fewer customers than the other sites and never checks games played or slots filled",
+      "Blames city-centre rent alone without checking costs and games per room",
+      "Recommends closing Birmingham outright without asking about the lease",
+      "Lets the £1.5 million already spent on building the rooms drive the decision",
+      "Spreads head-office costs across the sites, which muddies the comparison"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "site-profit",
+      "title": "Revenue and profit by site last year, before head-office costs (£ thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Site", "Revenue", "Site profit"],
+        "rows": [
+          ["York", 560, 110],
+          ["Leeds", 640, 140],
+          ["Sheffield", 610, 120],
+          ["Nottingham", 580, 110],
+          ["Derby", 590, 120],
+          ["Leicester", 620, 120],
+          ["Birmingham", 800, -160],
+          ["All seven sites", 4400, 560]
+        ]
+      },
+      "reveal_hint": "Ask for revenue and profit by site, or a comparison of Birmingham with the other sites.",
+      "insight": "Birmingham has the highest revenue in the chain, a third more than the average other site (£600k), yet it is the only site that loses money. The other six each make £110k to £140k, about 20% of revenue. So Birmingham does not have fewer customers than the other sites; it has more. A candidate who assumed it simply attracts too few customers should rethink and ask what else is bigger at Birmingham (rooms and fixed costs). If Birmingham only broke even, site profit would be £720k instead of £560k and, after £520k of head-office costs, the company would make £200k instead of £40k."
+    },
+    {
+      "id": "birmingham-vs-others",
+      "title": "Birmingham versus the average of the other six sites, last year",
+      "kind": "table",
+      "data": {
+        "columns": ["Line", "Other six sites (average)", "Birmingham"],
+        "rows": [
+          ["Rooms", 4, 8],
+          ["Games played", 6000, 8000],
+          ["Revenue per game (£)", 100, 100],
+          ["Variable cost per game (£)", 20, 20],
+          ["Revenue (£ thousand)", 600, 800],
+          ["Variable costs (£ thousand)", 120, 160],
+          ["Rent (£ thousand)", 100, 320],
+          ["Core staff rota (£ thousand)", 180, 300],
+          ["Other fixed costs (£ thousand)", 80, 180],
+          ["Site profit (£ thousand)", 120, -160]
+        ]
+      },
+      "reveal_hint": "Ask for Birmingham's costs and volumes against the other sites, or for costs split into fixed and variable.",
+      "insight": "Birmingham plays a third more games (8,000 against 6,000) at the same price and the same variable cost, so every game adds the same £80. But it has twice the rooms, and its fixed costs are £800k against £360k (2.2 times). Per room it plays 1,000 games against 1,500, has £100k of fixed costs against £90k, and makes a loss of £20k against a profit of £30k. Rent per room is higher (£40k against £25k), but staff and other fixed costs per room are slightly lower (£60k against £65k). The main problem is too many rooms for the games played: even at the other sites' rent per room (£200k in total), Birmingham would still lose £40k."
+    },
+    {
+      "id": "slots-filled",
+      "title": "Share of game slots filled last year, by time of week",
+      "kind": "table",
+      "data": {
+        "columns": ["Time of week", "Slots per room per week", "Other six sites (average), % filled", "Birmingham, % filled"],
+        "rows": [
+          ["Peak (Friday evening to Sunday)", 20, 95, 70],
+          ["Off-peak (Monday to Thursday, Friday daytime)", 20, 55, 30],
+          ["All week", 40, 75, 50]
+        ]
+      },
+      "reveal_hint": "Ask how full the rooms are, about capacity or utilisation, or about demand by day or time of week.",
+      "insight": "Birmingham fills 50% of its slots against 75% elsewhere; it breaks even at 62.5%. At peak it plays about 112 games a week (more than an average site's 76) but still leaves 48 peak slots empty. Off-peak it plays about 48 games a week, about the same as an average four-room site's 44, spread over twice the rooms, so only 30% are filled and 112 off-peak slots a week sit empty. The other sites are limited by peak capacity (they turn groups away); Birmingham has more rooms than its demand can fill, above all on weekdays. Breaking even with eight rooms needs about 40 more games a week."
+    }
+  ],
+  "math": [
+    {
+      "id": "breakeven-games",
+      "question": "How many games a year does Birmingham need to play for its site profit, before head-office costs, to break even?",
+      "inputs": {
+        "rent": 320,
+        "staff": 300,
+        "other_fixed": 180,
+        "revenue_per_game": 100,
+        "variable_per_game": 20
+      },
+      "expression": "(rent + staff + other_fixed) * 1000 / (revenue_per_game - variable_per_game)",
+      "expected": 10000,
+      "tolerance_pct": 2,
+      "working": "Fixed costs are £800k (320 + 300 + 180). Each game brings in £100 and costs £20 more to run, so it contributes £80. £800,000 / £80 = 10,000 games: 2,000 (25%) more than the 8,000 played now, about 40 more a week over 50 weeks. That is 62.5% of Birmingham's 16,000 slots (8 rooms x 2,000), against 50% filled today. Head-office costs are left out, because the chief executive's target is site profit.",
+      "input_sources": [
+        { "input": "rent", "exhibit_id": "birmingham-vs-others", "row": 6, "column": "Birmingham" },
+        { "input": "staff", "exhibit_id": "birmingham-vs-others", "row": 7, "column": "Birmingham" },
+        { "input": "other_fixed", "exhibit_id": "birmingham-vs-others", "row": 8, "column": "Birmingham" },
+        { "input": "revenue_per_game", "exhibit_id": "birmingham-vs-others", "row": 2, "column": "Birmingham" },
+        { "input": "variable_per_game", "exhibit_id": "birmingham-vs-others", "row": 3, "column": "Birmingham" }
+      ]
+    },
+    {
+      "id": "room-gap-from-fewer-games",
+      "question": "Compare profit per room at Birmingham with the average of the other six sites. What percentage of that gap is explained by Birmingham playing fewer games per room, rather than by higher fixed costs per room?",
+      "inputs": {
+        "games_others": 6000,
+        "rooms_others": 4,
+        "games_bham": 8000,
+        "rooms_bham": 8,
+        "revenue_per_game": 100,
+        "variable_per_game": 20,
+        "profit_others": 120,
+        "profit_bham": -160
+      },
+      "expression": "(games_others / rooms_others - games_bham / rooms_bham) * (revenue_per_game - variable_per_game) / 1000 / (profit_others / rooms_others - profit_bham / rooms_bham) * 100",
+      "expected": 80,
+      "tolerance_pct": 3,
+      "working": "Profit per room is £30k at an average other site (120 / 4) and a £20k loss at Birmingham (-160 / 8): a £50k gap. Birmingham plays 1,000 games per room against 1,500, and each game contributes £80, so the missing 500 games cost £40k per room. Fixed costs per room are £100k (800 / 8) against £90k (360 / 4), only £10k more: rent is £15k a room higher, partly offset by £5k lower staff and other costs. £40k / £50k = 80%.",
+      "input_sources": [
+        { "input": "games_others", "exhibit_id": "birmingham-vs-others", "row": 1, "column": "Other six sites (average)" },
+        { "input": "rooms_others", "exhibit_id": "birmingham-vs-others", "row": 0, "column": "Other six sites (average)" },
+        { "input": "games_bham", "exhibit_id": "birmingham-vs-others", "row": 1, "column": "Birmingham" },
+        { "input": "rooms_bham", "exhibit_id": "birmingham-vs-others", "row": 0, "column": "Birmingham" },
+        { "input": "revenue_per_game", "exhibit_id": "birmingham-vs-others", "row": 2, "column": "Other six sites (average)" },
+        { "input": "variable_per_game", "exhibit_id": "birmingham-vs-others", "row": 3, "column": "Other six sites (average)" },
+        { "input": "profit_others", "exhibit_id": "birmingham-vs-others", "row": 9, "column": "Other six sites (average)" },
+        { "input": "profit_bham", "exhibit_id": "birmingham-vs-others", "row": 9, "column": "Birmingham" }
+      ]
+    },
+    {
+      "id": "profit-after-subletting",
+      "question": "If Hollowlatch sublets the space of three Birmingham rooms to the gym, what would Birmingham's yearly site profit be, in £ thousand?",
+      "inputs": {
+        "profit_bham": -160,
+        "rent_saving": 120,
+        "staff_saving": 60,
+        "other_saving": 40,
+        "games_lost": 500,
+        "revenue_per_game": 100,
+        "variable_per_game": 20
+      },
+      "expression": "profit_bham + rent_saving + staff_saving + other_saving - games_lost * (revenue_per_game - variable_per_game) / 1000",
+      "expected": 20,
+      "tolerance_pct": 5,
+      "working": "Fixed costs fall by £220k (£120k rent, £60k rota, £40k other). About 10 games a week are lost, 500 a year, at £80 each: £40k. -160 + 220 - 40 = a profit of about £20k. With five rooms and about 7,500 games, Birmingham would fill about 75% of its 10,000 slots (about 92% at peak and 58% off-peak), like the other sites overall, but it would still earn far less than an average site's £120k, because its fixed costs per room (£116k) stay higher than theirs (£90k).",
+      "input_sources": [
+        { "input": "profit_bham", "exhibit_id": "birmingham-vs-others", "row": 9, "column": "Birmingham" },
+        { "input": "revenue_per_game", "exhibit_id": "birmingham-vs-others", "row": 2, "column": "Birmingham" },
+        { "input": "variable_per_game", "exhibit_id": "birmingham-vs-others", "row": 3, "column": "Birmingham" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "Beyond subletting rooms, what could Hollowlatch do to raise Birmingham's profit, and what should the whole chain learn from it?",
+    "idea_bank": [
+      "Sell weekday daytime team-building packages to the offices around the Birmingham site, with a part-time salesperson",
+      "Introduce off-peak prices or weekday offers to attract new groups and move some peak groups to quieter times",
+      "Win school, university and youth-group bookings for term-time weekdays",
+      "Offer birthday-party and private-hire packages that book several rooms at once",
+      "Open only some rooms on quiet weekdays and cut the core rota to match, so part of the fixed staff cost follows demand",
+      "Raise peak prices at the six sites that are full at weekends and turn groups away",
+      "Move the room sets taken out of Birmingham (or one or two of its games) into the spare fifth-room space at Leeds or Leicester, which turn groups away at peak",
+      "Replace the least-booked rooms with new games to bring past customers back",
+      "Run two-room head-to-head games for larger groups and events",
+      "Sell gift vouchers and market more in Birmingham to compete with the three nearby venues",
+      "Ask the landlord for a lower rent on the remaining space as part of the gym deal",
+      "Size future sites to tested demand (four or five rooms to start), and commit the two planned sites to eight rooms only with evidence that the city can fill them",
+      "Track the share of slots filled at peak and off-peak at every site each month"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "Birmingham does not have fewer customers than the other sites (it plays the most games and has the highest revenue); it has too much capacity for its demand: twice the rooms and £800k of fixed costs against £360k, so it fills only 50% of its slots against 75% elsewhere",
+      "It needs 10,000 games a year (62.5% of its slots) to break even, 2,000 more than now, and about 80% of the per-room profit gap comes from fewer games per room rather than higher costs per room",
+      "A clear recommendation as chief executive, for example sublet three rooms (about £20k profit instead of a £160k loss) and fill the off-peak slots, and do not commit the two planned sites to eight rooms without evidence that each city can fill them"
+    ],
+    "good_signs": [
+      "Good answer: 'cut Birmingham's costs'. Better answer: explains that its costs per room are close to the other sites', so the fix is matching rooms to demand (fewer rooms, or many more weekday games), and applies the lesson to the expansion plan",
+      "Explains why closing the whole site would make things worse: the £320k rent and about £60k of business rates on the empty unit would still be due, so the loss would rise from £160k to about £380k; even closing and subletting the gym's share would leave a loss of well over £200k",
+      "Ignores the £1.5 million already spent on the rooms (a sunk cost) when deciding",
+      "Weighs the sublet against trying to fill all eight rooms: the sublet is certain and quick, while breaking even with eight rooms needs about 40 more games a week, mostly off-peak, where games would have to rise from about 48 to nearly 90 a week from customers Hollowlatch barely serves today. After the sublet, five rooms would be about 92% full at peak but still have about 42 empty off-peak slots a week, so the sublet gives up only peak headroom: that is the real cost of a choice that cannot be undone",
+      "Tests corporate demand with its own assumptions: 2,000 more games a year means about 20 a year from each of the roughly 100 large offices nearby (for example, four team events of five groups each), and says whether that looks realistic when Hollowlatch has almost no corporate bookings today",
+      "Commits to an answer and says what would change it, for example strong early corporate demand before the gym's three-month deadline",
+      "Looks beyond Birmingham: the other six sites turn groups away at peak, so the chain has too much capacity in one place and too little in others (peak prices, or a fifth room at Leeds or Leicester, perhaps using the room sets taken out of Birmingham)",
+      "Notes that Birmingham's three nearby rivals mean one site does not prove the eight-room format fails everywhere, which is why new sites should be sized to demand and tested first",
+      "Names risks (losing more than 10 peak games a week, at about £40k a year for each 10; the sublet cannot be undone; if the gym stops paying, Hollowlatch loses the £120k a year but still owes the full rent) and next steps (confirm terms with the landlord and the gym, a corporate sales trial, monthly tracking of slots filled)"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify and play back the question: what is holding Birmingham back, and what should the chief executive do about it before the board meets in three months? Confirm the facts: seven leased sites, six profitable; Birmingham is the newest and has eight rooms against four, the same prices (about £100 a game) and the same variable cost (£20 a game), and it is no longer ramping up. The goal: Birmingham's site profit (before head-office costs) at least breaks even next year, ideally reaching an average site's, with two more large sites on hold. Opening hypotheses: weak demand, or high city-centre rent.",
+    "Structure: site profit = games x (revenue per game - variable cost per game) - fixed costs, where games = rooms x slots x share filled. Compare Birmingham with an average site per room and per game, then look at options on demand, capacity and the lease, and what it means for the expansion plan.",
+    "Rethink the hypothesis: Birmingham has the highest revenue (£800k against £600k on average) and plays the most games (8,000 against 6,000), so it does not have fewer customers than the other sites. It has twice the rooms and fixed costs of £800k against £360k. Each game contributes £80, so it needs 10,000 games to break even, 62.5% of its 16,000 slots, against 8,000 (50%) today. Ratings and group sizes match the other sites, so quality is not the cause.",
+    "Per room, an average site makes £30k and Birmingham loses £20k. About 80% of the £50k gap is fewer games per room (1,000 against 1,500); only 20% is higher fixed cost per room: rent is £15k a room higher, partly offset by £5k lower staff and other costs. Even at the other sites' rent per room it would lose £40k. Slots filled are 70% at peak and 30% off-peak, against 95% and 55%: Birmingham's off-peak games (about 48 a week) are about the same as a four-room site's 44, spread over eight rooms, while the other sites turn groups away at peak.",
+    "Options: closing the site outright is worse, because the £320k rent and about £60k of business rates are still due (a loss of about £380k against £160k today, and still well over £200k even with the gym's sublet); the £1.5 million build cost is sunk and should not affect the choice. Subletting three rooms to the gym saves £220k of fixed costs for about £40k of lost contribution, giving a profit of about £20k, with five rooms about 75% full like the other sites: about 92% at peak, with about 42 empty off-peak slots a week, so it gives up only peak headroom. Keeping all eight rooms and breaking even needs about 40 more games a week, nearly doubling off-peak games from customers Hollowlatch barely serves today; spread over the roughly 100 large offices nearby, that is about 20 games a year each.",
+    "Recommendation: accept the gym's sublet before its deadline, because it fixes most of the loss reliably, and grow off-peak demand in the remaining five rooms with corporate team events, schools and off-peak offers (each extra 10 games a week adds about £40k a year), opening fewer rooms on quiet days. Reaching an average site's £120k in five rooms needs about 25 more games a week, taking off-peak slots filled from about 58% to about 83%, well above the other sites' 55%, so break-even is the firm target and the corporate trial tests how far beyond it Birmingham can go. Across the chain, use peak prices at the sites that turn groups away, and consider moving the room sets taken out of Birmingham into the spare fifth-room space at Leeds or Leicester. Do not commit the two planned sites to eight rooms without evidence that each city can fill them (at Birmingham's costs, about 10,000 games a year just to break even): size new sites to tested demand, four or five rooms to start.",
+    "Risks: losing more peak games than expected (about £40k a year for each 10 a week), the three nearby competitors, the sublet cannot be undone, and if the gym stops paying Hollowlatch loses the £120k a year but still owes the full rent. Next steps: agree terms with the landlord and the gym, start a corporate sales trial before the deadline, and track slots filled by time of week every month."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

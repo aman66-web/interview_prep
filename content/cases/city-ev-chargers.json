@@ -1,0 +1,237 @@
+{
+  "id": "case-003",
+  "slug": "city-ev-chargers",
+  "title": "How many public EV chargers will a city need?",
+  "track": "consulting",
+  "type": "market_sizing",
+  "industry": "Energy and mobility",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 20,
+  "prompt": "A US city of one million people wants to plan its public charging network for electric vehicles (EVs). Today it has 240 public charging points. The mayor asks: how many public charging points will the city need in five years' time, and so how many more should it plan to add? Estimate the numbers and explain how you got there.",
+  "facts": [
+    {
+      "question_topic": "Population and households",
+      "answer": "The city has 1,000,000 residents living in 400,000 households. Assume the number of households stays the same over the five years."
+    },
+    {
+      "question_topic": "EV adoption",
+      "answer": "About 3% of households own an EV today. In five years, 10% of households will own one. Assume one EV per owning household."
+    },
+    {
+      "question_topic": "Home charging",
+      "answer": "70% of EV-owning households can charge at home, for example in a garage or on a driveway. The other 30% cannot, mostly because they live in apartments without their own parking space, so they rely on public chargers for all their charging. Assume these shares stay the same over the five years."
+    },
+    {
+      "question_topic": "EV owners who can charge at home",
+      "answer": "They use public chargers only now and then, mostly fast chargers on long trips outside the city. Leave them out of the base estimate; you may mention them as a risk."
+    },
+    {
+      "question_topic": "Scope",
+      "answer": "Count only residents' EVs. Ignore visitors, commuters from outside the city, taxis, ride-hailing cars and delivery fleets."
+    },
+    {
+      "question_topic": "Time horizon",
+      "answer": "Estimate the need five years from now, then compare it with the 240 charging points the city has today."
+    },
+    {
+      "question_topic": "What counts as a charging point",
+      "answer": "One charging point charges one vehicle at a time. A site with four plugs that can all be used at once counts as four charging points."
+    },
+    {
+      "question_topic": "Charger types",
+      "answer": "There are two types. Level 2 chargers are slower and suit stops of a few hours, such as overnight on a residential street or during a working day. DC fast chargers give a top-up in well under an hour. There is a table showing how demand splits between the two types, how many EVs one charger can serve and how many of each the city has today."
+    },
+    {
+      "question_topic": "How many EVs one charger can serve",
+      "answer": "The figures in the table are the number of EVs whose charging one charger can meet in full, and they already allow for busy times so that drivers rarely wait. A DC fast charger is much quicker, but it serves only about four times as many EVs as a Level 2 charger, because drivers use fast chargers mostly at peak times and will not queue for long."
+    },
+    {
+      "question_topic": "City goal",
+      "answer": "The mayor wants enough public chargers that an EV owner without home charging rarely has to wait."
+    },
+    {
+      "question_topic": "Cost and budget",
+      "answer": "Not part of this question. The city will cost the plan once it knows how many charging points it needs."
+    },
+    {
+      "question_topic": "Charger downtime",
+      "answer": "Ignore downtime and maintenance in the base estimate. You may mention it as a risk."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Demand: from households to EV owners in five years",
+      "Who relies on public charging (owners who cannot charge at home)",
+      "How that demand splits between Level 2 and DC fast chargers",
+      "Supply: how many EVs one charger of each type can serve",
+      "The gap: the need in five years against the 240 charging points today",
+      "Sense-check of the final number"
+    ],
+    "good_signs": [
+      "States each assumption clearly and checks it with the interviewer",
+      "Splits the problem into demand (who needs public charging) and supply (what each charger can serve)",
+      "Treats Level 2 and DC fast separately because they serve different needs at different speeds",
+      "Rounds numbers to keep the maths simple",
+      "Sense-checks the answer, for example chargers per 1,000 residents, or by applying the same method to today's 3% adoption and comparing the result with the 240 charging points the city already has"
+    ],
+    "red_flags": [
+      "Starts calculating without a structure",
+      "Mixes up people and households",
+      "Treats every EV owner as a public-charging user, forgetting that most charge at home",
+      "Gives the total need but never compares it with the charging points the city already has",
+      "Gives a number without any sense-check"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "charger-types",
+      "title": "Public charging by charger type (case assumptions)",
+      "kind": "table",
+      "data": {
+        "columns": ["Charger type", "Share of public charging demand (%)", "EVs one charger can fully serve", "Public charging points today"],
+        "rows": [
+          ["Level 2 (slow)", 60, 10, 200],
+          ["DC fast", 40, 40, 40]
+        ]
+      },
+      "reveal_hint": "Ask how public charging demand splits between Level 2 and DC fast chargers, how many EVs one charger can serve, or how many chargers of each type the city has today.",
+      "insight": "Level 2 chargers make up most of the need (720 of 840) and most of the build (520 of the 600 to add), even though DC fast chargers carry 40% of demand, because each fast charger serves four times as many EVs. The city needs 3.5 times today's network."
+    }
+  ],
+  "math": [
+    {
+      "id": "evs-in-city",
+      "question": "How many EVs will the city's residents own in five years?",
+      "inputs": {
+        "households": 400000,
+        "ev_share_pct": 10
+      },
+      "expression": "households * ev_share_pct / 100",
+      "expected": 40000,
+      "tolerance_pct": 2,
+      "working": "10% of 400,000 households is 40,000 EVs (one per owning household)."
+    },
+    {
+      "id": "evs-needing-public-charging",
+      "question": "How many of those EVs will rely on public charging?",
+      "inputs": {
+        "evs": 40000,
+        "no_home_charging_pct": 30
+      },
+      "expression": "evs * no_home_charging_pct / 100",
+      "expected": 12000,
+      "tolerance_pct": 2,
+      "working": "30% of the 40,000 EVs cannot charge at home: 12,000 EVs."
+    },
+    {
+      "id": "level2-chargers",
+      "question": "How many Level 2 charging points will the city need in five years?",
+      "inputs": {
+        "public_evs": 12000,
+        "l2_share_pct": 60,
+        "evs_per_l2": 10
+      },
+      "expression": "public_evs * l2_share_pct / 100 / evs_per_l2",
+      "expected": 720,
+      "tolerance_pct": 3,
+      "working": "60% of the demand from 12,000 EVs is the charging needs of 7,200 EVs. One Level 2 charger fully serves 10 EVs, so 7,200 / 10 = 720 chargers.",
+      "input_sources": [
+        { "input": "l2_share_pct", "exhibit_id": "charger-types", "row": 0, "column": "Share of public charging demand (%)" },
+        { "input": "evs_per_l2", "exhibit_id": "charger-types", "row": 0, "column": "EVs one charger can fully serve" }
+      ]
+    },
+    {
+      "id": "dc-fast-chargers",
+      "question": "How many DC fast charging points will the city need in five years?",
+      "inputs": {
+        "public_evs": 12000,
+        "dc_share_pct": 40,
+        "evs_per_dc": 40
+      },
+      "expression": "public_evs * dc_share_pct / 100 / evs_per_dc",
+      "expected": 120,
+      "tolerance_pct": 3,
+      "working": "40% of the demand from 12,000 EVs is the charging needs of 4,800 EVs. One DC fast charger fully serves 40 EVs, so 4,800 / 40 = 120 chargers.",
+      "input_sources": [
+        { "input": "dc_share_pct", "exhibit_id": "charger-types", "row": 1, "column": "Share of public charging demand (%)" },
+        { "input": "evs_per_dc", "exhibit_id": "charger-types", "row": 1, "column": "EVs one charger can fully serve" }
+      ]
+    },
+    {
+      "id": "total-chargers",
+      "question": "How many public charging points will the city need in total in five years?",
+      "inputs": {
+        "l2": 720,
+        "dc": 120
+      },
+      "expression": "l2 + dc",
+      "expected": 840,
+      "tolerance_pct": 3,
+      "working": "720 Level 2 plus 120 DC fast is 840 charging points: about 0.84 per 1,000 residents, or one for every 14 EVs that rely on public charging."
+    },
+    {
+      "id": "chargers-to-add",
+      "question": "How many more public charging points must the city add over the five years?",
+      "inputs": {
+        "l2": 720,
+        "dc": 120,
+        "l2_today": 200,
+        "dc_today": 40
+      },
+      "expression": "l2 + dc - l2_today - dc_today",
+      "expected": 600,
+      "tolerance_pct": 3,
+      "working": "The city needs 840 and has 240 today (200 Level 2 and 40 DC fast), so it must add about 600: 520 Level 2 and 80 DC fast, or roughly 120 a year.",
+      "input_sources": [
+        { "input": "l2_today", "exhibit_id": "charger-types", "row": 0, "column": "Public charging points today" },
+        { "input": "dc_today", "exhibit_id": "charger-types", "row": 1, "column": "Public charging points today" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could make the real number of chargers needed higher or lower than your estimate, and what would you do about it?",
+    "idea_bank": [
+      "Faster EV adoption than 10%, for example from incentives or falling car prices",
+      "Later EV buyers being more likely to live in apartments, so more than 30% cannot charge at home",
+      "More residents able to charge at home after apartment parking is fitted with chargers, which lowers demand",
+      "Residents who charge at home still using public fast chargers now and then",
+      "Visitors, commuters and tourists adding demand",
+      "Taxi, ride-hailing and delivery fleets using public chargers heavily",
+      "Workplace charging reducing the need for public chargers",
+      "Longer vehicle range, which means less frequent charging",
+      "Charger downtime and maintenance raising the number needed",
+      "Location: chargers far from apartment-heavy neighbourhoods sit idle while others have queues",
+      "Grid capacity limits in some neighbourhoods, especially for DC fast chargers",
+      "Pricing and time-of-day rules spreading charging across the day, so each charger serves more EVs"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "A final estimate of about 840 public charging points in five years, roughly 720 Level 2 and 120 DC fast",
+      "The gap: about 600 more than the 240 today, most of them Level 2",
+      "The key assumptions (10% adoption and 30% without home charging) and a sensitivity, such as what happens at 15% adoption"
+    ],
+    "good_signs": [
+      "Gives a range as well as a point estimate",
+      "Identifies which assumption matters most (adoption and the share without home charging)",
+      "Says where the new Level 2 chargers should go: close to homes without off-street parking",
+      "Recommends phasing the build, about 120 a year, and resizing it each year",
+      "Suggests how to validate the estimate, for example usage data from today's chargers, utility records or comparable cities"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: residents' EVs only, five years out; a charging point charges one vehicle at a time; the city has 240 today.",
+    "Structure: demand (EVs that rely on public charging) divided by supply (EVs one charger can serve), split by charger type, then compared with today's network.",
+    "Demand: 1,000,000 residents in 400,000 households; 10% own an EV in five years, so 40,000 EVs. 30% cannot charge at home, so 12,000 EVs rely on public chargers.",
+    "By type: 60% of demand is Level 2 (the needs of 7,200 EVs, at 10 per charger, is 720 chargers); 40% is DC fast (4,800 EVs at 40 per charger is 120 chargers). Total about 840.",
+    "Sense-check: about 0.84 per 1,000 residents, or one charger for every 14 EVs that depend on them. The same method at today's 3% adoption gives about 250 chargers, close to the 240 the city has, so the capacity figures look sensible.",
+    "Gap: the city must add about 600 charging points, 520 Level 2 and 80 DC fast, roughly 120 a year. Most should be Level 2 chargers near apartments without off-street parking.",
+    "Sensitivities: 15% adoption would mean about 1,260 in total; if 40% could not charge at home, about 1,120. Fleets and visitors would add more. Recommend phasing the build at about 120 a year and resizing it each year with usage data."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

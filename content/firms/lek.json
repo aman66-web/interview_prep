@@ -1,0 +1,203 @@
+{
+  "slug": "lek",
+  "name": "L.E.K. Consulting",
+  "status": "ready",
+  "sector": "consulting",
+  "short_name": "L.E.K.",
+  "seo_title": "L.E.K. case interview: what to expect",
+  "description": "What L.E.K.'s own careers pages say about its online assessments, case interviews and how to prepare, each line linked to its source.",
+  "updated": "2026-10-16",
+  "intro": "This guide sums up what L.E.K. Consulting's own careers pages say about applying and interviewing, from how to apply to how L.E.K. suggests you prepare. It reflects those pages as we checked them on 16 October 2026. Processes differ by programme, role and country, so check L.E.K.'s careers site for your role before you apply.",
+  "sections": [
+    {
+      "heading": "How to apply",
+      "items": [
+        {
+          "text": "L.E.K. says it reviews every application it receives.",
+          "source": "lek-apply"
+        },
+        {
+          "text": "L.E.K. says candidates can apply to only one of its offices worldwide in any one year.",
+          "source": "lek-apply"
+        }
+      ]
+    },
+    {
+      "heading": "What L.E.K. looks for",
+      "items": [
+        {
+          "text": "L.E.K. says many of its people join straight from university or business school, while others come from different careers, some after several.",
+          "source": "lek-apply"
+        },
+        {
+          "text": "For its 2027 London entry-level Generalist Associate role, L.E.K. says it expects applicants to be working at 2:1 or above in their degree.",
+          "source": "lek-london-associate-2027"
+        },
+        {
+          "text": "L.E.K.'s recruitment privacy notice says that for consulting and certain core services applicants to its London offices it may use automated decision-making based on minimum grades: a 2:1 undergraduate degree and AAB at A level, with an A in Maths if taken, plus fluent English, or the equivalent. Applicants who fall short get an automatic rejection email and can ask for a human to review the decision.",
+          "source": "lek-privacy-recruitment"
+        },
+        {
+          "text": "For its 2027 London entry-level Generalist Associate role, L.E.K. says it recruits from a wide range of disciplines in both the arts and the sciences and does not require existing technical skills.",
+          "source": "lek-london-associate-2027"
+        },
+        {
+          "text": "For its 2027 London entry-level Generalist Associate role, L.E.K. says it looks for intellectual curiosity, logical and structured thinking, and the creativity to look beyond the obvious.",
+          "source": "lek-london-associate-2027"
+        }
+      ]
+    },
+    {
+      "heading": "Online assessments",
+      "items": [
+        {
+          "text": "For its 2027 London entry-level Generalist Associate role, L.E.K. says selected applicants are invited to online assessments, followed by a series of interviews.",
+          "source": "lek-london-associate-2027"
+        },
+        {
+          "text": "For its London Summer Associate internship, L.E.K. says selected applicants take online tests and then a series of interviews.",
+          "source": "lek-london-summer-associate-2027"
+        },
+        {
+          "text": "For its London Life Sciences Specialist roles (PhD and MD applicants only), L.E.K. asks for a CV and covering letter and says selected applicants are invited to a numerical reasoning test, followed by a series of interviews.",
+          "source": "lek-london-lss-2027"
+        },
+        {
+          "text": "L.E.K.'s recruitment privacy notice says it may share candidates' contact details with Applied, an online assessment provider, for certain London vacancies.",
+          "source": "lek-privacy-recruitment"
+        },
+        {
+          "text": "For its US Consultant 2027 role, where it says candidates are typically MBA students, L.E.K. says candidates must complete an online assessment as part of selection.",
+          "source": "lek-us-consultant-2027"
+        }
+      ]
+    },
+    {
+      "heading": "Interviews and case studies",
+      "items": [
+        {
+          "text": "L.E.K. says selected candidates attend several rounds of interviews, which cover case studies and questions about their professional background.",
+          "source": "lek-apply"
+        },
+        {
+          "text": "L.E.K. says its interview process differs slightly by region and by level, but generally has several rounds that mix experiential and case interviews, with both quantitative and strategic cases possible.",
+          "source": "lek-apply"
+        },
+        {
+          "text": "L.E.K. says its interviews aim to get to know candidates, learn how they think about business issues, and understand their motivation for consulting and for L.E.K.",
+          "source": "lek-apply"
+        },
+        {
+          "text": "L.E.K. says an interview is a chance to show how you think, and that it uses case-based interviews to see how you approach business problems, using data and your own experience to reach and defend a conclusion.",
+          "source": "lek-interview-preparation"
+        },
+        {
+          "text": "In a post on L.E.K.'s careers blog, a London associate says the in-person interviews were case-based, with problem-solving and fit questions, and that the key was showing structured problem solving rather than necessarily getting the right answer.",
+          "source": "lek-blog-london-interview-process"
+        }
+      ]
+    },
+    {
+      "heading": "How L.E.K. suggests you prepare",
+      "items": [
+        {
+          "text": "L.E.K. suggests attending case interview workshops on campus, reading business publications or daily papers regularly, practising with people who work in strategy consulting, and knowing what kind of work L.E.K. does.",
+          "source": "lek-interview-preparation"
+        },
+        {
+          "text": "During the case, L.E.K. advises taking your time, repeating or paraphrasing the question, stating your assumptions, then noting early ideas and setting out a coherent approach.",
+          "source": "lek-interview-preparation"
+        },
+        {
+          "text": "L.E.K. advises working through each issue point by point, asking for any extra information you need, and sharing your thinking as information is revealed.",
+          "source": "lek-interview-preparation"
+        },
+        {
+          "text": "L.E.K. advises committing to an answer while staying flexible and willing to rethink when new data appears, and being yourself.",
+          "source": "lek-interview-preparation"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "lek-apply",
+      "title": "Apply",
+      "publisher": "L.E.K. Consulting",
+      "url": "https://www.lek.com/careers/apply",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-interview-preparation",
+      "title": "Interview Preparation",
+      "publisher": "L.E.K. Consulting",
+      "url": "https://www.lek.com/careers/apply/interview-preparation",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-london-associate-2027",
+      "title": "London Office - Associate (entry level) - Generalist 2027",
+      "publisher": "L.E.K. Consulting (application system provided by Oleeo)",
+      "url": "https://lek.tal.net/vx/lang-en-GB/mobile-0/appcentre-1/brand-2/candidate/so/pm/1/pl/1/opp/4118-London-Office-Associate-entry-level-Generalist-2027/en-GB",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-london-summer-associate-2027",
+      "title": "London Office - Summer Associate 2027",
+      "publisher": "L.E.K. Consulting (application system provided by Oleeo)",
+      "url": "https://lek.tal.net/vx/lang-en-GB/mobile-0/appcentre-1/brand-2/candidate/so/pm/1/pl/1/opp/4121-London-Office-Summer-Associate-2027/en-GB",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-london-lss-2027",
+      "title": "London Office – Life Sciences Specialist – PhD and MD applicants only 2027",
+      "publisher": "L.E.K. Consulting (application system provided by Oleeo)",
+      "url": "https://lek.tal.net/vx/lang-en-GB/mobile-0/appcentre-1/brand-2/candidate/so/pm/1/pl/1/opp/4120-London-Office-Life-Sciences-Specialist-PhD-and-MD-applicants-only-2027/en-GB",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-privacy-recruitment",
+      "title": "Privacy Notice - Recruitment",
+      "publisher": "L.E.K. Consulting",
+      "url": "https://www.lek.com/privacy-notice-recruitment",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-us-consultant-2027",
+      "title": "U.S. Consultant - 2027",
+      "publisher": "L.E.K. Consulting (application system provided by Oleeo)",
+      "url": "https://lek.tal.net/vx/lang-en-GB/mobile-0/appcentre-2/brand-2/candidate/so/pm/1/pl/6/opp/3782-U-S-Consultant-2027/en-GB",
+      "checked": "2026-10-16"
+    },
+    {
+      "id": "lek-blog-london-interview-process",
+      "title": "The London L.E.K. Interview Process with Tom Adams",
+      "publisher": "L.E.K. Consulting (Life at L.E.K. Blog)",
+      "url": "https://www.lek.com/careers/life-lek-blog/london-lek-interview-process-tom-adams",
+      "checked": "2026-10-16"
+    }
+  ],
+  "practice_advice": [
+    "Practise saying your structure out loud before you start any analysis, so the interviewer can follow your plan.",
+    "Do short, timed mental maths drills most days, with pen and paper only. CaseSpar's drills cover mental maths, chart reading and market sizing.",
+    "After each practice case, write down one thing to do better and choose your next case to work on it."
+  ],
+  "practice": {
+    "seo_title": "L.E.K.-style case interview practice",
+    "description": "Practise for L.E.K.-style case interviews with original cases and an AI interviewer. What L.E.K. says, sourced, plus cases to run.",
+    "intro": "Run original practice cases out loud with an AI interviewer and get a scored debrief with every number checked by code. Below: what L.E.K. itself publishes about its case interviews and how to prepare, and the cases we suggest starting with.",
+    "show_sections": [
+      "Interviews and case studies",
+      "How L.E.K. suggests you prepare"
+    ],
+    "cases": [
+      "harbourline-bakeries",
+      "hollowlatch-escape-rooms-birmingham",
+      "us-dog-walking-market",
+      "aurora-kitchen-uk-entry",
+      "corvane-vets-acquisition",
+      "cobalt-basin-ski-resort",
+      "flexora-gym-software-pricing"
+    ]
+  }
+}

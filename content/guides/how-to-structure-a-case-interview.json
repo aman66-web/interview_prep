@@ -1,0 +1,266 @@
+{
+  "slug": "how-to-structure-a-case-interview",
+  "kind": "skill",
+  "title": "How to structure a case interview (without memorised frameworks)",
+  "seo_title": "How to Structure a Case Interview: Issue Trees and MECE",
+  "description": "Build your own case structure from the client's question: restate it, split it with no gaps or overlaps, prioritise and present it clearly. With an example.",
+  "updated": "2026-10-15",
+  "reading_minutes": 10,
+  "summary": "To structure a case, restate the client's question as one clear goal, ask a few clarifying questions, then break the problem into three to five parts that don't overlap and together cover everything that could answer it, with one or two levels of detail under each. Build those parts from this client's question and business rather than from a memorised template, and use the structure to decide what to analyse first.",
+  "blocks": [
+    { "type": "h2", "id": "what-a-structure-is", "text": "What a case structure is" },
+    {
+      "type": "p",
+      "text": "A structure is your plan for answering the client's question. It usually takes the form of an issue tree: the question at the top, broken into a few big parts, each broken into smaller, more specific questions that data can answer. You build it near the start of the case, talk the interviewer through it, and then use it as a map for the rest of the case."
+    },
+    {
+      "type": "p",
+      "text": "A good structure does three jobs. It shows you have understood the problem, it makes sure you don't miss anything important, and it tells you where to start. A list of business topics does none of those, which is why a structure built from the question beats one recalled from memory."
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "A structure is a plan, not a list",
+      "text": "Every branch should be something you could go and check, and together the branches should be able to answer the question. If a branch couldn't change your answer, it doesn't belong."
+    },
+    { "type": "h2", "id": "mece-in-plain-words", "text": "MECE in plain words" },
+    {
+      "type": "p",
+      "text": "MECE stands for “mutually exclusive, collectively exhaustive”. In plain words: no overlaps and no gaps. Every possible cause or answer should fit into exactly one branch. Overlaps mean you analyse the same thing twice and may count it twice; gaps mean the real answer can sit outside your structure, where you'll never find it."
+    },
+    {
+      "type": "table",
+      "caption": "Spotting overlaps and gaps",
+      "columns": ["Split", "The problem", "A better split"],
+      "rows": [
+        [
+          "Customers: young people, students, families",
+          "Overlap: most students are young, so where does a 20-year-old student go?",
+          "Split on one thing at a time: by age band, or by life stage, not both at once"
+        ],
+        [
+          "Costs: staff, rent, marketing",
+          "Gaps: it misses materials, delivery, energy and everything else",
+          "Variable and fixed costs, then the main lines under each, with an “other” line"
+        ],
+        [
+          "Sales: online, London, outside London",
+          "Overlap: online buyers also live in or outside London",
+          "By channel first (online, in store), then by region inside each channel"
+        ],
+        [
+          "Why are sales falling? Bad marketing, high prices",
+          "Gaps: these are two guesses, not a split; they miss the product, competitors, distribution and the market itself",
+          "Fewer customers versus customers buying less, then possible reasons under each"
+        ]
+      ]
+    },
+    { "type": "h2", "id": "ways-to-split", "text": "Five reliable ways to split a problem" },
+    {
+      "type": "table",
+      "caption": "Ways to make a clean split",
+      "columns": ["Type of split", "How it works", "Example"],
+      "rows": [
+        ["An equation", "Use a formula whose parts add or multiply up to the answer", "Profit = revenue − costs; revenue = customers × spend per customer"],
+        ["Steps in a process", "Follow the order in which things happen", "A customer hears about it, visits, buys, then comes back (or doesn't)"],
+        ["Segments", "Split by one feature at a time", "By product, region, channel or customer type"],
+        ["Stakeholders", "Look at the question from each party's side", "The client, its customers, its competitors and its suppliers"],
+        ["Opposites", "Pair two halves that together cover everything", "Inside the company or outside it; short term or long term"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Equations and segments give the cleanest splits, because the parts add up exactly to the whole. Opposites are always MECE but often too vague to help on their own (“internal versus external” tells you little), so save them for a lower level of the tree, or skip them."
+    },
+    { "type": "h2", "id": "step-by-step", "text": "Step by step: building your structure" },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Restate the goal",
+          "text": "Say the question back in one sentence with a measurable goal: “So the museum wants to understand why visits fell by a fifth, and how to get back to 500,000 a year.” If you can't say it in one sentence, ask another question."
+        },
+        {
+          "title": "Ask two to four clarifying questions",
+          "text": "Ask only what changes your plan: the goal, the scope, the time frame and any limits on what the client will consider."
+        },
+        {
+          "title": "Ask for a moment and draw it on paper",
+          "text": "Write the question at the top of the page. Plan in silence; it is better than thinking aloud in circles."
+        },
+        {
+          "title": "Pick the top-level split",
+          "text": "Ask yourself what you would need to know to answer the question. For a yes-or-no decision, the branches are often the things that must be true to say yes. For a “why” question, an equation or a segment split usually works."
+        },
+        {
+          "title": "Add one or two levels of specific questions",
+          "text": "Under each branch, write questions that data could answer. “Customers” is a topic; “has the number of school groups fallen?” is a question."
+        },
+        {
+          "title": "Check it",
+          "text": "Look for overlaps and gaps. Take a few possible answers and ask where each one would go: if one has no home, or two homes, fix the split."
+        },
+        {
+          "title": "Prioritise",
+          "text": "Say which branch you would look at first and why: usually the one most likely to hold the answer, or the biggest."
+        },
+        {
+          "title": "Keep using it",
+          "text": "As data arrives, tick off branches, go deeper where the answer is, and tell the interviewer where you are in the tree."
+        }
+      ]
+    },
+    { "type": "h2", "id": "tailor-dont-recite", "text": "Build from the question, not from a template" },
+    {
+      "type": "p",
+      "text": "Learning the common frameworks is useful, because they remind you what to check. The trouble comes when they are recited. A generic list such as “company, customers, competitors, product”, applied to every question, suggests you have prepared a speech rather than understood this client. It also tends to miss whatever is special about the case."
+    },
+    {
+      "type": "p",
+      "text": "Two habits help. First, use the client's own words in every branch: “school groups, families, tourists and members” beats “customer segments”. Second, ask what would have to be true for the answer to be yes, or what could explain the change, and build the branches around those."
+    },
+    {
+      "type": "table",
+      "caption": "Generic versus tailored: should a hospital build a new car park?",
+      "columns": ["Generic branch", "Tailored branch"],
+      "rows": [
+        ["Market", "How many more spaces are needed at the busiest times, now and in five years?"],
+        ["Customers", "Who needs them: patients, visitors or staff? Could some of them travel another way?"],
+        ["Costs", "What would it cost to build and run, compared with the parking fees it would bring in?"],
+        ["Competition", "Could nearby car parks or a better bus service meet the demand instead?"],
+        ["Risks", "Planning permission, disruption while it is built, and whether demand could fall if more appointments move online or to local clinics"]
+      ]
+    },
+    { "type": "h2", "id": "worked-example", "text": "Worked example: why did museum visits fall?" },
+    {
+      "type": "example",
+      "title": "Structuring and prioritising a fall in visits",
+      "question": "Riverside Museum is an invented science museum that charges for entry. It had 500,000 visits last year and 400,000 this year. The director asks why visits fell and what to do. Build a structure and decide where to start. (The museum and every number here are invented for practice.)",
+      "answer": [
+        "Restate: visits fell by 100,000, a fifth, and the director wants to know why and how to recover.",
+        "A weak start would be “internal factors and external factors”, or a recited list such as product, price, place and promotion. Both are hard to test and use nothing about this museum.",
+        "A tailored top split: total visits are the sum of visits from each type of visitor. Asked which groups the museum tracks, the director names school groups, families, tourists and members (people with a yearly pass). Every visit belongs to exactly one group, so the split has no overlaps or gaps.",
+        "Under each group, split visits into the number of visitors × how often they come, then list possible reasons for a change: price, what's on, how easy the museum is to reach, and other things competing for the same time.",
+        "Ask for the numbers by group. Last year: schools 150,000, families 200,000, tourists 100,000 and members 50,000, a total of 500,000. This year: schools 90,000, families 190,000, tourists 95,000 and members 25,000, a total of 400,000.",
+        "Prioritise: school visits fell by 60,000, which is 60% of the 100,000 fall. Member visits fell by 25,000, another 25%. Together these two groups explain 85% of the fall, so start with schools, then members, and leave families and tourists until later.",
+        "Go one level deeper on schools: are fewer schools booking, or are groups smaller? And why: a price rise, a change in what pupils are taught, higher coach costs, or a competing attraction? These are hypotheses to test with the museum's booking data, not conclusions.",
+        "Tell the interviewer where you are: “Two groups explain 85% of the fall. I'd like to start with schools. Do we have bookings by school for both years?”"
+      ],
+      "checks": [
+        {
+          "label": "Visits last year",
+          "inputs": { "schools": 150000, "families": 200000, "tourists": 100000, "members": 50000 },
+          "expression": "schools + families + tourists + members",
+          "expected": 500000
+        },
+        {
+          "label": "Visits this year",
+          "inputs": { "schools": 90000, "families": 190000, "tourists": 95000, "members": 25000 },
+          "expression": "schools + families + tourists + members",
+          "expected": 400000
+        },
+        { "label": "Fall as a share of last year's visits", "inputs": { "last_year": 500000, "this_year": 400000 }, "expression": "(last_year - this_year) / last_year", "expected": 0.2 },
+        {
+          "label": "School groups' share of the fall",
+          "inputs": { "schools_last": 150000, "schools_now": 90000, "total_last": 500000, "total_now": 400000 },
+          "expression": "(schools_last - schools_now) / (total_last - total_now)",
+          "expected": 0.6
+        },
+        {
+          "label": "Members' share of the fall",
+          "inputs": { "members_last": 50000, "members_now": 25000, "total_last": 500000, "total_now": 400000 },
+          "expression": "(members_last - members_now) / (total_last - total_now)",
+          "expected": 0.25
+        },
+        { "label": "Share of the fall from the two groups together", "inputs": { "school_drop": 60000, "member_drop": 25000, "total_drop": 100000 }, "expression": "(school_drop + member_drop) / total_drop", "expected": 0.85 }
+      ]
+    },
+    { "type": "h2", "id": "presenting", "text": "How to present your structure" },
+    {
+      "type": "ul",
+      "items": [
+        "Say how many parts there are before you go through them: “I'd look at three areas.”",
+        "Give the top level first, then the detail under each, so the interviewer can follow.",
+        "Give a reason for each branch in a few words, linked to the question.",
+        "In person, turn your page so the interviewer can see it; online, describe it clearly enough that they could draw it.",
+        "Finish with where you would start and why, then ask for the data you need.",
+        "Keep it to a minute or two. The detail can come out as you work through the case."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "A sample opening",
+      "text": "“Visits fell by 100,000. I'd like to find out which visitors stopped coming, and then why. Every visit comes from one of four groups: schools, families, tourists or members. For each, I'd look at how many came and how often, then at price, what's on, access and competition. I'd start with whichever group fell most. Do we have visits by group?”"
+    },
+    { "type": "h2", "id": "common-mistakes", "text": "Common mistakes" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Forcing a framework onto the question",
+      "text": "Reciting a memorised framework whatever the question, then struggling when the case doesn't fit it. Build each structure from the question in front of you, and use frameworks only to check you haven't missed something."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Too many branches. Three to five at the top are easier to follow and remember than eight.",
+        "Vague branches such as “strategy” or “market” that you couldn't actually go and check.",
+        "Overlaps and gaps that testing a few possible answers against the tree would have caught.",
+        "A long silence, or thinking aloud with no plan. Ask for a moment, then present.",
+        "Presenting a neat structure and never using it again.",
+        "Treating every branch as equally important instead of saying where you'd start."
+      ]
+    },
+    { "type": "h2", "id": "how-to-practise", "text": "How to practise structuring" },
+    {
+      "type": "ul",
+      "items": [
+        "Take a business news story and write a structure for the decision behind it in two minutes.",
+        "Take one type of question, such as falling profit, across five different industries, and notice how the branches change.",
+        "Test a tree for MECE by listing ten possible answers and placing each one.",
+        "Record yourself presenting a structure, and check that it lasts under two minutes and starts by saying how many parts there are.",
+        "Swap trees with a practice partner and try to find each other's gaps."
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Keep practising",
+      "items": [
+        { "label": "Framework drills", "href": "/drills/frameworks" },
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Profitability case interviews", "href": "/guides/profitability-case-interview" },
+        { "label": "Market entry case interviews", "href": "/guides/market-entry-case-interview" },
+        { "label": "Market sizing case interviews", "href": "/guides/market-sizing-case-interview" },
+        { "label": "How to practise case interviews alone", "href": "/guides/how-to-practise-case-interviews-alone" },
+        { "label": "Glossary of case terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Should I memorise case frameworks at all?",
+      "a": "Knowing the common ones helps as a checklist, so you don't forget something obvious such as competitors or costs. But don't present them as they are. Build each structure from the question, and use the frameworks only to check you haven't missed anything."
+    },
+    {
+      "q": "How many branches should a structure have?",
+      "a": "Three to five at the top level is a good range. Fewer usually means the branches are too broad to act on; more is hard to follow and often hides overlaps. Add detail one or two levels down instead."
+    },
+    {
+      "q": "How long can I take to think before presenting?",
+      "a": "Asking for a short pause to plan is fine, and better than thinking aloud in circles. Practise getting to a clean structure in about two minutes so the pause stays short."
+    },
+    {
+      "q": "What does hypothesis-driven mean?",
+      "a": "It means starting with your best guess at the answer and building the structure to test it. For example: “My guess is that one visitor group explains most of the fall, so let's check visits by group first.” You still keep the full structure, so you can move on if the guess is wrong."
+    },
+    {
+      "q": "What if I realise halfway through that my structure is wrong?",
+      "a": "Say so and adjust it. Changing the plan when the data shows something new is good judgement. Tell the interviewer what you are changing and why."
+    },
+    {
+      "q": "Does a structure have to be perfectly MECE?",
+      "a": "Not perfectly. Aim for no big overlaps and no obvious gaps. If something could sit in two branches, say where you will put it and move on."
+    }
+  ],
+  "related_drills": ["frameworks", "market-sizing"]
+}

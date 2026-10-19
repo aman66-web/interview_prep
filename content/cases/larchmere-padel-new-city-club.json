@@ -1,0 +1,331 @@
+{
+  "id": "case-029",
+  "slug": "larchmere-padel-new-city-club",
+  "title": "Larchmere Padel: sign for a new club before a rival does?",
+  "track": "consulting",
+  "type": "market_entry",
+  "industry": "Sports venues (padel)",
+  "difficulty": 2,
+  "style": "candidate_led",
+  "est_minutes": 30,
+  "prompt": "Larchmere Padel runs five indoor padel clubs in the south of England. Padel is a racket sport usually played in doubles on a small court enclosed by glass and mesh walls, and Larchmere hires out its courts by the hour. Its founder has found a warehouse unit with room for eight courts in a large city in the north of England, where Larchmere has no clubs yet. The landlord is offering three months rent-free if the lease is signed within six weeks, and a national padel operator has just said it is looking for a site in the same city. At next week's board meeting the founder has to say whether Larchmere should sign the lease now, and she has asked you for a recommendation. What would you advise?",
+  "facts": [
+    {
+      "question_topic": "The company",
+      "answer": "Larchmere runs five indoor padel clubs in the south of England, each with six to eight courts in a leased unit. Almost all of its income is court hire; coaching, leagues, a café-bar and racket hire add a little more. It has never opened a club outside the south."
+    },
+    {
+      "question_topic": "How court hire works",
+      "answer": "At Larchmere's clubs, players hire a court by the hour, usually four players to a court, and split the price between them. Larchmere sells court-hours (one court for one hour) through its own booking app."
+    },
+    {
+      "question_topic": "Objective",
+      "answer": "The board approves a new club only if it passes two tests: it makes a profit in its first full year, and its profits pay back the fit-out within five years of opening, which is when the lease can first be broken. The founder needs a clear answer for next week's board meeting on whether to sign the lease within the landlord's six weeks, with any conditions."
+    },
+    {
+      "question_topic": "The site",
+      "answer": "A former warehouse on a retail park at the edge of the city, with parking and room for eight courts. Larchmere's nearest club is about four hours' drive away, and the Larchmere name is unknown in the north."
+    },
+    {
+      "question_topic": "The lease",
+      "answer": "Ten years, with a break clause after year 5 that lets Larchmere leave. The rent is £180,000 a year and starts when the lease is signed. The landlord offers three months rent-free if the lease is signed within six weeks, and says another padel operator has viewed the unit. Fitting out takes about three months after signing, so the rent-free months would cover the fit-out, and the plan assumes this. Signed later, Larchmere pays about £45,000 of rent before opening, which its profits would also have to pay back."
+    },
+    {
+      "question_topic": "How Larchmere looks at demand",
+      "answer": "Larchmere does not start from the population. For a new club it asks where local players play today and when they cannot get a court. Its research team tracked a year of the two indoor rivals' online booking pages, which show which slots are taken, and surveyed 1,200 local players about where and when they play, scaled up to the whole area. 'Local' means living within a 20-minute drive of the unit (the catchment). The results are in a table, split into peak and off-peak hours."
+    },
+    {
+      "question_topic": "Sizing from the population",
+      "answer": "If the candidate wants to size the market from the population, say it is a fair cross-check: Larchmere's survey suggests about 10,000 adults in the catchment play at least once a month, about 40 hours a year each, which at four players to a court is about 100,000 court-hours a year, the same total as the table. Then steer them to the table: the board's question is how much play the new club can win and at what times, not how big the city's padel market is."
+    },
+    {
+      "question_topic": "Growth in padel",
+      "answer": "The research covers the last 12 months, and Larchmere has no reliable forecast for the city. The board wants the decision tested on today's play, with any growth treated as upside."
+    },
+    {
+      "question_topic": "Capacity and times of day",
+      "answer": "Larchmere's clubs open about 14 hours a day, every day. Allowing for maintenance, each court can be booked for about 5,000 hours a year: about 2,000 at peak times (weekday evenings and weekend daytimes) and 3,000 off-peak. So eight courts give 16,000 peak and 24,000 off-peak court-hours a year."
+    },
+    {
+      "question_topic": "Prices",
+      "answer": "Larchmere would charge £50 a court-hour at peak and £25 off-peak, as at its other clubs. The two indoor rivals charge within a pound or two of these prices, so Larchmere cannot win players on price."
+    },
+    {
+      "question_topic": "Costs",
+      "answer": "Each court-hour played costs about £10 at any time of day: energy for the lights and heating while a court is in use, booking and card fees, cleaning, and wear on the courts. The fixed costs (rent, staff, business rates, insurance, maintenance and local marketing) do not change with bookings. The club's cost table has the figures."
+    },
+    {
+      "question_topic": "Fit-out",
+      "answer": "A one-off £1.15 million, paid before opening: eight courts, lighting, heating, changing rooms, a small café-bar and the booking system. About £400,000 of it is the courts themselves, which could be taken down and moved to another site if the club ever closed."
+    },
+    {
+      "question_topic": "How quickly a new club fills",
+      "answer": "At Larchmere's four newest clubs, peak hours filled quickly and off-peak hours slowly: about 75% of peak hours and 25% of off-peak hours were sold in the first year, 85% and 35% in the second, and about 90% and 40% from the third year on. The club plan uses the same shares."
+    },
+    {
+      "question_topic": "Competitors",
+      "answer": "The catchment has two independent indoor clubs (12 and 10 courts) and some outdoor courts at tennis clubs and parks. Both indoor rivals are almost full at peak and less than half full off-peak. Almost all of their players live in the catchment, and neither has announced plans to add courts. A table of where local players play today is available."
+    },
+    {
+      "question_topic": "Players who play outside the catchment",
+      "answer": "In Larchmere's survey, most local players who play at clubs outside the catchment do so at peak times because they cannot get a local court then. Four in five of the peak hours they play elsewhere (80%) belong to players who said they would switch to a local club if they could book a peak court there. The small amount of off-peak play outside the catchment is mostly near people's workplaces and would not move."
+    },
+    {
+      "question_topic": "Possible new entrants",
+      "answer": "A national padel operator with clubs in other cities has said it is looking for a site in the city. It usually opens clubs of about 10 courts and has not named a site. It may be the 'other operator' the landlord mentions, but Larchmere does not know. If the candidate asks how two new clubs would share the returning players, say: assume in proportion to their courts, and that neither wins peak players from the two rivals, whose regulars already have their slots."
+    },
+    {
+      "question_topic": "Other income",
+      "answer": "At Larchmere's mature clubs, coaching, leagues, the café-bar and racket hire add about 15% on top of court income, at a lower margin than court hire. The plan leaves them out, so they are upside."
+    },
+    {
+      "question_topic": "Running the club",
+      "answer": "A newly hired local manager would run the club. Head office in the south would handle bookings, marketing and finance, and head-office costs would not change. The founder would spend about one week a month at the new club in its first year."
+    },
+    {
+      "question_topic": "Funding and simplifications",
+      "answer": "Larchmere would pay for the fit-out from its cash and a bank loan that is already agreed. For this case, ignore interest, tax and inflation. All figures exclude VAT."
+    }
+  ],
+  "structure_rubric": {
+    "key_buckets": [
+      "Unserved demand by time of day: where local players play today, how full the rivals are at peak and off-peak, and how much peak play leaves the catchment and would come back",
+      "The club's economics by time of day: peak and off-peak prices, the variable cost per court-hour, fixed costs, how many peak hours cover the fixed costs, and how quickly each band fills",
+      "The board's two tests: a profit in the first full year, and the £1.15m fit-out paid back within five years of opening, when the lease can first be broken",
+      "The race and the lease: the national operator, the landlord's other viewer, the six-week rent-free deadline, and what a second new club would do to the numbers",
+      "Ability to run it and the downside: an unknown brand far from head office, the year-5 break clause, the courts that could be moved"
+    ],
+    "good_signs": [
+      "Asks what the board needs to see and builds the structure around its two tests (a profit in the first full year; the fit-out paid back within five years of opening, when the lease can first be broken)",
+      "Proposes an order of work and where to start: first where local demand goes unserved and at what times, then whether the club's peak and off-peak hours cover its costs and repay the fit-out, then what a second new club would do to that, then the lease timing",
+      "Splits the club into peak and off-peak hours from the start, because the prices differ and the rivals' courts are full at one and not the other",
+      "Uses court-hours as the unit, because that is what Larchmere sells, and remembers that four players share one court",
+      "States an early hypothesis, for example 'if local courts are full at peak and players travel elsewhere, there is room for one more club; the question is whether there is room for two'",
+      "Treats the national operator and the six-week deadline as part of the decision from the start, not as an afterthought",
+      "Thinks aloud and walks the interviewer through the structure before asking for data"
+    ],
+    "red_flags": [
+      "Counts each player as hiring a whole court, which makes demand four times too big",
+      "Judges the club by setting its break-even beside the size of the city's whole padel market, instead of against the play it can actually win and its own peak and off-peak capacity",
+      "Uses one blended price and fill rate, and misses that peak hours are full everywhere while off-peak hours are mostly empty",
+      "Ignores the £1.15m fit-out and the five-year test, or counts payback from mature profit only",
+      "Assumes the national operator will not open, or treats the landlord's deadline as irrelevant",
+      "Recites a generic market-entry framework with no link to this decision"
+    ]
+  },
+  "exhibits": [
+    {
+      "id": "where-players-play",
+      "title": "Where the catchment's players play today, by time of day (thousand court-hours a year)",
+      "kind": "table",
+      "data": {
+        "columns": ["Where", "Courts", "Peak hours bookable", "Peak hours played", "Off-peak hours bookable", "Off-peak hours played"],
+        "rows": [
+          ["Rival club A (indoor)", 12, 24, 22.8, 36, 16.2],
+          ["Rival club B (indoor)", 10, 20, 19, 30, 12],
+          ["Outdoor courts at tennis clubs and parks", 12, "Varies with the weather", 6, "Varies with the weather", 3],
+          ["Clubs outside the catchment", "Not counted", "Not counted", 18, "Not counted", 3]
+        ]
+      },
+      "reveal_hint": "Ask where local players play today, how full the rival clubs are at different times, or whether players go elsewhere when they cannot get a court.",
+      "insight": "Both indoor rivals sell 95% of their peak hours (22,800 of 24,000 and 19,000 of 20,000) but only 45% and 40% of their off-peak hours, so between them about 2,200 peak hours and about 37,800 off-peak hours go unsold. Local players who cannot get a peak court drive out: 18,000 peak court-hours a year are played outside the catchment, and four in five of them (about 14,400) would come back. That alone would fill 90% of the new club's 16,000 peak hours, the level a mature Larchmere club reaches, without taking anyone from the rivals. Off-peak is the opposite: local courts are already more than half empty, so the new club's off-peak hours have to be built with coaching, leagues and new players. And 14,400 returning peak hours are room for one new club, not two: shared by courts with a 10-court national operator, Larchmere's part would be about 6,400. The rows add up to about 100,000 court-hours a year, which matches a population cross-check; that total is not what the club is judged against."
+    },
+    {
+      "id": "club-plan",
+      "title": "Plan for the new eight-court club, by time of day",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "Peak", "Off-peak"],
+        "rows": [
+          ["Bookable hours per court a year", 2000, 3000],
+          ["Bookable court-hours a year (8 courts)", 16000, 24000],
+          ["Price per court-hour (£)", 50, 25],
+          ["Variable cost per court-hour played (£)", 10, 10],
+          ["Share of hours sold in year 1 (%)", 75, 25],
+          ["Share of hours sold in year 2 (%)", 85, 35],
+          ["Share of hours sold from year 3 (%)", 90, 40]
+        ]
+      },
+      "reveal_hint": "Ask about the new club's prices, capacity, variable costs or how quickly its peak and off-peak hours fill.",
+      "insight": "A peak hour contributes £40 (£50 - £10) and an off-peak hour £15 (£25 - £10), so one peak hour is worth almost three off-peak hours. Year 1 sells 12,000 peak and 6,000 off-peak hours (£480k + £90k = £570k of contribution), year 2 sells 13,600 and 8,400 (£544k + £126k = £670k), and from year 3 14,400 and 9,600 (£576k + £144k = £720k). Peak hours bring in four-fifths of the mature contribution, and the plan's mature peak hours (14,400) are the same as the peak play that would come back to the catchment. Across the whole club that is 45%, 55% and 60% of all bookable hours."
+    },
+    {
+      "id": "club-costs",
+      "title": "New club: yearly fixed costs and the fit-out (£ thousand)",
+      "kind": "table",
+      "data": {
+        "columns": ["Item", "£ thousand"],
+        "rows": [
+          ["Rent", 180],
+          ["Staff", 130],
+          ["Business rates, insurance, maintenance and local marketing", 110],
+          ["Total fixed costs a year", 420],
+          ["Fit-out, paid once before opening", 1150],
+          ["Of which: the courts, which could be moved", 400]
+        ]
+      },
+      "reveal_hint": "Ask about the club's fixed costs, its rent and staff, or the cost of fitting it out.",
+      "insight": "With year 1's off-peak contribution of £90k, the club covers its £420k of fixed costs at 8,250 peak hours ((420 - 90) / 40), about half its peak hours. It makes about £150k in year 1, £250k in year 2 and £300k a year from year 3, so both board tests pass: the £1.15m fit-out is paid back about 4.5 years after opening (£400k after two years, then 750 / 300 = 2.5 more years). The slack is in peak hours: with off-peak at 40%, the five-year test needs about 13,150 peak hours from year 3 (82%), against the 14,400 that would come back; with peak at 90%, it needs only about 26% off-peak. If the club closed at the year-5 break, the £400k of courts could be moved."
+    }
+  ],
+  "math": [
+    {
+      "id": "returning-peak-play",
+      "question": "Four in five of the peak court-hours that local players now play outside the catchment would come back to a local club with free peak courts. What share of the new club's peak hours could that returning play fill (%)?",
+      "inputs": {
+        "leaked_peak_k": 18,
+        "would_return_pct": 80,
+        "peak_court_hours": 16000
+      },
+      "expression": "leaked_peak_k * 1000 * would_return_pct / 100 / peak_court_hours * 100",
+      "expected": 90,
+      "tolerance_pct": 3,
+      "working": "18,000 peak court-hours a year are played outside the catchment. Four in five would come back: 18,000 x 80% = 14,400 court-hours. The club has 8 courts x 2,000 = 16,000 peak court-hours, so the returning play alone would fill 14,400 / 16,000 = 90% of them, the level a mature Larchmere club reaches, without taking any players from the rivals (who already sell 95% of their peak hours).",
+      "input_sources": [
+        { "input": "leaked_peak_k", "exhibit_id": "where-players-play", "row": 3, "column": "Peak hours played" },
+        { "input": "peak_court_hours", "exhibit_id": "club-plan", "row": 1, "column": "Peak" }
+      ]
+    },
+    {
+      "id": "breakeven-peak-hours",
+      "question": "In year 1 the plan sells 25% of the club's off-peak hours. How many peak court-hours must the club sell that year to cover its yearly fixed costs?",
+      "inputs": {
+        "fixed_costs_k": 420,
+        "offpeak_court_hours": 24000,
+        "y1_offpeak_pct": 25,
+        "peak_price": 50,
+        "offpeak_price": 25,
+        "variable_cost": 10
+      },
+      "expression": "(fixed_costs_k * 1000 - offpeak_court_hours * y1_offpeak_pct / 100 * (offpeak_price - variable_cost)) / (peak_price - variable_cost)",
+      "expected": 8250,
+      "tolerance_pct": 2,
+      "working": "Each peak hour contributes £50 - £10 = £40 and each off-peak hour £25 - £10 = £15. Year 1 off-peak: 24,000 x 25% = 6,000 hours x £15 = £90,000. That leaves £420,000 - £90,000 = £330,000 to come from peak hours: £330,000 / £40 = 8,250 peak court-hours, about half of the 16,000. The plan sells 12,000 peak hours (75%) in year 1, so the club makes about £150,000 that year (12,000 x £40 = £480,000, plus £90,000, less £420,000): the first board test is passed. A candidate who uses one blended price and fill misses that the peak hours carry the club.",
+      "input_sources": [
+        { "input": "fixed_costs_k", "exhibit_id": "club-costs", "row": 3, "column": "£ thousand" },
+        { "input": "offpeak_court_hours", "exhibit_id": "club-plan", "row": 1, "column": "Off-peak" },
+        { "input": "y1_offpeak_pct", "exhibit_id": "club-plan", "row": 4, "column": "Off-peak" },
+        { "input": "peak_price", "exhibit_id": "club-plan", "row": 2, "column": "Peak" },
+        { "input": "offpeak_price", "exhibit_id": "club-plan", "row": 2, "column": "Off-peak" },
+        { "input": "variable_cost", "exhibit_id": "club-plan", "row": 3, "column": "Peak" }
+      ]
+    },
+    {
+      "id": "payback-from-opening",
+      "question": "Using the plan's peak and off-peak shares for each year, how many years after opening does the club's running total of profit pay back the £1.15 million fit-out?",
+      "inputs": {
+        "peak_court_hours": 16000,
+        "offpeak_court_hours": 24000,
+        "y1_peak_pct": 75,
+        "y1_offpeak_pct": 25,
+        "y2_peak_pct": 85,
+        "y2_offpeak_pct": 35,
+        "mature_peak_pct": 90,
+        "mature_offpeak_pct": 40,
+        "peak_price": 50,
+        "offpeak_price": 25,
+        "variable_cost": 10,
+        "fixed_costs_k": 420,
+        "fit_out_k": 1150
+      },
+      "expression": "2 + (fit_out_k - ((peak_court_hours * y1_peak_pct / 100 * (peak_price - variable_cost) + offpeak_court_hours * y1_offpeak_pct / 100 * (offpeak_price - variable_cost)) / 1000 - fixed_costs_k) - ((peak_court_hours * y2_peak_pct / 100 * (peak_price - variable_cost) + offpeak_court_hours * y2_offpeak_pct / 100 * (offpeak_price - variable_cost)) / 1000 - fixed_costs_k)) / ((peak_court_hours * mature_peak_pct / 100 * (peak_price - variable_cost) + offpeak_court_hours * mature_offpeak_pct / 100 * (offpeak_price - variable_cost)) / 1000 - fixed_costs_k)",
+      "expected": 4.5,
+      "tolerance_pct": 2,
+      "working": "Year 1: 12,000 peak hours x £40 = £480,000 plus 6,000 off-peak x £15 = £90,000 = £570,000, less £420,000 = £150,000. Year 2: 13,600 x £40 = £544,000 plus 8,400 x £15 = £126,000 = £670,000 - £420,000 = £250,000. From year 3: 14,400 x £40 = £576,000 plus 9,600 x £15 = £144,000 = £720,000 - £420,000 = £300,000 a year. After two years the running total is £400,000, leaving £750,000 of the £1.15 million; £750,000 / £300,000 = 2.5 more years. So the fit-out is paid back about 4.5 years after opening, inside the five years before the break clause: the second board test is passed. An answer of about 3.8 years (£1.15m / £300k) counts mature profit only; ask the candidate to count from opening.",
+      "input_sources": [
+        { "input": "peak_court_hours", "exhibit_id": "club-plan", "row": 1, "column": "Peak" },
+        { "input": "offpeak_court_hours", "exhibit_id": "club-plan", "row": 1, "column": "Off-peak" },
+        { "input": "peak_price", "exhibit_id": "club-plan", "row": 2, "column": "Peak" },
+        { "input": "offpeak_price", "exhibit_id": "club-plan", "row": 2, "column": "Off-peak" },
+        { "input": "variable_cost", "exhibit_id": "club-plan", "row": 3, "column": "Peak" },
+        { "input": "y1_peak_pct", "exhibit_id": "club-plan", "row": 4, "column": "Peak" },
+        { "input": "y1_offpeak_pct", "exhibit_id": "club-plan", "row": 4, "column": "Off-peak" },
+        { "input": "y2_peak_pct", "exhibit_id": "club-plan", "row": 5, "column": "Peak" },
+        { "input": "y2_offpeak_pct", "exhibit_id": "club-plan", "row": 5, "column": "Off-peak" },
+        { "input": "mature_peak_pct", "exhibit_id": "club-plan", "row": 6, "column": "Peak" },
+        { "input": "mature_offpeak_pct", "exhibit_id": "club-plan", "row": 6, "column": "Off-peak" },
+        { "input": "fixed_costs_k", "exhibit_id": "club-costs", "row": 3, "column": "£ thousand" },
+        { "input": "fit_out_k", "exhibit_id": "club-costs", "row": 4, "column": "£ thousand" }
+      ]
+    },
+    {
+      "id": "two-new-clubs-shortfall",
+      "question": "Suppose the national operator opens a 10-court club at the same time, the returning peak play is shared between the two new clubs in proportion to their courts, and neither wins peak players from the rivals. With off-peak at the plan's 40%, how far short of its yearly fixed costs would Larchmere's club fall from year 3, in £ thousand?",
+      "inputs": {
+        "leaked_peak_k": 18,
+        "would_return_pct": 80,
+        "larchmere_courts": 8,
+        "national_courts": 10,
+        "peak_price": 50,
+        "offpeak_price": 25,
+        "variable_cost": 10,
+        "offpeak_court_hours": 24000,
+        "mature_offpeak_pct": 40,
+        "fixed_costs_k": 420
+      },
+      "expression": "fixed_costs_k - (leaked_peak_k * 1000 * would_return_pct / 100 * larchmere_courts / (larchmere_courts + national_courts) * (peak_price - variable_cost) + offpeak_court_hours * mature_offpeak_pct / 100 * (offpeak_price - variable_cost)) / 1000",
+      "expected": 20,
+      "tolerance_pct": 5,
+      "working": "Returning peak play is 18,000 x 80% = 14,400 court-hours. Shared by courts between Larchmere's 8 and the national operator's 10, Larchmere gets 14,400 x 8 / 18 = 6,400 peak hours (40% of its peak hours) x £40 = £256,000. Off-peak at 40%: 9,600 hours x £15 = £144,000. That is £400,000 of contribution against £420,000 of fixed costs: about £20,000 a year short, even at maturity, so the club would fail both board tests. The peak play that leaves the catchment is room for one new club, not two.",
+      "input_sources": [
+        { "input": "leaked_peak_k", "exhibit_id": "where-players-play", "row": 3, "column": "Peak hours played" },
+        { "input": "peak_price", "exhibit_id": "club-plan", "row": 2, "column": "Peak" },
+        { "input": "offpeak_price", "exhibit_id": "club-plan", "row": 2, "column": "Off-peak" },
+        { "input": "variable_cost", "exhibit_id": "club-plan", "row": 3, "column": "Peak" },
+        { "input": "offpeak_court_hours", "exhibit_id": "club-plan", "row": 1, "column": "Off-peak" },
+        { "input": "mature_offpeak_pct", "exhibit_id": "club-plan", "row": 6, "column": "Off-peak" },
+        { "input": "fixed_costs_k", "exhibit_id": "club-costs", "row": 3, "column": "£ thousand" }
+      ]
+    }
+  ],
+  "brainstorm": {
+    "question": "What could Larchmere do to lock in the returning peak players before a rival opens, build its off-peak hours, or lower the risk of signing now?",
+    "idea_bank": [
+      "Pre-sell founding memberships and packs of peak-time hours during the fit-out, aimed at the players who drive out of the city today, to lock them in before any rival opens",
+      "Give members priority booking at peak, so the returning players have a reason to stay if a second club opens",
+      "Build off-peak demand, where the rivals already have spare courts: beginner coaching, daytime leagues, company and university bookings, and lower prices at quiet times",
+      "Build a community that books again and again: leagues, social nights and tournaments",
+      "Sign within the six weeks, so the rent-free months cover the fit-out and Larchmere secures the unit before the landlord's other viewer, while keeping the year-5 break clause",
+      "Negotiate a longer rent-free period or a stepped rent that starts lower",
+      "Ask the landlord for first refusal on a neighbouring unit, so the club can add courts if demand allows and a rival cannot open next door",
+      "Open with six courts and leave room for two more, to cut the upfront cost (six courts give 12,000 peak hours, fewer than the 14,400 that would come back)",
+      "Partner with local tennis clubs, gyms or schools for referrals and coaching",
+      "Grow other income: coaching, the café-bar, racket hire, kit sales and private events",
+      "Hire a strong local manager with links to local sport, and have the founder on site during the launch",
+      "Use peak and off-peak prices to move some demand from full evenings to quieter hours"
+    ]
+  },
+  "synthesis_rubric": {
+    "must_mention": [
+      "About 18,000 peak court-hours a year leave the catchment because local courts are full at peak; the four in five that would come back (about 14,400) would fill about 90% of the new club's 16,000 peak hours",
+      "Both board tests are passed: with its year-1 off-peak sales the club covers its fixed costs at about 8,250 peak hours and makes about £150,000 in year 1, and it pays back the £1.15 million fit-out about 4.5 years after opening",
+      "A clear recommendation on signing within the six weeks, tied to the risk of a second new club (for example sign now, with conditions)"
+    ],
+    "good_signs": [
+      "Good answer: 'Sign, because the club meets both of the board's tests. The rivals are full at peak and local players drive out of the city for about 18,000 peak court-hours a year; the 14,400 of those that would come back would fill 90% of the new club's peak hours. With its first-year off-peak sales, the club covers its costs at 8,250 peak hours, should make about £150,000 in its first year, and pays back the £1.15 million fit-out about 4.5 years after opening, before the year-5 break.' Better answer: also sees that the case holds only if Larchmere is the one new club. Shared by courts with a 10-court national operator, the returning peak play would give Larchmere about 6,400 peak hours, about £20,000 a year short of its fixed costs even at maturity. So the real decision is the race: sign within the six weeks, which keeps the rent-free months and secures the unit before the landlord's other viewer; sign up the returning peak players before anyone else opens; build off-peak coaching and leagues, because returning players will not fill those hours; and rely on the year-5 break and the £400,000 of movable courts if a second club opens anyway",
+      "Works the club by time of day: a peak hour contributes £40 and an off-peak hour £15, so peak hours bring in four-fifths of the club's contribution at maturity (£576,000 of £720,000)",
+      "Uses the rivals' spare off-peak courts (about 37,800 unsold off-peak hours between them) to see that the club's off-peak hours have to be built with coaching and leagues, not won from players who travel today",
+      "Tests a second new club: shared by courts, Larchmere would get about 6,400 returning peak hours and fall about £20,000 a year short of its fixed costs even at maturity, so there is room for one new club, not two",
+      "Tests how much slack the five-year test has: with off-peak at 40%, the club needs about 13,150 peak hours (82%) from year 3, against the 14,400 that would come back; with peak at 90%, it needs only about 26% off-peak. The decision rests on the peak hours",
+      "Names other risks (an unknown brand four hours from head office, a rival adding courts, and signing after the six weeks, which adds about £45,000 of rent before opening and pushes payback to about 4.65 years) and what limits them (the year-5 break clause, the £400,000 of courts that could be moved)",
+      "Notes the upside the plan leaves out: coaching, leagues, the café-bar and racket hire add about 15% on top of court income at mature clubs",
+      "Sorts the next steps. Before signing, within the six weeks: find out whether the landlord's other viewer is the national operator and where else it is looking, and push for a stepped rent or a longer rent-free period. After signing: pre-sell peak memberships during the fit-out to the players who drive out today, hire a local manager, set up off-peak coaching and leagues, and track peak hours sold each month against 75% in year 1",
+      "Gives the answer first, then the reasons, risks and next steps, in a few sentences the founder could repeat to her board"
+    ]
+  },
+  "model_answer_outline": [
+    "Clarify: the decision (whether to sign the lease within the landlord's six weeks), the board's two tests (a profit in the first full year; the fit-out paid back within five years of opening, when the lease can first be broken), the site and lease (eight courts, ten years, rent from signing, three months rent-free if signed within six weeks, which would cover the three-month fit-out), the national operator's search, how Larchmere looks at demand (where local players play today, by time of day) and the simplifications (no VAT, interest, tax or inflation).",
+    "Structure: unserved demand by time of day (how full the rivals are, what leaves the catchment and would come back); the club's peak and off-peak economics against the two tests; what a second new club would do; the lease timing; ability to run a club far from head office, and the downside protection. Start with where players play, because a new club only works if it fills hours the rivals cannot.",
+    "Unserved demand: both rivals sell 95% of their peak hours but only 40-45% off-peak, with about 37,800 off-peak hours unsold. 18,000 peak court-hours a year are played outside the catchment; four in five (14,400) would come back, which is 90% of the new club's 16,000 peak hours, without taking players from the rivals. Off-peak hours will have to be built. The table's total (about 100,000 court-hours) matches a population cross-check, but the club is judged on the play it can win, not on the size of the market.",
+    "Break-even by time of day: a peak hour contributes £40 and an off-peak hour £15. In year 1, 6,000 off-peak hours bring in £90,000, so covering £420,000 of fixed costs needs (420 - 90) / 40 = 8,250 peak hours, about half the peak capacity. The plan sells 12,000 peak hours in year 1, for about £150,000 of profit: the first test is passed.",
+    "Payback: profit is £150,000 in year 1, £250,000 in year 2 and £300,000 a year from year 3 (14,400 peak x £40 + 9,600 off-peak x £15 - £420,000). After two years £400,000 is back; the other £750,000 takes 2.5 years, so the £1.15 million fit-out is paid back about 4.5 years after opening: the second test is passed. The slack is in peak hours: with off-peak at 40%, the test needs about 13,150 peak hours (82%) from year 3, against the 14,400 that would come back.",
+    "A second new club: if the national operator opened 10 courts at the same time and the returning play were shared by courts, Larchmere would get 14,400 x 8 / 18 = 6,400 peak hours (£256,000) plus £144,000 off-peak: £400,000 against £420,000 of fixed costs, about £20,000 a year short even at maturity. The returning play is room for one new club, not two.",
+    "Good answer: 'Sign, because the club meets both of the board's tests. The rivals are full at peak and local players drive out of the city for about 18,000 peak court-hours a year; the 14,400 of those that would come back would fill 90% of the new club's peak hours. With its first-year off-peak sales, the club covers its costs at 8,250 peak hours, should make about £150,000 in its first year, and pays back the £1.15 million fit-out about 4.5 years after opening, before the year-5 break.'",
+    "Better answer: sign within the six weeks, with conditions, because the real decision is the race. The tests pass only if Larchmere is the one new club: shared with a 10-court national operator, the returning peak play would leave it about £20,000 a year short of its fixed costs even at maturity. Signing in time keeps the rent-free months and secures the unit before the landlord's other viewer, which could be that operator or just a negotiating line; opening first lets Larchmere sign up the returning peak players as members before anyone else can. Off-peak is the part to build, with coaching and leagues, because the returning players will not fill those hours. Other income (about 15% on top of court income, left out of the plan) is a cushion. Other risks: a slow start for an unknown brand four hours from head office, and a rival adding courts; the year-5 break clause and the £400,000 of movable courts limit the downside. Signing late would add about £45,000 of rent before opening and push payback to about 4.65 years ((1,195 - 400) / 300 = 2.65 more years after the first two), still inside five, so the deadline matters most for the race, not the sums. Before signing: find out whether the other viewer is the national operator and push for a stepped rent or a longer rent-free period. After signing: pre-sell peak memberships during the fit-out to the players who drive out today, hire a local manager, and track peak hours sold each month against 75% in year 1."
+  ],
+  "free_starter": false,
+  "free_preview": false,
+  "status": "reviewed",
+  "reviewed_by": "Aman Marwaha (founder)",
+  "reviewed_on": "2026-10-19"
+}

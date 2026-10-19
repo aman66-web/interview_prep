@@ -1,0 +1,290 @@
+{
+  "slug": "case-interview-maths",
+  "kind": "skill",
+  "title": "Case interview maths: the mental maths you need, with worked examples",
+  "seo_title": "Case Interview Maths: Mental Maths Tips and Examples",
+  "description": "The maths for case interviews explained: percentages, growth, margins, break-even, rounding and sense checks, with worked examples to practise in your head.",
+  "updated": "2026-10-15",
+  "reading_minutes": 13,
+  "summary": "Case interview maths is mostly everyday arithmetic done accurately and out loud: percentages and percentage change, growth, margins, break-even, weighted averages and big numbers with lots of zeros. What matters most is setting the calculation up correctly before you start, keeping track of zeros and units, rounding sensibly, and checking that the answer is the right size before you say what it means for the client.",
+  "blocks": [
+    { "type": "h2", "id": "what-maths-to-expect", "text": "What maths to expect" },
+    {
+      "type": "p",
+      "text": "The maths in a case is rarely hard on its own. What makes it tricky is doing it under time pressure, without a calculator, while explaining your thinking and keeping the business question in mind. Almost all of it falls into the families on the formula sheet below, plus big multiplications and divisions (market sizes, cost per customer) and numbers you read off charts and tables. Knowing the formulas is the easy part; the skill is choosing the one the question needs and setting it up with the case's own numbers and units."
+    },
+    {
+      "type": "framework",
+      "title": "Case maths formula sheet",
+      "branches": [
+        { "name": "Percentages", "items": ["Share = part ÷ total", "Percentage change = (new − old) ÷ old", "Percentage points = new % − old %"] },
+        { "name": "Growth", "items": ["After n years = start × (1 + growth) to the power of n", "CAGR = (end ÷ start) to the power of (1 ÷ years), minus 1", "Doubling time ≈ 72 ÷ growth rate in %"] },
+        { "name": "Profit and margins", "items": ["Profit = revenue − costs", "Margin = profit ÷ price; markup = profit ÷ cost", "Contribution per unit = price − variable cost per unit"] },
+        { "name": "Break-even and payback", "items": ["Break-even volume = fixed costs ÷ contribution per unit", "Payback = investment ÷ yearly profit or cash", "Volume change a price change needs to break even = price change ÷ new contribution per unit"] },
+        { "name": "Averages and per-unit figures", "items": ["Weighted average = sum of (value × weight)", "Per-unit figure = total ÷ number of people, customers, days or stores"] }
+      ]
+    },
+    { "type": "h2", "id": "doing-maths-out-loud", "text": "How to do maths out loud" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Say the plan before the numbers", "text": "Put the formula in the words of the case, for example: 'To get the break-even volume, I'll divide fixed costs by the margin per unit.' If the plan is wrong, the interviewer can stop you before you waste time on it." },
+        { "title": "Write it down neatly", "text": "Keep a tidy page with units on every number. Messy notes are where zeros go missing." },
+        { "title": "Simplify first", "text": "Cancel zeros, round where it is safe, and break awkward numbers into easy parts." },
+        { "title": "Calculate steadily", "text": "Aim for steady rather than fast. A correct answer after 30 seconds beats a wrong one after 10." },
+        { "title": "Check the size", "text": "Is the answer plausible? Is it per year or per month, in thousands or in millions?" },
+        { "title": "Say the so-what", "text": "Finish with what the number means, for example: 'So the product needs 80,000 units a year to break even, which is below the sales forecast.'" }
+      ]
+    },
+    { "type": "h2", "id": "zeros-and-big-numbers", "text": "Zeros and big numbers" },
+    {
+      "type": "p",
+      "text": "A lost or extra zero is one of the easiest ways to go wrong, and it changes the answer tenfold. The simplest defence is to write big numbers in short form (k for thousand, m for million, bn for billion, where a billion is a thousand million) and to handle the zeros separately from the digits: multiply or divide the digits first, then sort out the zeros."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: keeping track of zeros",
+      "question": "An invented streaming service has 45 million subscribers, each paying $12 a month. What is its yearly revenue? And if it spends $2.4 billion a year on content, how much is that per subscriber?",
+      "answer": [
+        "Monthly revenue: 45m × $12. Digits first: 45 × 12 = 540, so $540m a month.",
+        "Yearly revenue: $540m × 12 = $6,480m, or about $6.5bn.",
+        "Content spend per subscriber: $2.4bn ÷ 45m. Write it as 2,400m ÷ 45m; the m's cancel, and 2,400 ÷ 45 is about 53, so about $53 per subscriber a year.",
+        "Sense check: $53 a year is about $4.40 of each subscriber's $12 a month, so content takes about 37% of revenue. That is a believable share for a business built on content. If you had got $5,300 per subscriber, a slipped zero would be the first suspect."
+      ],
+      "checks": [
+        { "label": "Monthly revenue", "inputs": { "subscribers": 45000000, "price": 12 }, "expression": "subscribers * price", "expected": 540000000 },
+        { "label": "Yearly revenue", "inputs": { "monthly": 540000000, "months": 12 }, "expression": "monthly * months", "expected": 6480000000 },
+        { "label": "Content spend per subscriber a year", "inputs": { "content": 2400000000, "subscribers": 45000000 }, "expression": "content / subscribers", "expected": 53.3333 },
+        { "label": "Content spend per subscriber a month", "inputs": { "content": 2400000000, "subscribers": 45000000 }, "expression": "content / subscribers / 12", "expected": 4.44444 },
+        { "label": "Content as a share of revenue (%)", "inputs": { "content": 2400000000, "revenue": 6480000000 }, "expression": "content / revenue * 100", "expected": 37.037 }
+      ]
+    },
+    { "type": "h2", "id": "percentages", "text": "Percentages" },
+    {
+      "type": "p",
+      "text": "Three ideas cover most percentage questions. First, build any percentage from easy pieces: 10% is the number divided by 10, 5% is half of that, and 1% is the number divided by 100. Second, x% of y is the same as y% of x, so 8% of 25 equals 25% of 8. Third, know the difference between a percentage change and a change in percentage points, and say which one you mean. It also pays to know common fractions as percentages (see the table after the example): 3 ÷ 8 is 3 × 12.5% = 37.5%, and 2 ÷ 7 is about 2 × 14.3% = 28.6%."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: three quick percentage questions",
+      "question": "(1) What is 15% of 360? (2) What is 8% of 25? (3) A company's profit margin rose from 12% to 15%. By how much did it rise?",
+      "answer": [
+        "(1) 10% of 360 is 36, and 5% is half of that, 18. So 15% is 36 + 18 = 54.",
+        "(2) Swap it round: 25% of 8 is a quarter of 8, which is 2.",
+        "(3) The margin rose by 3 percentage points (15 − 12). As a percentage change, it rose by 3 ÷ 12 = 25%. Both are correct, but they sound very different, so say which one you mean."
+      ],
+      "checks": [
+        { "label": "10% of 360", "inputs": { "n": 360 }, "expression": "n / 10", "expected": 36 },
+        { "label": "5% of 360", "inputs": { "ten_percent": 36 }, "expression": "ten_percent / 2", "expected": 18 },
+        { "label": "15% of 360", "inputs": { "n": 360 }, "expression": "n / 10 + n / 20", "expected": 54 },
+        { "label": "8% of 25", "inputs": { "a": 8, "b": 25 }, "expression": "a * b / 100", "expected": 2 },
+        { "label": "Change in percentage points", "inputs": { "new": 15, "old": 12 }, "expression": "new - old", "expected": 3 },
+        { "label": "Percentage change in the margin", "inputs": { "new": 15, "old": 12 }, "expression": "(new - old) / old * 100", "expected": 25 }
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Common fractions as percentages, worth knowing by heart",
+      "columns": ["Fraction", "Percentage"],
+      "rows": [
+        ["1/2", "50%"],
+        ["1/3", "33.3%"],
+        ["1/4", "25%"],
+        ["1/5", "20%"],
+        ["1/6", "16.7%"],
+        ["1/7", "14.3%"],
+        ["1/8", "12.5%"],
+        ["1/9", "11.1%"],
+        ["1/10", "10%"],
+        ["1/11", "9.1%"],
+        ["1/12", "8.3%"]
+      ]
+    },
+    { "type": "h2", "id": "growth-and-compounding", "text": "Growth and compounding" },
+    {
+      "type": "p",
+      "text": "Percentage change is (new − old) ÷ old. Growth over several years compounds: each year's growth applies to a bigger base, so 10% a year for three years is 33.1%, not 30%. The compound annual growth rate (CAGR) turns growth over several years into one yearly rate: (end ÷ start) to the power of (1 ÷ years), minus 1. Two shortcuts help. The rule of 72 says that something growing at r% a year doubles in about 72 ÷ r years. And after a fall, you need a bigger percentage rise than the fall to get back to where you started."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: growth that compounds",
+      "question": "(1) Revenue of $200m grows by 10% a year for three years. What is it at the end? (2) Sales rose from 50,000 to 72,000 units over two years. What is the CAGR? (3) A company's sales fall by 20%. What rise do they need to get back to where they started? (4) Roughly how long does something take to double at 8% a year?",
+      "answer": [
+        "(1) $200m × 1.1 × 1.1 × 1.1 = $266.2m: an increase of 33.1%, not 30%.",
+        "(2) 72,000 ÷ 50,000 = 1.44. Over two years, the CAGR is the square root of 1.44, minus 1. The square root of 1.44 is 1.2, so the CAGR is 20% a year. Check: 50,000 × 1.2 × 1.2 = 72,000.",
+        "(3) After the fall, 100 becomes 80. Getting from 80 back to 100 needs a rise of 20 ÷ 80 = 25%.",
+        "(4) Rule of 72: 72 ÷ 8 = 9 years. Check: 1.08 to the power of 9 is about 2.0."
+      ],
+      "checks": [
+        { "label": "Revenue after three years", "inputs": { "start": 200, "growth": 1.1 }, "expression": "start * growth ^ 3", "expected": 266.2 },
+        { "label": "Total increase over three years (%)", "inputs": { "growth": 1.1 }, "expression": "(growth ^ 3 - 1) * 100", "expected": 33.1 },
+        { "label": "Growth multiple over two years", "inputs": { "end": 72000, "start": 50000 }, "expression": "end / start", "expected": 1.44 },
+        { "label": "CAGR (%)", "inputs": { "end": 72000, "start": 50000, "years": 2 }, "expression": "((end / start) ^ (1 / years) - 1) * 100", "expected": 20 },
+        { "label": "Multiplying back", "inputs": { "start": 50000, "rate": 1.2 }, "expression": "start * rate * rate", "expected": 72000 },
+        { "label": "Level after a 20% fall", "inputs": { "start": 100, "fall": 0.2 }, "expression": "start * (1 - fall)", "expected": 80 },
+        { "label": "Rise needed to recover (%)", "inputs": { "start": 100, "after": 80 }, "expression": "(start - after) / after * 100", "expected": 25 },
+        { "label": "Rule of 72 at 8%", "inputs": { "rate": 8 }, "expression": "72 / rate", "expected": 9 },
+        { "label": "Nine years of 8% growth", "inputs": { "growth": 1.08 }, "expression": "growth ^ 9", "expected": 1.999 }
+      ]
+    },
+    { "type": "h2", "id": "margins-and-break-even", "text": "Margins, break-even and payback" },
+    {
+      "type": "p",
+      "text": "Profit is revenue minus costs. Margin is profit as a share of revenue (the price); markup is profit as a share of cost. They describe the same profit with different denominators, so a 25% margin is a 33% markup. Contribution margin is price minus variable cost per unit: what each extra sale adds towards fixed costs and profit. Break-even volume is fixed costs divided by contribution per unit, and payback is the investment divided by the yearly profit (or cash) it brings in. Both depend heavily on volume, so show how the answer moves if sales come in higher or lower."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: margin versus markup",
+      "question": "An invented online shop sells a lamp for $80. Buying and shipping it costs $60. What are the profit per lamp, the margin and the markup? If the shop wants a 40% margin, what price does it need?",
+      "answer": [
+        "Profit per lamp: $80 − $60 = $20.",
+        "Margin: $20 ÷ $80 = 25%.",
+        "Markup: $20 ÷ $60 = 33.3%.",
+        "For a 40% margin, the cost must be 60% of the price, so the price is $60 ÷ 0.6 = $100.",
+        "The trap: adding 40% to the cost gives $60 × 1.4 = $84, which is only a ($84 − $60) ÷ $84 = 28.6% margin."
+      ],
+      "checks": [
+        { "label": "Profit per lamp", "inputs": { "price": 80, "cost": 60 }, "expression": "price - cost", "expected": 20 },
+        { "label": "Margin (%)", "inputs": { "profit": 20, "price": 80 }, "expression": "profit / price * 100", "expected": 25 },
+        { "label": "Markup (%)", "inputs": { "profit": 20, "cost": 60 }, "expression": "profit / cost * 100", "expected": 33.3333 },
+        { "label": "Price for a 40% margin", "inputs": { "cost": 60, "margin": 0.4 }, "expression": "cost / (1 - margin)", "expected": 100 },
+        { "label": "Price from a 40% markup", "inputs": { "cost": 60, "markup": 0.4 }, "expression": "cost * (1 + markup)", "expected": 84 },
+        { "label": "Margin at $84 (%)", "inputs": { "price": 84, "cost": 60 }, "expression": "(price - cost) / price * 100", "expected": 28.5714 }
+      ]
+    },
+    {
+      "type": "example",
+      "title": "Worked example: break-even, payback and a sensitivity check",
+      "question": "An invented company is launching a water bottle. Fixed costs are $1.2m a year. Each bottle sells for $25 and costs $10 to make and ship. It expects to sell 100,000 a year. How many must it sell to break even? If the launch needs a $3m investment, how long does it take to pay back? What if sales reach 150,000?",
+      "answer": [
+        "Contribution per bottle: $25 − $10 = $15.",
+        "Break-even volume: $1.2m ÷ $15 = 80,000 bottles a year.",
+        "Forecast sales of 100,000 are 20,000 above break-even, so sales could fall 20% short of the forecast before the product loses money.",
+        "Yearly profit at 100,000 bottles: 100,000 × $15 − $1.2m = $300,000.",
+        "Payback: $3m ÷ $300,000 = 10 years. That is a long wait for a product like this.",
+        "Sensitivity: at 150,000 bottles, profit is 150,000 × $15 − $1.2m = $1.05m and payback falls to $3m ÷ $1.05m = about 2.9 years. So what: the launch only makes sense if there is good evidence that sales will be well above 100,000."
+      ],
+      "checks": [
+        { "label": "Contribution per bottle", "inputs": { "price": 25, "cost": 10 }, "expression": "price - cost", "expected": 15 },
+        { "label": "Break-even volume", "inputs": { "fixed": 1200000, "contribution": 15 }, "expression": "fixed / contribution", "expected": 80000 },
+        { "label": "Room above break-even (%)", "inputs": { "forecast": 100000, "break_even": 80000 }, "expression": "(forecast - break_even) / forecast * 100", "expected": 20 },
+        { "label": "Profit at 100,000 bottles", "inputs": { "units": 100000, "contribution": 15, "fixed": 1200000 }, "expression": "units * contribution - fixed", "expected": 300000 },
+        { "label": "Payback in years", "inputs": { "investment": 3000000, "profit": 300000 }, "expression": "investment / profit", "expected": 10 },
+        { "label": "Profit at 150,000 bottles", "inputs": { "units": 150000, "contribution": 15, "fixed": 1200000 }, "expression": "units * contribution - fixed", "expected": 1050000 },
+        { "label": "Payback at 150,000 bottles", "inputs": { "investment": 3000000, "profit": 1050000 }, "expression": "investment / profit", "expected": 2.85714 }
+      ]
+    },
+    { "type": "h2", "id": "weighted-averages", "text": "Averages and weighted averages" },
+    {
+      "type": "p",
+      "text": "When groups are different sizes, a simple average of their rates is wrong. Weight each rate by its share of the total instead. This comes up with prices across products, margins across business units and growth across regions."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: a weighted average price",
+      "question": "An invented coffee chain sells two sizes. 60% of the cups it sells are small, at $3, and 40% are large, at $4.50. What is the average price per cup? If a shop sells 2,000 cups a day, what is its daily revenue?",
+      "answer": [
+        "Weighted average: 0.6 × $3 + 0.4 × $4.50 = $1.80 + $1.80 = $3.60.",
+        "A simple average of $3 and $4.50 would give $3.75, which overstates revenue because more small cups are sold.",
+        "Daily revenue: 2,000 × $3.60 = $7,200."
+      ],
+      "checks": [
+        { "label": "Small cups' part of the average", "inputs": { "share": 0.6, "price": 3 }, "expression": "share * price", "expected": 1.8 },
+        { "label": "Large cups' part of the average", "inputs": { "share": 0.4, "price": 4.5 }, "expression": "share * price", "expected": 1.8 },
+        { "label": "Weighted average price", "inputs": { "small": 1.8, "large": 1.8 }, "expression": "small + large", "expected": 3.6 },
+        { "label": "Simple average (wrong here)", "inputs": { "small_price": 3, "large_price": 4.5 }, "expression": "(small_price + large_price) / 2", "expected": 3.75 },
+        { "label": "Daily revenue", "inputs": { "cups": 2000, "average": 3.6 }, "expression": "cups * average", "expected": 7200 }
+      ]
+    },
+    { "type": "h2", "id": "rounding-and-sense-checks", "text": "Rounding and sense checks" },
+    {
+      "type": "p",
+      "text": "Rounding makes mental maths fast, and it is fine as long as you say what you are doing and it cannot change the decision. Round to one or two significant figures, and when you multiply, round one number up and the other down so the errors partly cancel. Don't round away the very thing you are testing: if two options differ by 5%, rounding each by 10% can flip the answer. Then, before you use any number, check it is the right size. The quickest test is to turn a total into something per person, per customer, per day or per store, where you have a feel for what is reasonable."
+    },
+    {
+      "type": "example",
+      "title": "Worked example: when rounding helps and when it hurts",
+      "question": "(1) Estimate 49 × 21. (2) Option A is worth $10.4m a year and option B $9.6m. What happens if you round both to the nearest $1m?",
+      "answer": [
+        "(1) Round one number up and the other down: 50 × 20 = 1,000. The exact answer is 49 × 21 = 1,029, so the estimate is less than 3% out. Good enough for most purposes.",
+        "(2) Rounded to the nearest $1m, both become $10m and look the same. The real difference is $10.4m − $9.6m = $0.8m, over 8% of option B. Here rounding hides the answer, so keep one decimal place."
+      ],
+      "checks": [
+        { "label": "Rounded estimate", "inputs": { "a": 50, "b": 20 }, "expression": "a * b", "expected": 1000 },
+        { "label": "Exact answer", "inputs": { "a": 49, "b": 21 }, "expression": "a * b", "expected": 1029 },
+        { "label": "Rounding error (%)", "inputs": { "exact": 1029, "estimate": 1000 }, "expression": "(exact - estimate) / exact * 100", "expected": 2.81827 },
+        { "label": "Difference between the options", "inputs": { "a": 10.4, "b": 9.6 }, "expression": "a - b", "expected": 0.8 },
+        { "label": "Difference as a share of option B (%)", "inputs": { "difference": 0.8, "b": 9.6 }, "expression": "difference / b * 100", "expected": 8.33333 }
+      ]
+    },
+    {
+      "type": "example",
+      "title": "Worked example: does a market size make sense?",
+      "question": "You estimate that coffee bought away from home is worth $18bn a year in an invented country of 60 million people. Is that plausible? What if you had got $180bn?",
+      "answer": [
+        "Per person per year: $18bn ÷ 60m = $300.",
+        "Per person per day: $300 ÷ 365 = about $0.82. Many people buy no coffee at all and some buy one or two a day, so an average of under a dollar a day is believable.",
+        "With $180bn, the same steps give $3,000 a person a year, or about $8.20 a day for every adult and child in the country. That is far too high, so a zero has probably slipped somewhere."
+      ],
+      "checks": [
+        { "label": "Spend per person a year", "inputs": { "market": 18000000000, "people": 60000000 }, "expression": "market / people", "expected": 300 },
+        { "label": "Spend per person a day", "inputs": { "per_year": 300, "days": 365 }, "expression": "per_year / days", "expected": 0.821918 },
+        { "label": "Spend per person a year at $180bn", "inputs": { "market": 180000000000, "people": 60000000 }, "expression": "market / people", "expected": 3000 },
+        { "label": "Spend per person a day at $180bn", "inputs": { "per_year": 3000, "days": 365 }, "expression": "per_year / days", "expected": 8.21918 }
+      ]
+    },
+    { "type": "h2", "id": "mistakes-and-practice", "text": "Common mistakes and how to practise" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "Mistakes to watch for",
+      "text": "Losing or adding a zero; mixing up percentage points and percentages; adding percentages that should compound; averaging rates without weighting them; mixing monthly and yearly figures; confusing margin with markup; and going silent while you calculate. Each of these is avoidable with a tidy page and the habit of checking the size of every answer."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Do 10 to 20 minutes of timed drills on most days, without a calculator.",
+        "Practise out loud, explaining each step as you go.",
+        "Use numbers that look like case numbers: millions of customers, prices with cents, percentages with decimals.",
+        "Keep a log of every mistake and its cause, and look for patterns.",
+        "Once your accuracy is steady, work on speed, then add the so-what to every answer."
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Practise the maths",
+      "items": [
+        { "label": "Mental maths drills", "href": "/drills/mental-maths" },
+        { "label": "Market sizing drills", "href": "/drills/market-sizing" },
+        { "label": "Chart-reading drills", "href": "/drills/chart-reading" },
+        { "label": "Practice cases", "href": "/cases" },
+        { "label": "Pricing case interview guide", "href": "/guides/pricing-case-interview" },
+        { "label": "Market sizing case interview guide", "href": "/guides/market-sizing-case-interview" },
+        { "label": "Glossary of case interview terms", "href": "/glossary" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I use a calculator in a case interview?",
+      "a": "Practise as if you can't. Follow whatever instructions you are given for each interview or test, and ask if it is unclear. Being comfortable without a calculator also makes you faster at spotting numbers that look wrong."
+    },
+    {
+      "q": "How good does my mental maths need to be for case interviews?",
+      "a": "Good enough to do percentages, growth, margins and divisions with big numbers accurately and steadily while you talk. There is no fixed standard to hit. Accuracy comes first: a slower, correct answer with clear working is much better than a fast wrong one."
+    },
+    {
+      "q": "What is the difference between margin and markup?",
+      "a": "Both describe the profit on a sale. Margin divides the profit by the selling price; markup divides it by the cost. A product that costs $60 and sells for $80 has a margin of 25% and a markup of 33%."
+    },
+    {
+      "q": "What is the fastest way to work out percentages in my head?",
+      "a": "Build them from 10%, 5% and 1%. For 15% of 360, take 10% (36) and add 5% (18) to get 54. Swapping also helps: 8% of 25 is the same as 25% of 8, which is 2."
+    },
+    {
+      "q": "What should I do if I make a maths mistake in the interview?",
+      "a": "Correct it out loud as soon as you notice, say what changes as a result, and carry on. Catching your own error with a sense check shows good judgement; carrying on with a number that is obviously too big or too small is what to avoid."
+    }
+  ],
+  "related_drills": ["mental-maths", "market-sizing", "chart-reading"]
+}

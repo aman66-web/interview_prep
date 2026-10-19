@@ -1,0 +1,135 @@
+{
+  "slug": "about",
+  "title": "About CaseSpar",
+  "seo_title": "About CaseSpar | AI case interview practice",
+  "description": "What CaseSpar is, who it is for, how the AI interviewer and scored debrief work, and how every practice case is written and checked.",
+  "updated": "2026-10-15",
+  "status": "draft",
+  "intro": "CaseSpar is a website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window. Then you get a scored debrief that shows what went well and what to fix next.",
+  "blocks": [
+    { "type": "h2", "id": "what-it-is", "text": "What CaseSpar is" },
+    {
+      "type": "p",
+      "text": "In a case interview you are given a business problem and asked to work through it, with an interviewer guiding you. It takes practice, and practice usually needs someone to play the interviewer. CaseSpar gives you an interviewer whenever you want one."
+    },
+    {
+      "type": "p",
+      "text": "It has four parts: practice cases, an AI interviewer, a scored debrief after each interview, and short drills for the skills cases test."
+    },
+
+    { "type": "h2", "id": "who-it-is-for", "text": "Who it is for" },
+    {
+      "type": "ul",
+      "items": [
+        "University students and recent graduates applying for consulting roles.",
+        "MBA applicants, and people moving into consulting from another career.",
+        "Anyone who wants to get quicker at the maths, structuring and chart reading that case interviews test."
+      ]
+    },
+    { "type": "p", "text": "CaseSpar is in English only for now." },
+
+    { "type": "h2", "id": "how-it-works", "text": "How it works" },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Pick a case",
+          "text": "Anyone can read every case prompt for free. A free account lets you run the free starter case with the AI interviewer. A paid plan opens every case."
+        },
+        {
+          "title": "Work through it with the AI interviewer",
+          "text": "The interviewer takes you through clarifying questions, your structure, the analysis, a brainstorm and your recommendation. It answers from the case facts and shares exhibits during the analysis, when you ask for relevant data or when it moves the case on. Notes, a calculator and a timer sit beside the chat."
+        },
+        {
+          "title": "Read your scored debrief",
+          "text": "You get a score from 1 to 5 for structure, analysis and maths, business judgement, communication and your recommendation. You also get up to three strengths and three fixes, with quotes from what you said."
+        },
+        {
+          "title": "Practise your weak spots",
+          "text": "Each fix links to a drill: mental maths, market sizing, frameworks or chart reading. Drills are short questions with instant feedback."
+        }
+      ]
+    },
+
+    { "type": "h2", "id": "how-cases-are-written", "text": "How the cases are written" },
+    {
+      "type": "ul",
+      "items": [
+        "Every case is written for CaseSpar. We don't copy or rework cases from casebooks, books, other websites or firms' own practice materials.",
+        "The companies and numbers are invented. Any likeness to a real business is a coincidence.",
+        "Every maths question has an expected answer, and our tests recompute it from the case's own numbers. So the answer key is checked by code, not just by eye.",
+        "A person reads and checks each case before it goes live. Until then it stays a draft and is hidden from the live site. [Founder to confirm who reviews cases. Say \"someone with consulting experience\" only if that is true of the reviewer.]"
+      ]
+    },
+
+    { "type": "h2", "id": "what-the-ai-does", "text": "What the AI does" },
+    {
+      "type": "p",
+      "text": "The interviewer runs on a large language model made by Anthropic. It plays the interviewer for one case at a time."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "It is set up to answer your questions only from the case facts. If something isn't in the case, it says so or asks you to make an assumption.",
+        "It shares exhibits during the analysis, when you ask for relevant data or when it moves the case on. It probes your structure and reasoning instead of giving you the answer.",
+        "It writes your debrief from what you actually said. Quotes in the debrief are checked against your own messages, and dropped if they don't match."
+      ]
+    },
+
+    { "type": "h2", "id": "what-the-ai-does-not-do", "text": "What the AI does not do" },
+    {
+      "type": "ul",
+      "items": [
+        "It doesn't mark your maths. The AI only picks out the numbers you give. Code compares each one with the case's expected answer. Your analysis and maths score is the average of the AI's score for your analysis and the code's maths score. If you gave no maths answers, it is the AI's score alone.",
+        "It doesn't predict how any firm would judge you. Scores and feedback are practice feedback, not an assessment by a consulting firm. No firm sees them.",
+        "It is set up not to ask for personal details such as your name, school or employer.",
+        "It isn't perfect. It can misread you or give feedback that is wrong. If something looks off, trust the case numbers and tell us."
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "key",
+      "title": "Practice, not a prediction",
+      "text": "A high score on CaseSpar doesn't mean you will pass a real interview, and a low score doesn't mean you won't. Use your debrief to decide what to practise next."
+    },
+
+    { "type": "h2", "id": "free-and-paid", "text": "Free and paid" },
+    {
+      "type": "p",
+      "text": "A free account gives you one full AI interview with the free starter case, including the scored debrief, and 20 drills a day. Paid plans open every case and unlimited drills, with up to 3 AI interviews a day (60 a month) and an outline of a strong answer in each debrief. Monthly is $39 a month. The 90-Day Pass is $99, paid once."
+    },
+
+    { "type": "h2", "id": "your-data", "text": "Your data" },
+    {
+      "type": "p",
+      "text": "We collect only what we need to run CaseSpar. You can download your data or delete your account at any time from your account page. We never sell your data, and we don't use advertising trackers. The privacy policy has the details."
+    },
+
+    { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "text": "Not affiliated with or endorsed by McKinsey & Company, Boston Consulting Group, Bain & Company or any other firm named on this site."
+    },
+    {
+      "type": "p",
+      "text": "We use firm names only to describe something, such as a McKinsey-style case. We never use firm logos."
+    },
+
+    { "type": "h2", "id": "contact", "text": "Contact" },
+    { "type": "p", "text": "Questions, ideas or a mistake to report? Email [support email]." },
+
+    {
+      "type": "links",
+      "title": "Where to next",
+      "items": [
+        { "label": "Browse the cases", "href": "/cases" },
+        { "label": "Try a drill", "href": "/drills" },
+        { "label": "See the plans", "href": "/pricing" },
+        { "label": "Read the FAQ", "href": "/faq" },
+        { "label": "Privacy policy", "href": "/legal/privacy" },
+        { "label": "Disclaimer", "href": "/legal/disclaimer" }
+      ]
+    }
+  ]
+}
