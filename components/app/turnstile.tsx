@@ -53,6 +53,7 @@ export function Turnstile({ siteKey, resetKey }: { siteKey: string; resetKey?: u
         widget.current = api.render(box.current, {
           sitekey: siteKey,
           theme: "auto",
+          callback: () => setFailed(false), // a token arrived (also after Turnstile's own retry)
           "error-callback": () => {
             setFailed(true);
             return true;
@@ -79,7 +80,7 @@ export function Turnstile({ siteKey, resetKey }: { siteKey: string; resetKey?: u
       <div ref={box} className="min-h-[65px]" />
       {failed ? (
         <p role="alert" className="mt-2 text-sm text-ink">
-          The check could not load. Turn off any ad or script blocker for this page, then refresh it.
+          The check ran into a problem. Refresh the page and try again. If it keeps happening, turn off any ad or script blocker for this page.
         </p>
       ) : null}
     </div>

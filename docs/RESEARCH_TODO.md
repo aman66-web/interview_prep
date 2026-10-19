@@ -282,8 +282,7 @@ The privacy page's voice mode section (`content/pages/privacy.json`, `#voice-mod
 
 ## Sign-in email and bot check providers (19 Oct 2026)
 
-The privacy page's "Our service providers" table now lists Resend and Cloudflare (Turnstile).
+The privacy page's "Our service providers" table lists Resend and Cloudflare (Turnstile).
 
-- Resend: where it processes and stores data, which company contracts with UK customers, and whether its Data Processing Addendum includes the EU Standard Contractual Clauses with the UK Addendum. A search found none of its own pages (`https://resend.com/legal/privacy-policy` and its DPA were not read). The table row says only that Resend's own terms say where it processes data. Also check whether Resend's free plan allows a second domain next to the Preflight Pass one (price unknown; Chrome must stop and report before any upgrade).
-- Cloudflare Turnstile: which cookies or browser storage it sets on `challenges.cloudflare.com` and for how long. Its Privacy Addendum (`https://www.cloudflare.com/turnstile-privacy-policy/`, found by search 19 Oct 2026) says it points to Cloudflare's Cookie Policy and Turnstile docs for the list, which were not read. The privacy page makes no cookie claim for it.
-
+- Read on 19 Oct 2026: Resend's Data Processing Addendum (`https://resend.com/legal/dpa`): party Plus Five Five, Inc. (San Francisco); primary processing in the US (section 6.1); EU SCCs (6.2) and UK Addendum (6.4); EU-US DPF and UK Extension (11.1). The privacy row says exactly this. Not read: Resend's privacy policy, and whether its free plan allows a second domain next to the Preflight Pass one (price unknown; Chrome must stop and report before any upgrade).
+- Read on 19 Oct 2026: Cloudflare's Turnstile Privacy Addendum (`https://www.cloudflare.com/turnstile-privacy-policy/`): processor for running the check, controller for improving bot detection; signals include IP address, TLS fingerprint, User-Agent and the site key with its origin; signals "strictly necessary". **Not stated there:** the transfer safeguard (DPF, SCCs, UK Addendum) and the list of cookies (it points to Cloudflare's Cookie Policy). Still to read: Cloudflare's own Data Processing Addendum and Cookie Policy, then fill in the safeguard in the privacy row and remove "we have not confirmed one yet".
