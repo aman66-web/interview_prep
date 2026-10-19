@@ -40,10 +40,6 @@
       "type": "p",
       "text": "Our hosting provider, Vercel, receives your IP address and browser details when you use the site, as part of running and protecting it. Vercel's documentation says the logs from our server code (its \"runtime logs\") are kept for 1 day on our plan, or 30 days if its Observability Plus feature is switched on. [Founder to check whether Observability Plus is on (Vercel, your team's Settings, Billing, Observability Plus) and whether interview-prep is left out of it under Manage projects, then keep only the figure that applies.] Your browser doesn't connect to Supabase, our database and login provider, directly: our server does, and it doesn't pass your IP address on. Supabase's pricing page says it keeps API and database logs for 1 day, and records of sign-ins and other login events for 1 hour, on our plan."
     },
-    {
-      "type": "p",
-      "text": "[Founder: Supabase can also copy its login records (sign-ins, sign-ups, sign-outs and similar events, with the email address and an IP address) into a table in our own database (Supabase, Authentication, Configuration, Audit Logs, \"Write audit logs to the database\"). Its documentation doesn't say how long they stay there. Check whether this is on. If it is, switch it off or say here how long we keep those records.]"
-    },
 
     { "type": "h2", "id": "why-we-use-it", "text": "Why we use it, and our lawful basis" },
     {
@@ -81,7 +77,7 @@
       "caption": "Our service providers",
       "columns": ["Provider", "What it does for us", "Where"],
       "rows": [
-        ["Supabase", "Our database and login, including sending sign-in emails. [Founder: add the email-sending service here once one is chosen.]", "Our database is hosted in London (eu-west-2). Our contract is with Supabase Pte. Ltd., a company in Singapore. Supabase and the companies it uses may also process data in other countries. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Supabase's Data Processing Addendum."],
+        ["Supabase", "Our database and login, including sending sign-in emails.", "Our database is hosted in London (eu-west-2). Our contract is with Supabase Pte. Ltd., a company in Singapore. Supabase and the companies it uses may also process data in other countries. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Supabase's Data Processing Addendum."],
         ["Vercel", "Hosts the website and runs our server code.", "US company (Vercel Inc.). Vercel serves the site's fixed files from the location nearest to you. Our server code runs in Washington, D.C., USA. The small piece of code that checks you are logged in before account pages open runs in Vercel's locations around the world. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Vercel's Data Processing Addendum."],
         ["Anthropic", "Runs the AI interviewer and writes your debrief. It receives the case materials and the text of your interview, not your email address.", "US company (Anthropic PBC, San Francisco). For UK customers the contract is with Anthropic Ireland, Limited. Anthropic's documentation says it stores API data in the US, and that the AI model may run in any of the locations Anthropic uses. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Anthropic's Data Processing Addendum."],
         ["Stripe", "Takes payments and runs the billing portal. We send it your email address, your account reference, the plan you chose and that you ticked the \"start straight away\" box. On its own payment page it collects your card details, and it may also collect details about your device and connection, such as your IP address.", "For a UK Stripe account, the Stripe Services Agreement is with Stripe Payments Europe, Limited (Stripe Payments UK Ltd joins it for some services). Data sent to Stripe, LLC in the US is covered first by the Data Privacy Framework (for UK data, the UK Extension to the EU-US Data Privacy Framework, which Stripe's privacy policy says it follows). If that doesn't apply, the EU Standard Contractual Clauses with the UK International Data Transfer Addendum do. Stripe's Data Transfers Addendum sets this order."]
@@ -93,7 +89,7 @@
     },
     {
       "type": "p",
-      "text": "If you choose \"Continue with Google\", Google handles that sign-in under its own privacy policy and tells our login provider (Supabase) your email address. Google may also send your name and profile picture, which Supabase stores with your account; we don't use them, and they are deleted when you delete your account. [Founder: add the link to Google's privacy policy, and confirm from Google's own terms which Google company is responsible and where it processes data, before launch. Add the same for Apple if \"Continue with Apple\" is switched on later, including that Apple's \"Hide My Email\" gives us a private address.]"
+      "text": "If you choose \"Continue with Google\", Google handles that sign-in under its own privacy policy (https://policies.google.com/privacy) and tells our login provider (Supabase) your email address. Google may also send your name and profile picture, which Supabase stores with your account; we don't use them, and they are deleted when you delete your account."
     },
     {
       "type": "p",
@@ -142,10 +138,6 @@
       "type": "p",
       "text": "A clean-up runs automatically every day. It deletes transcripts and usage events, and removes the text from old debriefs, once they reach the ages above."
     },
-    {
-      "type": "p",
-      "text": "[Founder: the daily clean-up is built. It runs only once CRON_SECRET and SUPABASE_SECRET_KEY are set in Vercel (Production). Check one successful run in Vercel's Cron log before this policy goes live.]"
-    },
 
     { "type": "h2", "id": "share-links", "text": "Share links" },
     {
@@ -169,10 +161,6 @@
     {
       "type": "p",
       "text": "Only the resulting text reaches us. We treat it exactly like a typed answer: it becomes part of your interview transcript and is kept and deleted in the same way (see How long we keep it). You can switch voice mode off at any time and type instead."
-    },
-    {
-      "type": "p",
-      "text": "[Founder: before this page goes live, check that the browser makers' own privacy pages still describe their speech services this way, in particular Apple's for Safari (see docs/RESEARCH_TODO.md, Voice mode).]"
     },
 
     { "type": "h2", "id": "your-rights", "text": "Your rights" },
