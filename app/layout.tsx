@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <SiteFooter />
         <UtmCapture />
+        <Analytics />
       </body>
     </html>
   );
