@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { recordSignupOnce } from "@/lib/analytics/funnel";
 import { appendUtm, utmFromFormData } from "@/lib/analytics/utm";
+import { captchaTokenFrom, turnstileSiteKey } from "@/lib/auth/captcha";
 import { enabledOAuthProviders, parseProvider } from "@/lib/auth/providers";
 import { emailSchema, otpCodeSchema } from "@/lib/auth/schemas";
 import { previewQuickLoginAllowed, quickSignIn } from "@/lib/auth/preview-login";
@@ -56,6 +57,12 @@ export async function requestSignInEmail(
     // "no-token": nothing was tried, so send the normal email below.
   }
 
+  // The bot check (Cloudflare Turnstile), when it is switched on: no token, no email.
+  const captchaToken = captchaTokenFrom(formData);
+  if (turnstileSiteKey() && !captchaToken) {
+    return { step: "email", email, error: "Please finish the check below, then press the button again." };
+  }
+
   const origin = await requestOrigin();
 
   // The link carries the visit's campaign tags (no personal data) so the signup
@@ -70,12 +77,16 @@ export async function requestSignInEmail(
     options: {
       emailRedirectTo: redirectTo.toString(),
       shouldCreateUser: true,
+      ...(captchaToken ? { captchaToken } : {}),
     },
   });
 
   if (error) {
     // Log the reason but never the email address (personal data).
     console.error("signInWithOtp failed", { code: error.code, status: error.status });
+    if (error.code === "captcha_failed") {
+      return { step: "email", email, error: "The check didn't pass. Please try it again." };
+    }
     if (error.status === 429 || error.code === "over_email_send_rate_limit") {
       return {
         step: "email",

@@ -11,6 +11,7 @@ import { safeNextPath } from "@/lib/auth/safe-redirect";
 import { getUser } from "@/lib/auth/session";
 import { siteConfig } from "@/site.config";
 import { pageImage } from "@/lib/images";
+import { turnstileSiteKey } from "@/lib/auth/captcha";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default async function LoginPage({
               No password and no card. {names ? `Sign in with ${names}, or we email you a one-time code` : "We email you a one-time code to sign in"}; new accounts are created automatically.
             </p>
             <div className="mt-8 rounded-[1.75rem] bg-surface p-5 shadow-float ring-1 ring-inset ring-line sm:p-6">
-              <LoginForm next={next} notice={ownValue(notices, params.error)} providers={providers} />
+              <LoginForm next={next} notice={ownValue(notices, params.error)} providers={providers} captchaSiteKey={turnstileSiteKey()} />
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted">
               <Lock size={15} className="shrink-0" />

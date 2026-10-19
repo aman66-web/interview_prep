@@ -71,6 +71,16 @@ describe("the repository rules", () => {
     expect(externalScripts).toEqual([]);
   });
 
+  it("load a script from another company only for the sign-in bot check (rule 2.7, founder's yes 19 Oct 2026)", () => {
+    // Cloudflare Turnstile, in one file, and only when NEXT_PUBLIC_TURNSTILE_SITE_KEY is set. Any other
+    // outside script address (or a second file loading this one) needs the founder's decision first.
+    const outside = /["'`]https?:\/\/(?!(?:www\.)?(?:casespar\.app|localhost)\b)[^"'`\s]*\.(?:js|mjs)\b/i;
+    const loaders = code.filter((f) => /createElement\(["']script["']\)/.test(f.text)).map((f) => f.path);
+    expect(loaders).toEqual(["components/app/turnstile.tsx"]);
+    expect(code.filter((f) => f.path !== "components/app/turnstile.tsx" && outside.test(f.text) && /\.src\s*=/.test(f.text)).map((f) => f.path)).toEqual([]);
+    expect(read("components/app/turnstile.tsx")).toContain("https://challenges.cloudflare.com/turnstile/");
+  });
+
   it("set cookies only for the login session, from the Supabase helper files (rule 2.7)", () => {
     const allowed = new Set(["lib/supabase/server.ts", "lib/supabase/proxy.ts"]);
     const offenders = code

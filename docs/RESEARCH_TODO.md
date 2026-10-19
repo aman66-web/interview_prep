@@ -279,3 +279,11 @@ The privacy page's voice mode section (`content/pages/privacy.json`, `#voice-mod
 
 - Safari: where its speech recognition sends audio. No Apple or WebKit page found that says so. A WebKit bug report shows Safari's speech recognition needs Siri or Dictation switched on (`https://bugs.webkit.org/show_bug.cgi?id=225298`), so the page says Safari "uses Apple's speech recognition, which may send audio to Apple". Check Apple's "Ask Siri, Dictation & Privacy" page before launch. Looked 16 Oct 2026.
 - Edge: which service it uses for speech recognition and its "Online (Natural)" voices (believed to be Microsoft's). Not stated on the page, so not named there. Not looked up yet.
+
+## Sign-in email and bot check providers (19 Oct 2026)
+
+The privacy page's "Our service providers" table now lists Resend and Cloudflare (Turnstile).
+
+- Resend: where it processes and stores data, which company contracts with UK customers, and whether its Data Processing Addendum includes the EU Standard Contractual Clauses with the UK Addendum. A search found none of its own pages (`https://resend.com/legal/privacy-policy` and its DPA were not read). The table row says only that Resend's own terms say where it processes data. Also check whether Resend's free plan allows a second domain next to the Preflight Pass one (price unknown; Chrome must stop and report before any upgrade).
+- Cloudflare Turnstile: which cookies or browser storage it sets on `challenges.cloudflare.com` and for how long. Its Privacy Addendum (`https://www.cloudflare.com/turnstile-privacy-policy/`, found by search 19 Oct 2026) says it points to Cloudflare's Cookie Policy and Turnstile docs for the list, which were not read. The privacy page makes no cookie claim for it.
+

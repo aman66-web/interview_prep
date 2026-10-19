@@ -9,6 +9,7 @@ import { cn } from "@/lib/ui/cn";
 import { PROVIDER_LABELS, type OAuthProvider } from "@/lib/auth/providers";
 import { requestSignInEmail, signInWithProvider, verifySignInCode, type LoginState } from "./actions";
 import { UtmFields } from "@/components/utm-fields";
+import { Turnstile } from "@/components/app/turnstile";
 
 // A message about the sign-in as a whole (a cancelled or failed Google or Apple sign-in, an expired
 // link). It sits above the buttons so it is seen, and takes keyboard focus once so a screen reader
@@ -96,7 +97,7 @@ function Providers({ providers, next }: { providers: OAuthProvider[]; next: stri
   );
 }
 
-export function LoginForm({ next, notice, providers = [] }: { next: string; notice?: string; providers?: OAuthProvider[] }) {
+export function LoginForm({ next, notice, providers = [], captchaSiteKey = "" }: { next: string; notice?: string; providers?: OAuthProvider[]; captchaSiteKey?: string }) {
   const [emailState, emailAction, emailPending] = useActionState<LoginState, FormData>(
     requestSignInEmail,
     { step: "email" },
@@ -187,6 +188,7 @@ export function LoginForm({ next, notice, providers = [] }: { next: string; noti
           />
         </div>
         {error ? <ErrorText id="email-error">{error}</ErrorText> : null}
+        {captchaSiteKey ? <Turnstile siteKey={captchaSiteKey} resetKey={emailState} /> : null}
         <Button type="submit" disabled={emailPending} size="lg" full arrow className="mt-4">
           {emailPending ? "Sending…" : "Email me a sign-in code"}
         </Button>
