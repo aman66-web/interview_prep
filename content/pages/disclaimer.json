@@ -3,8 +3,9 @@
   "title": "Disclaimer",
   "seo_title": "Disclaimer | CaseSpar",
   "description": "CaseSpar is independent practice: not affiliated with any consulting firm, built on original invented cases, with AI feedback that can be wrong.",
-  "updated": "2026-10-15",
-  "status": "draft",
+  "updated": "2026-10-20",
+  "status": "approved",
+  "effective": "2026-10-20",
   "intro": "Please read this before you rely on anything on CaseSpar. Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "not-affiliated", "text": "Not affiliated with any firm" },

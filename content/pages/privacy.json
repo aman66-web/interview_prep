@@ -3,18 +3,15 @@
   "title": "Privacy policy",
   "seo_title": "Privacy policy | CaseSpar",
   "description": "What personal data CaseSpar collects, why, who processes it, how long we keep it, and how to download or delete your data under UK GDPR.",
-  "updated": "2026-10-16",
-  "status": "draft",
+  "updated": "2026-10-20",
+  "status": "approved",
+  "effective": "2026-10-20",
   "intro": "This policy explains what personal data we collect when you use CaseSpar, why we collect it, who helps us process it, and your rights under UK data protection law (UK GDPR). Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "who-we-are", "text": "Who we are" },
     {
       "type": "p",
       "text": "[legal entity name] runs CaseSpar and is the controller of your personal data. Company number: [company number]. Registered address: [registered address]. Contact: [support email]."
-    },
-    {
-      "type": "p",
-      "text": "[Founder: check whether you need to pay the ICO data protection fee and, if so, add the registration number here.]"
     },
 
     { "type": "h2", "id": "what-we-collect", "text": "What we collect" },
@@ -38,7 +35,7 @@
     },
     {
       "type": "p",
-      "text": "Our hosting provider, Vercel, receives your IP address and browser details when you use the site, as part of running and protecting it. Vercel's documentation says the logs from our server code (its \"runtime logs\") are kept for 1 day on our plan, or 30 days if its Observability Plus feature is switched on. [Founder to check whether Observability Plus is on (Vercel, your team's Settings, Billing, Observability Plus) and whether interview-prep is left out of it under Manage projects, then keep only the figure that applies.] Your browser doesn't connect to Supabase, our database and login provider, directly: our server does, and it doesn't pass your IP address on. Supabase's pricing page says it keeps API and database logs for 1 day, and records of sign-ins and other login events for 1 hour, on our plan."
+      "text": "Our hosting provider, Vercel, receives your IP address and browser details when you use the site, as part of running and protecting it. Vercel's documentation says the logs from our server code (its \"runtime logs\") are kept for 1 day on its standard plan, or up to 30 days if its optional Observability Plus feature is switched on. Your browser doesn't connect to Supabase, our database and login provider, directly: our server does, and it doesn't pass your IP address on. Supabase's pricing page says it keeps API and database logs for 1 day, and records of sign-ins and other login events for 1 hour, on our plan."
     },
 
     { "type": "h2", "id": "why-we-use-it", "text": "Why we use it, and our lawful basis" },
@@ -77,10 +74,10 @@
       "caption": "Our service providers",
       "columns": ["Provider", "What it does for us", "Where"],
       "rows": [
-        ["Supabase", "Our database and login, including sending sign-in emails.", "Our database is hosted in London (eu-west-2). Our contract is with Supabase Pte. Ltd., a company in Singapore. Supabase and the companies it uses may also process data in other countries. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Supabase's Data Processing Addendum."],
+        ["Supabase", "Our database and login. The sign-in emails themselves are sent through Resend (below).", "Our database is hosted in London (eu-west-2). Our contract is with Supabase Pte. Ltd., a company in Singapore. Supabase and the companies it uses may also process data in other countries. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Supabase's Data Processing Addendum."],
         ["Vercel", "Hosts the website and runs our server code.", "US company (Vercel Inc.). Vercel serves the site's fixed files from the location nearest to you. Our server code runs in Washington, D.C., USA. The small piece of code that checks you are logged in before account pages open runs in Vercel's locations around the world. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Vercel's Data Processing Addendum."],
         ["Anthropic", "Runs the AI interviewer and writes your debrief. It receives the case materials and the text of your interview, not your email address.", "US company (Anthropic PBC, San Francisco). For UK customers the contract is with Anthropic Ireland, Limited. Anthropic's documentation says it stores API data in the US, and that the AI model may run in any of the locations Anthropic uses. Transfers are covered by the EU Standard Contractual Clauses with the UK International Data Transfer Addendum, both part of Anthropic's Data Processing Addendum."],
-        ["Resend", "Sends our sign-in emails once it is switched on. It receives your email address and the text of the email, which holds your sign-in code. We do not use it for marketing.", "US company (Plus Five Five, Inc., which trades as Resend, San Francisco). Resend's Data Processing Addendum says its main processing takes place in the United States. Transfers are covered by the EU Standard Contractual Clauses with the UK Addendum, and Resend says it complies with the EU-US Data Privacy Framework and its UK Extension."],
+        ["Resend", "Sends our sign-in emails. It receives your email address and the text of the email, which holds your sign-in code. We do not use it for marketing.", "US company (Plus Five Five, Inc., which trades as Resend, San Francisco). Resend's Data Processing Addendum says its main processing takes place in the United States. Transfers are covered by the EU Standard Contractual Clauses with the UK Addendum, and Resend says it complies with the EU-US Data Privacy Framework and its UK Extension."],
         ["Cloudflare (Turnstile)", "Runs the \"are you a person?\" check on the email sign-in box, so bots cannot use it to send emails to strangers. Your browser loads the check from Cloudflare when you open the sign-in page, so Cloudflare receives signals such as your IP address, your browser's identification and the website the check ran on. It is not used for \"Continue with Google\".", "Cloudflare's Turnstile Privacy Addendum (cloudflare.com/turnstile-privacy-policy) says Cloudflare handles these signals for us as a processor to run the check, and as a controller to improve its own bot detection. That page does not name a safeguard for transfers outside the UK, so we have not confirmed one yet."],
         ["Stripe", "Takes payments and runs the billing portal. We send it your email address, your account reference, the plan you chose and that you ticked the \"start straight away\" box. On its own payment page it collects your card details, and it may also collect details about your device and connection, such as your IP address.", "For a UK Stripe account, the Stripe Services Agreement is with Stripe Payments Europe, Limited (Stripe Payments UK Ltd joins it for some services). Data sent to Stripe, LLC in the US is covered first by the Data Privacy Framework (for UK data, the UK Extension to the EU-US Data Privacy Framework, which Stripe's privacy policy says it follows). If that doesn't apply, the EU Standard Contractual Clauses with the UK International Data Transfer Addendum do. Stripe's Data Transfers Addendum sets this order."]
       ]
@@ -133,13 +130,13 @@
         ["The summary, quotes and written feedback in an interview's debrief", "Removed 365 days after the interview started. Its scores and maths results stay until you delete your account"],
         ["Usage events", "Deleted after 180 days"],
         ["Your account, plan, scores, drill answers and AI usage records", "Until you delete your account"],
-        ["Enquiries from universities and clubs", "[Founder to decide]"],
+        ["Enquiries from universities and clubs", "24 months, then they are deleted"],
         ["Payment records held by Stripe", "As long as Stripe needs them for its legal, tax and accounting duties and to prevent fraud, even after you delete your account"]
       ]
     },
     {
       "type": "p",
-      "text": "A clean-up runs automatically every day. It deletes transcripts and usage events, and removes the text from old debriefs, once they reach the ages above."
+      "text": "A clean-up runs automatically every day. It deletes transcripts, usage events and enquiries, and removes the text from old debriefs, once they reach the ages above."
     },
 
     { "type": "h2", "id": "share-links", "text": "Share links" },

@@ -38,6 +38,9 @@ export const siteConfig = {
 
   transcriptRetentionDays: 365,
 
+  // University and club enquiries (the /for-universities form) are deleted after this many days (about 24 months).
+  leadRetentionDays: 730,
+
   // The company that runs the site (founder, 15 Oct 2026). UK company websites must show
   // these; the footer, terms and privacy policy read them from here.
   operator: {

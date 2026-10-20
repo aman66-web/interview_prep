@@ -11,7 +11,8 @@ import { redactDebrief } from "./redact";
 //   2. delete interview messages older than that;
 //   3. for interviews that old, remove the transcript quotes, feedback text and
 //      summaries from case_sessions (scores and maths results stay);
-//   4. delete funnel events older than 180 days.
+//   4. delete funnel events older than 180 days;
+//   5. delete university and club enquiries older than siteConfig.leadRetentionDays.
 // Every step is safe to repeat. A failed step does not stop the others; the result
 // says which failed so the cron run is marked as failed and runs again tomorrow.
 
@@ -33,12 +34,15 @@ export interface RetentionStore {
   saveRedactedSession(id: string, scores: unknown): Promise<void>;
   /** Deletes events created before the cutoff; returns how many. */
   deleteEventsBefore(cutoffIso: string): Promise<number>;
+  /** Deletes enquiries (the leads table) created before the cutoff; returns how many. */
+  deleteLeadsBefore(cutoffIso: string): Promise<number>;
 }
 
 export type CleanupOptions = {
   now?: Date;
   transcriptDays?: number;
   eventDays?: number;
+  leadDays?: number;
   batchSize?: number;
   maxBatches?: number;
 };
@@ -47,14 +51,16 @@ export type CleanupResult = {
   ok: boolean;
   transcriptCutoff: string;
   eventCutoff: string;
+  leadCutoff: string;
   /** Unfinished interviews closed because their transcript is being deleted. */
   sessionsClosed: number;
   messagesDeleted: number;
   sessionsRedacted: number;
   eventsDeleted: number;
+  leadsDeleted: number;
   /** True when there were more old sessions than one run handles; the next run continues. */
   moreSessionsLeft: boolean;
-  failed: ("closing" | "messages" | "sessions" | "events")[];
+  failed: ("closing" | "messages" | "sessions" | "events" | "leads")[];
 };
 
 export function cutoff(now: Date, days: number): string {
@@ -65,6 +71,7 @@ export async function runRetentionCleanup(store: RetentionStore, options: Cleanu
   const now = options.now ?? new Date();
   const transcriptDays = options.transcriptDays ?? siteConfig.transcriptRetentionDays;
   const eventDays = options.eventDays ?? EVENT_RETENTION_DAYS;
+  const leadDays = options.leadDays ?? siteConfig.leadRetentionDays;
   const batchSize = options.batchSize ?? 200;
   const maxBatches = options.maxBatches ?? 25;
 
@@ -72,10 +79,12 @@ export async function runRetentionCleanup(store: RetentionStore, options: Cleanu
     ok: true,
     transcriptCutoff: cutoff(now, transcriptDays),
     eventCutoff: cutoff(now, eventDays),
+    leadCutoff: cutoff(now, leadDays),
     sessionsClosed: 0,
     messagesDeleted: 0,
     sessionsRedacted: 0,
     eventsDeleted: 0,
+    leadsDeleted: 0,
     moreSessionsLeft: false,
     failed: [],
   };
@@ -113,6 +122,12 @@ export async function runRetentionCleanup(store: RetentionStore, options: Cleanu
     result.eventsDeleted = await store.deleteEventsBefore(result.eventCutoff);
   } catch (error) {
     report("events", error, result);
+  }
+
+  try {
+    result.leadsDeleted = await store.deleteLeadsBefore(result.leadCutoff);
+  } catch (error) {
+    report("leads", error, result);
   }
 
   return result;

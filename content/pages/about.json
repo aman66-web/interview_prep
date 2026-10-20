@@ -3,8 +3,8 @@
   "title": "About CaseSpar",
   "seo_title": "About CaseSpar | AI case interview practice",
   "description": "What CaseSpar is, who it is for, how the AI interviewer and scored debrief work, and how every practice case is written and checked.",
-  "updated": "2026-10-15",
-  "status": "draft",
+  "updated": "2026-10-20",
+  "status": "approved",
   "intro": "CaseSpar is a website for practising consulting case interviews. You work through a case with an AI interviewer in a chat window. Then you get a scored debrief that shows what went well and what to fix next.",
   "blocks": [
     { "type": "h2", "id": "what-it-is", "text": "What CaseSpar is" },
@@ -58,7 +58,7 @@
         "Every case is written for CaseSpar. We don't copy or rework cases from casebooks, books, other websites or firms' own practice materials.",
         "The companies and numbers are invented. Any likeness to a real business is a coincidence.",
         "Every maths question has an expected answer, and our tests recompute it from the case's own numbers. So the answer key is checked by code, not just by eye.",
-        "A person reads and checks each case before it goes live. Until then it stays a draft and is hidden from the live site. [Founder to confirm who reviews cases. Say \"someone with consulting experience\" only if that is true of the reviewer.]"
+        "A person reads and checks each case before it goes live. A case that has not been checked stays hidden from the live site."
       ]
     },
 

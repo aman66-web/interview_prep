@@ -93,6 +93,7 @@ Everything brand- or business-specific lives here, so it can change without touc
   - 40 candidate turns per session
 - `refundWindowDays: 7` and `refundMaxAiSessions: 2`. The refund applies only if the user has used 2 or fewer AI sessions.
 - `transcriptRetentionDays: 365`.
+- `leadRetentionDays: 730` (university and club enquiries are deleted after this many days).
 - `tracksEnabled: ["consulting"]`. Phase 2 adds `"data"`.
 - `disclaimer` text (rule 2.3).
 - `stripeTaxEnabled: false`. The founder turns it on after talking to an accountant.
@@ -241,7 +242,7 @@ The universities form saves to `leads`, and the founder follows up by email. Lat
 
 Write a SQL check script and tests proving Row Level Security works: a user can't read another user's rows, and anonymous visitors can't read anything private.
 
-Cron job: delete `session_messages` older than the retention period, and `events` older than 180 days.
+Cron job: delete `session_messages` older than the retention period, `events` older than 180 days and `leads` (university and club enquiries) older than `leadRetentionDays` (730 days); close unfinished interviews older than the retention period and strip the text from old debriefs.
 
 ---
 

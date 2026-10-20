@@ -122,7 +122,7 @@ Money rules in the code: card details never touch this site (Stripe's page takes
 | Temporary, **Preview only**: `1` lets an `ADMIN_EMAILS` address sign in on the preview with no email. Delete it before sharing a preview link. Never for Production (it is ignored there) | `PREVIEW_QUICK_LOGIN` | No |
 
 - **In Vercel:** Settings, Environment Variables. Mark `SUPABASE_SECRET_KEY`, `CRON_SECRET` and `SHARE_SIGNING_SECRET` as **Sensitive**.
-- **The daily clean-up** (deletes interview chats after 365 days) runs by itself once `CRON_SECRET` is set in Vercel (Production). Without it the clean-up refuses to run.
+- **The daily clean-up** (deletes interview chats after 365 days, usage events after 180 days and university enquiries after 24 months) runs by itself once `CRON_SECRET` is set in Vercel (Production). Without it the clean-up refuses to run.
 - **For Claude Code in a cloud session:** the cloud environment menu in the session's title bar, then **Edit**, then add them as environment variables. Start a new session afterwards so it picks them up.
 - **On your own computer:** copy `.env.example` to `.env.local` and fill in the values. `.env.local` is never uploaded to GitHub.
 

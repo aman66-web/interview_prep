@@ -65,5 +65,11 @@ export function createRetentionStore(db: Pick<SupabaseClient, "from">): Retentio
       if (error) fail("deleting old events", error);
       return count ?? 0;
     },
+
+    async deleteLeadsBefore(cutoffIso) {
+      const { count, error } = await db.from("leads").delete({ count: "exact" }).lt("created_at", cutoffIso);
+      if (error) fail("deleting old enquiries", error);
+      return count ?? 0;
+    },
   };
 }

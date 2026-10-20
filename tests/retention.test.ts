@@ -87,6 +87,7 @@ function memoryStore() {
     messages: [] as { id: string; created_at: string }[],
     sessions: [] as MemorySession[],
     events: [] as { id: string; created_at: string }[],
+    leads: [] as { id: string; created_at: string }[],
     saves: 0,
     steps: [] as string[],
   };
@@ -122,6 +123,11 @@ function memoryStore() {
       db.events = db.events.filter((e) => e.created_at >= c);
       return before - db.events.length;
     },
+    async deleteLeadsBefore(c) {
+      const before = db.leads.length;
+      db.leads = db.leads.filter((l) => l.created_at >= c);
+      return before - db.leads.length;
+    },
   };
   return { db, store };
 }
@@ -153,6 +159,7 @@ describe("runRetentionCleanup", () => {
       row("s-new", keep, { summary: "recent" }),
     );
     db.events.push({ id: "e-old", created_at: ago(EVENT_RETENTION_DAYS + 1) }, { id: "e-new", created_at: ago(EVENT_RETENTION_DAYS - 1) });
+    db.leads.push({ id: "l-old", created_at: ago(siteConfig.leadRetentionDays + 1) }, { id: "l-new", created_at: ago(siteConfig.leadRetentionDays - 1) });
 
     const result = await runRetentionCleanup(store, { now: NOW });
     expect(result).toMatchObject({
@@ -161,6 +168,7 @@ describe("runRetentionCleanup", () => {
       messagesDeleted: 1,
       sessionsRedacted: 1,
       eventsDeleted: 1,
+      leadsDeleted: 1,
       moreSessionsLeft: false,
       failed: [],
     });
@@ -168,6 +176,8 @@ describe("runRetentionCleanup", () => {
     expect(result.eventCutoff).toBe(ago(EVENT_RETENTION_DAYS));
     expect(db.messages.map((m) => m.id)).toEqual(["m-new"]);
     expect(db.events.map((e) => e.id)).toEqual(["e-new"]);
+    expect(db.leads.map((l) => l.id)).toEqual(["l-new"]);
+    expect(result.leadCutoff).toBe(ago(siteConfig.leadRetentionDays));
 
     const [sOld, sAbandoned, sNew] = db.sessions;
     expect(sOld.summary).toBeNull();
@@ -179,7 +189,7 @@ describe("runRetentionCleanup", () => {
 
     // A second run has nothing left to do.
     const again = await runRetentionCleanup(store, { now: NOW });
-    expect(again).toMatchObject({ ok: true, sessionsClosed: 0, messagesDeleted: 0, sessionsRedacted: 0, eventsDeleted: 0 });
+    expect(again).toMatchObject({ ok: true, sessionsClosed: 0, messagesDeleted: 0, sessionsRedacted: 0, eventsDeleted: 0, leadsDeleted: 0 });
   });
 
   it("works through many old interviews in batches, and stops at the per-run limit", async () => {
@@ -197,6 +207,17 @@ describe("runRetentionCleanup", () => {
     store.saveRedactedSession = async () => {}; // pretend the update matched nothing
     const result = await runRetentionCleanup(store, { now: NOW });
     expect(result.sessionsRedacted).toBe(1);
+  });
+
+  it("reports a failed enquiries step without stopping the rest", async () => {
+    const { store } = memoryStore();
+    const error = vi.spyOn(console, "error").mockImplementation(() => {});
+    store.deleteLeadsBefore = async () => {
+      throw new Error("Database error while deleting old enquiries: 57014");
+    };
+    const result = await runRetentionCleanup(store, { now: NOW });
+    expect(result).toMatchObject({ ok: false, failed: ["leads"], leadsDeleted: 0 });
+    error.mockRestore();
   });
 
   it("carries on after a failed step and reports it", async () => {
