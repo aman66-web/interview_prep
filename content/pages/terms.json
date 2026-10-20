@@ -3,8 +3,9 @@
   "title": "Terms of service",
   "seo_title": "Terms of service | CaseSpar",
   "description": "The terms for using CaseSpar: your account, free and paid plans, fair-use limits, fair use of the AI, our content, and your legal rights.",
-  "updated": "2026-10-15",
-  "status": "draft",
+  "updated": "2026-10-20",
+  "status": "approved",
+  "effective": "2026-10-20",
   "intro": "These terms are the agreement between you and us when you use CaseSpar. Please read them before you buy a plan. Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "who-we-are", "text": "1. Who we are" },
@@ -53,7 +54,7 @@
     },
     {
       "type": "p",
-      "text": "Prices are in US dollars. [Founder to confirm with an accountant whether prices include VAT or other taxes, and say so here.] Stripe takes payments for us on its own secure page. We never see or store your card details."
+      "text": "Prices are in US dollars. The price shown at checkout is the price you pay. Stripe takes payments for us on its own secure page. We never see or store your card details."
     },
     {
       "type": "p",
@@ -108,7 +109,7 @@
     },
     {
       "type": "p",
-      "text": "If you break these rules, we may limit, suspend or close your account. We will tell you why, unless the law stops us. [Founder and lawyer to confirm what happens to any paid time left if an account is closed for this reason.]"
+      "text": "If you break these rules, we may limit, suspend or close your account. We will tell you why, unless the law stops us. If we close your account for breaking these rules, we do not have to refund any paid time you have left, except where the law says we must."
     },
 
     { "type": "h2", "id": "our-content", "text": "8. Our content" },
@@ -153,7 +154,7 @@
     },
     {
       "type": "p",
-      "text": "If we ever stop offering CaseSpar, we will give you notice and refund the unused part of any paid plan. [Founder to confirm.]"
+      "text": "If we ever stop offering CaseSpar, we will give you notice and refund the unused part of any paid plan."
     },
 
     { "type": "h2", "id": "ending", "text": "12. Ending your account" },
@@ -172,7 +173,7 @@
       "items": [
         "We provide CaseSpar with reasonable care and skill.",
         "We are not responsible for losses we could not have foreseen, for business losses, or for the outcome of any real interview or job application.",
-        "Our total responsibility to you is limited to the amount you paid us in the 12 months before your claim. [Founder and lawyer to confirm.]",
+        "Our total responsibility to you is limited to the amount you paid us in the 12 months before your claim.",
         "Nothing in these terms limits our responsibility for death or personal injury caused by our negligence, for fraud, or for anything else the law doesn't allow us to limit."
       ]
     },
@@ -191,7 +192,7 @@
     { "type": "h2", "id": "law", "text": "15. Law and disputes" },
     {
       "type": "p",
-      "text": "These terms are governed by the law of England and Wales. [Founder to confirm.] If you live in Scotland or Northern Ireland, you can also bring a claim in your local courts. [Lawyer to confirm.]"
+      "text": "These terms are governed by the law of England and Wales. If you live in Scotland or Northern Ireland, you can also bring a claim in your local courts."
     },
     {
       "type": "p",

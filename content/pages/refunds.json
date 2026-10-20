@@ -3,15 +3,16 @@
   "title": "Refund policy",
   "seo_title": "Refund policy | CaseSpar",
   "description": "CaseSpar plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
-  "updated": "2026-10-15",
-  "status": "draft",
+  "updated": "2026-10-20",
+  "status": "approved",
+  "effective": "2026-10-20",
   "intro": "This page explains our refund policy and how cancelling works. Effective date: [effective date].",
   "blocks": [
     {
       "type": "callout",
       "tone": "warning",
-      "title": "Note for the founder",
-      "text": "[Founder: ask a lawyer to check this no-refunds policy and the tick-box wording against UK consumer law before taking real payments.] UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
+      "title": "Your 14-day right to cancel",
+      "text": "UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
     },
     {
       "type": "callout",
@@ -51,7 +52,7 @@
     { "type": "h2", "id": "legal-rights", "text": "Your legal rights" },
     {
       "type": "p",
-      "text": "This policy does not affect your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a repair, a replacement or a refund whatever this policy says. If you think that applies, email [support email]. [Lawyer to confirm wording.]"
+      "text": "This policy does not affect your rights under UK consumer law. If something we provide is faulty or not as described, you may be entitled to a repair, a replacement or a refund whatever this policy says. If you think that applies, email [support email]."
     },
 
     { "type": "h2", "id": "contact", "text": "Contact" },

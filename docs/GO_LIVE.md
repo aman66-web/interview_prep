@@ -56,7 +56,7 @@ Never set `SHOW_DRAFT_CONTENT` or `PREVIEW_QUICK_LOGIN` for Production (draft ca
 - [ ] At least 5 cases are reviewed and show a reviewer name and date (`npm run content:check` passes).
 - [ ] Production variables set (part 2) and live Stripe keys in Production only.
 - [ ] `npm test`, `npm run lint`, `npm run typecheck` and `npm run build` pass on the PR branch, and CI is green.
-- [ ] Privacy, terms, refunds and disclaimer: no square-bracket notes left except those the founder accepts; the support email is set. About and FAQ approved or left as drafts (they stay out of Google while draft).
+- [ ] All six pages (privacy, terms, refunds, disclaimer, About, FAQ) are approved with an effective date of 20 Oct 2026 and carry no notes. Check `NEXT_PUBLIC_SUPPORT_EMAIL` is set in Production (and the build is newer than the setting): if it is not, the pages print the text `[support email]`.
 - [ ] ICO fee paid (or the founder accepts the risk), lawyer's view on the no-refunds wording received or accepted.
 - [ ] Vercel Authentication still on **All Deployments**.
 - [ ] The founder has said yes to the merge in this chat.

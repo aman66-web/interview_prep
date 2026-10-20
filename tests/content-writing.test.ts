@@ -250,10 +250,15 @@ describe("placeholders", () => {
     const text = JSON.stringify(after.findPage("privacy"));
     expect(text).not.toContain("[support email]");
     expect(text).toContain("help@example.com");
-    // Company details and the minimum age come from site.config.ts; founder notes stay visible.
+    // Company details and the minimum age come from site.config.ts.
     expect(text).not.toContain("[legal entity name]");
     expect(text).toContain("MARTZEY LTD");
-    expect(text).toContain("[Founder");
+    // Approved pages carry no note for a person to fill in, so nothing in square brackets is left.
+    for (const slug of ["terms", "privacy", "refunds", "disclaimer", "about", "faq"]) {
+      const page = after.findPage(slug);
+      expect(page?.status, slug).toBe("approved");
+      expect(after.unfilledPlaceholders(page), slug).toEqual([]);
+    }
     expect(after.fillPlaceholders("From [effective date].", { effective: "2026-11-01" })).toBe("From 1 November 2026.");
     expect(after.fillPlaceholders("From [effective date].", {})).toBe("From [effective date].");
   });
