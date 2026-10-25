@@ -3,9 +3,9 @@
   "title": "Privacy policy",
   "seo_title": "Privacy policy | CaseSpar",
   "description": "What personal data CaseSpar collects, why, who processes it, how long we keep it, and how to download or delete your data under UK GDPR.",
-  "updated": "2026-10-20",
+  "updated": "2026-10-25",
   "status": "approved",
-  "effective": "2026-10-20",
+  "effective": "2026-10-25",
   "intro": "This policy explains what personal data we collect when you use CaseSpar, why we collect it, who helps us process it, and your rights under UK data protection law (UK GDPR). Effective date: [effective date].",
   "blocks": [
     { "type": "h2", "id": "who-we-are", "text": "Who we are" },
@@ -107,6 +107,20 @@
       "text": "We may also share data if the law requires us to."
     },
 
+    { "type": "h2", "id": "google-sign-in", "text": "Information we get from Google sign-in" },
+    { "type": "p", "text": "This section applies only if you choose \"Continue with Google\". It explains what Google user data CaseSpar receives, how we use it, and how to take our access away." },
+    {
+      "type": "ul",
+      "items": [
+        "What we receive: your Google email address and, if Google sends them, your name and profile picture. We ask Google only for the basic sign-in permissions (openid, email and profile). We never ask for access to your Gmail, Drive, Calendar, contacts or any other Google service.",
+        "How we use it: your email address is used only to create your CaseSpar account and to log you in. We do not use your name or profile picture for anything: our login provider stores them with your account, and they appear in the file you get when you download your data.",
+        "Where it is stored: with our login provider, Supabase, in London, in a database where each person can read only their own records (see \"Who processes your data for us\").",
+        "Who we share it with: no one except the service providers listed above, who process it for us. We never sell it, never use it for advertising, and never use it to train AI models. The AI interviewer never receives your email address. We send marketing emails only if you tick the box to say yes.",
+        "How long we keep it: until you delete your account. Deleting your account (Account page, Delete my account) removes it straight away.",
+        "How to take our access away: in your Google Account, open Security, then Third-party apps and services (myaccount.google.com/permissions), and remove CaseSpar. You can also delete your CaseSpar account from the Account page, or email us at [support email]."
+      ]
+    },
+    { "type": "p", "text": "CaseSpar's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy (developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements." },
     { "type": "h2", "id": "cookies", "text": "Cookies and browser storage" },
     {
       "type": "ul",
