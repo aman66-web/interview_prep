@@ -21,7 +21,7 @@ export function ExhibitTable({
         <span aria-hidden="true" className="mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-brand" />
         {title}
       </figcaption>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" role="region" aria-label={`${title}: scroll sideways if the table is wider than the screen`} tabIndex={0}>
         <table className="w-full border-collapse text-left text-sm">
           <thead className="bg-surface-2">
             <tr>
@@ -31,7 +31,7 @@ export function ExhibitTable({
                   scope="col"
                   className={cn(
                     "px-3 py-2.5 text-[11px] font-medium uppercase leading-snug tracking-wide text-muted first:pl-4 last:pr-4 sm:px-5",
-                    numeric[i] ? "min-w-[4.75rem] text-right sm:min-w-[6.5rem]" : "min-w-[7.5rem] sm:min-w-[9rem]",
+                    numeric[i] ? "min-w-[4.25rem] text-right sm:min-w-[5.5rem]" : "min-w-[6rem] sm:min-w-[8rem]",
                   )}
                 >
                   {column}

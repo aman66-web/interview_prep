@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { ButtonLink, buttonClasses } from "@/components/ui/button";
 import { Cross, Grid, Menu } from "@/components/ui/icons";
 import { cn } from "@/lib/ui/cn";
 
-// The client parts of the site header and footer. They read only the current path
-// (no login lookup), so every page stays static: inside the signed-in area (/app and
-// /admin, which check the login themselves) the header offers "Dashboard" instead of
-// "Log in" and "Start free", and the footer drops its "Start practising free" banner.
+// The client parts of the site header and footer. Every page stays static: the header
+// reads the current path, and after the page loads it asks /api/auth/me whether this
+// browser carries a login cookie. Inside the signed-in area (/app and /admin, which check
+// the login themselves), and for anyone who is signed in, it offers "Dashboard" instead of
+// "Log in" and "Start free". The footer drops its "Start practising free" banner in /app.
 
 type NavItem = { readonly href: string; readonly label: string };
 
@@ -22,6 +23,40 @@ function isActive(pathname: string, href: string) {
 export function isAppPath(pathname: string | null | undefined): boolean {
   if (!pathname) return false;
   return ["/app", "/admin"].some((root) => pathname === root || pathname.startsWith(`${root}/`));
+}
+
+// "Is this browser signed in?" is asked once per page load and shared by the header, the
+// phone menu and the footer link. Until the answer arrives (or if it fails) the visitor is
+// treated as signed out, so the page never claims a login that is not there.
+let signedIn = false;
+let asked = false;
+const listeners = new Set<() => void>();
+
+function askIfSignedIn() {
+  if (asked || typeof window === "undefined") return;
+  asked = true;
+  fetch("/api/auth/me", { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .then((data: { signedIn?: boolean } | null) => {
+      if (data?.signedIn === true && !signedIn) {
+        signedIn = true;
+        listeners.forEach((l) => l());
+      }
+    })
+    .catch(() => {});
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  askIfSignedIn();
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+/** True once /api/auth/me has said this browser is signed in. False on the server and until then. */
+export function useSignedIn(): boolean {
+  return useSyncExternalStore(subscribe, () => signedIn, () => false);
 }
 
 /** Desktop links with a soft pill behind the current section. */
@@ -52,7 +87,9 @@ export function NavLinks({ items }: { items: readonly NavItem[] }) {
 
 /** The header's buttons: "Log in" and "Start free", or "Dashboard" on the signed-in pages. */
 export function HeaderActions() {
-  const inApp = isAppPath(usePathname());
+  const onAppPage = isAppPath(usePathname());
+  const signedIn = useSignedIn();
+  const inApp = onAppPage || signedIn;
   if (inApp) {
     return (
       <Link href="/app" className={cn(buttonClasses({ size: "sm" }), "gap-2")}>
@@ -76,9 +113,11 @@ export function HeaderActions() {
   );
 }
 
-/** Shows its children everywhere except the signed-in pages (the footer's sign-up banner). */
+/** Shows its children everywhere except the signed-in pages and for signed-in visitors (the footer's sign-up banner). */
 export function OutsideApp({ children }: { children: ReactNode }) {
-  return isAppPath(usePathname()) ? null : <>{children}</>;
+  const onAppPage = isAppPath(usePathname());
+  const signedIn = useSignedIn();
+  return onAppPage || signedIn ? null : <>{children}</>;
 }
 
 /**
@@ -109,7 +148,9 @@ export function FooterSignUp({ text, action, homePhoto }: { text: ReactNode; act
 
 /** The footer's "Log in" link, which reads "Dashboard" on the signed-in pages. */
 export function AccountLink({ className }: { className?: string }) {
-  const inApp = isAppPath(usePathname());
+  const onAppPage = isAppPath(usePathname());
+  const signedIn = useSignedIn();
+  const inApp = onAppPage || signedIn;
   return (
     <Link href={inApp ? "/app" : "/login"} className={className}>
       {inApp ? "Dashboard" : "Log in"}
@@ -120,7 +161,8 @@ export function AccountLink({ className }: { className?: string }) {
 /** The phone menu: a button that opens a panel under the header. Closes on navigation and Escape. */
 export function MobileMenu({ items }: { items: readonly NavItem[] }) {
   const pathname = usePathname();
-  const inApp = isAppPath(pathname);
+  const signedInHere = useSignedIn();
+  const inApp = isAppPath(pathname) || signedInHere;
   const [open, setOpen] = useState(false);
   const [openedOn, setOpenedOn] = useState(pathname);
   const buttonRef = useRef<HTMLButtonElement>(null);

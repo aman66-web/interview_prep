@@ -131,6 +131,9 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
   const strongest = spread && values.filter((v) => v === Math.max(...values)).length === 1 ? strongestSkill(d.scores) : null;
   const weakest = focusSkill(d.scores); // null when all five scores are equal
   const focus = weakest ? skillInfo(weakest) : null;
+  // Every skill that shares the lowest score, so a tie is described honestly rather than blaming the first one listed.
+  const lowestValue = Math.min(...values);
+  const lowestLabels = weakest ? SKILLS.filter((s) => d.scores[s.key] === lowestValue).map((s) => s.label.toLowerCase()) : [];
   const stage = pageImage("debrief");
 
   return (
@@ -201,7 +204,7 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
                 <h2 id="scores" className="text-xl font-medium tracking-tight text-ink">
                   Your scores
                 </h2>
-                <span className="font-mono text-xs text-subtle">1 needs work · 5 strong</span>
+                <span className="font-mono text-xs text-subtle">Out of 5</span>
               </div>
               <ScoreBars
                 className="mt-6"
@@ -292,7 +295,9 @@ export default async function DebriefPage({ params }: { params: Promise<{ sessio
           )}
           {focus ? (
             <p className="mt-4 text-sm text-muted">
-              Your lowest score was {focus.label.toLowerCase()}.{" "}
+              {lowestLabels.length > 1
+                ? `Your lowest scores were tied: ${lowestLabels.slice(0, -1).join(", ")} and ${lowestLabels[lowestLabels.length - 1]}. A good place to start: ${focus.label.toLowerCase()}.`
+                : `Your lowest score was ${focus.label.toLowerCase()}.`}{" "}
               <Link href={`/guides/${focus.guide.slug}`} className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
                 Read: {focus.guide.title}
               </Link>
