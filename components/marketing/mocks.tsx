@@ -72,7 +72,7 @@ function Bubble({ who, children, className }: { who: "you" | "interviewer"; chil
   return (
     <div className={cn("flex", you ? "justify-end" : "justify-start", className)}>
       <div className={cn("max-w-[85%]", you && "text-right")}>
-        <p className="mb-1 text-[10.5px] font-medium uppercase tracking-wider text-subtle">{you ? "You" : "Interviewer"}</p>
+        <p className="mb-1 text-[10.5px] font-medium uppercase tracking-wider text-subtle">{you ? "You" : "AI interviewer"}</p>
         <p
           className={cn(
             "rounded-2xl px-3.5 py-2.5 text-left text-[13px] leading-snug",
