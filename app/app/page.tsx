@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppHeader } from "@/components/app/app-header";
+import { LibrarySections } from "@/components/app/library-parts";
 import { PaywallSeen } from "@/components/app/paywall-seen";
 import { ScoreBars, ScoreRing } from "@/components/app/score-bars";
 import { CASE_TYPE_TONES, DIFFICULTY_LABELS } from "@/components/marketing/case-card";
@@ -310,6 +311,8 @@ export default async function DashboardPage() {
 
         <FocusCard focus={focus} score={focus && shown ? shown[focus] : null} levelScore={shown && !focus ? shown.structure : null} averaged={tracking} />
       </Container>
+
+      <LibrarySections className="mt-12 sm:mt-16" />
 
       <Container className="mt-12 sm:mt-16">
         <section aria-labelledby="practise-title">

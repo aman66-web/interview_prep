@@ -6,10 +6,11 @@ import { cn } from "@/lib/ui/cn";
 
 const ITEMS = [
   { href: "/app", label: "Dashboard", exact: true },
+  { href: "/app/library", label: "Library", exact: false },
   { href: "/app/account", label: "Account", exact: false },
 ] as const;
 
-/** The signed-in area's tabs (Dashboard, Account), as a segmented pill control. */
+/** The signed-in area's tabs (Dashboard, Library, Account), as a segmented pill control. */
 export function AppNav() {
   const pathname = usePathname();
   return (

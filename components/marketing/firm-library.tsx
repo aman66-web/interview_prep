@@ -10,10 +10,11 @@ import type { Firm } from "@/lib/content/writing-schema";
 import { cn } from "@/lib/ui/cn";
 import { siteConfig } from "@/site.config";
 
-// The home page's interview library: one card per firm or bank, in a sideways-scrolling row
-// for consulting firms and another for banks. Each card lists a few of our own practice
-// interviews with their length. Everything comes from the content files (practice pages,
-// case minutes and difficulty), so nothing here is invented.
+// The public home page's interview library: one card per firm or bank, in a sideways-scrolling
+// row for consulting firms and another for banks. Each card lists a few of our own practice
+// interviews with their length, and is one big link to that firm's practice page. Everything
+// comes from the content files (practice pages, case minutes and difficulty), so nothing here
+// is invented. The signed-in version (company, then role, then case) is in components/app/library-parts.tsx.
 //
 // Firm names appear as plain text, "McKinsey-style" (rule 2.3). There are no firm logos:
 // tests/repo-rules.test.ts blocks them, and a logo would suggest the firm is involved.
