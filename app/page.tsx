@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseCard } from "@/components/marketing/case-card";
+import { FirmLibrary } from "@/components/marketing/firm-library";
 import { MOCK_EXAMPLE, MockDebrief, MockExhibit, MockInterview, MockMathsCheck, MockStageBar } from "@/components/marketing/mocks";
 import { Eyebrow, Kicker, Tag } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -745,6 +746,7 @@ export default function Home() {
       <span hidden data-force-dark="" />
       <Hero />
       <Facts drillCount={drillCount} />
+      <FirmLibrary />
       <div className="mt-16 sm:mt-20">
         <p className="mb-5 text-center font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-subtle">What you can practise</p>
         <Marquee
