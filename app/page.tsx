@@ -94,7 +94,7 @@ const FAQ: FaqItem[] = [
   },
 ];
 
-function Hero({ drillCount }: { drillCount: number }) {
+function Hero() {
   return (
     <section aria-labelledby="hero-title" className="px-3 pt-4 sm:px-4">
       <div className="bg-aurora relative mx-auto w-full max-w-[88rem] overflow-hidden rounded-[2.25rem] ring-1 ring-inset ring-line">
@@ -104,13 +104,14 @@ function Hero({ drillCount }: { drillCount: number }) {
             <Eyebrow tone="lime" icon={<Sparkle size={14} />}>
               Your first full interview is free
             </Eyebrow>
-            <h1 id="hero-title" className="mt-6 text-[2.75rem] font-medium leading-[1] tracking-[-0.045em] text-ink sm:text-[4.25rem] xl:text-[4.6rem]">
-              <span className="whitespace-nowrap">Case interviews,</span>{" "}
-              <span className="serif-accent">practised</span> <span className="text-gradient">properly.</span>
+            {/* The headline says what it is in plain words (the same sentence as siteConfig.tagline), so the page makes sense in a second. */}
+            <h1 id="hero-title" className="mt-6 text-[2.5rem] font-medium leading-[1.02] tracking-[-0.04em] text-ink sm:text-[3.5rem] xl:text-[3.9rem]">
+              Practise <span className="serif-accent">consulting case interviews</span> with an{" "}
+              <span className="text-gradient whitespace-nowrap">AI interviewer.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              Run a realistic mock case with an AI interviewer that pushes back, shares exhibits as the analysis unfolds,
-              and checks your maths. Then get a scored debrief that shows exactly what to fix.
+              <strong className="font-medium text-ink">No practice partner needed.</strong> It pushes back, shows exhibits and checks your
+              maths, then gives you a scored debrief that shows exactly what to fix.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/login" size="lg" arrow>
@@ -120,13 +121,15 @@ function Hero({ drillCount }: { drillCount: number }) {
                 Browse the cases
               </ButtonLink>
             </div>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2.5 text-sm text-muted">
-              {["Original cases, invented numbers", "Maths checked by code", `${drillCount} practice drills`].map((t) => (
-                <li key={t} className="inline-flex items-center gap-2">
-                  <span className="grid size-5 place-items-center rounded-full bg-ink text-ink-contrast">
-                    <Check size={12} strokeWidth={2.8} />
-                  </span>
-                  {t}
+            <ul className="mt-9 grid gap-2.5 text-sm font-medium text-ink sm:grid-cols-3 sm:gap-3">
+              {[
+                { icon: <Users size={16} />, text: "Practise any time, no partner needed" },
+                { icon: <Calculator size={16} />, text: "Every maths answer checked by code" },
+                { icon: <Target size={16} />, text: "Scored debrief with your next fix" },
+              ].map((b) => (
+                <li key={b.text} className="flex items-center gap-2.5 rounded-2xl bg-surface p-2.5 shadow-soft ring-1 ring-inset ring-line sm:items-start sm:p-3.5">
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-lime text-lime-ink">{b.icon}</span>
+                  <span className="leading-snug sm:pt-0.5">{b.text}</span>
                 </li>
               ))}
             </ul>
@@ -738,7 +741,9 @@ export default function Home() {
   const drillCount = allDrills.length;
   return (
     <>
-      <Hero drillCount={drillCount} />
+      {/* The home page always shows the dark look (see data-force-dark in app/globals.css). */}
+      <span hidden data-force-dark="" />
+      <Hero />
       <Facts drillCount={drillCount} />
       <div className="mt-16 sm:mt-20">
         <p className="mb-5 text-center font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-subtle">What you can practise</p>

@@ -114,6 +114,54 @@
   }
 }
 
+/*
+ * The home page always shows the dark look, whatever the visitor's device is set to
+ * (founder's choice, 26 Oct 2026). It marks itself with a hidden <span data-force-dark>, and
+ * this block repeats the dark tokens above for any page that has the mark. Other pages still
+ * follow the device. tests/site-shell.test.ts checks the two lists stay identical.
+ */
+:root:has([data-force-dark]) {
+  color-scheme: dark;
+  --canvas: #0b0b0d;
+  --surface: #141417;
+  --surface-2: #1a1a1e;
+  --surface-3: #232328;
+  --ink: #f3f3f4;
+  --ink-contrast: #0d0d10;
+  --muted: #a7a7b0;
+  --subtle: #8a8a94;
+  --line: #2a2a30;
+  --line-strong: #3a3a42;
+
+  --lime: #d6f55c;
+  --lime-ink: #1b2300;
+  --brand: #8c93ff;
+  --brand-2: #b19cff;
+  --brand-ink: #c7caff;
+  --brand-soft: #1c1e38;
+
+  --lavender: #1f1b33;
+  --mint: #13241a;
+  --peach: #2c1d15;
+  --sky: #152039;
+  --butter: #2a2412;
+
+  --night: #070a14;
+  --night-2: #10162a;
+
+  --success: #4ade80;
+  --success-soft: #10261a;
+  --warning: #fbbf24;
+  --warning-soft: #2a2110;
+  --danger: #f87171;
+  --danger-soft: #2c1414;
+
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px -18px rgb(0 0 0 / 0.6);
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.5), 0 30px 60px -24px rgb(0 0 0 / 0.8);
+
+  --accent-foreground: #0d0d10;
+}
+
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
@@ -164,6 +212,16 @@
   --animate-marquee: marquee 45s linear infinite;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   --animate-float: float 7s ease-in-out infinite;
+}
+
+/* Tailwind's dark: styles apply in the dark look: on a dark device, and on pages marked data-force-dark (the home page). */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    @slot;
+  }
+  :root:has([data-force-dark]) & {
+    @slot;
+  }
 }
 
 @keyframes marquee {
@@ -252,6 +310,14 @@ p {
       radial-gradient(60% 60% at 60% 100%, rgb(214 245 92 / 0.08), transparent 60%),
       var(--surface);
   }
+}
+
+:root:has([data-force-dark]) .bg-aurora {
+  background:
+    radial-gradient(60% 70% at 85% 10%, rgb(124 92 245 / 0.22), transparent 60%),
+    radial-gradient(50% 60% at 10% 0%, rgb(79 70 229 / 0.18), transparent 60%),
+    radial-gradient(60% 60% at 60% 100%, rgb(214 245 92 / 0.08), transparent 60%),
+    var(--surface);
 }
 
 /* The deep blue gradient used for the closing call to action and the footer. */
