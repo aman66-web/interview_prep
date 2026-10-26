@@ -4,6 +4,7 @@ import { AppHeader } from "@/components/app/app-header";
 import { PaywallSeen } from "@/components/app/paywall-seen";
 import { ScoreBars, ScoreRing } from "@/components/app/score-bars";
 import { CASE_TYPE_TONES, DIFFICULTY_LABELS } from "@/components/marketing/case-card";
+import { FirmLibraryApp } from "@/components/marketing/firm-library";
 import { Kicker, Tag } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, IconBadge } from "@/components/ui/card";
@@ -310,6 +311,8 @@ export default async function DashboardPage() {
 
         <FocusCard focus={focus} score={focus && shown ? shown[focus] : null} levelScore={shown && !focus ? shown.structure : null} averaged={tracking} />
       </Container>
+
+      <FirmLibraryApp className="mt-12 sm:mt-16" />
 
       <Container className="mt-12 sm:mt-16">
         <section aria-labelledby="practise-title">
