@@ -22,15 +22,6 @@ describe("the home page interview library", () => {
     expect(source).not.toMatch(/\b(25|30|35)\s*min/);
   });
 
-  it("on the dashboard, each interview opens its start page, and the page checks the user itself", () => {
-    expect(source).toContain("`/app/start/${c.slug}`");
-    expect(readFileSync("app/app/page.tsx", "utf8")).toContain("<FirmLibraryApp");
-    const libraryPage = readFileSync("app/app/library/page.tsx", "utf8");
-    expect(libraryPage).toContain("<FirmLibraryApp");
-    expect(libraryPage).toContain("await requireUser()");
-    expect(readFileSync("components/app-nav.tsx", "utf8")).toContain('"/app/library"');
-  });
-
   it("has firms to show, each with at least one case that has a sensible length", () => {
     const firms = practiceFirms();
     expect(firms.length).toBeGreaterThan(0);

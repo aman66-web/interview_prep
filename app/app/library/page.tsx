@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppHeader } from "@/components/app/app-header";
-import { FirmLibraryApp } from "@/components/marketing/firm-library";
+import { LibrarySections } from "@/components/app/library-parts";
 import { requireUser } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-// The signed-in interview library: every firm and bank, with its practice interviews.
-// Tapping an interview opens its start page. The same section is on the dashboard.
+// The signed-in interview library: Companies (company, then role, then case) and Cases
+// (browse by role). The same two sections are on the dashboard.
 export default async function LibraryPage() {
   await requireUser();
   return (
@@ -21,9 +21,9 @@ export default async function LibraryPage() {
             The interview <span className="serif-accent">library</span>
           </>
         }
-        intro={<p>Choose the firm you are preparing for, then pick an interview. Each one has its length and difficulty on it.</p>}
+        intro={<p>Browse by company, or by the role you are going for. Every case has its length and difficulty on it.</p>}
       />
-      <FirmLibraryApp className="mt-12 pb-10 sm:mt-16 sm:pb-16" />
+      <LibrarySections className="mt-12 pb-10 sm:mt-16 sm:pb-16" />
     </>
   );
 }
