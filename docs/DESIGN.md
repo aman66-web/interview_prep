@@ -1,6 +1,6 @@
 # Design system
 
-The look: a light, calm canvas with big rounded white cards, near-black pill buttons with a round arrow "bubble", one lime accent, soft pastel cards in bento grids, a deep blue "night" panel for contrast, and one italic serif phrase per heading. Dark mode mirrors all of it. The home page (`app/page.tsx`) is the reference; copy its patterns.
+The look (always shown dark, see below; the tokens still have a light twin): a calm canvas with big rounded white cards, near-black pill buttons with a round arrow "bubble", one lime accent, soft pastel cards in bento grids, a deep blue "night" panel for contrast, and one italic serif phrase per heading. Dark mode mirrors all of it. The home page (`app/page.tsx`) is the reference; copy its patterns.
 
 ## Tokens (`app/globals.css`)
 
@@ -31,9 +31,9 @@ Fonts: Inter Tight (`font-sans`, default), Instrument Serif via `.serif-accent` 
 - `Faq` + `faqJsonLd` + `JsonLd`, `Marquee`, `Prose` + `TableOfContents` (renders content blocks), icons in `icons.tsx` (add new line icons there in the same style: 24px viewBox, stroke `currentColor`, `aria-hidden`).
 - Marketing pieces: `components/marketing/case-card.tsx` (`CaseCard`, `DifficultyMeter`, `CASE_TYPE_TONES`), `components/marketing/mocks.tsx` (decorative product pictures).
 
-## The home page is always dark
+## The whole site is always dark
 
-Founder's choice, 26 Oct 2026: the home page shows the black look on every device, even when the visitor's device is set to light. It marks itself with a hidden `<span data-force-dark>` (`app/page.tsx`). `app/globals.css` has a block (`:root:has([data-force-dark])`) that repeats the dark tokens, an override for `.bg-aurora`, and a `dark:` variant that also applies on marked pages, so photo dimming and the other `dark:` styles work there. Every other page still follows the visitor's device. `tests/site-shell.test.ts` checks the repeated tokens stay identical to the dark ones: when you change a dark token, change it in both places. To make another page always dark, add the same span to it; to turn the home page back to following the device, remove the span.
+Founder's choice, 26 Oct 2026 (the home page first, then "make the whole site black"): every page shows the black look on every device, even when the visitor's device is set to light. The root layout (`app/layout.tsx`) puts a hidden `<span data-force-dark>` on every page, and the browser bar colour (`themeColor`) is dark. `app/globals.css` has a block (`:root:has([data-force-dark])`) that repeats the dark tokens, an override for `.bg-aurora`, and a `dark:` variant that also applies on marked pages, so photo dimming and the other `dark:` styles work everywhere. The light tokens stay in `:root` as the fallback. `tests/site-shell.test.ts` checks the repeated tokens stay identical to the dark ones: when you change a dark token, change it in both places. **To go back to following the visitor's device, delete the span (and restore the two-colour `themeColor`) in `app/layout.tsx`.** Design and check new pages in dark first.
 
 ## Contrast
 

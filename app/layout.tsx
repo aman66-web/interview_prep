@@ -34,17 +34,18 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
+// The whole site is always dark (founder's choice, 26 Oct 2026; see docs/DESIGN.md), so the
+// browser's own bar is dark too, whatever the visitor's device is set to.
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f3f0" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0b0d" },
-  ],
+  themeColor: "#0b0b0d",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${interTight.variable} ${instrumentSerif.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
+        {/* Every page shows the dark look (data-force-dark; see app/globals.css and docs/DESIGN.md). */}
+        <span hidden data-force-dark="" />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-ink-contrast"

@@ -92,7 +92,7 @@ describe("colour tokens (WCAG AA, 4.5:1 for text)", () => {
   });
 });
 
-describe("the home page's always-dark look", () => {
+describe("the site's always-dark look", () => {
   const forcedStart = css.indexOf(":root:has([data-force-dark]) {");
   const forcedBlock = css.slice(forcedStart, css.indexOf("@theme inline"));
   const mediaDarkBlock = css.slice(darkStart, forcedStart);
@@ -108,8 +108,10 @@ describe("the home page's always-dark look", () => {
     expect(forcedBlock).toMatch(/color-scheme:\s*dark/);
   });
 
-  it("is switched on by the home page's mark", () => {
-    expect(readFileSync("app/page.tsx", "utf8")).toContain("data-force-dark");
+  it("is switched on for every page by the root layout, and the browser bar is dark too", () => {
+    const layout = readFileSync("app/layout.tsx", "utf8");
+    expect(layout).toContain("data-force-dark");
+    expect(layout).toMatch(/themeColor:\s*"#0b0b0d"/);
   });
 });
 

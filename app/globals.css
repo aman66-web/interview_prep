@@ -115,10 +115,12 @@
 }
 
 /*
- * The home page always shows the dark look, whatever the visitor's device is set to
- * (founder's choice, 26 Oct 2026). It marks itself with a hidden <span data-force-dark>, and
- * this block repeats the dark tokens above for any page that has the mark. Other pages still
- * follow the device. tests/site-shell.test.ts checks the two lists stay identical.
+ * The whole site always shows the dark look, whatever the visitor's device is set to
+ * (founder's choice, 26 Oct 2026: the home page first, then every page). The root layout puts a
+ * hidden <span data-force-dark> on every page, and this block repeats the dark tokens above for
+ * any page that has the mark. The light tokens stay in :root as the fallback, and removing the
+ * span from app/layout.tsx puts the site back to following the device.
+ * tests/site-shell.test.ts checks the two dark lists stay identical.
  */
 :root:has([data-force-dark]) {
   color-scheme: dark;
@@ -214,7 +216,7 @@
   --animate-float: float 7s ease-in-out infinite;
 }
 
-/* Tailwind's dark: styles apply in the dark look: on a dark device, and on pages marked data-force-dark (the home page). */
+/* Tailwind's dark: styles apply in the dark look: on a dark device, and on pages marked data-force-dark (every page). */
 @custom-variant dark {
   @media (prefers-color-scheme: dark) {
     @slot;
