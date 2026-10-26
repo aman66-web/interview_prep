@@ -741,6 +741,8 @@ export default function Home() {
   const drillCount = allDrills.length;
   return (
     <>
+      {/* The home page always shows the dark look (see data-force-dark in app/globals.css). */}
+      <span hidden data-force-dark="" />
       <Hero />
       <Facts drillCount={drillCount} />
       <div className="mt-16 sm:mt-20">

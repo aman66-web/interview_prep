@@ -92,6 +92,27 @@ describe("colour tokens (WCAG AA, 4.5:1 for text)", () => {
   });
 });
 
+describe("the home page's always-dark look", () => {
+  const forcedStart = css.indexOf(":root:has([data-force-dark]) {");
+  const forcedBlock = css.slice(forcedStart, css.indexOf("@theme inline"));
+  const mediaDarkBlock = css.slice(darkStart, forcedStart);
+
+  function declarations(block: string): Record<string, string> {
+    return Object.fromEntries([...block.matchAll(/--([a-z0-9-]+):\s*([^;]+);/gi)].map((m) => [m[1], m[2].replace(/\s+/g, " ").trim()]));
+  }
+
+  it("repeats every dark token exactly, so the home page looks the same as on a dark device", () => {
+    expect(forcedStart).toBeGreaterThan(darkStart);
+    expect(Object.keys(declarations(mediaDarkBlock)).length).toBeGreaterThan(30);
+    expect(declarations(forcedBlock)).toEqual(declarations(mediaDarkBlock));
+    expect(forcedBlock).toMatch(/color-scheme:\s*dark/);
+  });
+
+  it("is switched on by the home page's mark", () => {
+    expect(readFileSync("app/page.tsx", "utf8")).toContain("data-force-dark");
+  });
+});
+
 describe("browser-drawn parts and frosted glass", () => {
   it("tell the browser which theme is showing, so scrollbars and controls match", () => {
     expect(lightBlock).toMatch(/color-scheme:\s*light/);
