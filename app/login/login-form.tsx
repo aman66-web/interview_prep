@@ -117,7 +117,8 @@ export function LoginForm({ next, notice, providers = [], captchaSiteKey = "" }:
           </span>
           <p className="text-[15px] leading-relaxed text-ink">
             We emailed a sign-in code to <strong className="font-semibold">{email}</strong>. Type it below. You can read
-            the email on your phone and type the code here.
+            the email on your phone and type the code here.{" "}
+            <strong className="font-semibold">If you can&rsquo;t see it, please check your junk or spam folder.</strong>
           </p>
         </div>
         <form action={codeAction} className="mt-6">
@@ -151,7 +152,7 @@ export function LoginForm({ next, notice, providers = [], captchaSiteKey = "" }:
           If the email has a sign-in link instead of a code, open the link in this browser.
         </p>
         <p className="mt-2 text-sm text-muted">
-          Nothing arrived? Check your spam folder, or{" "}
+          Nothing arrived? Check your junk or spam folder, or{" "}
           <a href="/login" className="font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
             use a different email
           </a>
