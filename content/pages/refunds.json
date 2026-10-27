@@ -3,7 +3,7 @@
   "title": "Refund policy",
   "seo_title": "Refund policy | CaseSpar",
   "description": "CaseSpar plans are final sale: we don't offer refunds, except where the law requires them. How cancelling the Monthly plan works.",
-  "updated": "2026-10-20",
+  "updated": "2026-10-27",
   "status": "approved",
   "effective": "2026-10-20",
   "intro": "This page explains our refund policy and how cancelling works. Effective date: [effective date].",
@@ -12,7 +12,7 @@
       "type": "callout",
       "tone": "warning",
       "title": "Your 14-day right to cancel",
-      "text": "UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Checkout asks for that: the buy button only works once the person ticks \"I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.\""
+      "text": "UK consumer law gives buyers of digital content 14 days to cancel, unless they expressly agree to get access straight away and acknowledge that they lose that right. Our terms and conditions say that when you buy, you ask for access to start straight away and that you lose the 14-day right to cancel once you start using your plan. Checkout asks you to tick that you agree to the terms and conditions, and the buy button only works once you have."
     },
     {
       "type": "callout",
@@ -28,7 +28,7 @@
     },
     {
       "type": "p",
-      "text": "Before you pay, we ask you to confirm that you want access to start straight away and that you understand you lose the 14-day right to cancel once you start using your plan."
+      "text": "When you buy, you ask for access to start straight away, and you understand that you lose the 14-day right to cancel once you start using your plan. This is part of the terms and conditions you agree to at checkout."
     },
 
     { "type": "h2", "id": "cancelling-monthly", "text": "Cancelling the Monthly plan" },

@@ -3,7 +3,7 @@
   "title": "Terms of service",
   "seo_title": "Terms of service | CaseSpar",
   "description": "The terms for using CaseSpar: your account, free and paid plans, fair-use limits, fair use of the AI, our content, and your legal rights.",
-  "updated": "2026-10-20",
+  "updated": "2026-10-27",
   "status": "approved",
   "effective": "2026-10-20",
   "intro": "These terms are the agreement between you and us when you use CaseSpar. Please read them before you buy a plan. Effective date: [effective date].",
@@ -71,7 +71,8 @@
       "items": [
         "You can cancel Monthly at any time. Open your account page, choose Manage billing and cancel in Stripe's billing portal. You won't be charged again, and you keep access until the end of the month you have already paid for.",
         "The 90-Day Pass doesn't need cancelling, because it never renews.",
-        "All sales are final: we don't offer refunds, except where the law requires them (see our refund policy). Before you pay, you confirm that you want access to start straight away and understand that you lose the 14-day right to cancel once you start using your plan. Nothing here affects your other legal rights as a consumer.",
+        "All sales are final: we don't offer refunds, except where the law requires them (see our refund policy). Nothing here affects your other legal rights as a consumer.",
+        "Your plan starts straight away. When you buy, you ask us to give you access at once, and you understand that you lose the 14-day right to cancel that UK law gives buyers of digital content once you start using your plan.",
         "Deleting your account cancels any subscription straight away and ends any paid time left. It doesn't give you a refund."
       ]
     },

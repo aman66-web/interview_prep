@@ -11,7 +11,7 @@ import { Check, Lock, Shield, Sparkle } from "@/components/ui/icons";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { ownValue } from "@/lib/app/own-key";
 import { PLANS, type PlanId } from "@/lib/plans";
-import { CANCEL_WAIVER } from "@/lib/stripe/checkout";
+import { TERMS_CONSENT } from "@/lib/stripe/checkout";
 import { pageOpenGraph } from "@/components/learn/seo";
 import { PURCHASE_NOTICES } from "@/lib/stripe/plans";
 import { cn } from "@/lib/ui/cn";
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const { limits, prices } = siteConfig;
 
-const NOTICES: Record<string, string> = { ...PURCHASE_NOTICES, consent: CANCEL_WAIVER.notice };
+const NOTICES: Record<string, string> = { ...PURCHASE_NOTICES, consent: TERMS_CONSENT.notice };
 
 const NOTICE_TONES: Record<string, NoticeTone> = {
   unavailable: "warning",
@@ -51,7 +51,8 @@ function BuyButton({
 }) {
   // A plain form post: it works without JavaScript. Signed-out visitors are sent to sign in first.
   // The tick box is required here and checked again by /api/stripe/checkout.
-  const id = `cancel-waiver-${plan}`;
+  const id = `terms-${plan}`;
+  const [beforeLink, afterLink] = TERMS_CONSENT.text.split(TERMS_CONSENT.linkText);
   return (
     <form method="post" action="/api/stripe/checkout">
       <input type="hidden" name="plan" value={plan} />
@@ -59,12 +60,23 @@ function BuyButton({
         <input
           id={id}
           type="checkbox"
-          name={CANCEL_WAIVER.field}
-          value={CANCEL_WAIVER.version}
+          name={TERMS_CONSENT.field}
+          value={TERMS_CONSENT.version}
           required
           className={cn("mt-px size-5 shrink-0 cursor-pointer rounded", onNight ? "accent-lime" : "accent-ink")}
         />
-        <span>{CANCEL_WAIVER.text}</span>
+        <span>
+          {beforeLink}
+          <Link
+            href="/legal/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn("font-medium underline underline-offset-4", onNight ? "text-white decoration-white/40 hover:decoration-white" : "text-ink decoration-ink/30 hover:decoration-ink")}
+          >
+            {TERMS_CONSENT.linkText}
+          </Link>
+          {afterLink}
+        </span>
       </label>
       <Button type="submit" variant={variant} full arrow size="lg">
         {children}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LockedCaseLink } from "@/components/app/locked-case-link";
 import { CASE_TYPE_TONES, DIFFICULTY_LABELS } from "@/components/marketing/case-card";
 import { Tag, type TagTone } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, Building, ChevronRight, Clock, Coins, Layers, Lock, Target, TrendUp } from "@/components/ui/icons";
@@ -238,35 +239,47 @@ export function CaseList({ cases, paid }: { cases: Case[]; paid: boolean }) {
       {rows.map((c) => {
         const locked = !paid && !c.freeStarter;
         const tone: TagTone = CASE_TYPE_TONES[c.type] ?? "neutral";
+        const href = `/app/start/${c.slug}`;
+        const rowClass =
+          "group flex items-start justify-between gap-4 rounded-[1.5rem] bg-surface p-5 ring-1 ring-inset ring-line transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float sm:p-6";
+        const row = (
+          <>
+            <span className="min-w-0">
+              <span className="flex flex-wrap items-center gap-2">
+                <Tag tone={tone}>{CASE_TYPE_LABELS[c.type]}</Tag>
+                <Tag>{c.industry}</Tag>
+                {c.freeStarter ? <Tag tone="lime">Free</Tag> : null}
+                {locked ? (
+                  <Tag tone="warning">
+                    <Lock size={11} aria-hidden="true" /> Paid plan
+                  </Tag>
+                ) : null}
+              </span>
+              <span className="mt-3 block text-lg font-medium leading-snug tracking-tight text-ink">{c.title}</span>
+              <span className="mt-1 block text-sm text-muted">
+                {c.estMinutes} minute interview · {DIFFICULTY_LABELS[c.difficulty]}
+              </span>
+            </span>
+            <span
+              aria-hidden="true"
+              className="grid size-10 shrink-0 place-items-center rounded-full bg-surface-2 text-ink ring-1 ring-inset ring-line transition-all duration-300 group-hover:rotate-45 group-hover:bg-ink group-hover:text-ink-contrast"
+            >
+              <ArrowUpRight size={17} />
+            </span>
+          </>
+        );
         return (
           <li key={c.slug}>
-            <Link
-              href={`/app/start/${c.slug}`}
-              className="group flex items-start justify-between gap-4 rounded-[1.5rem] bg-surface p-5 ring-1 ring-inset ring-line transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-float sm:p-6"
-            >
-              <span className="min-w-0">
-                <span className="flex flex-wrap items-center gap-2">
-                  <Tag tone={tone}>{CASE_TYPE_LABELS[c.type]}</Tag>
-                  <Tag>{c.industry}</Tag>
-                  {c.freeStarter ? <Tag tone="lime">Free</Tag> : null}
-                  {locked ? (
-                    <Tag tone="warning">
-                      <Lock size={11} aria-hidden="true" /> Paid plan
-                    </Tag>
-                  ) : null}
-                </span>
-                <span className="mt-3 block text-lg font-medium leading-snug tracking-tight text-ink">{c.title}</span>
-                <span className="mt-1 block text-sm text-muted">
-                  {c.estMinutes} minute interview · {DIFFICULTY_LABELS[c.difficulty]}
-                </span>
-              </span>
-              <span
-                aria-hidden="true"
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-surface-2 text-ink ring-1 ring-inset ring-line transition-all duration-300 group-hover:rotate-45 group-hover:bg-ink group-hover:text-ink-contrast"
-              >
-                <ArrowUpRight size={17} />
-              </span>
-            </Link>
+            {locked ? (
+              // A free account pressing a paid case sees the upgrade window (it still links to the start page without JavaScript).
+              <LockedCaseLink href={href} slug={c.slug} className={rowClass}>
+                {row}
+              </LockedCaseLink>
+            ) : (
+              <Link href={href} className={rowClass}>
+                {row}
+              </Link>
+            )}
           </li>
         );
       })}
