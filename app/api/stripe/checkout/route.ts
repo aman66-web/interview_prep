@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { recordOncePerDay } from "@/lib/analytics/funnel";
 import { getUser } from "@/lib/auth/session";
 import { isSameOrigin } from "@/lib/http/same-origin";
-import { buildCheckoutParams, CANCEL_WAIVER, hasCancelWaiver } from "@/lib/stripe/checkout";
+import { buildCheckoutParams, hasAcceptedTerms, TERMS_CONSENT } from "@/lib/stripe/checkout";
 import { isStripeConfigured, StripeError } from "@/lib/stripe/client";
 import { checkPurchase, isPlanId } from "@/lib/stripe/plans";
 import { createStripeApi } from "@/lib/stripe/client";
@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
   const form = await request.formData().catch(() => null);
   const plan = form?.get("plan");
   if (!isPlanId(plan)) return back(request, "/pricing?notice=invalid");
-  // The buyer must ask for access to start straight away and accept losing the 14-day right to cancel.
-  if (!hasCancelWaiver(form)) return back(request, "/pricing?notice=consent");
+  // The buyer must tick that they agree to the terms and conditions.
+  if (!hasAcceptedTerms(form)) return back(request, "/pricing?notice=consent");
   if (!isStripeConfigured()) return back(request, "/pricing?notice=unavailable");
 
   try {
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         origin: request.nextUrl.origin,
         priceIds: { monthly: process.env.STRIPE_PRICE_MONTHLY, pass90: process.env.STRIPE_PRICE_PASS90 },
         taxEnabled: siteConfig.stripeTaxEnabled,
-        cancelWaiver: CANCEL_WAIVER.version,
+        termsAccepted: TERMS_CONSENT.version,
       }),
     );
     if (!session.url) throw new Error("Stripe returned no checkout address.");

@@ -5,24 +5,26 @@ import { PASS_DAYS, PLAN_INFO, type PlanId } from "./plans";
 // Builds the request that starts a Stripe Checkout page. Pure, so it is easy to test.
 
 /**
- * The "start straight away" acknowledgement every buyer ticks before checkout. Under
- * the UK Consumer Contracts Regulations 2013, a buyer of digital content keeps a 14-day
- * right to cancel unless they ask for access to start at once and acknowledge that they
- * lose that right. The box sits above each Buy button on /pricing; /api/stripe/checkout
- * refuses a checkout without it and records `version` in the Checkout Session's
- * metadata. Give the wording a new version whenever it changes.
+ * The terms-and-conditions tick every buyer makes before checkout (founder, 27 Oct 2026:
+ * the box only asks for the terms; the "start straight away" request and the loss of the
+ * 14-day right to cancel are written in the terms themselves, `content/pages/terms.json`
+ * and `refunds.json`). The box sits above each Buy button on /pricing; /api/stripe/checkout
+ * refuses a checkout without it and records `version` in the Checkout Session's metadata.
+ * Give the wording a new version whenever it changes.
  */
-export const CANCEL_WAIVER = {
-  field: "cancel_waiver",
-  version: "cancel-waiver-v1",
-  text: "I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.",
+export const TERMS_CONSENT = {
+  field: "terms_accepted",
+  version: "terms-v1",
+  text: "I agree to the terms and conditions.",
+  /** The part of `text` that links to the terms. */
+  linkText: "terms and conditions",
   /** Shown on /pricing?notice=consent when the box was not ticked. */
-  notice: "Please tick the box above the button to confirm you want access to start straight away. Nothing was charged.",
+  notice: "Please tick the box above the button to agree to the terms and conditions. Nothing was charged.",
 } as const;
 
-/** True only when the form carries the current version of the acknowledgement (a ticked box). */
-export function hasCancelWaiver(form: Pick<FormData, "get"> | null | undefined): boolean {
-  return form?.get(CANCEL_WAIVER.field) === CANCEL_WAIVER.version;
+/** True only when the form carries the current version of the tick (a ticked box). */
+export function hasAcceptedTerms(form: Pick<FormData, "get"> | null | undefined): boolean {
+  return form?.get(TERMS_CONSENT.field) === TERMS_CONSENT.version;
 }
 
 export type CheckoutInput = {
@@ -36,8 +38,8 @@ export type CheckoutInput = {
   /** Stripe price ids from the environment (optional). */
   priceIds: { monthly?: string; pass90?: string };
   taxEnabled: boolean;
-  /** The version of the "start straight away" acknowledgement the buyer ticked, kept in the session's metadata. */
-  cancelWaiver?: string;
+  /** The version of the terms tick the buyer made, kept in the session's metadata. */
+  termsAccepted?: string;
 };
 
 export type CheckoutParams = {
@@ -70,8 +72,8 @@ export function buildCheckoutParams(input: CheckoutInput): CheckoutParams {
     mode: info.mode,
     client_reference_id: input.userId,
     line_items: [lineItem],
-    // The session keeps a record of the acknowledgement; the subscription and payment keep only who and what.
-    metadata: input.cancelWaiver ? { ...metadata, cancel_waiver: input.cancelWaiver } : metadata,
+    // The session keeps a record of the tick; the subscription and payment keep only who and what.
+    metadata: input.termsAccepted ? { ...metadata, terms_accepted: input.termsAccepted } : metadata,
     allow_promotion_codes: true,
     success_url: `${input.origin}/api/stripe/return?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${input.origin}/pricing?notice=cancelled`,

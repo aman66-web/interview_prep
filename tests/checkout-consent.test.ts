@@ -1,9 +1,10 @@
 import { NextRequest } from "next/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { buildCheckoutParams, CANCEL_WAIVER, hasCancelWaiver } from "@/lib/stripe/checkout";
+import { buildCheckoutParams, hasAcceptedTerms, TERMS_CONSENT } from "@/lib/stripe/checkout";
 
-// H1: before checkout the buyer ticks "I want access to start straight away ..."
-// (UK Consumer Contracts Regulations 2013). The real route file runs here with the
+// H1: before checkout the buyer ticks "I agree to the terms and conditions." (the 14-day
+// right to cancel and starting straight away are written in the terms, founder 27 Oct 2026;
+// UK Consumer Contracts Regulations 2013). The real route file runs here with the
 // login, Stripe and the admin client replaced by fakes.
 
 const USER = { id: "11111111-2222-4333-8444-555555555555", email: "student@example.test" };
@@ -65,23 +66,22 @@ beforeEach(() => {
 });
 afterEach(() => vi.unstubAllEnvs());
 
-describe("the 'start straight away' acknowledgement", () => {
+describe("the terms-and-conditions tick", () => {
   it("uses the agreed wording, with a version", () => {
-    expect(CANCEL_WAIVER.text).toBe(
-      "I want access to start straight away. I understand that I lose my 14-day right to cancel once I start using my plan.",
-    );
-    expect(CANCEL_WAIVER.version).toBe("cancel-waiver-v1");
+    expect(TERMS_CONSENT.text).toBe("I agree to the terms and conditions.");
+    expect(TERMS_CONSENT.text).toContain(TERMS_CONSENT.linkText);
+    expect(TERMS_CONSENT.version).toBe("terms-v1");
   });
 
   it("counts only a ticked box carrying the current version", () => {
     const form = (value?: string) => {
       const f = new FormData();
-      if (value !== undefined) f.set(CANCEL_WAIVER.field, value);
+      if (value !== undefined) f.set(TERMS_CONSENT.field, value);
       return f;
     };
-    expect(hasCancelWaiver(form(CANCEL_WAIVER.version))).toBe(true);
-    for (const value of [undefined, "", "on", "yes", "true", "cancel-waiver-v0"]) expect(hasCancelWaiver(form(value))).toBe(false);
-    expect(hasCancelWaiver(null)).toBe(false);
+    expect(hasAcceptedTerms(form(TERMS_CONSENT.version))).toBe(true);
+    for (const value of [undefined, "", "on", "yes", "true", "terms-v0"]) expect(hasAcceptedTerms(form(value))).toBe(false);
+    expect(hasAcceptedTerms(null)).toBe(false);
   });
 
   it("is stored in the Checkout Session's metadata only", () => {
@@ -93,16 +93,16 @@ describe("the 'start straight away' acknowledgement", () => {
       origin: SITE,
       priceIds: {},
       taxEnabled: false,
-      cancelWaiver: CANCEL_WAIVER.version,
+      termsAccepted: TERMS_CONSENT.version,
     });
-    expect(p.metadata).toEqual({ user_id: USER.id, plan: "monthly", cancel_waiver: "cancel-waiver-v1" });
+    expect(p.metadata).toEqual({ user_id: USER.id, plan: "monthly", terms_accepted: "terms-v1" });
     expect(p.subscription_data).toEqual({ metadata: { user_id: USER.id, plan: "monthly" } });
   });
 });
 
 describe("POST /api/stripe/checkout", () => {
   it("refuses a checkout without the tick and sends the buyer back with a notice", async () => {
-    const attempts: Record<string, string>[] = [{ plan: "pass90" }, { plan: "pass90", cancel_waiver: "on" }, { plan: "monthly", cancel_waiver: "" }];
+    const attempts: Record<string, string>[] = [{ plan: "pass90" }, { plan: "pass90", terms_accepted: "on" }, { plan: "monthly", terms_accepted: "" }];
     for (const fields of attempts) {
       const r = await POST(post(fields));
       expect(r.status).toBe(303);
@@ -113,25 +113,25 @@ describe("POST /api/stripe/checkout", () => {
   });
 
   it("starts Stripe Checkout when ticked, recording the wording version", async () => {
-    const r = await POST(post({ plan: "pass90", cancel_waiver: CANCEL_WAIVER.version }));
+    const r = await POST(post({ plan: "pass90", terms_accepted: TERMS_CONSENT.version }));
     expect(r.status).toBe(303);
     expect(location(r)).toBe("https://checkout.stripe.test/pay/cs_test_123456");
     expect(createCheckoutSession).toHaveBeenCalledOnce();
     const params = createCheckoutSession.mock.calls[0][0];
-    expect(params.metadata).toEqual({ user_id: USER.id, plan: "pass90", cancel_waiver: "cancel-waiver-v1" });
+    expect(params.metadata).toEqual({ user_id: USER.id, plan: "pass90", terms_accepted: "terms-v1" });
     expect(params.payment_intent_data.metadata).toEqual({ user_id: USER.id, plan: "pass90" });
   });
 
   it("still sends a signed-out visitor to sign in, and refuses an unknown plan first", async () => {
     getUser.mockResolvedValue(null);
-    expect(location(await POST(post({ plan: "pass90", cancel_waiver: CANCEL_WAIVER.version })))).toBe(`${SITE}/login?next=%2Fpricing`);
+    expect(location(await POST(post({ plan: "pass90", terms_accepted: TERMS_CONSENT.version })))).toBe(`${SITE}/login?next=%2Fpricing`);
     getUser.mockResolvedValue(USER);
     expect(location(await POST(post({ plan: "lifetime" })))).toBe(`${SITE}/pricing?notice=invalid`);
   });
 
   it("records checkout_started once per plan per day, however often the form is posted", async () => {
-    for (let i = 0; i < 5; i++) await POST(post({ plan: "pass90", cancel_waiver: CANCEL_WAIVER.version }));
-    await POST(post({ plan: "monthly", cancel_waiver: CANCEL_WAIVER.version }));
+    for (let i = 0; i < 5; i++) await POST(post({ plan: "pass90", terms_accepted: TERMS_CONSENT.version }));
+    await POST(post({ plan: "monthly", terms_accepted: TERMS_CONSENT.version }));
     expect(createCheckoutSession).toHaveBeenCalledTimes(6);
     expect(events.map((e) => [e.name, e.path])).toEqual([
       ["checkout_started", "/pricing?plan=pass90"],
